@@ -31,9 +31,9 @@ export default {
       },
       keyframes: {
         "soft-pulse": {
-          "0%": { opacity: 0.3, transform: "scale(0.96)" },
-          "50%": { opacity: 0.7, transform: "scale(1)" },
-          "100%": { opacity: 0.3, transform: "scale(0.96)" }
+          "0%": { opacity: "0.3", transform: "scale(0.96)" },
+          "50%": { opacity: "0.7", transform: "scale(1)" },
+          "100%": { opacity: "0.3", transform: "scale(0.96)" }
         },
         "slow-pan": {
           "0%": { transform: "translate3d(-2%, -2%, 0)" },
