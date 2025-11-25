@@ -140,16 +140,14 @@ export const Hero = () => {
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0d1c2e] via-[#0f2438] to-[#0a1624] p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <video
+                    src="/videos/hero-vid-2.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="aspect-[4/3] w-full object-cover"
                     aria-label={copy.hero.spotlight.video.alt}
-                  >
-                    <track kind="captions" label={copy.hero.spotlight.video.alt} />
-                    <source src={copy.hero.spotlight.video.src} type="video/mp4" />
-                  </video>
+                  />
                 </div>
               </div>
               <p className="text-xs uppercase tracking-[0.3em] text-white/65">
