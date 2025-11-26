@@ -162,6 +162,8 @@
     isolation: isolate;
     z-index: 0;
     background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
     background-size: 180% 180%;
     animation: bubble-flow 38s ease-in-out infinite alternate;
     overflow: hidden;
@@ -185,9 +187,9 @@
         color-mix(in srgb, var(--g8), transparent 78%) 100%
       );
     mix-blend-mode: soft-light;
-    opacity: 0.18;
-    filter: saturate(calc(1 + (var(--cursor-speed, 0) * 0.08))) blur(1px);
-    transition: opacity 300ms ease;
+    opacity: 0.06;
+    filter: saturate(calc(1 + (var(--cursor-speed, 0) * 0.04))) blur(1px);
+    transition: opacity 300ms ease, background 300ms ease;
     z-index: 0;
   }
 

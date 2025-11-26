@@ -116,7 +116,7 @@ export const copy = {
         "cta": "Discover Verisense",
         "href": "/verisense",
         "video": {
-          "src": "/visuals/systems/verisense-wide-3.png",
+          "src": "/visuals/systems/verisense-logo-wide-1.png",
           "label": "Verisense overview"
         }
       },
