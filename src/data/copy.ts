@@ -84,7 +84,7 @@ export const copy = {
         proof: "Video + text analysis paired with reconciled sentiment reports for executive reviews.",
         highlights: ["Speech + presence diagnostics", "Leadership coaching dossiers", "Feedback loops wired into CRM"],
         image: {
-          src: "/visuals/systems/verisense-wide-logo-2.png",
+          src: "/visuals/systems/verisense-wide-3.png",
           label: "Verisense crest and mark"
         }
       },
@@ -139,7 +139,7 @@ export const copy = {
       ],
       useCases: [],
       demos: [],
-      image: { src: "/visuals/systems/verisense-wide-logo-2.png", label: "Verisense crest and mark" },
+      image: { src: "/visuals/systems/verisense-wide-3.png", label: "Verisense crest and mark" },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
       accent: "from-rose-500/20 via-purple-900/30 to-black"
     },
@@ -335,7 +335,7 @@ export const copy = {
         cta: "Explore Verisense Labs",
         href: "/labs/verisense",
         video: {
-          src: "/visuals/systems/verisense-wide-logo-2.png",
+          src: "/visuals/systems/verisense-wide-3.png",
           label: "See Beneath the Surface"
         }
       },

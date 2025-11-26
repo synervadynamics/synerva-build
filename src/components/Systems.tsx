@@ -77,7 +77,6 @@ export const Systems = () => {
               detail?.image;
             const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
             const mediaLabel = media?.label ?? `${system.title} visual`;
-            const isVerisense = system.title === "Verisense";
             const href = detail ? `/${detail.slug}` : "/contact";
             return (
               <motion.article
@@ -108,9 +107,7 @@ export const Systems = () => {
                       alt={mediaLabel}
                       width={1536}
                       height={1024}
-                      className={`aspect-video w-full transition duration-500 group-hover:scale-[1.03] ${
-                        isVerisense ? "object-contain p-5" : "object-cover"
-                      }`}
+                      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                       sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                       priority={index === 0}
                     />
