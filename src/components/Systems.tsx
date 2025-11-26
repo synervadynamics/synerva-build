@@ -85,7 +85,9 @@ export const Systems = () => {
         <div className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(8,18,32,0.74)] via-[rgba(12,28,46,0.7)] to-[rgba(10,20,36,0.7)] p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8">
           {systems.map((system, index) => {
             const detail = productLookup[system.title];
-            const media = (system as typeof system & { image?: { src: string; label?: string } }).image ?? system.video;
+            const media =
+              ("image" in system && system.image ? system.image : undefined) ??
+              (("video" in system && system.video) ? system.video : undefined);
             const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
             const mediaLabel = media?.label ?? `${system.title} visual`;
             const href = detail ? `/${detail.slug}` : "/contact";
