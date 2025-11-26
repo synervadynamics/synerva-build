@@ -141,8 +141,8 @@ export const Hero = () => {
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0d1c2e] via-[#0f2438] to-[#0a1624] p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
-                    src="/visuals/hero/synerva-dynamics-wide-logo-1.png"
-                    alt={copy.hero.spotlight.video.alt}
+                    src="/visuals/hero/synerva-hero-shot-2025.png"
+                    alt="Synerva Dynamics hero graphic"
                     width={1536}
                     height={1024}
                     className="aspect-[4/3] w-full object-cover"
