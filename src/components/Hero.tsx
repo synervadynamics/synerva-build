@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { copy } from "@/data/copy";
@@ -139,14 +140,14 @@ export const Hero = () => {
             <motion.div variants={child} className="space-y-4 rounded-[2.5rem] border border-white/10 bg-black/0 p-0">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0d1c2e] via-[#0f2438] to-[#0a1624] p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
-                  <video
-                    src="/videos/hero-vid-2.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <Image
+                    src="/visuals/hero/synerva-dynamics-wide-logo-1.png"
+                    alt={copy.hero.spotlight.video.alt}
+                    width={1536}
+                    height={1024}
                     className="aspect-[4/3] w-full object-cover"
-                    aria-label={copy.hero.spotlight.video.alt}
+                    sizes="(min-width: 1280px) 560px, (min-width: 1024px) 460px, 100vw"
+                    priority
                   />
                 </div>
               </div>
