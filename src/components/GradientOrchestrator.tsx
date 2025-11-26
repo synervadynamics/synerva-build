@@ -32,10 +32,6 @@ const setPalette = (colors?: [string, string, string, string]) => {
   root.style.setProperty("--g2", colors[1]);
   root.style.setProperty("--g3", colors[2]);
   root.style.setProperty("--g4", colors[3]);
-  root.style.setProperty("--g5", colors[0]);
-  root.style.setProperty("--g6", colors[1]);
-  root.style.setProperty("--g7", colors[2]);
-  root.style.setProperty("--g8", colors[3]);
 };
 
 export const GradientOrchestrator = () => {
