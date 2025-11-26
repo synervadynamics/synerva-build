@@ -31,11 +31,12 @@ export const Systems = () => {
       }
     | undefined
   > = {
-    Lucentra: { ...copy.products.lucentra, image: { src: "/visuals/systems/lucentra-wide-logo-1.png", label: copy.products.lucentra.title } },
-    Verisense: { ...copy.products.verisense, image: { src: "/visuals/systems/verisense-wide-logo-2.png", label: copy.products.verisense.title } },
+    Lucentra: { slug: copy.products.lucentra.slug, title: copy.products.lucentra.title, image: copy.products.lucentra.image },
+    Verisense: { slug: copy.products.verisense.slug, title: copy.products.verisense.title, image: copy.products.verisense.image },
     "Synerva OS": {
-      ...copy.products.synervaOs,
-      image: { src: "/visuals/systems/synerva-os-wide-shot-1.png", label: copy.products.synervaOs.title }
+      slug: copy.products.synervaOs.slug,
+      title: copy.products.synervaOs.title,
+      image: copy.products.synervaOs.image
     }
   };
 

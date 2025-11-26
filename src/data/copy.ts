@@ -96,7 +96,7 @@ export const copy = {
         proof: "Licensable playbooks + CASL-ready comms layers launched in phases two and three.",
         highlights: ["Revenue primitives + consent logic", "Cross-team governance dashboards", "Airtight data discipline across en-CA standards"],
         image: {
-          src: "/visuals/systems/synerva-os-wide-shot-1.png",
+          src: "/visuals/systems/usethis-snerva-os-wide-1.png",
           label: "Synerva OS crest and mark"
         }
       }
@@ -159,7 +159,7 @@ export const copy = {
       ],
       useCases: [],
       demos: [],
-      image: { src: "/visuals/systems/synerva-os-wide-shot-1.png", label: "Synerva OS crest and mark" },
+      image: { src: "/visuals/systems/usethis-snerva-os-wide-1.png", label: "Synerva OS crest and mark" },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },
       accent: "from-amber-400/20 via-slate-900/40 to-black"
     }
