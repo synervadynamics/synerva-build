@@ -137,8 +137,8 @@ export const Hero = () => {
               </motion.div>
             </div>
 
-            <motion.div variants={child} className="space-y-4 rounded-[2.5rem] border border-white/10 bg-black/0 p-0">
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#0d1c2e] via-[#0f2438] to-[#0a1624] p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+            <motion.div variants={child} className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
+              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
                     src="/visuals/hero/synerva-hero-shot-2025.png"
@@ -165,7 +165,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : undefined}
                 transition={{ delay: 0.3 + index * 0.1, duration: 0.6, ease: easeCurve }}
-                className="rounded-2xl border border-white/12 bg-gradient-to-br from-[#0c1a2b] via-[#0f2234] to-[#0a1826] px-6 py-4 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl"
+                className="rounded-2xl border border-white/12 bg-transparent px-6 py-4 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl"
               >
                 <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">{label}</p>
                 <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-nowrap sm:text-sm">{value}</p>

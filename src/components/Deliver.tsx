@@ -84,7 +84,7 @@ export const Deliver = () => {
             <span>{Math.round(activeProgress)}%</span>
           </div>
         </header>
-        <div className="bubble-drift grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,22,36,0.74)] via-[rgba(12,30,48,0.7)] to-[rgba(8,16,30,0.7)] p-6 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-10">
+        <div className="bubble-drift grid gap-10 rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-10">
           <div ref={cardsRef} className="grid gap-6 lg:grid-cols-2">
             {copy.deliver.items.map((item, index) => (
               <motion.article
@@ -96,8 +96,8 @@ export const Deliver = () => {
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)}
                 tabIndex={0}
-                className={`deliver-card bubble-drift group flex min-h-[220px] flex-col gap-4 rounded-3xl border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(14,36,58,0.7)] to-[rgba(10,22,38,0.68)] p-6 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
-                  activeIndex === index ? "border-white/30 bg-gradient-to-br from-[rgba(16,40,66,0.8)] via-[rgba(18,46,74,0.74)] to-[rgba(12,28,48,0.72)] shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]" : ""
+                className={`deliver-card bubble-drift group flex min-h-[220px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-6 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                  activeIndex === index ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)] backdrop-blur-xl" : ""
                 }`}
               >
                 <p className="text-xs uppercase tracking-[0.35em] text-white/60">{item.title}</p>
@@ -123,7 +123,7 @@ export const Deliver = () => {
                   }
                 : undefined
             }
-            className="relative h-full rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[#102032] via-[#0f1c2c] to-[#0b1422] p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
+            className="relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
           >
             <div className="overflow-hidden rounded-3xl border border-white/5">
               {activeItem.video?.src ? (
