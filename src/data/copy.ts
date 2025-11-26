@@ -83,7 +83,10 @@ export const copy = {
           "Verisense listens beneath literal language to surface tone, conviction, and intent. It’s built for recruiting, leadership, sales, and any environment where reading subtext beats reading scripts.",
         proof: "Video + text analysis paired with reconciled sentiment reports for executive reviews.",
         highlights: ["Speech + presence diagnostics", "Leadership coaching dossiers", "Feedback loops wired into CRM"],
-        image: null,
+        image: {
+          src: "/visuals/systems/verisense-wide-logo-2.png",
+          label: "Verisense crest and mark"
+        },
         video: {
           src: "/visuals/systems/verisense.mp4",
           label: "Verisense signal capture"
