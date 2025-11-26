@@ -98,7 +98,8 @@ export const Systems = () => {
             const detail = productLookup[system.title];
             const media =
               ((system as typeof system & { image?: SystemMedia }).image ?? undefined) ??
-              ((system as typeof system & { video?: SystemMedia }).video ?? undefined);
+              ((system as typeof system & { video?: SystemMedia }).video ?? undefined) ??
+              detail?.image;
             const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
             const mediaLabel = media?.label ?? `${system.title} visual`;
             const href = detail ? `/${detail.slug}` : "/contact";
