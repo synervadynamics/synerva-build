@@ -161,6 +161,7 @@
     position: relative;
     isolation: isolate;
     z-index: 0;
+    background: transparent !important;
     background-size: 180% 180%;
     animation: bubble-flow 38s ease-in-out infinite alternate;
     overflow: hidden;
@@ -172,19 +173,19 @@
     inset: -6%;
     pointer-events: none;
     background:
-      radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--g1), transparent 52%) 0%, transparent 44%),
-      radial-gradient(circle at 78% 14%, color-mix(in srgb, var(--g2), transparent 54%) 0%, transparent 48%),
-      radial-gradient(circle at 46% 84%, color-mix(in srgb, var(--g3), transparent 54%) 0%, transparent 52%),
-      radial-gradient(circle at 64% 42%, color-mix(in srgb, var(--g4), transparent 58%) 0%, transparent 56%),
+      radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--g1), transparent 72%) 0%, transparent 42%),
+      radial-gradient(circle at 78% 14%, color-mix(in srgb, var(--g2), transparent 74%) 0%, transparent 46%),
+      radial-gradient(circle at 46% 84%, color-mix(in srgb, var(--g3), transparent 74%) 0%, transparent 50%),
+      radial-gradient(circle at 64% 42%, color-mix(in srgb, var(--g4), transparent 76%) 0%, transparent 54%),
       linear-gradient(
         150deg,
-        color-mix(in srgb, var(--g5), transparent 62%) 0%,
-        color-mix(in srgb, var(--g6), transparent 68%) 32%,
-        color-mix(in srgb, var(--g7), transparent 68%) 64%,
-        color-mix(in srgb, var(--g8), transparent 62%) 100%
+        color-mix(in srgb, var(--g5), transparent 78%) 0%,
+        color-mix(in srgb, var(--g6), transparent 82%) 32%,
+        color-mix(in srgb, var(--g7), transparent 82%) 64%,
+        color-mix(in srgb, var(--g8), transparent 78%) 100%
       );
     mix-blend-mode: soft-light;
-    opacity: 0.32;
+    opacity: 0.18;
     filter: saturate(calc(1 + (var(--cursor-speed, 0) * 0.08))) blur(1px);
     transition: opacity 300ms ease;
     z-index: 0;
