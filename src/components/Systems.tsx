@@ -7,13 +7,13 @@ import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { copy } from "@/data/copy";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 type SystemMedia = { src: string; label?: string };
 
 export const Systems = () => {
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement | null>(null);
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -42,15 +42,6 @@ export const Systems = () => {
 
   useEffect(() => {
     if (shouldReduceMotion) return;
-    videoRefs.current.forEach(node => {
-      if (!node) return;
-      node.currentTime = 0;
-      void node.play();
-    });
-  }, [shouldReduceMotion]);
-
-  useEffect(() => {
-    if (shouldReduceMotion) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       // ScrollTrigger staggers the system cards once they enter view, giving the section a measured cinematic reveal.
@@ -67,22 +58,6 @@ export const Systems = () => {
     }, sectionRef);
     return () => ctx.revert();
   }, [shouldReduceMotion]);
-
-  const handleEnter = (index: number) => {
-    const node = videoRefs.current[index];
-    if (node) {
-      node.currentTime = 0;
-      void node.play();
-    }
-  };
-
-  const handleLeave = (index: number) => {
-    const node = videoRefs.current[index];
-    if (node) {
-      node.pause();
-      node.currentTime = 0;
-    }
-  };
 
   return (
     <section id="systems" ref={sectionRef} className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14">
@@ -110,18 +85,11 @@ export const Systems = () => {
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                onMouseEnter={() => handleEnter(index)}
-              onMouseLeave={() => handleLeave(index)}
-              onFocus={() => handleEnter(index)}
-              onBlur={() => handleLeave(index)}
                 className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(14,36,58,0.7)] to-[rgba(10,24,40,0.68)] p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-gradient-to-br hover:from-[rgba(18,44,74,0.78)] hover:via-[rgba(20,52,86,0.74)] hover:to-[rgba(12,30,52,0.72)]"
             >
                 <div className="overflow-hidden rounded-2xl border border-white/5">
                   {isVideo ? (
                     <video
-                      ref={node => {
-                        videoRefs.current[index] = node;
-                      }}
                       autoPlay
                       muted
                       loop
@@ -143,7 +111,9 @@ export const Systems = () => {
                       sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                       priority={index === 0}
                     />
-                  ) : null}
+                  ) : (
+                    <VideoPlaceholder label={mediaLabel} ratio="aspect-video" className="w-full" />
+                  )}
                 </div>
                 <div className="space-y-3 text-sm text-white/80">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/60">
