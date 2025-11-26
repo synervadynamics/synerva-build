@@ -8,6 +8,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { copy } from "@/data/copy";
 
+type SystemMedia = { src: string; label?: string };
+
 export const Systems = () => {
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -20,12 +22,20 @@ export const Systems = () => {
   const glow = useMotionTemplate`radial-gradient(circle at ${glowX} 30%, rgba(68,148,182,0.2), transparent 60%)`;
   const systems = copy.stack.items;
   // Match stack cards with their respective product pages so CTAs stay in sync with routing.
-  const productLookup: Record<string, { slug: string; title: string; video?: { src: string; label?: string } } | undefined> = {
-    Lucentra: { ...copy.products.lucentra, video: { src: "/visuals/systems/lucentra.mp4", label: copy.products.lucentra.title } },
-    Verisense: { ...copy.products.verisense, video: { src: "/visuals/systems/verisense.mp4", label: copy.products.verisense.title } },
+  const productLookup: Record<
+    string,
+    | {
+        slug: string;
+        title: string;
+        image?: { src: string; label?: string };
+      }
+    | undefined
+  > = {
+    Lucentra: { ...copy.products.lucentra, image: { src: "/visuals/systems/lucentra-wide-logo-1.png", label: copy.products.lucentra.title } },
+    Verisense: { ...copy.products.verisense, image: { src: "/visuals/systems/verisense-wide-logo-2.png", label: copy.products.verisense.title } },
     "Synerva OS": {
       ...copy.products.synervaOs,
-      video: { src: "/visuals/systems/synerva-os-homepage-video.mp4", label: copy.products.synervaOs.title }
+      image: { src: "/visuals/systems/synerva-os-wide-shot-1.png", label: copy.products.synervaOs.title }
     }
   };
 
@@ -86,8 +96,8 @@ export const Systems = () => {
           {systems.map((system, index) => {
             const detail = productLookup[system.title];
             const media =
-              ("image" in system && system.image ? system.image : undefined) ??
-              (("video" in system && system.video) ? system.video : undefined);
+              ((system as typeof system & { image?: SystemMedia }).image ?? undefined) ??
+              ((system as typeof system & { video?: SystemMedia }).video ?? undefined);
             const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
             const mediaLabel = media?.label ?? `${system.title} visual`;
             const href = detail ? `/${detail.slug}` : "/contact";

@@ -86,10 +86,6 @@ export const copy = {
         image: {
           src: "/visuals/systems/verisense-wide-logo-2.png",
           label: "Verisense crest and mark"
-        },
-        video: {
-          src: "/visuals/systems/verisense.mp4",
-          label: "Verisense signal capture"
         }
       },
       {
@@ -102,10 +98,6 @@ export const copy = {
         image: {
           src: "/visuals/systems/synerva-os-wide-shot-1.png",
           label: "Synerva OS crest and mark"
-        },
-        video: {
-          src: "/visuals/systems/synerva-os-homepage-video.mp4",
-          label: "Synvera OS automation map"
         }
       }
     ]
@@ -127,7 +119,7 @@ export const copy = {
       ],
       useCases: [],
       demos: [],
-      video: { src: "/visuals/systems/lucentra-subpage-video.mp4", label: "" },
+      image: { src: "/visuals/systems/lucentra-wide-logo-1.png", label: "Lucentra crest and mark" },
       cta: { label: "See What Lucentra Makes Possible", href: "/contact" },
       accent: "from-cyan-500/20 via-blue-900/30 to-black"
     },
@@ -147,7 +139,7 @@ export const copy = {
       ],
       useCases: [],
       demos: [],
-      video: { src: "/visuals/systems/verisense-subpage-video.mp4", label: "" },
+      image: { src: "/visuals/systems/verisense-wide-logo-2.png", label: "Verisense crest and mark" },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
       accent: "from-rose-500/20 via-purple-900/30 to-black"
     },
@@ -167,7 +159,7 @@ export const copy = {
       ],
       useCases: [],
       demos: [],
-      video: { src: "/visuals/systems/synerva-os-subpage-video.mp4", label: "" },
+      image: { src: "/visuals/systems/synerva-os-wide-shot-1.png", label: "Synerva OS crest and mark" },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },
       accent: "from-amber-400/20 via-slate-900/40 to-black"
     }
