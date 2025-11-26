@@ -99,7 +99,10 @@ export const copy = {
           "Synerva OS licenses the studio’s operational brain—automation primitives, pricing logic, message flows, and customer orchestration—without adding headcount or complexity.",
         proof: "Licensable playbooks + CASL-ready comms layers launched in phases two and three.",
         highlights: ["Revenue primitives + consent logic", "Cross-team governance dashboards", "Airtight data discipline across en-CA standards"],
-        image: null,
+        image: {
+          src: "/visuals/systems/synerva-os-wide-shot-1.png",
+          label: "Synerva OS crest and mark"
+        },
         video: {
           src: "/visuals/systems/synerva-os-homepage-video.mp4",
           label: "Synvera OS automation map"
