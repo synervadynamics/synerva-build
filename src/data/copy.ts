@@ -335,7 +335,7 @@ export const copy = {
         cta: "Explore Verisense Labs",
         href: "/labs/verisense",
         video: {
-          src: "/visuals/systems/verisense-wide-logo-2.png",
+          src: "/visuals/systems/verisense-logo-wide-1.png",
           label: "See Beneath the Surface"
         }
       },
