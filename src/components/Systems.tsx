@@ -21,7 +21,7 @@ export const Systems = () => {
   const glowX = useTransform(scrollYProgress, [0, 1], ["30%", "75%"]);
   const glow = useMotionTemplate`radial-gradient(circle at ${glowX} 30%, rgba(68,148,182,0.2), transparent 60%)`;
   const systems = copy.stack.items;
-  const mediaClass = "aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]";
+  const mediaClass = "h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]";
   // Match stack cards with their respective product pages so CTAs stay in sync with routing.
   const productLookup: Record<
     string,
@@ -88,7 +88,7 @@ export const Systems = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(14,36,58,0.7)] to-[rgba(10,24,40,0.68)] p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-gradient-to-br hover:from-[rgba(18,44,74,0.78)] hover:via-[rgba(20,52,86,0.74)] hover:to-[rgba(12,30,52,0.72)]"
             >
-                <div className="overflow-hidden rounded-2xl border border-white/5">
+                <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/5">
                   {isVideo ? (
                     <video
                       autoPlay
@@ -106,8 +106,7 @@ export const Systems = () => {
                     <Image
                       src={media.src}
                       alt={mediaLabel}
-                      width={1536}
-                      height={1024}
+                      fill
                       className={mediaClass}
                       sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                       priority={index === 0}
