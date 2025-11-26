@@ -21,6 +21,7 @@ export const Systems = () => {
   const glowX = useTransform(scrollYProgress, [0, 1], ["30%", "75%"]);
   const glow = useMotionTemplate`radial-gradient(circle at ${glowX} 30%, rgba(68,148,182,0.2), transparent 60%)`;
   const systems = copy.stack.items;
+  const mediaClass = "aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]";
   // Match stack cards with their respective product pages so CTAs stay in sync with routing.
   const productLookup: Record<
     string,
@@ -95,7 +96,7 @@ export const Systems = () => {
                       loop
                       playsInline
                       preload="metadata"
-                      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className={mediaClass}
                       aria-label={mediaLabel}
                     >
                       <track kind="captions" label={mediaLabel} />
@@ -107,12 +108,12 @@ export const Systems = () => {
                       alt={mediaLabel}
                       width={1536}
                       height={1024}
-                      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className={mediaClass}
                       sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                       priority={index === 0}
                     />
                   ) : (
-                    <VideoPlaceholder label={mediaLabel} ratio="aspect-video" className="w-full" />
+                    <VideoPlaceholder label={mediaLabel} ratio="aspect-video" className={mediaClass} />
                   )}
                 </div>
                 <div className="space-y-3 text-sm text-white/80">

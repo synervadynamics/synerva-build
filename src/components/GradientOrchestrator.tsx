@@ -28,14 +28,11 @@ const palettes: Palette[] = [
 const setPalette = (colors?: [string, string, string, string]) => {
   if (!colors) return;
   const root = document.documentElement;
-  root.style.setProperty("--g1", colors[0]);
-  root.style.setProperty("--g2", colors[1]);
-  root.style.setProperty("--g3", colors[2]);
-  root.style.setProperty("--g4", colors[3]);
-  root.style.setProperty("--g5", colors[0]);
-  root.style.setProperty("--g6", colors[1]);
-  root.style.setProperty("--g7", colors[2]);
-  root.style.setProperty("--g8", colors[3]);
+  colors.forEach((color, index) => {
+    const baseIndex = index + 1;
+    root.style.setProperty(`--g${baseIndex}`, color);
+    root.style.setProperty(`--g${baseIndex + 4}`, color);
+  });
 };
 
 export const GradientOrchestrator = () => {
