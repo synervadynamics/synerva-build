@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
@@ -84,6 +85,9 @@ export const Systems = () => {
         <div className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(8,18,32,0.74)] via-[rgba(12,28,46,0.7)] to-[rgba(10,20,36,0.7)] p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8">
           {systems.map((system, index) => {
             const detail = productLookup[system.title];
+            const media = (system as typeof system & { image?: { src: string; label?: string } }).image ?? system.video;
+            const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
+            const mediaLabel = media?.label ?? `${system.title} visual`;
             const href = detail ? `/${detail.slug}` : "/contact";
             return (
               <motion.article
@@ -99,21 +103,33 @@ export const Systems = () => {
                 className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(14,36,58,0.7)] to-[rgba(10,24,40,0.68)] p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-gradient-to-br hover:from-[rgba(18,44,74,0.78)] hover:via-[rgba(20,52,86,0.74)] hover:to-[rgba(12,30,52,0.72)]"
             >
                 <div className="overflow-hidden rounded-2xl border border-white/5">
-                  <video
-                    ref={node => {
-                      videoRefs.current[index] = node;
-                    }}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                    aria-label={system.video?.label ?? system.title}
-                  >
-                    <track kind="captions" label={system.video?.label ?? system.title} />
-                    {system.video?.src ? <source src={system.video.src} type="video/mp4" /> : null}
-                  </video>
+                  {isVideo ? (
+                    <video
+                      ref={node => {
+                        videoRefs.current[index] = node;
+                      }}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      aria-label={mediaLabel}
+                    >
+                      <track kind="captions" label={mediaLabel} />
+                      {media?.src ? <source src={media.src} type="video/mp4" /> : null}
+                    </video>
+                  ) : media?.src ? (
+                    <Image
+                      src={media.src}
+                      alt={mediaLabel}
+                      width={1536}
+                      height={1024}
+                      className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
+                      priority={index === 0}
+                    />
+                  ) : null}
                 </div>
                 <div className="space-y-3 text-sm text-white/80">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/60">

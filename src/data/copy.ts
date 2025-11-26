@@ -71,9 +71,9 @@ export const copy = {
           "Lucentra unifies brand voice, content intelligence, launch sequencing, and analytics into one adaptive interface. It functions like a strategist with perfect memory and zero drift—clarity on demand, at any scale.",
         proof: "Deployed as the living brief for every engagement within 14 days.",
         highlights: ["Voice DNA + editorial QA loops", "Scenario modeling + decision paddles", "Telemetry-led automation map"],
-        video: {
-          src: "/visuals/systems/lucentra.mp4",
-          label: "Lucentra adaptive interface"
+        image: {
+          src: "/visuals/systems/lucentra-wide-logo-1.png",
+          label: "Lucentra crest and mark"
         }
       },
       {
@@ -83,6 +83,7 @@ export const copy = {
           "Verisense listens beneath literal language to surface tone, conviction, and intent. It’s built for recruiting, leadership, sales, and any environment where reading subtext beats reading scripts.",
         proof: "Video + text analysis paired with reconciled sentiment reports for executive reviews.",
         highlights: ["Speech + presence diagnostics", "Leadership coaching dossiers", "Feedback loops wired into CRM"],
+        image: null,
         video: {
           src: "/visuals/systems/verisense.mp4",
           label: "Verisense signal capture"
@@ -95,6 +96,7 @@ export const copy = {
           "Synerva OS licenses the studio’s operational brain—automation primitives, pricing logic, message flows, and customer orchestration—without adding headcount or complexity.",
         proof: "Licensable playbooks + CASL-ready comms layers launched in phases two and three.",
         highlights: ["Revenue primitives + consent logic", "Cross-team governance dashboards", "Airtight data discipline across en-CA standards"],
+        image: null,
         video: {
           src: "/visuals/systems/synerva-os-homepage-video.mp4",
           label: "Synvera OS automation map"
