@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { copy } from "./_content";
 
@@ -45,15 +46,13 @@ export default function Hero() {
           className="relative w-full aspect-[16/9] min-h-[280px] sm:min-h-[340px] rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_10px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.05)] overflow-hidden"
         >
           <div className="absolute inset-0 rounded-3xl overflow-hidden">
-            <video
-              src="/visuals/hero/hero-vid-1.mp4"
-              poster="/visuals/hero/hero_main_render.webp"
-              autoPlay
-              loop
-              muted
-              playsInline
-              aria-hidden="true"
-              className="h-full w-full object-cover opacity-90"
+            <Image
+              src="/visuals/hero/synerva-hero-shot-2.png"
+              alt="Synerva Dynamics hero graphic"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+              priority
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
