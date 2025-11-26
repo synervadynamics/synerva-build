@@ -17,7 +17,7 @@ export default function CasesPageClient() {
   return (
     <div className="bg-[var(--bg)] text-white">
       <section ref={ref} className="relative overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
-        <AmbientVideo src="/visuals/cases/polar.mp4" opacity={shouldReduceMotion ? 0.25 : 0.4} blur />
+        <AmbientVideo src="/visuals/hero/synerva-hero-shot-2025.png" opacity={shouldReduceMotion ? 0.25 : 0.4} blur />
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/80" />
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}

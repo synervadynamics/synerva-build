@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { copy } from "./_content";
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 export default function Deliver() {
   return (
@@ -62,15 +65,26 @@ export default function Deliver() {
               </div>
               {it.video ? (
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
-                  <video
-                    src={it.video.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    aria-label={it.video.label ?? `${it.title} visual`}
-                    className="h-full w-full object-cover"
-                  />
+                  {isVideoSrc(it.video.src) ? (
+                    <video
+                      src={it.video.src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      aria-label={it.video.label ?? `${it.title} visual`}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={it.video.src}
+                      alt={it.video.label ?? `${it.title} visual`}
+                      width={1280}
+                      height={720}
+                      className="h-full w-full object-cover"
+                      sizes="(min-width: 1024px) 480px, (min-width: 768px) 640px, 100vw"
+                    />
+                  )}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
                 </div>
               ) : (

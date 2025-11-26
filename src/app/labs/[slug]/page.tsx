@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { copy } from "@/data/copy";
 import { buildPageMetadata } from "@/lib/metadata";
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const detailsBySlug: Record<
   string,
@@ -123,7 +126,7 @@ const labsItems = [
       "This is the book that sparked early murmurs around Synerva. A raw, cinematic, psychologically sharp account of what it means to operate with grace in a pressure cooker world.",
     href: "/labs/rockstar-server-playbook",
     video: {
-      src: "/visuals/deliver/hero-vid-1.mp4",
+      src: "/visuals/labs/labs_feature_poster.webp",
       label: "What Pressure Teaches"
     },
     slug: "rockstar-server-playbook"
@@ -204,17 +207,28 @@ export default async function Page({
 
           <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-white/5 p-6">
             <div className="overflow-hidden rounded-2xl border border-white/10">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="aspect-[4/3] w-full object-cover"
-                aria-label={item.video.label}
-              >
-                <track kind="captions" label={item.video.label} />
-                <source src={item.video.src} type="video/mp4" />
-              </video>
+              {isVideoSrc(item.video.src) ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="aspect-[4/3] w-full object-cover"
+                  aria-label={item.video.label}
+                >
+                  <track kind="captions" label={item.video.label} />
+                  <source src={item.video.src} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={item.video.src}
+                  alt={item.video.label}
+                  width={1200}
+                  height={900}
+                  className="aspect-[4/3] w-full object-cover"
+                  sizes="(min-width: 1024px) 440px, (min-width: 768px) 480px, 100vw"
+                />
+              )}
             </div>
 
             <p className="text-xs uppercase tracking-[0.35em] text-white/60">

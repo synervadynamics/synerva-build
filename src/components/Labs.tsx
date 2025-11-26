@@ -7,6 +7,9 @@ import Link from "next/link";
 import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
 import { useState } from "react";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const renderWithBreaks = (text: string) =>
   text.split("\n").map((line, index, arr) => (
@@ -98,10 +101,25 @@ export const Labs = () => {
                   className="bubble-drift flex flex-col gap-4 rounded-3xl border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(16,38,60,0.7)] to-[rgba(10,20,34,0.68)] p-5 shadow-[0_36px_126px_-74px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
                 >
                   <div className="overflow-hidden rounded-2xl border border-white/10">
-                    <video autoPlay loop muted playsInline className="h-40 w-full object-cover" aria-label={item.video.label}>
-                      <track kind="captions" label={item.video.label} />
-                      <source src={item.video.src} type="video/mp4" />
-                    </video>
+                    {item.video?.src ? (
+                      isVideoSrc(item.video.src) ? (
+                        <video autoPlay loop muted playsInline className="h-40 w-full object-cover" aria-label={item.video.label}>
+                          <track kind="captions" label={item.video.label} />
+                          <source src={item.video.src} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <Image
+                          src={item.video.src}
+                          alt={item.video.label ?? `${item.title} visual`}
+                          width={1280}
+                          height={720}
+                          className="h-40 w-full object-cover"
+                          sizes="(min-width: 1024px) 320px, (min-width: 768px) 360px, 100vw"
+                        />
+                      )
+                    ) : (
+                      <VideoPlaceholder label={`${item.title} visual`} />
+                    )}
                   </div>
                   <div className="flex flex-col gap-2">
                     <h3 className="text-xl text-white">{item.title}</h3>

@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
 import { copy } from "./_content";
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 export default function Philosophy() {
   const video = (copy?.philosophy?.video ?? null) as { src?: string; label?: string; poster?: string } | null;
@@ -34,16 +37,27 @@ export default function Philosophy() {
         >
           {video?.src ? (
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
-              <video
-                src={video.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                aria-label={video.label ?? "Philosophy visual"}
-                className="h-full w-full object-cover"
-                poster={video.poster}
-              />
+              {isVideoSrc(video.src) ? (
+                <video
+                  src={video.src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  aria-label={video.label ?? "Philosophy visual"}
+                  className="h-full w-full object-cover"
+                  poster={video.poster}
+                />
+              ) : (
+                <Image
+                  src={video.src}
+                  alt={video.label ?? "Philosophy visual"}
+                  width={1280}
+                  height={720}
+                  className="h-full w-full object-cover"
+                  sizes="(min-width: 1024px) 540px, (min-width: 768px) 640px, 100vw"
+                />
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
             </div>
           ) : (

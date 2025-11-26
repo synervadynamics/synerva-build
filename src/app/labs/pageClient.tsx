@@ -19,7 +19,7 @@ export default function LabsPageClient() {
   return (
     <div className="bg-[var(--bg)] text-white">
       <section ref={ref} className="relative isolate overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
-        <AmbientVideo src="/video/labs/pulse-atlas.mp4" opacity={shouldReduceMotion ? 0.25 : 0.45} blur />
+        <AmbientVideo src="/visuals/hero/hero_main_render.webp" opacity={shouldReduceMotion ? 0.25 : 0.45} blur />
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-black/70 to-emerald-300/20" />
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
@@ -77,7 +77,7 @@ export default function LabsPageClient() {
         </motion.div>
       </section>
       <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
-        <AmbientVideo src="/video/labs/flux-courier.mp4" opacity={shouldReduceMotion ? 0.2 : 0.4} blur />
+        <AmbientVideo src="/visuals/about/about_tile_3.webp" opacity={shouldReduceMotion ? 0.2 : 0.4} blur />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-black/70 to-black/80" />
         <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
           {copy.labs.secondary.map(item => (

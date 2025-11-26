@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
 import { copy } from "./_content";
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 export default function Labs() {
   const feature = copy.labs.feature;
@@ -17,10 +20,11 @@ export default function Labs() {
             initial={{ opacity: 0, y: 18, scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-          >
-            {featureVideo?.src ? (
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
+          {featureVideo?.src ? (
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+              {isVideoSrc(featureVideo.src) ? (
                 <video
                   src={featureVideo.src}
                   autoPlay
@@ -31,11 +35,21 @@ export default function Labs() {
                   aria-label={featureVideo.label ?? `${feature?.title ?? "Labs"} visual`}
                   className="h-full w-full object-cover"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-transparent" aria-hidden="true" />
-              </div>
-            ) : (
-              <VideoPlaceholder label={`${feature?.title ?? "Labs"} visual`} />
-            )}
+              ) : (
+                <Image
+                  src={featureVideo.src}
+                  alt={featureVideo.label ?? `${feature?.title ?? "Labs"} visual`}
+                  width={1280}
+                  height={720}
+                  className="h-full w-full object-cover"
+                  sizes="(min-width: 1024px) 640px, (min-width: 768px) 720px, 100vw"
+                />
+              )}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/22 via-transparent to-transparent" aria-hidden="true" />
+            </div>
+          ) : (
+            <VideoPlaceholder label={`${feature?.title ?? "Labs"} visual`} />
+          )}
           </motion.div>
 
           <motion.div
@@ -78,25 +92,36 @@ export default function Labs() {
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.04 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 shadow-glass"
-              >
-                {item.video ? (
-                  <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
-                    <video
-                      src={item.video.src}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      aria-label={item.video.label ?? `${item.title ?? "Lab"} visual`}
-                      className="h-full w-full object-cover"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" aria-hidden="true" />
-                  </div>
+            transition={{ duration: 0.5, ease: "easeOut", delay: idx * 0.04 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 shadow-glass"
+          >
+            {item.video ? (
+              <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+                {isVideoSrc(item.video.src) ? (
+                  <video
+                    src={item.video.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-label={item.video.label ?? `${item.title ?? "Lab"} visual`}
+                    className="h-full w-full object-cover"
+                  />
                 ) : (
-                  <VideoPlaceholder label={`${item.title ?? "Lab"} visual`} className="mb-5" ratio="aspect-[4/3]" />
+                  <Image
+                    src={item.video.src}
+                    alt={item.video.label ?? `${item.title ?? "Lab"} visual`}
+                    width={1200}
+                    height={900}
+                    className="h-full w-full object-cover"
+                    sizes="(min-width: 1024px) 420px, (min-width: 768px) 480px, 100vw"
+                  />
                 )}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" aria-hidden="true" />
+              </div>
+            ) : (
+              <VideoPlaceholder label={`${item.title ?? "Lab"} visual`} className="mb-5" ratio="aspect-[4/3]" />
+            )}
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 {item.desc ? <p className="mt-2 text-sm text-mute leading-relaxed">{item.desc}</p> : null}
                 {item.cta ? (

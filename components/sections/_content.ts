@@ -18,7 +18,7 @@ export const copy = {
         "href": "/voice-systems",
         "cta": "See the full voice system",
         "video": {
-          "src": "/visuals/deliver/evidence-over-vibes-1.mp4",
+          "src": "/visuals/about/about_tile_1.webp",
           "label": "Voice fidelity in action"
         }
       },
@@ -28,7 +28,7 @@ export const copy = {
         "href": "/web-systems",
         "cta": "Explore the full web system",
         "video": {
-          "src": "/visuals/deliver/content-editorial-1.mp4",
+          "src": "/visuals/about/about_tile_2.webp",
           "label": "Web delivery flow"
         }
       },
@@ -38,7 +38,7 @@ export const copy = {
         "href": "/content-systems",
         "cta": "Explore the content system",
         "video": {
-          "src": "/visuals/deliver/operational-realism.mp4",
+          "src": "/visuals/about/about_tile_3.webp",
           "label": "Editorial engine in motion"
         }
       },
@@ -48,7 +48,7 @@ export const copy = {
         "href": "/automation-systems",
         "cta": "See the automation system",
         "video": {
-          "src": "/visuals/deliver/compounding-systems.mp4",
+          "src": "/visuals/about/about_tile_4.webp",
           "label": "Automation control loop"
         }
       },
@@ -58,7 +58,7 @@ export const copy = {
         "href": "/analytics-systems",
         "cta": "Explore the analytics system",
         "video": {
-          "src": "/visuals/deliver/analytics.mp4",
+          "src": "/visuals/footer/footer_motif.webp",
           "label": "Analytics accuracy in motion"
         }
       }
@@ -70,7 +70,7 @@ export const copy = {
     "p1": "Most teams equate activity with progress. Syndicate Dynamics measures movement by lift alone. Each project isolates the smallest change that shifts a metric and makes that shift inevitable.",
     "p2": "Fewer pages. Faster load. Sharper story. Outcomes verified, never implied.",
     "video": {
-      "src": "/visuals/philosophy/clarity-compounds.mp4",
+      "src": "/visuals/hero/synerva-hero-shot-2025.png",
       "label": "Clarity compounds visual"
     }
   },
@@ -95,7 +95,7 @@ export const copy = {
       "ctaPrimary": "Get launch updates",
       "ctaSecondary": "Read a sample chapter",
       "video": {
-        "src": "/video/labs/content-systems-workbook-1.mp4",
+        "src": "/visuals/labs/labs_feature_poster.webp",
         "label": "The Rockstar Server Playbook Visual"
       }
     },
@@ -106,7 +106,7 @@ export const copy = {
         "cta": "Explore Cognivate",
         "href": "/cognivate",
         "video": {
-          "src": "/video/labs/cognivate-2.mp4",
+          "src": "/visuals/hero/hero_main_render.webp",
           "label": "Cognivate in action"
         }
       },
@@ -116,7 +116,7 @@ export const copy = {
         "cta": "Discover Verisense",
         "href": "/verisense",
         "video": {
-          "src": "/video/labs/verisense.mp4",
+          "src": "/visuals/systems/verisense-wide-logo-2.png",
           "label": "Verisense overview"
         }
       },
@@ -126,7 +126,7 @@ export const copy = {
         "cta": "View sample dashboards",
         "href": "/analytics-patterns",
         "video": {
-          "src": "/video/labs/analytics-patterns-2.mp4",
+          "src": "/visuals/hero/synerva-dynamics-wide-logo-1.png",
           "label": "Analytics Patterns walkthrough"
         }
       },
@@ -136,7 +136,7 @@ export const copy = {
         "cta": "Download the workbook",
         "href": "/content-systems-workbook",
         "video": {
-          "src": "/video/labs/content-systems-workbook-1.mp4",
+          "src": "/visuals/labs/labs_feature_poster.webp",
           "label": "Content Systems Workbook overview"
         }
       },
@@ -146,7 +146,7 @@ export const copy = {
         "cta": "See the templates",
         "href": "/offer-engineering-sheets",
         "video": {
-          "src": "/video/labs/offer-engineering-sheets.mp4",
+          "src": "/visuals/hero/synerva-hero-shot-2.png",
           "label": "Offer Engineering Sheets walkthrough"
         }
       }

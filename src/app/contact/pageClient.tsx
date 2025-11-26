@@ -35,7 +35,7 @@ export default function ContactPageClient() {
   return (
     <div className="bg-[var(--bg)] text-white">
       <section className="relative overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
-        <AmbientVideo src="/visuals/footer/pulse.mp4" opacity={0.45} blur />
+        <AmbientVideo src="/visuals/footer/footer_motif.webp" opacity={0.45} blur />
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-black/70 to-cyan-500/20" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative mx-auto flex max-w-5xl flex-col gap-5 rounded-[3rem] border border-white/10 bg-black/50 p-10 backdrop-blur-2xl">
@@ -47,7 +47,7 @@ export default function ContactPageClient() {
         </div>
       </section>
       <section className="relative overflow-hidden px-6 py-12 sm:px-10 lg:px-16">
-        <AmbientVideo src="/visuals/deliver/analytics.mp4" opacity={0.35} blur />
+        <AmbientVideo src="/visuals/about/about_tile_2.webp" opacity={0.35} blur />
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/80" />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
@@ -60,7 +60,7 @@ export default function ContactPageClient() {
         </div>
       </section>
       <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
-        <AmbientVideo src="/visuals/deliver/compounding-systems.mp4" opacity={0.3} blur />
+        <AmbientVideo src="/visuals/hero/hero_main_render.webp" opacity={0.3} blur />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/95 via-black/70 to-black/85" />
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">

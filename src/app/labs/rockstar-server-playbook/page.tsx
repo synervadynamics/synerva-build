@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
@@ -50,10 +51,14 @@ export default function RockstarPlaybookPage() {
           </div>
           <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-white/5 p-6">
             <div className="overflow-hidden rounded-2xl border border-white/10">
-              <video autoPlay loop muted playsInline className="aspect-[4/3] w-full object-cover" aria-label="What Pressure Teaches">
-                <track kind="captions" label="What Pressure Teaches" />
-                <source src="/visuals/deliver/hero-vid-1.mp4" type="video/mp4" />
-              </video>
+              <Image
+                src="/visuals/labs/labs_feature_poster.webp"
+                alt="What Pressure Teaches"
+                width={1200}
+                height={900}
+                className="aspect-[4/3] w-full object-cover"
+                sizes="(min-width: 1024px) 440px, (min-width: 768px) 480px, 100vw"
+              />
             </div>
             <p className="text-xs uppercase tracking-[0.35em] text-white/60">{spotlight.title}</p>
             <p className="text-sm text-white/70">What Pressure Teaches</p>

@@ -27,16 +27,16 @@ export const copy = {
     primaryCta: { label: "Start with a 30-minute plan", href: "/contact" },
     secondaryCta: { label: "See Proof of Lift", href: "/proof" },
     video: {
-      src: "/visuals/hero/hero-loop.mp4",
-      poster: "/visuals/hero/hero-loop.jpg",
+      src: "/visuals/hero/hero_main_render.webp",
+      poster: "/visuals/hero/hero_main_render.webp",
       alt: "Synerva Dynamics ambient interface loop"
     },
     spotlight: {
       label: "Systems preview",
       description: "Lucentra, Verisense, and Synerva OS orchestrated in real time.",
       video: {
-        src: "/visuals/hero/hero-vid-2.mp4",
-        alt: "Hero side video showing the systems running together"
+        src: "/visuals/hero/synerva-hero-shot-2.png",
+        alt: "Hero side visual showing the systems running together"
       }
     },
     proofs: [
@@ -184,7 +184,7 @@ export const copy = {
           "Executive-ready packets indexed by scenario: investor, press, sales, ops"
         ],
         video: {
-          src: "/visuals/deliver/labs-ongoing-projects-2.mp4",
+          src: "/visuals/about/about_tile_1.webp",
           label: "Voice fidelity in action"
         }
       },
@@ -202,7 +202,7 @@ export const copy = {
           "Weekly heatmaps + funnel reads to validate every layout"
         ],
         video: {
-          src: "/visuals/deliver/operational-realism.mp4",
+          src: "/visuals/about/about_tile_2.webp",
           label: "Web delivery flow"
         }
       },
@@ -220,7 +220,7 @@ export const copy = {
           "Campaign dashboards reveal what amplified reach, not just what got views"
         ],
         video: {
-          src: "/visuals/deliver/hero-vid-1.mp4",
+          src: "/visuals/about/about_tile_3.webp",
           label: "Editorial engine in motion"
         }
       },
@@ -238,7 +238,7 @@ export const copy = {
           "Human-in-the-loop checkpoints in every sensitive branch"
         ],
         video: {
-          src: "/visuals/deliver/compounding-systems.mp4",
+          src: "/visuals/about/about_tile_4.webp",
           label: "Automation control loop"
         }
       },
@@ -256,7 +256,7 @@ export const copy = {
           "Quarterly rollups that separate noise from repeatable wins"
         ],
         video: {
-          src: "/visuals/deliver/analytics-truth.mp4",
+          src: "/visuals/footer/footer_motif.webp",
           label: "Analytics accuracy in motion"
         }
       }
@@ -268,7 +268,7 @@ export const copy = {
       "Most teams confuse motion with momentum. Synerva measures movement by lift alone. Every project isolates the smallest shift that changes a metric, then makes that shift inevitable through design, rhythm, and evidence.",
     p2: "Fewer pages. Faster load. Sharper story. Outcomes verified, never implied.\nPrecision isn’t a vibe here—it’s the operating law.",
     video: {
-      src: "/visuals/philosophy/clarity-compounds.mp4",
+      src: "/visuals/hero/synerva-hero-shot-2025.png",
       alt: "Clarity compounds visual"
     }
   },
@@ -324,7 +324,7 @@ export const copy = {
         cta: "Enter Lucentra Labs",
         href: "/labs/lucentra",
         video: {
-          src: "/video/labs/lab_lucentra_alt02.mp4",
+          src: "/visuals/systems/lucentra-wide-logo-1.png",
           label: "How Lucentra Learns"
         }
       },
@@ -335,7 +335,7 @@ export const copy = {
         cta: "Explore Verisense Labs",
         href: "/labs/verisense",
         video: {
-          src: "/video/labs/lab_verisense_alt02.mp4",
+          src: "/visuals/systems/verisense-wide-logo-2.png",
           label: "See Beneath the Surface"
         }
       },
@@ -346,7 +346,7 @@ export const copy = {
         cta: "View Analytics Patterns",
         href: "/labs/analytics-patterns",
         video: {
-          src: "/video/labs/lab_analytics_patterns_alt03.mp4",
+          src: "/visuals/hero/synerva-dynamics-wide-logo-1.png",
           label: "Find the Signal"
         }
       },
@@ -357,7 +357,7 @@ export const copy = {
         cta: "Open the Workbook",
         href: "/labs/content-systems-workbook",
         video: {
-          src: "/video/labs/lab_content_systems_alt05.mp4",
+          src: "/visuals/labs/labs_feature_poster.webp",
           label: "Structure Fuels Output"
         }
       },
@@ -368,7 +368,7 @@ export const copy = {
         cta: "Access Offer Sheets",
         href: "/labs/offer-engineering-sheets",
         video: {
-          src: "/video/labs/lab_offer_engineering_alt05.mp4",
+          src: "/visuals/hero/synerva-hero-shot-2.png",
           label: "Build Offers That Convert"
         }
       }
@@ -448,9 +448,8 @@ export const copy = {
       "Analytics boards reconciling KPIs with every sprint"
     ],
     video: {
-      src: "/visuals/footer/pulse.mp4",
-      poster: "/visuals/footer/pulse.jpg",
-      alt: "Looped cinematic pulse"
+      src: "/visuals/footer/footer_motif.webp",
+      alt: "Looped cinematic motif"
     }
   },
   contact: {

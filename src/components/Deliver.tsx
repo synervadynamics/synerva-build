@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -8,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 type DeliverItem = {
   title: string;
@@ -16,8 +18,10 @@ type DeliverItem = {
   panelText?: string;
   panelDetail?: string;
   panelPoints: readonly string[];
-  video: { src: string; label: string };
+  video?: { src: string; label: string };
 };
+
+const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 export const Deliver = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -122,21 +126,37 @@ export const Deliver = () => {
             className="relative h-full rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[#102032] via-[#0f1c2c] to-[#0b1422] p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
           >
             <div className="overflow-hidden rounded-3xl border border-white/5">
-              <video
-                key={activeItem.video.src}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="aspect-video w-full object-cover"
-                aria-label={activeItem.video.label}
-              >
-                <track kind="captions" label={activeItem.video.label} />
-                <source src={activeItem.video.src} type="video/mp4" />
-              </video>
+              {activeItem.video?.src ? (
+                isVideoSrc(activeItem.video.src) ? (
+                  <video
+                    key={activeItem.video.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="aspect-video w-full object-cover"
+                    aria-label={activeItem.video.label}
+                  >
+                    <track kind="captions" label={activeItem.video.label} />
+                    <source src={activeItem.video.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <Image
+                    key={activeItem.video.src}
+                    src={activeItem.video.src}
+                    alt={activeItem.video.label}
+                    width={1920}
+                    height={1080}
+                    className="aspect-video w-full object-cover"
+                    sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
+                  />
+                )
+              ) : (
+                <VideoPlaceholder label={`${activeItem.title} visual`} />
+              )}
             </div>
             <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
-              {activeItem.video.label}
+              {activeItem.video?.label ?? `${activeItem.title} visual`}
             </p>
             <p className="mt-2 text-lg text-white">{activeItem.title}</p>
             <p className="text-sm text-white/70">{activeItem.panelText ?? activeItem.text}</p>
