@@ -69,7 +69,7 @@ export const Systems = () => {
           <p className="text-lg text-white/75">{copy.stack.intro}</p>
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">{copy.stack.footnote}</p>
         </div>
-        <div className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(8,18,32,0.74)] via-[rgba(12,28,46,0.7)] to-[rgba(10,20,36,0.7)] p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8">
+        <div className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8">
           {systems.map((system, index) => {
             const detail = productLookup[system.title];
             const media =
@@ -86,8 +86,8 @@ export const Systems = () => {
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(14,36,58,0.7)] to-[rgba(10,24,40,0.68)] p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-gradient-to-br hover:from-[rgba(18,44,74,0.78)] hover:via-[rgba(20,52,86,0.74)] hover:to-[rgba(12,30,52,0.72)]"
-            >
+                className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-white/5"
+              >
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/5">
                   {isVideo ? (
                     <video
