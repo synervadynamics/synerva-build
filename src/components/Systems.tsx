@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
@@ -13,15 +10,9 @@ type SystemMedia = { src: string; label?: string };
 
 export const Systems = () => {
   const shouldReduceMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const glowX = useTransform(scrollYProgress, [0, 1], ["30%", "75%"]);
-  const glow = useMotionTemplate`radial-gradient(circle at ${glowX} 30%, rgba(68,148,182,0.2), transparent 60%)`;
   const systems = copy.stack.items;
   const mediaClass = "h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]";
+  const initialState = shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 };
   // Match stack cards with their respective product pages so CTAs stay in sync with routing.
   const productLookup: Record<
     string,
@@ -41,27 +32,8 @@ export const Systems = () => {
     }
   };
 
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      // ScrollTrigger staggers the system cards once they enter view, giving the section a measured cinematic reveal.
-      gsap.from(".system-card", {
-        opacity: 0,
-        y: 40,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%"
-        }
-      });
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [shouldReduceMotion]);
-
   return (
-    <section id="systems" ref={sectionRef} className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14">
+    <section id="systems" className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14">
       <div className="relative mx-auto max-w-6xl space-y-6 text-white">
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.4em] text-white/65">Core Systems</p>
@@ -83,9 +55,10 @@ export const Systems = () => {
               <motion.article
                 key={system.title}
                 tabIndex={0}
-                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
+                initial={initialState}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="system-card group flex flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl transition hover:border-white/30 hover:bg-white/5"
               >
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/5">
