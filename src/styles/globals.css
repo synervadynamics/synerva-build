@@ -198,6 +198,20 @@
     z-index: 1;
   }
 
+  .bubble-drift.deliver-clean {
+    animation: none !important;
+  }
+
+  .bubble-drift.deliver-clean::after {
+    animation: none !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  .deliver-clean {
+    background: transparent !important;
+  }
+
 
   @keyframes hero-flow {
     0% {

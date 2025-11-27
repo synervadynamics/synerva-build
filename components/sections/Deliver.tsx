@@ -40,7 +40,7 @@ export default function Deliver() {
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.45, ease: "easeOut", delay: idx * 0.05 }}
-                className="group grid gap-6 rounded-3xl border border-white/10 bg-transparent p-6 shadow-glass will-change-transform md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center lg:gap-10 lg:p-8"
+                className="deliver-clean group grid gap-6 rounded-3xl border border-white/10 bg-transparent p-6 shadow-glass will-change-transform md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center lg:gap-10 lg:p-8"
                 style={{ perspective: "900px" } as any}
               >
               <div className="space-y-4">
@@ -75,7 +75,7 @@ export default function Deliver() {
               </div>
               {it.video ? (
                 <div
-                  className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-transparent shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
+                  className="deliver-clean relative w-full overflow-hidden rounded-3xl border border-white/10 bg-transparent shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
                   style={{ aspectRatio }}
                 >
                   {isVideoSrc(it.video.src) ? (
@@ -86,7 +86,7 @@ export default function Deliver() {
                       muted
                       playsInline
                       aria-label={it.video.label ?? `${it.title} visual`}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                       style={{ aspectRatio }}
                     />
                   ) : (
@@ -95,7 +95,7 @@ export default function Deliver() {
                       alt={it.video.label ?? `${it.title} visual`}
                       width={mediaDimensions[it.video.src]?.width ?? 1280}
                       height={mediaDimensions[it.video.src]?.height ?? 720}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain"
                       style={{ aspectRatio }}
                       sizes="(min-width: 1024px) 480px, (min-width: 768px) 640px, 100vw"
                     />
