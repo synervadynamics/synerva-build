@@ -213,7 +213,7 @@ export const copy = {
           "Editors police tone, timing, and receipts before anything ships",
           "Campaign dashboards reveal what amplified reach, not just what got views"
         ],
-        video: { src: "/visuals/deliver/content-that-restores-focus.jpg", label: "Content that multiplies reach" }
+        video: { src: "/visuals/deliver/content-that-multiplies-reach.jpg", label: "Content that multiplies reach" }
       },
       {
         title: "Automation that restores focus",

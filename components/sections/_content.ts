@@ -18,8 +18,8 @@ export const copy = {
         "href": "/voice-systems",
         "cta": "See the full voice system",
         "video": {
-          "src": "/visuals/about/about_tile_1.webp",
-          "label": "Voice fidelity in action"
+          "src": "/visuals/deliver/voice-built-to-scale.jpg",
+          "label": "Voice built to scale"
         }
       },
       {
@@ -28,8 +28,8 @@ export const copy = {
         "href": "/web-systems",
         "cta": "Explore the full web system",
         "video": {
-          "src": "/visuals/about/about_tile_2.webp",
-          "label": "Web delivery flow"
+          "src": "/visuals/deliver/web-that-earns-attention.jpg",
+          "label": "Web that earns attention"
         }
       },
       {
@@ -38,8 +38,8 @@ export const copy = {
         "href": "/content-systems",
         "cta": "Explore the content system",
         "video": {
-          "src": "/visuals/about/about_tile_3.webp",
-          "label": "Editorial engine in motion"
+          "src": "/visuals/deliver/content-that-multiplies-reach.jpg",
+          "label": "Content that multiplies reach"
         }
       },
       {
@@ -48,8 +48,8 @@ export const copy = {
         "href": "/automation-systems",
         "cta": "See the automation system",
         "video": {
-          "src": "/visuals/about/about_tile_4.webp",
-          "label": "Automation control loop"
+          "src": "/visuals/deliver/automation-that-restores-focus.jpg",
+          "label": "Automation that restores focus"
         }
       },
       {
@@ -58,8 +58,8 @@ export const copy = {
         "href": "/analytics-systems",
         "cta": "Explore the analytics system",
         "video": {
-          "src": "/visuals/footer/footer_motif.webp",
-          "label": "Analytics accuracy in motion"
+          "src": "/visuals/deliver/analytics-that-tell-the-truth.jpg",
+          "label": "Analytics that tell the truth"
         }
       }
     ]
