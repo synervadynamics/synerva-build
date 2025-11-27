@@ -59,7 +59,7 @@ export const Labs = () => {
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
             animate={inView ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bubble-drift flex flex-col gap-6 rounded-[2.75rem] border border-white/12 bg-gradient-to-br from-[rgba(14,30,50,0.76)] via-[rgba(16,36,56,0.72)] to-[rgba(10,20,34,0.7)] p-6 shadow-[0_44px_150px_-84px_rgba(0,0,0,0.84)] backdrop-blur-2xl"
+            className="bubble-drift flex flex-col gap-6 rounded-[2.75rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-84px_rgba(0,0,0,0.84)] backdrop-blur-2xl"
           >
             <div className="overflow-hidden rounded-[2rem] border border-white/10" suppressHydrationWarning>
               <Image
@@ -90,15 +90,15 @@ export const Labs = () => {
           <div className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
               {copy.labs.secondary.map((item, index) => (
-              <motion.article
-                key={item.title}
-                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
-                animate={
-                  inView
-                    ? { opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
-                    : undefined
+                <motion.article
+                  key={item.title}
+                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
+                  animate={
+                    inView
+                      ? { opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+                      : undefined
                   }
-                  className="bubble-drift flex flex-col gap-4 rounded-3xl border border-white/12 bg-gradient-to-br from-[rgba(12,30,50,0.74)] via-[rgba(16,38,60,0.7)] to-[rgba(10,20,34,0.68)] p-5 shadow-[0_36px_126px_-74px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
+                  className="bubble-drift flex flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_36px_126px_-74px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
                 >
                   <div className="overflow-hidden rounded-2xl border border-white/10">
                     {item.video?.src ? (
@@ -138,7 +138,7 @@ export const Labs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift grid gap-8 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[rgba(10,22,38,0.74)] via-[rgba(14,32,50,0.7)] to-[rgba(10,20,34,0.68)] p-8 shadow-[0_58px_178px_-86px_rgba(0,0,0,0.86)] backdrop-blur-3xl lg:grid-cols-[1.1fr_0.9fr]"
+          className="bubble-drift grid gap-8 rounded-[3rem] border border-white/12 bg-transparent p-8 shadow-[0_58px_178px_-86px_rgba(0,0,0,0.86)] backdrop-blur-3xl lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div className="space-y-6 text-white">
             <div className="space-y-3">
@@ -156,7 +156,10 @@ export const Labs = () => {
             </ul>
             <div className="grid gap-4 md:grid-cols-3">
               {rockstar.stats.map(stat => (
-                <div key={stat.label} className="rounded-2xl border border-white/12 bg-gradient-to-br from-[rgba(16,36,54,0.76)] via-[rgba(16,30,44,0.72)] to-[rgba(10,20,34,0.68)] p-4 text-center">
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/12 bg-transparent p-4 text-center backdrop-blur-xl"
+                >
                   <p className="text-xs uppercase tracking-[0.3em] text-white/50">{stat.label}</p>
                   <p className="mt-2 text-sm text-white/80">{stat.value}</p>
                 </div>
@@ -170,8 +173,7 @@ export const Labs = () => {
             </Link>
             <p className="text-xs uppercase tracking-[0.3em] text-white/40">{rockstar.footnote}</p>
           </div>
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(16,36,54,0.76)] via-[rgba(16,30,44,0.72)] to-[rgba(10,20,34,0.68)] p-4 shadow-[0_40px_140px_-80px_rgba(0,0,0,0.82)]" suppressHydrationWarning>
-            <div className="absolute inset-0 bg-gradient-to-bl from-amber-400/10 via-transparent to-rose-400/10" />
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-transparent p-4 shadow-[0_40px_140px_-80px_rgba(0,0,0,0.82)] backdrop-blur-2xl" suppressHydrationWarning>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[2rem] border border-white/12">
               <Image
                 suppressHydrationWarning
@@ -182,7 +184,7 @@ export const Labs = () => {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="relative mt-4 rounded-2xl border border-white/12 bg-gradient-to-br from-[rgba(10,22,38,0.74)] via-[rgba(14,32,50,0.7)] to-[rgba(10,20,34,0.68)] p-4 text-sm text-white/72">
+            <div className="relative mt-4 rounded-2xl border border-white/12 bg-transparent p-4 text-sm text-white/72 backdrop-blur-xl">
               <p className="text-xs uppercase tracking-[0.35em] text-white/60">{rockstar.eyebrow}</p>
               <p className="mt-2 text-white">{rockstar.title}</p>
             </div>
@@ -195,7 +197,7 @@ export const Labs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift grid gap-4 rounded-[2.75rem] border border-white/12 bg-gradient-to-br from-[rgba(12,28,46,0.74)] via-[rgba(14,32,52,0.7)] to-[rgba(10,20,34,0.68)] p-6 shadow-[0_48px_160px_-84px_rgba(0,0,0,0.84)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr]"
+          className="bubble-drift grid gap-4 rounded-[2.75rem] border border-white/12 bg-transparent p-6 shadow-[0_48px_160px_-84px_rgba(0,0,0,0.84)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div className="space-y-4 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">Preview Access</p>
@@ -236,10 +238,9 @@ export const Labs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift grid gap-8 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[rgba(10,22,38,0.74)] via-[rgba(14,34,52,0.7)] to-[rgba(10,20,34,0.68)] p-8 shadow-[0_60px_180px_-88px_rgba(0,0,0,0.86)] backdrop-blur-3xl lg:grid-cols-[0.85fr_1.15fr]"
+          className="bubble-drift grid gap-8 rounded-[3rem] border border-white/12 bg-transparent p-8 shadow-[0_60px_180px_-88px_rgba(0,0,0,0.86)] backdrop-blur-3xl lg:grid-cols-[0.85fr_1.15fr]"
         >
-          <div className="bubble-drift relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(16,36,54,0.76)] via-[rgba(16,30,44,0.72)] to-[rgba(10,20,34,0.68)] p-4 shadow-[0_40px_140px_-80px_rgba(0,0,0,0.82)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-emerald-300/10" />
+          <div className="bubble-drift relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-transparent p-4 shadow-[0_40px_140px_-80px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[2rem] border border-white/12">
               <Image
                 suppressHydrationWarning
@@ -251,7 +252,7 @@ export const Labs = () => {
                 priority
               />
             </div>
-            <div className="relative mt-4 rounded-2xl border border-white/12 bg-gradient-to-br from-[rgba(10,22,38,0.74)] via-[rgba(14,32,50,0.7)] to-[rgba(10,20,34,0.68)] p-4 text-sm text-white/72">
+            <div className="relative mt-4 rounded-2xl border border-white/12 bg-transparent p-4 text-sm text-white/72 backdrop-blur-xl">
               <p className="text-xs uppercase tracking-[0.35em] text-white/60">{reflective.eyebrow}</p>
               <p className="mt-2 text-white">{reflective.title}</p>
             </div>
@@ -272,7 +273,10 @@ export const Labs = () => {
             </ul>
             <div className="grid gap-4 md:grid-cols-3">
               {reflective.stats.map(stat => (
-                <div key={stat.label} className="bubble-drift rounded-2xl border border-white/12 bg-gradient-to-br from-[rgba(16,36,54,0.76)] via-[rgba(16,30,44,0.72)] to-[rgba(10,20,34,0.68)] p-4 text-center">
+                <div
+                  key={stat.label}
+                  className="bubble-drift rounded-2xl border border-white/12 bg-transparent p-4 text-center backdrop-blur-xl"
+                >
                   <p className="text-xs uppercase tracking-[0.3em] text-white/50">{stat.label}</p>
                   <p className="mt-2 text-sm text-white/80">{stat.value}</p>
                 </div>
