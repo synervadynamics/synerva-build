@@ -9,6 +9,11 @@ import { CascadingText } from "@/components/CascadingText";
 import { useState } from "react";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
+const labsMediaDimensions: Record<string, { width: number; height: number }> = {
+  "/visuals/labs/lucentra-labs.png": { width: 1536, height: 1024 },
+  "/visuals/labs/verisense-labs.jpg": { width: 7680, height: 4320 }
+};
+
 const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const renderWithBreaks = (text: string) =>
@@ -89,47 +94,63 @@ export const Labs = () => {
           </motion.aside>
           <div className="space-y-6">
             <div className="grid gap-6 md:grid-cols-2">
-              {copy.labs.secondary.map((item, index) => (
-                <motion.article
-                  key={item.title}
-                  initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
-                  animate={
-                    inView
-                      ? { opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
-                      : undefined
-                  }
-                  className="bubble-drift flex flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_36px_126px_-74px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
-                >
-                  <div className="overflow-hidden rounded-2xl border border-white/10">
-                    {item.video?.src ? (
-                      isVideoSrc(item.video.src) ? (
-                        <video autoPlay loop muted playsInline className="h-40 w-full object-cover" aria-label={item.video.label}>
-                          <track kind="captions" label={item.video.label} />
-                          <source src={item.video.src} type="video/mp4" />
-                        </video>
+              {copy.labs.secondary.map((item, index) => {
+                const mediaSize = item.video?.src ? labsMediaDimensions[item.video.src] : undefined;
+                const aspectRatio = mediaSize ? mediaSize.width / mediaSize.height : 16 / 9;
+                return (
+                  <motion.article
+                    key={item.title}
+                    initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 40 }}
+                    animate={
+                      inView
+                        ? { opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
+                        : undefined
+                    }
+                    className="bubble-drift deliver-clean flex flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_36px_126px_-74px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
+                  >
+                    <div
+                      className="deliver-clean relative w-full overflow-hidden rounded-2xl border border-white/10"
+                      style={{ aspectRatio }}
+                    >
+                      {item.video?.src ? (
+                        isVideoSrc(item.video.src) ? (
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="h-full w-full object-contain"
+                            style={{ aspectRatio }}
+                            aria-label={item.video.label}
+                          >
+                            <track kind="captions" label={item.video.label} />
+                            <source src={item.video.src} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <Image
+                            src={item.video.src}
+                            alt={item.video.label ?? `${item.title} visual`}
+                            width={mediaSize?.width ?? 1280}
+                            height={mediaSize?.height ?? 720}
+                            className="h-full w-full object-contain"
+                            style={{ aspectRatio }}
+                            sizes="(min-width: 1024px) 320px, (min-width: 768px) 360px, 100vw"
+                          />
+                        )
                       ) : (
-                        <Image
-                          src={item.video.src}
-                          alt={item.video.label ?? `${item.title} visual`}
-                          width={1280}
-                          height={720}
-                          className="h-40 w-full object-cover"
-                          sizes="(min-width: 1024px) 320px, (min-width: 768px) 360px, 100vw"
-                        />
-                      )
-                    ) : (
-                      <VideoPlaceholder label={`${item.title} visual`} />
-                    )}
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-xl text-white">{item.title}</h3>
-                    <p className="text-sm text-white/70">{renderWithBreaks(item.desc)}</p>
-                    <Link href={item.href} className="text-sm font-semibold text-white hover:text-cyan-300">
-                      {item.cta} →
-                    </Link>
-                  </div>
-                </motion.article>
-              ))}
+                        <VideoPlaceholder label={`${item.title} visual`} />
+                      )}
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-xl text-white">{item.title}</h3>
+                      <p className="text-sm text-white/70">{renderWithBreaks(item.desc)}</p>
+                      <Link href={item.href} className="text-sm font-semibold text-white hover:text-cyan-300">
+                        {item.cta} →
+                      </Link>
+                    </div>
+                  </motion.article>
+                );
+              })}
             </div>
           </div>
         </div>

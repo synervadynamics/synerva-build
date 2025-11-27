@@ -309,7 +309,7 @@ export const copy = {
         cta: "Enter Lucentra Labs",
         href: "/labs/lucentra",
         video: {
-          src: "/visuals/systems/lucentra-wide-logo-1.png",
+          src: "/visuals/labs/lucentra-labs.png",
           label: "How Lucentra Learns"
         }
       },
@@ -320,7 +320,7 @@ export const copy = {
         cta: "Explore Verisense Labs",
         href: "/labs/verisense",
         video: {
-          src: "/visuals/systems/verisense-logo-wide-1.png",
+          src: "/visuals/labs/verisense-labs.jpg",
           label: "See Beneath the Surface"
         }
       },
