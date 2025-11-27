@@ -101,53 +101,25 @@ export const copy = {
     },
     "secondary": [
       {
-        "title": "Cognivate",
-        "desc": "AI-assisted orchestration for strategy and content production. Systems that think in structure, not noise.",
-        "cta": "Explore Cognivate",
-        "href": "/cognivate",
+        "title": "Lucentra Labs",
+        "desc":
+          "Lucentra Labs is the forge where the operating system evolves. Voice models sharpen. Reasoning chains refine. Cognitive structures are tested against real world friction. This is where Synerva takes raw intelligence and turns it into architecture, a system that does not merely automate work but amplifies human judgment.",
+        "cta": "Enter Lucentra Labs",
+        "href": "/labs/lucentra",
         "video": {
-          "src": "/visuals/hero/hero_main_render.webp",
-          "label": "Cognivate in action"
+          "src": "/visuals/labs/lucentra-labs.png",
+          "label": "How Lucentra Learns"
         }
       },
       {
-        "title": "Verisense",
-        "desc": "Video-based behavioural analysis revealing the signals behind speech and presence. Designed for leadership, training, and coaching.",
-        "cta": "Discover Verisense",
-        "href": "/verisense",
+        "title": "Verisense Labs",
+        "desc":
+          "Verisense Labs is where communication stops being guesswork. Each experiment deepens the engine’s ability to read tone, subtext, and psychological intent, turning messy human conversations into clean, interpretable intelligence. It is clarity engineered molecule by molecule.",
+        "cta": "Explore Verisense Labs",
+        "href": "/labs/verisense",
         "video": {
-          "src": "/visuals/systems/verisense-logo-wide-1.png",
-          "label": "Verisense overview"
-        }
-      },
-      {
-        "title": "Analytics Patterns",
-        "desc": "Dashboards recast as diagnostics. Attribution logic and closed-loop feedback deliver data leadership can trust.",
-        "cta": "View sample dashboards",
-        "href": "/analytics-patterns",
-        "video": {
-          "src": "/visuals/hero/synerva-dynamics-wide-logo-1.png",
-          "label": "Analytics Patterns walkthrough"
-        }
-      },
-      {
-        "title": "Content Systems Workbook",
-        "desc": "Editorial gravity rendered as a system. Matrices and production timelines sustain coherence as speed scales.",
-        "cta": "Download the workbook",
-        "href": "/content-systems-workbook",
-        "video": {
-          "src": "/visuals/labs/labs_feature_poster.webp",
-          "label": "Content Systems Workbook overview"
-        }
-      },
-      {
-        "title": "Offer Engineering Sheets",
-        "desc": "Behaviour modelled and measured. Pricing logic and cognitive cues form offers that convert without coercion.",
-        "cta": "See the templates",
-        "href": "/offer-engineering-sheets",
-        "video": {
-          "src": "/visuals/hero/synerva-hero-shot-2.png",
-          "label": "Offer Engineering Sheets walkthrough"
+          "src": "/visuals/labs/verisense-labs.jpg",
+          "label": "See Beneath the Surface"
         }
       }
     ],
