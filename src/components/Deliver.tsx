@@ -23,6 +23,14 @@ type DeliverItem = {
 
 const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
+const mediaDimensions: Record<string, { width: number; height: number }> = {
+  "/visuals/deliver/voice-built-to-scale.jpg": { width: 7152, height: 4023 },
+  "/visuals/deliver/web-that-earns-attention.jpg": { width: 7111, height: 4000 },
+  "/visuals/deliver/content-that-multiplies-reach.jpg": { width: 4000, height: 3000 },
+  "/visuals/deliver/automation-that-restores-focus.jpg": { width: 7680, height: 4320 },
+  "/visuals/deliver/analytics-that-tell-the-truth.jpg": { width: 3840, height: 2160 }
+};
+
 export const Deliver = () => {
   const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -145,8 +153,8 @@ export const Deliver = () => {
                     key={activeItem.video.src}
                     src={activeItem.video.src}
                     alt={activeItem.video.label}
-                    width={1920}
-                    height={1080}
+                    width={mediaDimensions[activeItem.video.src]?.width ?? 1920}
+                    height={mediaDimensions[activeItem.video.src]?.height ?? 1080}
                     className="aspect-video w-full object-cover"
                     sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
                   />

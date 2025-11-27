@@ -8,6 +8,13 @@ import { Check } from "lucide-react";
 import { copy } from "./_content";
 
 const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
+const mediaDimensions: Record<string, { width: number; height: number }> = {
+  "/visuals/deliver/voice-built-to-scale.jpg": { width: 7152, height: 4023 },
+  "/visuals/deliver/web-that-earns-attention.jpg": { width: 7111, height: 4000 },
+  "/visuals/deliver/content-that-multiplies-reach.jpg": { width: 4000, height: 3000 },
+  "/visuals/deliver/automation-that-restores-focus.jpg": { width: 7680, height: 4320 },
+  "/visuals/deliver/analytics-that-tell-the-truth.jpg": { width: 3840, height: 2160 }
+};
 
 export default function Deliver() {
   return (
@@ -30,7 +37,7 @@ export default function Deliver() {
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, ease: "easeOut", delay: idx * 0.05 }}
-              className="group grid gap-6 rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-glass will-change-transform md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center lg:gap-10 lg:p-8"
+              className="group grid gap-6 rounded-3xl border border-white/10 bg-transparent p-6 shadow-glass will-change-transform md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:items-center lg:gap-10 lg:p-8"
               style={{ perspective: "900px" } as any}
             >
               <div className="space-y-4">
@@ -64,7 +71,7 @@ export default function Deliver() {
                 ) : null}
               </div>
               {it.video ? (
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl border border-white/10 bg-transparent shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
                   {isVideoSrc(it.video.src) ? (
                     <video
                       src={it.video.src}
@@ -79,13 +86,12 @@ export default function Deliver() {
                     <Image
                       src={it.video.src}
                       alt={it.video.label ?? `${it.title} visual`}
-                      width={1280}
-                      height={720}
+                      width={mediaDimensions[it.video.src]?.width ?? 1280}
+                      height={mediaDimensions[it.video.src]?.height ?? 720}
                       className="h-full w-full object-cover"
                       sizes="(min-width: 1024px) 480px, (min-width: 768px) 640px, 100vw"
                     />
                   )}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
                 </div>
               ) : (
                 <VideoPlaceholder label={`${it.title} visual`} />
