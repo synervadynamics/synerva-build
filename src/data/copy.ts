@@ -183,10 +183,7 @@ export const copy = {
           "Voice QA flags anything off-tempo before it reaches an executive inbox",
           "Executive-ready packets indexed by scenario: investor, press, sales, ops"
         ],
-        video: {
-          src: "/visuals/about/about_tile_1.webp",
-          label: "Voice fidelity in action"
-        }
+        video: { src: "/visuals/deliver/voice-built-to-scale.jpg", label: "Voice built to scale" }
       },
       {
         title: "Web that earns attention",
@@ -201,10 +198,7 @@ export const copy = {
           "Accessibility, schema, and privacy logic built into the component kit",
           "Weekly heatmaps + funnel reads to validate every layout"
         ],
-        video: {
-          src: "/visuals/about/about_tile_2.webp",
-          label: "Web delivery flow"
-        }
+        video: { src: "/visuals/deliver/web-that-earns-attention.jpg", label: "Web that earns attention" }
       },
       {
         title: "Content that multiplies reach",
@@ -219,10 +213,7 @@ export const copy = {
           "Editors police tone, timing, and receipts before anything ships",
           "Campaign dashboards reveal what amplified reach, not just what got views"
         ],
-        video: {
-          src: "/visuals/about/about_tile_3.webp",
-          label: "Editorial engine in motion"
-        }
+        video: { src: "/visuals/deliver/content-that-restores-focus.jpg", label: "Content that multiplies reach" }
       },
       {
         title: "Automation that restores focus",
@@ -237,10 +228,7 @@ export const copy = {
           "Dashboards show which play fired, who owns it, and what changed",
           "Human-in-the-loop checkpoints in every sensitive branch"
         ],
-        video: {
-          src: "/visuals/about/about_tile_4.webp",
-          label: "Automation control loop"
-        }
+        video: { src: "/visuals/deliver/automation-that-restores-focus.jpg", label: "Automation that restores focus" }
       },
       {
         title: "Analytics that tell the truth",
@@ -255,10 +243,7 @@ export const copy = {
           "Annotations that call out the decision behind every spike or dip",
           "Quarterly rollups that separate noise from repeatable wins"
         ],
-        video: {
-          src: "/visuals/footer/footer_motif.webp",
-          label: "Analytics accuracy in motion"
-        }
+        video: { src: "/visuals/deliver/analytics-that-tell-the-truth.jpg", label: "Analytics that tell the truth" }
       }
     ]
   },
