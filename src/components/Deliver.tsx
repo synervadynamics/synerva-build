@@ -44,6 +44,8 @@ export const Deliver = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const deliverItems = copy.deliver.items as readonly DeliverItem[];
   const activeItem: DeliverItem = deliverItems[activeIndex] ?? deliverItems[0];
+  const activeMediaSize = activeItem.video?.src ? mediaDimensions[activeItem.video.src] : undefined;
+  const activeAspectRatio = activeMediaSize ? activeMediaSize.width / activeMediaSize.height : 16 / 9;
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const cardVariants: Variants = {
@@ -133,7 +135,10 @@ export const Deliver = () => {
             }
             className="relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl"
           >
-            <div className="overflow-hidden rounded-3xl border border-white/5">
+            <div
+              className="overflow-hidden rounded-3xl border border-white/5"
+              style={{ aspectRatio: activeAspectRatio }}
+            >
               {activeItem.video?.src ? (
                 isVideoSrc(activeItem.video.src) ? (
                   <video
@@ -142,7 +147,8 @@ export const Deliver = () => {
                     loop
                     muted
                     playsInline
-                    className="aspect-video w-full object-cover"
+                    className="h-full w-full object-cover"
+                    style={{ aspectRatio: activeAspectRatio }}
                     aria-label={activeItem.video.label}
                   >
                     <track kind="captions" label={activeItem.video.label} />
@@ -155,7 +161,8 @@ export const Deliver = () => {
                     alt={activeItem.video.label}
                     width={mediaDimensions[activeItem.video.src]?.width ?? 1920}
                     height={mediaDimensions[activeItem.video.src]?.height ?? 1080}
-                    className="aspect-video w-full object-cover"
+                    className="h-full w-full object-cover"
+                    style={{ aspectRatio: activeAspectRatio }}
                     sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
                   />
                 )
