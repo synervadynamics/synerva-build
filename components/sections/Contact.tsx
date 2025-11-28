@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { copy } from "./_content";
+import { copy } from "@/data/copy";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle"|"sending"|"sent"|"error">("idle");

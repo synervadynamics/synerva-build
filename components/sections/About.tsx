@@ -3,7 +3,7 @@
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { copy } from "./_content";
+import { copy } from "@/data/copy";
 
 export default function About() {
   return (

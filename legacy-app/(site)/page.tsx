@@ -7,7 +7,7 @@ import CaseStudies from "../../components/sections/CaseStudies";
 import Labs from "../../components/sections/Labs";
 import About from "../../components/sections/About";
 import Contact from "../../components/sections/Contact";
-import { copy } from "../../components/sections/_content";
+import { copy } from "@/data/copy";
 
 export default function Page() {
   return (

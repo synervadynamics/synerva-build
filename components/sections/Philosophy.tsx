@@ -3,7 +3,7 @@
 import Image from "next/image";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
-import { copy } from "./_content";
+import { copy } from "@/data/copy";
 
 const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
