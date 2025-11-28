@@ -384,17 +384,18 @@ export const copy = {
   },
   art: {
     eyebrow: "Visual R&D",
-    heading: "Art That Teaches the Systems to Feel",
+    heading: "Art From the Studio’s Inner Circuit",
     intro:
-      "The studio’s cinematic sketches, interface murals, and analog experiments live here before they ship as client work. Each study is a placeholder canvas until final renders drop—built to pressure-test color math, motion grammar, and narrative tone.",
-    note: "Click any frame to see the texture up close inside the showcase.",
+      "A rotating archive of visual experiments—renders, studies, and interface sketches created to push color, structure, and motion into new territory. These pieces evolve in public before they become part of client systems.",
+    note: "Click any frame to inspect the details inside the showcase.",
     cta: { label: "Enter the Art Showcase", href: "/art" },
     gallery: [
       {
         title: "Signal Bloom",
         label: "Study 01",
         medium: "Lightfield mural",
-        description: "Data trails bending into auroras; how telemetry should feel when it finally breathes.",
+        description:
+          "Telemetry stretched into aurora-like gradients and directional light.",
         accent: "from-cyan-400/25 via-sky-900/70 to-slate-950",
         ratio: "aspect-[4/5]"
       },
@@ -402,7 +403,8 @@ export const copy = {
         title: "Carbon Script",
         label: "Study 02",
         medium: "Charcoal grid",
-        description: "Hand-drawn lattices folding into typography—a nod to Lucentra’s living brief.",
+        description:
+          "Hand-drawn lattices folding toward precise, engineered typography.",
         accent: "from-amber-200/20 via-slate-900/70 to-black",
         ratio: "aspect-[5/6]"
       },
@@ -410,7 +412,8 @@ export const copy = {
         title: "Memory Tides",
         label: "Study 03",
         medium: "Chromatic current",
-        description: "Signal waves recorded as watercolor gradients, mapping emotion against data.",
+        description:
+          "Watercolor gradients mapped to emotional signal patterns.",
         accent: "from-emerald-300/20 via-cyan-900/65 to-black",
         ratio: "aspect-square"
       },
@@ -418,7 +421,8 @@ export const copy = {
         title: "Relay Choir",
         label: "Study 04",
         medium: "Glass typography",
-        description: "Layered scripts suspended like a choir—how multi-voice systems stay in tune.",
+        description:
+          "Layered scripts suspended in glass—multi-channel communication visualized.",
         accent: "from-fuchsia-300/22 via-indigo-900/65 to-slate-950",
         ratio: "aspect-[16/10]"
       },
@@ -426,7 +430,8 @@ export const copy = {
         title: "Night Systems",
         label: "Study 05",
         medium: "Nocturne render",
-        description: "Low-light UI shards and anodized metal, built for the late shift operators.",
+        description:
+          "Low-light UI shards and anodized metal tuned for late-shift clarity.",
         accent: "from-slate-200/16 via-slate-900/70 to-black",
         ratio: "aspect-[3/4]"
       },
@@ -434,7 +439,8 @@ export const copy = {
         title: "Kinetic Atlas",
         label: "Study 06",
         medium: "Motion poster",
-        description: "A kinetic map of product lines arcing across the continent—light beams from the Synerva ecosystem.",
+        description:
+          "An energetic map of the ecosystem—product lines connected through light and motion.",
         accent: "from-amber-300/24 via-rose-900/60 to-slate-950",
         ratio: "aspect-[4/5]"
       }
