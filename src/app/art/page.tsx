@@ -1,12 +1,12 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import { copy } from "@/data/copy";
+import { pages_art } from "@/copy/pages";
 import ArtPageClient from "./pageClient";
 
-const artPageCopy = copy.pages.art;
+const artPageCopy = pages_art;
 
 export const metadata = buildPageMetadata({
-  title: `Art — ${artPageCopy.heading}`,
-  description: artPageCopy.description,
+  title: "Art — Synerva Dynamics",
+  description: artPageCopy.hero.subtitle,
   path: "/art"
 });
 

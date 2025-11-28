@@ -7,12 +7,20 @@ type SectionItem = {
   label: string;
 };
 
+const defaultSections: SectionItem[] = [
+  { id: "systems", label: "Systems" },
+  { id: "deliver", label: "Deliver" },
+  { id: "labs", label: "Labs" },
+  { id: "art", label: "Art" }
+];
+
 type Props = {
-  sections: SectionItem[];
+  sections?: SectionItem[];
 };
 
-export const SectionIndex = ({ sections }: Props) => {
-  const [active, setActive] = useState<string>(sections[0]?.id ?? "");
+export const SectionIndex = ({ sections = defaultSections }: Props) => {
+  const resolvedSections = sections.length ? sections : defaultSections;
+  const [active, setActive] = useState<string>(resolvedSections[0]?.id ?? "");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,21 +38,21 @@ export const SectionIndex = ({ sections }: Props) => {
       }
     );
 
-    sections.forEach(section => {
+    resolvedSections.forEach(section => {
       const el = document.getElementById(section.id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [sections]);
+  }, [resolvedSections]);
 
   const items = useMemo(
     () =>
-      sections.map(item => ({
+      resolvedSections.map(item => ({
         ...item,
         isActive: active === item.id
       })),
-    [sections, active]
+    [resolvedSections, active]
   );
 
   if (!items.length) return null;
