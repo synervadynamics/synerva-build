@@ -383,69 +383,69 @@ export const copy = {
     closing: "Every Lab starts as an irritation worth solving and ends as a tested asset ready to deploy."
   },
   art: {
-    eyebrow: "Visual R&D",
-    heading: "Art From the Studio’s Inner Circuit",
-    intro:
-      "A rotating archive of visual experiments—renders, studies, and interface sketches built to push color, structure, and motion into uncharted territory. These pieces evolve in public before they merge with client systems.",
-    note: "Hover or tap any frame to inspect the details inside the showcase.",
-    cta: { label: "Enter the Art Showcase", href: "/art" },
-    gallery: [
-      {
-        title: "Signal Bloom",
-        label: "Study 01",
-        medium: "Lightfield mural",
-        description:
-          "Telemetry stretched into aurora-like gradients and directional light so data feels like breath.",
-        accent: "from-cyan-400/25 via-sky-900/70 to-slate-950",
-        ratio: "aspect-[4/5]"
-      },
-      {
-        title: "Carbon Script",
-        label: "Study 02",
-        medium: "Charcoal grid",
-        description:
-          "Hand-drawn lattices folding toward precise, engineered typography with graphite noise mapped to Lucentra grids.",
-        accent: "from-amber-200/20 via-slate-900/70 to-black",
-        ratio: "aspect-[5/6]"
-      },
-      {
-        title: "Memory Tides",
-        label: "Study 03",
-        medium: "Chromatic current",
-        description:
-          "Watercolor gradients mapped to emotional signal patterns and pulse authoritative wavelengths.",
-        accent: "from-emerald-300/20 via-cyan-900/65 to-black",
-        ratio: "aspect-square"
-      },
-      {
-        title: "Relay Choir",
-        label: "Study 04",
-        medium: "Glass typography",
-        description:
-          "Layered scripts suspended in glass—multi-channel communication visualized as translucent choreography.",
-        accent: "from-fuchsia-300/22 via-indigo-900/65 to-slate-950",
-        ratio: "aspect-[16/10]"
-      },
-      {
-        title: "Night Systems",
-        label: "Study 05",
-        medium: "Nocturne render",
-        description:
-          "Low-light UI shards and anodized metal tuned for late-shift clarity, softened by midnight cobalt haze.",
-        accent: "from-slate-200/16 via-slate-900/70 to-black",
-        ratio: "aspect-[3/4]"
-      },
-      {
-        title: "Kinetic Atlas",
-        label: "Study 06",
-        medium: "Motion poster",
-        description:
-          "An energetic map of the ecosystem—product lines connected through light and motion, contours pulsing along the Synerva network.",
-        accent: "from-amber-300/24 via-rose-900/60 to-slate-950",
-        ratio: "aspect-[4/5]"
-      }
-    ]
-  },
+  eyebrow: "Visual R&D",
+  heading: "Art From the Studio’s Inner Circuit",
+  intro:
+    "A rotating archive of visual experiments—renders, studies, and interface sketches created to push color, structure, and motion into new territory. These pieces evolve in public before they become part of client systems.",
+  note: "Click any frame to inspect the details inside the showcase.",
+  cta: { label: "Enter the Art Showcase", href: "/art" },
+  gallery: [
+    {
+      title: "Signal Bloom",
+      label: "Study 01",
+      medium: "Lightfield mural",
+      description:
+        "Telemetry stretched into aurora-like gradients and directional light.",
+      accent: "from-cyan-400/25 via-sky-900/70 to-slate-950",
+      ratio: "aspect-[4/5]"
+    },
+    {
+      title: "Carbon Script",
+      label: "Study 02",
+      medium: "Charcoal grid",
+      description:
+        "Hand-drawn lattices folding toward precise, engineered typography.",
+      accent: "from-amber-200/20 via-slate-900/70 to-black",
+      ratio: "aspect-[5/6]"
+    },
+    {
+      title: "Memory Tides",
+      label: "Study 03",
+      medium: "Chromatic current",
+      description:
+        "Watercolor gradients mapped to emotional signal patterns.",
+      accent: "from-emerald-300/20 via-cyan-900/65 to-black",
+      ratio: "aspect-square"
+    },
+    {
+      title: "Relay Choir",
+      label: "Study 04",
+      medium: "Glass typography",
+      description:
+        "Layered scripts suspended in glass—multi-channel communication visualized.",
+      accent: "from-fuchsia-300/22 via-indigo-900/65 to-slate-950",
+      ratio: "aspect-[16/10]"
+    },
+    {
+      title: "Night Systems",
+      label: "Study 05",
+      medium: "Nocturne render",
+      description:
+        "Low-light UI shards and anodized metal tuned for late-shift clarity.",
+      accent: "from-slate-200/16 via-slate-900/70 to-black",
+      ratio: "aspect-[3/4]"
+    },
+    {
+      title: "Kinetic Atlas",
+      label: "Study 06",
+      medium: "Motion poster",
+      description:
+        "An energetic map of the ecosystem—product lines connected through light and motion.",
+      accent: "from-amber-300/24 via-rose-900/60 to-slate-950",
+      ratio: "aspect-[4/5]"
+    }
+  ]
+},
   about: {
     heading: "About the Studio",
     p1:
