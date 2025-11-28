@@ -13,7 +13,8 @@ import type { Easing } from "framer-motion";
 const sectionMap = [
   { id: "systems", label: "Systems" },
   { id: "deliver", label: "Deliverables" },
-  { id: "labs", label: "Labs" }
+  { id: "labs", label: "Labs" },
+  { id: "art", label: "Art" }
 ];
 
 export const Hero = () => {

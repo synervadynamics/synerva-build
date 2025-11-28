@@ -12,6 +12,7 @@ import { Narrative } from "@/components/Narrative";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import { GradientOrchestrator } from "@/components/GradientOrchestrator";
+import { Art } from "@/components/Art";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Philosophy />
       <Roadmap />
       <Labs />
+      <Art />
       <About />
       <CTA />
       <Footer />
