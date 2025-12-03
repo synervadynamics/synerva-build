@@ -7,7 +7,7 @@ const artPageCopy = pages_art;
 export const dynamic = "force-dynamic";
 
 export const metadata = buildPageMetadata({
-  title: "Art — Synerva Dynamics",
+  title: "Synerva Dimensions — The Quiet Divine",
   description: artPageCopy.hero.subtitle,
   path: "/art"
 });

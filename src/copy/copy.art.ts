@@ -1,5 +1,5 @@
 export const art = {
-  title: "Art",
-  tagline: "A portfolio of experimental visual systems.",
-  cta: "Explore the gallery"
+  title: "Synerva Dimensions",
+  tagline: "A living gallery of interior worlds and visual systems.",
+  cta: "Enter The Quiet Divine"
 };
