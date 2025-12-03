@@ -7,9 +7,8 @@ import { ArtFrame } from "@/components/ArtFrame";
 import { art as artCopy } from "@/copy";
 import { artGallery } from "@/data/art-gallery";
 
-const previewGallery = artGallery.slice(0, 3);
-
 export const Art = () => {
+  const previewGallery = artGallery.slice(0, 3);
   const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.18 });
 

@@ -12,9 +12,9 @@ import { art as artCopy } from "@/copy";
 import { pages_art } from "@/copy/pages";
 import { artGallery } from "@/data/art-gallery";
 
+const artPageCopy = pages_art;
+
 export default function ArtPageClient() {
-  const artPageCopy = pages_art;
-  const gallery = artGallery;
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const shouldReduceMotion = useReducedMotion();
   const [selected, setSelected] = useState<ArtPiece | null>(null);
@@ -69,7 +69,7 @@ export default function ArtPageClient() {
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="relative space-y-4 rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-white/4 via-slate-900/70 to-black p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
           >
-            <ArtFrame piece={gallery[0]} />
+            <ArtFrame piece={artGallery[0]} />
             <div className="flex items-center justify-between text-xs uppercase tracking-[0.35em] text-white/60">
               <span>Placeholder study</span>
               <span>Modal preview ready</span>
@@ -89,7 +89,7 @@ export default function ArtPageClient() {
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">Click a frame to enlarge</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((piece, index) => (
+            {artGallery.map((piece, index) => (
               <motion.button
                 key={piece.title}
                 type="button"

@@ -4,8 +4,6 @@ import ArtPageClient from "./pageClient";
 
 const artPageCopy = pages_art;
 
-export const dynamic = "force-dynamic";
-
 export const metadata = buildPageMetadata({
   title: "Art — Synerva Dynamics",
   description: artPageCopy.hero.subtitle,
