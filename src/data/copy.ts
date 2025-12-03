@@ -21,6 +21,9 @@ export const copy = {
   },
   hero: {
     eyebrow: "Synerva Dynamics",
+    title: "The Power of Many, Engineered for One",
+    subtitle:
+      "A studio built for precision at scale. Brand, web, content, automation, and analytics operate as one integrated loop—each decision grounded in truth, each result visible in motion.",
     headline: ["The Power of Many,", "Engineered for One"],
     subhead:
       "A studio built for precision at scale. Brand, web, content, automation, and analytics operate as one integrated loop—each decision grounded in truth, each result visible in motion.",
@@ -183,7 +186,9 @@ export const copy = {
           "Voice QA flags anything off-tempo before it reaches an executive inbox",
           "Executive-ready packets indexed by scenario: investor, press, sales, ops"
         ],
-        video: { src: "/visuals/deliver/voice-built-to-scale.jpg", label: "Voice built to scale" }
+        video: { src: "/visuals/deliver/voice-built-to-scale.jpg", label: "Voice built to scale" },
+        href: "/contact",
+        cta: "Talk voice systems"
       },
       {
         title: "Web that earns attention",
@@ -198,7 +203,9 @@ export const copy = {
           "Accessibility, schema, and privacy logic built into the component kit",
           "Weekly heatmaps + funnel reads to validate every layout"
         ],
-        video: { src: "/visuals/deliver/web-that-earns-attention.jpg", label: "Web that earns attention" }
+        video: { src: "/visuals/deliver/web-that-earns-attention.jpg", label: "Web that earns attention" },
+        href: "/contact",
+        cta: "Discuss the web stack"
       },
       {
         title: "Content that multiplies reach",
@@ -213,7 +220,9 @@ export const copy = {
           "Editors police tone, timing, and receipts before anything ships",
           "Campaign dashboards reveal what amplified reach, not just what got views"
         ],
-        video: { src: "/visuals/deliver/content-that-multiplies-reach.jpg", label: "Content that multiplies reach" }
+        video: { src: "/visuals/deliver/content-that-multiplies-reach.jpg", label: "Content that multiplies reach" },
+        href: "/contact",
+        cta: "Scale content"
       },
       {
         title: "Automation that restores focus",
@@ -228,7 +237,9 @@ export const copy = {
           "Dashboards show which play fired, who owns it, and what changed",
           "Human-in-the-loop checkpoints in every sensitive branch"
         ],
-        video: { src: "/visuals/deliver/automation-that-restores-focus.jpg", label: "Automation that restores focus" }
+        video: { src: "/visuals/deliver/automation-that-restores-focus.jpg", label: "Automation that restores focus" },
+        href: "/contact",
+        cta: "Plan automation"
       },
       {
         title: "Analytics that tell the truth",
@@ -243,7 +254,9 @@ export const copy = {
           "Annotations that call out the decision behind every spike or dip",
           "Quarterly rollups that separate noise from repeatable wins"
         ],
-        video: { src: "/visuals/deliver/analytics-that-tell-the-truth.jpg", label: "Analytics that tell the truth" }
+        video: { src: "/visuals/deliver/analytics-that-tell-the-truth.jpg", label: "Analytics that tell the truth" },
+        href: "/contact",
+        cta: "Review analytics"
       }
     ]
   },
@@ -278,6 +291,11 @@ export const copy = {
         "Born from fifteen years in the hospitality trenches, The Rockstar Server Playbook is a cinematic, psychological field manual for anyone who has ever carried grace through chaos and walked out stronger. It is part memoir, part systems guide, and part war story anthology. It is a lived blueprint for pressure, precision, and performance drawn from the world where clarity is not optional, it is oxygen.",
       ctaPrimary: "Read the Playbook",
       ctaPrimaryHref: "/labs#preview-access",
+      ctaSecondary: "View all Labs",
+      video: {
+        src: "/rockstar-cover.png",
+        alt: "The Rockstar Server Playbook cover artwork"
+      },
       image: {
         src: "/rockstar-cover.png",
         alt: "The Rockstar Server Playbook cover artwork"
@@ -450,7 +468,9 @@ export const copy = {
     heading: "About the Studio",
     p1:
       "Synerva Dynamics operates as a solo product studio with enterprise-grade discipline. Brand, UX, narrative, and code stay tightly aligned so intent survives execution. Every system adheres to en-CA standards, CAD currency, and CASL compliance. Each engagement runs on defined acceptance criteria, transparent pricing logic, and measurable lift.",
-    p2: "This isn’t an agency model.\nIt’s a precision engine—lean, psychological, and built for teams that want clarity without bureaucracy."
+    p2: "This isn’t an agency model.\nIt’s a precision engine—lean, psychological, and built for teams that want clarity without bureaucracy.",
+    href: "/contact",
+    cta: "Discuss a build"
   },
   roadmap: {
     heading: "12-Month Roadmap in Motion",
@@ -483,6 +503,8 @@ export const copy = {
     ]
   },
   cta: {
+    contact: "Start with a 30-minute plan",
+    work: "See Proof of Lift",
     label: "Engagement rhythm",
     title: "Field Teams Built Around Evidence",
     body:

@@ -1,0 +1,8 @@
+Synerva Dimensions and The Quiet Divine implementation
+
+- Added new /dimensions route and base layout, plus Quiet Divine subroute with hero, narrative, and gallery.
+- Ingested Quiet Divine copy from the docx into a structured TypeScript content schema.
+- Mapped Quiet Divine images from public/the-quiet-divine-art into typed metadata with captions/order.
+- Rebuilt dimensions components (heroes, narratives, gallery, shared ImageCard) using live content.
+- Fixed About/Deliver/Labs copy fields to unblock build; removed Google font dependency in layout.
+- Cleaned legacy art system and duplicate app folders; build now completes successfully.

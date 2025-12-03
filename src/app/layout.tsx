@@ -1,23 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { copy } from "@/data/copy";
 import CursorLayer from "@/components/CursorLayer";
 import BackgroundDynamics from "@/components/BackgroundDynamics";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-space-grotesk"
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-  variable: "--font-plex-mono"
-});
 
 const metadataBase = new URL(copy.meta.url);
 
@@ -103,7 +89,7 @@ const breadcrumbSchema = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-CA" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} ${plexMono.variable} bg-[var(--bg)] text-white antialiased`} suppressHydrationWarning>
+      <body className="bg-[var(--bg)] text-white antialiased" suppressHydrationWarning>
         <div className="global-backdrop" aria-hidden />
         <div className="global-gradient" aria-hidden />
         <BackgroundDynamics />
