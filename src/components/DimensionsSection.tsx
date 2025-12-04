@@ -40,7 +40,7 @@ export function DimensionsSection() {
               href="/dimensions"
               className="px-5 py-3 rounded-xl text-sm font-semibold bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] transition"
             >
-              Explore Dimensions
+              Explore Synerva Dimensions
             </Link>
           </div>
         </div>
