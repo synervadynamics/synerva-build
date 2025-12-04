@@ -24,15 +24,6 @@ export function ArtShowcase() {
             {copy.art.cta.label}
           </Link>
         </div>
-        <div className="overflow-x-auto pb-4">
-          <div className="flex gap-4 min-w-full snap-x snap-mandatory">
-            {gallery.slice(0, 5).map(piece => (
-              <div key={piece.title} className="min-w-[240px] snap-start">
-                <ArtFrame piece={piece} className="hover:scale-[1.01] transition-transform duration-300" showDescription />
-              </div>
-            ))}
-          </div>
-        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map(piece => (
             <ArtFrame key={piece.title} piece={piece} className="hover:scale-[1.01] transition-transform duration-300" />
