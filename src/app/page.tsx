@@ -13,6 +13,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import { GradientOrchestrator } from "@/components/GradientOrchestrator";
 import { DimensionsSection } from "@/components/DimensionsSection";
+import { ArtShowcase } from "@/components/ArtShowcase";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Systems />
       <Philosophy />
       <Roadmap />
+      <ArtShowcase />
       <DimensionsSection />
       <Labs />
       <About />

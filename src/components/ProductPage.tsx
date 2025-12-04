@@ -32,6 +32,8 @@ export const ProductPage = ({ product }: { product: ProductEntry }) => {
 
   // Fixed: make readonly product.demos mutable for Demo[]
   const demos: Demo[] = [...(product.demos ?? [])];
+  const useCases = (product as ProductEntry & { useCases?: { title: string; description: string }[] }).useCases ?? [];
+  const proofPoints = (product as ProductEntry & { proofPoints?: string[] }).proofPoints ?? [];
 
   // Keep the interactive demo state resilient even if copy data changes length.
   const activeDemo = demos[Math.min(demoIndex, Math.max(demos.length - 1, 0))];
@@ -43,12 +45,6 @@ export const ProductPage = ({ product }: { product: ProductEntry }) => {
           <Link href="/" className="text-sm uppercase tracking-[0.3em] text-white/70 transition hover:text-white">
             ← Home
           </Link>
-        </div>
-        <div className="relative z-10 mb-4 rounded-2xl border border-amber-300/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-100 backdrop-blur">
-          <p className="font-semibold uppercase tracking-[0.25em]">Development Notice</p>
-          <p className="text-white/80">
-            This experience is in active development. New modules, visuals, and documentation will be posted as they release.
-          </p>
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-[#050912f2] via-[#0b1626e6] to-[#0a1320e6]" />
         <div
@@ -67,19 +63,30 @@ export const ProductPage = ({ product }: { product: ProductEntry }) => {
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.4em] text-white/70">{product.eyebrow}</p>
             <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">{product.title}</h1>
-            <p className="text-lg text-white/80">{product.tagline}</p>
+            {product.tagline ? <p className="text-lg text-white/80">{product.tagline}</p> : null}
             {product.description.map(paragraph => (
               <p key={paragraph} className="text-base text-white/70">
                 {paragraph}
               </p>
             ))}
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Proof</p>
-              <p className="text-base text-white">{product.proof}</p>
-            </div>
-            <div className="rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white/70">
-              This product page is in active development. Updates will be posted as they are made available.
-            </div>
+            {proofPoints.length > 0 ? (
+              <div className="space-y-3">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">Proof points</p>
+                <ul className="space-y-2 text-base text-white/75">
+                  {proofPoints.map(point => (
+                    <li key={point} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">Proof</p>
+                <p className="text-base text-white">{product.proof}</p>
+              </div>
+            )}
             <Link
               href={product.cta.href}
               className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
@@ -156,6 +163,26 @@ export const ProductPage = ({ product }: { product: ProductEntry }) => {
               <pre className="mt-4 text-base leading-relaxed text-white/80">
                 {activeDemo.sample}
               </pre>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {useCases.length > 0 && (
+        <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#050912f2] via-[#0a1828e6] to-[#0a1320e6]" />
+          <div className="relative mx-auto grid max-w-6xl gap-8 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-8 backdrop-blur-2xl shadow-[0_48px_160px_-88px_rgba(0,0,0,0.84)] lg:grid-cols-2">
+            <div className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/70">Use cases</p>
+              <h2 className="text-3xl text-white">Where it excels</h2>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {useCases.map(useCase => (
+                <div key={useCase.title} className="rounded-2xl border border-white/12 bg-white/5 p-5 text-white/80">
+                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">{useCase.title}</p>
+                  <p className="mt-2 text-sm text-white/75">{useCase.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
