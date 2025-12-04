@@ -8,7 +8,7 @@ const renderParagraphs = (text: string | null) =>
     .map((para, idx) => <p key={idx}>{para}</p>);
 
 export default function QuietDivineNarrative() {
-  const { overview, narrative, themes, philosophy } = quietDivineContent;
+  const { overview, narrative, themes, themesParagraph, philosophy } = quietDivineContent;
 
   return (
     <section className="quiet-divine-narrative space-y-10">
@@ -26,18 +26,21 @@ export default function QuietDivineNarrative() {
         </div>
       )}
 
-      {Array.isArray(themes) && themes.length > 0 && (
+      {themesParagraph ? (
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Themes</h2>
-          <ul className="space-y-3 text-base leading-relaxed text-white/80">
+          <p className="text-base leading-relaxed text-white/80">{themesParagraph}</p>
+        </div>
+      ) : Array.isArray(themes) && themes.length > 0 ? (
+        <div className="narrative-block space-y-4">
+          <h2 className="text-2xl font-semibold">Themes</h2>
+          <ul className="list-disc list-outside pl-6 space-y-3 text-base leading-relaxed text-white/80 [&>li]:marker:text-white/60 [&>li]:pl-1">
             {themes.map((theme, idx) => (
-              <li key={idx} className="list-disc list-inside marker:text-white/60">
-                {theme}
-              </li>
+              <li key={idx}>{theme}</li>
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
 
       {philosophy && (
         <div className="narrative-block space-y-4">
