@@ -81,12 +81,6 @@ export default function ProofPage() {
             >
               {proofCopy.primaryCta.label}
             </Link>
-            <Link
-              href={proofCopy.secondaryCta.href}
-              className="rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-white/10"
-            >
-              {proofCopy.secondaryCta.label}
-            </Link>
           </div>
         </div>
       </section>
