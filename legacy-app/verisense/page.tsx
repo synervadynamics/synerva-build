@@ -5,11 +5,20 @@ import { copyVerisense } from "../../components/verisense/content";
 
 export const metadata = {
   title: "Verisense — Syndicate Dynamics",
-  description: copyVerisense.hero.subtitle
+  description: copyVerisense.hero.subtitle,
 };
 
 export default function VerisensePage() {
-  const { hero, overview, architecture, applications, process, outcomes, faq, cta } = copyVerisense;
+  const {
+    hero,
+    overview,
+    architecture,
+    applications,
+    process,
+    outcomes,
+    faq,
+    cta,
+  } = copyVerisense;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24 space-y-24">
@@ -55,17 +64,26 @@ export default function VerisensePage() {
             {overview.oneLiner}
           </h2>
           <ul className="space-y-3 text-sm text-mute sm:text-base">
-            {overview.bullets.map(point => (
+            {overview.bullets.map((point) => (
               <li key={point} className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[rgba(0,170,255,0.6)]" aria-hidden="true" />
+                <span
+                  className="mt-1 h-2 w-2 rounded-full bg-[rgba(0,170,255,0.6)]"
+                  aria-hidden="true"
+                />
                 <span className="leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>
         </FadeIn>
         <FadeIn className="grid gap-6 sm:grid-cols-2">
-          <VideoPlaceholder label="Signal capture workflow" ratio="aspect-[4/5]" />
-          <VideoPlaceholder label="Behavioural insight snapshot" ratio="aspect-[4/5]" />
+          <VideoPlaceholder
+            label="Signal capture workflow"
+            ratio="aspect-[4/5]"
+          />
+          <VideoPlaceholder
+            label="Behavioural insight snapshot"
+            ratio="aspect-[4/5]"
+          />
         </FadeIn>
       </section>
 
@@ -75,15 +93,18 @@ export default function VerisensePage() {
             Architecture Layers
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-mute sm:text-base">
-            Verisense fuses video, audio, and language signals into actionable intelligence—grounded in ethics and consent.
+            Verisense fuses video, audio, and language signals into actionable
+            intelligence—grounded in ethics and consent.
           </p>
         </FadeIn>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {architecture.map(layer => (
+          {architecture.map((layer) => (
             <FadeIn key={layer.title} className="h-full">
               <article className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-glass">
                 <header>
-                  <h3 className="text-lg font-semibold sm:text-xl">{layer.title}</h3>
+                  <h3 className="text-lg font-semibold sm:text-xl">
+                    {layer.title}
+                  </h3>
                   <p className="mt-3 text-sm text-mute sm:text-base leading-relaxed">
                     {layer.text}
                   </p>
@@ -107,15 +128,18 @@ export default function VerisensePage() {
             Where Verisense Operates
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-mute sm:text-base">
-            Precision measurement unlocks better coaching, hiring, negotiation, and learning—without crossing ethical lines.
+            Precision measurement unlocks better coaching, hiring, negotiation,
+            and learning—without crossing ethical lines.
           </p>
         </FadeIn>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {applications.map(item => (
+          {applications.map((item) => (
             <FadeIn key={item.title} className="h-full">
               <article className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-glass">
                 <header>
-                  <h3 className="text-lg font-semibold sm:text-xl">{item.title}</h3>
+                  <h3 className="text-lg font-semibold sm:text-xl">
+                    {item.title}
+                  </h3>
                   <p className="mt-3 text-sm text-mute sm:text-base leading-relaxed">
                     {item.text}
                   </p>
@@ -139,7 +163,8 @@ export default function VerisensePage() {
             Operating Loop
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-mute sm:text-base">
-            Capture signals, decode them, visualize the insight, and apply it—each step governed by consent and clarity.
+            Capture signals, decode them, visualize the insight, and apply
+            it—each step governed by consent and clarity.
           </p>
         </FadeIn>
         <div className="space-y-5">
@@ -153,7 +178,9 @@ export default function VerisensePage() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold sm:text-xl">{item.step}</h3>
+                  <h3 className="text-lg font-semibold sm:text-xl">
+                    {item.step}
+                  </h3>
                   <p className="mt-3 text-sm text-mute sm:text-base leading-relaxed">
                     {item.detail}
                   </p>
@@ -172,7 +199,7 @@ export default function VerisensePage() {
         </FadeIn>
         <FadeIn>
           <ul className="grid gap-4 sm:grid-cols-3">
-            {outcomes.bullets.map(item => (
+            {outcomes.bullets.map((item) => (
               <li
                 key={item}
                 className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 text-sm text-mute sm:text-base"
@@ -191,7 +218,7 @@ export default function VerisensePage() {
           </h2>
         </FadeIn>
         <div className="space-y-4">
-          {faq.map(item => (
+          {faq.map((item) => (
             <FadeIn key={item.q}>
               <details className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6">
                 <summary className="cursor-pointer text-base font-medium sm:text-lg">

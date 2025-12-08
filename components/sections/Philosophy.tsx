@@ -5,10 +5,15 @@ import VideoPlaceholder from "@/components/VideoPlaceholder";
 import { motion } from "framer-motion";
 import { copy } from "@/data/copy";
 
-const isVideoSrc = (src?: string) => Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
+const isVideoSrc = (src?: string) =>
+  Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 export default function Philosophy() {
-  const video = (copy?.philosophy?.video ?? null) as { src?: string; label?: string; poster?: string } | null;
+  const video = (copy?.philosophy?.video ?? null) as {
+    src?: string;
+    label?: string;
+    poster?: string;
+  } | null;
 
   return (
     <section id="philosophy" className="py-24 sm:py-28">
@@ -21,11 +26,18 @@ export default function Philosophy() {
           className="space-y-6"
         >
           <blockquote className="text-2xl font-medium leading-tight tracking-tight sm:text-3xl">
-            {(copy?.philosophy?.quote ?? "Clarity compounds. Every decision either sharpens the signal or feeds the noise.")}
+            {copy?.philosophy?.quote ??
+              "Clarity compounds. Every decision either sharpens the signal or feeds the noise."}
           </blockquote>
           <div className="space-y-4 text-mute">
-            <p>{(copy?.philosophy?.p1 ?? "Most teams ship more to feel progress. I ship less to create it.")}</p>
-            <p>{(copy?.philosophy?.p2 ?? "The result is momentum you can measure: fewer pages, faster paths, stronger story.")}</p>
+            <p>
+              {copy?.philosophy?.p1 ??
+                "Most teams ship more to feel progress. I ship less to create it."}
+            </p>
+            <p>
+              {copy?.philosophy?.p2 ??
+                "The result is momentum you can measure: fewer pages, faster paths, stronger story."}
+            </p>
           </div>
         </motion.div>
 
@@ -58,7 +70,10 @@ export default function Philosophy() {
                   sizes="(min-width: 1024px) 540px, (min-width: 768px) 640px, 100vw"
                 />
               )}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                aria-hidden="true"
+              />
             </div>
           ) : (
             <VideoPlaceholder label="Philosophy visual" />

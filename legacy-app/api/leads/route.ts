@@ -6,11 +6,16 @@ export async function POST(req: NextRequest) {
     const { name, email, message } = await req.json();
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
     }
 
     const supabase = getClient();
-    const { error } = await supabase.from("leads").insert([{ name, email, message }]);
+    const { error } = await supabase
+      .from("leads")
+      .insert([{ name, email, message }]);
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
@@ -18,7 +23,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true });
   } catch (err: any) {
-    return NextResponse.json({ error: err?.message || "Unexpected error" }, { status: 500 });
+    return NextResponse.json(
+      { error: err?.message || "Unexpected error" },
+      { status: 500 },
+    );
   }
 }
 
@@ -30,9 +38,13 @@ export async function GET() {
       .select("id,name,email,message,created_at")
       .order("created_at", { ascending: false });
 
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    if (error)
+      return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json(data);
   } catch (err: any) {
-    return NextResponse.json({ error: err?.message || "Unexpected error" }, { status: 500 });
+    return NextResponse.json(
+      { error: err?.message || "Unexpected error" },
+      { status: 500 },
+    );
   }
 }

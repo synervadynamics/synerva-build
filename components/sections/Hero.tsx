@@ -19,9 +19,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
             {copy.hero.title}
           </h1>
-          <p className="text-mute max-w-prose">
-            {copy.hero.subtitle}
-          </p>
+          <p className="text-mute max-w-prose">{copy.hero.subtitle}</p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="#contact"

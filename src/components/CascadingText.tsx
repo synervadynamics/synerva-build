@@ -9,7 +9,12 @@ type Props = {
   className?: string;
 };
 
-export const CascadingText = ({ items, direction = "left", speed = 60, className = "" }: Props) => {
+export const CascadingText = ({
+  items,
+  direction = "left",
+  speed = 60,
+  className = "",
+}: Props) => {
   const dataset = [...items, ...items];
   return (
     <div className={`cascade-outer ${className}`}>

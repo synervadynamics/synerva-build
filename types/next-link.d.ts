@@ -4,7 +4,10 @@ import type { LinkProps as NextLinkProps } from "next/dist/client/link";
 
 declare module "next/link" {
   export type FlexibleLinkProps<RouteType = string> = Omit<
-    DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
+    DetailedHTMLProps<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >,
     keyof NextLinkProps<RouteType>
   > &
     Omit<NextLinkProps<RouteType>, "href"> & {
@@ -12,5 +15,7 @@ declare module "next/link" {
       children?: ReactNode;
     };
 
-  export default function Link<RouteType = string>(props: FlexibleLinkProps<RouteType>): JSX.Element;
+  export default function Link<RouteType = string>(
+    props: FlexibleLinkProps<RouteType>,
+  ): JSX.Element;
 }

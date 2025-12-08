@@ -5,16 +5,20 @@ import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Syndicate Dynamics",
-  description: "Syndicate Dynamics"
+  description: "Syndicate Dynamics",
 };
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter"
+  variable: "--font-inter",
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen bg-bg text-ink antialiased selection:bg-accent/20 selection:text-ink">

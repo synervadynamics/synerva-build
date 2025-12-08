@@ -8,10 +8,10 @@ type SectionItem = {
 };
 
 const defaultSections: SectionItem[] = [
-  { id: "systems", label: "Systems" },
   { id: "deliver", label: "Deliver" },
-  { id: "labs", label: "Labs" },
-  { id: "art", label: "Art" }
+  { id: "systems", label: "Systems" },
+  { id: "philosophy", label: "Philosophy" },
+  { id: "roadmap", label: "Roadmap" },
 ];
 
 type Props = {
@@ -24,9 +24,9 @@ export const SectionIndex = ({ sections = defaultSections }: Props) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
+      (entries) => {
         const visible = entries
-          .filter(entry => entry.isIntersecting)
+          .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target.id) {
           setActive(visible.target.id);
@@ -34,11 +34,11 @@ export const SectionIndex = ({ sections = defaultSections }: Props) => {
       },
       {
         rootMargin: "-40% 0px -40% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1]
-      }
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
     );
 
-    resolvedSections.forEach(section => {
+    resolvedSections.forEach((section) => {
       const el = document.getElementById(section.id);
       if (el) observer.observe(el);
     });
@@ -48,18 +48,18 @@ export const SectionIndex = ({ sections = defaultSections }: Props) => {
 
   const items = useMemo(
     () =>
-      resolvedSections.map(item => ({
+      resolvedSections.map((item) => ({
         ...item,
-        isActive: active === item.id
+        isActive: active === item.id,
       })),
-    [resolvedSections, active]
+    [resolvedSections, active],
   );
 
   if (!items.length) return null;
 
   return (
     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/50">
-      {items.map(item => (
+      {items.map((item) => (
         <a
           key={item.id}
           href={`#${item.id}`}
@@ -71,7 +71,9 @@ export const SectionIndex = ({ sections = defaultSections }: Props) => {
           <span>{item.label}</span>
           <span
             className={`h-1 w-10 rounded-full bg-white/30 transition ${
-              item.isActive ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]" : ""
+              item.isActive
+                ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                : ""
             }`}
           />
         </a>

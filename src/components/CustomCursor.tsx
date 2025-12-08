@@ -22,7 +22,7 @@ const variants: Record<"default" | "link" | "accent", CursorVariant> = {
     borderColor: "rgba(255,255,255,0.35)",
     backgroundColor: "rgba(255,255,255,0.06)",
     halo: "rgba(255,255,255,0.08)",
-    core: "rgba(255,255,255,0.25)"
+    core: "rgba(255,255,255,0.25)",
   },
   link: {
     scale: 1.4,
@@ -31,7 +31,7 @@ const variants: Record<"default" | "link" | "accent", CursorVariant> = {
     borderColor: "rgba(255,255,255,0.75)",
     backgroundColor: "rgba(255,255,255,0.12)",
     halo: "rgba(132,196,255,0.16)",
-    core: "rgba(255,255,255,0.35)"
+    core: "rgba(255,255,255,0.35)",
   },
   accent: {
     scale: 1.8,
@@ -40,8 +40,8 @@ const variants: Record<"default" | "link" | "accent", CursorVariant> = {
     borderColor: "rgba(88,229,255,0.9)",
     backgroundColor: "rgba(88,229,255,0.18)",
     halo: "rgba(88,229,255,0.18)",
-    core: "rgba(255,255,255,0.48)"
-  }
+    core: "rgba(255,255,255,0.48)",
+  },
 };
 
 type VariantKey = keyof typeof variants;
@@ -54,7 +54,11 @@ export const CustomCursor = () => {
 
   const smoothX = useSpring(x, { stiffness: 320, damping: 40, mass: 0.5 });
   const smoothY = useSpring(y, { stiffness: 320, damping: 40, mass: 0.5 });
-  const haloSize = useSpring(speedScale, { stiffness: 220, damping: 30, mass: 0.4 });
+  const haloSize = useSpring(speedScale, {
+    stiffness: 220,
+    damping: 30,
+    mass: 0.4,
+  });
 
   useEffect(() => {
     let lastX = 0;
@@ -74,7 +78,9 @@ export const CustomCursor = () => {
       lastX = event.clientX;
       lastY = event.clientY;
       lastTime = now;
-      const target = (event.target as HTMLElement | null)?.closest<HTMLElement>("[data-cursor], a, button");
+      const target = (event.target as HTMLElement | null)?.closest<HTMLElement>(
+        "[data-cursor], a, button",
+      );
       if (target) {
         const attr = target.getAttribute("data-cursor");
         if (attr === "accent") {
@@ -103,9 +109,9 @@ export const CustomCursor = () => {
       translateY: smoothY,
       borderColor: variants[variant].borderColor,
       backgroundColor: variants[variant].backgroundColor,
-      mixBlendMode: variants[variant].mixBlendMode
+      mixBlendMode: variants[variant].mixBlendMode,
     }),
-    [smoothX, smoothY, variant]
+    [smoothX, smoothY, variant],
   );
 
   return (
@@ -122,7 +128,7 @@ export const CustomCursor = () => {
           background: `radial-gradient(circle, ${variants[variant].halo} 0%, transparent 70%)`,
           filter: "blur(16px)",
           mixBlendMode: "screen",
-          opacity: 0.8
+          opacity: 0.8,
         }}
         aria-hidden
       />
@@ -131,11 +137,11 @@ export const CustomCursor = () => {
         style={{
           ...style,
           boxShadow: `0 0 24px rgba(255,255,255,${0.08 * speedScale})`,
-          filter: `drop-shadow(0 0 20px rgba(255,255,255,${0.05 * speedScale}))`
+          filter: `drop-shadow(0 0 20px rgba(255,255,255,${0.05 * speedScale}))`,
         }}
         animate={{
           scale: variants[variant].scale * speedScale,
-          opacity: variants[variant].opacity
+          opacity: variants[variant].opacity,
         }}
         transition={{ type: "spring", stiffness: 240, damping: 26 }}
       >
@@ -143,7 +149,7 @@ export const CustomCursor = () => {
           className="absolute inset-[28%] rounded-full"
           style={{
             background: `radial-gradient(circle at 40% 40%, ${variants[variant].core} 0%, rgba(255,255,255,0.08) 70%, transparent 100%)`,
-            mixBlendMode: "screen"
+            mixBlendMode: "screen",
           }}
         />
       </motion.div>

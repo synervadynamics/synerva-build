@@ -37,8 +37,7 @@ const fileNames = [
   "F72B51A0-8552-45B6-A9C6-CC70972C5BC7.PNG",
 ];
 
-const captions = (quietDivineContent.captions ??
-  {}) as Record<string, string>;
+const captions = (quietDivineContent.captions ?? {}) as Record<string, string>;
 const explicitOrder = quietDivineContent.imageOrder ?? null;
 
 const cleanAltFromCaption = (caption: string): string => {
@@ -53,7 +52,13 @@ const buildImages = (): QuietDivineImage[] => {
     const alt = caption
       ? cleanAltFromCaption(caption)
       : `Quiet Divine artwork: ${id.replace(/[-_]/g, " ")}`;
-    return { id, fileName, src: `/the-quiet-divine-art/${fileName}`, alt, caption };
+    return {
+      id,
+      fileName,
+      src: `/the-quiet-divine-art/${fileName}`,
+      alt,
+      caption,
+    };
   });
 
   if (explicitOrder && explicitOrder.length > 0) {
@@ -72,7 +77,10 @@ const buildImages = (): QuietDivineImage[] => {
 export const quietDivineImages: QuietDivineImage[] = buildImages();
 
 export const quietDivineImagesById: Record<string, QuietDivineImage> =
-  quietDivineImages.reduce((acc, image) => {
-    acc[image.id] = image;
-    return acc;
-  }, {} as Record<string, QuietDivineImage>);
+  quietDivineImages.reduce(
+    (acc, image) => {
+      acc[image.id] = image;
+      return acc;
+    },
+    {} as Record<string, QuietDivineImage>,
+  );

@@ -4,8 +4,12 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p>© Syndicate Dynamics</p>
         <nav className="flex gap-4">
-          <a href="/legal/terms" className="hover:text-ink/90">Terms</a>
-          <a href="/legal/privacy" className="hover:text-ink/90">Privacy</a>
+          <a href="/legal/terms" className="hover:text-ink/90">
+            Terms
+          </a>
+          <a href="/legal/privacy" className="hover:text-ink/90">
+            Privacy
+          </a>
         </nav>
       </div>
     </footer>

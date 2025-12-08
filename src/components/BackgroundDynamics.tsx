@@ -14,13 +14,19 @@ export const BackgroundDynamics = () => {
     };
 
     const handleScroll = () => {
-      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
+      const scrolled =
+        window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
       root.style.setProperty("--grad-scroll", scrolled.toString());
     };
 
     window.addEventListener("pointermove", handlePointer, { passive: true });
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handlePointer(new PointerEvent("pointermove", { clientX: window.innerWidth / 2, clientY: window.innerHeight / 2 }));
+    handlePointer(
+      new PointerEvent("pointermove", {
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2,
+      }),
+    );
     handleScroll();
 
     return () => {

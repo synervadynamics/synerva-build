@@ -23,7 +23,7 @@ export default function Page() {
           id: `case-${idx}`,
           heading: teaser.title,
           body: teaser.line,
-          mediaLabel: teaser.title
+          mediaLabel: teaser.title,
         }))}
       />
       <Labs />

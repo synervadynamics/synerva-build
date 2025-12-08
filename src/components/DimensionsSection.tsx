@@ -15,7 +15,9 @@ export function DimensionsSection() {
     <section id="dimensions" className="py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
         <div className="space-y-5">
-          <p className="text-sm uppercase tracking-[0.28em] text-white/60">Synerva Dimensions</p>
+          <p className="text-sm uppercase tracking-[0.28em] text-white/60">
+            Synerva Dimensions
+          </p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
             {quietDivineContent.title ?? "Quiet Divine"}
           </h2>
@@ -59,7 +61,10 @@ export function DimensionsSection() {
           ) : (
             <div className="aspect-[3/4] w-full bg-white/5" />
           )}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-transparent" aria-hidden="true" />
+          <div
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-transparent"
+            aria-hidden="true"
+          />
         </div>
       </div>
     </section>

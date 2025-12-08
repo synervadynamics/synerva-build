@@ -5,7 +5,7 @@ import { Resend } from "resend";
 const schema = z.object({
   name: z.string().min(1).max(120),
   email: z.string().email(),
-  message: z.string().min(10).max(5000)
+  message: z.string().min(10).max(5000),
 });
 
 export async function POST(req: Request) {
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   if (!parsed.success) {
     return NextResponse.json(
       { error: "Invalid input", issues: parsed.error.flatten() },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -28,7 +28,10 @@ export async function POST(req: Request) {
   const key = process.env.RESEND_API_KEY;
 
   if (!key) {
-    return NextResponse.json({ status: "queued", transport: "stub" }, { status: 200 });
+    return NextResponse.json(
+      { status: "queued", transport: "stub" },
+      { status: 200 },
+    );
   }
 
   try {
@@ -38,10 +41,16 @@ export async function POST(req: Request) {
       to: ["hello@syndicatedynamics.dev"],
       replyTo: email,
       subject: `New contact from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
-    return NextResponse.json({ status: "queued", transport: "resend" }, { status: 200 });
+    return NextResponse.json(
+      { status: "queued", transport: "resend" },
+      { status: 200 },
+    );
   } catch {
-    return NextResponse.json({ status: "queued", transport: "stub" }, { status: 200 });
+    return NextResponse.json(
+      { status: "queued", transport: "stub" },
+      { status: 200 },
+    );
   }
 }

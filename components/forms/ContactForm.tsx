@@ -42,14 +42,19 @@ export default function ContactForm() {
       setState({ status: "success" });
       formRef.current?.reset();
     } catch (err: any) {
-      setState({ status: "error", message: err?.message || "Something went wrong." });
+      setState({
+        status: "error",
+        message: err?.message || "Something went wrong.",
+      });
     }
   }
 
   return (
     <form ref={formRef} onSubmit={onSubmit} className="space-y-4">
       <div>
-        <label htmlFor="name" className="block text-sm text-neutral-300">Name</label>
+        <label htmlFor="name" className="block text-sm text-neutral-300">
+          Name
+        </label>
         <input
           id="name"
           name="name"
@@ -61,7 +66,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm text-neutral-300">Email</label>
+        <label htmlFor="email" className="block text-sm text-neutral-300">
+          Email
+        </label>
         <input
           id="email"
           name="email"
@@ -73,7 +80,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm text-neutral-300">Message</label>
+        <label htmlFor="message" className="block text-sm text-neutral-300">
+          Message
+        </label>
         <textarea
           id="message"
           name="message"

@@ -26,7 +26,9 @@ export default function ImageCard({ image, onClick }: ImageCardProps) {
         </div>
       </button>
       {image.caption && (
-        <figcaption className="p-4 text-sm leading-relaxed text-white/75">{image.caption}</figcaption>
+        <figcaption className="p-4 text-sm leading-relaxed text-white/75">
+          {image.caption}
+        </figcaption>
       )}
     </figure>
   );

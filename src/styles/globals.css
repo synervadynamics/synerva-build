@@ -50,7 +50,14 @@
 
   body {
     color: var(--ink);
-    font-family: "Space Grotesk Variable", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family:
+      "Space Grotesk Variable",
+      "Inter",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -115,9 +122,22 @@
   .hero-gradient {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 15% 20%, rgba(88, 229, 255, 0.18), transparent 28%),
-      radial-gradient(circle at 80% 15%, rgba(255, 186, 73, 0.16), transparent 32%),
-      radial-gradient(circle at 50% 85%, rgba(122, 255, 190, 0.18), transparent 40%),
+    background:
+      radial-gradient(
+        circle at 15% 20%,
+        rgba(88, 229, 255, 0.18),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 80% 15%,
+        rgba(255, 186, 73, 0.16),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 50% 85%,
+        rgba(122, 255, 190, 0.18),
+        transparent 40%
+      ),
       linear-gradient(135deg, rgba(5, 7, 10, 0.9), rgba(3, 6, 13, 0.92));
     background-size: 200% 200%;
     animation: hero-flow 16s ease-in-out infinite alternate;
@@ -130,26 +150,65 @@
     position: fixed;
     inset: 0;
     background:
-      radial-gradient(circle at calc(var(--grad-x, 0.5) * 100%) calc(var(--grad-y, 0.5) * 100%), var(--g1, rgba(88, 229, 255, 0.22)), transparent 32%),
-      radial-gradient(circle at 18% calc((var(--grad-scroll, 0.5) * 60%)), var(--g2, rgba(255, 126, 189, 0.14)), transparent 38%),
-      radial-gradient(circle at 82% calc(30% + var(--grad-scroll, 0.5) * 42%), var(--g3, rgba(122, 255, 190, 0.16)), transparent 38%),
-      radial-gradient(circle at 45% 85%, var(--g4, rgba(255, 214, 102, 0.12)), transparent 45%),
-      radial-gradient(circle at 60% 25%, rgba(175, 144, 255, 0.12), transparent 40%),
-      radial-gradient(circle at 30% 78%, rgba(255, 132, 180, 0.1), transparent 42%),
+      radial-gradient(
+        circle at calc(var(--grad-x, 0.5) * 100%)
+          calc(var(--grad-y, 0.5) * 100%),
+        var(--g1, rgba(88, 229, 255, 0.22)),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 18% calc((var(--grad-scroll, 0.5) * 60%)),
+        var(--g2, rgba(255, 126, 189, 0.14)),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 82% calc(30% + var(--grad-scroll, 0.5) * 42%),
+        var(--g3, rgba(122, 255, 190, 0.16)),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 45% 85%,
+        var(--g4, rgba(255, 214, 102, 0.12)),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 60% 25%,
+        rgba(175, 144, 255, 0.12),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 30% 78%,
+        rgba(255, 132, 180, 0.1),
+        transparent 42%
+      ),
       linear-gradient(135deg, #02050b, #050910 40%, #04070f);
     background-size: 240% 240%;
-    animation: global-flow 48s ease-in-out infinite alternate, global-drift 95s linear infinite;
+    animation:
+      global-flow 48s ease-in-out infinite alternate,
+      global-drift 95s linear infinite;
     mix-blend-mode: screen;
     opacity: 0.92;
     z-index: 0;
     pointer-events: none;
   }
 
-
   .ambient-gradient {
-    background: radial-gradient(circle at 25% 20%, var(--ambient-c1, var(--g1, rgba(88, 229, 255, 0.22))), transparent 32%),
-      radial-gradient(circle at 75% 30%, var(--ambient-c2, var(--g2, rgba(255, 186, 73, 0.18))), transparent 36%),
-      radial-gradient(circle at 45% 80%, var(--ambient-c3, var(--g3, rgba(122, 255, 190, 0.16))), transparent 40%),
+    background:
+      radial-gradient(
+        circle at 25% 20%,
+        var(--ambient-c1, var(--g1, rgba(88, 229, 255, 0.22))),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 75% 30%,
+        var(--ambient-c2, var(--g2, rgba(255, 186, 73, 0.18))),
+        transparent 36%
+      ),
+      radial-gradient(
+        circle at 45% 80%,
+        var(--ambient-c3, var(--g3, rgba(122, 255, 190, 0.16))),
+        transparent 40%
+      ),
       linear-gradient(120deg, rgba(2, 5, 11, 0.9), rgba(6, 10, 15, 0.9));
     background-size: 220% 220%;
     animation: ambient-flow 26s ease-in-out infinite alternate;
@@ -175,10 +234,26 @@
     inset: -6%;
     pointer-events: none;
     background:
-      radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--ink), transparent 90%) 0%, transparent 42%),
-      radial-gradient(circle at 78% 14%, color-mix(in srgb, var(--ink), transparent 92%) 0%, transparent 46%),
-      radial-gradient(circle at 46% 84%, color-mix(in srgb, var(--ink), transparent 92%) 0%, transparent 50%),
-      radial-gradient(circle at 64% 42%, color-mix(in srgb, var(--ink), transparent 94%) 0%, transparent 54%),
+      radial-gradient(
+        circle at 18% 18%,
+        color-mix(in srgb, var(--ink), transparent 90%) 0%,
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 78% 14%,
+        color-mix(in srgb, var(--ink), transparent 92%) 0%,
+        transparent 46%
+      ),
+      radial-gradient(
+        circle at 46% 84%,
+        color-mix(in srgb, var(--ink), transparent 92%) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 64% 42%,
+        color-mix(in srgb, var(--ink), transparent 94%) 0%,
+        transparent 54%
+      ),
       linear-gradient(
         150deg,
         color-mix(in srgb, var(--ink), transparent 94%) 0%,
@@ -189,7 +264,9 @@
     mix-blend-mode: screen;
     opacity: 0.03;
     filter: saturate(calc(1 + (var(--cursor-speed, 0) * 0.02))) blur(1px);
-    transition: opacity 300ms ease, background 300ms ease;
+    transition:
+      opacity 300ms ease,
+      background 300ms ease;
     z-index: 0;
   }
 
@@ -211,7 +288,6 @@
   .deliver-clean {
     background: transparent !important;
   }
-
 
   @keyframes hero-flow {
     0% {
@@ -275,7 +351,6 @@
     }
   }
 
-
   .vertical-ribbon {
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -290,7 +365,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 50%);
+    background: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.15),
+      transparent 50%
+    );
     mix-blend-mode: screen;
     opacity: 0.3;
     pointer-events: none;
@@ -317,8 +396,16 @@
   .hero-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 20% 20%, rgba(88, 229, 255, 0.15), transparent 45%);
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.8) 45%, transparent 90%);
+    background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(88, 229, 255, 0.15),
+      transparent 45%
+    );
+    mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.8) 45%,
+      transparent 90%
+    );
     pointer-events: none;
   }
 

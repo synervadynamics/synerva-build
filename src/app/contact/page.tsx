@@ -7,7 +7,7 @@ const contactCopy = copy.pages.contact;
 export const metadata = buildPageMetadata({
   title: `Contact — ${contactCopy.heading}`,
   description: contactCopy.description,
-  path: "/contact"
+  path: "/contact",
 });
 
 export default function ContactPage() {

@@ -7,7 +7,7 @@ const casesPageCopy = copy.pages.cases;
 export const metadata = buildPageMetadata({
   title: `Case Studies — ${casesPageCopy.heading}`,
   description: casesPageCopy.description,
-  path: "/cases"
+  path: "/cases",
 });
 
 export default function CasesPage() {

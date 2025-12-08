@@ -5,11 +5,12 @@ import { copyAboutStudio } from "../../components/about/content";
 
 export const metadata = {
   title: "About — Syndicate Dynamics",
-  description: copyAboutStudio.hero.subtitle
+  description: copyAboutStudio.hero.subtitle,
 };
 
 export default function AboutPage() {
-  const { hero, overview, pillars, process, outcomes, faq, cta } = copyAboutStudio;
+  const { hero, overview, pillars, process, outcomes, faq, cta } =
+    copyAboutStudio;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24 space-y-24">
@@ -42,29 +43,35 @@ export default function AboutPage() {
           </div>
         </FadeIn>
         <FadeIn>
-          <VideoPlaceholder
-            label="Studio in motion"
-            ratio="aspect-[16/10]"
-          />
+          <VideoPlaceholder label="Studio in motion" ratio="aspect-[16/10]" />
         </FadeIn>
       </section>
 
-      <section id="overview" className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+      <section
+        id="overview"
+        className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
+      >
         <FadeIn className="space-y-6">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             {overview.oneLiner}
           </h2>
           <ul className="space-y-3 text-sm text-mute sm:text-base">
-            {overview.bullets.map(point => (
+            {overview.bullets.map((point) => (
               <li key={point} className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 rounded-full bg-[rgba(0,170,255,0.6)]" aria-hidden="true" />
+                <span
+                  className="mt-1 h-2 w-2 rounded-full bg-[rgba(0,170,255,0.6)]"
+                  aria-hidden="true"
+                />
                 <span className="leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>
         </FadeIn>
         <FadeIn className="grid gap-6 sm:grid-cols-2">
-          <VideoPlaceholder label="Strategy-to-execution bridge" ratio="aspect-[4/5]" />
+          <VideoPlaceholder
+            label="Strategy-to-execution bridge"
+            ratio="aspect-[4/5]"
+          />
           <VideoPlaceholder label="Proof loop dashboard" ratio="aspect-[4/5]" />
         </FadeIn>
       </section>
@@ -75,15 +82,18 @@ export default function AboutPage() {
             Studio Pillars
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-mute sm:text-base">
-            Five principles keep every engagement focused on lift, realism, and narrative discipline.
+            Five principles keep every engagement focused on lift, realism, and
+            narrative discipline.
           </p>
         </FadeIn>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {pillars.map(pillar => (
+          {pillars.map((pillar) => (
             <FadeIn key={pillar.title} className="h-full">
               <article className="flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-glass">
                 <header>
-                  <h3 className="text-lg font-semibold sm:text-xl">{pillar.title}</h3>
+                  <h3 className="text-lg font-semibold sm:text-xl">
+                    {pillar.title}
+                  </h3>
                   <p className="mt-3 text-sm text-mute sm:text-base leading-relaxed">
                     {pillar.text}
                   </p>
@@ -107,7 +117,8 @@ export default function AboutPage() {
             Operating Loop
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-mute sm:text-base">
-            Every engagement runs on the same loop—define, engineer, measure, refine—so work compounds instead of resetting.
+            Every engagement runs on the same loop—define, engineer, measure,
+            refine—so work compounds instead of resetting.
           </p>
         </FadeIn>
         <div className="space-y-5">
@@ -121,7 +132,9 @@ export default function AboutPage() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold sm:text-xl">{item.step}</h3>
+                  <h3 className="text-lg font-semibold sm:text-xl">
+                    {item.step}
+                  </h3>
                   <p className="mt-3 text-sm text-mute sm:text-base leading-relaxed">
                     {item.detail}
                   </p>
@@ -140,7 +153,7 @@ export default function AboutPage() {
         </FadeIn>
         <FadeIn>
           <ul className="grid gap-4 sm:grid-cols-3">
-            {outcomes.bullets.map(item => (
+            {outcomes.bullets.map((item) => (
               <li
                 key={item}
                 className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 text-sm text-mute sm:text-base"
@@ -159,7 +172,7 @@ export default function AboutPage() {
           </h2>
         </FadeIn>
         <div className="space-y-4">
-          {faq.map(item => (
+          {faq.map((item) => (
             <FadeIn key={item.q}>
               <details className="group rounded-3xl border border-white/10 bg-white/[0.03] p-6">
                 <summary className="cursor-pointer text-base font-medium sm:text-lg">

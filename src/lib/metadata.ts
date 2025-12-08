@@ -16,7 +16,12 @@ type MetadataInput = {
  * Creates a metadata object with sensible defaults for Synerva Dynamics pages.
  * Sharing the logic keeps Open Graph, Twitter, and canonical tags in sync.
  */
-export const buildPageMetadata = ({ title, description, path = "/", image }: MetadataInput): Metadata => {
+export const buildPageMetadata = ({
+  title,
+  description,
+  path = "/",
+  image,
+}: MetadataInput): Metadata => {
   const url = new URL(path, siteUrl).toString();
   const ogImage = image ?? defaultImage;
 
@@ -24,7 +29,7 @@ export const buildPageMetadata = ({ title, description, path = "/", image }: Met
     title,
     description,
     alternates: {
-      canonical: url
+      canonical: url,
     },
     openGraph: {
       title,
@@ -33,7 +38,7 @@ export const buildPageMetadata = ({ title, description, path = "/", image }: Met
       siteName,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
       type: "website",
-      locale: "en_CA"
+      locale: "en_CA",
     },
     twitter: {
       card: "summary_large_image",
@@ -41,7 +46,7 @@ export const buildPageMetadata = ({ title, description, path = "/", image }: Met
       creator: copy.meta.twitter,
       title,
       description,
-      images: [ogImage]
-    }
+      images: [ogImage],
+    },
   };
 };

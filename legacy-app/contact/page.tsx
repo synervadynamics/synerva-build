@@ -2,8 +2,7 @@ import ContactForm from "../../components/forms/ContactForm";
 
 export const metadata = {
   title: "Contact — Syndicate Dynamics",
-  description:
-    "Get in touch to start a project or ask a question.",
+  description: "Get in touch to start a project or ask a question.",
 };
 
 export default function ContactPage() {

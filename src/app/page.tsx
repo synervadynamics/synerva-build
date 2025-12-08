@@ -1,8 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Deliver } from "@/components/Deliver";
 import { Philosophy } from "@/components/Philosophy";
-import { Labs } from "@/components/Labs";
-import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -13,12 +11,11 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import { GradientOrchestrator } from "@/components/GradientOrchestrator";
 import { DimensionsSection } from "@/components/DimensionsSection";
-import { ArtShowcase } from "@/components/ArtShowcase";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
   description: copy.meta.description,
-  path: "/"
+  path: "/",
 });
 
 export default function HomePage() {
@@ -32,11 +29,8 @@ export default function HomePage() {
       <Systems />
       <Philosophy />
       <Roadmap />
-      <ArtShowcase />
       <DimensionsSection />
-      <Labs />
       <About />
-      <CTA />
       <Footer />
     </main>
   );

@@ -8,28 +8,35 @@ const renderParagraphs = (text: string | null) =>
     .map((para, idx) => <p key={idx}>{para}</p>);
 
 export default function QuietDivineNarrative() {
-  const { overview, narrative, themes, themesParagraph, philosophy } = quietDivineContent;
+  const { overview, narrative, themes, themesParagraph, philosophy } =
+    quietDivineContent;
 
   return (
     <section className="quiet-divine-narrative space-y-10">
       {overview && (
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Overview</h2>
-          <div className="space-y-4 text-base leading-relaxed text-white/80">{renderParagraphs(overview)}</div>
+          <div className="space-y-4 text-base leading-relaxed text-white/80">
+            {renderParagraphs(overview)}
+          </div>
         </div>
       )}
 
       {narrative && (
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Narrative</h2>
-          <div className="space-y-4 text-base leading-relaxed text-white/80">{renderParagraphs(narrative)}</div>
+          <div className="space-y-4 text-base leading-relaxed text-white/80">
+            {renderParagraphs(narrative)}
+          </div>
         </div>
       )}
 
       {themesParagraph ? (
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Themes</h2>
-          <p className="text-base leading-relaxed text-white/80">{themesParagraph}</p>
+          <p className="text-base leading-relaxed text-white/80">
+            {themesParagraph}
+          </p>
         </div>
       ) : Array.isArray(themes) && themes.length > 0 ? (
         <div className="narrative-block space-y-4">
@@ -45,7 +52,9 @@ export default function QuietDivineNarrative() {
       {philosophy && (
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Philosophy</h2>
-          <div className="space-y-4 text-base leading-relaxed text-white/80">{renderParagraphs(philosophy)}</div>
+          <div className="space-y-4 text-base leading-relaxed text-white/80">
+            {renderParagraphs(philosophy)}
+          </div>
         </div>
       )}
     </section>

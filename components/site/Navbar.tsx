@@ -11,7 +11,7 @@ const SECTIONS = [
   { id: "cases", label: "Case Studies" },
   { id: "labs", label: "Labs" },
   { id: "about", label: "About" },
-  { id: "contact", label: "Contact" }
+  { id: "contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -32,7 +32,7 @@ export default function Navbar() {
           setActive(visible[0].target.id);
         }
       },
-      { rootMargin: "-30% 0px -65% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { rootMargin: "-30% 0px -65% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
 
     SECTIONS.forEach(({ id }) => {
@@ -85,11 +85,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur supports-[backdrop-filter]:bg-black/30">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4">
         <Link href="#hero" className="flex items-center gap-3 py-4">
-            <img src="/logo.png" alt="" className="h-7 w-7 rounded" />
-            <span className="text-sm sm:text-base font-semibold tracking-tight">
-              Syndicate Dynamics
-            </span>
-          </Link>
+          <img src="/logo.png" alt="" className="h-7 w-7 rounded" />
+          <span className="text-sm sm:text-base font-semibold tracking-tight">
+            Syndicate Dynamics
+          </span>
+        </Link>
 
         <div className="hidden items-center gap-6 md:flex">
           <div className="relative">
@@ -128,13 +128,22 @@ export default function Navbar() {
                 systemsOpen ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">Explore</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                Explore
+              </p>
               <ul className="mt-3 space-y-3">
-                {Object.values(copy.products).map(product => (
+                {Object.values(copy.products).map((product) => (
                   <li key={product.slug}>
-                    <Link href={`/${product.slug}`} className="block rounded-xl border border-white/5 bg-white/5 px-3 py-2 transition hover:border-white/40">
-                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">{product.title}</p>
-                      <p className="text-[0.75rem] text-white/70">{product.tagline}</p>
+                    <Link
+                      href={`/${product.slug}`}
+                      className="block rounded-xl border border-white/5 bg-white/5 px-3 py-2 transition hover:border-white/40"
+                    >
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                        {product.title}
+                      </p>
+                      <p className="text-[0.75rem] text-white/70">
+                        {product.tagline}
+                      </p>
                     </Link>
                   </li>
                 ))}
@@ -151,7 +160,7 @@ export default function Navbar() {
 
         <button
           className="md:hidden"
-          onClick={() => setMobileOpen(prev => !prev)}
+          onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           <span className="block h-0.5 w-6 bg-white" />
@@ -159,7 +168,9 @@ export default function Navbar() {
           <span className="mt-2 block h-0.5 w-6 bg-white" />
         </button>
       </nav>
-      {!reduce && <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />}
+      {!reduce && (
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      )}
 
       <div
         className={`md:hidden ${
@@ -167,7 +178,7 @@ export default function Navbar() {
         } border-t border-white/10 bg-black/80 px-6 py-6 transition-opacity`}
       >
         <div className="space-y-4 text-sm">
-          {SECTIONS.map(section => (
+          {SECTIONS.map((section) => (
             <a
               key={section.id}
               href={`#${section.id}`}
@@ -178,8 +189,10 @@ export default function Navbar() {
             </a>
           ))}
           <div className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/50">Systems</p>
-            {Object.values(copy.products).map(product => (
+            <p className="text-xs uppercase tracking-[0.35em] text-white/50">
+              Systems
+            </p>
+            {Object.values(copy.products).map((product) => (
               <Link
                 key={product.slug}
                 href={`/${product.slug}`}

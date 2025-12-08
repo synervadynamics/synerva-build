@@ -9,7 +9,7 @@ const nextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   // Ensure Next.js treats this directory as the workspace root even if other lockfiles exist.
-  outputFileTracingRoot: __dirname
+  outputFileTracingRoot: __dirname,
 };
 
 export default nextConfig;

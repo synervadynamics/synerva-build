@@ -17,8 +17,8 @@ export const Philosophy = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.9, ease: easeCurve, staggerChildren: 0.15 }
-    }
+      transition: { duration: 0.9, ease: easeCurve, staggerChildren: 0.15 },
+    },
   };
 
   return (
@@ -33,12 +33,13 @@ export const Philosophy = () => {
         animate={inView ? "visible" : "hidden"}
         className="bubble-drift relative overflow-hidden rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(14,30,52,0.76)] via-[rgba(14,26,42,0.7)] to-[rgba(10,20,34,0.7)] p-8 text-white shadow-[0_52px_170px_-86px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-12 lg:p-14"
       >
-        <motion.div variants={variants} className="relative space-y-6 text-white">
+        <motion.div
+          variants={variants}
+          className="relative space-y-6 text-white"
+        >
           <blockquote className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
-            “{copy.philosophy.quote}”
+            {copy.philosophy.quote}
           </blockquote>
-          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p1}</p>
-          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p2}</p>
         </motion.div>
       </motion.div>
     </section>

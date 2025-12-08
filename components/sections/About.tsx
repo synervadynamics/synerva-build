@@ -16,7 +16,9 @@ export default function About() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="space-y-5"
         >
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">{copy.about.heading}</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+            {copy.about.heading}
+          </h2>
           <p className="text-mute">{copy.about.p1}</p>
           <p className="text-mute">{copy.about.p2}</p>
           {copy.about.href && copy.about.cta ? (
@@ -37,7 +39,10 @@ export default function About() {
           transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
           className="grid gap-4 sm:grid-cols-2"
         >
-          <VideoPlaceholder label="Studio walkthrough" className="sm:col-span-2" />
+          <VideoPlaceholder
+            label="Studio walkthrough"
+            className="sm:col-span-2"
+          />
           <VideoPlaceholder label="Prototype build" ratio="aspect-square" />
           <VideoPlaceholder label="System in motion" ratio="aspect-square" />
         </motion.div>

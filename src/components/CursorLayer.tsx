@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
   ssr: false,
-  loading: () => null
+  loading: () => null,
 });
 
 export const CursorLayer = () => {

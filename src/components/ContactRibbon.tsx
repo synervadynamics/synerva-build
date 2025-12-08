@@ -8,8 +8,15 @@ import { AmbientVideo } from "@/components/AmbientVideo";
 export const ContactRibbon = () => {
   const shouldReduceMotion = useReducedMotion();
   return (
-    <section id="contact" className="relative overflow-hidden px-6 pb-20 pt-14 sm:px-10 sm:pb-22 sm:pt-16 lg:px-16 lg:pb-24 lg:pt-18">
-      <AmbientVideo src="contact-ribbon" opacity={shouldReduceMotion ? 0.2 : 0.38} blur />
+    <section
+      id="contact"
+      className="relative overflow-hidden px-6 pb-20 pt-14 sm:px-10 sm:pb-22 sm:pt-16 lg:px-16 lg:pb-24 lg:pt-18"
+    >
+      <AmbientVideo
+        src="contact-ribbon"
+        opacity={shouldReduceMotion ? 0.2 : 0.38}
+        blur
+      />
       <motion.div
         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
         whileInView={{ opacity: 1, y: 0 }}

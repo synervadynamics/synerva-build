@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import * as React from "react";
 
-export default function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export default function FadeIn({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <motion.div
       className={className}

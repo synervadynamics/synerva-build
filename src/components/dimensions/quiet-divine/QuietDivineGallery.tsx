@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
@@ -16,7 +16,7 @@ export default function QuietDivineGallery() {
         }
         return ao - bo;
       }),
-    []
+    [],
   );
 
   const [isOpen, setIsOpen] = useState(false);
@@ -85,7 +85,11 @@ export default function QuietDivineGallery() {
       <h2 className="text-2xl font-semibold">Gallery</h2>
       <div className="qd-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {images.map((image, idx) => (
-          <ImageCard key={image.id} image={image} onClick={() => openLightbox(idx)} />
+          <ImageCard
+            key={image.id}
+            image={image}
+            onClick={() => openLightbox(idx)}
+          />
         ))}
       </div>
 
@@ -105,7 +109,9 @@ export default function QuietDivineGallery() {
           <div className="relative z-10 w-full max-w-5xl space-y-4">
             <div
               className={`relative mx-auto w-full max-h-[80vh] rounded-2xl border border-white/15 bg-black/50 shadow-[0_18px_48px_rgba(0,0,0,0.45)] ${
-                isZoomed ? "overflow-auto cursor-grab active:cursor-grabbing" : "overflow-hidden"
+                isZoomed
+                  ? "overflow-auto cursor-grab active:cursor-grabbing"
+                  : "overflow-hidden"
               }`}
             >
               <div className="relative w-full aspect-[3/4] max-h-[80vh]">
@@ -118,7 +124,10 @@ export default function QuietDivineGallery() {
                   priority
                 />
               </div>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" aria-hidden />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"
+                aria-hidden
+              />
 
               <div className="absolute inset-y-0 left-0 flex items-center px-3">
                 <button
@@ -151,7 +160,9 @@ export default function QuietDivineGallery() {
             </div>
 
             <div className="flex items-center justify-between gap-3">
-              <div className="text-sm text-white/70 truncate">{activeImage.caption ?? activeImage.alt}</div>
+              <div className="text-sm text-white/70 truncate">
+                {activeImage.caption ?? activeImage.alt}
+              </div>
               <div className="flex items-center gap-2">
                 <button
                   type="button"

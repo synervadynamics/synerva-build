@@ -18,9 +18,16 @@ export const metadata: Metadata = {
     description: copy.meta.description,
     url: copy.meta.url,
     siteName: "Synerva Dynamics",
-    images: [{ url: copy.meta.ogImage, width: 1200, height: 630, alt: copy.meta.title }],
+    images: [
+      {
+        url: copy.meta.ogImage,
+        width: 1200,
+        height: 630,
+        alt: copy.meta.title,
+      },
+    ],
     type: "website",
-    locale: "en_CA"
+    locale: "en_CA",
   },
   twitter: {
     card: "summary_large_image",
@@ -28,11 +35,11 @@ export const metadata: Metadata = {
     creator: copy.meta.twitter,
     title: copy.meta.title,
     description: copy.meta.description,
-    images: [copy.meta.ogImage]
+    images: [copy.meta.ogImage],
   },
   alternates: {
-    canonical: copy.meta.url
-  }
+    canonical: copy.meta.url,
+  },
 };
 
 const schemaOrg = {
@@ -48,8 +55,8 @@ const schemaOrg = {
       telephone: copy.global.contact.phone,
       contactType: "customer support",
       areaServed: "CA",
-      availableLanguage: ["English", "French"]
-    }
+      availableLanguage: ["English", "French"],
+    },
   ],
   address: {
     "@type": "PostalAddress",
@@ -57,8 +64,8 @@ const schemaOrg = {
     addressLocality: "St. Catharines",
     addressRegion: "ON",
     postalCode: "L2R 3M7",
-    addressCountry: "CA"
-  }
+    addressCountry: "CA",
+  },
 };
 
 const breadcrumbSchema = {
@@ -69,34 +76,37 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: copy.meta.url
+      item: copy.meta.url,
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: "Labs",
-      item: `${copy.meta.url}/labs`
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
       name: "Contact",
-      item: `${copy.meta.url}/contact`
-    }
-  ]
+      item: `${copy.meta.url}/contact`,
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-CA" suppressHydrationWarning>
-      <body className="bg-[var(--bg)] text-white antialiased" suppressHydrationWarning>
+      <body
+        className="bg-[var(--bg)] text-white antialiased"
+        suppressHydrationWarning
+      >
         <div className="global-backdrop" aria-hidden />
         <div className="global-gradient" aria-hidden />
         <BackgroundDynamics />
         <CursorLayer />
         <div className="page-shell">{children}</div>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       </body>
     </html>
   );

@@ -8,6 +8,6 @@ export const metadata: Metadata = {
     title: "The Quiet Divine — Synerva Dimensions",
     description:
       "Portraits that render inner architecture—pressure, light, and reflection—inside Synerva’s Series 001.",
-    type: "article"
-  }
+    type: "article",
+  },
 };

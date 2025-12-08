@@ -20,7 +20,14 @@ const hueFromString = (input: string) => {
   return (Math.abs(hash) % 360) / 360;
 };
 
-export const AmbientVideo = ({ src, className = "", opacity = 0.65, blur = false, bleed = 15, style }: Props) => {
+export const AmbientVideo = ({
+  src,
+  className = "",
+  opacity = 0.65,
+  blur = false,
+  bleed = 15,
+  style,
+}: Props) => {
   const baseHue = hueFromString(src);
   const c1 = `hsla(${Math.round(baseHue * 360)}, 85%, 62%, ${opacity * 0.6})`;
   const c2 = `hsla(${Math.round(((baseHue + 0.2) % 1) * 360)}, 80%, 55%, ${opacity * 0.5})`;
@@ -36,7 +43,7 @@ export const AmbientVideo = ({ src, className = "", opacity = 0.65, blur = false
     bottom: `-${bleed}%`,
     filter: blur ? "blur(12px)" : undefined,
     transform: blur ? "scale(1.05)" : undefined,
-    ...style
+    ...style,
   } as CSSProperties;
 
   return (

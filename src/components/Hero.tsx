@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionTemplate,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { copy } from "@/data/copy";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -11,10 +17,10 @@ import { SectionIndex } from "@/components/SectionIndex";
 import type { Easing } from "framer-motion";
 
 const sectionMap = [
-  { id: "systems", label: "Systems" },
   { id: "deliver", label: "Deliverables" },
-  { id: "labs", label: "Labs" },
-  { id: "art", label: "Art" }
+  { id: "systems", label: "Systems" },
+  { id: "philosophy", label: "Philosophy" },
+  { id: "roadmap", label: "Roadmap" },
 ];
 
 export const Hero = () => {
@@ -24,7 +30,7 @@ export const Hero = () => {
   const [mounted, setMounted] = useState(false);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   const sheen = useTransform(scrollYProgress, [0, 1], ["30%", "80%"]);
@@ -39,13 +45,17 @@ export const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.9, ease: easeCurve, staggerChildren: 0.1 }
-    }
+      transition: { duration: 0.9, ease: easeCurve, staggerChildren: 0.1 },
+    },
   };
 
   const child = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 32 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: easeCurve } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.9, ease: easeCurve },
+    },
   };
 
   const setRefs = (node: HTMLElement | null) => {
@@ -72,18 +82,25 @@ export const Hero = () => {
           className="pointer-events-none absolute inset-0"
           suppressHydrationWarning
           style={{
-            background: shouldReduceMotion ? undefined : sheenBackground
+            background: shouldReduceMotion ? undefined : sheenBackground,
           }}
         />
       ) : null}
       <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
         <header className="flex flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between">
-          <Link href="/" className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white">
+          <Link
+            href="/"
+            className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+          >
             Synerva Dynamics
           </Link>
           <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-            {copy.global.nav.map(item => (
-              <Link key={item.href} href={item.href} className="transition hover:text-white">
+            {copy.global.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="transition hover:text-white"
+              >
                 {item.label}
               </Link>
             ))}
@@ -98,7 +115,10 @@ export const Hero = () => {
         >
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div className="flex flex-col gap-6 text-balance">
-              <motion.p variants={child} className="text-xs uppercase tracking-[0.5em] text-white/60">
+              <motion.p
+                variants={child}
+                className="text-xs uppercase tracking-[0.5em] text-white/60"
+              >
                 {copy.hero.eyebrow}
               </motion.p>
               <motion.h1
@@ -117,7 +137,10 @@ export const Hero = () => {
                   </span>
                 ))}
               </motion.h1>
-              <motion.p variants={child} className="max-w-3xl text-lg text-white/80 sm:text-xl">
+              <motion.p
+                variants={child}
+                className="max-w-3xl text-lg text-white/80 sm:text-xl"
+              >
                 {copy.hero.subhead}
               </motion.p>
               <motion.div variants={child} className="flex flex-wrap gap-4">
@@ -138,7 +161,10 @@ export const Hero = () => {
               </motion.div>
             </div>
 
-            <motion.div variants={child} className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
+            <motion.div
+              variants={child}
+              className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl"
+            >
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
@@ -152,10 +178,6 @@ export const Hero = () => {
                   />
                 </div>
               </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/65">
-                {copy.hero.spotlight.label}
-              </p>
-              <p className="text-sm text-white/78">{copy.hero.spotlight.description}</p>
             </motion.div>
           </div>
 
@@ -165,16 +187,33 @@ export const Hero = () => {
                 key={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : undefined}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.6, ease: easeCurve }}
+                transition={{
+                  delay: 0.3 + index * 0.1,
+                  duration: 0.6,
+                  ease: easeCurve,
+                }}
                 className="rounded-2xl border border-white/12 bg-transparent px-6 py-4 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl"
               >
-                <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">{label}</p>
-                <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-nowrap sm:text-sm">{value}</p>
+                <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
+                  {label}
+                </p>
+                <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-nowrap sm:text-sm">
+                  {value}
+                </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
-        <CascadingText className="mt-8 pt-6" items={["Brand orchestration", "Web systems", "Content labs", "Automation loops", "Analytics clarity"]} speed={70} />
+        <CascadingText
+          className="mt-8 pt-6"
+          items={[
+            "Brand orchestration",
+            "Web systems",
+            "Automation loops",
+            "Analytics clarity",
+          ]}
+          speed={70}
+        />
       </div>
     </section>
   );
