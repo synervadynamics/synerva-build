@@ -416,12 +416,103 @@ export const copy = {
     ],
   },
   philosophy: {
-    quote:
-      "Clarity compounds. Every decision either sharpens the signal or feeds the noise.",
+    quote: "Clarity compounds. Every decision either sharpens the signal or feeds the noise.",
+    p1:
+      "Most teams confuse motion with momentum. Synerva measures movement by lift alone. Every project pinpoints the smallest shift that moves a metric, then makes that shift inevitable through design, rhythm, and evidence.",
+    p2: "Fewer pages. Faster load times. Sharper story. Outcomes verified, never assumed.\nPrecision isn’t a vibe here—it’s the operating law.",
     video: {
       src: "/visuals/hero/synerva-hero-shot-2025.png",
       alt: "Clarity compounds visual",
     },
+  },
+  labs: {
+    heading: "Labs & Ongoing Projects",
+    desc: "Depth over volume. Labs turn raw experiments into polished systems that ship cleanly and scale quickly.",
+    feature: {
+      title: "The Rockstar Server Playbook",
+      hook: "A Survival Gospel for High Pressure Worlds",
+      blurb:
+        "Forged from fifteen years in the high-pressure hospitality trenches, The Rockstar Server Playbook is a cinematic, psychological field manual for anyone who has carried grace through chaos and come out stronger. It’s part memoir, part systems guide, part war story anthology—a living blueprint for handling pressure with precision and performance in a world where clarity isn’t optional, it’s oxygen.",
+      ctaPrimary: "Read the Playbook",
+      ctaPrimaryHref: "/labs#preview-access",
+      ctaSecondary: "View all Labs",
+      video: {
+        src: "/rockstar-cover.png",
+        alt: "The Rockstar Server Playbook cover artwork",
+      },
+      image: {
+        src: "/rockstar-cover.png",
+        alt: "The Rockstar Server Playbook cover artwork",
+      },
+    },
+    rockstarPlaybook: {
+      eyebrow: "A Survival Gospel for High Pressure Worlds",
+      title: "The Rockstar Server Playbook",
+      description:
+        "Forged from fifteen years in the high-pressure hospitality trenches, The Rockstar Server Playbook is a cinematic, psychological field manual for anyone who has carried grace through chaos and come out stronger. It’s part memoir, part systems guide, part war story anthology—a living blueprint for handling pressure with precision and performance in a world where clarity isn’t optional, it’s oxygen.",
+      highlights: [
+        "Lessons forged in real crisis, timing, empathy, and split second judgment.",
+        "A narrative voice that blends psychology, humor, and lived expertise.",
+        "A framework for performing under pressure without losing humanity.",
+      ],
+      stats: [
+        {
+          label: "Format",
+          value:
+            "A thirty chapter cinematic manual blending narrative, psychology, and tactical systems.",
+        },
+        {
+          label: "Cadence",
+          value:
+            "Written in the rhythm of a Saturday night rush, tight, fast, and unignorable.",
+        },
+        {
+          label: "Focus",
+          value: "Grace under fire, emotional craftsmanship, and the invisible skills behind great service.",
+        },
+      ],
+      ctaPrimary: { label: "Read the Playbook", href: "/labs#preview-access" },
+      footnote: "Born in live hospitality labs and engineered to apply far beyond them.",
+    },
+    secondary: [] as {
+      title: string;
+      desc: string;
+      cta: string;
+      href: string;
+      video?: { src: string; label?: string };
+    }[],
+    reflectiveDose: {
+      eyebrow: "A Journal for Minds That Want Their Momentum Back",
+      title: "The Reflective Dose",
+      description:
+        "The Reflective Dose is a guided wellness journal for those who think deeply, feel intensely, and want their habits to finally work in their favor. Designed with psychological insight and structured reflection, it helps users track thought patterns, emotional rhythms, and micro-behaviors with clarity instead of judgment. This isn’t a diary—it’s a calibration tool for a mind that craves steadiness and direction.",
+      highlights: [
+        "Structured prompts that transform reflection into momentum (not rumination)",
+        "Pattern-tracking that reveals emotional and cognitive trends over time",
+        "A compassionate design philosophy rooted in clarity, dignity, and self-understanding",
+      ],
+      stats: [
+        {
+          label: "Cadence",
+          value: "Built for steady, sustainable reflection at any pace.",
+        },
+        {
+          label: "Format",
+          value: "A guided journal with psychological prompts, pattern maps, and micro-tracking tools.",
+        },
+        {
+          label: "Focus",
+          value: "Emotional clarity, behavioral awareness, and the shift from overwhelm to grounded direction.",
+        },
+      ],
+      image: {
+        src: "/brand/reflective-dose-cover.png",
+        alt: "Cover of The Reflective Dose journal",
+      },
+      ctaPrimary: { label: "Explore The Reflective Dose", href: "/labs#preview-access" },
+      footnote: "(Born in live hospitality labs and engineered to apply far beyond them.)",
+    },
+    closing: "Every Lab begins as an irritation worth solving, and ends as a tested asset ready to deploy.",
   },
   cases: {
     heading: "Case Studies: When Systems Replace Struggle",

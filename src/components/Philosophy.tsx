@@ -40,6 +40,8 @@ export const Philosophy = () => {
           <blockquote className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
             {copy.philosophy.quote}
           </blockquote>
+          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p1}</p>
+          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p2}</p>
         </motion.div>
       </motion.div>
     </section>
