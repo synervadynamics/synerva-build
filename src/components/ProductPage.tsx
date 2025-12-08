@@ -43,6 +43,13 @@ export const ProductPage = ({
         useCases?: { title: string; description: string }[];
       }
     ).useCases ?? [];
+  const activationNote =
+    (
+      product as ProductEntry & {
+        activationNote?: string;
+      }
+    ).activationNote ??
+    "Each deployment is staged with telemetry, governance, and QA loops so teams can trust the system immediately. Modules plug into existing CRM, CMS, and analytics stacks without replatforming.";
   const proofPoints =
     (product as ProductEntry & { proofPoints?: string[] }).proofPoints ?? [];
 
@@ -207,11 +214,7 @@ export const ProductPage = ({
             <p className="text-xs uppercase tracking-[0.4em] text-white/70">
               Activation notes
             </p>
-            <p className="text-base text-white/70">
-              Each deployment is staged with telemetry, governance, and QA loops
-              so teams can trust the system immediately. Modules plug into
-              existing CRM, CMS, and analytics stacks without replatforming.
-            </p>
+            <p className="text-base text-white/70">{activationNote}</p>
             <Link
               href={product.cta.href}
               className="inline-flex rounded-full border border-white/60 px-6 py-3 text-sm uppercase tracking-wide hover:bg-white/10"

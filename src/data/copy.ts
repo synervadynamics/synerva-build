@@ -128,30 +128,30 @@ export const copy = {
       title: "Lucentra",
       tagline: "The strategy brain your team has been missing.",
       description: [
-        "Lucentra is the strategic brain your team has been missing. It absorbs your voice, your standards, even your psychology, and centralizes them into one adaptive system that handles the complexity you shouldn’t have to. Instead of shuffling between tools, documents, and fractured processes, Lucentra becomes the cognitive architecture that thinks alongside you. It gives a small team the clarity, speed, and coherence of a fully staffed strategy department.",
+        "Lucentra is the strategic brain your team has been missing. It absorbs your voice, your standards, even your psychology, and centralizes them into one adaptive system that handles the complexity you shouldn’t have to. Instead of shuffling between tools, drafts, and disjointed decisions, Lucentra becomes the cognitive architecture that thinks alongside you. It gives a small creative or leadership team the coherence and clarity of a fully staffed strategic department, without the drag of committees or translation layers.",
       ],
       proof:
         "Deployed as the living brief for every engagement within 14 days.",
       highlights: [
-        "Voice DNA modeling + editorial QA loops",
-        "Scenario modeling + decision levers",
-        "Data-driven automation map",
+        "Voice understanding and narrative alignment",
+        "Scenario mapping and decision support",
+        "Quiet, accurate delegation of operational strain",
       ],
       useCases: [
         {
-          title: "Brand voice governance",
+          title: "Voice alignment",
           description:
-            "Keep every writer, prompt, and deck aligned to one living voice DNA.",
+            "Keep writing, messaging, and creative direction anchored to one living standard rather than scattered intuition.",
         },
         {
-          title: "Campaign decision matrix",
+          title: "Launch clarity",
           description:
-            "Model scenarios and launch sequences with telemetry attached to every move.",
+            "Model release sequences without the guesswork, and understand what actually matters before motion begins.",
         },
         {
-          title: "Editorial QA & briefs",
+          title: "Editorial support",
           description:
-            "Generate briefs, enforce QA gates, and cut approval cycles from days to hours.",
+            "Generate briefs, simplify QA, and reduce cycles not through pressure, but through precision.",
         },
       ],
       proofPoints: [
@@ -161,18 +161,18 @@ export const copy = {
       ],
       demos: [
         {
-          label: "Voice QA",
+          label: "Voice calibration",
           detail:
-            "Run a headline through Lucentra’s voice grid and see flagged tone issues instantly.",
+            "If a draft misses tone or intent, Lucentra suggests adjustments that still sound like you.",
           sample:
-            "“Launch the new feature today.” → Tone: flat, missing urgency. Suggested: “Ship the new feature today—customers are waiting.”",
+            "Draft misses urgency → Lucentra proposes sharper language that still matches your cadence.",
         },
         {
-          label: "Scenario modeling",
+          label: "Scenario preview",
           detail:
-            "Explore a launch path and see telemetry hooks automatically applied.",
+            "Present two viable paths forward—not abstractions, but choices with consequences clearly drawn.",
           sample:
-            "Scenario: Product launch. Lucentra outputs: primary CTA, channel mix, QA gates, and measurement plan.",
+            "Two launch paths → Each shows timing, dependencies, and risk contours.",
         },
       ],
       image: {
@@ -180,6 +180,8 @@ export const copy = {
         label: "Lucentra crest and mark",
       },
       cta: { label: "See What Lucentra Makes Possible", href: "/contact" },
+      activationNote:
+        "Lucentra works cleanly alongside existing workflows. No upheaval. No re-education program. Just a quieter, more coordinated brain to share the load.",
       accent: "from-cyan-500/20 via-blue-900/30 to-black",
     },
     verisense: {
@@ -188,30 +190,30 @@ export const copy = {
       title: "Verisense",
       tagline: "Insight beyond words.",
       description: [
-        "Verisense decodes the emotional and psychological undercurrents in communication—identifying tone, motive, authenticity signals, and persuasion patterns. It turns everyday conversations into structured intelligence, giving leaders, educators, and decision-makers a depth of insight that usually comes only with years of experience. When clarity is the difference between momentum and misfire, Verisense becomes your quiet, decisive advantage.",
+        "Verisense reads communication at its true depth—tone, intent, tension, resolve, hesitation, conviction. It doesn’t chase transcripts; it listens to the human underneath them. It turns everyday exchanges into a clearer read of what someone is actually saying, what they are trying not to say, and what sits beneath both. For leaders, educators, interviewers, and advisors, Verisense becomes the quiet interpreter of subtext and emotional weight.",
       ],
       proof:
         "Combined video and text analysis with consolidated sentiment reports for executive review.",
       highlights: [
-        "Speech & presence diagnostics",
-        "Leadership coaching dossiers",
-        "Feedback loops integrated into CRM",
+        "Speech and presence diagnostics",
+        "Patterns of emphasis, avoidance, certainty, and doubt",
+        "Foundations for better listening and more humane leadership",
       ],
       useCases: [
         {
-          title: "Hiring with confidence",
+          title: "Hiring with clarity",
           description:
-            "Analyze interviews for authenticity signals and conviction to speed confident offers.",
+            "You don’t judge delivery—you understand intent.",
         },
         {
-          title: "Sales call coaching",
+          title: "Coaching conversations",
           description:
-            "Surface persuasive cues and objection patterns to coach reps in real time.",
+            "Find the signal beneath politeness, pressure, or performance.",
         },
         {
-          title: "Leadership feedback loops",
+          title: "Leadership communication",
           description:
-            "Give execs unfiltered readouts on tone, clarity, and reception before all-hands or board updates.",
+            "Craft messages that land without bruise or distortion.",
         },
       ],
       proofPoints: [
@@ -223,16 +225,16 @@ export const copy = {
         {
           label: "Tone read",
           detail:
-            "See how Verisense scores confidence and authenticity on a sample sentence.",
+            "“I think this could work.” might register as tentative when the moment needs steadiness. Verisense surfaces that gap with care.",
           sample:
-            "Input: “I think this could work.” → Confidence: 42%; Authenticity: 61%; Recommended adjustment: direct commitment.",
+            "Input is flagged for tentativeness → Verisense recommends a steadier commitment without losing sincerity.",
         },
         {
-          label: "Call review",
+          label: "Conversation replay",
           detail:
-            "Preview a call snippet with sentiment and persuasion markers annotated.",
+            "It shows where certainty rose, where tension slipped in, and where understanding faltered.",
           sample:
-            "[00:12] Tone: Warm; Objection risk: Low; Cue: Agreement pattern detected.",
+            "Timeline markers highlight confidence spikes, hesitation, and points of misalignment.",
         },
       ],
       image: {
@@ -240,38 +242,40 @@ export const copy = {
         label: "Verisense crest and mark",
       },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
+      activationNote:
+        "Verisense doesn’t grade people—it reveals context. The goal is not control; it is clarity without harm.",
       accent: "from-rose-500/20 via-purple-900/30 to-black",
     },
     synervaOs: {
       slug: "synerva-os",
       eyebrow: "Infrastructure That Scales Without More People",
       title: "Synerva OS",
-      tagline: "Your ops, supercharged.",
+      tagline: "Your ops, simplified.",
       description: [
-        "Synerva OS is the backbone of the entire ecosystem—a modular environment that lets organizations deploy Synerva’s automation engines as their own. Agencies, consultants, studios, and in-house teams can install Synerva OS internally and expand without adding headcount. It’s the architecture behind Synerva’s long-term model: scalable intellectual property, ready-to-license frameworks, and systems engineered to multiply capability instead of cost.",
+        "Synerva OS is the backbone of the entire ecosystem: a modular environment that lets teams extend their capability without extending their headcount. It isn’t another dashboard or formal management layer. It is the silent chassis that carries your systems, commitments, timelines, outputs, and responsibilities without demanding more personnel to hold them together. Synerva OS is what remains steady when growth arrives faster than bodies do.",
       ],
       proof:
         "Licensable playbooks and CASL-compliant communication layers ready in roadmap phases two and three.",
       highlights: [
-        "Revenue building blocks + consent logic",
-        "Cross-team governance dashboards",
-        "Airtight data discipline across Canadian standards",
+        "Scalable internal frameworks",
+        "Quiet delegation of operational strain",
+        "A structure built to carry complexity without theatrics",
       ],
       useCases: [
         {
-          title: "Agency-in-a-box",
+          title: "Capacity extension",
           description:
-            "Deploy prebuilt automation playbooks to serve more clients without new headcount.",
+            "Serve more clients without sacrificing accuracy or sleep.",
         },
         {
-          title: "Governance & compliance",
+          title: "Operational calm",
           description:
-            "CASL-safe outreach, consent logic, and audit trails built into every flow.",
+            "Remove the friction that usually arrives with scale.",
         },
         {
-          title: "Cross-team telemetry",
+          title: "Unified workflow",
           description:
-            "Unify CRM, web, and campaign data into dashboards everyone trusts.",
+            "Bring campaigns, communication, and commitments into one breathable structure.",
         },
       ],
       proofPoints: [
@@ -283,16 +287,15 @@ export const copy = {
         {
           label: "Automation map",
           detail:
-            "See how a lead triggers multi-step ops with consent checks embedded.",
+            "Every stage clear, every handoff clean, without the brittle overhead of procedure worship.",
           sample:
-            "Lead → Double opt-in → Scoring → Routing → Audit log with timestamps.",
+            "Lead to delivery chain shows each handoff with context instead of bureaucracy.",
         },
         {
-          label: "Revenue primitives",
-          detail:
-            "Preview how pricing logic and consent layers sit inside a campaign flow.",
+          label: "Flow clarity",
+          detail: "Not more management, just less noise.",
           sample:
-            "Offer → Pricing variant A/B → Consent check → CRM update → Attribution note.",
+            "Execution flow spelled out simply so teams see responsibility without new layers of process.",
         },
       ],
       image: {
@@ -300,6 +303,8 @@ export const copy = {
         label: "Synerva OS crest and mark",
       },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },
+      activationNote:
+        "The OS slots into existing rhythms. Nothing breaks. Nothing is reinvented for the sake of reinvention. This is infrastructure as relief, not performance.",
       accent: "from-amber-400/20 via-slate-900/40 to-black",
     },
   },
