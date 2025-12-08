@@ -87,7 +87,7 @@ export const copy = {
         proof: "Delivers combined video and text analysis with consolidated sentiment reports for executive review.",
         highlights: ["Speech & presence diagnostics", "Tailored leadership coaching dossiers", "Feedback loops integrated into CRM"],
         image: {
-          src: "/new-hero-shots/verisense-hero-shot-new-2.jpg",
+          src: "/new-hero-shots/verisense-hero-shot-new-3.png",
           label: "Verisense crest and mark"
         }
       },
