@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Systems } from "@/components/Systems";
+import { Labs } from "@/components/Labs";
 import { Roadmap } from "@/components/Roadmap";
 import { Narrative } from "@/components/Narrative";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <Narrative />
       <Deliver />
       <Systems />
+      <Labs />
       <Philosophy />
       <Roadmap />
       <DimensionsSection />
