@@ -165,14 +165,14 @@ export const copy = {
           detail:
             "If a draft misses tone or intent, Lucentra suggests adjustments that still sound like you.",
           sample:
-            "Draft misses urgency → Lucentra proposes sharper language that still matches your cadence.",
+            "If a draft misses tone or intent, Lucentra suggests adjustments that still sound like you.",
         },
         {
           label: "Scenario preview",
           detail:
             "Present two viable paths forward—not abstractions, but choices with consequences clearly drawn.",
           sample:
-            "Two launch paths → Each shows timing, dependencies, and risk contours.",
+            "Present two viable paths forward—not abstractions, but choices with consequences clearly drawn.",
         },
       ],
       image: {
@@ -227,14 +227,14 @@ export const copy = {
           detail:
             "“I think this could work.” might register as tentative when the moment needs steadiness. Verisense surfaces that gap with care.",
           sample:
-            "Input is flagged for tentativeness → Verisense recommends a steadier commitment without losing sincerity.",
+            "“I think this could work.” might register as tentative when the moment needs steadiness. Verisense surfaces that gap with care.",
         },
         {
           label: "Conversation replay",
           detail:
             "It shows where certainty rose, where tension slipped in, and where understanding faltered.",
           sample:
-            "Timeline markers highlight confidence spikes, hesitation, and points of misalignment.",
+            "It shows where certainty rose, where tension slipped in, and where understanding faltered.",
         },
       ],
       image: {
@@ -289,13 +289,12 @@ export const copy = {
           detail:
             "Every stage clear, every handoff clean, without the brittle overhead of procedure worship.",
           sample:
-            "Lead to delivery chain shows each handoff with context instead of bureaucracy.",
+            "Every stage clear, every handoff clean, without the brittle overhead of procedure worship.",
         },
         {
           label: "Flow clarity",
           detail: "Not more management, just less noise.",
-          sample:
-            "Execution flow spelled out simply so teams see responsibility without new layers of process.",
+          sample: "Not more management, just less noise.",
         },
       ],
       image: {
