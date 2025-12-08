@@ -16,7 +16,7 @@ export function DimensionsSection() {
       <div className="mx-auto max-w-6xl px-4 grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
         <div className="space-y-5">
           <p className="text-sm uppercase tracking-[0.28em] text-white/60">
-            Synerva Dimensions
+            Artwork by Synerva Dimensions
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
             {quietDivineContent.title ?? "Quiet Divine"}
