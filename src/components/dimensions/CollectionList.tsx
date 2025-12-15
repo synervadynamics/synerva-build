@@ -1,8 +1,16 @@
 import Link from "next/link";
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
+import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
 
 export default function CollectionList() {
   const collections = [
+    {
+      slug: "/dimensions/parallax-loom",
+      name: parallaxLoomContent.title ?? "Parallax Loom Brewing Co.",
+      summary:
+        parallaxLoomContent.seriesDescription ??
+        "Series 002 of Synerva Dimensions—portfolio-grade beer can satire presented with ceremonial polish.",
+    },
     {
       slug: "/dimensions/quiet-divine",
       name: quietDivineContent.title ?? "The Quiet Divine",

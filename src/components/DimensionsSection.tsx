@@ -1,15 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
-import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
+import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
+import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function DimensionsSection() {
-  const heroImage = [...quietDivineImages].sort((a, b) => {
-    const ao = a.order ?? Number.POSITIVE_INFINITY;
-    const bo = b.order ?? Number.POSITIVE_INFINITY;
-    if (ao === bo) return a.id.localeCompare(b.id);
-    return ao - bo;
-  })[0];
+  const heroImage = parallaxLoomImages[0];
 
   return (
     <section id="dimensions" className="py-24 sm:py-28">
@@ -19,30 +14,30 @@ export function DimensionsSection() {
             Artwork by Synerva Dimensions
           </p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            {quietDivineContent.title ?? "Quiet Divine"}
+            {parallaxLoomContent.title ?? "Parallax Loom Brewing Co."}
           </h2>
-          {quietDivineContent.seriesDescription ? (
+          {parallaxLoomContent.seriesDescription ? (
             <p className="text-mute leading-relaxed max-w-prose">
-              {quietDivineContent.seriesDescription}
+              {parallaxLoomContent.seriesDescription}
             </p>
           ) : null}
-          {quietDivineContent.overview ? (
+          {parallaxLoomContent.heroCopy ? (
             <p className="text-sm text-white/70 max-w-prose">
-              {quietDivineContent.overview.split("\n").filter(Boolean)[0]}
+              {parallaxLoomContent.heroCopy.split("\n").filter(Boolean)[0]}
             </p>
           ) : null}
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/dimensions/quiet-divine"
+              href="/dimensions/parallax-loom"
               className="px-5 py-3 rounded-xl text-sm font-semibold transition-transform hover:scale-[1.02] active:scale-[0.99] bg-[color:var(--accent)] text-[#001018] shadow-[0_8px_32px_rgba(0,170,255,0.25)]"
             >
-              View Quiet Divine
+              View Parallax Loom
             </Link>
             <Link
-              href="/dimensions"
+              href="/dimensions/quiet-divine"
               className="px-5 py-3 rounded-xl text-sm font-semibold bg-white/[0.06] border border-white/10 hover:bg-white/[0.1] transition"
             >
-              Explore Synerva Dimensions
+              View Quiet Divine
             </Link>
           </div>
         </div>

@@ -1,8 +1,14 @@
 import Image from "next/image";
-import type { QuietDivineImage } from "@/lib/dimensions/quietDivineImages";
+
+type DimensionImage = {
+  src: string;
+  alt: string;
+  caption?: string | null;
+  order?: number | null;
+};
 
 type ImageCardProps = {
-  image: QuietDivineImage;
+  image: DimensionImage;
   onClick?: () => void;
 };
 
