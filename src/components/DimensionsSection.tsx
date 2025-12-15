@@ -4,7 +4,10 @@ import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
 import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function DimensionsSection() {
-  const heroImage = parallaxLoomImages[0];
+  const heroImage =
+    parallaxLoomImages.find(
+      (image) => image.id === "gaslighting-myself-into-greatness-v1",
+    ) ?? parallaxLoomImages[0];
 
   return (
     <section id="dimensions" className="py-24 sm:py-28">

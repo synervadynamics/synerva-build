@@ -12,6 +12,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import { GradientOrchestrator } from "@/components/GradientOrchestrator";
 import { DimensionsSection } from "@/components/DimensionsSection";
+import { QuietDivineSection } from "@/components/QuietDivineSection";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -32,6 +33,7 @@ export default function HomePage() {
       <Philosophy />
       <Roadmap />
       <DimensionsSection />
+      <QuietDivineSection />
       <About />
       <Footer />
     </main>
