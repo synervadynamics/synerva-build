@@ -23,26 +23,17 @@ export function SynervaDimensionsSection() {
   return (
     <section id="synerva-dimensions" className="py-24 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.28em] text-white/60">
-              Synerva Dimensions Artwork
-            </p>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Portraits across parallel timelines
-            </h2>
-            <p className="max-w-2xl text-sm text-white/70 sm:text-base">
-              Quiet interior work. Loud modern rituals. A grid of series that
-              keep expanding—each link opens the full narrative, imagery, and
-              gallery.
-            </p>
-          </div>
-          <Link
-            href="/dimensions"
-            className="rounded-xl border border-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/[0.07] transition"
-          >
-            View Synerva Dimensions index
-          </Link>
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.28em] text-white/60">
+            Synerva Dimensions Artwork
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Portraits across parallel timelines
+          </h2>
+          <p className="max-w-2xl text-sm text-white/70 sm:text-base">
+            Quiet interior work. Loud modern rituals. A grid of series that keep
+            expanding—each link opens the full narrative, imagery, and gallery.
+          </p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
