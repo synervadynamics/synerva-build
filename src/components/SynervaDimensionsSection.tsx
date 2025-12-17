@@ -93,17 +93,15 @@ export function SynervaDimensionsSection() {
 
             <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
               {parallaxHero ? (
-                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10">
-                  <div className="relative aspect-[3/4] w-full">
-                    <Image
-                      src={parallaxHero.src}
-                      alt={parallaxHero.alt}
-                      fill
-                      className="object-contain bg-[#080C14]"
-                      sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
-                      priority
-                    />
-                  </div>
+                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 aspect-[3/4]">
+                  <Image
+                    src={parallaxHero.src}
+                    alt={parallaxHero.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
+                    priority
+                  />
                   <div
                     className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
                     aria-hidden="true"
