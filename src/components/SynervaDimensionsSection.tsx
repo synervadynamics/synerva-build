@@ -21,7 +21,19 @@ export function SynervaDimensionsSection() {
     ) ?? parallaxLoomImages[0];
 
   return (
-    <section id="synerva-dimensions" className="py-24 sm:py-28">
+    <section
+      id="synerva-dimensions"
+      className="relative overflow-hidden py-24 sm:py-28"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        aria-hidden="true"
+      >
+        <div className="absolute -left-16 top-6 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_60%)] blur-3xl" />
+        <div className="absolute right-4 top-28 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(0,200,255,0.18),transparent_60%)] blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.05),transparent_35%,rgba(255,255,255,0.08))]" />
+      </div>
+
       <div className="mx-auto max-w-6xl px-4">
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.28em] text-white/60">
