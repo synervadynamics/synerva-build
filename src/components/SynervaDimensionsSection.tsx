@@ -1,11 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
+import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
 import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
+import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function SynervaDimensionsSection() {
   const parallaxLead = parallaxLoomContent.heroCopy
     ?.split("\n")
     .find((paragraph) => paragraph.trim());
+
+  const quietHero =
+    quietDivineImages.find(
+      (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
+    ) ?? quietDivineImages[0];
+
+  const parallaxHero =
+    parallaxLoomImages.find(
+      (image) => image.id === "divorced-millenial-v1",
+    ) ?? parallaxLoomImages[0];
 
   return (
     <section id="synerva-dimensions" className="py-24 sm:py-28">
@@ -35,6 +48,24 @@ export function SynervaDimensionsSection() {
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           <div className="grid gap-6 sm:grid-cols-2 lg:col-span-2">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+              {quietHero ? (
+                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10">
+                  <div className="relative aspect-[3/4] w-full">
+                    <Image
+                      src={quietHero.src}
+                      alt={quietHero.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
+                      priority
+                    />
+                  </div>
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
+                </div>
+              ) : null}
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
                 Series 001 — Portraiture
               </p>
@@ -61,6 +92,24 @@ export function SynervaDimensionsSection() {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+              {parallaxHero ? (
+                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10">
+                  <div className="relative aspect-[3/4] w-full">
+                    <Image
+                      src={parallaxHero.src}
+                      alt={parallaxHero.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
+                      priority
+                    />
+                  </div>
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
+                </div>
+              ) : null}
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
                 Series 002 — Design Study
               </p>
