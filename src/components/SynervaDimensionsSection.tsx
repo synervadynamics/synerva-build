@@ -99,7 +99,7 @@ export function SynervaDimensionsSection() {
                       src={parallaxHero.src}
                       alt={parallaxHero.alt}
                       fill
-                      className="object-cover"
+                      className="object-contain bg-[#080C14]"
                       sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
                       priority
                     />
