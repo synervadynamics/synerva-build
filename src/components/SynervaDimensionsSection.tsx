@@ -17,7 +17,7 @@ export function SynervaDimensionsSection() {
 
   const parallaxHero =
     parallaxLoomImages.find(
-      (image) => image.id === "divorced-millenial-v1",
+      (image) => image.id === "gaslighting-myself-into-greatness-v1",
     ) ?? parallaxLoomImages[0];
 
   return (
