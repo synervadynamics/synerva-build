@@ -68,7 +68,7 @@
 
   .page-shell {
     position: relative;
-    z-index: 1;
+    z-index: 3;
   }
 
   ::selection {
@@ -153,6 +153,12 @@
       radial-gradient(
         circle at calc(var(--grad-x, 0.5) * 100%)
           calc(var(--grad-y, 0.5) * 100%),
+        rgba(120, 160, 255, 0.35),
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at calc(var(--grad-x, 0.5) * 100%)
+          calc(var(--grad-y, 0.5) * 100%),
         var(--g1, rgba(88, 229, 255, 0.22)),
         transparent 32%
       ),
@@ -173,22 +179,70 @@
       ),
       radial-gradient(
         circle at 60% 25%,
-        rgba(175, 144, 255, 0.12),
+        var(--g5, rgba(175, 144, 255, 0.12)),
         transparent 40%
       ),
       radial-gradient(
         circle at 30% 78%,
-        rgba(255, 132, 180, 0.1),
+        var(--g6, rgba(255, 132, 180, 0.1)),
         transparent 42%
+      ),
+      radial-gradient(
+        circle at 72% 58%,
+        var(--g7, rgba(120, 210, 255, 0.1)),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 22% 62%,
+        var(--g8, rgba(255, 210, 160, 0.1)),
+        transparent 44%
       ),
       linear-gradient(135deg, #02050b, #050910 40%, #04070f);
     background-size: 240% 240%;
     animation:
       global-flow 48s ease-in-out infinite alternate,
       global-drift 95s linear infinite;
-    mix-blend-mode: screen;
-    opacity: 0.92;
+    mix-blend-mode: normal;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .global-backdrop {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at 20% 15%,
+        rgba(120, 210, 255, 0.08),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 85% 70%,
+        rgba(255, 190, 140, 0.08),
+        transparent 48%
+      ),
+      linear-gradient(120deg, rgba(3, 6, 13, 0.92), rgba(2, 4, 9, 0.98));
+    opacity: 0.9;
     z-index: 0;
+    pointer-events: none;
+  }
+
+  .cursor-spotlight {
+    position: fixed;
+    inset: -20%;
+    background: radial-gradient(
+      circle at calc(var(--cursor-x, 0.5) * 100%)
+        calc(var(--cursor-y, 0.5) * 100%),
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(120, 210, 255, 0.28) 10%,
+      rgba(6, 10, 20, 0) 26%
+    );
+    mix-blend-mode: screen;
+    opacity: calc(0.32 + (var(--cursor-speed, 0) * 0.4));
+    filter: blur(1px);
+    transition: opacity 80ms ease;
+    z-index: 2;
     pointer-events: none;
   }
 
