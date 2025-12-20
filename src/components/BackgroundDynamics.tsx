@@ -64,13 +64,13 @@ export const BackgroundDynamics = () => {
     ] as const;
 
     const mix = (a: number, b: number, t: number) => a + (b - a) * t;
-    const mixColor = (a: number[], b: number[], t: number) => [
+    const mixColor = (a: readonly number[], b: readonly number[], t: number) => [
       mix(a[0], b[0], t),
       mix(a[1], b[1], t),
       mix(a[2], b[2], t),
       mix(a[3], b[3], t),
     ];
-    const toRgba = (color: number[]) =>
+    const toRgba = (color: readonly number[]) =>
       `rgba(${Math.round(color[0])},${Math.round(color[1])},${Math.round(
         color[2],
       )},${color[3].toFixed(3)})`;
