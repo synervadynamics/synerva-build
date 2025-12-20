@@ -45,7 +45,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 rounded-3xl overflow-hidden">
             <Image
-              src="/visuals/hero/synerva-hero-shot-2025.png"
+              src="/visuals/hero/synerva-hero-5.png"
               alt="Synerva Dynamics hero graphic"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
