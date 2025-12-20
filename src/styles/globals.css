@@ -152,6 +152,9 @@
   .global-gradient {
     position: fixed;
     inset: 0;
+    transform: translateZ(0);
+    will-change: transform, background-position, opacity;
+    isolation: isolate;
     background:
       radial-gradient(
         circle at var(--grad-x, 50%) var(--grad-y, 50%),
