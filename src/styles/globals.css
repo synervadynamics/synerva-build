@@ -152,9 +152,17 @@
   .global-gradient {
     position: fixed;
     inset: 0;
-    transform: translateZ(0);
-    will-change: transform, background-position, opacity;
+    z-index: 1;
+    pointer-events: none;
     isolation: isolate;
+    background: none !important;
+  }
+
+  .global-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background:
       radial-gradient(
         circle at var(--grad-x, 50%) var(--grad-y, 50%),
@@ -208,13 +216,24 @@
       global-drift 95s linear infinite;
     mix-blend-mode: normal;
     opacity: 1;
-    z-index: 1;
-    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform, opacity, filter, background-position;
+    backface-visibility: hidden;
   }
 
   .global-backdrop {
     position: fixed;
     inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: none !important;
+  }
+
+  .global-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background:
       radial-gradient(
         circle at 20% 15%,
@@ -228,13 +247,24 @@
       ),
       linear-gradient(120deg, rgba(3, 6, 13, 0.92), rgba(2, 4, 9, 0.98));
     opacity: 0.9;
-    z-index: 0;
-    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform, opacity, filter, background-position;
+    backface-visibility: hidden;
   }
 
   .cursor-spotlight {
     position: fixed;
     inset: -20%;
+    z-index: 2;
+    pointer-events: none;
+    background: none !important;
+  }
+
+  .cursor-spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background: radial-gradient(
       circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
       rgba(255, 255, 255, 0.3) 0%,
@@ -245,20 +275,9 @@
     opacity: calc(0.32 + (var(--cursor-speed, 0) * 0.4));
     filter: blur(1px);
     transition: opacity 80ms ease;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .global-backdrop,
-  .global-gradient,
-  .cursor-spotlight {
     transform: translateZ(0);
     will-change: transform, opacity, filter, background-position;
     backface-visibility: hidden;
-  }
-
-  .global-gradient {
-    isolation: isolate;
   }
 
   .ambient-gradient {
