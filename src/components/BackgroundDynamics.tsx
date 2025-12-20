@@ -5,6 +5,10 @@ import { useEffect } from "react";
 export const BackgroundDynamics = () => {
   useEffect(() => {
     const root = document.documentElement;
+    root.style.setProperty("--grad-x", "50%");
+    root.style.setProperty("--grad-y", "50%");
+    root.style.setProperty("--cursor-x", "50vw");
+    root.style.setProperty("--cursor-y", "50vh");
     const palettes = [
       {
         // Blue to green.
@@ -75,6 +79,9 @@ export const BackgroundDynamics = () => {
         color[2],
       )},${color[3].toFixed(3)})`;
 
+    const safe = (v: number, fallback: number) =>
+      Number.isFinite(v) ? v : fallback;
+
     const setGradientColors = (progress: number) => {
       const clamped = Math.min(1, Math.max(0, progress));
       const steps = palettes.length - 1;
@@ -137,15 +144,22 @@ export const BackgroundDynamics = () => {
       currentX += (targetX - currentX) * 0.22;
       currentY += (targetY - currentY) * 0.22;
       currentSpeed += (targetSpeed - currentSpeed) * 0.24;
-      root.style.setProperty("--grad-x", `${(currentX * 100).toFixed(2)}%`);
-      root.style.setProperty("--grad-y", `${(currentY * 100).toFixed(2)}%`);
+      const gradX = safe(currentX * 100, 50);
+      const gradY = safe(currentY * 100, 50);
+      const cursorX = safe(currentX * window.innerWidth, window.innerWidth / 2);
+      const cursorY = safe(
+        currentY * window.innerHeight,
+        window.innerHeight / 2,
+      );
+      root.style.setProperty("--grad-x", `${gradX}%`);
+      root.style.setProperty("--grad-y", `${gradY}%`);
       root.style.setProperty(
         "--cursor-x",
-        `${(currentX * 100).toFixed(2)}%`,
+        `${cursorX}px`,
       );
       root.style.setProperty(
         "--cursor-y",
-        `${(currentY * 100).toFixed(2)}%`,
+        `${cursorY}px`,
       );
       root.style.setProperty("--cursor-speed", currentSpeed.toFixed(4));
       raf = window.requestAnimationFrame(tick);

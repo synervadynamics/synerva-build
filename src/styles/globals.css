@@ -249,6 +249,18 @@
     pointer-events: none;
   }
 
+  .global-backdrop,
+  .global-gradient,
+  .cursor-spotlight {
+    transform: translateZ(0);
+    will-change: transform, opacity, filter, background-position;
+    backface-visibility: hidden;
+  }
+
+  .global-gradient {
+    isolation: isolate;
+  }
+
   .ambient-gradient {
     background:
       radial-gradient(
