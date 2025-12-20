@@ -19,10 +19,13 @@
     --g6: rgba(255, 170, 120, 0.2);
     --g7: rgba(170, 255, 210, 0.18);
     --g8: rgba(255, 214, 120, 0.14);
-    --cursor-x: 0.5;
-    --cursor-y: 0.5;
+    --cursor-x: 50%;
+    --cursor-y: 50%;
     --cursor-speed: 0;
-    --grad-scroll: 0.5;
+    --grad-scroll-60: 30%;
+    --grad-scroll-42: 21%;
+    --grad-x: 50%;
+    --grad-y: 50%;
     transition:
       --g1 900ms ease,
       --g2 900ms ease,
@@ -151,24 +154,22 @@
     inset: 0;
     background:
       radial-gradient(
-        circle at calc(var(--grad-x, 0.5) * 100%)
-          calc(var(--grad-y, 0.5) * 100%),
+        circle at var(--grad-x, 50%) var(--grad-y, 50%),
         rgba(120, 160, 255, 0.35),
         transparent 60%
       ),
       radial-gradient(
-        circle at calc(var(--grad-x, 0.5) * 100%)
-          calc(var(--grad-y, 0.5) * 100%),
+        circle at var(--grad-x, 50%) var(--grad-y, 50%),
         var(--g1, rgba(88, 229, 255, 0.22)),
         transparent 32%
       ),
       radial-gradient(
-        circle at 18% calc((var(--grad-scroll, 0.5) * 60%)),
+        circle at 18% var(--grad-scroll-60, 30%),
         var(--g2, rgba(255, 126, 189, 0.14)),
         transparent 38%
       ),
       radial-gradient(
-        circle at 82% calc(30% + var(--grad-scroll, 0.5) * 42%),
+        circle at 82% calc(30% + var(--grad-scroll-42, 21%)),
         var(--g3, rgba(122, 255, 190, 0.16)),
         transparent 38%
       ),
@@ -232,8 +233,7 @@
     position: fixed;
     inset: -20%;
     background: radial-gradient(
-      circle at calc(var(--cursor-x, 0.5) * 100%)
-        calc(var(--cursor-y, 0.5) * 100%),
+      circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
       rgba(255, 255, 255, 0.3) 0%,
       rgba(120, 210, 255, 0.28) 10%,
       rgba(6, 10, 20, 0) 26%

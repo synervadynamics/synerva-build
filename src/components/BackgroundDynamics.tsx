@@ -122,7 +122,14 @@ export const BackgroundDynamics = () => {
     const handleScroll = () => {
       const scrolled =
         window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
-      root.style.setProperty("--grad-scroll", scrolled.toString());
+      root.style.setProperty(
+        "--grad-scroll-60",
+        `${(scrolled * 60).toFixed(2)}%`,
+      );
+      root.style.setProperty(
+        "--grad-scroll-42",
+        `${(scrolled * 42).toFixed(2)}%`,
+      );
       setGradientColors(scrolled);
     };
 
@@ -130,10 +137,16 @@ export const BackgroundDynamics = () => {
       currentX += (targetX - currentX) * 0.22;
       currentY += (targetY - currentY) * 0.22;
       currentSpeed += (targetSpeed - currentSpeed) * 0.24;
-      root.style.setProperty("--grad-x", currentX.toFixed(4));
-      root.style.setProperty("--grad-y", currentY.toFixed(4));
-      root.style.setProperty("--cursor-x", currentX.toFixed(4));
-      root.style.setProperty("--cursor-y", currentY.toFixed(4));
+      root.style.setProperty("--grad-x", `${(currentX * 100).toFixed(2)}%`);
+      root.style.setProperty("--grad-y", `${(currentY * 100).toFixed(2)}%`);
+      root.style.setProperty(
+        "--cursor-x",
+        `${(currentX * 100).toFixed(2)}%`,
+      );
+      root.style.setProperty(
+        "--cursor-y",
+        `${(currentY * 100).toFixed(2)}%`,
+      );
       root.style.setProperty("--cursor-speed", currentSpeed.toFixed(4));
       raf = window.requestAnimationFrame(tick);
     };
