@@ -94,9 +94,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className="bg-[var(--bg)] text-white antialiased"
         suppressHydrationWarning
       >
-        <div className="global-backdrop" aria-hidden />
         <div className="global-gradient" aria-hidden />
-        <div className="cursor-spotlight" aria-hidden />
         <BackgroundDynamics />
         <CursorLayer />
         <div className="page-shell">{children}</div>
