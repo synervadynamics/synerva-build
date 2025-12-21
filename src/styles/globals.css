@@ -186,12 +186,12 @@
         transparent 32%
       ),
       radial-gradient(
-        circle at 18% var(--grad-scroll-60, 30%),
+        circle at 18% 30%,
         var(--g2, rgba(255, 126, 189, 0.14)),
         transparent 38%
       ),
       radial-gradient(
-        circle at 82% calc(30% + var(--grad-scroll-42, 21%)),
+        circle at 82% 51%,
         var(--g3, rgba(122, 255, 190, 0.16)),
         transparent 38%
       ),
@@ -222,12 +222,10 @@
       ),
       linear-gradient(135deg, #02050b, #050910 40%, #04070f);
     background-size: 240% 240%;
-    animation:
-      global-flow 48s ease-in-out infinite alternate,
-      global-drift 95s linear infinite;
+    animation: global-flow 48s ease-in-out infinite alternate;
     mix-blend-mode: normal;
-    opacity: 1;
-    transform: translateZ(0);
+    opacity: var(--bg-opacity, 1);
+    transform: translate3d(0, var(--bg-shift, 0px), 0) scale(1.02);
     will-change: transform, opacity, filter, background-position;
     backface-visibility: hidden;
   }

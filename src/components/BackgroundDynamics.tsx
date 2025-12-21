@@ -126,18 +126,20 @@ export const BackgroundDynamics = () => {
       lastTime = now;
     };
 
+    let lastStep = -1;
     const handleScroll = () => {
       const scrolled =
         window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
-      root.style.setProperty(
-        "--grad-scroll-60",
-        `${(scrolled * 60).toFixed(2)}%`,
-      );
-      root.style.setProperty(
-        "--grad-scroll-42",
-        `${(scrolled * 42).toFixed(2)}%`,
-      );
-      setGradientColors(scrolled);
+      const stepped = Math.round(scrolled * 20) / 20;
+      if (stepped === lastStep) {
+        return;
+      }
+      lastStep = stepped;
+      const shift = (stepped - 0.5) * 40;
+      const opacity = 0.92 + stepped * 0.08;
+      root.style.setProperty("--bg-shift", `${shift.toFixed(1)}px`);
+      root.style.setProperty("--bg-opacity", opacity.toFixed(3));
+      setGradientColors(stepped);
     };
 
     const tick = () => {
