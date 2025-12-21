@@ -43,6 +43,7 @@
 
   html {
     scroll-behavior: smooth;
+    background: #02050b;
   }
 
   html,
@@ -65,13 +66,12 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     position: relative;
-    isolation: isolate;
     background: transparent;
   }
 
   .page-shell {
     position: relative;
-    z-index: 3;
+    z-index: 1;
   }
 
   ::selection {
@@ -152,9 +152,8 @@
   .global-gradient {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
-    isolation: isolate;
     background:
       radial-gradient(
         circle at 20% 15%,
@@ -166,15 +165,7 @@
         rgba(255, 190, 140, 0.072),
         transparent 48%
       ),
-      linear-gradient(120deg, rgba(3, 6, 13, 0.828), rgba(2, 4, 9, 0.882));
-  }
-
-  .global-gradient::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
+      linear-gradient(120deg, rgba(3, 6, 13, 0.828), rgba(2, 4, 9, 0.882)),
       radial-gradient(
         circle at var(--grad-x, 50%) var(--grad-y, 50%),
         rgba(120, 160, 255, 0.35),
@@ -226,8 +217,12 @@
     mix-blend-mode: normal;
     opacity: var(--bg-opacity, 1);
     transform: translate3d(0, var(--bg-shift, 0px), 0) scale(1.02);
-    will-change: transform, opacity, filter, background-position;
+    will-change: transform, opacity, background-position;
     backface-visibility: hidden;
+  }
+
+  .global-gradient::before {
+    content: none;
   }
 
   .global-gradient::after {
@@ -237,6 +232,7 @@
   .cursor-spotlight-layer {
     position: absolute;
     inset: -20%;
+    display: none !important;
     pointer-events: none;
     mix-blend-mode: screen;
     opacity: calc(0.32 + (var(--cursor-speed, 0) * 0.4));

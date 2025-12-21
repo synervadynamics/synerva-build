@@ -1,0 +1,103 @@
+{
+  "animationSample": {
+    "first": {
+      "backgroundPosition": "0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%, 0.785867% 0.654889%",
+      "transform": "matrix(1.02, 0, 0, 1.02, 0, -20)"
+    },
+    "second": {
+      "backgroundPosition": "1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%",
+      "transform": "matrix(1.02, 0, 0, 1.02, 0, -20)"
+    },
+    "changed": true
+  },
+  "gradientDump": {
+    "exists": {
+      "globalGradient": true,
+      "pageShell": true
+    },
+    "elementFromPoint": {
+      "topLeft": "section#hero.relative.isolate.min-h-screen.px-6",
+      "center": "p.max-w-3xl.text-lg.text-white/80.sm:text-xl"
+    },
+    "computed": {
+      "globalGradient": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "backgroundPosition": "0% 0%",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "transform": "none",
+        "filter": "none",
+        "mixBlendMode": "normal",
+        "zIndex": "0",
+        "position": "fixed",
+        "pointerEvents": "none",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "globalGradientBefore": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "backgroundPosition": "0% 0%",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "transform": "none",
+        "filter": "none",
+        "mixBlendMode": "normal",
+        "zIndex": "auto",
+        "position": "static",
+        "pointerEvents": "none",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "htmlBefore": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "radial-gradient(circle at 20% 15%, rgba(120, 210, 255, 0.07), rgba(0, 0, 0, 0) 42%), radial-gradient(circle at 85% 70%, rgba(255, 190, 140, 0.07), rgba(0, 0, 0, 0) 48%), linear-gradient(120deg, rgba(3, 6, 13, 0.827), rgba(2, 4, 9, 0.882)), radial-gradient(circle, rgba(120, 160, 255, 0.35), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgba(88, 229, 255, 0.24), rgba(0, 0, 0, 0) 32%), radial-gradient(circle at 18% 30%, rgba(255, 170, 120, 0.2), rgba(0, 0, 0, 0) 38%), radial-gradient(circle at 82% 51%, rgba(170, 255, 210, 0.18), rgba(0, 0, 0, 0) 38%), radial-gradient(circle at 45% 85%, rgba(255, 214, 120, 0.14), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 60% 25%, rgba(88, 229, 255, 0.24), rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 30% 78%, rgba(255, 170, 120, 0.2), rgba(0, 0, 0, 0) 42%), radial-gradient(circle at 72% 58%, rgba(170, 255, 210, 0.18), rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 22% 62%, rgba(255, 214, 120, 0.14), rgba(0, 0, 0, 0) 44%), linear-gradient(135deg, rgb(2, 5, 11), rgb(5, 9, 16) 40%, rgb(4, 7, 15))",
+        "backgroundPosition": "1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%, 1.267295% 1.056079%",
+        "opacity": "0.92",
+        "visibility": "visible",
+        "display": "block",
+        "transform": "matrix(1.02, 0, 0, 1.02, 0, -20)",
+        "filter": "none",
+        "mixBlendMode": "normal",
+        "zIndex": "0",
+        "position": "fixed",
+        "pointerEvents": "none",
+        "animationName": "global-flow",
+        "animationDuration": "48s",
+        "animationPlayState": "running"
+      }
+    },
+    "bounds": {
+      "html": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "globalGradient": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "pageShell": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 10483.703125
+      }
+    },
+    "htmlBeforeBackgroundImage": "radial-gradient(circle at 20% 15%, rgba(120, 210, 255, 0.07), rgba(0, 0, 0, 0) 42%), radial-gradient(circle at 85% 70%, rgba(255, 190, 140, 0.07), rgba(0, 0, 0, 0) 48%), linear-gradient(120deg, rgba(3, 6, 13, 0.827), rgba(2, 4, 9, 0.882)), radial-gradient(circle, rgba(120, 160, 255, 0.35), rgba(0, 0, 0, 0) 60%), radial-gradient(circle, rgba(88, 229, 255, 0.24), rgba(0, 0, 0, 0) 32%), radial-gradient(circle at 18% 30%, rgba(255, 170, 120, 0.2), rgba(0, 0, 0, 0) 38%), radial-gradient(circle at 82% 51%, rgba(170, 255, 210, 0.18), rgba(0, 0, 0, 0) 38%), radial-gradient(circle at 45% 85%, rgba(255, 214, 120, 0.14), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 60% 25%, rgba(88, 229, 255, 0.24), rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 30% 78%, rgba(255, 170, 120, 0.2), rgba(0, 0, 0, 0) 42%), radial-gradient(circle at 72% 58%, rgba(170, 255, 210, 0.18), rgba(0, 0, 0, 0) 40%), radial-gradient(circle at 22% 62%, rgba(255, 214, 120, 0.14), rgba(0, 0, 0, 0) 44%), linear-gradient(135deg, rgb(2, 5, 11), rgb(5, 9, 16) 40%, rgb(4, 7, 15))"
+  }
+}

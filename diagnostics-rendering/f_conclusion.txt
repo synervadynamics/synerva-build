@@ -1,0 +1,3 @@
+Phase E complete.
+Chromium screenshot: /Users/kylegruarin/dev/synerva-build/diagnostics-rendering/f_final_chromium.png
+WebKit screenshot: /Users/kylegruarin/dev/synerva-build/diagnostics-rendering/f_final_webkit.png

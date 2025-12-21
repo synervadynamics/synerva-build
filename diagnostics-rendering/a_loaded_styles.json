@@ -1,0 +1,42 @@
+{
+  "chromium": {
+    "url": "http://localhost:3000/",
+    "hasGlobals": false,
+    "stylesheets": [
+      {
+        "href": "http://localhost:3000/_next/static/css/app/layout.css?v=1766352603271",
+        "disabled": false,
+        "accessible": true,
+        "ruleCount": 522,
+        "error": null
+      },
+      {
+        "href": "inline",
+        "disabled": false,
+        "accessible": true,
+        "ruleCount": 4,
+        "error": null
+      }
+    ]
+  },
+  "webkit": {
+    "url": "http://localhost:3000/",
+    "hasGlobals": false,
+    "stylesheets": [
+      {
+        "href": "http://localhost:3000/_next/static/css/app/layout.css?v=1766352620509",
+        "disabled": false,
+        "accessible": true,
+        "ruleCount": 522,
+        "error": null
+      },
+      {
+        "href": "inline",
+        "disabled": false,
+        "accessible": true,
+        "ruleCount": 4,
+        "error": null
+      }
+    ]
+  }
+}

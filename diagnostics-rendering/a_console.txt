@@ -1,0 +1,60 @@
+Chromium console:
+[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js:27)
+[log] [HMR] connected (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js:27)
+[warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/shared/forward-logs-shared.js:27)
+
+WebKit console:
+[log] [HMR] connected
+[error] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="page.tsx">
+              <SegmentTrieNode>
+              <HomePage>
+                <main className="relative t...">
+                  <GradientOrchestrator>
+                  <ScrollProgress>
+                  <Hero>
+                  <Narrative>
+                  <Deliver>
+                  <Systems>
+                  <Labs>
+                    <section id="labs" className="relative o...">
+                      <div ref={function bound dispatchSetState} className="relative m...">
+                        <motion.div>
+                        <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true, ...}} ...>
+                          <div className="bubble-dri..." style={{opacity:0, ...}} ref={function useMotionRef.useCallback}>
+                            <div>
+                            <form onSubmit={function handleSubmit} className="space-y-3">
+                              <label>
+                              <input
+                                id="labs-email"
+                                type="email"
+                                required={true}
+                                value=""
+                                onChange={function onChange}
+                                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-white ..."
+                                placeholder="you@company.com"
+-                               style={{caret-color:"transparent"}}
+                              >
+                              ...
+                        ...
+                  ...
+            ...
+          ...
+
+[warning] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.

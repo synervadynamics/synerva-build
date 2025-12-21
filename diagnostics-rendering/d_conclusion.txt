@@ -1,0 +1,4 @@
+Phase D complete.
+Chromium animation changed: true
+WebKit animation changed: true
+Captured screenshots and animation samples after delay and reduced-motion override.
