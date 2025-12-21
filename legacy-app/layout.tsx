@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-bg text-ink antialiased selection:bg-accent/20 selection:text-ink">
         {/* GridBackground will be implemented in Section 3 */}
         <div className="bg-grid bg-[length:24px_24px] relative">
-          <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+          <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)][--webkit-mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
           <HomeButton />
           <main className="relative z-10">{children}</main>
         </div>

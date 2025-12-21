@@ -233,9 +233,25 @@
   }
 
   .global-gradient::after {
-    content: "";
+    content: none;
+  }
+
+  .cursor-spotlight-layer {
     position: absolute;
     inset: -20%;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: calc(0.32 + (var(--cursor-speed, 0) * 0.4));
+    transition: opacity 80ms ease;
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  .cursor-spotlight-layer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     pointer-events: none;
     background: radial-gradient(
       circle at var(--cursor-x, 50%) var(--cursor-y, 50%),
@@ -243,12 +259,9 @@
       rgba(120, 210, 255, 0.28) 10%,
       rgba(6, 10, 20, 0) 26%
     );
-    mix-blend-mode: screen;
-    opacity: calc(0.32 + (var(--cursor-speed, 0) * 0.4));
     filter: blur(1px);
-    transition: opacity 80ms ease;
     transform: translateZ(0);
-    will-change: transform, opacity, filter, background-position;
+    will-change: transform, filter, background-position;
     backface-visibility: hidden;
   }
 
@@ -460,6 +473,11 @@
       circle at 20% 20%,
       rgba(88, 229, 255, 0.15),
       transparent 45%
+    );
+    -webkit-mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.8) 45%,
+      transparent 90%
     );
     mask-image: radial-gradient(
       circle,
