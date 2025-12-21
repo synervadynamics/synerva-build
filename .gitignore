@@ -19,3 +19,4 @@ pnpm-debug.log*
 *.avi
 *.m4v
 .vercel
+diagnostics-rendering/
