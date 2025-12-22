@@ -34,7 +34,7 @@ const renderWithBreaks = (text: string) =>
 export default function ContactPageClient() {
   return (
     <div className="bg-[var(--bg)] text-white">
-      <section className="relative overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/footer/footer_motif.webp"
           opacity={0.45}
@@ -56,7 +56,7 @@ export default function ContactPageClient() {
           </p>
         </div>
       </section>
-      <section className="relative overflow-hidden px-6 py-12 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-12 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/about/about_tile_2.webp"
           opacity={0.35}
@@ -78,7 +78,7 @@ export default function ContactPageClient() {
           ))}
         </div>
       </section>
-      <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/hero/hero_main_render.webp"
           opacity={0.3}

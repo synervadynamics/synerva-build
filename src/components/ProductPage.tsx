@@ -55,7 +55,7 @@ export const ProductPage = ({
 
   return (
     <div className="bg-[var(--bg)] text-white">
-      <section className="relative isolate overflow-hidden px-6 pt-28 pb-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pt-28 pb-16 sm:px-10 lg:px-16">
         <div className="relative z-10 mb-4 flex justify-start">
           <Link
             href="/"
@@ -156,7 +156,7 @@ export const ProductPage = ({
       </section>
 
       {disclaimer ? (
-        <section className="relative overflow-hidden px-6 pb-12 sm:px-10 lg:px-16">
+        <section className="relative overflow-visible px-6 pb-12 sm:px-10 lg:px-16">
           <div className="absolute inset-0 bg-gradient-to-br from-[#050912f0] via-[#0a1828e6] to-[#0a1320e6]" />
           <div className="relative mx-auto max-w-6xl rounded-[2rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-6 text-white/80 shadow-[0_36px_120px_-80px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-8">
             <p className="text-sm">{disclaimer}</p>
@@ -165,7 +165,7 @@ export const ProductPage = ({
       ) : null}
 
       {useCases.length > 0 && (
-        <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+        <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
           <div className="absolute inset-0 bg-gradient-to-br from-[#050912f2] via-[#0a1828e6] to-[#0a1320e6]" />
           <div className="relative mx-auto grid max-w-6xl gap-8 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-8 backdrop-blur-2xl shadow-[0_48px_160px_-88px_rgba(0,0,0,0.84)] lg:grid-cols-2">
             <div className="space-y-3">
@@ -193,7 +193,7 @@ export const ProductPage = ({
         </section>
       )}
 
-      <section className="relative overflow-hidden px-6 py-20 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-20 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-br from-[#050912f2] via-[#0a1828e6] to-[#0a1320e6]" />
         <div className="relative mx-auto grid max-w-6xl gap-8 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-8 backdrop-blur-2xl shadow-[0_50px_170px_-90px_rgba(0,0,0,0.86)] lg:grid-cols-2">
           <div className="space-y-4">
@@ -225,7 +225,7 @@ export const ProductPage = ({
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 pb-24 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pb-24 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-r from-[#050912f0] via-[#0a1828e0] to-[#0a1320e6]" />
         <div className="relative mx-auto max-w-6xl space-y-10 rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-8 backdrop-blur-2xl shadow-[0_50px_170px_-90px_rgba(0,0,0,0.86)]">
           <div className="flex flex-col gap-2">

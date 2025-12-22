@@ -1,105 +1,19 @@
 "use client";
 
 import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export const BackgroundDynamics = () => {
   useEffect(() => {
     const root = document.documentElement;
+    const stage = document.querySelector<HTMLElement>(".gradient-stage");
     root.style.setProperty("--grad-x", "50%");
     root.style.setProperty("--grad-y", "50%");
     root.style.setProperty("--cursor-x", "50vw");
     root.style.setProperty("--cursor-y", "50vh");
-    const palettes = [
-      {
-        // Blue to green.
-        g1: [120, 200, 255, 0.3],
-        g2: [80, 220, 200, 0.24],
-        g3: [120, 255, 210, 0.22],
-        g4: [90, 180, 255, 0.18],
-        g5: [70, 240, 210, 0.2],
-        g6: [120, 210, 255, 0.18],
-        g7: [90, 255, 225, 0.16],
-        g8: [120, 180, 255, 0.14],
-      },
-      {
-        // Green to teal.
-        g1: [90, 255, 200, 0.28],
-        g2: [70, 200, 255, 0.22],
-        g3: [120, 255, 190, 0.2],
-        g4: [120, 220, 255, 0.18],
-        g5: [70, 230, 255, 0.2],
-        g6: [90, 255, 210, 0.18],
-        g7: [120, 200, 255, 0.16],
-        g8: [90, 255, 220, 0.14],
-      },
-      {
-        // Yellow to orange.
-        g1: [255, 215, 120, 0.3],
-        g2: [255, 170, 90, 0.24],
-        g3: [255, 210, 140, 0.22],
-        g4: [255, 180, 120, 0.18],
-        g5: [255, 200, 110, 0.2],
-        g6: [255, 150, 110, 0.18],
-        g7: [255, 200, 140, 0.16],
-        g8: [255, 170, 120, 0.14],
-      },
-      {
-        // Orange to red.
-        g1: [255, 160, 110, 0.3],
-        g2: [255, 120, 100, 0.24],
-        g3: [255, 140, 130, 0.22],
-        g4: [255, 110, 90, 0.18],
-        g5: [255, 170, 120, 0.2],
-        g6: [255, 120, 120, 0.18],
-        g7: [255, 150, 140, 0.16],
-        g8: [255, 120, 110, 0.14],
-      },
-      {
-        // Red to purple.
-        g1: [255, 120, 160, 0.28],
-        g2: [200, 100, 255, 0.22],
-        g3: [255, 140, 200, 0.2],
-        g4: [170, 110, 255, 0.18],
-        g5: [220, 120, 255, 0.2],
-        g6: [255, 120, 200, 0.18],
-        g7: [180, 120, 255, 0.16],
-        g8: [220, 140, 255, 0.14],
-      },
-    ] as const;
-
-    const mix = (a: number, b: number, t: number) => a + (b - a) * t;
-    const mixColor = (a: readonly number[], b: readonly number[], t: number) => [
-      mix(a[0], b[0], t),
-      mix(a[1], b[1], t),
-      mix(a[2], b[2], t),
-      mix(a[3], b[3], t),
-    ];
-    const toRgba = (color: readonly number[]) =>
-      `rgba(${Math.round(color[0])},${Math.round(color[1])},${Math.round(
-        color[2],
-      )},${color[3].toFixed(3)})`;
-
     const safe = (v: number, fallback: number) =>
       Number.isFinite(v) ? v : fallback;
-
-    const setGradientColors = (progress: number) => {
-      const clamped = Math.min(1, Math.max(0, progress));
-      const steps = palettes.length - 1;
-      const scaled = clamped * steps;
-      const index = Math.min(steps - 1, Math.floor(scaled));
-      const t = scaled - index;
-      const from = palettes[index];
-      const to = palettes[index + 1];
-
-      root.style.setProperty("--g1", toRgba(mixColor(from.g1, to.g1, t)));
-      root.style.setProperty("--g2", toRgba(mixColor(from.g2, to.g2, t)));
-      root.style.setProperty("--g3", toRgba(mixColor(from.g3, to.g3, t)));
-      root.style.setProperty("--g4", toRgba(mixColor(from.g4, to.g4, t)));
-      root.style.setProperty("--g5", toRgba(mixColor(from.g5, to.g5, t)));
-      root.style.setProperty("--g6", toRgba(mixColor(from.g6, to.g6, t)));
-      root.style.setProperty("--g7", toRgba(mixColor(from.g7, to.g7, t)));
-      root.style.setProperty("--g8", toRgba(mixColor(from.g8, to.g8, t)));
-    };
 
     let targetX = 0.5;
     let targetY = 0.5;
@@ -107,10 +21,22 @@ export const BackgroundDynamics = () => {
     let currentY = 0.5;
     let targetSpeed = 0;
     let currentSpeed = 0;
+    let scrollHue = 210;
     let lastX = window.innerWidth / 2;
     let lastY = window.innerHeight / 2;
     let lastTime = performance.now();
     let raf = 0;
+    let resizeObserver: ResizeObserver | null = null;
+
+    const updateStageHeight = () => {
+      if (!stage) return;
+      const nextHeight = Math.max(
+        document.body.scrollHeight,
+        window.innerHeight * 2,
+      );
+      stage.style.height = `${nextHeight}px`;
+      ScrollTrigger.refresh();
+    };
 
     const handlePointer = (event: PointerEvent) => {
       targetX = event.clientX / window.innerWidth;
@@ -126,20 +52,22 @@ export const BackgroundDynamics = () => {
       lastTime = now;
     };
 
-    let lastStep = -1;
-    const handleScroll = () => {
-      const scrolled =
-        window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
-      const stepped = Math.round(scrolled * 20) / 20;
-      if (stepped === lastStep) {
-        return;
-      }
-      lastStep = stepped;
-      const shift = (stepped - 0.5) * 40;
-      const opacity = 0.92 + stepped * 0.08;
+    const updateScrollVars = (scrolled: number) => {
+      const clamped = Math.min(1, Math.max(0, scrolled));
+      if (!Number.isFinite(clamped)) return;
+      const shift = (clamped - 0.5) * 40;
+      const opacity = 0.92 + clamped * 0.08;
+      scrollHue = clamped * 720;
+      const baseHue = scrollHue % 360;
+      root.style.setProperty("--auto-hue", baseHue.toFixed(2));
+      root.style.setProperty("--auto-hue-2", ((baseHue + 70) % 360).toFixed(2));
+      root.style.setProperty("--auto-hue-3", ((baseHue + 150) % 360).toFixed(2));
+      root.style.setProperty("--auto-hue-4", ((baseHue + 260) % 360).toFixed(2));
+      root.style.setProperty("--bg-x", `${(50 + clamped * 18).toFixed(2)}%`);
+      root.style.setProperty("--bg-y", `${(50 + clamped * 22).toFixed(2)}%`);
       root.style.setProperty("--bg-shift", `${shift.toFixed(1)}px`);
       root.style.setProperty("--bg-opacity", opacity.toFixed(3));
-      setGradientColors(stepped);
+      root.style.setProperty("--scroll-hue", scrollHue.toFixed(2));
     };
 
     const tick = () => {
@@ -167,21 +95,45 @@ export const BackgroundDynamics = () => {
       raf = window.requestAnimationFrame(tick);
     };
 
+    gsap.registerPlugin(ScrollTrigger);
+    const scrollState = { progress: 0 };
+    const scrollTween = gsap.to(scrollState, {
+      progress: 1,
+      ease: "none",
+      scrollTrigger: {
+        start: 0,
+        end: () => Math.max(1, document.body.scrollHeight - window.innerHeight),
+        scrub: 0.6,
+      },
+      onUpdate: () => updateScrollVars(scrollState.progress),
+    });
+
     window.addEventListener("pointermove", handlePointer, { passive: true });
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updateStageHeight, { passive: true });
+    updateStageHeight();
+    ScrollTrigger.refresh();
+    if ("ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(updateStageHeight);
+      resizeObserver.observe(document.body);
+    }
     handlePointer(
       new PointerEvent("pointermove", {
         clientX: window.innerWidth / 2,
         clientY: window.innerHeight / 2,
       }),
     );
-    handleScroll();
+    updateScrollVars(
+      window.scrollY / (document.body.scrollHeight - window.innerHeight || 1),
+    );
     tick();
 
     return () => {
       window.removeEventListener("pointermove", handlePointer);
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateStageHeight);
+      resizeObserver?.disconnect();
       window.cancelAnimationFrame(raf);
+      scrollTween.scrollTrigger?.kill();
+      scrollTween.kill();
     };
   }, []);
 

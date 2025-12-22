@@ -116,7 +116,7 @@ export const Deliver = () => {
     <motion.section
       id="deliver"
       ref={setRefs}
-      className="relative isolate px-6 pb-18 pt-12 sm:px-10 sm:pb-22 sm:pt-12 lg:px-16 lg:pb-22 lg:pt-14"
+      className="relative px-6 pb-18 pt-12 sm:px-10 sm:pb-22 sm:pt-12 lg:px-16 lg:pb-22 lg:pt-14"
     >
       <div className="relative mx-auto max-w-6xl space-y-8">
         <header className="max-w-4xl space-y-6 text-white">

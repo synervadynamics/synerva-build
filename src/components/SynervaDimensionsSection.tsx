@@ -23,7 +23,7 @@ export function SynervaDimensionsSection() {
   return (
     <section
       id="synerva-dimensions"
-      className="relative overflow-hidden py-24 sm:py-28"
+      className="relative overflow-visible py-24 sm:py-28"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10"

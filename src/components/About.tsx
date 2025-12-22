@@ -30,7 +30,7 @@ export const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden px-6 pb-24 pt-14 sm:px-10 sm:pb-24 sm:pt-16 lg:px-16 lg:pb-28 lg:pt-18"
+      className="relative overflow-visible px-6 pb-24 pt-14 sm:px-10 sm:pb-24 sm:pt-16 lg:px-16 lg:pb-28 lg:pt-18"
     >
       <div className="relative mx-auto max-w-6xl">
         <motion.div

@@ -18,7 +18,7 @@ export default function CasesPageClient() {
     <div className="bg-[var(--bg)] text-white">
       <section
         ref={ref}
-        className="relative overflow-hidden px-6 pt-28 sm:px-10 lg:px-16"
+        className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16"
       >
         <AmbientVideo
           src="/visuals/hero/synerva-hero-shot-2025.png"
@@ -57,7 +57,7 @@ export default function CasesPageClient() {
         </motion.div>
       </section>
 
-      <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/92 via-black/76 to-black/88" />
         <div className="relative mx-auto max-w-6xl space-y-8">
           <div className="space-y-2">

@@ -55,7 +55,7 @@ const snapshots = [
 export default function ProofPage() {
   return (
     <main className="bg-[var(--bg)] text-white">
-      <section className="relative isolate overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-black/82 to-cyan-500/14" />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative mx-auto flex max-w-5xl flex-col gap-6 rounded-[3rem] border border-white/10 bg-black/52 p-10 backdrop-blur-3xl shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)]">
@@ -85,7 +85,7 @@ export default function ProofPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-tr from-black/92 via-black/76 to-black/88" />
         <div className="relative mx-auto max-w-6xl space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4">

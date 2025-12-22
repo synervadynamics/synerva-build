@@ -54,7 +54,7 @@ export const Labs = () => {
   return (
     <section
       id="labs"
-      className="relative overflow-hidden px-6 pb-24 pt-14 sm:px-10 sm:pb-26 sm:pt-16 lg:px-16 lg:pb-30 lg:pt-20"
+      className="relative overflow-visible px-6 pb-24 pt-14 sm:px-10 sm:pb-26 sm:pt-16 lg:px-16 lg:pb-30 lg:pt-20"
     >
       <div ref={ref} className="relative mx-auto flex max-w-6xl flex-col gap-12">
         <motion.div

@@ -13,7 +13,7 @@ export const metadata = buildPageMetadata({
 export default function PatreonPage() {
   return (
     <main className="bg-[var(--bg)] text-white">
-      <section className="relative isolate overflow-hidden px-6 pt-28 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <div className="relative z-10 mb-4 flex justify-start">
           <Link
             href="/"
@@ -41,7 +41,7 @@ export default function PatreonPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 py-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-slate-900/70 to-black" />
         <div className="relative mx-auto max-w-6xl space-y-10 rounded-[3rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl">
           <div>
@@ -68,7 +68,7 @@ export default function PatreonPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 pb-20 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 pb-20 sm:px-10 lg:px-16">
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/85" />
         <div className="relative mx-auto max-w-6xl space-y-8 rounded-[3rem] border border-white/10 bg-black/40 p-8 backdrop-blur-2xl">
           <div>

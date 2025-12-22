@@ -71,7 +71,7 @@ export const Hero = () => {
     <section
       id="hero"
       ref={setRefs}
-      className="relative isolate min-h-screen px-6 pb-8 pt-14 sm:px-10 sm:pb-10 sm:pt-16 lg:px-16 lg:pb-10 lg:pt-20"
+      className="relative min-h-screen px-6 pb-8 pt-14 sm:px-10 sm:pb-10 sm:pt-16 lg:px-16 lg:pb-10 lg:pt-20"
       suppressHydrationWarning
     >
       <div className="hero-grid" />

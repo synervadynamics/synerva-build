@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CaseComingSoon() {
   return (
     <main className="bg-[var(--bg)] text-white">
-      <section className="relative isolate overflow-hidden px-6 py-28 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-28 sm:px-10 lg:px-16">
         <div className="relative z-10 mb-4 flex justify-start">
           <Link
             href="/"

@@ -26,15 +26,22 @@
     --grad-scroll-42: 21%;
     --grad-x: 50%;
     --grad-y: 50%;
+    --bg-x: 50%;
+    --bg-y: 50%;
+    --scroll-hue: 210;
+    --auto-hue: 210;
+    --auto-hue-2: 40;
+    --auto-hue-3: 120;
+    --auto-hue-4: 300;
     transition:
-      --g1 900ms ease,
-      --g2 900ms ease,
-      --g3 900ms ease,
-      --g4 900ms ease,
-      --g5 900ms ease,
-      --g6 900ms ease,
-      --g7 900ms ease,
-      --g8 900ms ease;
+      --g1 520ms ease,
+      --g2 520ms ease,
+      --g3 520ms ease,
+      --g4 520ms ease,
+      --g5 520ms ease,
+      --g6 520ms ease,
+      --g7 520ms ease,
+      --g8 520ms ease;
   }
 
   * {
@@ -149,9 +156,13 @@
     pointer-events: none;
   }
 
-  .global-gradient {
-    position: fixed;
-    inset: 0;
+  .gradient-stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    min-height: 100%;
     z-index: 0;
     pointer-events: none;
     background:
@@ -213,19 +224,16 @@
       ),
       linear-gradient(135deg, #02050b, #050910 40%, #04070f);
     background-size: 240% 240%;
-    animation: global-flow 48s ease-in-out infinite alternate;
-    mix-blend-mode: normal;
+    background-position: var(--bg-x, 50%) var(--bg-y, 50%);
     opacity: var(--bg-opacity, 1);
     transform: translate3d(0, var(--bg-shift, 0px), 0) scale(1.02);
-    will-change: transform, opacity, background-position;
-    backface-visibility: hidden;
   }
 
-  .global-gradient::before {
+  .gradient-stage::before {
     content: none;
   }
 
-  .global-gradient::after {
+  .gradient-stage::after {
     content: none;
   }
 
@@ -457,7 +465,45 @@
   }
 
   .noise-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .noise-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.56' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .glass-panel,
+    .bubble-drift,
+    .backdrop-blur-2xl,
+    .backdrop-blur-xl,
+    .backdrop-blur-lg,
+    .backdrop-blur {
+      backdrop-filter: none;
+      background-color: rgba(7, 12, 20, 0.78);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .glass-panel,
+    .bubble-drift,
+    .backdrop-blur-2xl,
+    .backdrop-blur-xl,
+    .backdrop-blur-lg {
+      backdrop-filter: none;
+      background-color: rgba(7, 12, 20, 0.8);
+    }
   }
 
   .hero-grid {

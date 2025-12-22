@@ -10,7 +10,7 @@ export const Roadmap = () => {
   return (
     <section
       id="roadmap"
-      className="relative overflow-hidden px-6 pb-24 pt-14 sm:px-10 sm:pb-26 sm:pt-16 lg:px-16 lg:pb-28 lg:pt-20"
+      className="relative overflow-visible px-6 pb-24 pt-14 sm:px-10 sm:pb-26 sm:pt-16 lg:px-16 lg:pb-28 lg:pt-20"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8">
         <div className="max-w-3xl space-y-4 text-white">

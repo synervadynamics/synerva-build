@@ -10,7 +10,7 @@ export const ContactRibbon = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden px-6 pb-20 pt-14 sm:px-10 sm:pb-22 sm:pt-16 lg:px-16 lg:pb-24 lg:pt-18"
+      className="relative overflow-visible px-6 pb-20 pt-14 sm:px-10 sm:pb-22 sm:pt-16 lg:px-16 lg:pb-24 lg:pt-18"
     >
       <AmbientVideo
         src="contact-ribbon"
