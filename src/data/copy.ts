@@ -10,6 +10,7 @@ export const copy = {
   global: {
     nav: [
       { label: "Offerings", href: "/offerings" },
+      { label: "Merch", href: "/merch" },
       { label: "Contact", href: "/contact" },
     ],
     contact: {
@@ -118,6 +119,142 @@ export const copy = {
         href: "/contact",
       },
     ],
+  },
+  merch: {
+    eyebrow: "Merch",
+    heading: "Studio artifacts you can wear.",
+    body: [
+      "Synerva’s work is built to survive contact with reality: pressure, repetition, and the slow grind of days that don’t care about your plans. The merch is the same principle, printed.",
+      "These visuals are mockups from the current design slate. The first run will be available for sale soon. If you want first access, the merch page is where the drop notices will land.",
+    ],
+    microline: "Mockups shown. First release opens soon.",
+    ctas: {
+      primary: { label: "View Merch", href: "/merch" },
+      secondary: { label: "Get Drop Alerts", href: "/merch#drop-alerts" },
+    },
+    cards: [
+      {
+        title: "Quiet Divine Editions",
+        meta: "Series artifacts",
+        text:
+          "Portraiture-as-infrastructure. Floral permeability, fracture, goldwork, and the calm kind of intensity that doesn’t need volume to be felt.",
+        cta: "See the Editions",
+        href: "/merch",
+      },
+      {
+        title: "Synerva Core",
+        meta: "System graphics",
+        text:
+          "Minimal marks, engineered layouts, and typographic pressure. The pieces that feel like a studio schematic, not a slogan.",
+        cta: "Explore Core",
+        href: "/merch",
+      },
+      {
+        title: "Numbered Issues",
+        meta: "Limited runs",
+        text:
+          "Small-batch releases with a clean identifier and a clear end. When it’s done, it’s done.",
+        cta: "View Upcoming Drops",
+        href: "/merch",
+      },
+    ],
+    placeholders: {
+      labels: ["merch-mockup-01", "merch-mockup-02", "merch-mockup-03"],
+      alt: "Synerva merch mockup preview",
+    },
+  },
+  merchPage: {
+    hero: {
+      eyebrow: "Merch",
+      heading: "Wear the standard. Not the noise.",
+      lead: [
+        "This page is a preview bay. What you’re seeing are mockups from Synerva’s current merch slate, shown early so the direction is visible before the checkout goes live.",
+        "The first collection will be available for sale soon. If you want the opening window, sizing details, and final print specs the moment they’re locked, join the drop list.",
+      ],
+      ctas: {
+        primary: { label: "Get Drop Alerts", href: "#drop-alerts" },
+        secondary: { label: "Back to Home", href: "/" },
+      },
+      microproofs: [
+        "Designed like the site: restrained, intentional, measured",
+        "Mockups now, first release soon",
+        "Limited runs, clean identifiers",
+      ],
+      heroImage: {
+        label: "merch-hero-mockup",
+        alt: "Synerva merch mockup hero placeholder",
+      },
+    },
+    whatThisIs: {
+      heading: "Not “merch.” Physical editions.",
+      body: [
+        "Synerva doesn’t produce decoration. It produces artifacts: proof that taste can be disciplined, that a visual can hold tension without shouting, that a system can still feel cinematic.",
+        "These shirts are the physical counterpart to the studio’s work. Same principles. Different substrate.",
+      ],
+    },
+    currentSlate: {
+      heading: "The current mockup slate",
+      body:
+        "A first look at the designs in rotation. Some will ship as-is. Some will tighten. The rule is the same either way: if it can’t hold up under a second look, it doesn’t launch.",
+      collections: [
+        {
+          title: "Quiet Divine Series",
+          text:
+            "Portraiture and motif studies: florals, fracture, luminous geometry, the calm authority of inner coherence.",
+          status: "Mockups live. Release window announced soon.",
+          placeholder: {
+            label: "quiet-divine-mockup",
+            alt: "Synerva merch mockup preview",
+          },
+        },
+        {
+          title: "Synerva Graphics",
+          text:
+            "System layouts, typographic constructions, engineered gradients, and studio marks designed to feel inevitable on black.",
+          status: "Mockups live. Final variants pending.",
+          placeholder: {
+            label: "synerva-graphics-mockup",
+            alt: "Synerva merch mockup preview",
+          },
+        },
+        {
+          title: "Issue Units",
+          text:
+            "Limited identifiers, minimal language, and designs that read like a production label instead of a punchline.",
+          status: "Mockups live. First run coming soon.",
+          placeholder: {
+            label: "issue-units-mockup",
+            alt: "Synerva merch mockup preview",
+          },
+        },
+      ],
+    },
+    disclaimer: {
+      heading: "Important: these are mockups.",
+      body:
+        "Mockups are shown to communicate direction, scale, and placement before the sales system is live. Final color, print texture, and micro-placement may shift slightly between mockup and production. The launch post will include the finalized specs and a locked sizing chart.",
+    },
+    dropLogic: {
+      heading: "How drops will work",
+      body:
+        "When the store opens, releases will run in clear windows. Each drop will have: a defined start, a defined end, and a clean archive afterward. No fog. No “maybe still available?” confusion.",
+      bullets: [
+        "Drop window announcement (with finalized mockups + specs)",
+        "Launch opens",
+        "Window closes",
+        "Archive remains visible",
+      ],
+    },
+    finalCta: {
+      heading: "Get the opening window.",
+      body:
+        "If you want first access when the first run goes live, join the drop list. You’ll get one message when it matters, not an algorithmic drip campaign auditioning for your last nerve.",
+      ctas: {
+        primary: { label: "Get Drop Alerts" },
+        secondary: { label: "View Homepage", href: "/" },
+      },
+      note: "Drop list activation coming soon.",
+    },
   },
   systemsSection: {
     eyebrow: "Systems",

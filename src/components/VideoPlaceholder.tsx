@@ -4,17 +4,21 @@ type VideoPlaceholderProps = {
   label?: string;
   className?: string;
   ratio?: string;
+  ariaLabel?: string;
 };
 
 export default function VideoPlaceholder({
   label = "Video placeholder",
   className,
   ratio,
+  ariaLabel,
 }: VideoPlaceholderProps) {
   const ratioClass = ratio ?? "aspect-[16/9]";
 
   return (
     <div
+      role={ariaLabel ? "img" : undefined}
+      aria-label={ariaLabel}
       className={cn(
         "relative flex w-full items-center justify-center overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)]",
         ratioClass,
