@@ -48,7 +48,11 @@ export const Systems = () => {
                       src={card.image}
                       alt={card.imageAlt}
                       fill
-                      className="object-cover"
+                      className={
+                        card.title === "Synerva OS"
+                          ? "object-cover object-[center_60%]"
+                          : "object-cover"
+                      }
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
