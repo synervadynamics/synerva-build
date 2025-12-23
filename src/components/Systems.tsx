@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const Systems = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -30,6 +31,11 @@ export const Systems = () => {
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           className="bubble-drift rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:p-8"
         >
+          <VideoPlaceholder
+            label="systems-placeholder"
+            ratio="aspect-[16/9]"
+            className="mb-6"
+          />
           <ul className="space-y-3 text-sm text-white/80">
             {sectionCopy.bullets.map((item) => (
               <li key={item} className="flex items-center gap-3">

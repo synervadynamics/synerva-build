@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const Offerings = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -41,6 +42,10 @@ export const Offerings = () => {
               key={card.title}
               className="flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl"
             >
+              <VideoPlaceholder
+                label="offerings-card-placeholder"
+                ratio="aspect-[16/10]"
+              />
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.35em] text-white/60">
                   {card.title}
