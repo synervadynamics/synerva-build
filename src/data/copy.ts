@@ -173,7 +173,7 @@ export const copy = {
         cta: "View Upcoming Drops",
         href: "/merch",
         image: {
-          src: "/visuals/merch/numbered-issuues-v1.PNG",
+          src: "/visuals/merch/numbered-issues-v1.PNG",
           alt: "Numbered Issues mockup",
         },
       },
