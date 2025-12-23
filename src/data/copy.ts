@@ -110,6 +110,10 @@ export const copy = {
           "A practical blueprint for building leverage, consistency, and execution systems that do not collapse under pressure.",
         cta: "Read the Playbook",
         href: "/contact",
+        image: {
+          src: "/rockstar-cover.png",
+          alt: "The Rockstar Server Playbook cover",
+        },
       },
       {
         title: "The Reflective Dose",
@@ -117,6 +121,10 @@ export const copy = {
           "Short-form clarity injections on craft, resilience, and the invisible rules behind good work.",
         cta: "Explore The Reflective Dose",
         href: "/contact",
+        image: {
+          src: "/reflective-dose-cover.png",
+          alt: "The Reflective Dose cover",
+        },
       },
     ],
   },
