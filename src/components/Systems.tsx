@@ -42,13 +42,13 @@ export const Systems = () => {
                 key={card.title}
                 className="flex h-full flex-col rounded-[2.25rem] border border-white/15 bg-gradient-to-b from-[rgba(16,30,42,0.92)] via-[rgba(15,28,40,0.86)] to-[rgba(12,24,34,0.92)] p-6 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.85)]"
               >
-                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-[rgba(6,12,20,0.9)] p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+                <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-[rgba(6,12,20,0.9)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
                   <div className="relative aspect-[16/9] w-full">
                     <Image
                       src={card.image}
                       alt={card.imageAlt}
                       fill
-                      className="object-contain"
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
