@@ -1,9 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
+
+const offeringsMedia = {
+  "Operator Hourly": {
+    src: "/visuals/offerings/operator-hourly.PNG",
+    alt: "Operator Hourly offering",
+    width: 1024,
+    height: 1536,
+  },
+  "Flat-Rate Sprints": {
+    src: "/visuals/offerings/flat-rate-sprints.PNG",
+    alt: "Flat-rate sprints offering",
+    width: 1536,
+    height: 1024,
+  },
+  "Build With Synerva": {
+    src: "/visuals/offerings/full-stack-system-builds.PNG",
+    alt: "Full-stack system builds offering",
+    width: 1024,
+    height: 1024,
+  },
+} as const;
 
 export const Offerings = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -37,32 +58,45 @@ export const Offerings = () => {
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8"
         >
-          {offerings.cards.map((card) => (
-            <div
-              key={card.title}
-              className="flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl"
-            >
-              <VideoPlaceholder
-                label="offerings-card-placeholder"
-                ratio="aspect-[16/10]"
-              />
-              <div className="space-y-2">
-                <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                  {card.title}
-                </p>
-                <p className="text-sm text-white/70">{card.meta}</p>
+          {offerings.cards.map((card) => {
+            const media =
+              offeringsMedia[card.title as keyof typeof offeringsMedia];
+
+            return (
+              <div
+                key={card.title}
+                className="flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl"
+              >
+                {media ? (
+                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <Image
+                      src={media.src}
+                      alt={media.alt}
+                      width={media.width}
+                      height={media.height}
+                      className="h-auto w-full object-cover"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                  </div>
+                ) : null}
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    {card.title}
+                  </p>
+                  <p className="text-sm text-white/70">{card.meta}</p>
+                </div>
+                <p className="text-sm text-white/80">{card.text}</p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href={card.href}
+                    className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                  >
+                    {card.cta}
+                  </Link>
+                </div>
               </div>
-              <p className="text-sm text-white/80">{card.text}</p>
-              <div className="mt-auto pt-2">
-                <Link
-                  href={card.href}
-                  className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                >
-                  {card.cta}
-                </Link>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
         <p className="text-xs uppercase tracking-[0.3em] text-white/50">
           {offerings.microline}
