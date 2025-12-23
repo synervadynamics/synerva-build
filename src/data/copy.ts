@@ -8,7 +8,10 @@ export const copy = {
     twitter: "@synerva-dynamics",
   },
   global: {
-    nav: [{ label: "Contact", href: "/contact" }],
+    nav: [
+      { label: "Offerings", href: "/offerings" },
+      { label: "Contact", href: "/contact" },
+    ],
     contact: {
       email: "synerva-dynamics@gmail.com",
       phone: "+1 (905) 380-7790",
@@ -60,6 +63,73 @@ export const copy = {
       "Transform scattered effort into a unified engine built to multiply output.",
     ],
     cta: { label: "Experience Unified Momentum", href: "/contact" },
+  },
+  offerings: {
+    eyebrow: "Offerings",
+    heading: "Choose the entry point. We’ll do the compression.",
+    body:
+      "Most firms charge you for coordination. Synerva charges you for forward motion. Brand, web, content, design, automation, and measurement run as one loop, so decisions don’t get lost between people who don’t own the outcome.",
+    cards: [
+      {
+        title: "Operator Hourly",
+        meta: "$100 CAD/hr",
+        text:
+          "Best for sharp problems: positioning, copy, audits, conversion fixes, creative direction, and fast iteration when the highest value is judgment.",
+        cta: "View Offerings",
+        href: "/offerings",
+      },
+      {
+        title: "Flat-Rate Sprints",
+        meta: "Fixed scope. Fast turnaround.",
+        text:
+          "Defined deliverables, clear acceptance criteria, and a quote that does not drift. Built for work that should not become a six-week “alignment journey.”",
+        cta: "See Sprint Options",
+        href: "/offerings#sprints",
+      },
+      {
+        title: "Build With Synerva",
+        meta: "Full-stack system builds",
+        text:
+          "When you want the full loop: strategy, writing, design, build, automation, and analytics stitched into one release path.",
+        cta: "Start a Project",
+        href: "/contact",
+      },
+    ],
+    microline: "Transparent pricing, kept off the homepage spreadsheet.",
+  },
+  publications: {
+    eyebrow: "Publications",
+    heading: "Work that holds up under rereads.",
+    body:
+      "Field manuals, essays, and frameworks built for real operators. Clean thinking, shipped in public.",
+    cards: [
+      {
+        title: "The Rockstar Server Playbook",
+        text:
+          "A practical blueprint for building leverage, consistency, and execution systems that do not collapse under pressure.",
+        cta: "Read the Playbook",
+        href: "/contact",
+      },
+      {
+        title: "The Reflective Dose",
+        text:
+          "Short-form clarity injections on craft, resilience, and the invisible rules behind good work.",
+        cta: "Explore The Reflective Dose",
+        href: "/contact",
+      },
+    ],
+  },
+  systemsSection: {
+    eyebrow: "Systems",
+    heading: "Internal engines. Public outcomes.",
+    body:
+      "Synerva is powered by internal systems that preserve decisions, standards, and context across projects. Some of these tools are in private development and not offered as standalone products yet. What you can hire today is the output: strategy, writing, design, builds, and the operational loops that make the work compound.",
+    bullets: [
+      "Lucentra (in development)",
+      "Verisense (in development)",
+      "Synerva OS (in development)",
+    ],
+    microline: "Want preview access? Join the private list.",
   },
   stack: {
     heading: "The Flagship Systems That Anchor the Roadmap",
@@ -438,7 +508,7 @@ export const copy = {
       blurb:
         "Forged from fifteen years in the high-pressure hospitality trenches, The Rockstar Server Playbook is a cinematic, psychological field manual for anyone who has carried grace through chaos and come out stronger. It’s part memoir, part systems guide, part war story anthology—a living blueprint for handling pressure with precision and performance in a world where clarity isn’t optional, it’s oxygen.",
       ctaPrimary: "Read the Playbook",
-      ctaPrimaryHref: "/labs#preview-access",
+      ctaPrimaryHref: "/#preview-access",
       ctaSecondary: "View all Labs",
       video: {
         src: "/rockstar-cover.png",
@@ -475,7 +545,7 @@ export const copy = {
           value: "Grace under fire, emotional craftsmanship, and the invisible skills behind great service.",
         },
       ],
-      ctaPrimary: { label: "Read the Playbook", href: "/labs#preview-access" },
+      ctaPrimary: { label: "Read the Playbook", href: "/#preview-access" },
       footnote: "Born in live hospitality labs and engineered to apply far beyond them.",
     },
     secondary: [] as {
@@ -513,7 +583,7 @@ export const copy = {
         src: "/brand/reflective-dose-cover.png",
         alt: "Cover of The Reflective Dose journal",
       },
-      ctaPrimary: { label: "Explore The Reflective Dose", href: "/labs#preview-access" },
+      ctaPrimary: { label: "Explore The Reflective Dose", href: "/#preview-access" },
       footnote: "(Born in live hospitality labs and engineered to apply far beyond them.)",
     },
     closing: "Every Lab begins as an irritation worth solving, and ends as a tested asset ready to deploy.",

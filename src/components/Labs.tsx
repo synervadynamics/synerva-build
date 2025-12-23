@@ -115,6 +115,7 @@ export const Labs = () => {
           </div>
         </motion.div>
         <motion.div
+          id="preview-access"
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}

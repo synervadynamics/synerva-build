@@ -33,7 +33,7 @@ export default function CaseComingSoon() {
               View Case Summaries
             </Link>
             <Link
-              href="/#cases"
+              href="/cases"
               className="rounded-full border border-white/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:border-white/60"
             >
               Back to Cases Section

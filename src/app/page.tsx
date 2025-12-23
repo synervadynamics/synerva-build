@@ -5,12 +5,13 @@ import { Footer } from "@/components/Footer";
 import { About } from "@/components/About";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { Systems } from "@/components/Systems";
-import { Labs } from "@/components/Labs";
+import { Publications } from "@/components/Publications";
 import { Roadmap } from "@/components/Roadmap";
 import { Narrative } from "@/components/Narrative";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
+import { Offerings } from "@/components/Offerings";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -24,9 +25,10 @@ export default function HomePage() {
       <ScrollProgress />
       <Hero />
       <Narrative />
+      <Offerings />
       <Deliver />
       <Systems />
-      <Labs />
+      <Publications />
       <Philosophy />
       <Roadmap />
       <SynervaDimensionsSection />
