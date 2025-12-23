@@ -260,13 +260,54 @@ export const copy = {
     eyebrow: "Systems",
     heading: "Internal engines. Public outcomes.",
     body:
-      "Synerva is powered by internal systems that preserve decisions, standards, and context across projects. Some of these tools are in private development and not offered as standalone products yet. What you can hire today is the output: strategy, writing, design, builds, and the operational loops that make the work compound.",
-    bullets: [
-      "Lucentra (in development)",
-      "Verisense (in development)",
-      "Synerva OS (in development)",
+      "Synerva is built around a simple advantage: decisions persist. Standards don’t evaporate. Context doesn’t reset.\n\nBehind the scenes, we’re developing a small stack of internal systems designed to preserve judgment and reduce operational drag over time. They’re not public products yet, and they’re not what you’re hiring.\n\nWhat you can hire today is the output: strategy, writing, design, builds, and the operational loops that make the work compound.",
+    cards: [
+      {
+        title: "Lucentra",
+        descriptor: "LUCENTRA — STRATEGY INTELLIGENCE LAYER",
+        body:
+          "Lucentra is being built to capture how a team thinks, decides, and writes, then keep that standard intact as output scales. Not a template machine. A disciplined memory for judgment.",
+        status: "In private development. Not publicly released yet.",
+        bullets: [
+          "Voice constraints + editorial guardrails",
+          "Decision mapping + scenario pressure tests",
+          "Brief architecture that survives revisions",
+        ],
+        href: "/lucentra",
+        image: "/visuals/systems/lucentra-wide-logo-1.png",
+        imageAlt: "Lucentra logo",
+      },
+      {
+        title: "Verisense",
+        descriptor: "VERISENSE — BEHAVIORAL SIGNAL ENGINE",
+        body:
+          "Verisense is being built to surface what communication is doing, not just what it says, with emphasis on tone, intent, confidence, and friction. The goal is clearer conversations, fewer avoidable misreads.",
+        status: "In private development. Not publicly released yet.",
+        bullets: [
+          "Signal detection beyond transcripts",
+          "Patterns of certainty, avoidance, and emphasis",
+          "Review views for leadership and coaching",
+        ],
+        href: "/verisense",
+        image: "/visuals/systems/verisense-hero-2.jpg",
+        imageAlt: "Verisense logo",
+      },
+      {
+        title: "Synerva OS",
+        descriptor: "SYNERVA OS — OPERATIONAL STRUCTURE LAYER",
+        body:
+          "Synerva OS is being built as modular execution infrastructure: workflows, handoffs, compliance-aware messaging logic, and scaffolding that scales without turning your week into meetings about meetings.",
+        status: "In private development. Not publicly released yet.",
+        bullets: [
+          "Automation building blocks + guardrails",
+          "Consent-aware messaging architecture",
+          "Clear visibility into ownership + flow",
+        ],
+        href: "/synerva-os",
+        image: "/visuals/systems/usethis-snerva-os-wide-1.png",
+        imageAlt: "Synerva OS logo",
+      },
     ],
-    microline: "Want preview access? Join the private list.",
   },
   stack: {
     heading: "The Flagship Systems That Anchor the Roadmap",
