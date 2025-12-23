@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 
@@ -156,6 +157,20 @@ export default function OfferingsPage() {
                 {chip}
               </span>
             ))}
+          </div>
+          <div className="w-full">
+            <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-[2.5rem] border border-white/10">
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src="/visuals/placeholders/offerings-hero-placeholder.svg"
+                  alt="Minimal abstract hero visual"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 640px, (min-width: 768px) 520px, 100vw"
+                  priority
+                />
+              </div>
+            </div>
           </div>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
@@ -13,6 +14,20 @@ export const Offerings = () => {
       id="offerings"
       className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
+      <div
+        className="pointer-events-none absolute right-6 top-10 hidden md:block"
+        aria-hidden="true"
+      >
+        <div className="relative h-48 w-48 opacity-25 lg:h-72 lg:w-72">
+          <Image
+            src="/visuals/placeholders/offerings-loop-placeholder.svg"
+            alt="Abstract loop graphic"
+            fill
+            className="object-contain"
+            sizes="(min-width: 1024px) 288px, 192px"
+          />
+        </div>
+      </div>
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
@@ -41,16 +42,29 @@ export const Publications = () => {
               key={card.title}
               className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
             >
-              <h3 className="text-2xl font-semibold tracking-tight">
-                {card.title}
-              </h3>
-              <p className="mt-3 text-sm text-white/70">{card.text}</p>
-              <Link
-                href={card.href}
-                className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-              >
-                {card.cta}
-              </Link>
+              <div className="flex items-start gap-4">
+                <div className="relative h-36 w-24 flex-shrink-0 overflow-hidden rounded-xl border border-white/10">
+                  <Image
+                    src="/visuals/placeholders/publications-cover-placeholder.png"
+                    alt="Publication cover placeholder"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-semibold tracking-tight">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-white/70">{card.text}</p>
+                  <Link
+                    href={card.href}
+                    className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                  >
+                    {card.cta}
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </motion.div>
