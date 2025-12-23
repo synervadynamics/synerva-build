@@ -3,8 +3,8 @@ export const copy = {
     title: "Synerva Dynamics — The Power of Many, Engineered for One",
     description:
       "Synerva Dynamics builds unified systems across brand, web, content, and automation—designed around structure, not noise. Every layer works in one integrated loop, so ambitious teams gain lift they can see, measure, and compound.",
-    url: "https://synerva-dynamics.com",
-    ogImage: "/visuals/hero/hero-loop.jpg",
+    url: "https://www.synervadynamics.com",
+    ogImage: "/visuals/hero/synerva-hero-5.png",
     twitter: "@synerva-dynamics",
   },
   global: {
@@ -733,7 +733,7 @@ export const copy = {
     ],
     schema: {
       name: "Synerva Dynamics",
-      url: "https://synerva-dynamics.com",
+      url: "https://www.synervadynamics.com",
       logo: "/logo.svg",
       sameAs: [
         "https://www.linkedin.com/company/synerva",
