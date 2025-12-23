@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 import { copy } from "@/data/copy";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const Merch = () => {
   const shouldReduceMotion = useReducedMotion();
   const merch = copy.merch;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeLabel =
+    merch.placeholders.labels[activeIndex] ?? merch.placeholders.labels[0];
 
   return (
     <section
@@ -51,6 +55,14 @@ export const Merch = () => {
                 {merch.ctas.secondary.label}
               </Link>
             </div>
+            <div className="bubble-drift mt-6 rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)]">
+              <VideoPlaceholder
+                label={activeLabel}
+                ratio="aspect-[4/3]"
+                ariaLabel={merch.placeholders.alt}
+                className="rounded-2xl"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -61,10 +73,17 @@ export const Merch = () => {
             className="space-y-6"
           >
             <div className="grid gap-5">
-              {merch.cards.map((card) => (
+              {merch.cards.map((card, index) => (
                 <div
                   key={card.title}
-                  className="rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
+                  onMouseEnter={() => setActiveIndex(index)}
+                  onFocus={() => setActiveIndex(index)}
+                  tabIndex={0}
+                  className={`rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
+                    activeIndex === index
+                      ? "border-white/30 shadow-[0_24px_70px_-40px_rgba(0,0,0,0.55)]"
+                      : ""
+                  }`}
                 >
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/60">
@@ -82,17 +101,6 @@ export const Merch = () => {
                     {card.cta}
                   </Link>
                 </div>
-              ))}
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {merch.placeholders.labels.map((label) => (
-                <VideoPlaceholder
-                  key={label}
-                  label={label}
-                  ratio="aspect-[3/2]"
-                  ariaLabel={merch.placeholders.alt}
-                  className="rounded-2xl"
-                />
               ))}
             </div>
           </motion.div>
