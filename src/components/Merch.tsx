@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { copy } from "@/data/copy";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const Merch = () => {
   const shouldReduceMotion = useReducedMotion();
   const merch = copy.merch;
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeLabel =
-    merch.placeholders.labels[activeIndex] ?? merch.placeholders.labels[0];
+  const activeCard = merch.cards[activeIndex] ?? merch.cards[0];
 
   return (
     <section
@@ -56,12 +55,17 @@ export const Merch = () => {
               </Link>
             </div>
             <div className="bubble-drift mt-6 rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)]">
-              <VideoPlaceholder
-                label={activeLabel}
-                ratio="aspect-[4/3]"
-                ariaLabel={merch.placeholders.alt}
-                className="rounded-2xl"
-              />
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                <div className="relative aspect-[3/2] w-full">
+                  <Image
+                    src={activeCard.image.src}
+                    alt={activeCard.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 44vw, (min-width: 768px) 80vw, 100vw"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
 

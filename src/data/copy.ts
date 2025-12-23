@@ -148,6 +148,10 @@ export const copy = {
           "Portraiture-as-infrastructure. Floral permeability, fracture, goldwork, and the calm kind of intensity that doesn’t need volume to be felt.",
         cta: "See the Editions",
         href: "/merch",
+        image: {
+          src: "/visuals/merch/quiet-divine-series-v1.PNG",
+          alt: "Quiet Divine Editions mockup",
+        },
       },
       {
         title: "Synerva Core",
@@ -156,6 +160,10 @@ export const copy = {
           "Minimal marks, engineered layouts, and typographic pressure. The pieces that feel like a studio schematic, not a slogan.",
         cta: "Explore Core",
         href: "/merch",
+        image: {
+          src: "/visuals/merch/what-you-see-is-a-side-effect.PNG",
+          alt: "Synerva Core mockup",
+        },
       },
       {
         title: "Numbered Issues",
@@ -164,6 +172,10 @@ export const copy = {
           "Small-batch releases with a clean identifier and a clear end. When it’s done, it’s done.",
         cta: "View Upcoming Drops",
         href: "/merch",
+        image: {
+          src: "/visuals/merch/numbered-issuues-v1.PNG",
+          alt: "Numbered Issues mockup",
+        },
       },
     ],
     placeholders: {
