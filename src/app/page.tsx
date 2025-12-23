@@ -10,7 +10,6 @@ import { Roadmap } from "@/components/Roadmap";
 import { Narrative } from "@/components/Narrative";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
-import { GradientOrchestrator } from "@/components/GradientOrchestrator";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 
 export const metadata = buildPageMetadata({
@@ -22,7 +21,6 @@ export const metadata = buildPageMetadata({
 export default function HomePage() {
   return (
     <main className="relative text-white">
-      <GradientOrchestrator />
       <ScrollProgress />
       <Hero />
       <Narrative />
