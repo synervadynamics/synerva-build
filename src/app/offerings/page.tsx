@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const metadata = buildPageMetadata({
   title: "Offerings — Synerva Dynamics",
@@ -128,63 +128,59 @@ export default function OfferingsPage() {
   return (
     <main className="bg-[var(--bg)] text-white">
       <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
-        <div className="relative mx-auto flex max-w-5xl flex-col gap-6 rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
-          <div className="flex justify-start">
-            <Link
-              href="/"
-              className="text-sm uppercase tracking-[0.3em] text-white/70 transition hover:text-white"
-            >
-              ← Home
-            </Link>
-          </div>
-          <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-            Offerings
-          </p>
-          <h1 className="text-4xl leading-tight sm:text-5xl">
-            High-output execution, without the headcount tax.
-          </h1>
-          <p className="text-base text-white/72">
-            Synerva is built around one advantage: decisions persist. Standards
-            don’t evaporate. Work compresses instead of multiplying. That’s the
-            difference between “busy” and “done.”
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {heroChips.map((chip) => (
-              <span
-                key={chip}
-                className="rounded-full border border-white/20 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/70"
-              >
-                {chip}
-              </span>
-            ))}
-          </div>
-          <div className="w-full">
-            <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-[2.5rem] border border-white/10">
-              <div className="relative aspect-[16/9] w-full">
-                <Image
-                  src="/visuals/placeholders/offerings-hero-placeholder.svg"
-                  alt="Minimal abstract hero visual"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 640px, (min-width: 768px) 520px, 100vw"
-                  priority
-                />
+        <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="flex flex-col gap-6">
+              <div className="flex justify-start">
+                <Link
+                  href="/"
+                  className="text-sm uppercase tracking-[0.3em] text-white/70 transition hover:text-white"
+                >
+                  ← Home
+                </Link>
+              </div>
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                Offerings
+              </p>
+              <h1 className="text-4xl leading-tight sm:text-5xl">
+                High-output execution, without the headcount tax.
+              </h1>
+              <p className="text-base text-white/72">
+                Synerva is built around one advantage: decisions persist.
+                Standards don’t evaporate. Work compresses instead of
+                multiplying. That’s the difference between “busy” and “done.”
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {heroChips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-white/20 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/70"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  href="/contact"
+                  className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                >
+                  Start with a 30-minute plan
+                </Link>
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                >
+                  Initiate Contact
+                </Link>
               </div>
             </div>
-          </div>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link
-              href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-            >
-              Start with a 30-minute plan
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-            >
-              Initiate Contact
-            </Link>
+            <div className="w-full lg:w-auto">
+              <VideoPlaceholder
+                label="offerings-hero-placeholder"
+                ratio="aspect-[16/9]"
+              />
+            </div>
           </div>
         </div>
       </section>
