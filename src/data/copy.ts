@@ -595,7 +595,7 @@ export const copy = {
           "Executive-ready packets indexed by scenario (investor, press, sales, operations)",
         ],
         video: {
-          src: "/what's-delivered-v1/voice-built-to-scale.PNG",
+          src: "/whats-delivered-v2/voice-built-to-scale.PNG",
           label: "Voice built to scale",
         },
         href: "/contact",
@@ -616,7 +616,7 @@ export const copy = {
           "Weekly heatmap analyses and funnel checks to validate every layout",
         ],
         video: {
-          src: "/what's-delivered-v1/web-that-earns-attention.PNG",
+          src: "/whats-delivered-v2/web-that-earns-attention.PNG",
           label: "Web that earns attention",
         },
         href: "/contact",
@@ -637,7 +637,7 @@ export const copy = {
           "Campaign dashboards reveal what actually amplified reach, not just what got views",
         ],
         video: {
-          src: "/what's-delivered-v1/content-that-multiplies-reach.PNG",
+          src: "/whats-delivered-v2/content-that-multiplies-reach.PNG",
           label: "Content that multiplies reach",
         },
         href: "/contact",
@@ -658,7 +658,7 @@ export const copy = {
           "Human-in-the-loop checkpoints at every sensitive juncture",
         ],
         video: {
-          src: "/what's-delivered-v1/automation-that-restores-focus.PNG",
+          src: "/whats-delivered-v2/automation-that-restores-focus.PNG",
           label: "Automation that restores focus",
         },
         href: "/contact",
@@ -679,7 +679,7 @@ export const copy = {
           "Quarterly roll-ups that separate noise from repeatable wins",
         ],
         video: {
-          src: "/what's-delivered-v1/analytics-that-tell-the-truth.PNG",
+          src: "/whats-delivered-v2/analytics-that-tell-the-truth.PNG",
           label: "Analytics that tell the truth",
         },
         href: "/contact",

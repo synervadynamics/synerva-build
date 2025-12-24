@@ -31,22 +31,25 @@ const isVideoSrc = (src?: string) =>
   Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const mediaDimensions: Record<string, { width: number; height: number }> = {
-  "/visuals/deliver/voice-built-to-scale.jpg": { width: 7152, height: 4023 },
-  "/visuals/deliver/web-that-earns-attention.jpg": {
-    width: 7111,
-    height: 4000,
+  "/whats-delivered-v2/voice-built-to-scale.PNG": {
+    width: 1536,
+    height: 1024,
   },
-  "/visuals/deliver/content-that-multiplies-reach.jpg": {
-    width: 4000,
-    height: 3000,
+  "/whats-delivered-v2/web-that-earns-attention.PNG": {
+    width: 1536,
+    height: 1024,
   },
-  "/visuals/deliver/automation-that-restores-focus.jpg": {
-    width: 7680,
-    height: 4320,
+  "/whats-delivered-v2/content-that-multiplies-reach.PNG": {
+    width: 1536,
+    height: 1024,
   },
-  "/visuals/deliver/analytics-that-tell-the-truth.jpg": {
-    width: 3840,
-    height: 2160,
+  "/whats-delivered-v2/automation-that-restores-focus.PNG": {
+    width: 1536,
+    height: 1024,
+  },
+  "/whats-delivered-v2/analytics-that-tell-the-truth.PNG": {
+    width: 1536,
+    height: 1024,
   },
 };
 
