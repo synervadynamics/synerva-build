@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
@@ -65,11 +66,18 @@ export default function MerchPage() {
               </div>
             </div>
             <div className="w-full lg:w-auto">
-              <VideoPlaceholder
-                label={merch.hero.heroImage.label}
-                ratio="aspect-[16/10]"
-                ariaLabel={merch.hero.heroImage.alt}
-              />
+              <div className="relative overflow-hidden rounded-[2.25rem] border border-white/12 bg-white/[0.04] p-3 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-black/60">
+                  <Image
+                    src="/merch-v1/merch-hero.png"
+                    alt="Synerva merch hero mockup"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
