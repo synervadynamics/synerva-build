@@ -74,12 +74,17 @@ export const merchV1Categories: MerchCategory[] = [
       "Small-batch releases with a clean identifier and a clear end. When it is done, it is done.",
     ctaLabel: "View Numbered Issues",
     ctaHref: "/merch#numbered-issues",
-    previewImage: "/merch-v1/in-working-order.PNG",
+    previewImage: "/merch-v1/partial-exception.PNG",
     items: [
       {
-        name: "In Working Order",
-        imageSrc: "/merch-v1/in-working-order.PNG",
-        alt: "Numbered Issues shirt mockup: In Working Order",
+        name: "Eternal Return",
+        imageSrc: "/merch-v1/eternal-return.PNG",
+        alt: "Numbered Issues shirt mockup: Eternal Return",
+      },
+      {
+        name: "Partial Exception",
+        imageSrc: "/merch-v1/partial-exception.PNG",
+        alt: "Numbered Issues shirt mockup: Partial Exception",
       },
     ],
   },
