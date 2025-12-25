@@ -423,9 +423,9 @@ export const copy = {
         },
       ],
       proofPoints: [
-        "Onboards a team’s content playbook in 14 days.",
-        "Cut approval cycles from 5 days to 1 day via centralized voice standards.",
-        "Doubled output for a 10-person team with zero brand drift.",
+        "Absorbs a team’s voice and standards quickly, then keeps them coherent.",
+        "Tightens approval loops by making intent and tone explicit before review.",
+        "Expands output without dilution by holding a single, living definition of the work.",
       ],
       demos: [
         {
@@ -485,9 +485,9 @@ export const copy = {
         },
       ],
       proofPoints: [
-        "Improved sales call win rates by 20% by flagging high-impact cues.",
-        "Cut new-hire training time in half by revealing communication gaps early.",
-        "Raised eNPS by 15 points through clearer leadership comms.",
+        "Flags high-impact cues in conversation so responses match what matters.",
+        "Surfaces communication gaps early, making onboarding and coaching cleaner.",
+        "Strengthens trust in leadership by helping messages land as intended.",
       ],
       demos: [
         {
@@ -547,9 +547,9 @@ export const copy = {
         },
       ],
       proofPoints: [
-        "Handled 3× client load for a consultancy with zero additional hires.",
-        "Achieved 100% CASL-compliant outreach from day one.",
-        "Automated 250+ hours of manual work in the first quarter.",
+        "Carries more client and project load without adding coordination overhead.",
+        "Keeps outbound messaging aligned with consent and privacy expectations.",
+        "Automates repeatable work and clarifies ownership so execution stays calm.",
       ],
       demos: [
         {
