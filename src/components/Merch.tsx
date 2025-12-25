@@ -5,12 +5,14 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { copy } from "@/data/copy";
+import { merchV1Categories } from "@/data/merch-v1";
 
 export const Merch = () => {
   const shouldReduceMotion = useReducedMotion();
   const merch = copy.merch;
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeCard = merch.cards[activeIndex] ?? merch.cards[0];
+  const activeCard =
+    merchV1Categories[activeIndex] ?? merchV1Categories[0] ?? null;
 
   return (
     <section
@@ -57,13 +59,15 @@ export const Merch = () => {
             <div className="bubble-drift mt-6 rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)]">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                 <div className="relative aspect-[3/2] w-full">
-                  <Image
-                    src={activeCard.image.src}
-                    alt={activeCard.image.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 44vw, (min-width: 768px) 80vw, 100vw"
-                  />
+                  {activeCard ? (
+                    <Image
+                      src={activeCard.previewImage}
+                      alt={`${activeCard.title} preview`}
+                      fill
+                      className="object-contain p-6"
+                      sizes="(min-width: 1024px) 44vw, (min-width: 768px) 80vw, 100vw"
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -77,7 +81,7 @@ export const Merch = () => {
             className="space-y-6"
           >
             <div className="grid gap-5">
-              {merch.cards.map((card, index) => (
+              {merchV1Categories.map((card, index) => (
                 <div
                   key={card.title}
                   onMouseEnter={() => setActiveIndex(index)}
@@ -91,18 +95,20 @@ export const Merch = () => {
                 >
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                      {card.meta}
+                      Collection
                     </p>
                     <h3 className="text-2xl font-semibold tracking-tight">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-white/70">{card.text}</p>
+                    <p className="text-sm text-white/70">
+                      {card.description}
+                    </p>
                   </div>
                   <Link
-                    href={card.href}
+                    href={card.ctaHref}
                     className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
                   >
-                    {card.cta}
+                    {card.ctaLabel}
                   </Link>
                 </div>
               ))}

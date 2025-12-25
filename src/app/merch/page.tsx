@@ -2,6 +2,7 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
+import MerchCatalog from "@/components/merch/MerchCatalog";
 
 export const metadata = buildPageMetadata({
   title: "Merch — Synerva Dynamics",
@@ -91,29 +92,7 @@ export default function MerchPage() {
             <h2 className="text-3xl sm:text-4xl">{merch.currentSlate.heading}</h2>
             <p className="text-lg text-white/75">{merch.currentSlate.body}</p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {merch.currentSlate.collections.map((collection) => (
-              <div
-                key={collection.title}
-                className="flex h-full flex-col gap-4 rounded-[2.5rem] border border-white/12 bg-white/[0.03] p-6 shadow-[0_40px_130px_-80px_rgba(0,0,0,0.78)]"
-              >
-                <VideoPlaceholder
-                  label={collection.placeholder.label}
-                  ratio="aspect-[16/10]"
-                  ariaLabel={collection.placeholder.alt}
-                />
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-semibold tracking-tight">
-                    {collection.title}
-                  </h3>
-                  <p className="text-sm text-white/70">{collection.text}</p>
-                </div>
-                <p className="mt-auto text-xs uppercase tracking-[0.3em] text-white/55">
-                  {collection.status}
-                </p>
-              </div>
-            ))}
-          </div>
+          <MerchCatalog />
         </div>
       </section>
 

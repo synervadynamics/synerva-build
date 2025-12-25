@@ -154,15 +154,15 @@ export const copy = {
         },
       },
       {
-        title: "Synerva Core",
+        title: "Synerva Essentials",
         meta: "System graphics",
         text:
           "Minimal marks, engineered layouts, and typographic pressure. The pieces that feel like a studio schematic, not a slogan.",
-        cta: "Explore Core",
+        cta: "Explore Essentials",
         href: "/merch",
         image: {
           src: "/visuals/merch/what-you-see-is-a-side-effect.PNG",
-          alt: "Synerva Core mockup",
+          alt: "Synerva Essentials mockup",
         },
       },
       {
