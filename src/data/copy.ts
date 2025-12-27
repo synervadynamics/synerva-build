@@ -444,7 +444,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/visuals/systems/lucentra-wide-logo-1.png",
+        src: "/systems-logos-upscaled/lucentra-subpage.png",
         label: "Lucentra crest and mark",
       },
       cta: { label: "See What Lucentra Makes Possible", href: "/contact" },
@@ -506,7 +506,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/visuals/systems/verisense-logo-wide-1.png",
+        src: "/systems-logos-upscaled/verisense-subpage.png",
         label: "Verisense crest and mark",
       },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
@@ -566,7 +566,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/visuals/systems/usethis-snerva-os-wide-1.png",
+        src: "/systems-logos-upscaled/synerva-os-subpage.png",
         label: "Synerva OS crest and mark",
       },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },

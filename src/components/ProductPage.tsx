@@ -36,6 +36,8 @@ export const ProductPage = ({
       : undefined);
   const isVideo = Boolean(media?.src && media.src.endsWith(".mp4"));
   const mediaLabel = media?.label || `${product.title} visual`;
+  const mediaFrameClasses =
+    "relative aspect-[3/4] h-full max-h-[480px] w-full max-w-xs overflow-hidden rounded-2xl border border-white/10 bg-black";
 
   const useCases =
     (
@@ -125,29 +127,34 @@ export const ProductPage = ({
           <div className="flex items-center justify-center rounded-[2.25rem] border border-white/12 bg-gradient-to-br from-[#0f2032] via-[#0f1d2c] to-[#0a1422] p-4 shadow-[0_36px_120px_-78px_rgba(0,0,0,0.8)]">
             {media ? (
               isVideo ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="aspect-[3/4] h-full max-h-[480px] w-full max-w-xs overflow-hidden rounded-2xl border border-white/10 bg-black object-cover"
-                  aria-label={mediaLabel}
-                >
-                  <track kind="captions" label={mediaLabel} />
-                  <source src={media.src} type="video/mp4" />
-                </video>
+                <div className={mediaFrameClasses}>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover"
+                    aria-label={mediaLabel}
+                  >
+                    <track kind="captions" label={mediaLabel} />
+                    <source src={media.src} type="video/mp4" />
+                  </video>
+                </div>
               ) : (
-                <Image
-                  src={media.src}
-                  alt={mediaLabel}
-                  width={960}
-                  height={1280}
-                  className="aspect-[3/4] h-full max-h-[480px] w-full max-w-xs overflow-hidden rounded-2xl border border-white/10 bg-black object-cover"
-                  sizes="(min-width: 1024px) 320px, (min-width: 768px) 300px, 80vw"
-                />
+                <div className={mediaFrameClasses}>
+                  <Image
+                    src={media.src}
+                    alt={mediaLabel}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 320px, (min-width: 768px) 300px, 80vw"
+                  />
+                </div>
               )
             ) : (
-              <div className="flex aspect-[3/4] h-full max-h-[480px] w-full max-w-xs items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/30 text-sm text-white/50">
+              <div
+                className={`${mediaFrameClasses} flex items-center justify-center border-dashed border-white/20 bg-black/30 text-sm text-white/50`}
+              >
                 Coming soon
               </div>
             )}
