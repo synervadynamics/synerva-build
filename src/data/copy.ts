@@ -324,7 +324,7 @@ export const copy = {
           "Clear visibility into ownership + flow",
         ],
         href: "/synerva-os",
-        image: "/systems-homepage-logos/synerva-os-homepage-logo.png",
+        image: "/systems-homepage-logos/synerva-os-homepage-v2.png",
         imageAlt: "Synerva OS logo",
       },
     ],
