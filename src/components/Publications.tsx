@@ -12,7 +12,7 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-16 lg:pt-12"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         <motion.div
@@ -35,15 +35,15 @@ export const Publications = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="grid gap-6 sm:grid-cols-2"
+          className="grid gap-6 sm:grid-cols-2 lg:gap-5"
         >
           {publications.cards.map((card) => (
             <div
               key={card.title}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
+              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[460px] lg:p-5"
             >
               <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                <div className="relative aspect-[2/3] w-full">
+                <div className="relative aspect-[2/3] w-full lg:aspect-[4/5]">
                   <Image
                     src={card.image.src}
                     alt={card.image.alt}

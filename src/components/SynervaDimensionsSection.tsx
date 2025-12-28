@@ -23,7 +23,7 @@ export function SynervaDimensionsSection() {
   return (
     <section
       id="synerva-dimensions"
-      className="relative overflow-visible py-24 sm:py-28"
+      className="relative overflow-visible py-24 sm:py-28 lg:py-20"
     >
       <div
         className="pointer-events-none absolute inset-0 -z-10"
@@ -48,11 +48,11 @@ export function SynervaDimensionsSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-8 lg:gap-5">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {quietHero ? (
-              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10">
-                <div className="relative aspect-[3/4] w-full">
+              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 lg:mb-4">
+                <div className="relative aspect-[3/4] w-full lg:aspect-[4/5]">
                   <Image
                     src={quietHero.src}
                     alt={quietHero.alt}
@@ -93,9 +93,9 @@ export function SynervaDimensionsSection() {
             </Link>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
+          <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {parallaxHero ? (
-              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 aspect-[3/4]">
+              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 aspect-[3/4] lg:mb-4 lg:aspect-[4/5]">
                 <Image
                   src={parallaxHero.src}
                   alt={parallaxHero.alt}
