@@ -51,21 +51,22 @@ export function SynervaDimensionsSection() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-8 lg:gap-5">
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {quietHero ? (
-              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 lg:mb-4">
-                <div className="relative aspect-[3/4] w-full lg:aspect-[4/5]">
+              <div className="mb-5 flex justify-center lg:mb-4">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[300px]">
                   <Image
                     src={quietHero.src}
                     alt={quietHero.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
+                    width={720}
+                    height={960}
+                    className="h-auto w-full rounded-2xl border border-white/10"
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 360px, 100vw"
                     priority
                   />
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/35 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
                 </div>
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
-                  aria-hidden="true"
-                />
               </div>
             ) : null}
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
@@ -95,19 +96,22 @@ export function SynervaDimensionsSection() {
 
           <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {parallaxHero ? (
-              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 aspect-[3/4] lg:mb-4 lg:aspect-[4/5]">
-                <Image
-                  src={parallaxHero.src}
-                  alt={parallaxHero.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
-                  priority
-                />
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
-                  aria-hidden="true"
-                />
+              <div className="mb-5 flex justify-center lg:mb-4">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[300px]">
+                  <Image
+                    src={parallaxHero.src}
+                    alt={parallaxHero.alt}
+                    width={720}
+                    height={960}
+                    className="h-auto w-full rounded-2xl border border-white/10"
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 360px, 100vw"
+                    priority
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/35 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
             ) : null}
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">

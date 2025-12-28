@@ -42,14 +42,15 @@ export const Publications = () => {
               key={card.title}
               className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[460px] lg:p-5"
             >
-              <div className="relative mb-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                <div className="relative aspect-[2/3] w-full lg:aspect-[4/5]">
+              <div className="mb-5 flex justify-center">
+                <div className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[300px]">
                   <Image
                     src={card.image.src}
                     alt={card.image.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    width={600}
+                    height={900}
+                    className="h-auto w-full rounded-2xl border border-white/10 bg-white/5"
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 360px, 100vw"
                   />
                 </div>
               </div>
