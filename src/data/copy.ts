@@ -294,7 +294,7 @@ export const copy = {
           "Brief architecture that survives revisions",
         ],
         href: "/lucentra",
-        image: "/systems-logos-upscaled/lucentra-homepage-upscaled.PNG",
+        image: "/systems-homepage-logos/lucentra-homepage-upscaled.PNG",
         imageAlt: "Lucentra logo",
       },
       {
@@ -309,7 +309,7 @@ export const copy = {
           "Review views for leadership and coaching",
         ],
         href: "/verisense",
-        image: "/systems-logos-upscaled/verisense-homepage-upscaled.PNG",
+        image: "/systems-homepage-logos/verisense-homepage-logo.png",
         imageAlt: "Verisense logo",
       },
       {
@@ -324,7 +324,7 @@ export const copy = {
           "Clear visibility into ownership + flow",
         ],
         href: "/synerva-os",
-        image: "/systems-logos-upscaled/synerva-os-homepage-upscaled.PNG",
+        image: "/systems-homepage-logos/synerva-os-homepage-logo.png",
         imageAlt: "Synerva OS logo",
       },
     ],
