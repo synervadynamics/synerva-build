@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const metadata = buildPageMetadata({
   title: "Offerings — Synerva Dynamics",
@@ -176,10 +176,16 @@ export default function OfferingsPage() {
               </div>
             </div>
             <div className="w-full lg:w-auto">
-              <VideoPlaceholder
-                label="offerings-hero-placeholder"
-                ratio="aspect-[16/9]"
-              />
+              <div className="relative flex w-full items-center justify-center overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] shadow-[0_18px_45px_rgba(0,0,0,0.35)] aspect-[9/16]">
+                <Image
+                  src="/visuals/offerings-subpage/offerings-subpage.PNG"
+                  alt="Offerings visual"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 360px, 90vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
