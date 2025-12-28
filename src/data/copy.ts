@@ -294,7 +294,7 @@ export const copy = {
           "Brief architecture that survives revisions",
         ],
         href: "/lucentra",
-        image: "/systems-homepage-logos/lucentra-homepage.png",
+        image: "/systems-homepage-logos/lucentra-homepage-v2.png",
         imageAlt: "Lucentra logo",
       },
       {
@@ -324,7 +324,7 @@ export const copy = {
           "Clear visibility into ownership + flow",
         ],
         href: "/synerva-os",
-        image: "/systems-homepage-logos/lucentra-homepage-v2.png",
+        image: "/systems-homepage-logos/synerva-os-homepage-logo.png",
         imageAlt: "Synerva OS logo",
       },
     ],
