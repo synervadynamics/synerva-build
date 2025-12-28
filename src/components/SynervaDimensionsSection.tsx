@@ -75,11 +75,6 @@ export function SynervaDimensionsSection() {
             <h3 className="mt-3 text-2xl font-semibold tracking-tight">
               {quietDivineContent.title ?? "The Quiet Divine"}
             </h3>
-            {quietDivineContent.seriesDescription ? (
-              <p className="mt-3 text-mute leading-relaxed">
-                {quietDivineContent.seriesDescription}
-              </p>
-            ) : null}
             {quietDivineContent.subtitle ? (
               <p className="mt-3 text-sm text-white/70">
                 {quietDivineContent.subtitle}
@@ -120,11 +115,6 @@ export function SynervaDimensionsSection() {
             <h3 className="mt-3 text-2xl font-semibold tracking-tight">
               {parallaxLoomContent.title ?? "Parallax Loom Brewing Co."}
             </h3>
-            {parallaxLoomContent.seriesDescription ? (
-              <p className="mt-3 text-mute leading-relaxed">
-                {parallaxLoomContent.seriesDescription}
-              </p>
-            ) : null}
             {parallaxLead ? (
               <p className="mt-3 text-sm text-white/70">{parallaxLead}</p>
             ) : null}
