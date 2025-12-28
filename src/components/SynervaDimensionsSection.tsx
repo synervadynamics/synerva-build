@@ -6,9 +6,8 @@ import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
 import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function SynervaDimensionsSection() {
-  const parallaxLead = parallaxLoomContent.heroCopy
-    ?.split("\n")
-    .find((paragraph) => paragraph.trim());
+  const parallaxLead =
+    "Parallax Loom is a fictional brewery and a study of modern behavior. Beer cans become confessional objects. The work isn’t about drinking. It’s about the habits, performances, and small personal mythologies people use to navigate modern life while assuring everyone, sincerely, that things are fine.";
 
   const quietHero =
     quietDivineImages.find(
@@ -52,7 +51,7 @@ export function SynervaDimensionsSection() {
           <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {quietHero ? (
               <div className="mb-5 flex justify-center lg:mb-4">
-                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[300px]">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
                   <Image
                     src={quietHero.src}
                     alt={quietHero.alt}
@@ -92,7 +91,7 @@ export function SynervaDimensionsSection() {
           <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
             {parallaxHero ? (
               <div className="mb-5 flex justify-center lg:mb-4">
-                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[300px]">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
                   <Image
                     src={parallaxHero.src}
                     alt={parallaxHero.alt}
