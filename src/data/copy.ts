@@ -294,7 +294,7 @@ export const copy = {
           "Brief architecture that survives revisions",
         ],
         href: "/lucentra",
-        image: "/systems-homepage-logos/lucentra-homepage.png",
+        image: "/systems-homepage-logos/lucentra-homepage-v3.png",
         imageAlt: "Lucentra logo",
       },
       {
