@@ -47,8 +47,8 @@ export const copy = {
       { label: "Loop Coverage", value: "Brand · Web · Content · Automation" },
       { label: "Core Systems", value: "Lucentra · Verisense · Synerva OS" },
       {
-        label: "Engagement Tempo",
-        value: "Plan in 30 min · Launch map in 10 days",
+        label: "Operating Posture",
+        value: "Clarity first · Execution without drag",
       },
     ],
   },
