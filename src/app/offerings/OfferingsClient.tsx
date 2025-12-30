@@ -226,12 +226,12 @@ export default function OfferingsClient() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="relative flex w-full items-center justify-center"
               >
-                <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
+                <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[9/16]">
                   <Image
-                    src="/offerings-subpage/hero.PNG"
+                    src="/offerings-subpage-dec-30/hero.PNG"
                     alt="Offerings hero"
                     fill
-                    className="object-contain"
+                    className="object-contain rounded-none"
                     sizes="(min-width: 1280px) 520px, (min-width: 1024px) 420px, 100vw"
                     priority
                   />
@@ -243,23 +243,10 @@ export default function OfferingsClient() {
       </section>
 
       <section className="relative px-6 py-16 sm:px-10 lg:px-16">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:grid-rows-[auto_auto] lg:gap-10">
-          <div className="order-1 lg:col-start-1 lg:row-start-1">
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-[1.1fr_0.9fr] sm:items-center lg:gap-10">
+          <div className="order-1">
             <h2 className="text-3xl sm:text-4xl">What You’re Actually Hiring</h2>
-          </div>
-          <div className="order-2 lg:col-start-2 lg:row-span-2">
-            <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[9/16]">
-              <Image
-                src="/offerings-subpage/what-synerva-does.PNG"
-                alt="What Synerva Does"
-                fill
-                className="object-contain"
-                sizes="(min-width: 1024px) 420px, 100vw"
-              />
-            </div>
-          </div>
-          <div className="order-3 lg:col-start-1 lg:row-start-2">
-            <p className="text-lg text-white/75">
+            <p className="mt-4 text-lg text-white/75">
               Synerva performs the category of work typically handled by senior
               brand strategists, lead designers, principal writers, and
               experienced operators. The compression comes from structure, not
@@ -269,6 +256,9 @@ export default function OfferingsClient() {
               why costs stay in the thousands instead of six figures. This is
               senior-level work without senior-level overhead.
             </p>
+          </div>
+          <div className="order-2 sm:justify-self-end sm:self-center">
+            <div className="w-full aspect-[16/9] border border-white/15 bg-white/10 pointer-events-none" />
           </div>
         </div>
       </section>
@@ -379,7 +369,7 @@ export default function OfferingsClient() {
             })}
           </div>
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]">
-            <div className="relative w-full aspect-[9/16] flex items-center justify-center">
+            <div className="relative w-full aspect-[16/9] flex items-center justify-center">
               <motion.div
                 key={isBuildWithSynerva ? "build-with-synerva" : "execution-modes"}
                 initial={{ opacity: 0.4, scale: 0.98 }}
@@ -388,22 +378,22 @@ export default function OfferingsClient() {
                 className="flex w-full items-center justify-center"
               >
                 {isBuildWithSynerva ? (
-                  <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[9/16]">
+                  <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
                     <Image
-                      src="/offerings-subpage/build-with-synerva.PNG"
+                      src="/offerings-subpage-dec-30/full-build.PNG"
                       alt="Build With Synerva preview"
                       fill
-                      className="object-contain"
+                      className="object-contain rounded-none"
                       sizes="(min-width: 1024px) 420px, 100vw"
                     />
                   </div>
                 ) : (
-                  <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
+                  <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
                     <Image
-                      src="/offerings-subpage/execution-modes.PNG"
+                      src="/offerings-subpage-dec-30/flat-rate-projects.PNG"
                       alt="Execution modes preview"
                       fill
-                      className="object-contain"
+                      className="object-contain rounded-none"
                       sizes="(min-width: 1024px) 420px, 100vw"
                     />
                   </div>
@@ -421,92 +411,88 @@ export default function OfferingsClient() {
         id="content"
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="mx-auto max-w-6xl space-y-6">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-              {""}
-            </p>
-            <h2 className="text-3xl sm:text-4xl">
-              Writing, Content, and Design
-            </h2>
-            <p className="text-lg text-white/75">
-              Content here is treated as structure, not volume. That includes
-              voice, rhythm, proof, release logic, and how work holds up after
-              launch.
-            </p>
-          </div>
-          <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
-            <Image
-              src="/offerings-subpage/content.PNG"
-              alt="Content overview"
-              fill
-              className="object-contain"
-              sizes="(min-width: 1024px) 860px, 100vw"
-            />
-          </div>
-          <div className="grid gap-6">
-            {contentOfferings.map((item, index) => {
-              const isOpen = activeContentIndex === index;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
-                >
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setActiveContentIndex(isOpen ? null : index)
-                    }
-                    aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-6 text-left"
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                {""}
+              </p>
+              <h2 className="text-3xl sm:text-4xl">
+                Writing, Content, and Design
+              </h2>
+              <p className="text-lg text-white/75">
+                Content here is treated as structure, not volume. That includes
+                voice, rhythm, proof, release logic, and how work holds up after
+                launch.
+              </p>
+            </div>
+            <div className="grid gap-6">
+              {contentOfferings.map((item, index) => {
+                const isOpen = activeContentIndex === index;
+                return (
+                  <div
+                    key={item.title}
+                    className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
                   >
-                    <h3 className="text-xl text-white">{item.title}</h3>
-                  </button>
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: isOpen ? "auto" : 0,
-                      opacity: isOpen ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="overflow-hidden"
-                  >
-                    <p className="mt-4 text-sm text-white/70">{item.body}</p>
-                    {"formats" in item ? (
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveContentIndex(isOpen ? null : index)
+                      }
+                      aria-expanded={isOpen}
+                      className="flex w-full items-center justify-between gap-6 text-left"
+                    >
+                      <h3 className="text-xl text-white">{item.title}</h3>
+                    </button>
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        height: isOpen ? "auto" : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="mt-4 text-sm text-white/70">{item.body}</p>
+                      {"formats" in item ? (
+                        <p className="mt-3 text-sm text-white/70">
+                          {item.formats}
+                        </p>
+                      ) : null}
+                      {"proof" in item ? (
+                        <p className="mt-3 text-sm text-white/70">
+                          {item.proof}
+                        </p>
+                      ) : null}
+                      {"options" in item && item.options ? (
+                        <ul className="mt-3 space-y-2 text-sm text-white/70">
+                          {item.options.map((option) => (
+                            <li key={option} className="flex items-start gap-3">
+                              <span className="mt-1 h-1.5 w-5 rounded-full bg-white/40" />
+                              <span>{option}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                       <p className="mt-3 text-sm text-white/70">
-                        {item.formats}
+                        {item.pricing}
                       </p>
-                    ) : null}
-                    {"proof" in item ? (
                       <p className="mt-3 text-sm text-white/70">
-                        {item.proof}
+                        {item.deliverable}
                       </p>
-                    ) : null}
-                    {"options" in item && item.options ? (
-                      <ul className="mt-3 space-y-2 text-sm text-white/70">
-                        {item.options.map((option) => (
-                          <li key={option} className="flex items-start gap-3">
-                            <span className="mt-1 h-1.5 w-5 rounded-full bg-white/40" />
-                            <span>{option}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                    <p className="mt-3 text-sm text-white/70">
-                      {item.pricing}
-                    </p>
-                    <p className="mt-3 text-sm text-white/70">
-                      {item.deliverable}
-                    </p>
-                    {"examples" in item ? (
-                      <p className="mt-3 text-sm text-white/70">
-                        {item.examples}
-                      </p>
-                    ) : null}
-                  </motion.div>
-                </div>
-              );
-            })}
+                      {"examples" in item ? (
+                        <p className="mt-3 text-sm text-white/70">
+                          {item.examples}
+                        </p>
+                      ) : null}
+                    </motion.div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="sm:justify-self-end sm:self-center">
+            <div className="w-full aspect-[9/16] border border-white/15 bg-white/10 pointer-events-none" />
           </div>
         </div>
       </section>
@@ -536,37 +522,42 @@ export default function OfferingsClient() {
         id="timelines"
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="relative mx-auto max-w-6xl space-y-6">
-          <div className="space-y-2">
-            <h2 className="text-3xl sm:text-4xl">
-              Start Here When Clarity Is the Bottleneck
-            </h2>
+        <div className="relative mx-auto grid max-w-6xl gap-6 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <h2 className="text-3xl sm:text-4xl">
+                Start Here When Clarity Is the Bottleneck
+              </h2>
+              <p className="text-sm text-white/70">
+                {"Clarity Diagnostic\n$75–$125 CAD\n\nA short, paid diagnostic designed to collapse uncertainty into a clear decision.\n\nThis is not a consultation and not a sales call. It is a bounded analysis of a real problem you’re actively trying to solve, using the same senior-level judgment applied in full engagements."}
+              </p>
+            </div>
+            <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-6">
+              <div className="grid gap-3 text-xs uppercase tracking-[0.3em] text-white/60 md:grid-cols-[1.2fr_1fr_1fr]">
+                <span>What It Includes</span>
+                <span>What You Walk Away With</span>
+                <span>Clarity on:</span>
+              </div>
+              <div className="mt-4 grid gap-4">
+                {timelineRows.map((row) => (
+                  <div
+                    key={row.label}
+                    className="grid gap-3 border-t border-white/10 pt-4 text-sm text-white/75 md:grid-cols-[1.2fr_1fr_1fr]"
+                  >
+                    <span className="text-white">{row.label}</span>
+                    <span>{row.synerva}</span>
+                    <span>{row.typical}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <p className="text-sm text-white/70">
-              {"Clarity Diagnostic\n$75–$125 CAD\n\nA short, paid diagnostic designed to collapse uncertainty into a clear decision.\n\nThis is not a consultation and not a sales call. It is a bounded analysis of a real problem you’re actively trying to solve, using the same senior-level judgment applied in full engagements."}
+              {""}
             </p>
           </div>
-          <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-6">
-            <div className="grid gap-3 text-xs uppercase tracking-[0.3em] text-white/60 md:grid-cols-[1.2fr_1fr_1fr]">
-              <span>What It Includes</span>
-              <span>What You Walk Away With</span>
-              <span>Clarity on:</span>
-            </div>
-            <div className="mt-4 grid gap-4">
-              {timelineRows.map((row) => (
-                <div
-                  key={row.label}
-                  className="grid gap-3 border-t border-white/10 pt-4 text-sm text-white/75 md:grid-cols-[1.2fr_1fr_1fr]"
-                >
-                  <span className="text-white">{row.label}</span>
-                  <span>{row.synerva}</span>
-                  <span>{row.typical}</span>
-                </div>
-              ))}
-            </div>
+          <div className="sm:justify-self-end sm:self-center">
+            <div className="w-full aspect-[16/9] border border-white/15 bg-white/10 pointer-events-none" />
           </div>
-          <p className="text-sm text-white/70">
-            {""}
-          </p>
         </div>
       </section>
 
@@ -594,12 +585,12 @@ export default function OfferingsClient() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-5xl">
-          <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
+          <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
             <Image
-              src="/offerings-subpage/closing-cta.PNG"
+              src="/offerings-subpage-dec-30/how-to-proceed.PNG"
               alt="Closing CTA"
               fill
-              className="object-contain"
+              className="object-contain rounded-none"
               sizes="(min-width: 1024px) 860px, 100vw"
             />
           </div>
