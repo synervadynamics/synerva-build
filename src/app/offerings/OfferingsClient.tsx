@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
 
 const heroChips = [
   "Clarity Diagnostic",
@@ -128,52 +129,10 @@ const timelineRows = [
   },
 ];
 
-type PlaceholderCardProps = {
-  ratio: "16/9" | "9/16";
-  className?: string;
-};
-
-const ratioClassMap: Record<PlaceholderCardProps["ratio"], string> = {
-  "16/9": "aspect-[16/9]",
-  "9/16": "aspect-[9/16]",
-};
-
-const PlaceholderCard = ({ ratio, className = "" }: PlaceholderCardProps) => (
-  <div
-    className={`relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.04] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] ${ratioClassMap[ratio]} ${className}`}
-  >
-    <div
-      className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(255,255,255,0.08),transparent_40%),linear-gradient(135deg,rgba(255,255,255,0.06),transparent_55%)]"
-      aria-hidden="true"
-    />
-    <div
-      className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08),transparent_55%)] opacity-70"
-      aria-hidden="true"
-    />
-  </div>
-);
-
 export default function OfferingsClient() {
   const shouldReduceMotion = useReducedMotion();
-  const [activeHiringIndex, setActiveHiringIndex] = useState(0);
   const [activeModeIndex, setActiveModeIndex] = useState(0);
   const [activeContentIndex, setActiveContentIndex] = useState<number | null>(0);
-  const hiringRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: hiringRef,
-    offset: ["start end", "end start"],
-  });
-
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (value) => {
-      const nextIndex = Math.min(
-        2,
-        Math.max(0, Math.floor(value * 3)),
-      );
-      setActiveHiringIndex(nextIndex);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
 
   const executionModes = [
     {
@@ -201,8 +160,8 @@ export default function OfferingsClient() {
       ratio: "9/16" as const,
     },
   ];
-
-  const hiringImages = ["16/9", "16/9", "16/9"] as const;
+  const isBuildWithSynerva =
+    executionModes[activeModeIndex]?.label === "Build With Synerva";
 
   return (
     <main className="bg-[var(--bg)] text-white">
@@ -267,20 +226,39 @@ export default function OfferingsClient() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="relative flex w-full items-center justify-center"
               >
-                <PlaceholderCard ratio="16/9" />
+                <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
+                  <Image
+                    src="/offerings-subpage/hero.PNG"
+                    alt="Offerings hero"
+                    fill
+                    className="object-contain"
+                    sizes="(min-width: 1280px) 520px, (min-width: 1024px) 420px, 100vw"
+                    priority
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        ref={hiringRef}
-        className="relative px-6 py-16 sm:px-10 lg:px-16"
-      >
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="flex flex-col gap-6">
+      <section className="relative px-6 py-16 sm:px-10 lg:px-16">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:grid-rows-[auto_auto] lg:gap-10">
+          <div className="order-1 lg:col-start-1 lg:row-start-1">
             <h2 className="text-3xl sm:text-4xl">What You’re Actually Hiring</h2>
+          </div>
+          <div className="order-2 lg:col-start-2 lg:row-span-2">
+            <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[9/16]">
+              <Image
+                src="/offerings-subpage/what-synerva-does.PNG"
+                alt="What Synerva Does"
+                fill
+                className="object-contain"
+                sizes="(min-width: 1024px) 420px, 100vw"
+              />
+            </div>
+          </div>
+          <div className="order-3 lg:col-start-1 lg:row-start-2">
             <p className="text-lg text-white/75">
               Synerva performs the category of work typically handled by senior
               brand strategists, lead designers, principal writers, and
@@ -292,20 +270,6 @@ export default function OfferingsClient() {
               senior-level work without senior-level overhead.
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            {hiringImages.map((ratio, index) => (
-              <motion.div
-                key={`hiring-image-${index}`}
-                animate={{
-                  opacity: activeHiringIndex === index ? 1 : 0.4,
-                  scale: activeHiringIndex === index ? 1 : 0.98,
-                }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              >
-                <PlaceholderCard ratio={ratio} />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -313,11 +277,6 @@ export default function OfferingsClient() {
         id="pricing"
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40">
-          <div className="w-full max-w-5xl px-6">
-            <PlaceholderCard ratio="16/9" className="blur-[0.5px]" />
-          </div>
-        </div>
         <div className="relative mx-auto max-w-6xl space-y-6 rounded-[2.5rem] border border-white/12 bg-transparent p-8 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl">
           <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl">How Engagement Works</h2>
@@ -422,15 +381,33 @@ export default function OfferingsClient() {
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]">
             <div className="relative w-full aspect-[9/16] flex items-center justify-center">
               <motion.div
-                key={executionModes[activeModeIndex]?.label}
+                key={isBuildWithSynerva ? "build-with-synerva" : "execution-modes"}
                 initial={{ opacity: 0.4, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="w-full"
+                className="flex w-full items-center justify-center"
               >
-                <PlaceholderCard
-                  ratio={executionModes[activeModeIndex]?.ratio ?? "16/9"}
-                />
+                {isBuildWithSynerva ? (
+                  <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[9/16]">
+                    <Image
+                      src="/offerings-subpage/build-with-synerva.PNG"
+                      alt="Build With Synerva preview"
+                      fill
+                      className="object-contain"
+                      sizes="(min-width: 1024px) 420px, 100vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
+                    <Image
+                      src="/offerings-subpage/execution-modes.PNG"
+                      alt="Execution modes preview"
+                      fill
+                      className="object-contain"
+                      sizes="(min-width: 1024px) 420px, 100vw"
+                    />
+                  </div>
+                )}
               </motion.div>
             </div>
             <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/50">
@@ -458,13 +435,18 @@ export default function OfferingsClient() {
               launch.
             </p>
           </div>
+          <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
+            <Image
+              src="/offerings-subpage/content.PNG"
+              alt="Content overview"
+              fill
+              className="object-contain"
+              sizes="(min-width: 1024px) 860px, 100vw"
+            />
+          </div>
           <div className="grid gap-6">
             {contentOfferings.map((item, index) => {
               const isOpen = activeContentIndex === index;
-              const ratio =
-                item.title === "Ghostwriting (Books + Longform)"
-                  ? "9/16"
-                  : "16/9";
               return (
                 <div
                   key={item.title}
@@ -489,9 +471,6 @@ export default function OfferingsClient() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-5">
-                      <PlaceholderCard ratio={ratio} />
-                    </div>
                     <p className="mt-4 text-sm text-white/70">{item.body}</p>
                     {"formats" in item ? (
                       <p className="mt-3 text-sm text-white/70">
@@ -557,11 +536,6 @@ export default function OfferingsClient() {
         id="timelines"
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-35">
-          <div className="w-full max-w-5xl px-6">
-            <PlaceholderCard ratio="16/9" className="blur-[1px]" />
-          </div>
-        </div>
         <div className="relative mx-auto max-w-6xl space-y-6">
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl">
@@ -620,7 +594,15 @@ export default function OfferingsClient() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-5xl">
-          <PlaceholderCard ratio="16/9" />
+          <div className="relative w-full overflow-hidden rounded-3xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
+            <Image
+              src="/offerings-subpage/closing-cta.PNG"
+              alt="Closing CTA"
+              fill
+              className="object-contain"
+              sizes="(min-width: 1024px) 860px, 100vw"
+            />
+          </div>
         </div>
       </section>
     </main>
