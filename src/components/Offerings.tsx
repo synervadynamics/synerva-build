@@ -7,19 +7,19 @@ import { copy } from "@/data/copy";
 
 const offeringsMedia = {
   "Operator Hourly": {
-    src: "/visuals/offerings-v2/operator-hourly.png",
+    src: "/homepage-post-12-25-2025/offerings-operator-hourly.PNG",
     alt: "Operator Hourly offering",
     width: 1024,
     height: 1536,
   },
   "Flat-Rate Projects": {
-    src: "/visuals/offerings-v2/flat-rate-sprints.png",
+    src: "/homepage-post-12-25-2025/offerings-flate-rate-projects.PNG",
     alt: "Flat-rate sprints offering",
     width: 1536,
     height: 1024,
   },
   "Build with Synerva": {
-    src: "/visuals/offerings-v2/full-stack-system-builds.png",
+    src: "/homepage-post-12-25-2025/offerings-build-with-synerva.PNG",
     alt: "Full-stack system builds offering",
     width: 1024,
     height: 1024,
