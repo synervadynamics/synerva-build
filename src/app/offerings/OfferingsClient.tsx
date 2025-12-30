@@ -131,7 +131,6 @@ const timelineRows = [
 
 export default function OfferingsClient() {
   const shouldReduceMotion = useReducedMotion();
-  const [activeModeIndex, setActiveModeIndex] = useState(0);
   const [activeContentIndex, setActiveContentIndex] = useState<number | null>(0);
 
   const executionModes = [
@@ -141,7 +140,11 @@ export default function OfferingsClient() {
       eyebrow: "Operator Hourly",
       body:
         "$100 CAD per hour\n\nUsed when the goal is to audit, fix, unblock, or ship without waiting for a full specification cycle.\n\nThis mode exists for live work under uncertainty, where judgment matters more than documentation.\n\nYou are not buying time. You are buying progress with fewer cycles.",
-      ratio: "16/9" as const,
+      imageSrc: "/homepage-post-12-25-2025/offerings-operator-hourly.PNG",
+      imageAlt: "Operator Hourly preview",
+      imageWidth: 1600,
+      imageHeight: 900,
+      ratioClass: "aspect-[16/9]",
     },
     {
       label: "Flat-Rate Scoped Work",
@@ -149,7 +152,11 @@ export default function OfferingsClient() {
       eyebrow: "Flat-Rate Projects",
       body:
         "Flat-Rate Projects\n\nFlat-rate work exists for clients who want certainty.\n\nThe finish line is defined first. Deliverables are explicit. Acceptance criteria are agreed on before work begins.\n\nIf you want a fixed quote that does not drift, this is how it happens.",
-      ratio: "16/9" as const,
+      imageSrc: "/offerings-subpage-dec-30/flat-rate-projects.PNG",
+      imageAlt: "Flat-Rate Projects preview",
+      imageWidth: 900,
+      imageHeight: 1600,
+      ratioClass: "aspect-[9/16]",
     },
     {
       label: "Build With Synerva",
@@ -157,11 +164,13 @@ export default function OfferingsClient() {
       eyebrow: "Build With Synerva",
       body:
         "Synerva performs the category of work typically handled by senior brand strategists, lead designers, principal writers, and experienced operators. The compression comes from structure, not shortcuts. Strategy, execution, and judgment are not split across roles. They live in one loop. That is why work that normally stretches across quarters can be delivered in days or weeks, and why costs stay in the thousands instead of six figures. This is senior-level work without senior-level overhead.",
-      ratio: "9/16" as const,
+      imageSrc: "/offerings-subpage-dec-30/full-build.PNG",
+      imageAlt: "Build With Synerva preview",
+      imageWidth: 1600,
+      imageHeight: 900,
+      ratioClass: "aspect-[16/9]",
     },
   ];
-  const isBuildWithSynerva =
-    executionModes[activeModeIndex]?.label === "Build With Synerva";
 
   return (
     <main className="bg-[var(--bg)] text-white">
@@ -291,31 +300,21 @@ export default function OfferingsClient() {
         id="execution-modes"
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="grid gap-4">
-            {executionModes.map((mode, index) => {
-              const isActive = activeModeIndex === index;
-              const modeId =
-                mode.label === "Operator Hourly"
-                  ? "operator-hourly"
-                  : mode.label === "Flat-Rate Scoped Work"
-                    ? "sprints"
-                    : "build-with-synerva";
-              return (
-                <button
-                  key={mode.label}
-                  type="button"
-                  id={modeId}
-                  onMouseEnter={() => setActiveModeIndex(index)}
-                  onFocus={() => setActiveModeIndex(index)}
-                  onClick={() => setActiveModeIndex(index)}
-                  aria-expanded={isActive}
-                  className={`text-left rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
-                    isActive
-                      ? "border-white/30 shadow-[0_26px_90px_-40px_rgba(0,0,0,0.65)]"
-                      : ""
-                  }`}
-                >
+        <div className="mx-auto grid max-w-6xl gap-10">
+          {executionModes.map((mode) => {
+            const modeId =
+              mode.label === "Operator Hourly"
+                ? "operator-hourly"
+                : mode.label === "Flat-Rate Scoped Work"
+                  ? "sprints"
+                  : "build-with-synerva";
+            return (
+              <div
+                key={mode.label}
+                id={modeId}
+                className="grid gap-8 grid-cols-[1.05fr_0.95fr] items-start"
+              >
+                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)]">
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/60">
                       {mode.label}
@@ -325,14 +324,7 @@ export default function OfferingsClient() {
                       {mode.eyebrow}
                     </p>
                   </div>
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      opacity: isActive ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className={`mt-4 space-y-4 transition ${isActive ? "pointer-events-auto" : "pointer-events-none"}`}
-                  >
+                  <div className="mt-4 space-y-4">
                     <p className="text-sm text-white/75">
                       {mode.body}
                     </p>
@@ -363,47 +355,28 @@ export default function OfferingsClient() {
                         ))}
                       </div>
                     ) : null}
-                  </motion.div>
-                </button>
-              );
-            })}
-          </div>
-          <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]">
-            <div className="relative w-full aspect-[16/9] flex items-center justify-center">
-              <motion.div
-                key={isBuildWithSynerva ? "build-with-synerva" : "execution-modes"}
-                initial={{ opacity: 0.4, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="flex w-full items-center justify-center"
-              >
-                {isBuildWithSynerva ? (
-                  <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
-                    <Image
-                      src="/offerings-subpage-dec-30/full-build.PNG"
-                      alt="Build With Synerva preview"
-                      fill
-                      className="object-contain rounded-none"
-                      sizes="(min-width: 1024px) 420px, 100vw"
-                    />
                   </div>
-                ) : (
-                  <div className="relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] aspect-[16/9]">
-                    <Image
-                      src="/offerings-subpage-dec-30/flat-rate-projects.PNG"
-                      alt="Execution modes preview"
-                      fill
-                      className="object-contain rounded-none"
-                      sizes="(min-width: 1024px) 420px, 100vw"
-                    />
+                </div>
+                <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]">
+                  <div className={`relative w-full ${mode.ratioClass} flex items-center justify-center`}>
+                    <div className={`relative w-full overflow-hidden rounded-none border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] ${mode.ratioClass}`}>
+                      <Image
+                        src={mode.imageSrc}
+                        alt={mode.imageAlt}
+                        width={mode.imageWidth}
+                        height={mode.imageHeight}
+                        className="h-full w-full object-contain rounded-none"
+                        sizes="(min-width: 1024px) 420px, 100vw"
+                      />
+                    </div>
                   </div>
-                )}
-              </motion.div>
-            </div>
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/50">
-              {""}
-            </p>
-          </div>
+                  <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/50">
+                    {""}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
