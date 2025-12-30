@@ -152,10 +152,10 @@ export default function OfferingsClient() {
       eyebrow: "Flat-Rate Projects",
       body:
         "Flat-Rate Projects\n\nFlat-rate work exists for clients who want certainty.\n\nThe finish line is defined first. Deliverables are explicit. Acceptance criteria are agreed on before work begins.\n\nIf you want a fixed quote that does not drift, this is how it happens.",
-      imageSrc: "/offerings-subpage-dec-30/flat-rate-projects.PNG",
+      imageSrc: "/offerings-subpage-dec-30/flat-rate-scoped-project-tall.PNG",
       imageAlt: "Flat-Rate Projects preview",
-      imageWidth: 900,
-      imageHeight: 1600,
+      imageWidth: 1024,
+      imageHeight: 1536,
       ratioClass: "aspect-[9/16]",
     },
     {
