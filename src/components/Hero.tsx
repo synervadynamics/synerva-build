@@ -168,7 +168,7 @@ export const Hero = () => {
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
-                    src="/homepage-post-12-25-2025/homepage-hero.PNG"
+                    src="/homepage-post-12-25-2025/homepage-hero-4-3-dimensions.PNG"
                     alt="Synerva Dynamics hero graphic"
                     width={1536}
                     height={1024}
