@@ -67,7 +67,7 @@ export const Narrative = () => {
         >
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-white/64">
-              System guardrails
+              System Guardrails
             </p>
             <ul className="space-y-4 text-sm text-white/78">
               {story.bullets.map((point) => (
@@ -80,16 +80,15 @@ export const Narrative = () => {
           </div>
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-white/64">
-              Engagement stance
+              Engagement Stance
             </p>
             <p className="text-sm text-white/80">
-              We orchestrate systems for clarity-first teams, pairing precision
-              controls with story-led delivery so every release lands with
-              intent.
+              We pair precision systems with human judgment, so delivery stays
+              fast without losing intent.
             </p>
             <p className="text-sm text-white/74">
-              Tight guardrails, measured automation, human oversight: the triad
-              keeps momentum without drift.
+              Measured automation, tight guardrails, human oversight—momentum
+              holds after launch.
             </p>
           </div>
         </motion.div>

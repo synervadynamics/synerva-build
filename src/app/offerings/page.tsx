@@ -10,117 +10,115 @@ export const metadata = buildPageMetadata({
 });
 
 const heroChips = [
-  "$100 CAD/hr",
-  "Hourly or flat-rate",
-  "Scoped bands available",
-  "Start with a 30-minute plan",
+  "Clarity Diagnostic",
+  "Operator Hourly",
+  "Hourly",
+  "Flat-Rate",
 ];
 
 const pricingBullets = [
-  "Hourly when the work needs speed and judgment",
-  "Flat-rate when the scope can be defined cleanly",
-  "If scope expands, you’ll know before it expands",
+  "Hourly\nUsed when speed, judgment, and momentum matter more than formal scoping.",
+  "Flat-Rate\nUsed when the finish line can be defined cleanly in advance.",
+  "If scope changes, you’ll know before it changes. Nothing expands silently.",
 ];
 
 const hourlyRules = [
-  "Minimum 1 hour",
+  "How It Works\nMinimum: 1 hour",
   "Billed in 15-minute increments after",
-  "Short recap after each working block (what changed, what shipped, what’s next)",
+  "Short written recap after each working block:\nwhat changed\nwhat shipped\nwhat happens next",
 ];
 
 const sprintExamples = [
   {
-    title: "30-Minute Plan Call — $100 CAD",
-    detail: "A focused diagnosis and a ranked launch path.",
+    title: "Common Flat-Rate Engagements",
+    detail: "",
   },
   {
-    title: "Brand Voice Kit — $600 to $1,200 CAD",
-    detail: "Tone rules, constraints, patterns, and QA logic so output stays consistent.",
+    title: "Brand Voice Kit — $600–$1,200 CAD",
+    detail:
+      "Tone rules, constraints, patterns, and QA logic so output stays consistent across people, channels, and time.",
   },
   {
-    title: "Offer + Positioning Sprint — $900 to $1,800 CAD",
-    detail: "Message hierarchy, objections, proof structure, and CTA logic.",
+    title: "Offer + Positioning Sprint — $900–$1,800 CAD",
+    detail:
+      "Message hierarchy, objection handling, proof structure, and CTA logic organized so decisions don’t reset.",
   },
   {
-    title: "Landing Page Sprint (Copy + Structure + Direction) — $900 to $2,500 CAD",
-    detail: "One goal, one path, one clean conversion narrative.",
+    title: "Landing Page Sprint — $900–$2,500 CAD",
+    detail: "One goal. One path. One clean conversion narrative.",
   },
   {
-    title: "Website Launch Map (10 days) — $1,500 to $3,000 CAD",
-    detail: "Sitemap, page goals, content requirements, build sequence, launch checklist.",
+    title: "Website Launch Map (10 days) — $1,500–$3,000 CAD",
+    detail:
+      "Sitemap, page goals, content requirements, build sequence, and launch checklist.",
   },
   {
-    title: "Full Build — from $5,000 CAD",
-    detail: "When you want a real system, not a pretty first draft.",
+    title: "Full Build — From $5,000 CAD",
+    detail: "For teams that want a functioning system, not a polished first draft.",
   },
 ];
 
 const contentOfferings = [
   {
-    title: "1) Writing (Shortform + Longform)",
-    body: "Clear writing that holds up under scrutiny, not just scrolling.",
-    formats:
-      "Website copy · landing pages · email sequences · case studies · thought leadership · scripts · decks · campaign packs",
+    title: "Writing (Shortform + Longform)",
+    body:
+      "Common formats include website copy, landing pages, email sequences, case studies, scripts, decks, and campaign packs.",
     pricing:
-      "Writing is billed hourly or quoted as a fixed deliverable after intake, based on research depth and revision intensity.",
+      "Pricing is hourly or quoted as a fixed deliverable after intake, based on research depth and revision intensity.",
     deliverable:
-      "A final draft in a clean doc format, with an optional variant set when the output benefits from options (headlines, hooks, CTAs).",
+      "You receive a clean final draft, with optional variants when options improve outcomes.",
   },
   {
-    title: "2) Ghostwriting (Books + Longform)",
-    body:
-      "If you want a book, you need a system: outline architecture, voice constraints, chapter logic, cadence, and a revision protocol that survives real life.",
-    proof: "Already shipped: The Rockstar Server Playbook.",
-    options: [
-      "Architecture only: outline, chapter map, voice rules, writing plan",
-      "Co-writing: you provide raw material, Synerva structures, drafts, and polishes",
-      "Full ghostwriting: Synerva drafts the manuscript; you steer and approve",
-    ],
-    pricing:
-      "Book work is quoted after intake because length, interviews, research, and revision cycles change the true scope. You’ll receive a milestone-based estimate, not a hand-wavy number.",
-    deliverable:
-      "A manuscript delivered in milestones (architecture → draft → revisions → final), plus a clean system for what happens after draft one.",
-  },
-  {
-    title: "3) Graphic Design (Wide Range)",
-    body:
-      "Design that behaves like a system: consistent under pressure, usable across channels, and built to deploy cleanly.",
+    title: "Ghostwriting (Books + Longform)",
+    body: "Books require systems, not motivation.",
     examples:
-      "Brand assets · campaign kits · social templates · decks · print · merch graphics · web visuals · content design systems",
+      "Engagements may include architecture only, co-writing, or full ghostwriting.",
     pricing:
-      "Design runs hourly or as a scoped sprint depending on number of assets and how defined the brand system already is.",
+      "Pricing is quoted after intake due to variability in length, interviews, research, and revision cycles.",
     deliverable:
-      "Export-ready assets sized for their channels, plus source files when relevant and agreed.",
+      "Delivery is milestone-based, with a structure that survives past draft one.",
+  },
+  {
+    title: "Graphic Design",
+    body: "Design is treated as a deployable system.",
+    examples:
+      "Assets are built to hold together across channels, not just look good in isolation.",
+    pricing:
+      "Pricing runs hourly or as a scoped sprint depending on asset count and system maturity.",
+    deliverable:
+      "You receive export-ready assets sized correctly for their channels, plus source files when agreed.",
   },
 ];
 
 const scopeBands = [
-  "Band 1: Single asset or short deliverable",
-  "Band 2: Campaign pack",
-  "Band 3: System build",
-  "Band 4: Deep production (books, multi-week production cycles)",
+  "Band 1: single asset or short deliverable",
+  "Band 2: campaign pack",
+  "Band 3: system build",
+  "Band 4: deep production (books, multi-week cycles)",
 ];
 
 const timelineRows = [
   {
-    label: "Brand voice kit",
-    synerva: "1–3 days ($600–$1,200)",
-    typical: "2–4 weeks ($3k–$10k+)",
+    label: "Focused intake to understand the situation, constraints, and goal",
+    synerva: "A clear framing of the problem you’re actually dealing with.",
+    typical: "the core constraint",
   },
   {
-    label: "Landing page sprint",
-    synerva: "2–5 days ($900–$2,500)",
-    typical: "2–6 weeks ($4k–$15k+)",
+    label: "Real-time diagnosis of where leverage actually is",
+    synerva: "Enough certainty to act immediately, with or without Synerva.",
+    typical: "viable paths forward",
   },
   {
-    label: "Website launch map",
-    synerva: "5–10 days ($1,500–$3,000)",
-    typical: "4–10 weeks ($7k–$25k+)",
+    label: "Identification of what not to work on right now",
+    synerva:
+      "This is the correct starting point when you don’t want to spend more money guessing.",
+    typical: "the fastest way to create lift",
   },
   {
-    label: "Full brand system",
-    synerva: "1–3 weeks (scope-based)",
-    typical: "6–12+ weeks (scope-based)",
+    label: "Ranked next steps, sequenced for impact",
+    synerva:
+      "A recommendation on whether Synerva is the right fit for the next phase, or not",
+    typical: "",
   },
 ];
 
@@ -143,12 +141,17 @@ export default function OfferingsPage() {
                 Offerings
               </p>
               <h1 className="text-4xl leading-tight sm:text-5xl">
-                High-output execution, without the headcount tax.
+                Senior-level execution, delivered in a small fraction of
+                traditional time and cost.
               </h1>
               <p className="text-base text-white/72">
-                Synerva is built around one advantage: decisions persist.
-                Standards don’t evaporate. Work compresses instead of
-                multiplying. That’s the difference between “busy” and “done.”
+                The homepage explains why Synerva works. This page explains how
+                to engage, what you receive, and what to expect when money is
+                involved. This is not a list of services. It is a set of clear
+                entry points into work that normally requires a firm, multiple
+                senior roles, and months of coordination. If this fits what
+                you’re trying to ship, the path forward should feel
+                straightforward. If it doesn’t, that should be clear as well.
               </p>
               <div className="flex flex-wrap gap-3">
                 {heroChips.map((chip) => (
@@ -193,12 +196,16 @@ export default function OfferingsPage() {
 
       <section className="relative px-6 py-16 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-6xl flex-col gap-6">
-          <h2 className="text-3xl sm:text-4xl">What Synerva does</h2>
+          <h2 className="text-3xl sm:text-4xl">What You’re Actually Hiring</h2>
           <p className="text-lg text-white/75">
-            Synerva helps founders and teams ship brand, web, content, and
-            systems faster and cleaner. That includes positioning and voice,
-            writing and ghostwriting, graphic design across formats, web builds,
-            and the operational loops that keep output consistent.
+            Synerva performs the category of work typically handled by senior
+            brand strategists, lead designers, principal writers, and
+            experienced operators. The compression comes from structure, not
+            shortcuts. Strategy, execution, and judgment are not split across
+            roles. They live in one loop. That is why work that normally
+            stretches across quarters can be delivered in days or weeks, and
+            why costs stay in the thousands instead of six figures. This is
+            senior-level work without senior-level overhead.
           </p>
         </div>
       </section>
@@ -209,11 +216,11 @@ export default function OfferingsPage() {
       >
         <div className="mx-auto max-w-6xl space-y-6 rounded-[2.5rem] border border-white/12 bg-transparent p-8 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl">Simple pricing. No fog.</h2>
+            <h2 className="text-3xl sm:text-4xl">How Engagement Works</h2>
             <p className="text-lg text-white/75">
-              Most firms bill you for drag: meetings, handoffs, translation
-              layers, and revision loops. Synerva bills you for progress,
-              tracked against a clear outcome.
+              Synerva does not sell retainers by default. It does not sell vague
+              scopes. It does not bill for process. Work is priced in one of two
+              ways, depending on what the situation requires. Engagement Types
             </p>
           </div>
           <ul className="space-y-3 text-sm text-white/80">
@@ -233,14 +240,14 @@ export default function OfferingsPage() {
       >
         <div className="mx-auto max-w-6xl space-y-6">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl">Operator Hourly</h2>
+            <h2 className="text-3xl sm:text-4xl">
+              When Momentum Matters More Than Ceremony
+            </h2>
             <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-              $100 CAD/hr
+              Operator Hourly
             </p>
             <p className="text-lg text-white/75">
-              Ideal when the goal is momentum: audit, clarify, fix, ship. You’re
-              not buying “time.” You’re buying a cleaner outcome with fewer
-              cycles.
+              {"$100 CAD per hour\n\nUsed when the goal is to audit, fix, unblock, or ship without waiting for a full specification cycle.\n\nThis mode exists for live work under uncertainty, where judgment matters more than documentation.\n\nYou are not buying time. You are buying progress with fewer cycles."}
             </p>
           </div>
           <ul className="space-y-3 text-sm text-white/80">
@@ -261,11 +268,10 @@ export default function OfferingsPage() {
         <div className="mx-auto max-w-6xl space-y-6">
           <div className="space-y-3">
             <h2 className="text-3xl sm:text-4xl">
-              Flat-rate, when scope is clean.
+              When Scope Is Clean
             </h2>
             <p className="text-lg text-white/75">
-              Fixed scope. Defined deliverables. Clear acceptance criteria.
-              Built for clients who want a quote that does not drift.
+              {"Flat-Rate Projects\n\nFlat-rate work exists for clients who want certainty.\n\nThe finish line is defined first. Deliverables are explicit. Acceptance criteria are agreed on before work begins.\n\nIf you want a fixed quote that does not drift, this is how it happens."}
             </p>
           </div>
           <div className="grid gap-4">
@@ -280,7 +286,7 @@ export default function OfferingsPage() {
             ))}
           </div>
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-            If you want a fixed quote, we define the finish line first.
+            {""}
           </p>
         </div>
       </section>
@@ -292,16 +298,15 @@ export default function OfferingsPage() {
         <div className="mx-auto max-w-6xl space-y-6">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-              Content
+              {""}
             </p>
             <h2 className="text-3xl sm:text-4xl">
-              Writing, ghostwriting, and design that ships.
+              Writing, Content, and Design
             </h2>
             <p className="text-lg text-white/75">
-              Content is not “more posts.” It’s structure: voice, rhythm, proof,
-              and release logic. Synerva produces shortform, longform, full
-              books, and graphic design across applications, with pricing scoped
-              to what you’re actually making.
+              Content here is treated as structure, not volume. That includes
+              voice, rhythm, proof, release logic, and how work holds up after
+              launch.
             </p>
           </div>
           <div className="grid gap-6">
@@ -313,9 +318,7 @@ export default function OfferingsPage() {
                 <h3 className="text-xl text-white">{item.title}</h3>
                 <p className="mt-3 text-sm text-white/70">{item.body}</p>
                 {"formats" in item ? (
-                  <p className="mt-3 text-sm text-white/70">
-                    Formats: {item.formats}
-                  </p>
+                  <p className="mt-3 text-sm text-white/70">{item.formats}</p>
                 ) : null}
                 {"proof" in item ? (
                   <p className="mt-3 text-sm text-white/70">{item.proof}</p>
@@ -331,15 +334,13 @@ export default function OfferingsPage() {
                   </ul>
                 ) : null}
                 <p className="mt-3 text-sm text-white/70">
-                  Pricing note: {item.pricing}
+                  {item.pricing}
                 </p>
                 <p className="mt-3 text-sm text-white/70">
-                  What you receive: {item.deliverable}
+                  {item.deliverable}
                 </p>
                 {"examples" in item ? (
-                  <p className="mt-3 text-sm text-white/70">
-                    Examples: {item.examples}
-                  </p>
+                  <p className="mt-3 text-sm text-white/70">{item.examples}</p>
                 ) : null}
               </div>
             ))}
@@ -352,12 +353,10 @@ export default function OfferingsPage() {
         className="relative px-6 pb-16 sm:px-10 lg:px-16"
       >
         <div className="mx-auto max-w-6xl space-y-4">
-          <h2 className="text-3xl sm:text-4xl">
-            Pricing depends on output, not vibes.
-          </h2>
+          <h2 className="text-3xl sm:text-4xl">Scope Bands</h2>
           <p className="text-lg text-white/75">
-            To keep it fair and fast, content is priced by scope band after
-            intake. You get a clear estimate, then the work moves.
+            To keep pricing fair and predictable, work is scoped after intake.
+            Pricing reflects output and complexity, not vibes.
           </p>
           <ul className="space-y-3 text-sm text-white/80">
             {scopeBands.map((item) => (
@@ -377,18 +376,17 @@ export default function OfferingsPage() {
         <div className="mx-auto max-w-6xl space-y-6">
           <div className="space-y-2">
             <h2 className="text-3xl sm:text-4xl">
-              Typical timelines and cost ranges
+              Start Here When Clarity Is the Bottleneck
             </h2>
             <p className="text-sm text-white/70">
-              Ranges vary by scope and approval cycles. “Typical firm workflow”
-              means multiple roles, handoffs, meetings, and revision loops.
+              {"Clarity Diagnostic\n$75–$125 CAD\n\nA short, paid diagnostic designed to collapse uncertainty into a clear decision.\n\nThis is not a consultation and not a sales call. It is a bounded analysis of a real problem you’re actively trying to solve, using the same senior-level judgment applied in full engagements."}
             </p>
           </div>
           <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-6">
             <div className="grid gap-3 text-xs uppercase tracking-[0.3em] text-white/60 md:grid-cols-[1.2fr_1fr_1fr]">
-              <span>Project</span>
-              <span>Synerva</span>
-              <span>Typical workflow</span>
+              <span>What It Includes</span>
+              <span>What You Walk Away With</span>
+              <span>Clarity on:</span>
             </div>
             <div className="mt-4 grid gap-4">
               {timelineRows.map((row) => (
@@ -404,8 +402,7 @@ export default function OfferingsPage() {
             </div>
           </div>
           <p className="text-sm text-white/70">
-            The goal isn’t speed for its own sake. It’s momentum without drift:
-            fewer loops, tighter QA, clearer proof.
+            {""}
           </p>
         </div>
       </section>
@@ -413,12 +410,10 @@ export default function OfferingsPage() {
       <section className="relative px-6 pb-24 sm:px-10 lg:px-16">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-[3rem] border border-white/10 bg-black/60 p-10 text-center backdrop-blur-2xl">
           <h2 className="text-3xl sm:text-4xl">
-            Start with the fastest clarity injection.
+            How to Proceed
           </h2>
           <p className="text-base text-white/72">
-            If you’re unsure what to do first, start with the 30-minute plan.
-            You’ll leave with a ranked list of interventions and the shortest
-            path to lift.
+            {"Reality Check\nThe goal is not speed for its own sake.\n\nThe goal is senior-level output without senior-level overhead.\n\nThat’s why work ships in days or weeks instead of months, and why costs stay in the thousands instead of six figures.\n\nCompression comes from fewer loops, tighter QA, and preserved judgment—not from cutting corners.\n\nIf you already know what you need, choose the entry point that fits the scope.\n\nIf you don’t, start with the Clarity Diagnostic. You’ll leave knowing exactly what to do next, and why."}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link

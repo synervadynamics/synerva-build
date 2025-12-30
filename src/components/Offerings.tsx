@@ -12,13 +12,13 @@ const offeringsMedia = {
     width: 1024,
     height: 1536,
   },
-  "Flat-Rate Sprints": {
+  "Flat-Rate Projects": {
     src: "/visuals/offerings-v2/flat-rate-sprints.png",
     alt: "Flat-rate sprints offering",
     width: 1536,
     height: 1024,
   },
-  "Build With Synerva": {
+  "Build with Synerva": {
     src: "/visuals/offerings-v2/full-stack-system-builds.png",
     alt: "Full-stack system builds offering",
     width: 1024,

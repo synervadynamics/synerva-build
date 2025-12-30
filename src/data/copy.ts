@@ -24,12 +24,12 @@ export const copy = {
     eyebrow: "Synerva Dynamics",
     title: "The Power of Many, Engineered for One",
     subtitle:
-      "A studio built for precision at scale. Brand, web, content, automation, and analytics function as one unified loop—every decision grounded in evidence, every result visible in motion.",
+      "Senior-level brand, systems, and execution—delivered in weeks instead of quarters. Strategy, design, web, and operations function as one coherent loop, removing the overhead, handoffs, and translation loss that slow traditional teams.",
     headline: ["The Power of Many,", "Engineered for One"],
     subhead:
-      "A studio built for precision at scale. Brand, web, content, automation, and analytics function as one unified loop—every decision grounded in evidence, every result visible in motion.",
-    primaryCta: { label: "Start with a 30-minute plan", href: "/contact" },
-    secondaryCta: { label: "See Proof of Lift", href: "/proof" },
+      "Senior-level brand, systems, and execution—delivered in weeks instead of quarters. Strategy, design, web, and operations function as one coherent loop, removing the overhead, handoffs, and translation loss that slow traditional teams.",
+    primaryCta: { label: "START WITH A 30-MINUTE PLAN", href: "/contact" },
+    secondaryCta: { label: "SEE PROOF OF LIFT", href: "/proof" },
     video: {
       src: "/visuals/hero/hero_main_render.webp",
       poster: "/visuals/hero/hero_main_render.webp",
@@ -44,59 +44,59 @@ export const copy = {
       },
     },
     proofs: [
-      { label: "Loop coverage", value: "Brand · Web · Content · Automation" },
-      { label: "Core systems", value: "Lucentra · Verisense · Synerva OS" },
+      { label: "Loop Coverage", value: "Brand · Web · Content · Automation" },
+      { label: "Core Systems", value: "Lucentra · Verisense · Synerva OS" },
       {
-        label: "Engagement tempo",
+        label: "Engagement Tempo",
         value: "Plan in 30 min · Launch map in 10 days",
       },
     ],
   },
   story: {
-    eyebrow: "Where Intelligence Becomes Infrastructure",
+    eyebrow: "WHERE INTELLIGENCE BECOMES INFRASTRUCTURE",
     heading: "Fragmentation Kills Velocity",
     statement:
-      "Most organizations don’t slow down for lack of ambition. They slow down because of drag: too many tools, too many workflows, too many places where momentum quietly leaks away. Synerva replaces that drag with engineered speed—unifying scattered efforts into one coordinated force.",
+      "Most teams don’t stall from lack of ambition. They stall from friction: process-heavy workflows, fragmented ownership, and coordination that resets progress. Synerva removes that drag by designing and executing work as one system—so decisions persist and momentum compounds.",
     proof: "",
     bullets: [
-      "Replace chaos with one adaptive system engineered for clarity and speed.",
-      "Turn manual, ad-hoc workflows into automation guided by psychology.",
-      "Transform scattered effort into a unified engine built to multiply output.",
+      "Replace process-heavy coordination with a single adaptive system built for speed.",
+      "Convert manual, ad-hoc work into automation guided by judgment.",
+      "Unify effort into an engine where output compounds instead of resetting.",
     ],
-    cta: { label: "Experience Unified Momentum", href: "/contact" },
+    cta: { label: "EXPERIENCE UNIFIED MOMENTUM", href: "/contact" },
   },
   offerings: {
     eyebrow: "Offerings",
     heading: "Choose the entry point. We’ll do the compression.",
     body:
-      "Most firms charge you for coordination. Synerva charges you for forward motion. Brand, web, content, design, automation, and measurement run as one loop, so decisions don’t get lost between people who don’t own the outcome.",
+      "Most firms sell isolated services. Synerva applies intelligence across the full loop—so deliverables arrive faster, cost less, and don’t require babysitting after launch. Whether you need a single artifact or an interconnected system, there are clear ways to engage.",
     cards: [
       {
         title: "Operator Hourly",
-        meta: "$100 CAD/hr",
+        meta: "",
         text:
-          "Best for sharp problems: positioning, copy, audits, conversion fixes, creative direction, and fast iteration when the highest value is judgment.",
-        cta: "View Offerings",
+          "Best for sharp problems: audits, positioning, fixes, unblocking, and fast execution when the highest value is judgment.",
+        cta: "VIEW OFFERINGS",
         href: "/offerings",
       },
       {
-        title: "Flat-Rate Sprints",
-        meta: "Fixed scope. Fast turnaround.",
+        title: "Flat-Rate Projects",
+        meta: "",
         text:
-          "Defined deliverables, clear acceptance criteria, and a quote that does not drift. Built for work that should not become a six-week “alignment journey.”",
-        cta: "See Sprint Options",
+          "Defined deliverables, clear acceptance criteria, and a finish line agreed on before work begins. Built for clients who want certainty without drift.",
+        cta: "SEE PROJECT OPTIONS",
         href: "/offerings#sprints",
       },
       {
-        title: "Build With Synerva",
-        meta: "Full-stack system builds",
+        title: "Build with Synerva",
+        meta: "",
         text:
-          "When you want the full loop: strategy, writing, design, build, automation, and analytics stitched into one release path.",
-        cta: "Start a Project",
+          "When strategy, writing, design, build, automation, and analytics need to ship as one coherent release.",
+        cta: "START A PROJECT",
         href: "/contact",
       },
     ],
-    microline: "Transparent pricing, kept off the homepage spreadsheet.",
+    microline: "Transparent pricing, without process theater.",
   },
   publications: {
     eyebrow: "Publications",

@@ -207,10 +207,11 @@ export const Hero = () => {
         <CascadingText
           className="mt-8 pt-6"
           items={[
-            "Brand orchestration",
-            "Web systems",
-            "Automation loops",
-            "Analytics clarity",
+            "Orchestration",
+            "Web Systems",
+            "Automation Loops",
+            "Analytics Clarity",
+            "Brand Orchestration",
           ]}
           speed={70}
         />
