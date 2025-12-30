@@ -58,7 +58,18 @@ const sprintExamples = [
   },
 ];
 
-const contentOfferings = [
+type ContentOffering = {
+  title: string;
+  body: string;
+  pricing: string;
+  deliverable: string;
+  formats?: string;
+  proof?: string;
+  options?: string[];
+  examples?: string;
+};
+
+const contentOfferings: ContentOffering[] = [
   {
     title: "Writing (Shortform + Longform)",
     body:
