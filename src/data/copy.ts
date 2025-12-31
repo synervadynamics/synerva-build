@@ -595,7 +595,7 @@ export const copy = {
           "actions that can begin immediately",
         ],
         video: {
-          src: "/whats-delivered-v2/voice-built-to-scale.PNG",
+          src: "/Users/kylegruarin/dev/synerva-build/public/whats-delivered-v3/strategic-direction.PNG",
           label: "Strategic Direction",
         },
         href: "/contact",
@@ -616,7 +616,7 @@ export const copy = {
           "compounding forward motion",
         ],
         video: {
-          src: "/whats-delivered-v2/web-that-earns-attention.PNG",
+          src: "/Users/kylegruarin/dev/synerva-build/public/whats-delivered-v3/integrated-execution.PNG",
           label: "Integrated Execution",
         },
         href: "/contact",
@@ -636,7 +636,7 @@ export const copy = {
           "less dependence on outside interpretation",
         ],
         video: {
-          src: "/whats-delivered-v2/content-that-multiplies-reach.PNG",
+          src: "/Users/kylegruarin/dev/synerva-build/public/whats-delivered-v3/durable-assets.PNG",
           label: "Durable Assets",
         },
         href: "/contact",
@@ -656,7 +656,7 @@ export const copy = {
           "composed execution under constraint",
         ],
         video: {
-          src: "/whats-delivered-v2/analytics-that-tell-the-truth.PNG",
+          src: "/Users/kylegruarin/dev/synerva-build/public/whats-delivered-v3/operating-judgement.PNG",
           label: "Operating Judgment",
         },
         href: "/contact",
