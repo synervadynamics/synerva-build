@@ -51,6 +51,22 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
     width: 1536,
     height: 1024,
   },
+  "/whats-delivered-v3/strategic-direction.PNG": {
+    width: 1536,
+    height: 1024,
+  },
+  "/whats-delivered-v3/integrated-execution.PNG": {
+    width: 1536,
+    height: 1024,
+  },
+  "/whats-delivered-v3/operating-judgement.PNG": {
+    width: 1536,
+    height: 1024,
+  },
+  "/whats-delivered-v3/durable-assets.PNG": {
+    width: 1536,
+    height: 1024,
+  },
 };
 
 export const Deliver = () => {
