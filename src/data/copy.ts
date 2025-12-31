@@ -577,110 +577,114 @@ export const copy = {
   },
   deliver: {
     heading: "What’s Delivered",
-    intro:
-      "Output that compounds. Proof that endures. Systems tuned for momentum—without burnout.",
+    intro: "",
     items: [
       {
-        title: "Voice built to scale",
-        text: "Language systems ensure your identity stays intact even as output accelerates. Every headline, page, and script aligns to your cadence and tone before it ever reaches a client or executive.",
-        detail:
-          "Lucentra’s voice DNA model, tonal diagnostics, and banned-phrases list keep teams disciplined. Every prompt, editor, and script ties back to the same guidelines, so even a comma change still sounds like you.",
+        title: "Strategic Clarity",
+        text: "Clear direction before motion.",
+        detail: "Decisions that survive contact with reality.",
         panelText:
-          "Lucentra keeps your voice consistent behind the scenes—even if ten writers and three AI co-pilots are working.",
+          "Strategy here is not vision statements or alignment exercises. It is the act of reducing complexity until the path forward becomes obvious and defensible.",
         panelDetail:
-          "Every launch inherits the same cadence map, word bank, and correction loop, ensuring momentum never dilutes your signal.",
+          "This is built from real constraints, not abstract models. The result is a shared operating picture that makes downstream decisions faster, calmer, and harder to derail.",
         panelPoints: [
-          "Live style guides embedded in prompts, CMS blocks, and teleprompters",
-          "Voice QA catches any off-tone content before it reaches an executive’s inbox",
-          "Executive-ready packets indexed by scenario (investor, press, sales, operations)",
+          "what actually matters versus what is noise",
+          "where effort compounds and where it leaks",
+          "priorities and tradeoffs grounded in real constraints",
+          "a sequence of actions that can be executed immediately",
+          "decision logic that holds when conditions change",
         ],
         video: {
           src: "/whats-delivered-v2/voice-built-to-scale.PNG",
-          label: "Voice built to scale",
+          label: "Strategic Clarity",
         },
         href: "/contact",
         cta: "Talk voice systems",
       },
       {
-        title: "Web that earns attention",
-        text: "Websites built for clarity and conversion. Accessibility best practices, schema markup, and CASL-safe forms are standard. Every page cuts the fluff, loads fast, and guides visitors cleanly to the action that matters.",
-        detail:
-          "Everything from hero flow and dwell-time patterns to compliance logic is choreographed inside Synerva OS. All metrics loop back into dashboards to prove whether each button, headline, or nav element is pulling its weight.",
+        title: "Execution Systems",
+        text: "Work that moves as one system.",
+        detail: "No translation layer required.",
         panelText:
-          "Wireframe-to-launch lives in one tight checklist—cinematic feel with product-clean motion.",
+          "Execution is designed as a single system from the start. Decisions made in one area are reflected everywhere else by design.",
         panelDetail:
-          "No jargon. No dark patterns. Just honest paths to action.",
+          "You’re not handed tasks. You’re handed a system that already knows how to move.",
         panelPoints: [
-          "Hero sections choreographed around one primary conversion per page",
-          "Accessibility standards, structured data, and privacy compliance baked into the component kit",
-          "Weekly heatmap analyses and funnel checks to validate every layout",
+          "workflows designed as one coherent system",
+          "decisions that propagate correctly across brand, content, web, and automation",
+          "assets built to work together, not coexist",
+          "reduced back-and-forth and fewer execution resets",
+          "motion that compounds instead of fragmenting",
         ],
         video: {
           src: "/whats-delivered-v2/web-that-earns-attention.PNG",
-          label: "Web that earns attention",
+          label: "Execution Systems",
         },
         href: "/contact",
         cta: "Discuss the web stack",
       },
       {
-        title: "Content that multiplies reach",
-        text: "Core narratives stretch into campaigns, case studies, and reusable formats. Each piece ties back to a measurable goal so momentum becomes predictable, not just lucky.",
-        detail:
-          "Narrative frameworks turn one flagship idea into podcasts, decks, newsletters, and demand-generation content—without everything sounding cloned. Editorial QA ensures every proof point lands with impact.",
+        title: "Built Assets",
+        text: "Things you keep.",
+        detail: "Not presentations. Not promises.",
         panelText:
-          "A single flagship POV becomes a dozen formats without losing identity.",
+          "Every engagement produces real assets that remain useful long after delivery. These are tools you continue to operate.",
         panelDetail:
-          "Distribution calendars are planned around revenue milestones, not vanity spikes.",
+          "The value does not disappear when the work concludes. It accumulates.",
         panelPoints: [
-          "Scripts, decks, and clips backed by evidence, sharing a common research backbone",
-          "Editors ensure tone, timing, and supporting receipts are on point before anything ships",
-          "Campaign dashboards reveal what actually amplified reach, not just what got views",
+          "frameworks you can reuse without retranslation",
+          "language that remains stable under scrutiny",
+          "systems that retain value after delivery",
+          "tools that reduce dependence on outside interpretation",
+          "infrastructure that survives ownership changes",
         ],
         video: {
           src: "/whats-delivered-v2/content-that-multiplies-reach.PNG",
-          label: "Content that multiplies reach",
+          label: "Built Assets",
         },
         href: "/contact",
         cta: "Scale content",
       },
       {
-        title: "Automation that restores focus",
-        text: "Automated workflows remove repetition and surface the next step automatically. Built-in CRM logic, onboarding sequences, and follow-up loops keep progress steady—even after hours.",
-        detail:
-          "Synerva OS comes with scenario packs, lead scoring controls, and operational guardrails out of the box. Admin work fades away, clarity rises to the surface, and leadership sees only the signals that truly matter.",
+        title: "Ongoing Intelligence",
+        text: "Visibility replaces guesswork.",
+        detail: "Signals instead of opinions.",
         panelText:
-          "System maps keep every trigger, safeguard, and exception visible at a glance.",
+          "What’s delivered includes mechanisms for seeing what’s working, what isn’t, and why.",
         panelDetail:
-          "Growth moves faster. Operations get full paper trails. Legal sleeps easy.",
+          "This is selective visibility focused on decisions that actually matter.",
         panelPoints: [
-          "Click-by-click runbooks for onboarding, retention, and renewal",
-          "Dashboards show which play ran, who owns it, and what changed",
-          "Human-in-the-loop checkpoints at every sensitive juncture",
+          "indicators tied directly to real outcomes",
+          "visibility into what’s working, what isn’t, and why",
+          "feedback loops that inform action, not debate",
+          "insight that arrives early enough to matter",
+          "performance clarity without narrative spin",
         ],
         video: {
           src: "/whats-delivered-v2/automation-that-restores-focus.PNG",
-          label: "Automation that restores focus",
+          label: "Ongoing Intelligence",
         },
         href: "/contact",
         cta: "Plan automation",
       },
       {
-        title: "Analytics that tell the truth",
-        text: "Dashboards serve as diagnostics. Strict KPIs, disciplined UTM tracking, and reconciliation loops keep metrics honest. Every signal ties back to a deliberate decision, not guesswork.",
-        detail:
-          "Data from CRM, web, and campaigns is reconciled daily. Every move is annotated so leadership sees clear cause-and-effect instead of chaos.",
+        title: "Operating Posture",
+        text: "Senior judgment without senior sprawl.",
+        detail: "",
         panelText:
-          "Analytics operate like a lab notebook—question, experiment, artifact, next move.",
+          "You are engaging a mode of operation that replaces coordination overhead with judgment.",
         panelDetail:
-          "Every chart comes paired with a lever to pull, not just a number to admire.",
+          "The work moves with the coherence of a small, experienced team, even when the scope is large.",
         panelPoints: [
-          "Daily data reconciliation across CRM, web, and paid channels",
-          "Annotations highlight the decision behind each spike or dip",
-          "Quarterly roll-ups that separate noise from repeatable wins",
+          "fewer handoffs, explanations, and resets",
+          "judgment replacing coordination overhead",
+          "faster movement without shortcuts",
+          "calm execution under real constraints",
+          "senior-level coherence without senior-level sprawl",
         ],
         video: {
           src: "/whats-delivered-v2/analytics-that-tell-the-truth.PNG",
-          label: "Analytics that tell the truth",
+          label: "Operating Posture",
         },
         href: "/contact",
         cta: "Review analytics",
