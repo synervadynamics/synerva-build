@@ -4,7 +4,7 @@ export const copy = {
     description:
       "Synerva Dynamics builds unified systems across brand, web, content, and automation—designed around structure, not noise. Every layer works in one integrated loop, so ambitious teams gain lift they can see, measure, and compound.",
     url: "https://www.synervadynamics.com",
-    ogImage: "/visuals/hero/synerva-hero-5.png",
+    ogImage: "/homepage-post-12-25-2025/synerva-hero-5.png",
     twitter: "@synerva-dynamics",
   },
   global: {
@@ -580,111 +580,84 @@ export const copy = {
     intro: "",
     items: [
       {
-        title: "Strategic Clarity",
-        text: "Clear direction before motion.",
-        detail: "Decisions that survive contact with reality.",
+        title: "Strategic Direction",
+        text:
+          "This work establishes clear direction before execution begins. Complexity is reduced until priorities, tradeoffs, and next actions are obvious enough to move on without hesitation.",
+        detail:
+          "Decisions are shaped to survive real conditions, not idealized plans.",
         panelText:
-          "Strategy here is not vision statements or alignment exercises. It is the act of reducing complexity until the path forward becomes obvious and defensible.",
-        panelDetail:
-          "This is built from real constraints, not abstract models. The result is a shared operating picture that makes downstream decisions faster, calmer, and harder to derail.",
+          "Strategy here is about reducing complexity until the path forward becomes defensible and executable.",
+        panelDetail: "",
         panelPoints: [
-          "what actually matters versus what is noise",
+          "what matters versus what can be ignored",
           "where effort compounds and where it leaks",
-          "priorities and tradeoffs grounded in real constraints",
-          "a sequence of actions that can be executed immediately",
-          "decision logic that holds when conditions change",
+          "tradeoffs made explicit",
+          "actions that can begin immediately",
         ],
         video: {
           src: "/whats-delivered-v2/voice-built-to-scale.PNG",
-          label: "Strategic Clarity",
+          label: "Strategic Direction",
         },
         href: "/contact",
         cta: "Talk voice systems",
       },
       {
-        title: "Execution Systems",
-        text: "Work that moves as one system.",
-        detail: "No translation layer required.",
+        title: "Integrated Execution",
+        text:
+          "Execution is treated as a single, connected system rather than a set of parallel efforts. Work moves coherently across brand, content, web, and automation without translation or rework.",
+        detail: "Momentum is designed in, not managed after the fact.",
         panelText:
-          "Execution is designed as a single system from the start. Decisions made in one area are reflected everywhere else by design.",
-        panelDetail:
-          "You’re not handed tasks. You’re handed a system that already knows how to move.",
+          "Execution is designed so decisions propagate cleanly across the system.",
+        panelDetail: "",
         panelPoints: [
-          "workflows designed as one coherent system",
-          "decisions that propagate correctly across brand, content, web, and automation",
-          "assets built to work together, not coexist",
-          "reduced back-and-forth and fewer execution resets",
-          "motion that compounds instead of fragmenting",
+          "workflows that move together",
+          "assets built to reinforce each other",
+          "fewer resets and handoffs",
+          "compounding forward motion",
         ],
         video: {
           src: "/whats-delivered-v2/web-that-earns-attention.PNG",
-          label: "Execution Systems",
+          label: "Integrated Execution",
         },
         href: "/contact",
         cta: "Discuss the web stack",
       },
       {
-        title: "Built Assets",
-        text: "Things you keep.",
-        detail: "Not presentations. Not promises.",
-        panelText:
-          "Every engagement produces real assets that remain useful long after delivery. These are tools you continue to operate.",
-        panelDetail:
-          "The value does not disappear when the work concludes. It accumulates.",
+        title: "Durable Assets",
+        text:
+          "The work produces assets you continue to use. These are not summaries or presentations, but tools that clarify thinking and support decisions long after delivery.",
+        detail: "Value accumulates instead of expiring.",
+        panelText: "Every engagement leaves behind usable systems and language.",
+        panelDetail: "",
         panelPoints: [
-          "frameworks you can reuse without retranslation",
-          "language that remains stable under scrutiny",
-          "systems that retain value after delivery",
-          "tools that reduce dependence on outside interpretation",
-          "infrastructure that survives ownership changes",
+          "reusable frameworks",
+          "stable decision language",
+          "systems that retain value",
+          "less dependence on outside interpretation",
         ],
         video: {
           src: "/whats-delivered-v2/content-that-multiplies-reach.PNG",
-          label: "Built Assets",
+          label: "Durable Assets",
         },
         href: "/contact",
         cta: "Scale content",
       },
       {
-        title: "Ongoing Intelligence",
-        text: "Visibility replaces guesswork.",
-        detail: "Signals instead of opinions.",
-        panelText:
-          "What’s delivered includes mechanisms for seeing what’s working, what isn’t, and why.",
-        panelDetail:
-          "This is selective visibility focused on decisions that actually matter.",
+        title: "Operating Judgment",
+        text:
+          "You engage experienced judgment without the overhead that usually comes with it. Work moves calmly and decisively, even when scope and stakes are real.",
+        detail: "Coordination friction is replaced by clarity.",
+        panelText: "Judgment replaces coordination overhead.",
+        panelDetail: "",
         panelPoints: [
-          "indicators tied directly to real outcomes",
-          "visibility into what’s working, what isn’t, and why",
-          "feedback loops that inform action, not debate",
-          "insight that arrives early enough to matter",
-          "performance clarity without narrative spin",
-        ],
-        video: {
-          src: "/whats-delivered-v2/automation-that-restores-focus.PNG",
-          label: "Ongoing Intelligence",
-        },
-        href: "/contact",
-        cta: "Plan automation",
-      },
-      {
-        title: "Operating Posture",
-        text: "Senior judgment without senior sprawl.",
-        detail: "",
-        panelText:
-          "You are engaging a mode of operation that replaces coordination overhead with judgment.",
-        panelDetail:
-          "The work moves with the coherence of a small, experienced team, even when the scope is large.",
-        panelPoints: [
-          "fewer handoffs, explanations, and resets",
-          "judgment replacing coordination overhead",
+          "fewer explanations and resets",
           "faster movement without shortcuts",
-          "calm execution under real constraints",
-          "senior-level coherence without senior-level sprawl",
+          "decisions made once",
+          "composed execution under constraint",
         ],
         video: {
           src: "/whats-delivered-v2/analytics-that-tell-the-truth.PNG",
-          label: "Operating Posture",
+          label: "Operating Judgment",
         },
         href: "/contact",
         cta: "Review analytics",

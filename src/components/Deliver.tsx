@@ -119,10 +119,10 @@ export const Deliver = () => {
     <motion.section
       id="deliver"
       ref={setRefs}
-      className="relative px-6 pb-18 pt-12 sm:px-10 sm:pb-22 sm:pt-12 lg:px-16 lg:pb-22 lg:pt-14"
+      className="relative px-6 pb-16 pt-10 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
     >
-      <div className="relative mx-auto max-w-6xl space-y-8">
-        <header className="max-w-4xl space-y-6 text-white">
+      <div className="relative mx-auto max-w-6xl space-y-6">
+        <header className="max-w-4xl space-y-4 text-white">
           <h2 className="text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
             {copy.deliver.heading}
           </h2>
@@ -133,8 +133,8 @@ export const Deliver = () => {
             <span>{Math.round(activeProgress)}%</span>
           </div>
         </header>
-        <div className="bubble-drift deliver-clean grid gap-10 rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-10">
-          <div ref={cardsRef} className="grid gap-6 lg:grid-cols-2">
+        <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
+          <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
             {copy.deliver.items.map((item, index) => (
               <motion.article
                 key={item.title}
@@ -145,7 +145,7 @@ export const Deliver = () => {
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)}
                 tabIndex={0}
-                className={`deliver-card bubble-drift deliver-clean group flex min-h-[220px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-6 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
                   activeIndex === index
                     ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
                     : ""
@@ -178,7 +178,7 @@ export const Deliver = () => {
                   }
                 : undefined
             }
-            className="deliver-clean relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
+            className="deliver-clean relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
           >
             <div
               className="deliver-clean overflow-hidden rounded-3xl border border-white/5"
@@ -217,7 +217,7 @@ export const Deliver = () => {
                 <VideoPlaceholder label={`${activeItem.title} visual`} />
               )}
             </div>
-            <p className="mt-4 text-sm uppercase tracking-[0.3em] text-white/60">
+            <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
               {activeItem.video?.label ?? `${activeItem.title} visual`}
             </p>
             <p className="mt-2 text-lg text-white">{activeItem.title}</p>
@@ -228,7 +228,7 @@ export const Deliver = () => {
               {activeItem.panelDetail ?? activeItem.detail}
             </p>
             {activeItem.panelPoints?.length ? (
-              <ul className="mt-4 space-y-2 text-sm text-white/65">
+              <ul className="mt-3 space-y-2 text-sm text-white/65">
                 {activeItem.panelPoints.map((point) => (
                   <li key={point} className="flex items-start gap-3">
                     <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-white/40" />
@@ -240,7 +240,7 @@ export const Deliver = () => {
           </motion.div>
         </div>
         <CascadingText
-          className="pt-6"
+          className="pt-4"
           items={copy.deliver.items.map((item) => item.title)}
           speed={60}
         />
