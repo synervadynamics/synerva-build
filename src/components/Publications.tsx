@@ -20,7 +20,7 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 pb-8 pt-6 sm:px-10 sm:pb-10 sm:pt-6 lg:px-16 lg:pb-10 lg:pt-6"
+      className="relative px-6 pb-6 pt-6 sm:px-10 sm:pb-6 sm:pt-6 lg:px-16 lg:pb-6 lg:pt-6"
     >
       <div className="relative mx-auto max-w-6xl">
         <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6">
@@ -52,27 +52,26 @@ export const Publications = () => {
               <div className="w-full">
                 <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-2">
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <div className="relative aspect-[9/16] w-full">
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={activeItem.title}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={imageTransition}
-                            className="absolute inset-0"
-                          >
-                            <Image
-                              src={activeItem.image.src}
-                              alt={activeItem.image.alt}
-                              fill
-                              className="rounded-2xl object-contain object-top"
-                              sizes="(min-width: 1024px) 35vw, 100vw"
-                            />
-                          </motion.div>
-                        </AnimatePresence>
-                      </div>
+                    <div className="overflow-hidden rounded-2xl">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeItem.title}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={imageTransition}
+                          className="w-full"
+                        >
+                          <Image
+                            src={activeItem.image.src}
+                            alt={activeItem.image.alt}
+                            width={1024}
+                            height={1536}
+                            className="w-full rounded-2xl object-contain object-top"
+                            sizes="(min-width: 1024px) 35vw, 100vw"
+                          />
+                        </motion.div>
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
