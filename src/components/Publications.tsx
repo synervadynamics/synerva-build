@@ -20,22 +20,25 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 pb-12 pt-10 sm:px-10 sm:pb-14 sm:pt-10 lg:px-16 lg:pb-14 lg:pt-10"
+      className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-8 lg:px-16 lg:pb-12 lg:pt-8"
     >
       <div className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-6 sm:p-7 lg:p-8">
-          <div className="flex flex-col gap-8 text-white">
+        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-5 sm:p-6 lg:p-7">
+          <div className="flex flex-col gap-6 text-white">
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-4"
+              className="space-y-3"
             >
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+                PUBLICATIONS
+              </p>
               <h2 className="text-2xl leading-tight sm:text-3xl lg:text-4xl">
                 {publications.heading}
               </h2>
-              <p className="text-base leading-snug text-white/75">
+              <p className="text-sm leading-snug text-white/75">
                 {publications.body}
               </p>
             </motion.div>
@@ -44,10 +47,10 @@ export const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-6 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-start lg:gap-8"
+              className="grid gap-5 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] lg:items-start lg:gap-6"
             >
               <div className="w-full">
-                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
+                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2.5">
                   <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                     <div className="relative aspect-[9/16] w-full">
                       <AnimatePresence mode="wait">
@@ -63,7 +66,7 @@ export const Publications = () => {
                             src={activeItem.image.src}
                             alt={activeItem.image.alt}
                             fill
-                            className="object-contain p-4"
+                            className="rounded-2xl object-contain p-5"
                             sizes="(min-width: 1024px) 35vw, 100vw"
                           />
                         </motion.div>
@@ -73,7 +76,7 @@ export const Publications = () => {
                 </div>
               </div>
               <div
-                className="flex flex-col gap-3"
+                className="flex flex-col gap-2.5"
                 onMouseLeave={() => {
                   setExpandedIndex(null);
                   setImageIndex(0);
@@ -97,12 +100,12 @@ export const Publications = () => {
                         setImageIndex(index);
                       }}
                       tabIndex={0}
-                      className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
+                      className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-4 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
                         isActive ? "bg-white/[0.06]" : ""
                       }`}
                       aria-expanded={isActive}
                     >
-                      <h3 className="text-lg font-semibold tracking-tight text-white/95">
+                      <h3 className="text-[1rem] font-semibold tracking-tight text-white/95">
                         {item.title}
                       </h3>
                       <p className="mt-2 text-sm leading-snug text-white/70">
@@ -111,19 +114,19 @@ export const Publications = () => {
                       <div
                         className={`overflow-hidden text-[0.82rem] leading-snug text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                           isActive
-                            ? "mt-4 max-h-[1200px] opacity-100"
+                            ? "mt-3 max-h-[1200px] opacity-100"
                             : "max-h-0 opacity-0"
                         }`}
                         aria-hidden={!isActive}
                       >
-                        <div className="space-y-3">
+                        <div className="space-y-2.5">
                           {item.description.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
                           <Link
                             href={item.href}
                             tabIndex={isActive ? 0 : -1}
-                            className="inline-flex text-xs font-semibold tracking-[0.2em] text-white/90 transition hover:text-white"
+                            className="inline-flex text-[0.7rem] font-semibold tracking-[0.2em] text-white/90 transition hover:text-white"
                           >
                             {item.cta}
                           </Link>
