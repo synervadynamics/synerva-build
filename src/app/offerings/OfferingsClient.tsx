@@ -235,15 +235,17 @@ export default function OfferingsClient() {
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 className="relative flex w-full items-center justify-center"
               >
-                <div className="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[9/16]">
-                  <Image
-                    src="/offerings-subpage-dec-30/hero.PNG"
-                    alt="Offerings hero"
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 1280px) 520px, (min-width: 1024px) 420px, 100vw"
-                    priority
-                  />
+                <div className="relative w-full aspect-[9/16]">
+                  <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)]">
+                    <Image
+                      src="/offerings-subpage-dec-30/hero.PNG"
+                      alt="Offerings hero"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1280px) 520px, (min-width: 1024px) 420px, 100vw"
+                      priority
+                    />
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -359,7 +361,7 @@ export default function OfferingsClient() {
                 </div>
                 <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]">
                   <div className={`relative w-full ${mode.ratioClass} flex items-center justify-center`}>
-                    <div className={`relative w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)] ${mode.ratioClass}`}>
+                    <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.7)]">
                       <Image
                         src={mode.imageSrc}
                         alt={mode.imageAlt}
@@ -558,14 +560,16 @@ export default function OfferingsClient() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-5xl">
-          <div className="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)] aspect-[16/9]">
-            <Image
-              src="/offerings-subpage-dec-30/how-to-proceed.PNG"
-              alt="Closing CTA"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 860px, 100vw"
-            />
+          <div className="relative w-full aspect-[16/9]">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/15 bg-white/[0.02] shadow-[0_32px_120px_-80px_rgba(0,0,0,0.85)]">
+              <Image
+                src="/offerings-subpage-dec-30/how-to-proceed.PNG"
+                alt="Closing CTA"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 860px, 100vw"
+              />
+            </div>
           </div>
         </div>
       </section>
