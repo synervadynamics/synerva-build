@@ -67,7 +67,7 @@ export const Publications = () => {
                               src={activeItem.image.src}
                               alt={activeItem.image.alt}
                               fill
-                              className="rounded-2xl object-contain object-top"
+                              className="rounded-2xl object-contain"
                               sizes="(min-width: 1024px) 35vw, 100vw"
                             />
                           </motion.div>
