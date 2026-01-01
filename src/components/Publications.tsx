@@ -47,7 +47,7 @@ export const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-4 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,0.38fr)] lg:items-start lg:gap-4"
+              className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4"
             >
               <div className="w-full">
                 <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
