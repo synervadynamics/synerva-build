@@ -32,7 +32,7 @@ export function SynervaDimensionsSection() {
 
       <div className="mx-auto max-w-6xl px-4">
         <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
-          <div className="space-y-2">
+          <div className="space-y-1">
             <div className="space-y-1">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 Synerva Dimensions
@@ -50,14 +50,13 @@ export function SynervaDimensionsSection() {
               </p>
               <p>
                 These works are not marketing artifacts. They are thinking
-                tools.
+                tools. What survives becomes architecture.
               </p>
-              <p>What survives becomes architecture.</p>
             </div>
           </div>
 
-          <div className="mt-5 grid gap-6 sm:grid-cols-2 lg:gap-5">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:gap-5">
+            <div className="rounded-3xl bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
               {quietHero ? (
                 <div className="mb-5 flex justify-center lg:mb-4">
                   <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
@@ -96,7 +95,7 @@ export function SynervaDimensionsSection() {
               </Link>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
+            <div className="rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
               {parallaxHero ? (
                 <div className="mb-5 flex justify-center lg:mb-4">
                   <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
