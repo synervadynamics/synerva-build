@@ -112,8 +112,8 @@ export const copy = {
           "It’s also funny, because accuracy is funny when you recognize yourself in it. The humor comes from watching fragile systems hold, watching humans improvise dignity under fluorescent lighting, and watching chaos occasionally line up just long enough to feel like magic.",
           "The setting is hospitality. The subject is competence under pressure. If you’ve ever had to perform while being watched, recover without drama, or keep a system moving when it’s clearly trying to break, this book will recognize you before you finish the sentence.",
         ],
-        cta: "→ Enter the Playbook",
-        href: "/contact",
+        cta: "GET THE PREVIEW",
+        href: "/#preview-access",
         image: {
           src: "/rockstar-cover.png",
           alt: "The Rockstar Server Playbook cover",
@@ -129,8 +129,8 @@ export const copy = {
           "There are no streaks, scores, or motivational theatrics here. The pages are simple, repeatable, and forgiving. Some days you write a sentence. Some days you stop early. That counts.",
           "The Reflective Dose doesn’t tell you what to do. It gives you a container where honesty feels possible, and where small moments of awareness can quietly change the direction of a day.",
         ],
-        cta: "→ Open the Journal",
-        href: "/contact",
+        cta: "PREVIEW COMING SOON",
+        href: "",
         image: {
           src: "/reflective-dose-cover.png",
           alt: "The Reflective Dose cover",

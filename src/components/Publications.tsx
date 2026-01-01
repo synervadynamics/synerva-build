@@ -85,6 +85,7 @@ export const Publications = () => {
               >
                 {publications.items.map((item, index) => {
                   const isActive = index === expandedIndex;
+                  const isCtaDisabled = !item.href;
                   return (
                     <article
                       key={item.title}
@@ -129,13 +130,19 @@ export const Publications = () => {
                           ))}
                         </div>
                       </div>
-                      <Link
-                        href={item.href}
-                        tabIndex={isActive ? 0 : -1}
-                        className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                      >
-                        {item.cta}
-                      </Link>
+                      {isCtaDisabled ? (
+                        <span className="mt-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                          {item.cta}
+                        </span>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          tabIndex={isActive ? 0 : -1}
+                          className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                        >
+                          {item.cta}
+                        </Link>
+                      )}
                     </article>
                   );
                 })}

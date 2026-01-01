@@ -13,6 +13,7 @@ import { copy } from "@/data/copy";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Offerings } from "@/components/Offerings";
 import { Merch } from "@/components/Merch";
+import { Labs } from "@/components/Labs";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -30,6 +31,7 @@ export default function HomePage() {
       <Deliver />
       <Systems />
       <Publications />
+      <Labs variant="signup-only" />
       <Merch />
       <Philosophy />
       <Roadmap />
