@@ -35,10 +35,10 @@ export const Publications = () => {
               <p className="text-xs uppercase tracking-[0.4em] text-white/55">
                 PUBLICATIONS
               </p>
-              <h2 className="text-2xl leading-tight sm:text-3xl lg:text-[2.5rem]">
+              <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
                 {publications.heading}
               </h2>
-              <p className="text-sm leading-snug text-white/75">
+              <p className="text-base leading-relaxed text-white/75">
                 {publications.body}
               </p>
             </motion.div>
@@ -106,14 +106,17 @@ export const Publications = () => {
                       }`}
                       aria-expanded={isActive}
                     >
-                      <h3 className="text-[0.98rem] font-semibold tracking-tight text-white/95">
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                        Publication
+                      </p>
+                      <h3 className="text-2xl font-semibold tracking-tight text-white/95">
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-[0.82rem] leading-snug text-white/70">
+                      <p className="mt-2 text-sm leading-snug text-white/70">
                         {item.teaser}
                       </p>
                       <div
-                        className={`overflow-hidden text-[0.78rem] leading-snug text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                           isActive
                             ? "mt-3 max-h-[1200px] opacity-100"
                             : "max-h-0 opacity-0"
@@ -124,15 +127,15 @@ export const Publications = () => {
                           {item.description.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
-                          <Link
-                            href={item.href}
-                            tabIndex={isActive ? 0 : -1}
-                            className="inline-flex text-[0.68rem] font-semibold tracking-[0.2em] text-white/90 transition hover:text-white"
-                          >
-                            {item.cta}
-                          </Link>
                         </div>
                       </div>
+                      <Link
+                        href={item.href}
+                        tabIndex={isActive ? 0 : -1}
+                        className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                      >
+                        {item.cta}
+                      </Link>
                     </article>
                   );
                 })}
