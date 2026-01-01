@@ -31,7 +31,7 @@ export function SynervaDimensionsSection() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className="rounded-3xl border border-white/30 bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
+        <div className="rounded-3xl border border-white/45 bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
           <div className="space-y-1">
             <div className="space-y-1">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
