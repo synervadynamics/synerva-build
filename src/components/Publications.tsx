@@ -47,9 +47,9 @@ export const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4"
+              className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content]"
             >
-              <div className="w-full self-start flex flex-col">
+              <div className="w-full self-start h-fit flex flex-col">
                 <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-2">
                     <div className="relative overflow-hidden rounded-2xl">
@@ -61,7 +61,7 @@ export const Publications = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={imageTransition}
-                            className="absolute inset-0"
+                            className="absolute inset-0 pointer-events-none"
                           >
                             <Image
                               src={activeItem.image.src}
