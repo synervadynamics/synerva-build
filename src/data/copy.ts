@@ -771,7 +771,7 @@ export const copy = {
       ctaPrimary: { label: "Explore The Reflective Dose", href: "/#preview-access" },
       footnote: "(Born in live hospitality labs and engineered to apply far beyond them.)",
     },
-    closing: "Every Lab begins as an irritation worth solving, and ends as a tested asset ready to deploy.",
+    closing: "Occasional writing, early previews, and updates when new work is ready — nothing more.",
   },
   cases: {
     heading: "Case Studies: When Systems Replace Struggle",

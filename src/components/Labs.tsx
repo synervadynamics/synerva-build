@@ -229,7 +229,13 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
         )}
         <CascadingText
           className="pt-6"
-          items={["Labs ship weekly", "Public prototypes", "Rockstar Playbook", "Lucentra pilots", "Verisense drops"]}
+          items={[
+            "New writing (early access)",
+            "Product & project updates",
+            "Release previews",
+            "Selective field notes",
+            "Rockstar Server Playbook Preview",
+          ]}
           speed={65}
         />
         <p className="text-sm text-white/60">{copy.labs.closing}</p>
