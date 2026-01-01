@@ -6,9 +6,6 @@ import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
 import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function SynervaDimensionsSection() {
-  const parallaxLead =
-    "Parallax Loom is a fictional brewery and a study of modern behavior. Beer cans become confessional objects. The work isn’t about drinking. It’s about the habits, performances, and small personal mythologies people use to navigate modern life while assuring everyone, sincerely, that things are fine.";
-
   const quietHero =
     quietDivineImages.find(
       (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
@@ -34,17 +31,45 @@ export function SynervaDimensionsSection() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.28em] text-white/60">
-            Synerva Dimensions Artwork
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Portraits across parallel timelines
-          </h2>
-          <p className="max-w-2xl text-sm text-white/70 sm:text-base">
-            Quiet interior work. Loud modern rituals. A grid of series that keep
-            expanding—each link opens the full narrative, imagery, and gallery.
-          </p>
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Synerva Dimensions
+            </h2>
+            <p className="text-base text-white/70 sm:text-lg">
+              Cognitive Research in Visual Form
+            </p>
+          </div>
+          <div className="max-w-3xl space-y-4 text-sm text-white/80 sm:text-base">
+            <p>Synerva Dimensions is our internal research practice.</p>
+            <p>
+              It’s where we explore how perception, systems, and decision-making
+              behave under pressure—before those ideas ever reach a client
+              environment.
+            </p>
+            <p>
+              These works are not marketing artifacts. They are thinking tools.
+              Each piece isolates a cognitive problem—attention, authority,
+              ambiguity, constraint—and pushes it until it breaks or reveals
+              structure.
+            </p>
+            <p>What survives becomes architecture.</p>
+          </div>
+          <div className="max-w-3xl space-y-4 text-sm text-white/60">
+            <p>
+              We publish this work because it reflects how Synerva operates
+              internally.
+            </p>
+            <p>
+              Before we design systems for clients, we interrogate the
+              underlying cognitive mechanics: what draws focus, what creates
+              trust, what collapses under scale, and what endures.
+            </p>
+            <p>
+              The result is not art for art’s sake—it’s applied cognition,
+              documented.
+            </p>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-8 lg:gap-5">
@@ -68,17 +93,16 @@ export function SynervaDimensionsSection() {
                 </div>
               </div>
             ) : null}
-            <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
-              Series 001 — Portraiture
+            <p className="text-[11px] uppercase tracking-[0.24em] text-white/60">
+              Attention Under Internal Authority
             </p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+            <p className="mt-2 text-sm text-white/70">
+              Examines how focus stabilizes when self-governance replaces
+              external cues.
+            </p>
+            <h3 className="mt-4 text-2xl font-semibold tracking-tight">
               {quietDivineContent.title ?? "The Quiet Divine"}
             </h3>
-            {quietDivineContent.subtitle ? (
-              <p className="mt-3 text-sm text-white/70">
-                {quietDivineContent.subtitle}
-              </p>
-            ) : null}
             <Link
               href="/dimensions/quiet-divine"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
@@ -108,15 +132,16 @@ export function SynervaDimensionsSection() {
                 </div>
               </div>
             ) : null}
-            <p className="text-[11px] uppercase tracking-[0.28em] text-white/60">
-              Series 002 — Design Study
+            <p className="text-[11px] uppercase tracking-[0.24em] text-white/60">
+              Behavior Under Soft Authority
             </p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+            <p className="mt-2 text-sm text-white/70">
+              Studies how coping rituals form when everyday systems apply subtle
+              pressure.
+            </p>
+            <h3 className="mt-4 text-2xl font-semibold tracking-tight">
               {parallaxLoomContent.title ?? "Parallax Loom Brewing Co."}
             </h3>
-            {parallaxLead ? (
-              <p className="mt-3 text-sm text-white/70">{parallaxLead}</p>
-            ) : null}
             <Link
               href="/dimensions/parallax-loom"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
@@ -125,6 +150,15 @@ export function SynervaDimensionsSection() {
               <span aria-hidden="true">↗</span>
             </Link>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <Link
+            href="/dimensions"
+            className="text-sm font-semibold text-white underline-offset-4 hover:underline"
+          >
+            Explore the Synerva Dimensions research archive
+          </Link>
         </div>
       </div>
     </section>
