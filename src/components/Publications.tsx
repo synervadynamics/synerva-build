@@ -14,8 +14,8 @@ export const Publications = () => {
   const activeItem = publications.items[imageIndex];
   const imageTransition = {
     duration: shouldReduceMotion ? 0 : 0.35,
-    ease: [0.16, 1, 0.3, 1],
-  };
+    ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+  } as const;
 
   return (
     <section
