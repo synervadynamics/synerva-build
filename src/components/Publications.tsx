@@ -20,10 +20,10 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 py-5 sm:px-10 sm:py-5 lg:px-16 lg:py-5"
+      className="relative px-6 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
     >
       <div className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6">
+        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] px-4 py-3 sm:px-5 sm:py-4 lg:px-6 lg:py-4">
           <div className="flex flex-col gap-5 text-white">
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
@@ -51,28 +51,26 @@ export const Publications = () => {
             >
               <div className="w-full self-start h-fit flex flex-col">
                 <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-2">
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <div className="relative aspect-[2/3] w-full">
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={activeItem.title}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={imageTransition}
-                            className="absolute inset-0 pointer-events-none"
-                          >
-                            <Image
-                              src={activeItem.image.src}
-                              alt={activeItem.image.alt}
-                              fill
-                              className="rounded-2xl object-contain object-top"
-                              sizes="(min-width: 1024px) 35vw, 100vw"
-                            />
-                          </motion.div>
-                        </AnimatePresence>
-                      </div>
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <div className="relative aspect-[2/3] w-full">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeItem.title}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={imageTransition}
+                          className="absolute inset-0 pointer-events-none"
+                        >
+                          <Image
+                            src={activeItem.image.src}
+                            alt={activeItem.image.alt}
+                            fill
+                            className="rounded-2xl object-cover object-top"
+                            sizes="(min-width: 1024px) 35vw, 100vw"
+                          />
+                        </motion.div>
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
