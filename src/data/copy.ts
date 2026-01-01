@@ -99,16 +99,21 @@ export const copy = {
     microline: "Transparent pricing, without process theater.",
   },
   publications: {
-    eyebrow: "Publications",
-    heading: "Work that holds up under rereads.",
-    body:
-      "Field manuals, essays, and frameworks built for real operators. Clean thinking, shipped in public.",
-    cards: [
+    heading: "Written Under Real Conditions",
+    body: "Writing that holds up when conditions don’t.",
+    items: [
       {
         title: "The Rockstar Server Playbook",
-        text:
-          "A practical blueprint for building leverage, consistency, and execution systems that do not collapse under pressure.",
-        cta: "Read the Playbook",
+        teaser: "A survival manual for chaos, written from the floor.",
+        description: [
+          "This book starts in restaurants and bars because that’s where human behavior stops pretending.",
+          "A packed room, a dying printer, a bartender three tickets behind, a guest insisting they’re “not upset” while radiating menace. Everything is public. Everything is timed. Mistakes arrive with witnesses. Hospitality is pressure with the training wheels removed.",
+          "The Rockstar Server Playbook is written from fifteen years inside that environment. It treats the floor like live theatre: entrances matter, timing matters, tone travels faster than words, and recovery is often more impressive than perfection. The people who look calm aren’t gifted. They’re practiced.",
+          "It’s also funny. Not because it’s trying to be, but because accuracy is funny when you recognize yourself in it. The humor comes from watching fragile systems hold, watching humans improvise dignity under fluorescent lighting, and watching chaos occasionally line up just long enough to feel like magic.",
+          "Yes, the stories come from restaurants and bars. But the subject is broader: how work actually happens when stakes are real, conditions are messy, and people are watching. Anyone who’s led a team, dealt with clients, navigated conflict, or had to think clearly while the room leaned in will feel at home here.",
+          "This isn’t advice. It’s translation. A field guide to competence under pressure, written by someone who learned the rules the loud way and kept notes. If you’ve ever held things together with timing, humour, and a refusal to panic, this book will recognize you before you finish the sentence.",
+        ],
+        cta: "→ Enter the Playbook",
         href: "/contact",
         image: {
           src: "/rockstar-cover.png",
@@ -117,9 +122,15 @@ export const copy = {
       },
       {
         title: "The Reflective Dose",
-        text:
-          "Short-form clarity injections on craft, resilience, and the invisible rules behind good work.",
-        cta: "Explore The Reflective Dose",
+        teaser: "A quiet journal for noticing patterns and making gentler choices.",
+        description: [
+          "The Reflective Dose was written for moments when things feel loud inside and you don’t want a lecture.",
+          "It’s a guided journal designed to slow the moment just enough to notice what’s actually happening: in the body, in thought, in mood, and in the space between impulse and choice. The structure favors clarity over catharsis. One page at a time. One honest entry. No pressure to fix your life before dinner.",
+          "The book was developed in close collaboration with Jasmine Pessendawatch, whose graduate work in counselling psychology grounds the pages in real therapeutic care without turning them clinical. The result is a tool that respects both lived experience and psychological intelligence, without pretending to replace either.",
+          "There are no streaks, scores, or motivational theatrics here. The pages are intentionally simple, repeatable, and forgiving. Some days you write a sentence. Some days you stop early. That counts.",
+          "The Reflective Dose doesn’t tell you what to do. It gives you a container where honesty feels possible, and where small moments of awareness can quietly change the direction of a day.",
+        ],
+        cta: "→ Open the Journal",
         href: "/contact",
         image: {
           src: "/reflective-dose-cover.png",
