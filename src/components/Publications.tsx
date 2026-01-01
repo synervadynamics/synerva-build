@@ -51,27 +51,26 @@ export const Publications = () => {
             >
               <div className="w-full self-start h-fit flex flex-col">
                 <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                    <div className="relative aspect-[2/3] w-full">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={activeItem.title}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={imageTransition}
-                          className="absolute inset-0 pointer-events-none"
-                        >
-                          <Image
-                            src={activeItem.image.src}
-                            alt={activeItem.image.alt}
-                            fill
-                            className="rounded-2xl object-cover object-top"
-                            sizes="(min-width: 1024px) 35vw, 100vw"
-                          />
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex items-start">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activeItem.title}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={imageTransition}
+                        className="w-full pointer-events-none"
+                      >
+                        <Image
+                          src={activeItem.image.src}
+                          alt={activeItem.image.alt}
+                          width={1024}
+                          height={1536}
+                          className="block w-full rounded-2xl object-cover object-top"
+                          sizes="(min-width: 1024px) 35vw, 100vw"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
               </div>
