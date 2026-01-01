@@ -20,22 +20,22 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-8 lg:px-16 lg:pb-12 lg:pt-8"
+      className="relative px-6 pb-8 pt-6 sm:px-10 sm:pb-10 sm:pt-6 lg:px-16 lg:pb-10 lg:pt-6"
     >
       <div className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-5 sm:p-6 lg:p-7">
-          <div className="flex flex-col gap-6 text-white">
+        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 sm:p-5 lg:p-6">
+          <div className="flex flex-col gap-5 text-white">
             <motion.div
               initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-3"
+              className="space-y-2"
             >
               <p className="text-xs uppercase tracking-[0.4em] text-white/55">
                 PUBLICATIONS
               </p>
-              <h2 className="text-2xl leading-tight sm:text-3xl lg:text-4xl">
+              <h2 className="text-2xl leading-tight sm:text-3xl lg:text-[2.5rem]">
                 {publications.heading}
               </h2>
               <p className="text-sm leading-snug text-white/75">
@@ -47,36 +47,38 @@ export const Publications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-5 lg:grid-cols-[minmax(0,0.44fr)_minmax(0,0.56fr)] lg:items-start lg:gap-6"
+              className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4"
             >
               <div className="w-full">
-                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2.5">
-                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                    <div className="relative aspect-[9/16] w-full">
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={activeItem.title}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={imageTransition}
-                          className="absolute inset-0"
-                        >
-                          <Image
-                            src={activeItem.image.src}
-                            alt={activeItem.image.alt}
-                            fill
-                            className="rounded-2xl object-contain p-5"
-                            sizes="(min-width: 1024px) 35vw, 100vw"
-                          />
-                        </motion.div>
-                      </AnimatePresence>
+                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-2">
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <div className="relative aspect-[9/16] w-full">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activeItem.title}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={imageTransition}
+                            className="absolute inset-0"
+                          >
+                            <Image
+                              src={activeItem.image.src}
+                              alt={activeItem.image.alt}
+                              fill
+                              className="rounded-2xl object-contain object-top"
+                              sizes="(min-width: 1024px) 35vw, 100vw"
+                            />
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                className="flex flex-col gap-2.5"
+                className="flex flex-col gap-2"
                 onMouseLeave={() => {
                   setExpandedIndex(null);
                   setImageIndex(0);
@@ -100,33 +102,33 @@ export const Publications = () => {
                         setImageIndex(index);
                       }}
                       tabIndex={0}
-                      className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-4 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
+                      className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
                         isActive ? "bg-white/[0.06]" : ""
                       }`}
                       aria-expanded={isActive}
                     >
-                      <h3 className="text-[1rem] font-semibold tracking-tight text-white/95">
+                      <h3 className="text-[0.98rem] font-semibold tracking-tight text-white/95">
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-snug text-white/70">
+                      <p className="mt-2 text-[0.82rem] leading-snug text-white/70">
                         {item.teaser}
                       </p>
                       <div
-                        className={`overflow-hidden text-[0.82rem] leading-snug text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        className={`overflow-hidden text-[0.78rem] leading-snug text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                           isActive
                             ? "mt-3 max-h-[1200px] opacity-100"
                             : "max-h-0 opacity-0"
                         }`}
                         aria-hidden={!isActive}
                       >
-                        <div className="space-y-2.5">
+                        <div className="space-y-2">
                           {item.description.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
                           <Link
                             href={item.href}
                             tabIndex={isActive ? 0 : -1}
-                            className="inline-flex text-[0.7rem] font-semibold tracking-[0.2em] text-white/90 transition hover:text-white"
+                            className="inline-flex text-[0.68rem] font-semibold tracking-[0.2em] text-white/90 transition hover:text-white"
                           >
                             {item.cta}
                           </Link>
