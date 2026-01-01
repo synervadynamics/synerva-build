@@ -23,130 +23,126 @@ export const Publications = () => {
       className="relative px-6 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
     >
       <div className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2rem] border border-white/12 bg-white/[0.03] px-4 py-3 sm:px-5 sm:py-4 lg:px-6 lg:py-4">
-          <div className="flex flex-col gap-5 text-white">
-            <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-2"
-            >
-              <p className="text-xs uppercase tracking-[0.4em] text-white/55">
-                PUBLICATIONS
-              </p>
-              <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
-                {publications.heading}
-              </h2>
-              <p className="text-base leading-relaxed text-white/75">
-                {publications.body}
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content]"
-            >
-              <div className="w-full self-start h-fit flex flex-col">
-                <div className="rounded-3xl border border-white/12 bg-white/[0.03] p-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex items-start">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={activeItem.title}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={imageTransition}
-                        className="w-full pointer-events-none"
-                      >
-                        <Image
-                          src={activeItem.image.src}
-                          alt={activeItem.image.alt}
-                          width={1024}
-                          height={1536}
-                          className="block w-full rounded-2xl object-cover object-top"
-                          sizes="(min-width: 1024px) 35vw, 100vw"
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-                </div>
+        <div className="flex flex-col gap-5 text-white">
+          <motion.div
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-2"
+          >
+            <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+              PUBLICATIONS
+            </p>
+            <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              {publications.heading}
+            </h2>
+            <p className="text-base leading-relaxed text-white/75">
+              {publications.body}
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content]"
+          >
+            <div className="w-full self-start h-fit flex flex-col">
+              <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6 flex items-start">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeItem.title}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={imageTransition}
+                    className="pointer-events-none"
+                  >
+                    <Image
+                      src={activeItem.image.src}
+                      alt={activeItem.image.alt}
+                      width={1024}
+                      height={1536}
+                      className="block w-auto h-auto rounded-2xl object-cover object-top"
+                      sizes="(min-width: 1024px) 35vw, 100vw"
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
-              <div
-                className="flex flex-col gap-2"
-                onMouseLeave={() => {
-                  setExpandedIndex(null);
-                  setImageIndex(0);
-                }}
-              >
-                {publications.items.map((item, index) => {
-                  const isActive = index === expandedIndex;
-                  const isCtaDisabled = !item.href;
-                  return (
-                    <article
-                      key={item.title}
-                      onMouseEnter={() => {
-                        setExpandedIndex(index);
-                        setImageIndex(index);
-                      }}
-                      onFocus={() => {
-                        setExpandedIndex(index);
-                        setImageIndex(index);
-                      }}
-                      onClick={() => {
-                        setExpandedIndex(index);
-                        setImageIndex(index);
-                      }}
-                      tabIndex={0}
-                      className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
-                        isActive ? "bg-white/[0.06]" : ""
+            </div>
+            <div
+              className="flex flex-col gap-2"
+              onMouseLeave={() => {
+                setExpandedIndex(null);
+                setImageIndex(0);
+              }}
+            >
+              {publications.items.map((item, index) => {
+                const isActive = index === expandedIndex;
+                const isCtaDisabled = !item.href;
+                return (
+                  <article
+                    key={item.title}
+                    onMouseEnter={() => {
+                      setExpandedIndex(index);
+                      setImageIndex(index);
+                    }}
+                    onFocus={() => {
+                      setExpandedIndex(index);
+                      setImageIndex(index);
+                    }}
+                    onClick={() => {
+                      setExpandedIndex(index);
+                      setImageIndex(index);
+                    }}
+                    tabIndex={0}
+                    className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
+                      isActive ? "bg-white/[0.06]" : ""
+                    }`}
+                    aria-expanded={isActive}
+                  >
+                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                      Publication
+                    </p>
+                    <h3 className="text-2xl font-semibold tracking-tight text-white/95">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-snug text-white/70">
+                      {item.teaser}
+                    </p>
+                    <div
+                      className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        isActive
+                          ? "mt-3 max-h-[1200px] opacity-100"
+                          : "max-h-0 opacity-0"
                       }`}
-                      aria-expanded={isActive}
+                      aria-hidden={!isActive}
                     >
-                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                        Publication
-                      </p>
-                      <h3 className="text-2xl font-semibold tracking-tight text-white/95">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-snug text-white/70">
-                        {item.teaser}
-                      </p>
-                      <div
-                        className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                          isActive
-                            ? "mt-3 max-h-[1200px] opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                        aria-hidden={!isActive}
-                      >
-                        <div className="space-y-2">
-                          {item.description.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
-                          ))}
-                        </div>
+                      <div className="space-y-2">
+                        {item.description.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
                       </div>
-                      {isCtaDisabled ? (
-                        <span className="mt-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
-                          {item.cta}
-                        </span>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          tabIndex={isActive ? 0 : -1}
-                          className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                        >
-                          {item.cta}
-                        </Link>
-                      )}
-                    </article>
-                  );
-                })}
-              </div>
-            </motion.div>
-          </div>
+                    </div>
+                    {isCtaDisabled ? (
+                      <span className="mt-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                        {item.cta}
+                      </span>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        tabIndex={isActive ? 0 : -1}
+                        className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                      >
+                        {item.cta}
+                      </Link>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
