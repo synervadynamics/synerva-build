@@ -246,11 +246,11 @@ void main() {
 `;
 
 class TouchTexture {
-  size = 64;
+  size = 48;
   width = this.size;
   height = this.size;
-  maxAge = 64;
-  radius = 0.32 * this.size;
+  maxAge = 48;
+  radius = 0.28 * this.size;
   speed = 1 / this.maxAge;
   trail: Array<{
     x: number;
@@ -315,7 +315,7 @@ class TouchTexture {
       const d = Math.sqrt(dd);
       vx = dx / d;
       vy = dy / d;
-      force = Math.min(dd * 26000, 2.4) * strength;
+      force = Math.min(dd * 22000, 2.1) * strength;
     }
     this.last = { x: point.x, y: point.y };
     this.trail.push({ x: point.x, y: point.y, age: 0, force, vx, vy });
@@ -384,11 +384,11 @@ const prefersCoarsePointer = () =>
 const LiquidGradient = ({
   className,
   colors = defaultColors,
-  speed = 1.35,
-  intensity = 1.8,
-  gradientSize = 0.5,
-  gradientCount = 12,
-  color1Weight = 0.65,
+  speed = 1.15,
+  intensity = 1.7,
+  gradientSize = 0.55,
+  gradientCount = 8,
+  color1Weight = 0.6,
   color2Weight = 1.6,
   interactionStrength = 1.6,
 }: LiquidGradientProps) => {
@@ -470,7 +470,7 @@ const LiquidGradient = ({
       alpha: true,
       powerPreference: "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.2));
     renderer.setClearColor(0x0a0e27, 1);
 
     const scene = new THREE.Scene();
@@ -485,15 +485,15 @@ const LiquidGradient = ({
       uColor4: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
       uColor5: { value: new THREE.Vector3(0.945, 0.353, 0.133) },
       uColor6: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uSpeed: { value: 1.35 },
-      uIntensity: { value: 1.8 },
+      uSpeed: { value: 1.15 },
+      uIntensity: { value: 1.7 },
       uTouchTexture: { value: null as THREE.Texture | null },
-      uGrainIntensity: { value: 0.065 },
+      uGrainIntensity: { value: 0.04 },
       uZoom: { value: 1.0 },
       uDarkNavy: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uGradientSize: { value: 0.5 },
-      uGradientCount: { value: 12.0 },
-      uColor1Weight: { value: 0.65 },
+      uGradientSize: { value: 0.55 },
+      uGradientCount: { value: 8.0 },
+      uColor1Weight: { value: 0.6 },
       uColor2Weight: { value: 1.6 },
     };
     uniformsRef.current = uniforms;
@@ -509,6 +509,7 @@ const LiquidGradient = ({
     uniforms.uTouchTexture.value = touchTexture.texture;
 
     let lastTime = 0;
+    let lastRender = 0;
     let pointerActive = false;
     let pointerLastTime = 0;
     let pointerPos = { x: 0.5, y: 0.5 };
@@ -547,12 +548,18 @@ const LiquidGradient = ({
 
     const animate = (time: number) => {
       if (frameRef.current === null) return;
+      const targetFrame = 1000 / 30;
+      if (time - lastRender < targetFrame) {
+        frameRef.current = requestAnimationFrame(animate);
+        return;
+      }
       const elapsed = (time - lastTime) / 1000;
       lastTime = time;
+      lastRender = time;
       uniforms.uTime.value += elapsed;
       touchTexture.update();
       if (pointerActive && performance.now() - pointerLastTime < 900) {
-        touchTexture.addTouch(pointerPos, interactionStrength * 0.35);
+        touchTexture.addTouch(pointerPos, interactionStrength * 0.3);
       }
       renderer.render(scene, camera);
       frameRef.current = requestAnimationFrame(animate);

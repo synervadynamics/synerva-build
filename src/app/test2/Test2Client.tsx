@@ -87,13 +87,13 @@ export default function Test2Client() {
       <LiquidGradient
         className="absolute inset-0 z-0"
         colors={colors}
-        interactionStrength={2.2}
-        speed={1.35}
-        intensity={1.8}
-        gradientCount={12}
-        gradientSize={0.5}
-        color1Weight={0.7}
-        color2Weight={1.7}
+        interactionStrength={1.9}
+        speed={1.15}
+        intensity={1.7}
+        gradientCount={8}
+        gradientSize={0.55}
+        color1Weight={0.6}
+        color2Weight={1.6}
       />
       <section className="relative px-6 py-24">
         <div className="mx-auto max-w-6xl">
