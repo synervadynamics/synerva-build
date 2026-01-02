@@ -408,7 +408,7 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
       uColor6: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
       uSpeed: { value: 1.2 },
       uIntensity: { value: 1.65 },
-      uTouchTexture: { value: null },
+      uTouchTexture: { value: null as THREE.Texture | null },
       uGrainIntensity: { value: 0.06 },
       uZoom: { value: 1.0 },
       uDarkNavy: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
