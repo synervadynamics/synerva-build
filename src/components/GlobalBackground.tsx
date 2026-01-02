@@ -38,6 +38,16 @@ export default function GlobalBackground() {
     let last = 0;
     let running = false;
 
+    const resetCursor = () => {
+      setVar("--cursor-x", `${window.innerWidth / 2}px`);
+      setVar("--cursor-y", `${window.innerHeight / 2}px`);
+    };
+
+    const handlePointer = (event: PointerEvent) => {
+      setVar("--cursor-x", `${event.clientX}px`);
+      setVar("--cursor-y", `${event.clientY}px`);
+    };
+
     const tick = (time: number) => {
       if (!running) return;
       if (time - last < 33) {
@@ -88,10 +98,15 @@ export default function GlobalBackground() {
     handlePreference();
     motionQuery.addEventListener("change", handlePreference);
     pointerQuery.addEventListener("change", handlePreference);
+    window.addEventListener("pointermove", handlePointer, { passive: true });
+    window.addEventListener("pointerleave", resetCursor, { passive: true });
+    resetCursor();
 
     return () => {
       motionQuery.removeEventListener("change", handlePreference);
       pointerQuery.removeEventListener("change", handlePreference);
+      window.removeEventListener("pointermove", handlePointer);
+      window.removeEventListener("pointerleave", resetCursor);
       stop();
     };
   }, []);
@@ -101,6 +116,7 @@ export default function GlobalBackground() {
       <div className="bg-mesh" />
       <div className="bg-aurora" />
       <div className="bg-vignette" />
+      <div className="bg-cursor-glow" />
       <div className="bg-noise" />
     </div>
   );

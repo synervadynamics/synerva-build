@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "@/styles/globals.css";
 import { copy } from "@/data/copy";
-import CursorLayer from "@/components/CursorLayer";
 import GlobalBackground from "@/components/GlobalBackground";
 
 const metadataBase = new URL(copy.meta.url);
@@ -92,11 +91,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en-CA" suppressHydrationWarning>
       <body
         className="bg-[var(--bg)] text-white antialiased"
-        data-enhanced="1"
         suppressHydrationWarning
       >
         <GlobalBackground />
-        <CursorLayer />
         <div className="page-shell">{children}</div>
         <script
           type="application/ld+json"
