@@ -1,10 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 type LiquidGradientProps = {
   className?: string;
+  colors?: [string, string, string, string, string, string];
+  speed?: number;
+  intensity?: number;
+  gradientSize?: number;
+  gradientCount?: number;
+  color1Weight?: number;
+  color2Weight?: number;
+  interactionStrength?: number;
 };
 
 const vertexShader = `
@@ -242,7 +250,7 @@ class TouchTexture {
   width = this.size;
   height = this.size;
   maxAge = 64;
-  radius = 0.25 * this.size;
+  radius = 0.32 * this.size;
   speed = 1 / this.maxAge;
   trail: Array<{
     x: number;
@@ -294,7 +302,7 @@ class TouchTexture {
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
-  addTouch(point: { x: number; y: number }) {
+  addTouch(point: { x: number; y: number }, strength = 1) {
     let force = 0;
     let vx = 0;
     let vy = 0;
@@ -307,7 +315,7 @@ class TouchTexture {
       const d = Math.sqrt(dd);
       vx = dx / d;
       vy = dy / d;
-      force = Math.min(dd * 20000, 1.6);
+      force = Math.min(dd * 26000, 2.4) * strength;
     }
     this.last = { x: point.x, y: point.y };
     this.trail.push({ x: point.x, y: point.y, age: 0, force, vx, vy });
@@ -354,10 +362,18 @@ class TouchTexture {
   }
 }
 
-const staticGradientStyle = {
-  background:
-    "radial-gradient(circle at 18% 22%, rgba(88, 210, 235, 0.65), transparent 55%), radial-gradient(circle at 78% 24%, rgba(36, 138, 170, 0.7), transparent 60%), radial-gradient(circle at 48% 82%, rgba(255, 156, 72, 0.35), transparent 55%), linear-gradient(140deg, rgba(12, 26, 38, 0.98), rgba(6, 12, 18, 0.98))",
-};
+const defaultColors: [string, string, string, string, string, string] = [
+  "#F15A22",
+  "#0A0E27",
+  "#F15A22",
+  "#0A0E27",
+  "#F15A22",
+  "#0A0E27",
+];
+
+const buildStaticGradient = (colors: string[]) => ({
+  background: `radial-gradient(circle at 18% 22%, ${colors[0]}a6, transparent 55%), radial-gradient(circle at 78% 24%, ${colors[2]}b0, transparent 60%), radial-gradient(circle at 48% 82%, ${colors[4]}80, transparent 55%), linear-gradient(140deg, ${colors[1]}f0, ${colors[3]}f0)`,
+});
 
 const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -365,14 +381,77 @@ const prefersReducedMotion = () =>
 const prefersCoarsePointer = () =>
   window.matchMedia("(pointer: coarse)").matches;
 
-const LiquidGradient = ({ className }: LiquidGradientProps) => {
+const LiquidGradient = ({
+  className,
+  colors = defaultColors,
+  speed = 1.35,
+  intensity = 1.8,
+  gradientSize = 0.5,
+  gradientCount = 12,
+  color1Weight = 0.65,
+  color2Weight = 1.6,
+  interactionStrength = 1.6,
+}: LiquidGradientProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<number | null>(null);
+  const uniformsRef = useRef<{
+    uTime: { value: number };
+    uResolution: { value: THREE.Vector2 };
+    uColor1: { value: THREE.Vector3 };
+    uColor2: { value: THREE.Vector3 };
+    uColor3: { value: THREE.Vector3 };
+    uColor4: { value: THREE.Vector3 };
+    uColor5: { value: THREE.Vector3 };
+    uColor6: { value: THREE.Vector3 };
+    uSpeed: { value: number };
+    uIntensity: { value: number };
+    uTouchTexture: { value: THREE.Texture | null };
+    uGrainIntensity: { value: number };
+    uZoom: { value: number };
+    uDarkNavy: { value: THREE.Vector3 };
+    uGradientSize: { value: number };
+    uGradientCount: { value: number };
+    uColor1Weight: { value: number };
+    uColor2Weight: { value: number };
+  } | null>(null);
   const [useStatic, setUseStatic] = useState(() => {
     if (typeof window === "undefined") return true;
     return prefersReducedMotion() || prefersCoarsePointer();
   });
+
+  const staticStyle = useMemo(() => buildStaticGradient(colors), [colors]);
+
+  useEffect(() => {
+    const uniforms = uniformsRef.current;
+    if (!uniforms) return;
+    const resolved = colors.map((value) => new THREE.Color(value));
+    uniforms.uColor1.value.set(resolved[0].r, resolved[0].g, resolved[0].b);
+    uniforms.uColor2.value.set(resolved[1].r, resolved[1].g, resolved[1].b);
+    uniforms.uColor3.value.set(resolved[2].r, resolved[2].g, resolved[2].b);
+    uniforms.uColor4.value.set(resolved[3].r, resolved[3].g, resolved[3].b);
+    uniforms.uColor5.value.set(resolved[4].r, resolved[4].g, resolved[4].b);
+    uniforms.uColor6.value.set(resolved[5].r, resolved[5].g, resolved[5].b);
+    uniforms.uSpeed.value = speed;
+    uniforms.uIntensity.value = intensity;
+    uniforms.uGradientSize.value = gradientSize;
+    uniforms.uGradientCount.value = gradientCount;
+    uniforms.uColor1Weight.value = color1Weight;
+    uniforms.uColor2Weight.value = color2Weight;
+    uniforms.uDarkNavy.value.set(
+      resolved[1].r,
+      resolved[1].g,
+      resolved[1].b,
+    );
+  }, [
+    colors,
+    speed,
+    intensity,
+    gradientSize,
+    gradientCount,
+    color1Weight,
+    color2Weight,
+  ]);
 
   useEffect(() => {
     const shouldUseStatic = prefersReducedMotion() || prefersCoarsePointer();
@@ -406,17 +485,18 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
       uColor4: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
       uColor5: { value: new THREE.Vector3(0.945, 0.353, 0.133) },
       uColor6: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uSpeed: { value: 1.2 },
-      uIntensity: { value: 1.65 },
+      uSpeed: { value: 1.35 },
+      uIntensity: { value: 1.8 },
       uTouchTexture: { value: null as THREE.Texture | null },
-      uGrainIntensity: { value: 0.06 },
+      uGrainIntensity: { value: 0.065 },
       uZoom: { value: 1.0 },
       uDarkNavy: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uGradientSize: { value: 0.48 },
+      uGradientSize: { value: 0.5 },
       uGradientCount: { value: 12.0 },
-      uColor1Weight: { value: 0.6 },
+      uColor1Weight: { value: 0.65 },
       uColor2Weight: { value: 1.6 },
     };
+    uniformsRef.current = uniforms;
     const material = new THREE.ShaderMaterial({
       uniforms,
       vertexShader,
@@ -429,6 +509,9 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
     uniforms.uTouchTexture.value = touchTexture.texture;
 
     let lastTime = 0;
+    let pointerActive = false;
+    let pointerLastTime = 0;
+    let pointerPos = { x: 0.5, y: 0.5 };
 
     const resize = (width: number, height: number) => {
       if (width <= 0 || height <= 0) return;
@@ -448,10 +531,13 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
       const rect = wrapper.getBoundingClientRect();
       const x = (event.clientX - rect.left) / rect.width;
       const y = (event.clientY - rect.top) / rect.height;
-      touchTexture.addTouch({
+      pointerActive = true;
+      pointerLastTime = performance.now();
+      pointerPos = {
         x: Math.min(1, Math.max(0, x)),
         y: Math.min(1, Math.max(0, 1 - y)),
-      });
+      };
+      touchTexture.addTouch(pointerPos, interactionStrength);
     };
 
     const pointerTargetNode = wrapper.parentElement ?? wrapper;
@@ -465,6 +551,9 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
       lastTime = time;
       uniforms.uTime.value += elapsed;
       touchTexture.update();
+      if (pointerActive && performance.now() - pointerLastTime < 900) {
+        touchTexture.addTouch(pointerPos, interactionStrength * 0.35);
+      }
       renderer.render(scene, camera);
       frameRef.current = requestAnimationFrame(animate);
     };
@@ -487,14 +576,14 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
     };
   }, [useStatic]);
 
-    if (useStatic) {
-      return (
-        <div
-          ref={wrapperRef}
-          className={className}
-          style={staticGradientStyle}
-          aria-hidden="true"
-        />
+  if (useStatic) {
+    return (
+      <div
+        ref={wrapperRef}
+        className={className}
+        style={staticStyle}
+        aria-hidden="true"
+      />
     );
   }
 
@@ -502,7 +591,7 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
     <div
       ref={wrapperRef}
       className={className}
-      style={staticGradientStyle}
+      style={staticStyle}
       aria-hidden="true"
     >
       <canvas ref={canvasRef} className="block h-full w-full" />
