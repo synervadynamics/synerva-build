@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import Image from "next/image";
@@ -139,10 +140,22 @@ export const Deliver = () => {
     >
       <div className="relative mx-auto max-w-6xl space-y-6">
         <header className="max-w-4xl space-y-4 text-white">
-          <h2 className="text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2
+            data-type-compression="headline"
+            data-type-compression-line-height="1.25"
+            data-type-compression-letter-spacing="0"
+            className="text-3xl leading-tight text-white sm:text-4xl lg:text-5xl"
+          >
             {copy.deliver.heading}
           </h2>
-          <p className="text-lg text-white/72">{copy.deliver.intro}</p>
+          <p
+            data-type-compression="subhead"
+            data-type-compression-line-height="1.5"
+            data-type-compression-letter-spacing="0"
+            className="text-lg text-white/72"
+          >
+            {copy.deliver.intro}
+          </p>
           <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
             <span>Scroll to explore</span>
             <div className="h-px flex-1 bg-white/10" />

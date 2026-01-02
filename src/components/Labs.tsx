@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import Image from "next/image";
@@ -75,7 +76,14 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
             <div className="space-y-6 text-white">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.4em] text-white/60">{rockstar.eyebrow}</p>
-                <h3 className="text-3xl sm:text-4xl">{rockstar.title}</h3>
+                <h3
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="text-3xl sm:text-4xl"
+                >
+                  {rockstar.title}
+                </h3>
                 <p className="text-base text-white/75">{rockstar.description}</p>
               </div>
               <ul className="space-y-3 text-sm text-white/80">
@@ -136,7 +144,14 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
         >
           <div className="space-y-4 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">Access</p>
-            <h3 className="text-2xl sm:text-3xl">Get early access to new work.</h3>
+            <h3
+              data-type-compression="headline"
+              data-type-compression-line-height="1.5"
+              data-type-compression-letter-spacing="0"
+              className="text-2xl sm:text-3xl"
+            >
+              Get early access to new work.
+            </h3>
             <p className="text-sm text-white/70">
               Occasional writing, project updates, release notices, and preview drops. You'll also receive a free preview of The
               Rockstar Server Playbook when you sign up.
@@ -195,7 +210,14 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
             <div className="space-y-6 text-white">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.4em] text-white/60">{reflective.eyebrow}</p>
-                <h3 className="text-3xl sm:text-4xl">{reflective.title}</h3>
+                <h3
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="text-3xl sm:text-4xl"
+                >
+                  {reflective.title}
+                </h3>
                 <p className="text-base text-white/75">{reflective.description}</p>
               </div>
               <ul className="space-y-3 text-sm text-white/80">

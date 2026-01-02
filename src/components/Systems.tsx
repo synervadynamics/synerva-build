@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -22,7 +23,14 @@ export const Systems = () => {
           <p className="text-xs uppercase tracking-[0.4em] text-white/65">
             {sectionCopy.eyebrow}
           </p>
-          <h2 className="text-3xl sm:text-4xl">{sectionCopy.heading}</h2>
+          <h2
+            data-type-compression="headline"
+            data-type-compression-line-height="1.5"
+            data-type-compression-letter-spacing="0"
+            className="text-3xl sm:text-4xl"
+          >
+            {sectionCopy.heading}
+          </h2>
           <div className="space-y-4 text-lg text-white/75">
             {sectionCopy.body.split("\n\n").map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
