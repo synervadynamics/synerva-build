@@ -69,13 +69,14 @@ void main() {
   float n2 = fbm(warpUv * 2.4 - t * 0.15);
   float blend = smoothstep(0.15, 0.85, n1 + n2 * 0.35);
 
-  vec3 c1 = vec3(0.08, 0.2, 0.28);
-  vec3 c2 = vec3(0.12, 0.46, 0.6);
-  vec3 c3 = vec3(0.93, 0.42, 0.12);
+  vec3 c1 = vec3(0.06, 0.18, 0.28);
+  vec3 c2 = vec3(0.18, 0.58, 0.72);
+  vec3 c3 = vec3(1.0, 0.56, 0.2);
 
-  float highlight = smoothstep(0.2, 0.9, fbm(warpUv * 3.1 + t * 0.3));
+  float highlight = smoothstep(0.15, 0.9, fbm(warpUv * 3.1 + t * 0.3));
   vec3 base = mix(c1, c2, blend);
-  vec3 color = mix(base, c3, highlight * 0.25);
+  vec3 color = mix(base, c3, highlight * 0.32);
+  color += 0.12 * vec3(0.3, 0.55, 0.6) * (0.5 + 0.5 * sin(t + blend * 3.14));
 
   float vignette = smoothstep(0.95, 0.3, length(centered));
   gl_FragColor = vec4(color * vignette, 1.0);
@@ -84,7 +85,7 @@ void main() {
 
 const staticGradientStyle = {
   background:
-    "radial-gradient(circle at 20% 20%, rgba(45, 154, 189, 0.45), transparent 55%), radial-gradient(circle at 80% 30%, rgba(16, 98, 120, 0.55), transparent 60%), radial-gradient(circle at 45% 80%, rgba(255, 146, 52, 0.25), transparent 55%), linear-gradient(140deg, rgba(10, 22, 34, 0.95), rgba(6, 12, 18, 0.98))",
+    "radial-gradient(circle at 18% 22%, rgba(88, 210, 235, 0.65), transparent 55%), radial-gradient(circle at 78% 24%, rgba(36, 138, 170, 0.7), transparent 60%), radial-gradient(circle at 48% 82%, rgba(255, 156, 72, 0.35), transparent 55%), linear-gradient(140deg, rgba(12, 26, 38, 0.98), rgba(6, 12, 18, 0.98))",
 };
 
 const prefersReducedMotion = () =>
@@ -97,7 +98,10 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef<number | null>(null);
-  const [useStatic, setUseStatic] = useState(true);
+  const [useStatic, setUseStatic] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return prefersReducedMotion() || prefersCoarsePointer();
+  });
 
   useEffect(() => {
     const shouldUseStatic = prefersReducedMotion() || prefersCoarsePointer();
@@ -139,6 +143,7 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
     let pointer = new THREE.Vector2(0.5, 0.5);
 
     const resize = (width: number, height: number) => {
+      if (width <= 0 || height <= 0) return;
       renderer.setSize(width, height, false);
       uniforms.uResolution.value.set(width, height);
     };
@@ -149,6 +154,7 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
       }
     });
     resizeObserver.observe(wrapper);
+    resize(wrapper.clientWidth, wrapper.clientHeight);
 
     const onPointerMove = (event: PointerEvent) => {
       const rect = wrapper.getBoundingClientRect();
@@ -189,20 +195,25 @@ const LiquidGradient = ({ className }: LiquidGradientProps) => {
     };
   }, [useStatic]);
 
-  if (useStatic) {
-    return (
-      <div
-        ref={wrapperRef}
-        className={className}
-        style={staticGradientStyle}
-        aria-hidden="true"
-      />
+    if (useStatic) {
+      return (
+        <div
+          ref={wrapperRef}
+          className={className}
+          style={staticGradientStyle}
+          aria-hidden="true"
+        />
     );
   }
 
   return (
-    <div ref={wrapperRef} className={className} aria-hidden="true">
-      <canvas ref={canvasRef} className="h-full w-full" />
+    <div
+      ref={wrapperRef}
+      className={className}
+      style={staticGradientStyle}
+      aria-hidden="true"
+    >
+      <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   );
 };
