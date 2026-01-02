@@ -140,8 +140,7 @@ export default function OfferingsClient() {
       eyebrow: "Operator Hourly",
       body:
         "$100 CAD per hour\n\nUsed when the goal is to audit, fix, unblock, or ship without waiting for a full specification cycle.\n\nThis mode exists for live work under uncertainty, where judgment matters more than documentation.\n\nYou are not buying time. You are buying progress with fewer cycles.",
-      imageSrc:
-        "/Users/kylegruarin/dev/synerva-build/offerings-subpage-post-jan-2/operator-hourly.PNG",
+      imageSrc: "/offerings-subpage-post-jan-2/operator-hourly.PNG",
       imageAlt: "Operator Hourly preview",
       imageWidth: 1600,
       imageHeight: 900,
@@ -153,8 +152,7 @@ export default function OfferingsClient() {
       eyebrow: "Flat-Rate Projects",
       body:
         "Flat-Rate Projects\n\nFlat-rate work exists for clients who want certainty.\n\nThe finish line is defined first. Deliverables are explicit. Acceptance criteria are agreed on before work begins.\n\nIf you want a fixed quote that does not drift, this is how it happens.",
-      imageSrc:
-        "/Users/kylegruarin/dev/synerva-build/offerings-subpage-post-jan-2/flat-rate-projects.jpg",
+      imageSrc: "/offerings-subpage-post-jan-2/flat-rate-projects.jpg",
       imageAlt: "Flat-Rate Projects preview",
       imageWidth: 1024,
       imageHeight: 1536,
@@ -166,8 +164,7 @@ export default function OfferingsClient() {
       eyebrow: "Build With Synerva",
       body:
         "Synerva performs the category of work typically handled by senior brand strategists, lead designers, principal writers, and experienced operators. The compression comes from structure, not shortcuts. Strategy, execution, and judgment are not split across roles. They live in one loop. That is why work that normally stretches across quarters can be delivered in days or weeks, and why costs stay in the thousands instead of six figures. This is senior-level work without senior-level overhead.",
-      imageSrc:
-        "/Users/kylegruarin/dev/synerva-build/offerings-subpage-post-jan-2/build-with-synerva.PNG",
+      imageSrc: "/offerings-subpage-post-jan-2/build-with-synerva.PNG",
       imageAlt: "Build With Synerva preview",
       imageWidth: 1600,
       imageHeight: 900,
