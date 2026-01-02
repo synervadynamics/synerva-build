@@ -117,6 +117,28 @@ export default function TestsClient() {
             Export
           </button>
         </div>
+
+        <div className="rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-white/70 backdrop-blur-xl">
+          <div className="mb-2 text-[0.6rem] uppercase tracking-[0.3em] text-white/60">
+            Cursor Tightness
+          </div>
+          <div className="flex items-center gap-3">
+            <input
+              type="range"
+              min={0.8}
+              max={3.5}
+              step={0.1}
+              value={interaction}
+              onChange={(event) =>
+                setInteraction(parseFloat(event.target.value))
+              }
+              className="h-2 w-full cursor-pointer accent-white"
+            />
+            <span className="w-10 text-xs text-white/70">
+              {interaction.toFixed(1)}
+            </span>
+          </div>
+        </div>
       </div>
 
       {panelOpen ? (
@@ -150,27 +172,6 @@ export default function TestsClient() {
                 />
               </div>
             ))}
-            <div className="pt-2">
-              <div className="mb-2 text-[0.6rem] uppercase tracking-[0.3em] text-white/60">
-                Cursor Tightness
-              </div>
-              <div className="flex items-center gap-3">
-                <input
-                  type="range"
-                  min={0.8}
-                  max={3.5}
-                  step={0.1}
-                  value={interaction}
-                  onChange={(event) =>
-                    setInteraction(parseFloat(event.target.value))
-                  }
-                  className="h-2 w-full cursor-pointer accent-white"
-                />
-                <span className="w-10 text-xs text-white/70">
-                  {interaction.toFixed(1)}
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       ) : null}
