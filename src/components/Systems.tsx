@@ -13,13 +13,7 @@ export const Systems = () => {
   return (
     <section id="systems" className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14">
       <div className="relative mx-auto max-w-6xl space-y-6 text-white">
-        <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4"
-        >
+        <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.4em] text-white/65">
             {sectionCopy.eyebrow}
           </p>
@@ -27,7 +21,7 @@ export const Systems = () => {
             data-type-compression="headline"
             data-type-compression-line-height="1.5"
             data-type-compression-letter-spacing="0"
-            className="text-3xl sm:text-4xl"
+            className="section-header-lock text-3xl sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
           >
             {sectionCopy.heading}
           </h2>
@@ -36,7 +30,7 @@ export const Systems = () => {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </motion.div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -41,24 +41,6 @@ export const Hero = () => {
 
   const easeCurve = [0.16, 1, 0.3, 1] as Easing;
 
-  const container = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.9, ease: easeCurve, staggerChildren: 0.1 },
-    },
-  };
-
-  const child = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 32 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.9, ease: easeCurve },
-    },
-  };
-
   const setRefs = (node: HTMLElement | null) => {
     ref(node);
     sectionRef.current = node;
@@ -108,49 +90,33 @@ export const Hero = () => {
           </nav>
           <SectionIndex sections={sectionMap} />
         </header>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="flex flex-col gap-10"
-        >
+        <div className="flex flex-col gap-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div className="flex flex-col gap-6 text-balance">
-              <motion.p
-                variants={child}
-                className="text-xs uppercase tracking-[0.5em] text-white/60"
-              >
+              <p className="text-xs uppercase tracking-[0.5em] text-white/60">
                 {copy.hero.eyebrow}
-              </motion.p>
-              <motion.h1
-                variants={child}
+              </p>
+              <h1
                 data-type-compression="headline"
                 data-type-compression-line-height="1.05"
                 data-type-compression-letter-spacing="0"
-                className="text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl"
+                className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
               >
-                {copy.hero.headline.map((line, index) => (
+                {copy.hero.headline.map((line) => (
                   <span key={line} className="reveal-line">
-                    <motion.span
-                      variants={child}
-                      transition={{ delay: index * 0.12 }}
-                      className="block"
-                    >
-                      {line}
-                    </motion.span>
+                    <span className="block">{line}</span>
                   </span>
                 ))}
-              </motion.h1>
-              <motion.p
-                variants={child}
+              </h1>
+              <p
                 data-type-compression="subhead"
                 data-type-compression-line-height="1.5"
                 data-type-compression-letter-spacing="0"
                 className="max-w-3xl text-lg text-white/80 sm:text-xl"
               >
                 {copy.hero.subhead}
-              </motion.p>
-              <motion.div variants={child} className="flex flex-wrap gap-4">
+              </p>
+              <div className="flex flex-wrap gap-4">
                 <Link
                   data-cursor="accent"
                   className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
@@ -165,13 +131,10 @@ export const Hero = () => {
                 >
                   {copy.hero.secondaryCta.label}
                 </Link>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              variants={child}
-              className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl"
-            >
+            <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
@@ -185,7 +148,7 @@ export const Hero = () => {
                   />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           <div className="grid gap-6 text-sm text-white/70 sm:grid-cols-2 md:grid-cols-3">
@@ -210,7 +173,7 @@ export const Hero = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
         <CascadingText
           className="mt-8 pt-6"
           items={[

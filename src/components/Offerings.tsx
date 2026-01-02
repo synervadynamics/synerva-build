@@ -37,13 +37,7 @@ export const Offerings = () => {
       className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
-        <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4"
-        >
+        <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.4em] text-white/62">
             {offerings.eyebrow}
           </p>
@@ -51,7 +45,7 @@ export const Offerings = () => {
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
             data-type-compression-letter-spacing="0"
-            className="text-3xl leading-tight sm:text-4xl lg:text-5xl"
+            className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
           >
             {offerings.heading}
           </h2>
@@ -63,7 +57,7 @@ export const Offerings = () => {
           >
             {offerings.body}
           </p>
-        </motion.div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
           whileInView={{ opacity: 1, y: 0 }}

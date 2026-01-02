@@ -113,6 +113,18 @@
       0 2px 12px rgba(0, 0, 0, 0.3);
   }
 
+  .section-header-lock {
+    font-size: var(--section-title-size) !important;
+    line-height: var(--section-title-line) !important;
+    letter-spacing: var(--section-title-tracking) !important;
+    transform: translateZ(0) !important;
+    scale: 1 !important;
+    will-change: auto !important;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;

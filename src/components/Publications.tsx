@@ -25,13 +25,7 @@ export const Publications = () => {
     >
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 text-white">
-          <motion.div
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-2"
-          >
+          <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.4em] text-white/55">
               PUBLICATIONS
             </p>
@@ -39,7 +33,7 @@ export const Publications = () => {
               data-type-compression="headline"
               data-type-compression-line-height="1.25"
               data-type-compression-letter-spacing="0"
-              className="text-3xl leading-tight sm:text-4xl lg:text-5xl"
+              className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
             >
               {publications.heading}
             </h2>
@@ -51,7 +45,7 @@ export const Publications = () => {
             >
               {publications.body}
             </p>
-          </motion.div>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             whileInView={{ opacity: 1, y: 0 }}

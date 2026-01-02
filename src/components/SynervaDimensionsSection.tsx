@@ -43,7 +43,7 @@ export function SynervaDimensionsSection() {
                 data-type-compression="headline"
                 data-type-compression-line-height="1.5"
                 data-type-compression-letter-spacing="-0.025"
-                className="text-3xl font-semibold tracking-tight sm:text-4xl"
+                className="section-header-lock text-3xl font-semibold tracking-tight sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
               >
                 Synerva Dimensions
               </h2>
