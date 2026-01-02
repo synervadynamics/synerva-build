@@ -17,6 +17,7 @@ export default function TestsClient() {
   const [scheme, setScheme] = useState<keyof typeof colorSchemes>(1);
   const [panelOpen, setPanelOpen] = useState(false);
   const [customColors, setCustomColors] = useState<string[] | null>(null);
+  const [interaction, setInteraction] = useState(2.2);
   const activeColors = useMemo(
     () => (customColors ?? colorSchemes[scheme]).slice(0, 6) as [
       string,
@@ -55,7 +56,7 @@ export default function TestsClient() {
       <LiquidGradient
         className="absolute inset-0 z-0"
         colors={activeColors}
-        interactionStrength={2.2}
+        interactionStrength={interaction}
         speed={1.45}
         intensity={1.9}
         gradientCount={12}
@@ -149,6 +150,27 @@ export default function TestsClient() {
                 />
               </div>
             ))}
+            <div className="pt-2">
+              <div className="mb-2 text-[0.6rem] uppercase tracking-[0.3em] text-white/60">
+                Cursor Tightness
+              </div>
+              <div className="flex items-center gap-3">
+                <input
+                  type="range"
+                  min={0.8}
+                  max={3.5}
+                  step={0.1}
+                  value={interaction}
+                  onChange={(event) =>
+                    setInteraction(parseFloat(event.target.value))
+                  }
+                  className="h-2 w-full cursor-pointer accent-white"
+                />
+                <span className="w-10 text-xs text-white/70">
+                  {interaction.toFixed(1)}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       ) : null}
