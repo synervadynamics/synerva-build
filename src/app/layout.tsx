@@ -92,6 +92,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en-CA" suppressHydrationWarning>
       <body
         className="bg-[var(--bg)] text-white antialiased"
+        data-enhanced="1"
         suppressHydrationWarning
       >
         <GlobalBackground />

@@ -163,9 +163,14 @@ export const Hero = () => {
 
             <motion.div
               variants={child}
-              className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl"
+              className="relative space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl"
             >
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+              <div aria-hidden className="hero-orbits">
+                <span className="hero-orbit hero-orbit--one" />
+                <span className="hero-orbit hero-orbit--two" />
+                <span className="hero-orbit hero-orbit--three" />
+              </div>
+              <div className="hero-spotlight overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                 <div className="overflow-hidden rounded-2xl border border-white/8">
                   <Image
                     src="/homepage-post-12-25-2025/synerva-hero-5.png"
