@@ -11,7 +11,7 @@ export const About = () => {
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
             <div className="flex max-w-2xl flex-col gap-4">
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-                ABOUT THE FOUNDER
+                FOUNDER
               </p>
               <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
                 About the Founder
@@ -55,16 +55,16 @@ export const About = () => {
               </div>
             </div>
 
-            <div className="flex w-full lg:h-full">
-              <div className="flex w-full flex-col lg:h-full">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5">
-                  <div className="relative w-full overflow-hidden rounded-2xl">
+            <div className="flex w-full items-center justify-center">
+              <div className="flex w-full flex-col">
+                <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
+                  <div className="flex w-full items-center justify-center overflow-hidden rounded-2xl">
                     <Image
                       src="/homepage-post-12-25-2025/about-the-founder.PNG"
                       alt="Portrait of Kyle Gruarin"
                       width={900}
                       height={1200}
-                      className="h-auto w-full max-h-[360px] rounded-2xl object-contain sm:max-h-[420px] lg:max-h-[440px]"
+                      className="h-auto w-full max-h-[340px] rounded-2xl object-contain sm:max-h-[380px] lg:max-h-[400px]"
                       sizes="(min-width: 1024px) 32vw, 100vw"
                       priority
                     />
