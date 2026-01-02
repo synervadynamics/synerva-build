@@ -34,23 +34,22 @@ export function SynervaDimensionsSection() {
         <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
           <div className="space-y-1">
             <div className="space-y-1">
+              <p className="text-sm uppercase tracking-[0.28em] text-white/60">
+                ARTWORK
+              </p>
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 Synerva Dimensions
               </h2>
-              <p className="text-sm text-white/70 sm:text-base">
-                Cognitive Research in Visual Form
-              </p>
             </div>
             <div className="max-w-3xl space-y-2 text-sm text-white/80 sm:text-base">
               <p>
-                Synerva Dimensions is Synerva’s internal research
-                practice—where we pressure-test perception, systems, and
-                decision-making before those ideas ever reach a client
-                environment.
+                Synerva Dimensions is a visual research lab—where concepts are
+                built into repeatable, automated systems that compound progress
+                and translate across creative domains globally.
               </p>
               <p>
-                These works are not marketing artifacts. They are thinking
-                tools. What survives becomes architecture.
+                These works are not marketing artifacts. They are templates.
+                What survives becomes architecture now..
               </p>
             </div>
           </div>
