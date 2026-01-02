@@ -271,20 +271,6 @@
     opacity: 1;
   }
 
-  .bg-cursor-glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      circle 140px at var(--cursor-x) var(--cursor-y),
-      hsl(calc(190 + (var(--scroll) * 160)) 80% 60% / 0.28),
-      transparent 70%
-    );
-    mix-blend-mode: screen;
-    opacity: 0.8;
-    transition: opacity 200ms ease;
-  }
-
   .bg-vignette {
     background:
       radial-gradient(
@@ -377,10 +363,6 @@
 
     .bg-noise {
       opacity: 0.02;
-    }
-
-    .bg-cursor-glow {
-      opacity: 0;
     }
   }
 
@@ -603,5 +585,23 @@
 
   main section {
     position: relative;
+  }
+
+  @media (hover: hover) {
+    main img[class*="object-cover"] {
+      transition: transform 260ms ease;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    main img[class*="object-cover"]:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    main img[class*="object-cover"] {
+      transition: none;
+    }
   }
 }
