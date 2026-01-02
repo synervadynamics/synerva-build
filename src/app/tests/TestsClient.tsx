@@ -11,6 +11,8 @@ const colorSchemes = {
   5: ["#F15A22", "#004238", "#F15A22", "#000000", "#F15A22", "#000000"],
 } as const;
 
+const schemeKeys = [1, 2, 3, 4, 5] as const;
+
 export default function TestsClient() {
   const [scheme, setScheme] = useState<keyof typeof colorSchemes>(1);
   const [panelOpen, setPanelOpen] = useState(false);
@@ -82,24 +84,22 @@ export default function TestsClient() {
 
       <div className="fixed bottom-6 left-6 z-20 flex flex-col gap-3">
         <div className="flex flex-wrap gap-2 rounded-2xl border border-white/20 bg-black/40 p-3 backdrop-blur-xl">
-          {(Object.keys(colorSchemes) as Array<keyof typeof colorSchemes>).map(
-            (key) => (
-              <button
-                key={key}
-                onClick={() => {
-                  setScheme(key);
-                  setCustomColors(null);
-                }}
-                className={`min-w-[54px] rounded-full border px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] transition ${
-                  scheme === key
-                    ? "border-white/70 bg-white/20 text-white"
-                    : "border-white/30 bg-white/10 text-white/70 hover:border-white/60 hover:bg-white/20"
-                }`}
-              >
-                {`Scheme ${key}`}
-              </button>
-            ),
-          )}
+          {schemeKeys.map((key) => (
+            <button
+              key={key}
+              onClick={() => {
+                setScheme(key);
+                setCustomColors(null);
+              }}
+              className={`min-w-[54px] rounded-full border px-3 py-2 text-[0.65rem] uppercase tracking-[0.3em] transition ${
+                scheme === key
+                  ? "border-white/70 bg-white/20 text-white"
+                  : "border-white/30 bg-white/10 text-white/70 hover:border-white/60 hover:bg-white/20"
+              }`}
+            >
+              {`Scheme ${key}`}
+            </button>
+          ))}
         </div>
 
         <div className="flex items-center gap-3">
