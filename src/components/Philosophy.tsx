@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -37,7 +38,12 @@ export const Philosophy = () => {
           variants={variants}
           className="relative space-y-6 text-white"
         >
-          <blockquote className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
+          <blockquote
+            data-type-compression="headline"
+            data-type-compression-line-height="1.25"
+            data-type-compression-letter-spacing="0"
+            className="text-3xl leading-tight sm:text-4xl lg:text-5xl"
+          >
             {copy.philosophy.quote}
           </blockquote>
           <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p1}</p>

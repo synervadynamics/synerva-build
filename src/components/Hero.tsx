@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import Link from "next/link";
@@ -123,6 +124,9 @@ export const Hero = () => {
               </motion.p>
               <motion.h1
                 variants={child}
+                data-type-compression="headline"
+                data-type-compression-line-height="1.05"
+                data-type-compression-letter-spacing="0"
                 className="text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl"
               >
                 {copy.hero.headline.map((line, index) => (
@@ -139,6 +143,9 @@ export const Hero = () => {
               </motion.h1>
               <motion.p
                 variants={child}
+                data-type-compression="subhead"
+                data-type-compression-line-height="1.5"
+                data-type-compression-letter-spacing="0"
                 className="max-w-3xl text-lg text-white/80 sm:text-xl"
               >
                 {copy.hero.subhead}

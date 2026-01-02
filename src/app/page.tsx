@@ -1,3 +1,5 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
+
 import { Hero } from "@/components/Hero";
 import { Deliver } from "@/components/Deliver";
 import { Philosophy } from "@/components/Philosophy";
@@ -14,6 +16,7 @@ import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection"
 import { Offerings } from "@/components/Offerings";
 import { Merch } from "@/components/Merch";
 import { Labs } from "@/components/Labs";
+import { TypographyCompressionController } from "@/components/TypographyCompressionController";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -24,6 +27,7 @@ export const metadata = buildPageMetadata({
 export default function HomePage() {
   return (
     <main className="relative text-white">
+      <TypographyCompressionController />
       <ScrollProgress />
       <Hero />
       <Narrative />

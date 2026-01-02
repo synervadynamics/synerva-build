@@ -1,3 +1,4 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -17,10 +18,22 @@ export const Roadmap = () => {
           <p className="text-xs uppercase tracking-[0.4em] text-white/65">
             Roadmap
           </p>
-          <h2 className="text-3xl text-white sm:text-4xl lg:text-5xl">
+          <h2
+            data-type-compression="headline"
+            data-type-compression-line-height="1.5"
+            data-type-compression-letter-spacing="0"
+            className="text-3xl text-white sm:text-4xl lg:text-5xl"
+          >
             {copy.roadmap.heading}
           </h2>
-          <p className="text-lg text-white/75">{copy.roadmap.intro}</p>
+          <p
+            data-type-compression="subhead"
+            data-type-compression-line-height="1.5"
+            data-type-compression-letter-spacing="0"
+            className="text-lg text-white/75"
+          >
+            {copy.roadmap.intro}
+          </p>
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
             {copy.roadmap.footnote}
           </p>

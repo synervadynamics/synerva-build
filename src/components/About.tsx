@@ -1,3 +1,5 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
+
 import Image from "next/image";
 
 export const About = () => {
@@ -13,7 +15,12 @@ export const About = () => {
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">
                 FOUNDER
               </p>
-              <h2 className="text-3xl leading-tight sm:text-4xl lg:text-5xl">
+              <h2
+                data-type-compression="headline"
+                data-type-compression-line-height="1.25"
+                data-type-compression-letter-spacing="0"
+                className="text-3xl leading-tight sm:text-4xl lg:text-5xl"
+              >
                 About the Founder
               </h2>
               <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">

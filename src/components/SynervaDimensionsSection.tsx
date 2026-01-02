@@ -1,3 +1,5 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
+
 import Image from "next/image";
 import Link from "next/link";
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
@@ -37,7 +39,12 @@ export function SynervaDimensionsSection() {
               <p className="text-sm uppercase tracking-[0.28em] text-white/60">
                 ARTWORK
               </p>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2
+                data-type-compression="headline"
+                data-type-compression-line-height="1.5"
+                data-type-compression-letter-spacing="-0.025"
+                className="text-3xl font-semibold tracking-tight sm:text-4xl"
+              >
                 Synerva Dimensions
               </h2>
             </div>
