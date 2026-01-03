@@ -148,8 +148,8 @@ export default function OfferingsTestPage() {
 
               <div className="flex w-full items-center justify-center">
                 <div className="flex w-full flex-col">
-                  <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
-                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
+                  <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                       <Image
                         src={imagePaths.hiring}
                         alt="What you’re actually hiring"
@@ -254,26 +254,30 @@ export default function OfferingsTestPage() {
           </div>
 
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-[720px] overflow-hidden rounded-2xl border border-white/10 lg:max-w-[760px]">
+            <div className="relative mx-auto aspect-[16/9] w-full max-w-xl overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src={imagePaths.operator}
                 alt="Operator Hourly visual"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 760px, 100vw"
+                sizes="(min-width: 1024px) 576px, 100vw"
               />
             </div>
           </div>
 
-          <div className="space-y-4 text-base text-white/75">
-            <p className="text-lg text-white/85">$100 CAD per hour</p>
-            <p>
-              Used when the goal is to audit, fix, unblock, or ship without
-              waiting for a full specification cycle. This mode exists for live
-              work under uncertainty, where judgment matters more than
-              documentation.
-            </p>
-            <p>You are not buying time. You are buying progress with fewer cycles.</p>
+          <div className="grid gap-6 text-base text-white/75 lg:grid-cols-2 lg:gap-10">
+            <div className="space-y-4">
+              <p className="text-lg text-white/85">$100 CAD per hour</p>
+              <p>
+                Used when the goal is to audit, fix, unblock, or ship without
+                waiting for a full specification cycle. This mode exists for live
+                work under uncertainty, where judgment matters more than
+                documentation.
+              </p>
+              <p>
+                You are not buying time. You are buying progress with fewer cycles.
+              </p>
+            </div>
             <div className="space-y-3">
               <p className="text-base text-white/85">How It Works</p>
               <ul className="space-y-3 text-sm text-white/78">
@@ -320,24 +324,28 @@ export default function OfferingsTestPage() {
           </div>
 
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-[720px] overflow-hidden rounded-2xl border border-white/10 lg:max-w-[760px]">
+            <div className="relative mx-auto aspect-[16/9] w-full max-w-xl overflow-hidden rounded-2xl border border-white/10">
               <Image
                 src={imagePaths.flatRate}
                 alt="Flat-Rate Projects visual"
                 fill
                 className="object-cover"
-                sizes="(min-width: 1024px) 760px, 100vw"
+                sizes="(min-width: 1024px) 576px, 100vw"
               />
             </div>
           </div>
 
-          <div className="space-y-4 text-base text-white/75">
-            <p>
-              Flat-rate work exists for clients who want certainty. The finish
-              line is defined first. Deliverables are explicit. Acceptance
-              criteria are agreed on before work begins.
-            </p>
-            <p>If you want a fixed quote that does not drift, this is how it happens.</p>
+          <div className="grid gap-6 text-base text-white/75 lg:grid-cols-2 lg:gap-10">
+            <div className="space-y-4">
+              <p>
+                Flat-rate work exists for clients who want certainty. The finish
+                line is defined first. Deliverables are explicit. Acceptance
+                criteria are agreed on before work begins.
+              </p>
+              <p>
+                If you want a fixed quote that does not drift, this is how it happens.
+              </p>
+            </div>
             <div className="space-y-3">
               <p className="text-base text-white/85">Common Flat-Rate Engagements</p>
               <div className="space-y-4 text-sm text-white/75">
