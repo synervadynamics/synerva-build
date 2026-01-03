@@ -6,12 +6,12 @@ import { copy } from "@/data/copy";
 import { SectionIndex } from "@/components/SectionIndex";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
-import heroImage from "../../../offerings-subpage-jan-3/hero.PNG";
-import hiringImage from "../../../offerings-subpage-jan-3/what-you're-actually-hiring.PNG";
-import scopeImage from "../../../offerings-subpage-jan-3/scope-discipline.PNG";
-import operatorImage from "../../../offerings-subpage-jan-3/operator-hourly.PNG";
-import flatRateImage from "../../../offerings-subpage-jan-3/flat-rate-projects.jpg";
-import buildImage from "../../../offerings-subpage-jan-3/build-with-synerva.PNG";
+import heroImage from "../../../../offerings-subpage-jan-3/hero.PNG";
+import hiringImage from "../../../../offerings-subpage-jan-3/what-you're-actually-hiring.PNG";
+import scopeImage from "../../../../offerings-subpage-jan-3/scope-discipline.PNG";
+import operatorImage from "../../../../offerings-subpage-jan-3/operator-hourly.PNG";
+import flatRateImage from "../../../../offerings-subpage-jan-3/flat-rate-projects.jpg";
+import buildImage from "../../../../offerings-subpage-jan-3/build-with-synerva.PNG";
 
 const sectionMap = [
   { id: "hiring", label: "Hiring" },
