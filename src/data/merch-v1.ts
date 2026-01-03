@@ -65,6 +65,11 @@ export const merchV1Categories: MerchCategory[] = [
         imageSrc: "/merch-v1/there-all-along.PNG",
         alt: "Synerva Essentials shirt mockup: There All Along",
       },
+      {
+        name: "Exactly Enough",
+        imageSrc: "/merch-v1/exactly-enough.png",
+        alt: "Synerva Essentials shirt mockup: Exactly Enough",
+      },
     ],
   },
   {
