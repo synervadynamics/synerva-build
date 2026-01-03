@@ -6,12 +6,14 @@ import { copy } from "@/data/copy";
 import { SectionIndex } from "@/components/SectionIndex";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
-import heroImage from "../../../../offerings-subpage-jan-3/hero.PNG";
-import hiringImage from "../../../../offerings-subpage-jan-3/what-you're-actually-hiring.PNG";
-import scopeImage from "../../../../offerings-subpage-jan-3/scope-discipline.PNG";
-import operatorImage from "../../../../offerings-subpage-jan-3/operator-hourly.PNG";
-import flatRateImage from "../../../../offerings-subpage-jan-3/flat-rate-projects.jpg";
-import buildImage from "../../../../offerings-subpage-jan-3/build-with-synerva.PNG";
+const imagePaths = {
+  hero: "/offerings-subpage-jan-3/hero.PNG",
+  hiring: "/offerings-subpage-jan-3/what-you're-actually-hiring.PNG",
+  scope: "/offerings-subpage-jan-3/scope-discipline.PNG",
+  operator: "/offerings-subpage-jan-3/operator-hourly.PNG",
+  flatRate: "/offerings-subpage-jan-3/flat-rate-projects.jpg",
+  build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
+} as const;
 
 const sectionMap = [
   { id: "hiring", label: "Hiring" },
@@ -92,7 +94,7 @@ export default function OfferingsTestPage() {
                   <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                     <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/8 lg:h-[70vh] lg:w-auto">
                       <Image
-                        src={heroImage}
+                        src={imagePaths.hero}
                         alt="Synerva Dynamics offerings hero"
                         fill
                         className="object-cover"
@@ -149,7 +151,7 @@ export default function OfferingsTestPage() {
                   <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                       <Image
-                        src={hiringImage}
+                        src={imagePaths.hiring}
                         alt="What you’re actually hiring"
                         fill
                         className="object-cover"
@@ -185,7 +187,7 @@ export default function OfferingsTestPage() {
               <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6">
                 <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10">
                   <Image
-                    src={scopeImage}
+                    src={imagePaths.scope}
                     alt="Scope discipline visual"
                     fill
                     className="object-cover"
@@ -254,7 +256,7 @@ export default function OfferingsTestPage() {
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10">
               <Image
-                src={operatorImage}
+                src={imagePaths.operator}
                 alt="Operator Hourly visual"
                 fill
                 className="object-cover"
@@ -320,7 +322,7 @@ export default function OfferingsTestPage() {
           <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10">
               <Image
-                src={flatRateImage}
+                src={imagePaths.flatRate}
                 alt="Flat-Rate Projects visual"
                 fill
                 className="object-cover"
@@ -429,7 +431,7 @@ export default function OfferingsTestPage() {
                   <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                       <Image
-                        src={buildImage}
+                        src={imagePaths.build}
                         alt="Build with Synerva visual"
                         fill
                         className="object-cover"
