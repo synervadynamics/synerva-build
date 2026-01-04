@@ -70,6 +70,11 @@ export const merchV1Categories: MerchCategory[] = [
         imageSrc: "/merch-v1/exactly-enough.png",
         alt: "Synerva Essentials shirt mockup: Exactly Enough",
       },
+      {
+        name: "Deadbolt",
+        imageSrc: "/merch-v1/deadbolt.png",
+        alt: "Synerva Essentials shirt mockup: Deadbolt",
+      },
     ],
   },
   {
