@@ -1,4 +1,5 @@
 import BackupHomepageBackground from "@/app/backuphomepage/BackupHomepageBackground";
+import BackupHomepageLiquidBackground from "@/app/backuphomepage/BackupHomepageLiquidBackground";
 import Homepage from "@/components/Homepage/Homepage";
 
 // Optional: add middleware auth for /backuphomepage here later.
@@ -9,6 +10,7 @@ export default function BackupHomepage() {
   return (
     <>
       <BackupHomepageBackground />
+      <BackupHomepageLiquidBackground />
       <Homepage />
     </>
   );

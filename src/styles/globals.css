@@ -343,6 +343,7 @@
       var(--synerva-bg-layer-4),
       var(--synerva-bg-base);
     background-size: 170% 170%;
+    opacity: 0;
   }
 
   html[data-backup-homepage="1"] .bg-root::before {
