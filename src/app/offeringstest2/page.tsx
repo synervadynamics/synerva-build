@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { copy } from "@/data/copy";
 import { SectionIndex } from "@/components/SectionIndex";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
@@ -29,7 +28,21 @@ export default function OfferingsTestPage() {
       <ScrollProgress />
 
       <div className="relative px-6 pt-8 sm:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-6xl justify-end">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
+          <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/70">
+            <Link href="/" className="hover:text-white">
+              Synerva Dynamics
+            </Link>
+            <Link href="/offerings" className="hover:text-white">
+              Offerings
+            </Link>
+            <Link href="/merch" className="hover:text-white">
+              Merch
+            </Link>
+            <Link href="/contact" className="hover:text-white">
+              Contact
+            </Link>
+          </div>
           <SectionIndex sections={sectionMap} />
         </div>
       </div>
@@ -43,26 +56,6 @@ export default function OfferingsTestPage() {
         <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="flex flex-col gap-6 text-balance">
-              <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                <Link
-                  href="/"
-                  className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-                >
-                  Synerva Dynamics
-                </Link>
-                <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-                  {copy.global.nav.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="transition hover:text-white"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-              </header>
-
               <h1
                 data-type-compression="headline"
                 data-type-compression-line-height="1.05"
@@ -332,11 +325,11 @@ export default function OfferingsTestPage() {
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div className="flex w-full justify-center lg:justify-start">
-              <div className="frame w-full max-w-[420px] aspect-square rounded-[28px] border border-white/25 bg-transparent p-3 box-border">
+              <div className="image-frame w-full max-w-[420px] aspect-square rounded-[28px] border border-white/12 bg-transparent p-3 box-border">
                 <img
                   src={imagePaths.flatRate}
                   alt="Flat-Rate Projects"
-                  className="img block h-full w-full rounded-[22px] object-cover"
+                  className="image block h-full w-full rounded-[22px] object-cover"
                 />
               </div>
             </div>
