@@ -20,13 +20,19 @@ const sectionMap = [
   { id: "scope-discipline", label: "Scope" },
   { id: "operator-hourly", label: "Hourly" },
   { id: "flat-rate-projects", label: "Flat-Rate" },
-  { id: "build-with-synerva", label: "Build" },
+  { id: "build-with-synerva", label: "Full Build" },
 ];
 
 export default function OfferingsTestPage() {
   return (
     <main className="relative text-white">
       <ScrollProgress />
+
+      <div className="relative px-6 pt-8 sm:px-10 lg:px-16">
+        <div className="mx-auto flex max-w-6xl justify-end">
+          <SectionIndex sections={sectionMap} />
+        </div>
+      </div>
 
       <section
         id="hero"
@@ -55,7 +61,6 @@ export default function OfferingsTestPage() {
                     </Link>
                   ))}
                 </nav>
-                <SectionIndex sections={sectionMap} />
               </header>
 
               <h1
@@ -327,11 +332,11 @@ export default function OfferingsTestPage() {
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div className="flex w-full justify-center lg:justify-start">
-              <div className="flex aspect-[1/1] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/25 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
+              <div className="frame w-full max-w-[420px] aspect-square rounded-[28px] border border-white/25 bg-transparent p-3 box-border">
                 <img
                   src={imagePaths.flatRate}
-                  alt="Flat-Rate Projects visual"
-                  className="block h-full w-full rounded-[1.75rem] object-contain"
+                  alt="Flat-Rate Projects"
+                  className="img block h-full w-full rounded-[22px] object-cover"
                 />
               </div>
             </div>
