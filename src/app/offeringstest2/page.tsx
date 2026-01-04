@@ -28,23 +28,26 @@ export default function OfferingsTestPage() {
       <ScrollProgress />
 
       <div className="relative px-6 pt-8 sm:px-10 lg:px-16">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/70">
-            <Link href="/" className="hover:text-white">
-              Synerva Dynamics
-            </Link>
-            <Link href="/offerings" className="hover:text-white">
+        <header className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-6">
+          <Link
+            href="/"
+            className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+          >
+            Synerva Dynamics
+          </Link>
+          <nav className="flex flex-nowrap items-center gap-4 text-sm text-white/70">
+            <Link href="/offerings" className="transition hover:text-white">
               Offerings
             </Link>
-            <Link href="/merch" className="hover:text-white">
+            <Link href="/merch" className="transition hover:text-white">
               Merch
             </Link>
-            <Link href="/contact" className="hover:text-white">
+            <Link href="/contact" className="transition hover:text-white">
               Contact
             </Link>
-          </div>
-          <SectionIndex sections={sectionMap} />
-        </div>
+          </nav>
+          <SectionIndex />
+        </header>
       </div>
 
       <section
