@@ -8,6 +8,10 @@ import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
 import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function SynervaDimensionsSection() {
+  const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
+    "The Quiet Divine",
+    "Quiet Divine",
+  );
   const quietHero =
     quietDivineImages.find(
       (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
@@ -90,13 +94,13 @@ export function SynervaDimensionsSection() {
                 external cues.
               </p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight">
-                {quietDivineContent.title ?? "The Quiet Divine"}
+                {quietDivineTitle}
               </h3>
               <Link
                 href="/dimensions/quiet-divine"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
               >
-                View The Quiet Divine
+                View Quiet Divine
                 <span aria-hidden="true">↗</span>
               </Link>
             </div>

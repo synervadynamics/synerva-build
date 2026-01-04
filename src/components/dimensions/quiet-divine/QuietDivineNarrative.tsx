@@ -1,7 +1,10 @@
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
 
+const normalizeQuietDivine = (text: string | null | undefined) =>
+  text?.replace(/The Quiet Divine/g, "Quiet Divine");
+
 const renderParagraphs = (text: string | null) =>
-  text
+  normalizeQuietDivine(text)
     ?.split(/\n\s*\n/)
     .map((para) => para.trim())
     .filter(Boolean)
@@ -35,7 +38,7 @@ export default function QuietDivineNarrative() {
         <div className="narrative-block space-y-4">
           <h2 className="text-2xl font-semibold">Themes</h2>
           <p className="text-base leading-relaxed text-white/80">
-            {themesParagraph}
+            {normalizeQuietDivine(themesParagraph)}
           </p>
         </div>
       ) : Array.isArray(themes) && themes.length > 0 ? (
