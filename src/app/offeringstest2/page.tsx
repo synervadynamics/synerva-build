@@ -78,7 +78,7 @@ export default function OfferingsTestPage() {
         <div className="hero-gradient" />
         <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
           <header ref={headerRef} className="flex flex-col gap-4 pb-6">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-12">
               <Link
                 href="/"
                 className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
