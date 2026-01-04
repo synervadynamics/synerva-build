@@ -19,6 +19,12 @@ const smoothstep = (edge0: number, edge1: number, value: number) => {
   return t * t * (3 - 2 * t);
 };
 
+const blendCurve = (value: number) => {
+  const extended = clamp((value + 0.2) / 1.4, 0, 1);
+  const softened = smoothstep(0.08, 0.92, extended);
+  return softened * softened * (2 - softened);
+};
+
 const drawCover = (
   ctx: CanvasRenderingContext2D,
   image: HTMLImageElement,
@@ -60,7 +66,14 @@ export function ScrollMorphBackground() {
     let frameId = 0;
     let cancelled = false;
     let images: HTMLImageElement[] = [];
-    let latestProgress = 0;
+    let targetProgress = 0;
+    let currentProgress = 0;
+    let grainFrame = 0;
+    const grainSize = 96;
+    const grainCanvas = document.createElement("canvas");
+    grainCanvas.width = grainSize;
+    grainCanvas.height = grainSize;
+    const grainCtx = grainCanvas.getContext("2d");
 
     const size = {
       width: 1,
@@ -95,7 +108,7 @@ export function ScrollMorphBackground() {
         document.body.scrollHeight
       );
       const maxScroll = Math.max(1, scrollHeight - window.innerHeight);
-      latestProgress = clamp(scrollTop / maxScroll, 0, 1);
+      targetProgress = clamp(scrollTop / maxScroll, 0, 1);
     };
 
     const render = () => {
@@ -109,26 +122,54 @@ export function ScrollMorphBackground() {
       }
 
       const segmentCount = images.length - 1;
-      const position = latestProgress * segmentCount;
+      const position = currentProgress * segmentCount;
       const index = clamp(Math.floor(position), 0, segmentCount - 1);
       const localProgress = position - index;
-      const blend = smoothstep(0, 1, localProgress);
+      const lowBlend = blendCurve(localProgress);
+      const highBlend = blendCurve(localProgress - 0.08);
+      const blurAmount = Math.max(4, Math.min(size.width, size.height) * 0.01);
 
       drawCover(ctx, images[index], size.width, size.height);
       ctx.save();
-      ctx.globalAlpha = blend;
+      ctx.globalAlpha = lowBlend * 0.85;
+      ctx.filter = `blur(${blurAmount}px)`;
       drawCover(ctx, images[index + 1], size.width, size.height);
       ctx.restore();
+
+      ctx.save();
+      ctx.globalAlpha = highBlend;
+      ctx.filter = "none";
+      drawCover(ctx, images[index + 1], size.width, size.height);
+      ctx.restore();
+
+      if (grainCtx && grainFrame % 2 === 0) {
+        const imageData = grainCtx.createImageData(grainSize, grainSize);
+        for (let i = 0; i < imageData.data.length; i += 4) {
+          const value = 128 + Math.floor((Math.random() - 0.5) * 30);
+          imageData.data[i] = value;
+          imageData.data[i + 1] = value;
+          imageData.data[i + 2] = value;
+          imageData.data[i + 3] = 30;
+        }
+        grainCtx.putImageData(imageData, 0, 0);
+        ctx.save();
+        ctx.globalAlpha = 0.04;
+        ctx.globalCompositeOperation = "soft-light";
+        ctx.drawImage(grainCanvas, 0, 0, size.width, size.height);
+        ctx.restore();
+      }
+      grainFrame += 1;
     };
 
-    const requestRender = () => {
-      if (frameId) cancelAnimationFrame(frameId);
-      frameId = requestAnimationFrame(render);
+    const tick = () => {
+      if (cancelled) return;
+      currentProgress += (targetProgress - currentProgress) * 0.06;
+      render();
+      frameId = requestAnimationFrame(tick);
     };
 
     const handleScroll = () => {
       updateProgress();
-      requestRender();
     };
 
     const loadImages = async () => {
@@ -154,7 +195,12 @@ export function ScrollMorphBackground() {
       .then((loaded) => {
         if (cancelled) return;
         images = loaded;
-        render();
+        currentProgress = targetProgress;
+        if (!shouldReduceMotion) {
+          frameId = requestAnimationFrame(tick);
+        } else {
+          render();
+        }
       })
       .catch(() => {
         if (!cancelled && images[0]) render();
