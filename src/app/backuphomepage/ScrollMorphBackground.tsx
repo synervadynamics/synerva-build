@@ -1,0 +1,184 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { useReducedMotion } from "framer-motion";
+
+const IMAGE_SOURCES = [
+  "/jan-4-new-background-transition/IMG_4254.jpg",
+  "/jan-4-new-background-transition/IMG_5153.jpg",
+  "/jan-4-new-background-transition/IMG_5155.jpg",
+  "/jan-4-new-background-transition/IMG_5156.jpg",
+  "/jan-4-new-background-transition/IMG_5157.jpg",
+];
+
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(max, Math.max(min, value));
+
+const smoothstep = (edge0: number, edge1: number, value: number) => {
+  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1);
+  return t * t * (3 - 2 * t);
+};
+
+const drawCover = (
+  ctx: CanvasRenderingContext2D,
+  image: HTMLImageElement,
+  width: number,
+  height: number
+) => {
+  const imageRatio = image.width / image.height;
+  const canvasRatio = width / height;
+  let drawWidth = width;
+  let drawHeight = height;
+
+  if (imageRatio > canvasRatio) {
+    drawHeight = height;
+    drawWidth = height * imageRatio;
+  } else {
+    drawWidth = width;
+    drawHeight = width / imageRatio;
+  }
+
+  const offsetX = (width - drawWidth) / 2;
+  const offsetY = (height - drawHeight) / 2;
+
+  ctx.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
+};
+
+export function ScrollMorphBackground() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
+    if (!ctx) return;
+
+    let frameId = 0;
+    let cancelled = false;
+    let images: HTMLImageElement[] = [];
+    let latestProgress = 0;
+
+    const size = {
+      width: 1,
+      height: 1,
+      pixelRatio: 1,
+    };
+
+    const resize = () => {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      const width = Math.max(1, Math.floor(window.innerWidth * pixelRatio));
+      const height = Math.max(1, Math.floor(window.innerHeight * pixelRatio));
+
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+
+      size.width = width;
+      size.height = height;
+      size.pixelRatio = pixelRatio;
+    };
+
+    const handleResize = () => {
+      resize();
+      render();
+    };
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY || window.pageYOffset;
+      const scrollHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      const maxScroll = Math.max(1, scrollHeight - window.innerHeight);
+      latestProgress = clamp(scrollTop / maxScroll, 0, 1);
+    };
+
+    const render = () => {
+      if (cancelled || images.length === 0) return;
+
+      ctx.clearRect(0, 0, size.width, size.height);
+
+      if (shouldReduceMotion || images.length === 1) {
+        drawCover(ctx, images[0], size.width, size.height);
+        return;
+      }
+
+      const segmentCount = images.length - 1;
+      const position = latestProgress * segmentCount;
+      const index = clamp(Math.floor(position), 0, segmentCount - 1);
+      const localProgress = position - index;
+      const blend = smoothstep(0, 1, localProgress);
+
+      drawCover(ctx, images[index], size.width, size.height);
+      ctx.save();
+      ctx.globalAlpha = blend;
+      drawCover(ctx, images[index + 1], size.width, size.height);
+      ctx.restore();
+    };
+
+    const requestRender = () => {
+      if (frameId) cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(render);
+    };
+
+    const handleScroll = () => {
+      updateProgress();
+      requestRender();
+    };
+
+    const loadImages = async () => {
+      const loaded = await Promise.all(
+        IMAGE_SOURCES.map(
+          (source) =>
+            new Promise<HTMLImageElement>((resolve, reject) => {
+              const image = new Image();
+              image.src = source;
+              image.onload = () => resolve(image);
+              image.onerror = () => reject(new Error(`Failed to load ${source}`));
+            })
+        )
+      );
+
+      return loaded;
+    };
+
+    resize();
+    updateProgress();
+
+    loadImages()
+      .then((loaded) => {
+        if (cancelled) return;
+        images = loaded;
+        render();
+      })
+      .catch(() => {
+        if (!cancelled && images[0]) render();
+      });
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      cancelled = true;
+      if (frameId) cancelAnimationFrame(frameId);
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [shouldReduceMotion]);
+
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-cover bg-center"
+      style={{ backgroundImage: `url(${IMAGE_SOURCES[0]})` }}
+    >
+      <canvas ref={canvasRef} className="h-full w-full" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />
+    </div>
+  );
+}
