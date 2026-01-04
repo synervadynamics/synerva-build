@@ -179,7 +179,7 @@ export function LiquidMorphologyBackground() {
       const elapsed = timestamp - startTime;
 
       const slideDuration = 16000;
-      const transitionDuration = 6000;
+      const transitionDuration = 2500;
       const holdDuration = slideDuration - transitionDuration;
       const slideCount = images.length;
       const totalDuration = slideDuration * slideCount;
@@ -201,18 +201,29 @@ export function LiquidMorphologyBackground() {
         bufferContext.clearRect(0, 0, size.width, size.height);
         drawCover(bufferContext, images[nextIndex], size.width, size.height);
 
-        const timeOffset = elapsed * 0.00025;
-        const noiseScale = 0.055;
-        const edgeWidth = 0.18;
+        const timeOffset = elapsed * 0.00035;
+        const noiseScale = 0.08;
+        const maskCenterX = size.maskWidth / 2;
+        const maskCenterY = size.maskHeight / 2;
+        const maxRadius = Math.hypot(maskCenterX, maskCenterY) * 1.05;
+        const radius = transitionProgress * maxRadius;
+        const edgeSoftness = Math.max(4, maxRadius * 0.08);
+        const noiseStrength = edgeSoftness * 0.6;
         const data = maskData.data;
 
         for (let y = 0; y < size.maskHeight; y += 1) {
           for (let x = 0; x < size.maskWidth; x += 1) {
             const index = (y * size.maskWidth + x) * 4;
             const nX = x * noiseScale + timeOffset * 1.2;
-            const nY = y * noiseScale + timeOffset * 0.9;
+            const nY = y * noiseScale + timeOffset * 0.8;
             const n = valueNoise(nX, nY);
-            const alpha = smoothstep(n - edgeWidth, n + edgeWidth, transitionProgress);
+            const noisyRadius = radius + (n - 0.5) * noiseStrength;
+            const dx = x - maskCenterX;
+            const dy = y - maskCenterY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const alpha =
+              1 -
+              smoothstep(noisyRadius - edgeSoftness, noisyRadius + edgeSoftness, dist);
             data[index] = 255;
             data[index + 1] = 255;
             data[index + 2] = 255;
@@ -226,6 +237,30 @@ export function LiquidMorphologyBackground() {
         bufferContext.globalCompositeOperation = "source-over";
 
         ctx.drawImage(bufferCanvas, 0, 0);
+
+        const centerX = size.width / 2;
+        const centerY = size.height / 2;
+        const maxCanvasRadius = Math.hypot(centerX, centerY) * 1.05;
+        const radiusCanvas = transitionProgress * maxCanvasRadius;
+        const ringWidth = Math.max(12, maxCanvasRadius * 0.025);
+        const ringGradient = ctx.createRadialGradient(
+          centerX,
+          centerY,
+          Math.max(radiusCanvas - ringWidth, 0),
+          centerX,
+          centerY,
+          radiusCanvas + ringWidth
+        );
+        ringGradient.addColorStop(0, "rgba(255,255,255,0)");
+        ringGradient.addColorStop(0.5, "rgba(255,255,255,0.12)");
+        ringGradient.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.save();
+        ctx.globalCompositeOperation = "screen";
+        ctx.fillStyle = ringGradient;
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radiusCanvas + ringWidth, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
       }
 
       animationFrame = window.requestAnimationFrame(render);
