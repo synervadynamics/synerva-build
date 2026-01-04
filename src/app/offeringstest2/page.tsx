@@ -11,7 +11,7 @@ const imagePaths = {
   hiring: "/offerings-subpage-jan-3/what-you're-actually-hiring.PNG",
   scope: "/offerings-subpage-jan-3/scope-discipline.PNG",
   operator: "/offerings-subpage-jan-3/operator-hourly.PNG",
-  flatRate: "/offerings-subpage-jan-3/flat-rate-projects.jpg",
+  flatRate: "/offerings-subpage-jan-3/flat-rate-projects-square.png",
   build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
 } as const;
 
@@ -30,66 +30,66 @@ export default function OfferingsTestPage() {
 
       <section
         id="hero"
-        className="relative min-h-screen px-6 pb-8 pt-14 sm:px-10 sm:pb-10 sm:pt-16 lg:px-16 lg:pb-10 lg:pt-20"
+        className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16"
       >
         <div className="hero-grid" />
         <div className="hero-gradient" />
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
-          <header className="flex flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between">
-            <Link
-              href="/"
-              className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-            >
-              Synerva Dynamics
-            </Link>
-            <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-              {copy.global.nav.map((item) => (
+        <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div className="flex flex-col gap-6 text-balance">
+              <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="transition hover:text-white"
+                  href="/"
+                  className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
                 >
-                  {item.label}
+                  Synerva Dynamics
                 </Link>
-              ))}
-            </nav>
-            <SectionIndex sections={sectionMap} />
-          </header>
+                <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
+                  {copy.global.nav.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="transition hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <SectionIndex sections={sectionMap} />
+              </header>
 
-          <div className="flex flex-1 flex-col justify-center">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
-              <div className="flex flex-col gap-6 text-balance lg:min-h-[70vh] lg:justify-center">
-                <h1
-                  data-type-compression="headline"
-                  data-type-compression-line-height="1.05"
-                  data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
-                >
-                  <span className="reveal-line">
-                    <span className="block">
-                      Choose the entry point. We’ll do the compression.
-                    </span>
+              <h1
+                data-type-compression="headline"
+                data-type-compression-line-height="1.05"
+                data-type-compression-letter-spacing="0"
+                className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
+              >
+                <span className="reveal-line">
+                  <span className="block">
+                    Choose the entry point. We’ll do the compression.
                   </span>
-                </h1>
-                <div className="space-y-4 text-lg text-white/80 sm:text-xl">
-                  <p>
-                    Most firms sell isolated services. Synerva applies
-                    intelligence across the full loop, so work ships faster,
-                    costs less, and doesn’t require babysitting after launch.
-                  </p>
-                  <p>
-                    This work is not driven by volume, ceremony, or handoffs. It
-                    is driven by structure, judgment, and release logic.
-                  </p>
-                  <p>
-                    Whether you need a single intervention or a fully
-                    interconnected system, there are clear ways to
-                    engage—without drift, noise, or unnecessary process.
-                  </p>
-                </div>
+                </span>
+              </h1>
+              <div className="space-y-4 text-lg text-white/80 sm:text-xl">
+                <p>
+                  Most firms sell isolated services. Synerva applies
+                  intelligence across the full loop, so work ships faster,
+                  costs less, and doesn’t require babysitting after launch.
+                </p>
+                <p>
+                  This work is not driven by volume, ceremony, or handoffs. It
+                  is driven by structure, judgment, and release logic.
+                </p>
+                <p>
+                  Whether you need a single intervention or a fully
+                  interconnected system, there are clear ways to engage—without
+                  drift, noise, or unnecessary process.
+                </p>
               </div>
+            </div>
 
-              <div className="flex w-full justify-center lg:justify-end">
+            <div className="w-full lg:w-auto">
+              <div className="relative flex w-full items-center justify-center">
                 <div className="flex aspect-[9/16] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/25 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
                   <img
                     src={imagePaths.hero}
@@ -327,11 +327,11 @@ export default function OfferingsTestPage() {
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div className="flex w-full justify-center lg:justify-start">
-              <div className="w-full max-w-lg rounded-[2.5rem] border border-white/25 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
+              <div className="flex aspect-[1/1] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/25 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
                 <img
                   src={imagePaths.flatRate}
                   alt="Flat-Rate Projects visual"
-                  className="block w-full rounded-[2rem] object-cover [aspect-ratio:16/9]"
+                  className="block h-full w-full rounded-[1.75rem] object-contain"
                 />
               </div>
             </div>
