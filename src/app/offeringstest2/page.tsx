@@ -90,11 +90,11 @@ export default function OfferingsTestPage() {
               </div>
 
               <div className="flex w-full justify-center lg:justify-end">
-                <div className="flex aspect-[9/16] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/15 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
+                <div className="flex aspect-[9/16] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/25 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
                   <img
                     src={imagePaths.hero}
                     alt="Synerva Dynamics offerings hero"
-                    className="h-full w-full rounded-[1.75rem] object-contain"
+                    className="block h-full w-full rounded-[1.75rem] object-contain"
                   />
                 </div>
               </div>
@@ -327,11 +327,11 @@ export default function OfferingsTestPage() {
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
             <div className="flex w-full justify-center lg:justify-start">
-              <div className="w-full max-w-lg rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
+              <div className="w-full max-w-lg rounded-[2.5rem] border border-white/25 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
                 <img
                   src={imagePaths.flatRate}
                   alt="Flat-Rate Projects visual"
-                  className="w-full rounded-[2rem] object-cover [aspect-ratio:16/9]"
+                  className="block w-full rounded-[2rem] object-cover [aspect-ratio:16/9]"
                 />
               </div>
             </div>
