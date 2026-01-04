@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
+import { gsap } from "gsap";
+import * as THREE from "three";
 
 import imageOne from "../../../test-add-ons/hero-liquid-morphology-slideshow/IMG_5153.jpg";
 import imageTwo from "../../../test-add-ons/hero-liquid-morphology-slideshow/IMG_5155.jpg";
@@ -17,67 +19,165 @@ const IMAGE_SOURCES = [
   imageFive.src,
 ];
 
-const clamp = (value: number, min: number, max: number) =>
-  Math.min(max, Math.max(min, value));
+const SLIDE_HOLD_MS = 5000;
+const TRANSITION_DURATION = 2.5;
 
-const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
+const vertexShader = `
+varying vec2 vUv;
 
-const smoothstep = (edge0: number, edge1: number, value: number) => {
-  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1);
-  return t * t * (3 - 2 * t);
-};
+void main() {
+  vUv = uv;
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+}
+`;
 
-const fade = (t: number) => t * t * (3 - 2 * t);
+const fragmentShader = `
+uniform sampler2D uTexture1;
+uniform sampler2D uTexture2;
+uniform float uProgress;
+uniform vec2 uResolution;
+uniform vec2 uTexture1Size;
+uniform vec2 uTexture2Size;
 
-const hash = (x: number, y: number) => {
-  const value = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
-  return value - Math.floor(value);
-};
+uniform float uGlobalIntensity;
+uniform float uSpeedMultiplier;
+uniform float uDistortionStrength;
+uniform float uColorEnhancement;
 
-const valueNoise = (x: number, y: number) => {
-  const x0 = Math.floor(x);
-  const x1 = x0 + 1;
-  const y0 = Math.floor(y);
-  const y1 = y0 + 1;
+uniform float uGlassRefractionStrength;
+uniform float uGlassChromaticAberration;
+uniform float uGlassBubbleClarity;
+uniform float uGlassEdgeGlow;
+uniform float uGlassLiquidFlow;
 
-  const sx = fade(x - x0);
-  const sy = fade(y - y0);
+varying vec2 vUv;
 
-  const n00 = hash(x0, y0);
-  const n10 = hash(x1, y0);
-  const n01 = hash(x0, y1);
-  const n11 = hash(x1, y1);
+vec2 getCoverUV(vec2 uv, vec2 textureSize) {
+  vec2 s = uResolution / textureSize;
+  float scale = max(s.x, s.y);
+  vec2 scaledSize = textureSize * scale;
+  vec2 offset = (uResolution - scaledSize) * 0.5;
+  return (uv * uResolution - offset) / scaledSize;
+}
 
-  const nx0 = lerp(n00, n10, sx);
-  const nx1 = lerp(n01, n11, sx);
+float noise(vec2 p) {
+  return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
 
-  return lerp(nx0, nx1, sy);
-};
+float smoothNoise(vec2 p) {
+  vec2 i = floor(p);
+  vec2 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
 
-const drawCover = (
-  ctx: CanvasRenderingContext2D,
-  image: HTMLImageElement,
-  width: number,
-  height: number
-) => {
-  const imageRatio = image.width / image.height;
-  const canvasRatio = width / height;
-  let drawWidth = width;
-  let drawHeight = height;
+  return mix(
+    mix(noise(i), noise(i + vec2(1.0, 0.0)), f.x),
+    mix(noise(i + vec2(0.0, 1.0)), noise(i + vec2(1.0, 1.0)), f.x),
+    f.y
+  );
+}
 
-  if (imageRatio > canvasRatio) {
-    drawHeight = height;
-    drawWidth = height * imageRatio;
-  } else {
-    drawWidth = width;
-    drawHeight = width / imageRatio;
+vec4 glassEffect(vec2 uv, float progress) {
+  float glassStrength = 0.08 * uGlassRefractionStrength * uDistortionStrength * uGlobalIntensity;
+  float chromaticAberration = 0.02 * uGlassChromaticAberration * uGlobalIntensity;
+  float waveDistortion = 0.025 * uDistortionStrength;
+  float clearCenterSize = 0.3 * uGlassBubbleClarity;
+  float surfaceRipples = 0.004 * uDistortionStrength;
+  float liquidFlow = 0.015 * uGlassLiquidFlow * uSpeedMultiplier;
+  float rimLightWidth = 0.05;
+  float glassEdgeWidth = 0.025;
+
+  float brightnessPhase = smoothstep(0.8, 1.0, progress);
+  float rimLightIntensity = 0.08 * (1.0 - brightnessPhase) * uGlassEdgeGlow * uGlobalIntensity;
+  float glassEdgeOpacity = 0.06 * (1.0 - brightnessPhase) * uGlassEdgeGlow;
+
+  vec2 center = vec2(0.5, 0.5);
+  vec2 p = uv * uResolution;
+
+  vec2 uv1 = getCoverUV(uv, uTexture1Size);
+  vec2 uv2_base = getCoverUV(uv, uTexture2Size);
+
+  float maxRadius = length(uResolution) * 0.85;
+  float bubbleRadius = progress * maxRadius;
+  vec2 sphereCenter = center * uResolution;
+
+  float dist = length(p - sphereCenter);
+  float normalizedDist = dist / max(bubbleRadius, 0.001);
+  vec2 direction = (dist > 0.0) ? (p - sphereCenter) / dist : vec2(0.0);
+  float inside = smoothstep(bubbleRadius + 3.0, bubbleRadius - 3.0, dist);
+
+  float distanceFactor = smoothstep(clearCenterSize, 1.0, normalizedDist);
+  float time = progress * 5.0 * uSpeedMultiplier;
+
+  vec2 liquidSurface = vec2(
+    smoothNoise(uv * 100.0 + time * 0.3),
+    smoothNoise(uv * 100.0 + time * 0.2 + 50.0)
+  ) - 0.5;
+  liquidSurface *= surfaceRipples * distanceFactor;
+
+  vec2 distortedUV = uv2_base;
+  if (inside > 0.0) {
+    float refractionOffset = glassStrength * pow(distanceFactor, 1.5);
+    vec2 flowDirection = normalize(direction + vec2(sin(time), cos(time * 0.7)) * 0.3);
+    distortedUV -= flowDirection * refractionOffset;
+
+    float wave1 = sin(normalizedDist * 22.0 - time * 3.5);
+    float wave2 = sin(normalizedDist * 35.0 + time * 2.8) * 0.7;
+    float wave3 = sin(normalizedDist * 50.0 - time * 4.2) * 0.5;
+    float combinedWave = (wave1 + wave2 + wave3) / 3.0;
+
+    float waveOffset = combinedWave * waveDistortion * distanceFactor;
+    distortedUV -= direction * waveOffset + liquidSurface;
+
+    vec2 flowOffset = vec2(
+      sin(time + normalizedDist * 10.0),
+      cos(time * 0.8 + normalizedDist * 8.0)
+    ) * liquidFlow * distanceFactor * inside;
+    distortedUV += flowOffset;
   }
 
-  const offsetX = (width - drawWidth) / 2;
-  const offsetY = (height - drawHeight) / 2;
+  vec4 newImg;
+  if (inside > 0.0) {
+    float aberrationOffset = chromaticAberration * pow(distanceFactor, 1.2);
 
-  ctx.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
-};
+    vec2 uv_r = distortedUV + direction * aberrationOffset * 1.2;
+    vec2 uv_g = distortedUV + direction * aberrationOffset * 0.2;
+    vec2 uv_b = distortedUV - direction * aberrationOffset * 0.8;
+
+    float r = texture2D(uTexture2, uv_r).r;
+    float g = texture2D(uTexture2, uv_g).g;
+    float b = texture2D(uTexture2, uv_b).b;
+    newImg = vec4(r, g, b, 1.0);
+  } else {
+    newImg = texture2D(uTexture2, uv2_base);
+  }
+
+  if (inside > 0.0 && rimLightIntensity > 0.0) {
+    float rim = smoothstep(1.0 - rimLightWidth, 1.0, normalizedDist) *
+                (1.0 - smoothstep(1.0, 1.01, normalizedDist));
+    newImg.rgb += rim * rimLightIntensity;
+
+    float edge = smoothstep(1.0 - glassEdgeWidth, 1.0, normalizedDist) *
+                 (1.0 - smoothstep(1.0, 1.01, normalizedDist));
+    newImg.rgb = mix(newImg.rgb, vec3(1.0), edge * glassEdgeOpacity);
+  }
+
+  newImg.rgb = mix(newImg.rgb, newImg.rgb * 1.2, (uColorEnhancement - 1.0) * 0.5);
+
+  vec4 currentImg = texture2D(uTexture1, uv1);
+
+  if (progress > 0.95) {
+    vec4 pureNewImg = texture2D(uTexture2, uv2_base);
+    float endTransition = (progress - 0.95) / 0.05;
+    newImg = mix(newImg, pureNewImg, endTransition);
+  }
+
+  return mix(currentImg, newImg, inside);
+}
+
+void main() {
+  gl_FragColor = glassEffect(vUv, uProgress);
+}
+`;
 
 export function LiquidMorphologyBackground() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -90,201 +190,198 @@ export function LiquidMorphologyBackground() {
 
     if (!container || !canvas) return;
 
-    const ctx = canvas.getContext("2d");
-
-    if (!ctx) return;
-
+    let renderer: THREE.WebGLRenderer | null = null;
+    let scene: THREE.Scene | null = null;
+    let camera: THREE.OrthographicCamera | null = null;
+    let material: THREE.ShaderMaterial | null = null;
+    let mesh: THREE.Mesh | null = null;
     let animationFrame = 0;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
     let cancelled = false;
-    let startTime = 0;
-    let images: HTMLImageElement[] = [];
-
-    const maskCanvas = document.createElement("canvas");
-    const maskContext = maskCanvas.getContext("2d");
-
-    const bufferCanvas = document.createElement("canvas");
-    const bufferContext = bufferCanvas.getContext("2d");
-
-    if (!maskContext || !bufferContext) return;
-
-    ctx.imageSmoothingEnabled = true;
-    bufferContext.imageSmoothingEnabled = true;
+    let currentSlide = 0;
+    let isTransitioning = false;
+    let textures: THREE.Texture[] = [];
 
     const size = {
-      width: 0,
-      height: 0,
-      maskWidth: 0,
-      maskHeight: 0,
+      width: 1,
+      height: 1,
     };
-
-    let maskData = maskContext.createImageData(1, 1);
 
     const resize = () => {
       const rect = container.getBoundingClientRect();
-      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-      const width = Math.max(1, Math.floor(rect.width * pixelRatio));
-      const height = Math.max(1, Math.floor(rect.height * pixelRatio));
+      size.width = Math.max(1, Math.floor(rect.width));
+      size.height = Math.max(1, Math.floor(rect.height));
 
-      canvas.width = width;
-      canvas.height = height;
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
+      if (renderer) {
+        renderer.setSize(size.width, size.height, false);
+      }
 
-      bufferCanvas.width = width;
-      bufferCanvas.height = height;
-
-      size.width = width;
-      size.height = height;
-      size.maskWidth = Math.max(160, Math.floor(rect.width / 5));
-      size.maskHeight = Math.max(90, Math.floor(rect.height / 5));
-
-      maskCanvas.width = size.maskWidth;
-      maskCanvas.height = size.maskHeight;
-      maskData = maskContext.createImageData(size.maskWidth, size.maskHeight);
+      if (material) {
+        material.uniforms.uResolution.value.set(size.width, size.height);
+      }
     };
-
-    const handleResize = () => resize();
 
     const resizeObserver = new ResizeObserver(() => resize());
     resizeObserver.observe(container);
-    window.addEventListener("resize", handleResize);
-    resize();
+    window.addEventListener("resize", resize);
 
-    const loadImages = async () => {
-      const loaded = await Promise.all(
-        IMAGE_SOURCES.map(
-          (source) =>
-            new Promise<HTMLImageElement>((resolve, reject) => {
-              const image = new Image();
-              image.src = source;
-              image.onload = () => resolve(image);
-              image.onerror = () => reject(new Error(`Failed to load ${source}`));
-            })
-        )
-      );
+    const loadTextures = async () => {
+      const loader = new THREE.TextureLoader();
+      const loaded: THREE.Texture[] = [];
+
+      for (const source of IMAGE_SOURCES) {
+        const texture = await new Promise<THREE.Texture>((resolve, reject) => {
+          loader.load(
+            source,
+            (tex) => resolve(tex),
+            undefined,
+            (error) => reject(error)
+          );
+        });
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        loaded.push(texture);
+      }
 
       return loaded;
     };
 
-    const drawStatic = () => {
-      if (!images[0]) return;
-      ctx.clearRect(0, 0, size.width, size.height);
-      drawCover(ctx, images[0], size.width, size.height);
+    const startTransition = () => {
+      if (!material || isTransitioning || textures.length < 2) return;
+      const nextSlide = (currentSlide + 1) % textures.length;
+
+      const currentTexture = textures[currentSlide];
+      const nextTexture = textures[nextSlide];
+
+      material.uniforms.uTexture1.value = currentTexture;
+      material.uniforms.uTexture2.value = nextTexture;
+      material.uniforms.uTexture1Size.value.set(
+        currentTexture.image.width,
+        currentTexture.image.height
+      );
+      material.uniforms.uTexture2Size.value.set(
+        nextTexture.image.width,
+        nextTexture.image.height
+      );
+
+      isTransitioning = true;
+
+      gsap.fromTo(
+        material.uniforms.uProgress,
+        { value: 0 },
+        {
+          value: 1,
+          duration: TRANSITION_DURATION,
+          ease: "power2.inOut",
+          onComplete: () => {
+            if (!material) return;
+            material.uniforms.uProgress.value = 0;
+            material.uniforms.uTexture1.value = nextTexture;
+            material.uniforms.uTexture1Size.value.set(
+              nextTexture.image.width,
+              nextTexture.image.height
+            );
+            currentSlide = nextSlide;
+            isTransitioning = false;
+            scheduleNext();
+          },
+        }
+      );
     };
 
-    const render = (timestamp: number) => {
-      if (cancelled) return;
+    const scheduleNext = () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        if (cancelled || shouldReduceMotion) return;
+        startTransition();
+      }, SLIDE_HOLD_MS);
+    };
 
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
+    const render = () => {
+      if (!renderer || !scene || !camera) return;
+      animationFrame = window.requestAnimationFrame(render);
+      renderer.render(scene, camera);
+    };
 
-      const slideDuration = 16000;
-      const transitionDuration = 2500;
-      const holdDuration = slideDuration - transitionDuration;
-      const slideCount = images.length;
-      const totalDuration = slideDuration * slideCount;
+    const init = async () => {
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: false,
+        alpha: false,
+      });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-      const progressTime = elapsed % totalDuration;
-      const currentIndex = Math.floor(progressTime / slideDuration);
-      const slideTime = progressTime - currentIndex * slideDuration;
-      const nextIndex = (currentIndex + 1) % slideCount;
+      scene = new THREE.Scene();
+      camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
-      const transitionProgress =
-        slideTime < holdDuration
-          ? 0
-          : clamp((slideTime - holdDuration) / transitionDuration, 0, 1);
+      material = new THREE.ShaderMaterial({
+        uniforms: {
+          uTexture1: { value: null },
+          uTexture2: { value: null },
+          uProgress: { value: 0 },
+          uResolution: { value: new THREE.Vector2(size.width, size.height) },
+          uTexture1Size: { value: new THREE.Vector2(1, 1) },
+          uTexture2Size: { value: new THREE.Vector2(1, 1) },
+          uGlobalIntensity: { value: 1.0 },
+          uSpeedMultiplier: { value: 1.0 },
+          uDistortionStrength: { value: 1.0 },
+          uColorEnhancement: { value: 1.0 },
+          uGlassRefractionStrength: { value: 1.0 },
+          uGlassChromaticAberration: { value: 1.0 },
+          uGlassBubbleClarity: { value: 1.0 },
+          uGlassEdgeGlow: { value: 1.0 },
+          uGlassLiquidFlow: { value: 1.0 },
+        },
+        vertexShader,
+        fragmentShader,
+      });
 
-      ctx.clearRect(0, 0, size.width, size.height);
-      drawCover(ctx, images[currentIndex], size.width, size.height);
+      const geometry = new THREE.PlaneGeometry(2, 2);
+      mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
 
-      if (transitionProgress > 0) {
-        bufferContext.clearRect(0, 0, size.width, size.height);
-        drawCover(bufferContext, images[nextIndex], size.width, size.height);
+      resize();
 
-        const timeOffset = elapsed * 0.00035;
-        const noiseScale = 0.08;
-        const maskCenterX = size.maskWidth / 2;
-        const maskCenterY = size.maskHeight / 2;
-        const maxRadius = Math.hypot(maskCenterX, maskCenterY) * 1.05;
-        const radius = transitionProgress * maxRadius;
-        const edgeSoftness = Math.max(4, maxRadius * 0.08);
-        const noiseStrength = edgeSoftness * 0.6;
-        const data = maskData.data;
-
-        for (let y = 0; y < size.maskHeight; y += 1) {
-          for (let x = 0; x < size.maskWidth; x += 1) {
-            const index = (y * size.maskWidth + x) * 4;
-            const nX = x * noiseScale + timeOffset * 1.2;
-            const nY = y * noiseScale + timeOffset * 0.8;
-            const n = valueNoise(nX, nY);
-            const noisyRadius = radius + (n - 0.5) * noiseStrength;
-            const dx = x - maskCenterX;
-            const dy = y - maskCenterY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            const alpha =
-              1 -
-              smoothstep(noisyRadius - edgeSoftness, noisyRadius + edgeSoftness, dist);
-            data[index] = 255;
-            data[index + 1] = 255;
-            data[index + 2] = 255;
-            data[index + 3] = Math.floor(alpha * 255);
-          }
-        }
-
-        maskContext.putImageData(maskData, 0, 0);
-        bufferContext.globalCompositeOperation = "destination-in";
-        bufferContext.drawImage(maskCanvas, 0, 0, size.width, size.height);
-        bufferContext.globalCompositeOperation = "source-over";
-
-        ctx.drawImage(bufferCanvas, 0, 0);
-
-        const centerX = size.width / 2;
-        const centerY = size.height / 2;
-        const maxCanvasRadius = Math.hypot(centerX, centerY) * 1.05;
-        const radiusCanvas = transitionProgress * maxCanvasRadius;
-        const ringWidth = Math.max(12, maxCanvasRadius * 0.025);
-        const ringGradient = ctx.createRadialGradient(
-          centerX,
-          centerY,
-          Math.max(radiusCanvas - ringWidth, 0),
-          centerX,
-          centerY,
-          radiusCanvas + ringWidth
-        );
-        ringGradient.addColorStop(0, "rgba(255,255,255,0)");
-        ringGradient.addColorStop(0.5, "rgba(255,255,255,0.12)");
-        ringGradient.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.save();
-        ctx.globalCompositeOperation = "screen";
-        ctx.fillStyle = ringGradient;
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radiusCanvas + ringWidth, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+      try {
+        textures = await loadTextures();
+      } catch {
+        return;
       }
 
-      animationFrame = window.requestAnimationFrame(render);
+      if (cancelled || !material || textures.length === 0) return;
+
+      material.uniforms.uTexture1.value = textures[0];
+      material.uniforms.uTexture2.value = textures[1] || textures[0];
+      material.uniforms.uTexture1Size.value.set(
+        textures[0].image.width,
+        textures[0].image.height
+      );
+      material.uniforms.uTexture2Size.value.set(
+        (textures[1] || textures[0]).image.width,
+        (textures[1] || textures[0]).image.height
+      );
+
+      render();
+
+      if (!shouldReduceMotion && textures.length > 1) {
+        scheduleNext();
+      }
     };
 
-    loadImages()
-      .then((loaded) => {
-        if (cancelled) return;
-        images = loaded;
-        if (shouldReduceMotion) {
-          drawStatic();
-          return;
-        }
-        animationFrame = window.requestAnimationFrame(render);
-      })
-      .catch(() => {
-        if (!cancelled) drawStatic();
-      });
+    init();
 
     return () => {
       cancelled = true;
-      window.removeEventListener("resize", handleResize);
+      if (timeoutId) window.clearTimeout(timeoutId);
+      window.removeEventListener("resize", resize);
       resizeObserver.disconnect();
       window.cancelAnimationFrame(animationFrame);
+      gsap.killTweensOf(material?.uniforms.uProgress);
+      textures.forEach((texture) => texture.dispose());
+      mesh?.geometry.dispose();
+      material?.dispose();
+      renderer?.dispose();
     };
   }, [shouldReduceMotion]);
 
