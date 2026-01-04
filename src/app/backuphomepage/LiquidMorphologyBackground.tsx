@@ -256,14 +256,13 @@ export function LiquidMorphologyBackground() {
 
       material.uniforms.uTexture1.value = currentTexture;
       material.uniforms.uTexture2.value = nextTexture;
+      const currentImage = currentTexture.image as HTMLImageElement;
+      const nextImage = nextTexture.image as HTMLImageElement;
       material.uniforms.uTexture1Size.value.set(
-        currentTexture.image.width,
-        currentTexture.image.height
+        currentImage.width,
+        currentImage.height
       );
-      material.uniforms.uTexture2Size.value.set(
-        nextTexture.image.width,
-        nextTexture.image.height
-      );
+      material.uniforms.uTexture2Size.value.set(nextImage.width, nextImage.height);
 
       isTransitioning = true;
 
@@ -353,13 +352,15 @@ export function LiquidMorphologyBackground() {
 
       material.uniforms.uTexture1.value = textures[0];
       material.uniforms.uTexture2.value = textures[1] || textures[0];
+      const firstImage = textures[0].image as HTMLImageElement;
+      const secondImage = (textures[1] || textures[0]).image as HTMLImageElement;
       material.uniforms.uTexture1Size.value.set(
-        textures[0].image.width,
-        textures[0].image.height
+        firstImage.width,
+        firstImage.height
       );
       material.uniforms.uTexture2Size.value.set(
-        (textures[1] || textures[0]).image.width,
-        (textures[1] || textures[0]).image.height
+        secondImage.width,
+        secondImage.height
       );
 
       render();
