@@ -39,7 +39,7 @@ export default function BackupHomepageLiquidGradientPanel() {
         color2Weight={1.1}
         interactionStrength={clamp(responsiveness, 0.6, 2.2)}
       />
-      <div className="pointer-events-none fixed inset-0 z-10 hidden xl:block">
+      <div className="pointer-events-none fixed inset-0 z-10">
         <div className="pointer-events-auto absolute left-6 top-28 w-64 rounded-2xl border border-white/15 bg-black/45 p-4 text-white shadow-[0_24px_80px_-50px_rgba(0,0,0,0.7)] backdrop-blur-xl">
           <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
             Gradient Controls
