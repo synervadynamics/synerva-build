@@ -22,6 +22,10 @@ export default function BackupHomepage(_props: BackupHomepageProps) {
   return (
     <main className="relative text-white">
       <ScrollMorphBackground />
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[5] bg-gradient-to-b from-[rgba(8,12,18,0.18)] via-[rgba(8,12,18,0.12)] to-[rgba(8,12,18,0.16)]"
+      />
       <div className="relative z-10">
         <ScrollProgress />
         <BackupHero />
