@@ -1,5 +1,3 @@
-import BackupHomepageBackground from "@/app/backuphomepage/BackupHomepageBackground";
-import BackupHomepageLiquidGradientPanel from "@/app/backuphomepage/BackupHomepageLiquidGradientPanel";
 import Homepage from "@/components/Homepage/Homepage";
 
 // Optional: add middleware auth for /backuphomepage here later.
@@ -7,11 +5,5 @@ import Homepage from "@/components/Homepage/Homepage";
 // Optional: add visual debug banners here later.
 // Optional: add robots/noindex rules here later.
 export default function BackupHomepage() {
-  return (
-    <>
-      <BackupHomepageBackground />
-      <BackupHomepageLiquidGradientPanel />
-      <Homepage />
-    </>
-  );
+  return <Homepage />;
 }
