@@ -30,7 +30,13 @@ export default function HomePage() {
       <Offerings />
       <Deliver />
       <Systems />
-      <Publications />
+      <div className="relative px-6 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4">
+        <div className="relative mx-auto max-w-6xl">
+          <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7 [&_section#publications]:px-0 [&_section#publications]:py-0">
+            <Publications />
+          </div>
+        </div>
+      </div>
       <Labs variant="signup-only" />
       <Merch />
       <Philosophy />
