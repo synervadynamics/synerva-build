@@ -90,13 +90,13 @@ export default function OfferingsTestPage() {
               </div>
 
               <div className="flex w-full justify-center lg:justify-end">
-                <div className="rounded-[2.25rem] border-[0.75px] border-white/15 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+                <div className="overflow-visible rounded-[2.25rem] border-[0.75px] border-white/15 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
                   <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.75rem] lg:h-[70vh] lg:w-auto">
                     <Image
                       src={imagePaths.hero}
                       alt="Synerva Dynamics offerings hero"
                       fill
-                      className="object-contain"
+                      className="rounded-[1.75rem] object-contain"
                       sizes="(min-width: 1280px) 520px, (min-width: 1024px) 440px, 100vw"
                       priority
                     />
@@ -146,13 +146,13 @@ export default function OfferingsTestPage() {
 
               <div className="flex w-full items-center justify-center">
                 <div className="flex w-full flex-col">
-                  <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
+                  <div className="overflow-visible rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
                     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                       <Image
                         src={imagePaths.hiring}
                         alt="What you’re actually hiring"
                         fill
-                        className="object-cover"
+                        className="rounded-xl object-cover"
                         sizes="(min-width: 1024px) 32vw, 100vw"
                       />
                     </div>
