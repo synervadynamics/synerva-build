@@ -536,46 +536,6 @@ export default function OfferingsTestPage() {
       </section>
 
       <section
-        id="next-steps"
-        className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-      >
-        <div className="relative mx-auto max-w-5xl">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
-            <div className="space-y-4 text-white">
-              <h2
-                data-type-compression="headline"
-                data-type-compression-line-height="1.25"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-              >
-                Next Steps
-              </h2>
-              <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
-                <p>
-                  If you’re ready to move, choose an entry point and we’ll
-                  handle the compression.
-                </p>
-                <p>If you’re not sure yet, start with clarity</p>
-              </div>
-            </div>
-            <div className="flex w-full items-center justify-center">
-              <div className="flex w-full flex-col">
-                <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
-                  <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
-                    <img
-                      src={imagePaths.operator}
-                      alt="Next steps visual"
-                      className="h-full w-full rounded-xl object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
         id="clarity-diagnostic"
         className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
       >
