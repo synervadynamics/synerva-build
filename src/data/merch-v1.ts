@@ -52,7 +52,7 @@ export const merchV1Categories: MerchCategory[] = [
       },
       {
         name: "Thermal Drift",
-        imageSrc: "/merch-v1/thermal-drift.PNG",
+        imageSrc: "/merch-v1/thermal-drift-v2.png",
         alt: "Synerva Essentials shirt mockup: Thermal Drift",
       },
       {
