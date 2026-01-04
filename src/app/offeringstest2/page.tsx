@@ -15,11 +15,10 @@ const imagePaths = {
 } as const;
 
 const sectionMap = [
-  { id: "hiring", label: "Hiring" },
-  { id: "scope-discipline", label: "Scope" },
-  { id: "operator-hourly", label: "Hourly" },
-  { id: "flat-rate-projects", label: "Flat-Rate" },
-  { id: "build-with-synerva", label: "Full Build" },
+  { id: "deliver", label: "Deliverables" },
+  { id: "systems", label: "Systems" },
+  { id: "philosophy", label: "Philosophy" },
+  { id: "roadmap", label: "Roadmap" },
 ];
 
 export default function OfferingsTestPage() {
@@ -27,76 +26,78 @@ export default function OfferingsTestPage() {
     <main className="relative text-white">
       <ScrollProgress />
 
-      <div className="relative px-6 pt-8 sm:px-10 lg:px-16">
-        <header className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-6">
-          <Link
-            href="/"
-            className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-          >
-            Synerva Dynamics
-          </Link>
-          <nav className="flex flex-nowrap items-center gap-4 text-sm text-white/70">
-            <Link href="/offerings" className="transition hover:text-white">
-              Offerings
-            </Link>
-            <Link href="/merch" className="transition hover:text-white">
-              Merch
-            </Link>
-            <Link href="/contact" className="transition hover:text-white">
-              Contact
-            </Link>
-          </nav>
-          <SectionIndex />
-        </header>
-      </div>
-
       <section
         id="hero"
         className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16"
       >
         <div className="hero-grid" />
         <div className="hero-gradient" />
-        <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="flex flex-col gap-6 text-balance">
-              <h1
-                data-type-compression="headline"
-                data-type-compression-line-height="1.05"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
-              >
-                <span className="reveal-line">
-                  <span className="block">
-                    Choose the entry point. We’ll do the compression.
-                  </span>
-                </span>
-              </h1>
-              <div className="space-y-4 text-lg text-white/80 sm:text-xl">
-                <p>
-                  Most firms sell isolated services. Synerva applies
-                  intelligence across the full loop, so work ships faster,
-                  costs less, and doesn’t require babysitting after launch.
-                </p>
-                <p>
-                  This work is not driven by volume, ceremony, or handoffs. It
-                  is driven by structure, judgment, and release logic.
-                </p>
-                <p>
-                  Whether you need a single intervention or a fully
-                  interconnected system, there are clear ways to engage—without
-                  drift, noise, or unnecessary process.
-                </p>
-              </div>
-            </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+          <header className="flex flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between">
+            <Link
+              href="/"
+              className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+            >
+              Synerva Dynamics
+            </Link>
+            <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
+              <Link href="/offerings" className="transition hover:text-white">
+                Offerings
+              </Link>
+              <Link href="/merch" className="transition hover:text-white">
+                Merch
+              </Link>
+              <Link href="/contact" className="transition hover:text-white">
+                Contact
+              </Link>
+            </nav>
+            <SectionIndex sections={sectionMap} />
+          </header>
 
-            <div className="w-full lg:w-auto">
-              <div className="relative flex w-full items-center justify-center">
-                <div className="flex aspect-[9/16] w-full max-w-[520px] items-stretch overflow-visible rounded-[2.25rem] border-[0.75px] border-white/25 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:h-[70vh] lg:w-auto">
-                  <img
-                    src={imagePaths.hero}
-                    alt="Synerva Dynamics offerings hero"
-                    className="block h-full w-full rounded-[1.75rem] object-contain"
-                  />
+          <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div className="flex flex-col gap-6 text-balance">
+                <h1
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.05"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
+                >
+                  <span className="reveal-line">
+                    <span className="block">
+                      Choose the entry point. We’ll do the compression.
+                    </span>
+                  </span>
+                </h1>
+                <div className="space-y-4 text-lg text-white/80 sm:text-xl">
+                  <p>
+                    Most firms sell isolated services. Synerva applies
+                    intelligence across the full loop, so work ships faster,
+                    costs less, and doesn’t require babysitting after launch.
+                  </p>
+                  <p>
+                    This work is not driven by volume, ceremony, or handoffs. It
+                    is driven by structure, judgment, and release logic.
+                  </p>
+                  <p>
+                    Whether you need a single intervention or a fully
+                    interconnected system, there are clear ways to engage—without
+                    drift, noise, or unnecessary process.
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-auto">
+                <div className="flex w-full items-center justify-center">
+                  <div className="w-full max-w-[520px] overflow-visible rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
+                    <div className="aspect-[9/16] w-full overflow-hidden rounded-xl">
+                      <img
+                        src={imagePaths.hero}
+                        alt="Synerva Dynamics offerings hero"
+                        className="h-full w-full rounded-xl object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
