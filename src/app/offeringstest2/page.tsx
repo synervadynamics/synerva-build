@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 import { SectionIndex } from "@/components/SectionIndex";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
@@ -15,16 +16,47 @@ const imagePaths = {
 } as const;
 
 const sectionMap = [
-  { id: "deliver", label: "Deliverables" },
-  { id: "systems", label: "Systems" },
-  { id: "philosophy", label: "Philosophy" },
-  { id: "roadmap", label: "Roadmap" },
+  { id: "hiring", label: "Hiring" },
+  { id: "scope-discipline", label: "Scope" },
+  { id: "operator-hourly", label: "Hourly" },
+  { id: "flat-rate-projects", label: "Flat-Rate" },
+  { id: "build-with-synerva", label: "Full Build" },
 ];
 
 export default function OfferingsTestPage() {
+  const headerRef = useRef<HTMLElement | null>(null);
+  const getToolbarOffset = () =>
+    headerRef.current?.getBoundingClientRect().height ?? 0;
+
   return (
     <main className="relative text-white">
       <ScrollProgress />
+
+      <div className="relative px-6 pt-8 sm:px-10 lg:px-16">
+        <header
+          ref={headerRef}
+          className="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-6"
+        >
+          <Link
+            href="/"
+            className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+          >
+            Synerva Dynamics
+          </Link>
+          <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
+            <Link href="/offerings" className="transition hover:text-white">
+              Offerings
+            </Link>
+            <Link href="/merch" className="transition hover:text-white">
+              Merch
+            </Link>
+            <Link href="/contact" className="transition hover:text-white">
+              Contact
+            </Link>
+          </nav>
+          <SectionIndex sections={sectionMap} getScrollOffset={getToolbarOffset} />
+        </header>
+      </div>
 
       <section
         id="hero"
@@ -33,27 +65,6 @@ export default function OfferingsTestPage() {
         <div className="hero-grid" />
         <div className="hero-gradient" />
         <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
-          <header className="flex flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between">
-            <Link
-              href="/"
-              className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-            >
-              Synerva Dynamics
-            </Link>
-            <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-              <Link href="/offerings" className="transition hover:text-white">
-                Offerings
-              </Link>
-              <Link href="/merch" className="transition hover:text-white">
-                Merch
-              </Link>
-              <Link href="/contact" className="transition hover:text-white">
-                Contact
-              </Link>
-            </nav>
-            <SectionIndex sections={sectionMap} />
-          </header>
-
           <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="flex flex-col gap-6 text-balance">

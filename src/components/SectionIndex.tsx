@@ -16,9 +16,13 @@ const defaultSections: SectionItem[] = [
 
 type Props = {
   sections?: SectionItem[];
+  getScrollOffset?: () => number;
 };
 
-export const SectionIndex = ({ sections = defaultSections }: Props) => {
+export const SectionIndex = ({
+  sections = defaultSections,
+  getScrollOffset,
+}: Props) => {
   const resolvedSections = sections.length ? sections : defaultSections;
   const [active, setActive] = useState<string>(resolvedSections[0]?.id ?? "");
 
@@ -64,6 +68,24 @@ export const SectionIndex = ({ sections = defaultSections }: Props) => {
           key={item.id}
           href={`#${item.id}`}
           data-cursor="accent"
+          onClick={
+            getScrollOffset
+              ? (event) => {
+                  event.preventDefault();
+                  const el = document.getElementById(item.id);
+                  if (!el) return;
+                  const offset = getScrollOffset();
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+                  const reduceMotion = window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches;
+                  window.scrollTo({
+                    top,
+                    behavior: reduceMotion ? "auto" : "smooth",
+                  });
+                }
+              : undefined
+          }
           className={`flex flex-col items-center gap-2 transition ${
             item.isActive ? "text-white" : "hover:text-white/80"
           }`}
