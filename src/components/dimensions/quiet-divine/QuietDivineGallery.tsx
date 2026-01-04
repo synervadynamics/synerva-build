@@ -1,71 +1,30 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import ImageCard from "@/components/dimensions/common/ImageCard";
-import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
+import { quietDivineArtworks } from "@/lib/dimensions/quietDivineArtworks";
 
 export default function QuietDivineGallery() {
-  const images = useMemo(
-    () =>
-      [...quietDivineImages].sort((a, b) => {
-        const ao = a.order ?? Number.POSITIVE_INFINITY;
-        const bo = b.order ?? Number.POSITIVE_INFINITY;
-        if (ao === bo) {
-          return a.id.localeCompare(b.id);
-        }
-        return ao - bo;
-      }),
-    [],
-  );
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
-  const [isZoomed, setIsZoomed] = useState(false);
-
-  const openLightbox = useCallback((index: number) => {
-    setCurrentIndex(index);
-    setIsOpen(true);
-    setIsZoomed(false);
+  const openModal = useCallback((index: number) => {
+    setActiveIndex(index);
   }, []);
 
-  const closeLightbox = useCallback(() => {
-    setIsOpen(false);
-    setCurrentIndex(null);
-    setIsZoomed(false);
+  const closeModal = useCallback(() => {
+    setActiveIndex(null);
   }, []);
-
-  const showNext = useCallback(() => {
-    setCurrentIndex((idx) => {
-      if (idx === null) return idx;
-      return (idx + 1) % images.length;
-    });
-    setIsZoomed(false);
-  }, [images.length]);
-
-  const showPrev = useCallback(() => {
-    setCurrentIndex((idx) => {
-      if (idx === null) return idx;
-      return (idx - 1 + images.length) % images.length;
-    });
-    setIsZoomed(false);
-  }, [images.length]);
 
   useEffect(() => {
-    if (!isOpen) {
+    if (activeIndex === null) {
       return;
     }
 
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        closeLightbox();
-      } else if (event.key === "ArrowRight") {
-        event.preventDefault();
-        showNext();
-      } else if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        showPrev();
+        closeModal();
       }
     };
 
@@ -76,108 +35,78 @@ export default function QuietDivineGallery() {
       document.body.classList.remove("overflow-hidden");
       window.removeEventListener("keydown", handleKey);
     };
-  }, [isOpen, closeLightbox, showNext, showPrev]);
+  }, [activeIndex, closeModal]);
 
-  const activeImage = currentIndex !== null ? images[currentIndex] : null;
+  const activeArtwork =
+    activeIndex !== null ? quietDivineArtworks[activeIndex] : null;
 
   return (
     <section className="quiet-divine-gallery space-y-6">
       <h2 className="text-2xl font-semibold">Gallery</h2>
       <div className="qd-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {images.map((image, idx) => (
+        {quietDivineArtworks.map((artwork, idx) => (
           <ImageCard
-            key={image.id}
-            image={image}
-            onClick={() => openLightbox(idx)}
+            key={artwork.index}
+            image={{
+              src: artwork.image,
+              alt: artwork.title,
+              order: idx,
+            }}
+            onClick={() => openModal(idx)}
           />
         ))}
       </div>
 
-      {isOpen && activeImage ? (
+      {activeArtwork ? (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-8 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
-          aria-label="Quiet Divine image viewer"
+          aria-labelledby="quiet-divine-modal-title"
         >
           <button
             type="button"
             className="absolute inset-0 cursor-default"
-            aria-label="Close lightbox backdrop"
-            onClick={closeLightbox}
+            aria-label="Close artwork details"
+            onClick={closeModal}
           />
-          <div className="relative z-10 w-full max-w-5xl space-y-4">
-            <div
-              className={`relative mx-auto w-full max-h-[80vh] rounded-2xl border border-white/15 bg-black/50 shadow-[0_18px_48px_rgba(0,0,0,0.45)] ${
-                isZoomed
-                  ? "overflow-auto cursor-grab active:cursor-grabbing"
-                  : "overflow-hidden"
-              }`}
-            >
-              <div className="relative w-full aspect-[3/4] max-h-[80vh]">
-                <Image
-                  src={activeImage.src}
-                  alt={activeImage.alt}
-                  fill
-                  sizes="100vw"
-                  className={`object-contain transition-transform duration-300 ${isZoomed ? "scale-150" : "scale-100"}`}
-                  priority
-                />
-              </div>
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"
-                aria-hidden
-              />
-
-              <div className="absolute inset-y-0 left-0 flex items-center px-3">
+          <div className="relative z-10 w-full max-w-4xl">
+            <div className="rounded-3xl border border-white/10 bg-black/70 p-6 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    Artwork {activeArtwork.index}
+                  </p>
+                  <h3
+                    id="quiet-divine-modal-title"
+                    className="mt-3 text-2xl font-semibold"
+                  >
+                    {activeArtwork.title}
+                  </h3>
+                </div>
                 <button
                   type="button"
-                  onClick={showPrev}
-                  className="rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
-                  aria-label="Previous image"
-                >
-                  Prev
-                </button>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center px-3">
-                <button
-                  type="button"
-                  onClick={showNext}
-                  className="rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
-                  aria-label="Next image"
-                >
-                  Next
-                </button>
-              </div>
-              <button
-                type="button"
-                onClick={closeLightbox}
-                className="absolute top-3 right-3 rounded-full bg-black/60 px-3 py-2 text-sm font-semibold text-white shadow hover:bg-black/75 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
-                aria-label="Close lightbox"
-              >
-                Close
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between gap-3">
-              <div className="text-sm text-white/70 truncate">
-                {activeImage.caption ?? activeImage.alt}
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setIsZoomed((z) => !z)}
-                  className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
-                >
-                  {isZoomed ? "Zoom out" : "Zoom in"}
-                </button>
-                <button
-                  type="button"
-                  onClick={closeLightbox}
-                  className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
+                  onClick={closeModal}
+                  className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
                 >
                   Close
                 </button>
+              </div>
+
+              <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/50">
+                  <Image
+                    src={activeArtwork.image}
+                    alt={activeArtwork.title}
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 90vw"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="space-y-4 text-base leading-relaxed text-white/80">
+                  <p>{activeArtwork.description}</p>
+                </div>
               </div>
             </div>
           </div>

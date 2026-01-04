@@ -1,0 +1,184 @@
+export type QuietDivineArtwork = {
+  index: number;
+  image: string;
+  title: string;
+  description: string;
+};
+
+export const quietDivineArtworks: QuietDivineArtwork[] = [
+  {
+    index: 1,
+    image: "/the-quiet-divine-art/05F9D9BE-617A-434B-BDB4-330585FFC2CB.PNG",
+    title: "Contour of Returning",
+    description:
+      "She stands within a measured ring of light, the kind a person enters only after reclaiming parts of themselves that were once set aside to survive. The glow behind her does not elevate or idealize; it defines a boundary she has consciously redrawn. Her presence feels architectural, composed from decisions rather than defiance. The divinity here is quiet and human: the completion of a return that did not need an audience.",
+  },
+  {
+    index: 2,
+    image: "/the-quiet-divine-art/0BEEA26E-DB2C-4E6B-B671-93E6A0634B2B.PNG",
+    title: "Floral Drift (Model of a Changing Mind)",
+    description:
+      "Color moves across her face like information reorganizing itself, each hue marking a negotiation between memory and emerging identity. The floral forms are not symbolic so much as procedural, evidence of emotional material rising toward articulation. Her expression captures the moment just before understanding settles into permanence. Divinity appears here as intelligence in motion, the capacity to revise oneself without erasure.",
+  },
+  {
+    index: 3,
+    image: "/the-quiet-divine-art/14265F82-1D20-4138-BF49-A7FCF85598A8.PNG",
+    title: "Weathering Frame",
+    description:
+      "Her profile is set against a turbulent horizon, the external atmosphere echoing an interior climate she has already endured. Particles drift away from her like narratives that once defined her but no longer need to be carried. The stillness in her posture is not passive; it has the weight of long familiarity with pressure. Here, divinity is not transcendence but endurance refined into clarity.",
+  },
+  {
+    index: 4,
+    image: "/the-quiet-divine-art/28FEE977-CD07-4640-A878-C3167812F3B6.PNG",
+    title: "Specular Threshold",
+    description:
+      "Crystalline structures surface across her skin as if her inner logic has become visible geometry. The sheen is not decorative; it maps what clarity looks like after sustained pressure has organized it. Her gaze is level and diagnostic, shaped by self-examination rather than performance. Divinity emerges as stability, the ability to face complexity without dramatizing it.",
+  },
+  {
+    index: 5,
+    image: "/the-quiet-divine-art/298CCB41-80FB-4B9A-8674-01CA307CD971.PNG",
+    title: "Partial Bloom Theory",
+    description:
+      "Gradients of color pass over her features, the suspended florals acting as brief openings into unspoken thought. She appears mid-integration, assembling fragments of experience into something coherent and livable. The calm in her expression resists simplification, insisting on complexity without fracture. Divinity here is the discipline of remaining whole while still in the process of becoming.",
+  },
+  {
+    index: 6,
+    image: "/the-quiet-divine-art/2FE660A3-6EF2-47A9-9C53-5083C272AFDD.PNG",
+    title: "Archive of the Held and the Chosen",
+    description:
+      "Metal, cloud, and light converge around her like compressed layers of a personal archive, some inherited, others deliberately built. The gold surrounding her no longer reads as burden but as a system she has reinterpreted with intention. Her expression is reflective without nostalgia, suggesting a past examined and reorganized rather than discarded. Divinity takes the form of authorship: shaping history instead of being shaped by it.",
+  },
+  {
+    index: 7,
+    image: "/the-quiet-divine-art/35BF8CDC-49B9-48B2-A727-817C87A7579E.PNG",
+    title: "Soft Metrics of Resilience",
+    description:
+      "Blue and gold move across her features with the precision of measured systems, softened by the presence of daisies that anchor her to the human scale. The geometry reads like scaffolding constructed during periods when emotion threatened coherence. Yet her gaze remains steady, refusing reduction by the very structures that once constrained her. Divinity appears as balance, where sensitivity and structure are no longer in conflict.",
+  },
+  {
+    index: 8,
+    image: "/the-quiet-divine-art/410D46F6-E22B-434E-BC1C-F5E1487F21D6.PNG",
+    title: "Fragment Study in Continuity",
+    description:
+      "Her face disperses into facets, each reflecting a slightly different articulation of her interior life. The floral crest does not crown her in grandeur but signals continuity, growth sustained under tension. Light scatters across her features like meaning attempting to reassemble itself. Her divinity lies in coherence maintained across multiplicity, a self that does not require simplification to endure.",
+  },
+  {
+    index: 9,
+    image: "/the-quiet-divine-art/4881DD3D-3AF7-485B-A4EB-7772CC70F934.PNG",
+    title: "Luminous Disassembly",
+    description:
+      "Light fractures her face into prismatic segments, each holding a distinct emotional register she no longer tries to reconcile into one expression. The crystalline bloom near her eye marks a threshold where insight begins to stabilize after strain. Her composure suggests a person who has learned how to reorganize herself without flattening contradiction. Divinity appears here as integration achieved through patience rather than force.",
+  },
+  {
+    index: 10,
+    image: "/the-quiet-divine-art/4DCA373D-1551-4883-8A51-8DB7E844DB24.PNG",
+    title: "Vector of Awakening",
+    description:
+      "Crystals rise from her shoulders like physical records of pressure endured and retained as structure. The pink halo behind her behaves less like ornament than like a pulse, steady and directional, signaling internal alignment after long drift. Her gaze is calm but resolved, shaped by an understanding of where she is going rather than where she has been. Divinity takes the form of trajectory recognized and accepted.",
+  },
+  {
+    index: 11,
+    image: "/the-quiet-divine-art/52ABBD90-DD7B-4AF7-AE1E-9B58381CC010.PNG",
+    title: "Faultline Memory",
+    description:
+      "Fissures cross her face with the precision of a history that has been examined instead of hidden. The orange glow behind her suggests residual heat from recent transformation, still radiating even as it settles. She does not present as fractured, but as someone who has incorporated every seam into a coherent self. Divinity emerges through honesty with the forces that shaped her.",
+  },
+  {
+    index: 12,
+    image: "/the-quiet-divine-art/59C3EF8A-B3A7-4BF4-A13C-BCB842B294CC.PNG",
+    title: "Hybrid Reconstruction Model",
+    description:
+      "Pixels dissolve around her as a wave moves through, water and data negotiating the terms of her next configuration. Her expression is not alarmed but calibrated, held at the moment before coherence reforms. The tension between structure and fluidity reads as evolutionary rather than conflicted. Divinity appears in her capacity to remain present while identity reorganizes itself.",
+  },
+  {
+    index: 13,
+    image: "/the-quiet-divine-art/5B717471-8384-4699-B0E7-284D8D813F63.PNG",
+    title: "Celestial Bearing",
+    description:
+      "She stands with the posture of someone who has grown into the scale of her own insight. The halo behind her resonates outward, less a symbol than an echo of clarity that continues beyond the frame. Her authority is quiet, derived from sustained interior work rather than external validation. Divinity is expressed as alignment no longer resisted.",
+  },
+  {
+    index: 14,
+    image: "/the-quiet-divine-art/62BE5EA9-7888-4FC6-9660-13B4F200A0F3.PNG",
+    title: "Circuit of Returning Currents",
+    description:
+      "Circuitry traces her skin like a diagram of beliefs revised through intention rather than collapse. The koi move through her as persistent forms, returning with each cycle not as symbols but as proof of continuity. Embers gather in her gaze at the precise moment where realization hardens into resolve. Divinity emerges in the tension between past trajectories and chosen direction.",
+  },
+  {
+    index: 15,
+    image: "/the-quiet-divine-art/68D96B90-2E34-421C-8B8B-D4A49C5C151D.PNG",
+    title: "Continuum Leaf",
+    description:
+      "She holds the golden leaf with the care given to a truth recognized late but understood immediately. Behind her, the universe resolves into soft geometry, expanding in response to the clarity of her decision. Her expression remains contemplative, aware of both cost and consequence. Divinity here is precision in choosing without illusion.",
+  },
+  {
+    index: 16,
+    image: "/the-quiet-divine-art/7396373D-7EF4-496D-9DA4-349A9ECDBA75.PNG",
+    title: "Threshold of Inheritance",
+    description:
+      "Her garments carry the density of lineage, yet her expression refuses to collapse under inherited weight. She does not reject tradition but reinterprets it, reshaping obligation into something livable. The surrounding red reads as transition rather than ceremony, heat generated by internal revision. Divinity resides in authorship claimed without denial of origin.",
+  },
+  {
+    index: 17,
+    image: "/the-quiet-divine-art/8C7C1CF6-8830-4EE2-9A9D-265BA1456055.PNG",
+    title: "Crystalline Bearing",
+    description:
+      "She wears the blue armor not as protection but as the visible structure of clarity forged under sustained pressure. Each facet reflects versions of herself already examined and released, not disowned. Her steadiness suggests a person who has privately met what comes next and found it survivable. Divinity appears as orientation: a self aligned with its forward motion.",
+  },
+  {
+    index: 18,
+    image: "/the-quiet-divine-art/9594C27C-B48A-41A5-AE24-F70757318D0E.PNG",
+    title: "Geometry in Bloom",
+    description:
+      "Linear structures move across her form like thoughts finally given shape, softened by florals that reassert the human scale. Discipline and openness coexist without strain, neither correcting the other. Her gaze holds a quiet readiness, as though an internal tension has resolved into coherence. Divinity resides in the ease with which she holds complexity without fracture.",
+  },
+  {
+    index: 19,
+    image: "/the-quiet-divine-art/AEAE154C-26BA-4834-80DB-6A65F1510AFE.PNG",
+    title: "Cathedral Skin",
+    description:
+      "Her surface glows like stained glass lit from within, each facet warmed by intention rather than inheritance. The floral crest at her temple functions as confirmation, the moment conviction becomes visible as presence. Nothing in her expression demands recognition; stability radiates without effort. Divinity emerges as a self assembled deliberately and left intact.",
+  },
+  {
+    index: 20,
+    image: "/the-quiet-divine-art/C5232390-B443-4B84-A256-AEC66315ED13.PNG",
+    title: "Neon Equilibrium",
+    description:
+      "The neon ring behind her settles into a steady rhythm, marking the point where internal pace and external reality synchronize. Crystalline forms rise along her shoulders as records of truths no longer negotiated. Her gaze is calm, not distant, shaped by careful consideration rather than urgency. Divinity here is balance maintained under pressure.",
+  },
+  {
+    index: 21,
+    image: "/the-quiet-divine-art/CB45CD86-ECCD-4364-A6B6-B9E2FF4B599B.PNG",
+    title: "Goldwork Continuum",
+    description:
+      "Gold moves across her skin like a cumulative record of attention applied over time. The glow is not ornamental but residual, the quiet aftermath of sustained clarity. Her eyes reflect trust in the shape of her own thinking, earned rather than assumed. Divinity takes the form of refinement, where insight has been integrated instead of displayed.",
+  },
+  {
+    index: 22,
+    image: "/the-quiet-divine-art/D4E3AB74-F5DB-472F-9B93-92B7329BFC96.PNG",
+    title: "Petal Study in Restraint",
+    description:
+      "Blue petals interrupt her face like thoughts she has chosen not to voice. The veil does not conceal but regulates, allowing only what is ready to be seen. Her expression carries softness held deliberately, without spill or retreat. Divinity appears in discernment, knowing when openness would dilute rather than deepen.",
+  },
+  {
+    index: 23,
+    image: "/the-quiet-divine-art/DAE5ADD1-BC02-41B2-9863-362BEBCF8912.PNG",
+    title: "Moment of Aperture",
+    description:
+      "Light breaks behind her as though understanding has just widened the available space. She does not react theatrically; she absorbs the shift with composure. The moment captured is neither before nor after action, but the interval where clarity settles. Divinity emerges as stillness at the point of recognition.",
+  },
+  {
+    index: 24,
+    image: "/the-quiet-divine-art/F6E9BABA-BF19-4C48-9B8D-466363CAAF11.PNG",
+    title: "Veil of Particulate Memory",
+    description:
+      "Particles hover around her like fragments of thought still forming or dissolving. The crystalline veil at her brow suggests a mind protecting its newest insights until they are strong enough to articulate. Her gaze remains quiet and selective, aware of what must mature in silence. Divinity here is patience with emergence.",
+  },
+  {
+    index: 25,
+    image: "/the-quiet-divine-art/F72B51A0-8552-45B6-A9C6-CC70972C5BC7.PNG",
+    title: "Floral Vector",
+    description:
+      "Her profile is drawn with intention, angled toward a direction already chosen internally. The floral crest marks the point where memory resolves into momentum. Light gathers along her features with the precision of someone who has weighed consequence and proceeded regardless. Divinity concludes as directional clarity, motion guided by coherence rather than inertia.",
+  },
+];
