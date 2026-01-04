@@ -295,7 +295,11 @@ export default function QuietDivineGallery() {
                   onPointerLeave={handlePointerUp}
                 >
                   <div
-                    className="absolute inset-0 transition-transform transition-opacity duration-300"
+                    className={`absolute inset-0 ${
+                      isDragging
+                        ? "transition-none"
+                        : "transition-transform transition-opacity duration-300"
+                    }`}
                     style={{
                       transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel * (isVisible ? 1 : 0.96)})`,
                       transformOrigin: "center",
