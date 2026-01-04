@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useRef } from "react";
-import { SectionIndex } from "@/components/SectionIndex";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 const imagePaths = {
@@ -16,20 +15,56 @@ const imagePaths = {
 } as const;
 
 const sectionMap = [
-  { id: "hiring", label: "Hiring" },
-  { id: "scope-discipline", label: "Scope" },
-  { id: "operator-hourly", label: "Hourly" },
-  { id: "flat-rate-projects", label: "Flat-Rate" },
-  { id: "build-with-synerva", label: "Full Build" },
-  { id: "additional-capabilities", label: "Additional" },
-  { id: "next-steps", label: "Next Steps" },
-  { id: "clarity-diagnostic", label: "Clarity" },
+  { id: "hiring", labelLines: ["HIRING"] },
+  { id: "scope-discipline", labelLines: ["SCOPE"] },
+  { id: "operator-hourly", labelLines: ["HOURLY"] },
+  { id: "flat-rate-projects", labelLines: ["FLAT-RATE"] },
+  { id: "build-with-synerva", labelLines: ["FULL BUILD"] },
+  { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
+  { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
+  { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
 ];
 
 export default function OfferingsTestPage() {
   const headerRef = useRef<HTMLElement | null>(null);
+  const [activeSection, setActiveSection] = useState<string>(
+    sectionMap[0]?.id ?? "",
+  );
   const getToolbarOffset = () =>
     headerRef.current?.getBoundingClientRect().height ?? 0;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      {
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sectionMap.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const items = useMemo(
+    () =>
+      sectionMap.map((item) => ({
+        ...item,
+        isActive: activeSection === item.id,
+      })),
+    [activeSection],
+  );
 
   return (
     <main className="relative text-white">
@@ -38,29 +73,58 @@ export default function OfferingsTestPage() {
       <div className="relative px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20">
         <header
           ref={headerRef}
-          className="mx-auto flex max-w-6xl flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between"
+          className="mx-auto flex max-w-6xl flex-col gap-4 pb-6"
         >
-          <Link
-            href="/"
-            className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-          >
-            Synerva Dynamics
-          </Link>
-          <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-            <Link href="/offerings" className="transition hover:text-white">
-              Offerings
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
+            <Link
+              href="/"
+              className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+            >
+              Synerva Dynamics
             </Link>
-            <Link href="/merch" className="transition hover:text-white">
-              Merch
-            </Link>
-            <Link href="/contact" className="transition hover:text-white">
-              Contact
-            </Link>
-          </nav>
-          <SectionIndex
-            sections={sectionMap}
-            getScrollOffset={getToolbarOffset}
-          />
+            <nav className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-white/50">
+              {items.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  data-cursor="accent"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    const el = document.getElementById(item.id);
+                    if (!el) return;
+                    const offset = getToolbarOffset();
+                    const top =
+                      el.getBoundingClientRect().top + window.scrollY - offset;
+                    const reduceMotion = window.matchMedia(
+                      "(prefers-reduced-motion: reduce)",
+                    ).matches;
+                    window.scrollTo({
+                      top,
+                      behavior: reduceMotion ? "auto" : "smooth",
+                    });
+                  }}
+                  className={`flex w-fit flex-col items-center gap-2 transition ${
+                    item.isActive ? "text-white" : "hover:text-white/80"
+                  }`}
+                >
+                  <span className="text-center leading-tight">
+                    {item.labelLines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
+                  </span>
+                  <span
+                    className={`h-1 w-full rounded-full bg-white/30 transition ${
+                      item.isActive
+                        ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                        : ""
+                    }`}
+                  />
+                </a>
+              ))}
+            </nav>
+          </div>
         </header>
       </div>
 
