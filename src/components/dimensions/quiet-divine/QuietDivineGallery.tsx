@@ -1,12 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import ImageCard from "@/components/dimensions/common/ImageCard";
 import { quietDivineArtworks } from "@/lib/dimensions/quietDivineArtworks";
 
 export default function QuietDivineGallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const minZoom = 1;
+  const maxZoom = 2.5;
+  const zoomStep = 0.2;
 
   const openModal = useCallback((index: number) => {
     setActiveIndex(index);
@@ -15,6 +21,40 @@ export default function QuietDivineGallery() {
   const closeModal = useCallback(() => {
     setActiveIndex(null);
   }, []);
+
+  const showNext = useCallback(() => {
+    setActiveIndex((idx) => {
+      if (idx === null) return idx;
+      return (idx + 1) % quietDivineArtworks.length;
+    });
+  }, []);
+
+  const showPrev = useCallback(() => {
+    setActiveIndex((idx) => {
+      if (idx === null) return idx;
+      return (idx - 1 + quietDivineArtworks.length) % quietDivineArtworks.length;
+    });
+  }, []);
+
+  const zoomIn = useCallback(() => {
+    setZoomLevel((value) => Math.min(maxZoom, value + zoomStep));
+  }, [maxZoom, zoomStep]);
+
+  const zoomOut = useCallback(() => {
+    setZoomLevel((value) => Math.max(minZoom, value - zoomStep));
+  }, [minZoom, zoomStep]);
+
+  useEffect(() => {
+    if (activeIndex === null) {
+      setZoomLevel(1);
+      setIsVisible(false);
+      return;
+    }
+
+    setZoomLevel(1);
+    const frame = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(frame);
+  }, [activeIndex]);
 
   useEffect(() => {
     if (activeIndex === null) {
@@ -25,6 +65,18 @@ export default function QuietDivineGallery() {
       if (event.key === "Escape") {
         event.preventDefault();
         closeModal();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNext();
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrev();
+      } else if (event.key === "+" || event.key === "=") {
+        event.preventDefault();
+        zoomIn();
+      } else if (event.key === "-" || event.key === "_") {
+        event.preventDefault();
+        zoomOut();
       }
     };
 
@@ -35,7 +87,9 @@ export default function QuietDivineGallery() {
       document.body.classList.remove("overflow-hidden");
       window.removeEventListener("keydown", handleKey);
     };
-  }, [activeIndex, closeModal]);
+  }, [activeIndex, closeModal, showNext, showPrev, zoomIn, zoomOut]);
+
+  const zoomPercent = useMemo(() => Math.round(zoomLevel * 100), [zoomLevel]);
 
   const activeArtwork =
     activeIndex !== null ? quietDivineArtworks[activeIndex] : null;
@@ -71,7 +125,11 @@ export default function QuietDivineGallery() {
             onClick={closeModal}
           />
           <div className="relative z-10 w-full max-w-4xl">
-            <div className="rounded-3xl border border-white/10 bg-black/70 p-6 shadow-[0_32px_90px_rgba(0,0,0,0.45)]">
+            <div
+              className={`rounded-3xl border border-white/10 bg-black/70 p-6 shadow-[0_32px_90px_rgba(0,0,0,0.45)] transition-opacity duration-300 ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs uppercase tracking-[0.35em] text-white/60">
@@ -84,29 +142,79 @@ export default function QuietDivineGallery() {
                     {activeArtwork.title}
                   </h3>
                 </div>
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
-                >
-                  Close
-                </button>
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={showPrev}
+                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    aria-label="Previous artwork"
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNext}
+                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    aria-label="Next artwork"
+                  >
+                    →
+                  </button>
+                  <button
+                    type="button"
+                    onClick={closeModal}
+                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
 
               <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-black/50">
-                  <Image
-                    src={activeArtwork.image}
-                    alt={activeArtwork.title}
-                    fill
-                    sizes="(min-width: 1024px) 45vw, 90vw"
-                    className="object-contain"
-                    priority
-                  />
+                  <div
+                    className={`absolute inset-0 transition-transform transition-opacity duration-300 ${
+                      isVisible ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{
+                      transform: `scale(${zoomLevel * (isVisible ? 1 : 0.96)})`,
+                      transformOrigin: "center",
+                    }}
+                  >
+                    <Image
+                      src={activeArtwork.image}
+                      alt={activeArtwork.title}
+                      fill
+                      sizes="(min-width: 1024px) 45vw, 90vw"
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="space-y-4 text-base leading-relaxed text-white/80">
                   <p>{activeArtwork.description}</p>
                 </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.3em] text-white/60">
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={zoomOut}
+                    className="rounded-full border border-white/20 px-4 py-2 font-semibold text-white/80 transition hover:border-white/40 hover:text-white"
+                    aria-label="Zoom out"
+                  >
+                    -
+                  </button>
+                  <button
+                    type="button"
+                    onClick={zoomIn}
+                    className="rounded-full border border-white/20 px-4 py-2 font-semibold text-white/80 transition hover:border-white/40 hover:text-white"
+                    aria-label="Zoom in"
+                  >
+                    +
+                  </button>
+                </div>
+                <span>Zoom {zoomPercent}%</span>
               </div>
             </div>
           </div>
