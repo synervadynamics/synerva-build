@@ -70,71 +70,66 @@ export default function OfferingsTestPage() {
     <main className="relative text-white">
       <ScrollProgress />
 
-      <div className="relative px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20">
-        <header
-          ref={headerRef}
-          className="mx-auto flex max-w-6xl flex-col gap-4 pb-6"
-        >
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
-            <Link
-              href="/"
-              className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
-            >
-              Synerva Dynamics
-            </Link>
-            <nav className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-white/50">
-              {items.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  data-cursor="accent"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    const el = document.getElementById(item.id);
-                    if (!el) return;
-                    const offset = getToolbarOffset();
-                    const top =
-                      el.getBoundingClientRect().top + window.scrollY - offset;
-                    const reduceMotion = window.matchMedia(
-                      "(prefers-reduced-motion: reduce)",
-                    ).matches;
-                    window.scrollTo({
-                      top,
-                      behavior: reduceMotion ? "auto" : "smooth",
-                    });
-                  }}
-                  className={`flex w-fit flex-col items-center gap-2 transition ${
-                    item.isActive ? "text-white" : "hover:text-white/80"
-                  }`}
-                >
-                  <span className="text-center leading-tight">
-                    {item.labelLines.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
-                  </span>
-                  <span
-                    className={`h-1 w-full rounded-full bg-white/30 transition ${
-                      item.isActive
-                        ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
-                        : ""
-                    }`}
-                  />
-                </a>
-              ))}
-            </nav>
-          </div>
-        </header>
-      </div>
-
       <section
         id="hero"
-        className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16"
+        className="relative overflow-visible px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20"
       >
         <div className="hero-grid" />
         <div className="hero-gradient" />
         <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
+          <header ref={headerRef} className="flex flex-col gap-4 pb-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-6">
+              <Link
+                href="/"
+                className="font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
+              >
+                <span className="block">Synerva</span>
+                <span className="block">Dynamics</span>
+              </Link>
+              <nav className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-white/50">
+                {items.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    data-cursor="accent"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      const el = document.getElementById(item.id);
+                      if (!el) return;
+                      const offset = getToolbarOffset();
+                      const top =
+                        el.getBoundingClientRect().top + window.scrollY - offset;
+                      const reduceMotion = window.matchMedia(
+                        "(prefers-reduced-motion: reduce)",
+                      ).matches;
+                      window.scrollTo({
+                        top,
+                        behavior: reduceMotion ? "auto" : "smooth",
+                      });
+                    }}
+                    className={`flex w-fit flex-col items-center gap-2 transition ${
+                      item.isActive ? "text-white" : "hover:text-white/80"
+                    }`}
+                  >
+                    <span className="text-center leading-tight">
+                      {item.labelLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
+                    <span
+                      className={`h-1 w-full rounded-full bg-white/30 transition ${
+                        item.isActive
+                          ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                          : ""
+                      }`}
+                    />
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </header>
           <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="flex flex-col gap-6 text-balance">
@@ -194,14 +189,6 @@ export default function OfferingsTestPage() {
           <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
               <div className="flex max-w-2xl flex-col gap-4">
-                <h2
-                  data-type-compression="headline"
-                  data-type-compression-line-height="1.25"
-                  data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-                >
-                  What You’re Actually Hiring
-                </h2>
                 <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
                   <p>
                     You’re not hiring a role, a team, or a bundle of services.
@@ -483,9 +470,6 @@ export default function OfferingsTestPage() {
                 >
                   Build With Synerva
                 </h2>
-                <p className="text-sm text-white/60">
-                  What You’re Actually Hiring
-                </p>
                 <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
                   <p>
                     Synerva performs the category of work typically handled by
