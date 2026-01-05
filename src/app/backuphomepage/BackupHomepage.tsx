@@ -18,9 +18,12 @@ type BackupHomepageProps = {
   className?: string;
 };
 
-export default function BackupHomepage(_props: BackupHomepageProps) {
+export default function BackupHomepage(props: BackupHomepageProps) {
+  const { className } = props;
   return (
-    <main className="relative text-white backuphomepage">
+    <main
+      className={`relative text-white backuphomepage${className ? ` ${className}` : ""}`}
+    >
       <ScrollMorphBackground />
       <div
         aria-hidden

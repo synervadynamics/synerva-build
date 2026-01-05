@@ -167,22 +167,90 @@
     z-index: 1;
   }
 
-  .backuphomepage .bubble-drift,
-  .backuphomepage .deliver-clean,
-  .backuphomepage .glass-panel,
-  .backuphomepage .backdrop-blur-3xl,
-  .backuphomepage .backdrop-blur-2xl,
-  .backuphomepage .backdrop-blur-xl,
-  .backuphomepage .backdrop-blur-lg,
-  .backuphomepage .backdrop-blur {
+  .backuphomepage #hero .backdrop-blur-2xl,
+  .backuphomepage #hero .backdrop-blur-xl {
     backdrop-filter: none !important;
-    background: var(--bg-elevated) !important;
     background-color: var(--bg-elevated) !important;
   }
 
-  .backuphomepage .bubble-drift::after {
-    opacity: 0 !important;
-    background: none !important;
+  .backuphomepage #deliver .deliver-clean {
+    background-color: var(--bg-elevated) !important;
+  }
+
+  .backuphomepage #offerings .bubble-drift,
+  .backuphomepage #offerings .backdrop-blur-xl {
+    backdrop-filter: none !important;
+    background-color: var(--bg-elevated) !important;
+  }
+
+  .backuphomepage #narrative .bubble-drift {
+    backdrop-filter: none !important;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(10, 26, 44),
+      rgb(14, 34, 56),
+      rgb(8, 20, 34)
+    ) !important;
+    background-color: rgb(10, 26, 44) !important;
+  }
+
+  .backuphomepage #systems .bubble-drift {
+    backdrop-filter: none !important;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(13, 27, 38),
+      rgb(16, 30, 42),
+      rgb(10, 20, 32)
+    ) !important;
+    background-color: rgb(13, 27, 38) !important;
+  }
+
+  .backuphomepage #systems article {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(16, 30, 42),
+      rgb(15, 28, 40),
+      rgb(12, 24, 34)
+    ) !important;
+    background-color: rgb(16, 30, 42) !important;
+  }
+
+  .backuphomepage #preview-access {
+    backdrop-filter: none !important;
+    background-color: var(--bg-elevated) !important;
+  }
+
+  .backuphomepage #philosophy .bubble-drift {
+    backdrop-filter: none !important;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(14, 30, 52),
+      rgb(14, 26, 42),
+      rgb(10, 20, 34)
+    ) !important;
+    background-color: rgb(14, 30, 52) !important;
+  }
+
+  .backuphomepage #roadmap .bubble-drift {
+    backdrop-filter: none !important;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(14, 30, 50),
+      rgb(16, 34, 58),
+      rgb(10, 22, 36)
+    ) !important;
+    background-color: rgb(14, 30, 50) !important;
+  }
+
+  .backuphomepage footer > div {
+    backdrop-filter: none !important;
+    background-image: linear-gradient(
+      to bottom right,
+      #0b1522,
+      #0e1c2c,
+      #0a131f
+    ) !important;
+    background-color: #0b1522 !important;
   }
 
   .reveal-line {
