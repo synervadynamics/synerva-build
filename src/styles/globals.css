@@ -294,6 +294,28 @@
     background-image: none !important;
   }
 
+  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about),
+  .backuphomepage footer {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about)::before,
+  .backuphomepage footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(6, 10, 15, 0.2);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about) > *,
+  .backuphomepage footer > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;
