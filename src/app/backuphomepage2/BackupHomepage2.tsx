@@ -12,12 +12,12 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
 import { BackupHero } from "@/app/backuphomepage/BackupHero";
-import { ScrollMorphGradientBackground } from "@/app/backuphomepage2/ScrollMorphGradientBackground";
+import { ScrollMorphBackground } from "@/app/backuphomepage/ScrollMorphBackground";
 
 export default function BackupHomepage2() {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
-      <ScrollMorphGradientBackground />
+      <ScrollMorphBackground />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[5] bg-gradient-to-b from-[rgba(8,12,18,0.18)] via-[rgba(8,12,18,0.12)] to-[rgba(8,12,18,0.16)]"
