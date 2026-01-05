@@ -253,6 +253,22 @@
     background-color: #0b1522 !important;
   }
 
+  .backuphomepage.backuphomepage-variant #hero .rounded-2xl.backdrop-blur-2xl,
+  .backuphomepage.backuphomepage-variant #narrative .bubble-drift,
+  .backuphomepage.backuphomepage-variant #offerings .bubble-drift,
+  .backuphomepage.backuphomepage-variant #offerings .backdrop-blur-xl,
+  .backuphomepage.backuphomepage-variant #systems .bubble-drift,
+  .backuphomepage.backuphomepage-variant #systems article,
+  .backuphomepage.backuphomepage-variant #preview-access,
+  .backuphomepage.backuphomepage-variant #philosophy .bubble-drift,
+  .backuphomepage.backuphomepage-variant #roadmap .bubble-drift,
+  .backuphomepage.backuphomepage-variant footer > div {
+    backdrop-filter: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;
