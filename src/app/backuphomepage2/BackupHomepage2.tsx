@@ -15,9 +15,16 @@ import { BackupHero } from "@/app/backuphomepage/BackupHero";
 import { ScrollMorphBackground } from "@/app/backuphomepage/ScrollMorphBackground";
 
 export default function BackupHomepage2() {
+  const backgroundSources = [
+    "/jan-4-new-background-transition/v4/1.PNG",
+    "/jan-4-new-background-transition/v4/2.PNG",
+    "/jan-4-new-background-transition/v4/3.PNG",
+    "/jan-4-new-background-transition/v4/4.PNG",
+  ];
+
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
-      <ScrollMorphBackground />
+      <ScrollMorphBackground imageSources={backgroundSources} />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[5] bg-gradient-to-b from-[rgba(8,12,18,0.18)] via-[rgba(8,12,18,0.12)] to-[rgba(8,12,18,0.16)]"
