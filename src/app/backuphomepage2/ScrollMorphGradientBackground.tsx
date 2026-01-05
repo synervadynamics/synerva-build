@@ -40,16 +40,22 @@ type GradientState = {
   glows: RadialLayer[];
 };
 
+type RGB = {
+  r: number;
+  g: number;
+  b: number;
+};
+
 const GRADIENT_STATES: GradientState[] = [
   {
     base: {
       start: [0.05, 0.05],
       end: [0.95, 1],
       stops: [
-        { offset: 0, color: "#0b1116" },
-        { offset: 0.45, color: "#0f1a22" },
-        { offset: 0.75, color: "#13252d" },
-        { offset: 1, color: "#0b1116" },
+        { offset: 0, color: "#0a1117" },
+        { offset: 0.38, color: "#0e1a24" },
+        { offset: 0.68, color: "#112634" },
+        { offset: 1, color: "#0a1218" },
       ],
     },
     glows: [
@@ -57,20 +63,31 @@ const GRADIENT_STATES: GradientState[] = [
         center: [0.25, 0.15],
         radius: 0.9,
         stops: [
-          { offset: 0, color: "#13252d" },
-          { offset: 0.55, color: "#0f1a22" },
-          { offset: 1, color: "#0b1116" },
+          { offset: 0, color: "#17333a" },
+          { offset: 0.55, color: "#0f1f28" },
+          { offset: 1, color: "#0a1218" },
         ],
-        alpha: 0.35,
+        alpha: 0.32,
       },
       {
         center: [0.75, 0.85],
         radius: 0.95,
         stops: [
-          { offset: 0, color: "#0f1e24" },
-          { offset: 1, color: "#0b1116" },
+          { offset: 0, color: "#0f2428" },
+          { offset: 0.6, color: "#0c1a21" },
+          { offset: 1, color: "#0a1218" },
         ],
-        alpha: 0.22,
+        alpha: 0.2,
+      },
+      {
+        center: [0.62, 0.35],
+        radius: 0.7,
+        stops: [
+          { offset: 0, color: "#12303a" },
+          { offset: 0.45, color: "#0e2026" },
+          { offset: 1, color: "#0a1218" },
+        ],
+        alpha: 0.2,
       },
     ],
   },
@@ -79,10 +96,10 @@ const GRADIENT_STATES: GradientState[] = [
       start: [0.08, 0],
       end: [0.9, 1],
       stops: [
-        { offset: 0, color: "#0d2a2a" },
-        { offset: 0.5, color: "#123536" },
-        { offset: 0.8, color: "#1a3f3b" },
-        { offset: 1, color: "#0b2123" },
+        { offset: 0, color: "#0b2123" },
+        { offset: 0.46, color: "#0f2f32" },
+        { offset: 0.76, color: "#18413d" },
+        { offset: 1, color: "#0b1b1f" },
       ],
     },
     glows: [
@@ -90,20 +107,31 @@ const GRADIENT_STATES: GradientState[] = [
         center: [0.2, 0.2],
         radius: 0.85,
         stops: [
-          { offset: 0, color: "#1a3f3b" },
+          { offset: 0, color: "#1f4a46" },
           { offset: 0.6, color: "#123536" },
-          { offset: 1, color: "#0d2a2a" },
+          { offset: 1, color: "#0b2123" },
         ],
-        alpha: 0.32,
+        alpha: 0.3,
       },
       {
         center: [0.8, 0.8],
         radius: 0.9,
         stops: [
-          { offset: 0, color: "#0f2f2f" },
-          { offset: 1, color: "#0b2123" },
+          { offset: 0, color: "#113338" },
+          { offset: 0.6, color: "#0e262a" },
+          { offset: 1, color: "#0b1b1f" },
         ],
-        alpha: 0.2,
+        alpha: 0.18,
+      },
+      {
+        center: [0.7, 0.3],
+        radius: 0.75,
+        stops: [
+          { offset: 0, color: "#0f2f46" },
+          { offset: 0.5, color: "#112b36" },
+          { offset: 1, color: "#0b1b1f" },
+        ],
+        alpha: 0.16,
       },
     ],
   },
@@ -112,10 +140,10 @@ const GRADIENT_STATES: GradientState[] = [
       start: [0.1, 0],
       end: [0.9, 1],
       stops: [
-        { offset: 0, color: "#0a1c2f" },
-        { offset: 0.48, color: "#0e2740" },
-        { offset: 0.78, color: "#14345a" },
-        { offset: 1, color: "#081622" },
+        { offset: 0, color: "#081728" },
+        { offset: 0.45, color: "#0c2238" },
+        { offset: 0.78, color: "#103150" },
+        { offset: 1, color: "#071521" },
       ],
     },
     glows: [
@@ -123,18 +151,29 @@ const GRADIENT_STATES: GradientState[] = [
         center: [0.28, 0.18],
         radius: 0.9,
         stops: [
-          { offset: 0, color: "#14345a" },
-          { offset: 0.55, color: "#0e2740" },
-          { offset: 1, color: "#0a1c2f" },
+          { offset: 0, color: "#15415f" },
+          { offset: 0.55, color: "#0d2b43" },
+          { offset: 1, color: "#081728" },
         ],
-        alpha: 0.3,
+        alpha: 0.28,
       },
       {
         center: [0.78, 0.85],
         radius: 0.95,
         stops: [
-          { offset: 0, color: "#0d2334" },
-          { offset: 1, color: "#081622" },
+          { offset: 0, color: "#0d2837" },
+          { offset: 0.6, color: "#091c2a" },
+          { offset: 1, color: "#071521" },
+        ],
+        alpha: 0.16,
+      },
+      {
+        center: [0.65, 0.32],
+        radius: 0.7,
+        stops: [
+          { offset: 0, color: "#1b4756" },
+          { offset: 0.5, color: "#103246" },
+          { offset: 1, color: "#071521" },
         ],
         alpha: 0.18,
       },
@@ -145,10 +184,10 @@ const GRADIENT_STATES: GradientState[] = [
       start: [0.1, 0],
       end: [0.95, 1],
       stops: [
-        { offset: 0, color: "#151515" },
-        { offset: 0.45, color: "#1d2a28" },
-        { offset: 0.75, color: "#2a3a33" },
-        { offset: 1, color: "#111516" },
+        { offset: 0, color: "#121414" },
+        { offset: 0.45, color: "#1a2725" },
+        { offset: 0.76, color: "#25342e" },
+        { offset: 1, color: "#101314" },
       ],
     },
     glows: [
@@ -156,25 +195,101 @@ const GRADIENT_STATES: GradientState[] = [
         center: [0.25, 0.2],
         radius: 0.85,
         stops: [
-          { offset: 0, color: "#2a3a33" },
-          { offset: 0.6, color: "#1d2a28" },
-          { offset: 1, color: "#151515" },
+          { offset: 0, color: "#273c35" },
+          { offset: 0.6, color: "#1c2b28" },
+          { offset: 1, color: "#121414" },
         ],
-        alpha: 0.3,
+        alpha: 0.28,
       },
       {
         center: [0.78, 0.82],
         radius: 0.95,
         stops: [
           { offset: 0, color: "#3a2f1f" },
-          { offset: 0.5, color: "#202725" },
-          { offset: 1, color: "#111516" },
+          { offset: 0.5, color: "#262d26" },
+          { offset: 1, color: "#101314" },
         ],
-        alpha: 0.12,
+        alpha: 0.1,
+      },
+      {
+        center: [0.6, 0.35],
+        radius: 0.72,
+        stops: [
+          { offset: 0, color: "#1f3231" },
+          { offset: 0.55, color: "#1a2523" },
+          { offset: 1, color: "#101314" },
+        ],
+        alpha: 0.18,
       },
     ],
   },
 ];
+
+const parseHexColor = (value: string): RGB => {
+  const normalized = value.replace("#", "");
+  const full =
+    normalized.length === 3
+      ? normalized
+          .split("")
+          .map((char) => `${char}${char}`)
+          .join("")
+      : normalized;
+  const int = Number.parseInt(full, 16);
+  return {
+    r: (int >> 16) & 255,
+    g: (int >> 8) & 255,
+    b: int & 255,
+  };
+};
+
+const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
+
+const lerpColor = (from: string, to: string, t: number) => {
+  const start = parseHexColor(from);
+  const end = parseHexColor(to);
+  const r = Math.round(lerp(start.r, end.r, t));
+  const g = Math.round(lerp(start.g, end.g, t));
+  const b = Math.round(lerp(start.b, end.b, t));
+  return `rgb(${r}, ${g}, ${b})`;
+};
+
+const interpolateStops = (from: ColorStop[], to: ColorStop[], t: number) =>
+  from.map((stop, index) => ({
+    offset: stop.offset,
+    color: lerpColor(stop.color, to[index].color, t),
+  }));
+
+const interpolateLinearLayer = (
+  from: LinearLayer,
+  to: LinearLayer,
+  t: number
+): LinearLayer => ({
+  start: from.start,
+  end: from.end,
+  stops: interpolateStops(from.stops, to.stops, t),
+});
+
+const interpolateRadialLayer = (
+  from: RadialLayer,
+  to: RadialLayer,
+  t: number
+): RadialLayer => ({
+  center: from.center,
+  radius: from.radius,
+  stops: interpolateStops(from.stops, to.stops, t),
+  alpha: lerp(from.alpha ?? 1, to.alpha ?? 1, t),
+});
+
+const interpolateGradientState = (
+  from: GradientState,
+  to: GradientState,
+  t: number
+): GradientState => ({
+  base: interpolateLinearLayer(from.base, to.base, t),
+  glows: from.glows.map((glow, index) =>
+    interpolateRadialLayer(glow, to.glows[index], t)
+  ),
+});
 
 const drawLinearLayer = (
   ctx: CanvasRenderingContext2D,
@@ -298,22 +413,14 @@ export function ScrollMorphGradientBackground() {
       const position = currentProgress * segmentCount;
       const index = clamp(Math.floor(position), 0, segmentCount - 1);
       const localProgress = position - index;
-      const lowBlend = blendCurve(localProgress);
-      const highBlend = blendCurve(localProgress - 0.08);
-      const blurAmount = Math.max(4, Math.min(size.width, size.height) * 0.01);
+      const blendT = blendCurve(localProgress);
+      const composite = interpolateGradientState(
+        GRADIENT_STATES[index],
+        GRADIENT_STATES[index + 1],
+        blendT
+      );
 
-      drawGradient(ctx, GRADIENT_STATES[index], size.width, size.height);
-      ctx.save();
-      ctx.globalAlpha = lowBlend * 0.85;
-      ctx.filter = `blur(${blurAmount}px)`;
-      drawGradient(ctx, GRADIENT_STATES[index + 1], size.width, size.height);
-      ctx.restore();
-
-      ctx.save();
-      ctx.globalAlpha = highBlend;
-      ctx.filter = "none";
-      drawGradient(ctx, GRADIENT_STATES[index + 1], size.width, size.height);
-      ctx.restore();
+      drawGradient(ctx, composite, size.width, size.height);
 
       if (grainCtx && grainFrame % 2 === 0) {
         const imageData = grainCtx.createImageData(grainSize, grainSize);
