@@ -1,17 +1,5 @@
-import BackupHomepage from "@/app/backuphomepage/BackupHomepage";
-
-const BACKUPHOMEPAGE2_SOURCES = [
-  "/jan-4-new-background-transition/v3/1.png",
-  "/jan-4-new-background-transition/v3/2.png",
-  "/jan-4-new-background-transition/v3/3.png",
-  "/jan-4-new-background-transition/v3/4.png",
-];
+import BackupHomepage2 from "@/app/backuphomepage2/BackupHomepage2";
 
 export default function BackupHomepage2Page() {
-  return (
-    <BackupHomepage
-      className="backuphomepage-variant"
-      backgroundSources={BACKUPHOMEPAGE2_SOURCES}
-    />
-  );
+  return <BackupHomepage2 />;
 }
