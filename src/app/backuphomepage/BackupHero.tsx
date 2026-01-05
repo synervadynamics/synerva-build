@@ -51,29 +51,31 @@ export const BackupHero = () => {
         <div className="flex flex-col gap-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div className="flex flex-col gap-6 text-balance">
-              <p className="text-xs uppercase tracking-[0.5em] text-white/60">
-                {copy.hero.eyebrow}
-              </p>
-              <h1
-                data-type-compression="headline"
-                data-type-compression-line-height="1.05"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
-              >
-                {copy.hero.headline.map((line) => (
-                  <span key={line} className="reveal-line">
-                    <span className="block">{line}</span>
-                  </span>
-                ))}
-              </h1>
-              <p
-                data-type-compression="subhead"
-                data-type-compression-line-height="1.5"
-                data-type-compression-letter-spacing="0"
-                className="max-w-3xl text-lg text-white/80 sm:text-xl"
-              >
-                {copy.hero.subhead}
-              </p>
+              <div className="contrast-field space-y-6">
+                <p className="text-xs uppercase tracking-[0.5em] text-white/60">
+                  {copy.hero.eyebrow}
+                </p>
+                <h1
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.05"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
+                >
+                  {copy.hero.headline.map((line) => (
+                    <span key={line} className="reveal-line">
+                      <span className="block">{line}</span>
+                    </span>
+                  ))}
+                </h1>
+                <p
+                  data-type-compression="subhead"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="max-w-3xl text-lg text-white/80 sm:text-xl"
+                >
+                  {copy.hero.subhead}
+                </p>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Link
                   data-cursor="accent"

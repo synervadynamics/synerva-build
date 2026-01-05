@@ -25,7 +25,7 @@ export const Publications = () => {
     >
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 text-white">
-          <div className="space-y-2">
+          <div className="contrast-field space-y-2">
             <p className="text-xs uppercase tracking-[0.4em] text-white/55">
               PUBLICATIONS
             </p>

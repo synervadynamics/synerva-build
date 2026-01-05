@@ -20,7 +20,7 @@ type BackupHomepageProps = {
 
 export default function BackupHomepage(_props: BackupHomepageProps) {
   return (
-    <main className="relative text-white">
+    <main className="relative text-white backuphomepage">
       <ScrollMorphBackground />
       <div
         aria-hidden

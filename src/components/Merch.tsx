@@ -23,25 +23,27 @@ export const Merch = () => {
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 text-white">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/62">
-              {merch.eyebrow}
-            </p>
-            <h2
-              data-type-compression="headline"
-              data-type-compression-line-height="1.25"
-              data-type-compression-letter-spacing="0"
-              className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-            >
-              {merch.heading}
-            </h2>
-            <div className="space-y-4 text-lg text-white/75">
-              {merch.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+            <div className="contrast-field space-y-5">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+                {merch.eyebrow}
+              </p>
+              <h2
+                data-type-compression="headline"
+                data-type-compression-line-height="1.25"
+                data-type-compression-letter-spacing="0"
+                className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+              >
+                {merch.heading}
+              </h2>
+              <div className="space-y-4 text-lg text-white/75">
+                {merch.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                {merch.microline}
+              </p>
             </div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              {merch.microline}
-            </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Link
                 href={merch.ctas.primary.href}

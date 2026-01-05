@@ -125,6 +125,48 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .backuphomepage .contrast-field {
+    --contrast-pad-x: clamp(2.4rem, 6vw, 6.5rem);
+    --contrast-pad-y: clamp(2rem, 5vw, 5.5rem);
+    position: relative;
+    z-index: 0;
+  }
+
+  .backuphomepage .contrast-field::before,
+  .backuphomepage .contrast-field::after {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--contrast-pad-y)) calc(-1 * var(--contrast-pad-x));
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .backuphomepage .contrast-field::before {
+    background: radial-gradient(
+      120% 120% at 50% 50%,
+      rgba(8, 12, 18, 0.22) 0%,
+      rgba(8, 12, 18, 0.12) 38%,
+      rgba(8, 12, 18, 0) 72%
+    );
+    opacity: 0.2;
+  }
+
+  .backuphomepage .contrast-field::after {
+    background: radial-gradient(
+      120% 120% at 50% 50%,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.08) 40%,
+      rgba(255, 255, 255, 0) 74%
+    );
+    opacity: 0.1;
+  }
+
+  .backuphomepage .contrast-field > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;

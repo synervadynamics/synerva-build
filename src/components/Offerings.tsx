@@ -37,7 +37,7 @@ export const Offerings = () => {
       className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
-        <div className="space-y-4">
+        <div className="contrast-field space-y-4">
           <p className="text-xs uppercase tracking-[0.4em] text-white/62">
             {offerings.eyebrow}
           </p>

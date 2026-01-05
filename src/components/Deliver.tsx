@@ -139,7 +139,7 @@ export const Deliver = () => {
       className="relative px-6 pb-16 pt-10 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
     >
       <div className="relative mx-auto max-w-6xl space-y-6">
-        <header className="max-w-4xl space-y-4 text-white">
+        <header className="contrast-field max-w-4xl space-y-4 text-white">
           <h2
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
