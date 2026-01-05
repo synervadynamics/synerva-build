@@ -16,10 +16,10 @@ import { ScrollMorphBackground } from "@/app/backuphomepage/ScrollMorphBackgroun
 
 export default function BackupHomepage2() {
   const backgroundSources = [
-    "/jan-4-new-background-transition/v4/1.PNG",
-    "/jan-4-new-background-transition/v4/2.PNG",
-    "/jan-4-new-background-transition/v4/3.PNG",
-    "/jan-4-new-background-transition/v4/4.PNG",
+    "/jan-4-new-background-transition/v5/1.PNG",
+    "/jan-4-new-background-transition/v5/2.PNG",
+    "/jan-4-new-background-transition/v5/6.PNG",
+    "/jan-4-new-background-transition/v5/9.PNG",
   ];
 
   return (
