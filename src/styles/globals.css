@@ -167,6 +167,24 @@
     z-index: 1;
   }
 
+  .backuphomepage .bubble-drift,
+  .backuphomepage .deliver-clean,
+  .backuphomepage .glass-panel,
+  .backuphomepage .backdrop-blur-3xl,
+  .backuphomepage .backdrop-blur-2xl,
+  .backuphomepage .backdrop-blur-xl,
+  .backuphomepage .backdrop-blur-lg,
+  .backuphomepage .backdrop-blur {
+    backdrop-filter: none !important;
+    background: var(--bg-elevated) !important;
+    background-color: var(--bg-elevated) !important;
+  }
+
+  .backuphomepage .bubble-drift::after {
+    opacity: 0 !important;
+    background: none !important;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;
