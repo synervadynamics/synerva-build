@@ -269,6 +269,31 @@
     background-image: none !important;
   }
 
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) .contrast-field::before,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) .contrast-field::after {
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #hero .backdrop-blur-2xl,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #hero .backdrop-blur-xl,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #deliver .deliver-clean,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #offerings .bubble-drift,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #offerings .backdrop-blur-xl,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #narrative .bubble-drift,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #systems .bubble-drift,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #systems article,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #preview-access,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #philosophy .bubble-drift,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #roadmap .bubble-drift,
+  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) footer > div {
+    backdrop-filter: none !important;
+    filter: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
   .reveal-line {
     display: block;
     overflow: hidden;
