@@ -294,6 +294,22 @@
     background-image: none !important;
   }
 
+  .backuphomepage.backuphomepage-variant :is(
+      #hero,
+      #narrative,
+      #deliver,
+      #systems,
+      #publications,
+      #labs,
+      #philosophy,
+      #roadmap,
+      #about
+    )::before,
+  .backuphomepage.backuphomepage-variant footer::before {
+    background-color: transparent !important;
+    opacity: 0 !important;
+  }
+
   .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about),
   .backuphomepage footer {
     position: relative;
