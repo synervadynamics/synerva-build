@@ -25,6 +25,7 @@ export default function BackupHomepage2() {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
       <ScrollMorphBackground imageSources={backgroundSources} />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/35" />
       <div className="relative z-10">
         <ScrollProgress />
         <BackupHero />
