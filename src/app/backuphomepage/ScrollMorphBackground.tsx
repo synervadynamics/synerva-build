@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 
-const IMAGE_SOURCES = [
+const DEFAULT_IMAGE_SOURCES = [
   "/jan-4-new-background-transition/v2/1.png",
   "/jan-4-new-background-transition/v2/2.png",
   "/jan-4-new-background-transition/v2/3.png",
@@ -49,7 +49,13 @@ const drawCover = (
   ctx.drawImage(image, offsetX, offsetY, drawWidth, drawHeight);
 };
 
-export function ScrollMorphBackground() {
+type ScrollMorphBackgroundProps = {
+  imageSources?: string[];
+};
+
+export function ScrollMorphBackground({
+  imageSources = DEFAULT_IMAGE_SOURCES,
+}: ScrollMorphBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
@@ -173,7 +179,7 @@ export function ScrollMorphBackground() {
 
     const loadImages = async () => {
       const loaded = await Promise.all(
-        IMAGE_SOURCES.map(
+        imageSources.map(
           (source) =>
             new Promise<HTMLImageElement>((resolve, reject) => {
               const image = new Image();
@@ -214,13 +220,13 @@ export function ScrollMorphBackground() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [shouldReduceMotion]);
+  }, [imageSources, shouldReduceMotion]);
 
   return (
     <div
       aria-hidden
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${IMAGE_SOURCES[0]})` }}
+      style={{ backgroundImage: `url(${imageSources[0]})` }}
     >
       <canvas ref={canvasRef} className="h-full w-full" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/70" />

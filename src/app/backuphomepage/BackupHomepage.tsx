@@ -16,15 +16,16 @@ import { ScrollMorphBackground } from "@/app/backuphomepage/ScrollMorphBackgroun
 
 type BackupHomepageProps = {
   className?: string;
+  backgroundSources?: string[];
 };
 
 export default function BackupHomepage(props: BackupHomepageProps) {
-  const { className } = props;
+  const { className, backgroundSources } = props;
   return (
     <main
       className={`relative text-white backuphomepage${className ? ` ${className}` : ""}`}
     >
-      <ScrollMorphBackground />
+      <ScrollMorphBackground imageSources={backgroundSources} />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[5] bg-gradient-to-b from-[rgba(8,12,18,0.18)] via-[rgba(8,12,18,0.12)] to-[rgba(8,12,18,0.16)]"
