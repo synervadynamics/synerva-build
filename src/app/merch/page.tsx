@@ -4,6 +4,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 import MerchCatalog from "@/components/merch/MerchCatalog";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
 export const metadata = buildPageMetadata({
   title: "Merch — Synerva Dynamics",
@@ -16,7 +17,10 @@ export default function MerchPage() {
   const merch = copy.merchPage;
 
   return (
-    <main className="bg-[var(--bg)] text-white">
+    <main className="relative text-white">
+      <ScrollMorphBackground />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
+      <div className="relative z-10">
       <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <div className="relative mx-auto max-w-6xl rounded-[3rem] border border-white/10 bg-black/60 p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)] backdrop-blur-3xl">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -172,6 +176,7 @@ export default function MerchPage() {
           </div>
         </div>
       </section>
+      </div>
     </main>
   );
 }

@@ -225,7 +225,7 @@ export function ScrollMorphBackground({
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-cover bg-center"
+      className="pointer-events-none fixed inset-0 z-[1] overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: `url(${imageSources[0]})` }}
     >
       <canvas ref={canvasRef} className="h-full w-full" />
