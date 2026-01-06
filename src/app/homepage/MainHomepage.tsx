@@ -16,10 +16,11 @@ import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
 export default function MainHomepage() {
   const backgroundSources = [
-    "/jan-4-new-background-transition/v6/ChatGPT Image Jan 5, 2026, 01_09_09 PM.png",
-    "/jan-4-new-background-transition/v6/ChatGPT Image Jan 5, 2026, 01_09_13 PM.png",
-    "/jan-4-new-background-transition/v6/ChatGPT Image Jan 5, 2026, 01_23_40 PM.png",
-    "/jan-4-new-background-transition/v6/ChatGPT Image Jan 5, 2026, 01_12_36 PM.png",
+    "/jan-4-new-background-transition/v8/1.PNG",
+    "/jan-4-new-background-transition/v8/2.PNG",
+    "/jan-4-new-background-transition/v8/3.PNG",
+    "/jan-4-new-background-transition/v8/4.PNG",
+    "/jan-4-new-background-transition/v8/5.PNG",
   ];
 
   return (

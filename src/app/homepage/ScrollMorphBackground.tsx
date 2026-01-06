@@ -4,10 +4,11 @@ import { useEffect, useRef } from "react";
 import { useReducedMotion } from "framer-motion";
 
 const DEFAULT_IMAGE_SOURCES = [
-  "/jan-4-new-background-transition/v2/1.png",
-  "/jan-4-new-background-transition/v2/2.png",
-  "/jan-4-new-background-transition/v2/3.png",
-  "/jan-4-new-background-transition/v2/4.png",
+  "/jan-4-new-background-transition/v8/1.PNG",
+  "/jan-4-new-background-transition/v8/2.PNG",
+  "/jan-4-new-background-transition/v8/3.PNG",
+  "/jan-4-new-background-transition/v8/4.PNG",
+  "/jan-4-new-background-transition/v8/5.PNG",
 ];
 
 const clamp = (value: number, min: number, max: number) =>
