@@ -47,7 +47,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col md:hidden">
+            <div className="flex flex-col lg:hidden">
               <div className="flex min-h-[100svh] flex-col justify-center gap-6 pb-10 pt-12">
                 <p className="text-[0.65rem] uppercase tracking-[0.5em] text-white/60">
                   {copy.hero.eyebrow}
@@ -116,7 +116,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                 </div>
               </div>
             </div>
-            <div className="hidden flex-col gap-10 md:flex">
+            <div className="hidden flex-col gap-10 lg:flex">
               <header className="flex flex-col gap-4 pb-6 lg:flex-row lg:items-center lg:justify-between">
                 <Link
                   href="/"

@@ -49,7 +49,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col md:hidden">
+            <div className="flex flex-col lg:hidden">
               <div className="flex min-h-[100svh] flex-col justify-center gap-5 pb-8 pt-12">
                 <h2
                   data-type-compression="headline"
@@ -80,7 +80,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 </h3>
               </div>
             </div>
-            <div className="hidden flex-col gap-8 md:flex">
+            <div className="hidden flex-col gap-8 lg:flex">
               <div className="space-y-5">
                 <div className="contrast-field space-y-5">
                   <p className="text-xs uppercase tracking-[0.4em] text-white/62">

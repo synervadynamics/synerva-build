@@ -30,7 +30,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
       <div className="relative mx-auto max-w-6xl space-y-6 text-white">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col md:hidden">
+            <div className="flex flex-col lg:hidden">
               <div className="flex min-h-[100svh] flex-col justify-center gap-5 pb-8 pt-10">
                 <h2 className="text-2xl font-light leading-snug text-white">
                   {sentenceA}
@@ -56,7 +56,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                 <p className="text-base text-white/80">{sectionCopy.heading}</p>
               </div>
             </div>
-            <div className="hidden flex-col md:flex">
+            <div className="hidden flex-col lg:flex">
               <div className="contrast-field space-y-4">
                 <p className="text-xs uppercase tracking-[0.4em] text-white/65">
                   {sectionCopy.eyebrow}
