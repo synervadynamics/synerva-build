@@ -137,7 +137,6 @@ export const MainHero = () => {
         <CascadingText
           className="mt-8 pt-6"
           items={[
-            "Orchestration",
             "Web Systems",
             "Automation Loops",
             "Analytics Clarity",
