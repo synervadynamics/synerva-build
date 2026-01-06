@@ -8,10 +8,21 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { copy } from "@/data/copy";
 
-export const Narrative = () => {
+type NarrativeProps = {
+  mobileVariant?: "default" | "beats";
+};
+
+export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
   const shouldReduceMotion = useReducedMotion();
   const story = copy.story;
   const containerRef = useRef<HTMLDivElement>(null);
+  const statementSentences = story.statement
+    .split(/(?<=\.)\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+  const diagnosisSentence = statementSentences[0] ?? story.statement;
+  const frictionSentence = statementSentences[1] ?? "";
+  const synervaSentence = statementSentences[2] ?? "";
 
   useEffect(() => {
     if (shouldReduceMotion) return;
@@ -36,71 +47,176 @@ export const Narrative = () => {
       className="relative px-6 pb-14 pt-12 sm:px-10 sm:pb-20 sm:pt-14 lg:px-16 lg:pb-20 lg:pt-16"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
-        <div className="space-y-5">
-          <div className="contrast-field space-y-5">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/62">
-              {story.eyebrow}
-            </p>
-            <h2
-              data-type-compression="headline"
-              data-type-compression-line-height="1.25"
-              data-type-compression-letter-spacing="0"
-              className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+        {mobileVariant === "beats" ? (
+          <>
+            <div className="flex flex-col md:hidden">
+              <div className="flex min-h-[100svh] flex-col justify-center gap-5 pb-8 pt-12">
+                <h2
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.25"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-3xl leading-tight [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em]"
+                >
+                  {story.heading}
+                </h2>
+                <p
+                  data-type-compression="subhead"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="text-base text-white/80"
+                >
+                  {diagnosisSentence}
+                </p>
+              </div>
+              <div className="flex min-h-[100svh] flex-col justify-center gap-5 py-12">
+                <h3 className="text-xs uppercase tracking-[0.4em] text-white/62">
+                  {story.eyebrow}
+                </h3>
+                <p className="text-base text-white/80">{frictionSentence}</p>
+              </div>
+              <div className="flex min-h-[100svh] flex-col justify-center gap-5 py-12">
+                <h3 className="text-xl font-light leading-snug text-white/90">
+                  {synervaSentence}
+                </h3>
+              </div>
+            </div>
+            <div className="hidden flex-col gap-8 md:flex">
+              <div className="space-y-5">
+                <div className="contrast-field space-y-5">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+                    {story.eyebrow}
+                  </p>
+                  <h2
+                    data-type-compression="headline"
+                    data-type-compression-line-height="1.25"
+                    data-type-compression-letter-spacing="0"
+                    className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                  >
+                    {story.heading}
+                  </h2>
+                  <p
+                    data-type-compression="subhead"
+                    data-type-compression-line-height="1.5"
+                    data-type-compression-letter-spacing="0"
+                    className="text-lg text-white/85"
+                  >
+                    {story.statement}
+                  </p>
+                  <p className="text-base text-white/76">{story.proof}</p>
+                </div>
+                <Link
+                  href={story.cta.href}
+                  className="inline-flex rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                >
+                  {story.cta.label}
+                </Link>
+              </div>
+              <motion.div
+                ref={containerRef}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
+              >
+                <div className="space-y-4">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                    System Guardrails
+                  </p>
+                  <ul className="space-y-4 text-sm text-white/78">
+                    {story.bullets.map((point) => (
+                      <li key={point} className="story-bullet flex items-start gap-3">
+                        <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-cyan-300/70" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                    Engagement Stance
+                  </p>
+                  <p className="text-sm text-white/80">
+                    We pair precision systems with human judgment, so delivery stays
+                    fast without losing intent.
+                  </p>
+                  <p className="text-sm text-white/74">
+                    Measured automation, tight guardrails, human oversight—momentum
+                    holds after launch.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="space-y-5">
+              <div className="contrast-field space-y-5">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+                  {story.eyebrow}
+                </p>
+                <h2
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.25"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                >
+                  {story.heading}
+                </h2>
+                <p
+                  data-type-compression="subhead"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="text-lg text-white/85"
+                >
+                  {story.statement}
+                </p>
+                <p className="text-base text-white/76">{story.proof}</p>
+              </div>
+              <Link
+                href={story.cta.href}
+                className="inline-flex rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+              >
+                {story.cta.label}
+              </Link>
+            </div>
+            <motion.div
+              ref={containerRef}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
             >
-              {story.heading}
-            </h2>
-            <p
-              data-type-compression="subhead"
-              data-type-compression-line-height="1.5"
-              data-type-compression-letter-spacing="0"
-              className="text-lg text-white/85"
-            >
-              {story.statement}
-            </p>
-            <p className="text-base text-white/76">{story.proof}</p>
-          </div>
-          <Link
-            href={story.cta.href}
-            className="inline-flex rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-          >
-            {story.cta.label}
-          </Link>
-        </div>
-        <motion.div
-          ref={containerRef}
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
-        >
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/64">
-              System Guardrails
-            </p>
-            <ul className="space-y-4 text-sm text-white/78">
-              {story.bullets.map((point) => (
-                <li key={point} className="story-bullet flex items-start gap-3">
-                  <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-cyan-300/70" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/64">
-              Engagement Stance
-            </p>
-            <p className="text-sm text-white/80">
-              We pair precision systems with human judgment, so delivery stays
-              fast without losing intent.
-            </p>
-            <p className="text-sm text-white/74">
-              Measured automation, tight guardrails, human oversight—momentum
-              holds after launch.
-            </p>
-          </div>
-        </motion.div>
+              <div className="space-y-4">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                  System Guardrails
+                </p>
+                <ul className="space-y-4 text-sm text-white/78">
+                  {story.bullets.map((point) => (
+                    <li key={point} className="story-bullet flex items-start gap-3">
+                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-cyan-300/70" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                  Engagement Stance
+                </p>
+                <p className="text-sm text-white/80">
+                  We pair precision systems with human judgment, so delivery stays
+                  fast without losing intent.
+                </p>
+                <p className="text-sm text-white/74">
+                  Measured automation, tight guardrails, human oversight—momentum
+                  holds after launch.
+                </p>
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
     </section>
   );

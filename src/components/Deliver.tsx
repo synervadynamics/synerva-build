@@ -70,7 +70,11 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
   },
 };
 
-export const Deliver = () => {
+type DeliverProps = {
+  mobileVariant?: "default" | "beats";
+};
+
+export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
   const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -139,140 +143,296 @@ export const Deliver = () => {
       className="relative px-6 pb-16 pt-10 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
     >
       <div className="relative mx-auto max-w-6xl space-y-6">
-        <header className="contrast-field max-w-4xl space-y-4 text-white">
-          <h2
-            data-type-compression="headline"
-            data-type-compression-line-height="1.25"
-            data-type-compression-letter-spacing="0"
-            className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-          >
-            {copy.deliver.heading}
-          </h2>
-          <p
-            data-type-compression="subhead"
-            data-type-compression-line-height="1.5"
-            data-type-compression-letter-spacing="0"
-            className="text-lg text-white/72"
-          >
-            {copy.deliver.intro}
-          </p>
-          <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
-            <span>Scroll to explore</span>
-            <div className="h-px flex-1 bg-white/10" />
-            <span>{Math.round(activeProgress)}%</span>
-          </div>
-        </header>
-        <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
-          <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
-            {copy.deliver.items.map((item, index) => (
-              <motion.article
-                key={item.title}
-                custom={index}
-                variants={cardVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                onMouseEnter={() => setActiveIndex(index)}
-                onFocus={() => setActiveIndex(index)}
-                tabIndex={0}
-                className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
-                  activeIndex === index
-                    ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
-                    : ""
-                }`}
-              >
-                <p className="text-xs uppercase tracking-[0.35em] text-white/60">
-                  {item.title}
-                </p>
-                <p className="text-base text-white/80">{item.text}</p>
-                <p
-                  className={`overflow-hidden text-sm text-white/60 transition-all duration-300 ${
-                    activeIndex === index
-                      ? "max-h-24 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
+        {mobileVariant === "beats" ? (
+          <>
+            <div className="flex flex-col md:hidden">
+              {deliverItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex min-h-[110svh] flex-col justify-center gap-6 py-14"
                 >
-                  {item.detail}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 }}
-            animate={
-              inView
-                ? {
-                    opacity: 1,
-                    scale: 1,
-                    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-                  }
-                : undefined
-            }
-            className="deliver-clean relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
-          >
-            <div
-              className="deliver-clean overflow-hidden rounded-3xl border border-white/5"
-              style={{ aspectRatio: activeAspectRatio }}
-            >
-              {activeItem.video?.src ? (
-                isVideoSrc(activeItem.video.src) ? (
-                  <video
-                    key={activeItem.video.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="h-full w-full object-cover"
-                    style={{ aspectRatio: activeAspectRatio }}
-                    aria-label={activeItem.video.label}
-                  >
-                    <track kind="captions" label={activeItem.video.label} />
-                    <source src={activeItem.video.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <Image
-                    key={activeItem.video.src}
-                    src={activeItem.video.src}
-                    alt={activeItem.video.label}
-                    width={mediaDimensions[activeItem.video.src]?.width ?? 1920}
-                    height={
-                      mediaDimensions[activeItem.video.src]?.height ?? 1080
-                    }
-                    className="h-full w-full object-contain"
-                    style={{ aspectRatio: activeAspectRatio }}
-                    sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
-                  />
-                )
-              ) : (
-                <VideoPlaceholder label={`${activeItem.title} visual`} />
-              )}
+                  <h2 className="text-2xl font-light leading-snug text-white">
+                    {item.title}
+                  </h2>
+                  <p className="text-base text-white/80">{item.text}</p>
+                </div>
+              ))}
             </div>
-            <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
-              {activeItem.video?.label ?? `${activeItem.title} visual`}
-            </p>
-            <p className="mt-2 text-lg text-white">{activeItem.title}</p>
-            <p className="text-sm text-white/70">
-              {activeItem.panelText ?? activeItem.text}
-            </p>
-            <p className="text-sm text-white/60">
-              {activeItem.panelDetail ?? activeItem.detail}
-            </p>
-            {activeItem.panelPoints?.length ? (
-              <ul className="mt-3 space-y-2 text-sm text-white/65">
-                {activeItem.panelPoints.map((point) => (
-                  <li key={point} className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>{point}</span>
-                  </li>
+            <div className="hidden md:block">
+              <header className="contrast-field max-w-4xl space-y-4 text-white">
+                <h2
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.25"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                >
+                  {copy.deliver.heading}
+                </h2>
+                <p
+                  data-type-compression="subhead"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="text-lg text-white/72"
+                >
+                  {copy.deliver.intro}
+                </p>
+                <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
+                  <span>Scroll to explore</span>
+                  <div className="h-px flex-1 bg-white/10" />
+                  <span>{Math.round(activeProgress)}%</span>
+                </div>
+              </header>
+              <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
+                <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
+                  {copy.deliver.items.map((item, index) => (
+                    <motion.article
+                      key={item.title}
+                      custom={index}
+                      variants={cardVariants}
+                      initial="hidden"
+                      animate={inView ? "visible" : "hidden"}
+                      onMouseEnter={() => setActiveIndex(index)}
+                      onFocus={() => setActiveIndex(index)}
+                      tabIndex={0}
+                      className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                        activeIndex === index
+                          ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
+                          : ""
+                      }`}
+                    >
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                        {item.title}
+                      </p>
+                      <p className="text-base text-white/80">{item.text}</p>
+                      <p
+                        className={`overflow-hidden text-sm text-white/60 transition-all duration-300 ${
+                          activeIndex === index
+                            ? "max-h-24 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        {item.detail}
+                      </p>
+                    </motion.article>
+                  ))}
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 }}
+                  animate={
+                    inView
+                      ? {
+                          opacity: 1,
+                          scale: 1,
+                          transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                        }
+                      : undefined
+                  }
+                  className="deliver-clean relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
+                >
+                  <div
+                    className="deliver-clean overflow-hidden rounded-3xl border border-white/5"
+                    style={{ aspectRatio: activeAspectRatio }}
+                  >
+                    {activeItem.video?.src ? (
+                      isVideoSrc(activeItem.video.src) ? (
+                        <video
+                          key={activeItem.video.src}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover"
+                          style={{ aspectRatio: activeAspectRatio }}
+                          aria-label={activeItem.video.label}
+                        >
+                          <track kind="captions" label={activeItem.video.label} />
+                          <source src={activeItem.video.src} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <Image
+                          key={activeItem.video.src}
+                          src={activeItem.video.src}
+                          alt={activeItem.video.label}
+                          width={mediaDimensions[activeItem.video.src]?.width ?? 1920}
+                          height={
+                            mediaDimensions[activeItem.video.src]?.height ?? 1080
+                          }
+                          className="h-full w-full object-contain"
+                          style={{ aspectRatio: activeAspectRatio }}
+                          sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
+                        />
+                      )
+                    ) : (
+                      <VideoPlaceholder label={`${activeItem.title} visual`} />
+                    )}
+                  </div>
+                  <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
+                    {activeItem.video?.label ?? `${activeItem.title} visual`}
+                  </p>
+                  <p className="mt-2 text-lg text-white">{activeItem.title}</p>
+                  <p className="text-sm text-white/70">
+                    {activeItem.panelText ?? activeItem.text}
+                  </p>
+                  <p className="text-sm text-white/60">
+                    {activeItem.panelDetail ?? activeItem.detail}
+                  </p>
+                  {activeItem.panelPoints?.length ? (
+                    <ul className="mt-3 space-y-2 text-sm text-white/65">
+                      {activeItem.panelPoints.map((point) => (
+                        <li key={point} className="flex items-start gap-3">
+                          <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-white/40" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </motion.div>
+              </div>
+              <CascadingText
+                className="pt-4"
+                items={copy.deliver.items.map((item) => item.title)}
+                speed={60}
+              />
+            </div>
+          </>
+        ) : (
+          <>
+            <header className="contrast-field max-w-4xl space-y-4 text-white">
+              <h2
+                data-type-compression="headline"
+                data-type-compression-line-height="1.25"
+                data-type-compression-letter-spacing="0"
+                className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+              >
+                {copy.deliver.heading}
+              </h2>
+              <p
+                data-type-compression="subhead"
+                data-type-compression-line-height="1.5"
+                data-type-compression-letter-spacing="0"
+                className="text-lg text-white/72"
+              >
+                {copy.deliver.intro}
+              </p>
+              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
+                <span>Scroll to explore</span>
+                <div className="h-px flex-1 bg-white/10" />
+                <span>{Math.round(activeProgress)}%</span>
+              </div>
+            </header>
+            <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
+              <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
+                {copy.deliver.items.map((item, index) => (
+                  <motion.article
+                    key={item.title}
+                    custom={index}
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onFocus={() => setActiveIndex(index)}
+                    tabIndex={0}
+                    className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                      activeIndex === index
+                        ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
+                        : ""
+                    }`}
+                  >
+                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                      {item.title}
+                    </p>
+                    <p className="text-base text-white/80">{item.text}</p>
+                    <p
+                      className={`overflow-hidden text-sm text-white/60 transition-all duration-300 ${
+                        activeIndex === index
+                          ? "max-h-24 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {item.detail}
+                    </p>
+                  </motion.article>
                 ))}
-              </ul>
-            ) : null}
-          </motion.div>
-        </div>
-        <CascadingText
-          className="pt-4"
-          items={copy.deliver.items.map((item) => item.title)}
-          speed={60}
-        />
+              </div>
+              <motion.div
+                initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.95 }}
+                animate={
+                  inView
+                    ? {
+                        opacity: 1,
+                        scale: 1,
+                        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                      }
+                    : undefined
+                }
+                className="deliver-clean relative h-full rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
+              >
+                <div
+                  className="deliver-clean overflow-hidden rounded-3xl border border-white/5"
+                  style={{ aspectRatio: activeAspectRatio }}
+                >
+                  {activeItem.video?.src ? (
+                    isVideoSrc(activeItem.video.src) ? (
+                      <video
+                        key={activeItem.video.src}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="h-full w-full object-cover"
+                        style={{ aspectRatio: activeAspectRatio }}
+                        aria-label={activeItem.video.label}
+                      >
+                        <track kind="captions" label={activeItem.video.label} />
+                        <source src={activeItem.video.src} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <Image
+                        key={activeItem.video.src}
+                        src={activeItem.video.src}
+                        alt={activeItem.video.label}
+                        width={mediaDimensions[activeItem.video.src]?.width ?? 1920}
+                        height={
+                          mediaDimensions[activeItem.video.src]?.height ?? 1080
+                        }
+                        className="h-full w-full object-contain"
+                        style={{ aspectRatio: activeAspectRatio }}
+                        sizes="(min-width: 1024px) 42vw, (min-width: 768px) 60vw, 100vw"
+                      />
+                    )
+                  ) : (
+                    <VideoPlaceholder label={`${activeItem.title} visual`} />
+                  )}
+                </div>
+                <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
+                  {activeItem.video?.label ?? `${activeItem.title} visual`}
+                </p>
+                <p className="mt-2 text-lg text-white">{activeItem.title}</p>
+                <p className="text-sm text-white/70">
+                  {activeItem.panelText ?? activeItem.text}
+                </p>
+                <p className="text-sm text-white/60">
+                  {activeItem.panelDetail ?? activeItem.detail}
+                </p>
+                {activeItem.panelPoints?.length ? (
+                  <ul className="mt-3 space-y-2 text-sm text-white/65">
+                    {activeItem.panelPoints.map((point) => (
+                      <li key={point} className="flex items-start gap-3">
+                        <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-white/40" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </motion.div>
+            </div>
+            <CascadingText
+              className="pt-4"
+              items={copy.deliver.items.map((item) => item.title)}
+              speed={60}
+            />
+          </>
+        )}
       </div>
     </motion.section>
   );

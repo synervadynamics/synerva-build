@@ -18,11 +18,11 @@ export default function BackupHomepage3() {
     <main className="relative text-white backuphomepage backuphomepage-variant">
       <div className="relative z-10">
         <ScrollProgress />
-        <MainHero />
-        <Narrative />
+        <MainHero mobileVariant="beats" />
+        <Narrative mobileVariant="beats" />
         <Offerings />
-        <Deliver />
-        <Systems />
+        <Deliver mobileVariant="beats" />
+        <Systems mobileVariant="beats" />
         <Publications />
         <Labs variant="signup-only" />
         <Merch />
