@@ -59,7 +59,7 @@ export const MainHero = () => {
               </Link>
             ))}
           </nav>
-          {!isMobile ? <SectionIndex sections={sectionMap} /> : null}
+          <SectionIndex sections={sectionMap} />
         </header>
         <div className="flex flex-col gap-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
