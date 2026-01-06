@@ -122,12 +122,12 @@ export const MainHero = () => {
                   duration: 0.6,
                   ease: easeCurve,
                 }}
-                className="rounded-2xl border border-white/12 bg-transparent px-6 py-4 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl"
+                className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-5 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
               >
                 <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
                   {label}
                 </p>
-                <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-nowrap sm:text-sm">
+                <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal leading-snug sm:whitespace-nowrap sm:leading-normal sm:text-sm">
                   {value}
                 </p>
               </motion.div>
