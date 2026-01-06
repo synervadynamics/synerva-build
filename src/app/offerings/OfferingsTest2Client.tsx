@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero.PNG",
@@ -68,7 +69,10 @@ export default function OfferingsTest2Client() {
 
   return (
     <main className="relative text-white">
-      <ScrollProgress />
+      <ScrollMorphBackground />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
+      <div className="relative z-10">
+        <ScrollProgress />
 
       <section
         id="hero"
@@ -664,6 +668,7 @@ export default function OfferingsTest2Client() {
           </div>
         </div>
       </section>
+      </div>
     </main>
   );
 }
