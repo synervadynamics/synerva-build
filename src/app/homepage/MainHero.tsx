@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
 import { SectionIndex } from "@/components/SectionIndex";
@@ -19,6 +20,18 @@ const sectionMap = [
 export const MainHero = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
   const easeCurve = [0.16, 1, 0.3, 1] as Easing;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
 
   return (
     <section
@@ -111,31 +124,33 @@ export const MainHero = () => {
             </div>
           </div>
 
-          <div className="grid gap-6 text-sm text-white/70 sm:grid-cols-2 md:grid-cols-3">
-            {copy.hero.proofs.map(({ label, value }, index) => (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : undefined}
-                transition={{
-                  delay: 0.3 + index * 0.1,
-                  duration: 0.6,
-                  ease: easeCurve,
-                }}
-                className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
-              >
-                <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
-                  {label}
-                </p>
-                <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:whitespace-nowrap sm:leading-normal sm:text-sm">
-                  {value}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          {!isMobile && (
+            <div className="grid gap-6 text-sm text-white/70 grid-cols-2 md:grid-cols-3">
+              {copy.hero.proofs.map(({ label, value }, index) => (
+                <motion.div
+                  key={label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : undefined}
+                  transition={{
+                    delay: 0.3 + index * 0.1,
+                    duration: 0.6,
+                    ease: easeCurve,
+                  }}
+                  className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
+                >
+                  <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
+                    {label}
+                  </p>
+                  <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:whitespace-nowrap sm:leading-normal sm:text-sm">
+                    {value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
         <CascadingText
-          className="mt-8 pt-6"
+          className="mt-0 pt-0 sm:mt-8 sm:pt-6"
           items={[
             "Web Systems",
             "Automation Loops",

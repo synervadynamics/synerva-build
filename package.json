@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "type-check": "tsc --noEmit",
     "format": "prettier --check .",
-    "export": "next export"
+    "export": "next export",
+    "test:hero-proof-cards": "node scripts/hero-proof-cards-check.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.84.0",

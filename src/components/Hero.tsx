@@ -151,7 +151,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="grid gap-6 text-sm text-white/70 sm:grid-cols-2 md:grid-cols-3">
+          <div className="hidden gap-6 text-sm text-white/70 sm:grid sm:grid-cols-2 md:grid-cols-3">
             {copy.hero.proofs.map(({ label, value }, index) => (
               <motion.div
                 key={label}
@@ -175,7 +175,7 @@ export const Hero = () => {
           </div>
         </div>
         <CascadingText
-          className="mt-8 pt-6"
+          className="mt-0 pt-0 sm:mt-8 sm:pt-6"
           items={[
             "Web Systems",
             "Automation Loops",
