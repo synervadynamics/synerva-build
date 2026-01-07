@@ -145,7 +145,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
       <div className="relative mx-auto max-w-6xl space-y-6">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col lg:hidden">
+            <div className="flex flex-col md:hidden">
               {deliverItems.map((item) => (
                 <div
                   key={item.title}
@@ -158,7 +158,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 </div>
               ))}
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden md:block">
               <header className="contrast-field max-w-4xl space-y-4 text-white">
                 <h2
                   data-type-compression="headline"

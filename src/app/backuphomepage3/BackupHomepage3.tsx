@@ -21,8 +21,8 @@ export default function BackupHomepage3() {
         <MainHero mobileVariant="beats" />
         <Narrative mobileVariant="beats" />
         <Offerings />
-        <Deliver mobileVariant="beats" />
-        <Systems mobileVariant="beats" />
+        <Deliver />
+        <Systems />
         <Publications />
         <Labs variant="signup-only" />
         <Merch />
