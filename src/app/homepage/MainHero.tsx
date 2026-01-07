@@ -48,7 +48,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col lg:hidden">
-              <div className="flex min-h-[100svh] flex-col justify-center gap-6 pb-10 pt-12">
+              <div className="flex min-h-[80svh] flex-col justify-center gap-4 pb-6 pt-10">
                 <p className="text-[0.65rem] uppercase tracking-[0.5em] text-white/60">
                   {copy.hero.eyebrow}
                 </p>
@@ -65,10 +65,10 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   ))}
                 </h1>
               </div>
-              <div className="flex min-h-[100svh] flex-col justify-center gap-6 py-12">
+              <div className="flex min-h-[80svh] flex-col justify-center gap-4 py-10">
                 <h2
                   data-type-compression="headline"
-                  data-type-compression-line-height="1.15"
+                  data-type-compression-line-height="1.1"
                   data-type-compression-letter-spacing="0"
                   className="text-2xl font-light leading-snug text-white"
                 >
@@ -76,44 +76,29 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                 </h2>
                 <p
                   data-type-compression="subhead"
-                  data-type-compression-line-height="1.5"
+                  data-type-compression-line-height="1.45"
                   data-type-compression-letter-spacing="0"
-                  className="text-base text-white/80"
+                  className="text-[0.95rem] leading-6 text-white/80"
                 >
                   {copy.hero.subhead}
                 </p>
                 <Link
                   data-cursor="accent"
-                  className="w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
+                  className="w-fit rounded-full bg-white px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
                   href={copy.hero.primaryCta.href}
                 >
                   {copy.hero.primaryCta.label}
                 </Link>
               </div>
-              <div className="flex min-h-[100svh] flex-col justify-center gap-6 py-12">
+              <div className="flex min-h-[70svh] flex-col justify-center gap-3 py-8">
                 <h2
                   data-type-compression="headline"
                   data-type-compression-line-height="1.2"
                   data-type-compression-letter-spacing="0"
-                  className="text-xl font-light leading-snug text-white/90"
+                  className="text-lg font-light leading-snug text-white/85"
                 >
                   {copy.hero.proofs[2].value}
                 </h2>
-                <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0">
-                  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)]">
-                    <div className="overflow-hidden rounded-2xl border border-white/8">
-                      <Image
-                        src="/homepage-post-12-25-2025/synerva-hero-5.png"
-                        alt="Synerva Dynamics hero graphic"
-                        width={1536}
-                        height={1024}
-                        className="aspect-[4/3] w-full object-cover"
-                        sizes="100vw"
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="hidden flex-col gap-10 lg:flex">

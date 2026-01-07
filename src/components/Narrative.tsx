@@ -50,32 +50,34 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col lg:hidden">
-              <div className="flex min-h-[100svh] flex-col justify-center gap-5 pb-8 pt-12">
+              <div className="flex min-h-[80svh] flex-col justify-center gap-4 pb-6 pt-10">
                 <h2
                   data-type-compression="headline"
                   data-type-compression-line-height="1.25"
                   data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em]"
+                  className="section-header-lock text-[1.65rem] leading-tight [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em]"
                 >
                   {story.heading}
                 </h2>
                 <p
                   data-type-compression="subhead"
-                  data-type-compression-line-height="1.5"
+                  data-type-compression-line-height="1.45"
                   data-type-compression-letter-spacing="0"
-                  className="text-base text-white/80"
+                  className="text-[0.95rem] leading-6 text-white/78"
                 >
                   {diagnosisSentence}
                 </p>
               </div>
-              <div className="flex min-h-[100svh] flex-col justify-center gap-5 py-12">
-                <h3 className="text-xs uppercase tracking-[0.4em] text-white/62">
+              <div className="flex min-h-[80svh] flex-col justify-center gap-4 py-10">
+                <h3 className="text-lg font-light leading-snug text-white/85">
                   {story.eyebrow}
                 </h3>
-                <p className="text-base text-white/80">{frictionSentence}</p>
+                <p className="text-[0.95rem] leading-6 text-white/78">
+                  {frictionSentence}
+                </p>
               </div>
-              <div className="flex min-h-[100svh] flex-col justify-center gap-5 py-12">
-                <h3 className="text-xl font-light leading-snug text-white/90">
+              <div className="flex min-h-[75svh] flex-col justify-center gap-3 py-8">
+                <h3 className="text-lg font-light leading-snug text-white/85">
                   {synervaSentence}
                 </h3>
               </div>
