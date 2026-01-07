@@ -34,7 +34,7 @@ export const Offerings = () => {
   return (
     <section
       id="offerings"
-      className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         <div className="contrast-field space-y-4">
@@ -63,7 +63,7 @@ export const Offerings = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift grid gap-6 rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl lg:grid-cols-3 lg:p-8"
+          className="bubble-drift grid gap-4 rounded-[2.5rem] border border-white/12 bg-transparent p-4 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:gap-6 sm:p-6 lg:grid-cols-3 lg:p-8"
         >
           {offerings.cards.map((card) => {
             const media =
@@ -72,7 +72,7 @@ export const Offerings = () => {
             return (
               <div
                 key={card.title}
-                className="flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-5 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl"
+                className="flex h-full flex-col gap-3 rounded-[2rem] border border-white/12 bg-transparent p-4 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-4 sm:p-5"
               >
                 {media ? (
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -93,7 +93,7 @@ export const Offerings = () => {
                   <p className="text-sm text-white/70">{card.meta}</p>
                 </div>
                 <p className="text-sm text-white/80">{card.text}</p>
-                <div className="mt-auto pt-2">
+                <div className="mt-auto pt-1 sm:pt-2">
                   <Link
                     href={card.href}
                     className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"

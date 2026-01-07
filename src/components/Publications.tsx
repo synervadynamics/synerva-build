@@ -21,7 +21,7 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-6 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
+      className="relative px-4 py-6 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
     >
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 text-white">
@@ -46,12 +46,57 @@ export const Publications = () => {
               {publications.body}
             </p>
           </div>
+          <div className="flex flex-col gap-4 sm:hidden">
+            {publications.items.map((item) => {
+              const isCtaDisabled = !item.href;
+              return (
+                <article
+                  key={item.title}
+                  className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.03] p-4"
+                >
+                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <Image
+                      src={item.image.src}
+                      alt={item.image.alt}
+                      width={1024}
+                      height={1536}
+                      className="block h-auto w-full object-cover object-top"
+                      sizes="100vw"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                      Publication
+                    </p>
+                    <h3 className="text-2xl font-semibold tracking-tight text-white/95">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm leading-snug text-white/70">
+                      {item.teaser}
+                    </p>
+                    {isCtaDisabled ? (
+                      <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                        {item.cta}
+                      </span>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                      >
+                        {item.cta}
+                      </Link>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="grid gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content]"
+            className="hidden gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content] sm:grid"
           >
             <div className="w-full self-start h-fit flex flex-col">
               <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6 flex items-start">

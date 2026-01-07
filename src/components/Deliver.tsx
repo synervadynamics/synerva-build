@@ -87,7 +87,6 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
   const gradient = useMotionTemplate`radial-gradient(circle at 25% ${focusY}, rgba(64,148,178,0.24), transparent 55%)`;
   const [activeIndex, setActiveIndex] = useState(0);
   const deliverItems = copy.deliver.items as readonly DeliverItem[];
-  const mobileBeats = copy.deliver.mobile?.beats ?? [];
   const activeItem: DeliverItem = deliverItems[activeIndex] ?? deliverItems[0];
   const activeMediaSize = activeItem.video?.src
     ? mediaDimensions[activeItem.video.src]
@@ -97,9 +96,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
     : 16 / 9;
   const cardsRef = useRef<HTMLDivElement>(null);
   const mobileReadingContainerClasses =
-    "mx-auto w-full max-w-[26rem] px-5 sm:px-6";
-  const mobileBeatsWrapperClasses = "flex flex-col gap-6";
-  const mobileBeatClasses = "space-y-2";
+    "mx-auto w-full max-w-[28rem] px-4 sm:px-6";
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
@@ -149,24 +146,51 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
     <Section
       id="deliver"
       ref={setRefs}
-      className="relative px-6 pb-16 pt-10 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
+      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
     >
       <div className="relative mx-auto max-w-6xl space-y-6">
         {mobileVariant === "beats" ? (
           <>
             <div className="md:hidden">
               <div className={mobileReadingContainerClasses}>
-                <div className={mobileBeatsWrapperClasses}>
-                  {mobileBeats.map((beat) => (
-                    <div key={beat.heading} className={mobileBeatClasses}>
-                      <h2 className="text-xl font-light leading-snug text-white">
-                        {beat.heading}
-                      </h2>
-                      <p className="text-[0.95rem] leading-6 text-white/78">
-                        {beat.body}
-                      </p>
-                    </div>
-                  ))}
+                <div className="space-y-5">
+                  <h2 className="text-2xl font-light leading-snug text-white">
+                    {copy.deliver.heading}
+                  </h2>
+                  <div className="space-y-5">
+                    {deliverItems.map((item) => {
+                      const mediaSize = item.video?.src
+                        ? mediaDimensions[item.video.src]
+                        : undefined;
+                      return (
+                        <article
+                          key={item.title}
+                          className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.02] p-4 shadow-[0_20px_70px_-48px_rgba(0,0,0,0.75)]"
+                        >
+                          {item.video?.src ? (
+                            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                              <Image
+                                src={item.video.src}
+                                alt={item.video.label}
+                                width={mediaSize?.width ?? 1536}
+                                height={mediaSize?.height ?? 1024}
+                                className="aspect-[16/9] w-full object-cover"
+                                sizes="100vw"
+                              />
+                            </div>
+                          ) : null}
+                          <div className="space-y-2">
+                            <h3 className="text-xl font-light leading-snug text-white">
+                              {item.title}
+                            </h3>
+                            <p className="text-[0.95rem] leading-6 text-white/78">
+                              {item.text}
+                            </p>
+                          </div>
+                        </article>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
