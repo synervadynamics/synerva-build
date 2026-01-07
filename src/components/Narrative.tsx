@@ -18,9 +18,9 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
   const mobileBeats = story.mobile?.beats ?? [];
   const containerRef = useRef<HTMLDivElement>(null);
   const mobileReadingContainerClasses =
-    "mx-auto w-full max-w-[28rem] px-4 sm:px-6";
-  const mobileBeatsWrapperClasses = "flex flex-col gap-8";
-  const mobileBeatClasses = "space-y-3";
+    "mx-auto w-full max-w-[26rem] px-5 sm:px-6";
+  const mobileBeatsWrapperClasses = "flex flex-col gap-6";
+  const mobileBeatClasses = "space-y-2";
 
   useEffect(() => {
     if (mobileVariant === "beats") return;

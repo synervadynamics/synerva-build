@@ -97,9 +97,9 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
     : 16 / 9;
   const cardsRef = useRef<HTMLDivElement>(null);
   const mobileReadingContainerClasses =
-    "mx-auto w-full max-w-[28rem] px-4 sm:px-6";
-  const mobileBeatsWrapperClasses = "flex flex-col gap-8";
-  const mobileBeatClasses = "space-y-3";
+    "mx-auto w-full max-w-[26rem] px-5 sm:px-6";
+  const mobileBeatsWrapperClasses = "flex flex-col gap-6";
+  const mobileBeatClasses = "space-y-2";
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
