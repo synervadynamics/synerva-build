@@ -86,6 +86,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
   const gradient = useMotionTemplate`radial-gradient(circle at 25% ${focusY}, rgba(64,148,178,0.24), transparent 55%)`;
   const [activeIndex, setActiveIndex] = useState(0);
   const deliverItems = copy.deliver.items as readonly DeliverItem[];
+  const mobileBeats = copy.deliver.mobile?.beats ?? [];
   const activeItem: DeliverItem = deliverItems[activeIndex] ?? deliverItems[0];
   const activeMediaSize = activeItem.video?.src
     ? mediaDimensions[activeItem.video.src]
@@ -114,6 +115,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
   );
 
   useEffect(() => {
+    if (mobileVariant === "beats") return;
     if (shouldReduceMotion) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
@@ -146,15 +148,17 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col md:hidden">
-              {deliverItems.map((item) => (
+              {mobileBeats.map((beat) => (
                 <div
-                  key={item.title}
-                  className="flex min-h-[110svh] flex-col justify-center gap-6 py-14"
+                  key={beat.heading}
+                  className="flex min-h-[85svh] flex-col justify-center gap-5 py-12"
                 >
-                  <h2 className="text-2xl font-light leading-snug text-white">
-                    {item.title}
+                  <h2 className="text-xl font-light leading-snug text-white">
+                    {beat.heading}
                   </h2>
-                  <p className="text-base text-white/80">{item.text}</p>
+                  <p className="text-[0.95rem] leading-6 text-white/78">
+                    {beat.body}
+                  </p>
                 </div>
               ))}
             </div>

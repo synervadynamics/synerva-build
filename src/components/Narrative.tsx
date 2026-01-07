@@ -15,16 +15,11 @@ type NarrativeProps = {
 export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
   const shouldReduceMotion = useReducedMotion();
   const story = copy.story;
+  const mobileBeats = story.mobile?.beats ?? [];
   const containerRef = useRef<HTMLDivElement>(null);
-  const statementSentences = story.statement
-    .split(/(?<=\.)\s+/)
-    .map((sentence) => sentence.trim())
-    .filter(Boolean);
-  const diagnosisSentence = statementSentences[0] ?? story.statement;
-  const frictionSentence = statementSentences[1] ?? "";
-  const synervaSentence = statementSentences[2] ?? "";
 
   useEffect(() => {
+    if (mobileVariant === "beats") return;
     if (shouldReduceMotion) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
@@ -50,37 +45,19 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col lg:hidden">
-              <div className="flex min-h-[80svh] flex-col justify-center gap-4 pb-6 pt-10">
-                <h2
-                  data-type-compression="headline"
-                  data-type-compression-line-height="1.25"
-                  data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-[1.65rem] leading-tight [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em]"
+              {mobileBeats.map((beat) => (
+                <div
+                  key={beat.heading}
+                  className="flex min-h-[80svh] flex-col justify-center gap-4 py-10"
                 >
-                  {story.heading}
-                </h2>
-                <p
-                  data-type-compression="subhead"
-                  data-type-compression-line-height="1.45"
-                  data-type-compression-letter-spacing="0"
-                  className="text-[0.95rem] leading-6 text-white/78"
-                >
-                  {diagnosisSentence}
-                </p>
-              </div>
-              <div className="flex min-h-[80svh] flex-col justify-center gap-4 py-10">
-                <h3 className="text-lg font-light leading-snug text-white/85">
-                  {story.eyebrow}
-                </h3>
-                <p className="text-[0.95rem] leading-6 text-white/78">
-                  {frictionSentence}
-                </p>
-              </div>
-              <div className="flex min-h-[75svh] flex-col justify-center gap-3 py-8">
-                <h3 className="text-lg font-light leading-snug text-white/85">
-                  {synervaSentence}
-                </h3>
-              </div>
+                  <h2 className="text-xl font-light leading-snug text-white">
+                    {beat.heading}
+                  </h2>
+                  <p className="text-[0.95rem] leading-6 text-white/78">
+                    {beat.body}
+                  </p>
+                </div>
+              ))}
             </div>
             <div className="hidden flex-col gap-8 lg:flex">
               <div className="space-y-5">

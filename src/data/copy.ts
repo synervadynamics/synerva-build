@@ -58,6 +58,29 @@ export const copy = {
     statement:
       "Most teams don’t stall from lack of ambition. They stall from friction: process-heavy workflows, fragmented ownership, and coordination that resets progress. Synerva removes that drag by designing and executing work as one system—so decisions persist and momentum compounds.",
     proof: "",
+    mobile: {
+      beats: [
+        {
+          heading: "Fragmentation kills velocity.",
+          body:
+            "Most teams don’t stall from lack of ambition. They stall from friction: fragmented ownership, handoffs, and coordination that resets progress.",
+        },
+        {
+          heading: "Process replaces clarity when decisions don’t persist.",
+          body:
+            "When context resets, teams compensate with meetings, documentation, and approvals.",
+        },
+        {
+          heading: "Synerva replaces coordination with a single system.",
+          body:
+            "Work is designed and executed as one loop, so decisions persist instead of resetting.",
+        },
+        {
+          heading: "Momentum compounds instead of restarting.",
+          body: "Standards, intent, and direction hold across execution.",
+        },
+      ],
+    },
     bullets: [
       "Replace process-heavy coordination with a single adaptive system built for speed.",
       "Convert manual, ad-hoc work into automation guided by judgment.",
@@ -588,6 +611,30 @@ export const copy = {
   deliver: {
     heading: "What’s Delivered",
     intro: "",
+    mobile: {
+      beats: [
+        {
+          heading: "Direction comes before execution.",
+          body:
+            "Complexity is reduced until priorities, tradeoffs, and next actions are clear enough to move on without hesitation.",
+        },
+        {
+          heading: "Execution moves as one coherent system.",
+          body:
+            "Strategy, writing, design, web, and automation operate as a single loop, without translation or rework.",
+        },
+        {
+          heading: "The work produces durable assets.",
+          body:
+            "These outputs continue to support decisions long after delivery instead of expiring as documentation.",
+        },
+        {
+          heading: "Experienced judgment, without organizational drag.",
+          body:
+            "Work moves calmly and decisively, even when scope and stakes are real.",
+        },
+      ],
+    },
     items: [
       {
         title: "Strategic Direction",
