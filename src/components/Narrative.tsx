@@ -43,7 +43,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
   return (
     <section
       id="narrative"
-      className="relative px-4 pb-8 pt-8 sm:px-10 sm:pb-20 sm:pt-14 lg:px-16 lg:pb-20 lg:pt-16"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-14 lg:px-16 lg:pb-20 lg:pt-16"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         {mobileVariant === "beats" ? (

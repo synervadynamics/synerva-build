@@ -18,7 +18,7 @@ export const Merch = () => {
   return (
     <section
       id="merch"
-      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 text-white sm:gap-10">
         <div className="grid gap-6 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
@@ -44,7 +44,7 @@ export const Merch = () => {
                 {merch.microline}
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
               <Link
                 href={merch.ctas.primary.href}
                 className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
@@ -80,7 +80,7 @@ export const Merch = () => {
                   className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.03] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
                 >
                   <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                    <div className="relative aspect-[4/3] w-full">
+                    <div className="relative aspect-[4/3] w-full max-h-[40vh] sm:max-h-none">
                       <Image
                         src={card.previewImage}
                         alt={`${card.title} preview`}

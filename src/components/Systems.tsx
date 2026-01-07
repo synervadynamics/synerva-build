@@ -28,31 +28,31 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
   return (
     <section
       id="systems"
-      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto max-w-6xl space-y-6 text-white">
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col md:hidden">
-              <div className="flex flex-col justify-start gap-4 pb-5 pt-6 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:pb-8 sm:pt-10">
+              <div className="flex flex-col justify-start gap-4 pb-3 pt-4 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:pb-8 sm:pt-10">
                 <h2 className="text-2xl font-light leading-snug text-white">
                   {sentenceA}
                 </h2>
                 <p className="text-base text-white/80">{sentenceB}</p>
               </div>
-              <div className="flex flex-col justify-start gap-4 py-6 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
+              <div className="flex flex-col justify-start gap-4 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
                 <h3 className="text-xl font-light leading-snug text-white/90">
                   {sentenceC}
                 </h3>
                 <p className="text-base text-white/75">{sentenceD}</p>
               </div>
-              <div className="flex flex-col justify-start gap-4 py-6 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
+              <div className="flex flex-col justify-start gap-4 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
                 <h3 className="text-xl font-light leading-snug text-white/90">
                   {sentenceE}
                 </h3>
                 <p className="text-base text-white/75">{sentenceF}</p>
               </div>
-              <div className="flex flex-col justify-start gap-3 py-6 sm:min-h-[100svh] sm:justify-center sm:gap-4 sm:py-12">
+              <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-4 sm:py-12">
                 <p className="text-xs uppercase tracking-[0.4em] text-white/60">
                   {sectionCopy.eyebrow}
                 </p>
@@ -115,7 +115,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                       <p className="mt-3 text-sm text-white/55 sm:mt-4">
                         {card.status}
                       </p>
-                      <ul className="mt-4 space-y-1.5 text-sm text-white/75 sm:mt-5 sm:space-y-2">
+                      <ul className="mt-4 space-y-1 text-sm text-white/75 sm:mt-5 sm:space-y-1.5">
                         {card.bullets.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <span className="mt-2 h-1 w-6 rounded-full bg-white/40" />
@@ -192,7 +192,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                     <p className="mt-3 text-sm text-white/55 sm:mt-4">
                       {card.status}
                     </p>
-                    <ul className="mt-4 space-y-1.5 text-sm text-white/75 sm:mt-5 sm:space-y-2">
+                    <ul className="mt-4 space-y-1 text-sm text-white/75 sm:mt-5 sm:space-y-1.5">
                       {card.bullets.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <span className="mt-2 h-1 w-6 rounded-full bg-white/40" />

@@ -146,7 +146,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
     <Section
       id="deliver"
       ref={setRefs}
-      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
     >
       <div className="relative mx-auto max-w-6xl space-y-6">
         {mobileVariant === "beats" ? (
@@ -168,13 +168,13 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                           className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.02] p-4 shadow-[0_20px_70px_-48px_rgba(0,0,0,0.75)]"
                         >
                           {item.video?.src ? (
-                            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                            <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] md:max-h-none">
                               <Image
                                 src={item.video.src}
                                 alt={item.video.label}
                                 width={mediaSize?.width ?? 1536}
                                 height={mediaSize?.height ?? 1024}
-                                className="aspect-[16/9] w-full object-cover"
+                              className="aspect-[16/9] w-full object-cover max-h-[40vh] md:max-h-none"
                                 sizes="100vw"
                               />
                             </div>
@@ -230,7 +230,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                       onMouseEnter={() => setActiveIndex(index)}
                       onFocus={() => setActiveIndex(index)}
                       tabIndex={0}
-                      className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                      className={`deliver-card bubble-drift deliver-clean group flex min-h-0 sm:min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
                         activeIndex === index
                           ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
                           : ""
@@ -368,7 +368,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                     onMouseEnter={() => setActiveIndex(index)}
                     onFocus={() => setActiveIndex(index)}
                     tabIndex={0}
-                    className={`deliver-card bubble-drift deliver-clean group flex min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
+                  className={`deliver-card bubble-drift deliver-clean group flex min-h-0 sm:min-h-[200px] flex-col gap-4 rounded-3xl border border-white/12 bg-transparent p-5 shadow-[0_30px_120px_-70px_rgba(0,0,0,0.82)] transition ${
                       activeIndex === index
                         ? "border-white/30 shadow-[0_42px_130px_-70px_rgba(0,0,0,0.8)]"
                         : ""

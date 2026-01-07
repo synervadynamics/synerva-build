@@ -21,7 +21,7 @@ export const Publications = () => {
   return (
     <section
       id="publications"
-      className="relative px-4 py-6 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
+      className="relative px-4 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
     >
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 text-white">
@@ -60,7 +60,7 @@ export const Publications = () => {
                       alt={item.image.alt}
                       width={1024}
                       height={1536}
-                      className="block h-auto w-full object-cover object-top"
+                      className="block h-auto w-full object-cover object-top max-h-[40vh] sm:max-h-none"
                       sizes="100vw"
                     />
                   </div>

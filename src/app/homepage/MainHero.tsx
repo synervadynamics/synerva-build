@@ -41,14 +41,14 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
     <section
       id="hero"
       ref={ref}
-      className="relative isolate px-4 pb-4 pt-8 sm:min-h-screen sm:px-10 sm:pb-10 sm:pt-16 lg:px-16 lg:pb-10 lg:pt-20"
+      className="relative isolate px-4 pb-4 pt-4 min-h-0 sm:min-h-screen sm:px-10 sm:pb-10 sm:pt-16 lg:px-16 lg:pb-10 lg:pt-20"
       suppressHydrationWarning
     >
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         {mobileVariant === "beats" ? (
           <>
             <div className="flex flex-col lg:hidden">
-              <div className="flex flex-col justify-start gap-3 pb-3 pt-6 sm:min-h-[80svh] sm:justify-center sm:gap-4 sm:pb-6 sm:pt-10">
+              <div className="flex flex-col justify-start gap-3 pb-2 pt-4 min-h-0 sm:min-h-[80svh] sm:justify-center sm:gap-4 sm:pb-6 sm:pt-10">
                 <p className="text-[0.65rem] uppercase tracking-[0.5em] text-white/60">
                   {copy.hero.eyebrow}
                 </p>
@@ -65,7 +65,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   ))}
                 </h1>
               </div>
-              <div className="flex flex-col justify-start gap-3 py-6 sm:min-h-[80svh] sm:justify-center sm:gap-4 sm:py-10">
+              <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[80svh] sm:justify-center sm:gap-4 sm:py-10">
                 <h2
                   data-type-compression="headline"
                   data-type-compression-line-height="1.1"
@@ -90,7 +90,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   {copy.hero.primaryCta.label}
                 </Link>
               </div>
-              <div className="flex flex-col justify-start gap-3 py-5 sm:min-h-[70svh] sm:justify-center sm:py-8">
+              <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[70svh] sm:justify-center sm:py-8">
                 <h2
                   data-type-compression="headline"
                   data-type-compression-line-height="1.2"

@@ -34,7 +34,7 @@ export const Offerings = () => {
   return (
     <section
       id="offerings"
-      className="relative px-4 pb-10 pt-8 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         <div className="contrast-field space-y-4">
@@ -72,16 +72,16 @@ export const Offerings = () => {
             return (
               <div
                 key={card.title}
-                className="flex h-full flex-col gap-3 rounded-[2rem] border border-white/12 bg-transparent p-4 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-4 sm:p-5"
+                className="flex h-full flex-col gap-2 rounded-[2rem] border border-white/12 bg-transparent p-3 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-3 sm:p-5"
               >
                 {media ? (
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
                     <Image
                       src={media.src}
                       alt={media.alt}
                       width={media.width}
                       height={media.height}
-                      className="h-auto w-full object-cover"
+                      className="h-auto w-full object-cover max-h-[40vh] sm:max-h-none"
                       sizes="(max-width: 1024px) 100vw, 33vw"
                     />
                   </div>
