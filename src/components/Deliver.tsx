@@ -75,6 +75,7 @@ type DeliverProps = {
 };
 
 export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
+  const isMobileBeats = mobileVariant === "beats";
   const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -95,6 +96,10 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
     ? activeMediaSize.width / activeMediaSize.height
     : 16 / 9;
   const cardsRef = useRef<HTMLDivElement>(null);
+  const mobileReadingContainerClasses =
+    "mx-auto w-full max-w-[28rem] px-4 sm:px-6";
+  const mobileBeatsWrapperClasses = "flex flex-col gap-8";
+  const mobileBeatClasses = "space-y-3";
 
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 40 },
@@ -131,15 +136,17 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
       });
     }, cardsRef);
     return () => ctx.revert();
-  }, [shouldReduceMotion]);
+  }, [mobileVariant, shouldReduceMotion]);
 
   const setRefs = (node: HTMLElement | null) => {
     ref(node);
     sectionRef.current = node;
   };
 
+  const Section = isMobileBeats ? "section" : motion.section;
+
   return (
-    <motion.section
+    <Section
       id="deliver"
       ref={setRefs}
       className="relative px-6 pb-16 pt-10 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
@@ -147,20 +154,21 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
       <div className="relative mx-auto max-w-6xl space-y-6">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col md:hidden">
-              {mobileBeats.map((beat) => (
-                <div
-                  key={beat.heading}
-                  className="flex min-h-[85svh] flex-col justify-center gap-5 py-12"
-                >
-                  <h2 className="text-xl font-light leading-snug text-white">
-                    {beat.heading}
-                  </h2>
-                  <p className="text-[0.95rem] leading-6 text-white/78">
-                    {beat.body}
-                  </p>
+            <div className="md:hidden">
+              <div className={mobileReadingContainerClasses}>
+                <div className={mobileBeatsWrapperClasses}>
+                  {mobileBeats.map((beat) => (
+                    <div key={beat.heading} className={mobileBeatClasses}>
+                      <h2 className="text-xl font-light leading-snug text-white">
+                        {beat.heading}
+                      </h2>
+                      <p className="text-[0.95rem] leading-6 text-white/78">
+                        {beat.body}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
             <div className="hidden md:block">
               <header className="contrast-field max-w-4xl space-y-4 text-white">
@@ -438,6 +446,6 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
           </>
         )}
       </div>
-    </motion.section>
+    </Section>
   );
 };

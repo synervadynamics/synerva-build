@@ -17,6 +17,10 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
   const story = copy.story;
   const mobileBeats = story.mobile?.beats ?? [];
   const containerRef = useRef<HTMLDivElement>(null);
+  const mobileReadingContainerClasses =
+    "mx-auto w-full max-w-[28rem] px-4 sm:px-6";
+  const mobileBeatsWrapperClasses = "flex flex-col gap-8";
+  const mobileBeatClasses = "space-y-3";
 
   useEffect(() => {
     if (mobileVariant === "beats") return;
@@ -34,7 +38,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
       });
     }, containerRef);
     return () => ctx.revert();
-  }, [shouldReduceMotion]);
+  }, [mobileVariant, shouldReduceMotion]);
 
   return (
     <section
@@ -44,20 +48,21 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         {mobileVariant === "beats" ? (
           <>
-            <div className="flex flex-col lg:hidden">
-              {mobileBeats.map((beat) => (
-                <div
-                  key={beat.heading}
-                  className="flex min-h-[80svh] flex-col justify-center gap-4 py-10"
-                >
-                  <h2 className="text-xl font-light leading-snug text-white">
-                    {beat.heading}
-                  </h2>
-                  <p className="text-[0.95rem] leading-6 text-white/78">
-                    {beat.body}
-                  </p>
+            <div className="lg:hidden">
+              <div className={mobileReadingContainerClasses}>
+                <div className={mobileBeatsWrapperClasses}>
+                  {mobileBeats.map((beat) => (
+                    <div key={beat.heading} className={mobileBeatClasses}>
+                      <h2 className="text-xl font-light leading-snug text-white">
+                        {beat.heading}
+                      </h2>
+                      <p className="text-[0.95rem] leading-6 text-white/78">
+                        {beat.body}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
             <div className="hidden flex-col gap-8 lg:flex">
               <div className="space-y-5">

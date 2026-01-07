@@ -13,15 +13,21 @@ import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection"
 import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
 
-export default function BackupHomepage3() {
+type BackupHomepage3Props = {
+  mobileVariant?: "default" | "beats";
+};
+
+export default function BackupHomepage3({
+  mobileVariant = "beats",
+}: BackupHomepage3Props) {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
       <div className="relative z-10">
         <ScrollProgress />
         <MainHero mobileVariant="beats" />
-        <Narrative mobileVariant="beats" />
+        <Narrative mobileVariant={mobileVariant} />
         <Offerings />
-        <Deliver mobileVariant="beats" />
+        <Deliver mobileVariant={mobileVariant} />
         <Systems />
         <Publications />
         <Labs variant="signup-only" />
