@@ -75,11 +75,6 @@ export const merchV1Categories: MerchCategory[] = [
         imageSrc: "/merch-v1/deadbolt.png",
         alt: "Synerva Essentials shirt mockup: Deadbolt",
       },
-      {
-        name: "Weightless Resolve",
-        imageSrc: "/merch-v1/weightless-resolve.png",
-        alt: "Synerva Essentials shirt mockup: Weightless Resolve",
-      },
     ],
   },
   {
