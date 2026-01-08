@@ -63,7 +63,7 @@ export const DeliveredPanels = () => (
         style={
           {
             "--bg": "url('https://files.catbox.moe/p3wb1k.png')",
-            "--text-offset": "calc(50% - 9.5rem)"
+            "--text-offset": "30vh"
           } as CSSProperties
         }
       >
