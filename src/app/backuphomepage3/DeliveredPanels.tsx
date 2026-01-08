@@ -100,7 +100,7 @@ export const DeliveredPanels = () => {
       />
       <section
         className="delivered-panel"
-        style={{ "--bg": "url('https://files.catbox.moe/vyddj2.png')" } as CSSProperties}
+        style={{ "--bg": "url('https://files.catbox.moe/p3wb1k.png')" } as CSSProperties}
       >
         <div className="image-layer"></div>
         <div className="content">
