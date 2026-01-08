@@ -57,13 +57,13 @@ export const DeliveredPanels = () => (
       });
     `}</Script>
 
-    <section id="deliver" className="delivered-wrap">
+    <section className="delivered-wrap">
       <section
         className="delivered-panel contained"
         style={
           {
             "--bg": "url('https://files.catbox.moe/p3wb1k.png')",
-            "--text-offset": "26vh"
+            "--text-offset": "41vh"
           } as CSSProperties
         }
       >
@@ -138,7 +138,7 @@ export const DeliveredPanels = () => (
         style={
           {
             "--bg": "url('https://files.catbox.moe/4bhxrn.png')",
-            "--text-offset": "28vh"
+            "--text-offset": "41vh"
           } as CSSProperties
         }
       >
@@ -235,7 +235,6 @@ export const DeliveredPanels = () => (
         height: 82vh;
         border-radius: 28px;
         overflow: hidden;
-        background: #0b0c0e;
       }
 
       .image-layer {
