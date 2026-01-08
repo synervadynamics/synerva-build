@@ -1,5 +1,5 @@
 import { About } from "@/components/About";
-import { Deliver } from "@/components/Deliver";
+import { DeliveredPanels } from "@/app/backuphomepage3/DeliveredPanels";
 import { Footer } from "@/components/Footer";
 import { Labs } from "@/components/Labs";
 import { Merch } from "@/components/Merch";
@@ -21,13 +21,13 @@ export default function BackupHomepage3({
   mobileVariant = "beats",
 }: BackupHomepage3Props) {
   return (
-    <main className="relative text-white backuphomepage backuphomepage-variant">
+    <main className="relative text-white backuphomepage backuphomepage-variant backuphomepage3">
       <div className="relative z-10">
         <ScrollProgress />
         <MainHero mobileVariant="beats" />
         <Narrative mobileVariant={mobileVariant} />
         <Offerings />
-        <Deliver mobileVariant={mobileVariant} />
+        <DeliveredPanels />
         <Systems />
         <Publications />
         <Labs variant="signup-only" />
