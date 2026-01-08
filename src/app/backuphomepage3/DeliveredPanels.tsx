@@ -133,6 +133,72 @@ export const DeliveredPanels = () => (
           </div>
         </div>
       </section>
+
+      <section
+        className="delivered-panel contained"
+        style={
+          {
+            "--bg": "url('https://files.catbox.moe/4bhxrn.png')",
+            "--text-offset": "41vh"
+          } as CSSProperties
+        }
+      >
+        <div className="panel-frame">
+          <div className="image-layer"></div>
+          <div className="content">
+            <div className="text-block gs-reveal">
+              <h2>Durable Assets</h2>
+              <p>
+                The work produces assets you continue to use. These are not
+                summaries or presentations, but tools that clarify thinking and
+                support decisions long after delivery.
+              </p>
+              <p className="bridge">Value accumulates instead of expiring.</p>
+              <p>Every engagement leaves behind usable systems and language.</p>
+              <ul>
+                <li>reusable frameworks</li>
+                <li>stable decision language</li>
+                <li>systems that retain value</li>
+                <li>less dependence on outside interpretation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="delivered-panel contained"
+        style={
+          {
+            "--bg": "url('https://files.catbox.moe/m5ysd0.png')",
+            "--text-offset": "31vh"
+          } as CSSProperties
+        }
+      >
+        <div className="panel-frame">
+          <div className="image-layer"></div>
+          <div className="content">
+            <div className="text-block gs-reveal">
+              <h2>Operating Judgment</h2>
+              <p>
+                You engage experienced judgment without the overhead that usually
+                comes with it.
+              </p>
+              <p>
+                Work moves calmly and decisively, even when scope and stakes are
+                real.
+              </p>
+              <p className="bridge">Judgment replaces coordination overhead.</p>
+              <ul className="quiet-list">
+                <li>fewer explanations and resets</li>
+                <li>faster movement without shortcuts</li>
+                <li>decisions made once</li>
+                <li>composed execution under constraint</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <style jsx global>{`
