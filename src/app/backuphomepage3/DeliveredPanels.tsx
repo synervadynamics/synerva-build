@@ -71,134 +71,143 @@ export const DeliveredPanels = () => (
       });
     `}</Script>
 
-    <section
-      className="delivered-panel"
-      style={{ "--bg": "url('https://files.catbox.moe/p3wb1k.png')" } as CSSProperties}
-    >
-      <div className="image-layer"></div>
-      <div className="content">
-        <div className="text-block gs-reveal">
-          <h2>Strategic Direction</h2>
+      <section className="delivered-panel">
+        <div
+          className="panel-frame"
+          style={{ "--bg": "url('https://files.catbox.moe/p3wb1k.png')" } as CSSProperties}
+        >
+          <div className="image-layer"></div>
+          <div className="content">
+            <div className="text-block gs-reveal">
+              <h2>Strategic Direction</h2>
 
-          <p>
-            This work establishes clear direction before execution begins.
-            Complexity is reduced until priorities, tradeoffs, and next actions
-            are obvious enough to move on without hesitation.
-          </p>
+              <p>
+                This work establishes clear direction before execution begins.
+                Complexity is reduced until priorities, tradeoffs, and next
+                actions are obvious enough to move on without hesitation.
+              </p>
 
-          <p>
-            Decisions are shaped to survive real conditions, not idealized plans.
-          </p>
+              <p>
+                Decisions are shaped to survive real conditions, not idealized
+                plans.
+              </p>
 
-          <p className="bridge">
-            Strategy here is about reducing complexity until the path forward
-            becomes defensible and executable.
-          </p>
+              <p className="bridge">
+                Strategy here is about reducing complexity until the path forward
+                becomes defensible and executable.
+              </p>
 
-          <ul className="quiet-list">
-            <li>what matters versus what can be ignored</li>
-            <li>where effort compounds and where it leaks</li>
-            <li>tradeoffs made explicit</li>
-            <li>actions that can begin immediately</li>
-          </ul>
+              <ul className="quiet-list">
+                <li>what matters versus what can be ignored</li>
+                <li>where effort compounds and where it leaks</li>
+                <li>tradeoffs made explicit</li>
+                <li>actions that can begin immediately</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="delivered-panel">
+        <div
+          className="panel-frame"
+          style={{ "--bg": "url('https://files.catbox.moe/sa9fgc.png')" } as CSSProperties}
+        >
+          <div className="image-layer"></div>
+          <div className="content">
+            <div className="text-block gs-reveal">
+              <h2>Integrated Execution</h2>
+
+              <p>
+                Execution is treated as a single, connected system rather than a
+                set of parallel efforts.
+              </p>
+
+              <p>
+                Work moves coherently across brand, content, web, and automation
+                without translation or rework.
+              </p>
+
+              <p className="bridge">
+                Execution is designed so decisions propagate cleanly across the
+                system.
+              </p>
+
+              <ul className="quiet-list">
+                <li>workflows that move together</li>
+                <li>assets built to reinforce each other</li>
+                <li>fewer resets and handoffs</li>
+                <li>compounding forward motion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section className="delivered-panel">
+      <div
+        className="panel-frame"
+        style={{ "--bg": "url('https://files.catbox.moe/ggb49t.png')" } as CSSProperties}
+      >
+        <div className="image-layer"></div>
+        <div className="content">
+          <div className="text-block gs-reveal">
+            <h2>Durable Assets</h2>
+
+            <p>
+              The work produces assets you continue to use. These are not
+              summaries or presentations, but tools that clarify thinking and
+              support decisions long after delivery.
+            </p>
+
+            <p className="bridge">
+              Value accumulates instead of expiring.
+            </p>
+
+            <p>
+              Every engagement leaves behind usable systems and language.
+            </p>
+
+            <ul>
+              <li>reusable frameworks</li>
+              <li>stable decision language</li>
+              <li>systems that retain value</li>
+              <li>less dependence on outside interpretation</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section
-      className="delivered-panel"
-      style={{ "--bg": "url('https://files.catbox.moe/sa9fgc.png')" } as CSSProperties}
-    >
-      <div className="image-layer"></div>
-      <div className="content">
-        <div className="text-block gs-reveal">
-          <h2>Integrated Execution</h2>
+    <section className="delivered-panel">
+      <div
+        className="panel-frame"
+        style={{ "--bg": "url('https://files.catbox.moe/m5ysd0.png')" } as CSSProperties}
+      >
+        <div className="image-layer"></div>
+        <div className="content">
+          <div className="text-block gs-reveal">
+            <h2>Operating Judgment</h2>
 
-          <p>
-            Execution is treated as a single, connected system rather than a set
-            of parallel efforts.
-          </p>
+            <p>
+              You engage experienced judgment without the overhead that usually
+              comes with it.
+            </p>
 
-          <p>
-            Work moves coherently across brand, content, web, and automation
-            without translation or rework.
-          </p>
+            <p>
+              Work moves calmly and decisively, even when scope and stakes are
+              real.
+            </p>
 
-          <p className="bridge">
-            Execution is designed so decisions propagate cleanly across the system.
-          </p>
+            <p className="bridge">Judgment replaces coordination overhead.</p>
 
-          <ul className="quiet-list">
-            <li>workflows that move together</li>
-            <li>assets built to reinforce each other</li>
-            <li>fewer resets and handoffs</li>
-            <li>compounding forward motion</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section
-      className="delivered-panel"
-      style={{ "--bg": "url('https://files.catbox.moe/ggb49t.png')" } as CSSProperties}
-    >
-      <div className="image-layer"></div>
-      <div className="content">
-        <div className="text-block gs-reveal">
-          <h2>Durable Assets</h2>
-
-          <p>
-            The work produces assets you continue to use. These are not summaries
-            or presentations, but tools that clarify thinking and support decisions
-            long after delivery.
-          </p>
-
-          <p className="bridge">
-            Value accumulates instead of expiring.
-          </p>
-
-          <p>
-            Every engagement leaves behind usable systems and language.
-          </p>
-
-          <ul>
-            <li>reusable frameworks</li>
-            <li>stable decision language</li>
-            <li>systems that retain value</li>
-            <li>less dependence on outside interpretation</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section
-      className="delivered-panel"
-      style={{ "--bg": "url('https://files.catbox.moe/m5ysd0.png')" } as CSSProperties}
-    >
-      <div className="image-layer"></div>
-      <div className="content">
-        <div className="text-block gs-reveal">
-          <h2>Operating Judgment</h2>
-
-          <p>
-            You engage experienced judgment without the overhead that usually
-            comes with it.
-          </p>
-
-          <p>
-            Work moves calmly and decisively, even when scope and stakes are real.
-          </p>
-
-          <p className="bridge">
-            Judgment replaces coordination overhead.
-          </p>
-
-          <ul className="quiet-list">
-            <li>fewer explanations and resets</li>
-            <li>faster movement without shortcuts</li>
-            <li>decisions made once</li>
-            <li>composed execution under constraint</li>
-          </ul>
+            <ul className="quiet-list">
+              <li>fewer explanations and resets</li>
+              <li>faster movement without shortcuts</li>
+              <li>decisions made once</li>
+              <li>composed execution under constraint</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -231,12 +240,24 @@ export const DeliveredPanels = () => (
 
       .delivered-panel {
         position: relative;
-        height: 120vh;
+        height: 100vh;
         background: #0b0c0e;
         overflow: hidden;
       }
 
-      .image-layer {
+      .panel-frame {
+        position: absolute;
+        top: clamp(1.5rem, 3vw, 3rem);
+        bottom: clamp(1.5rem, 3vw, 3rem);
+        left: clamp(1rem, 2vw, 2.5rem);
+        right: clamp(1rem, 2vw, 2.5rem);
+        max-width: clamp(960px, 92vw, 1200px);
+        margin-inline: auto;
+        border-radius: clamp(1rem, 2vw, 1.5rem);
+        overflow: hidden;
+      }
+
+      .panel-frame .image-layer {
         position: absolute;
         inset: 0;
         background-image: var(--bg);
@@ -245,7 +266,7 @@ export const DeliveredPanels = () => (
         background-repeat: no-repeat;
       }
 
-      .content {
+      .panel-frame .content {
         position: relative;
         z-index: 1;
         padding-top: 31vh;
@@ -253,7 +274,7 @@ export const DeliveredPanels = () => (
         padding-right: 2rem;
       }
 
-      .text-block {
+      .panel-frame .text-block {
         max-width: 42ch;
       }
 
@@ -261,37 +282,37 @@ export const DeliveredPanels = () => (
       /* TYPOGRAPHY                                                                  */
       /* -------------------------------------------------------------------------- */
 
-      h2 {
+      .panel-frame h2 {
         font-size: clamp(2.25rem, 3.4vw, 3.05rem);
         font-weight: 400;
         margin-bottom: 1.4rem;
       }
 
-      p {
+      .panel-frame p {
         margin-bottom: 0.9rem;
         color: #d6d7db;
         font-weight: 400;
       }
 
-      .bridge {
+      .panel-frame .bridge {
         margin-top: 1.5rem;
         font-weight: 500;
         color: #e7e7ea;
       }
 
-      ul {
+      .panel-frame ul {
         list-style: disc;
         padding-left: 1.1rem;
         margin-top: 1.75rem;
       }
 
-      li {
+      .panel-frame li {
         margin-bottom: 0.35rem;
         color: #c7cad2;
         font-weight: 400;
       }
 
-      .quiet-list li {
+      .panel-frame .quiet-list li {
         color: #bfc3cc;
       }
     `}</style>
