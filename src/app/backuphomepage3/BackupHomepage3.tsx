@@ -12,6 +12,14 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+
+const backgroundSources = [
+  "/jan-4-new-background-transition/v8/1.png",
+  "/jan-4-new-background-transition/v8/2.png",
+  "/jan-4-new-background-transition/v8/3.png",
+  "/jan-4-new-background-transition/v8/4.png",
+];
 
 type BackupHomepage3Props = {
   mobileVariant?: "default" | "beats";
@@ -22,6 +30,8 @@ export default function BackupHomepage3({
 }: BackupHomepage3Props) {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant backuphomepage3">
+      <ScrollMorphBackground imageSources={backgroundSources} />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
         <MainHero mobileVariant="beats" />
