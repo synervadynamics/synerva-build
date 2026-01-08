@@ -228,7 +228,7 @@ export const DeliveredPanels = () => {
 
         .backuphomepage3 .delivered-panel {
           position: relative;
-          height: 120vh;
+          height: 100vh;
           background: #0b0c0e;
           overflow: hidden;
         }
