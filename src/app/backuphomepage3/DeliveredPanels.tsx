@@ -29,19 +29,19 @@ export const DeliveredPanels = () => (
       const TRAVEL_DISTANCE = 450;
 
       // -----------------------------------------------------------------------------
-      // DIRECTION-SAFE ENTRY ANIMATION (REUSED CANONICAL PATTERN)
+      // DIRECTION-SAFE ENTRY ANIMATION (CANONICAL, RESTING TRANSFORM CLEARED)
+      // IMPORTANT: trigger is the framed visual panel to prevent direction inversion.
       // -----------------------------------------------------------------------------
 
       gsap.utils.toArray(".delivered-panel").forEach(section => {
+        const frame = section.querySelector(".panel-frame");
         const text = section.querySelector(".gs-reveal");
 
-        gsap.set(text, {
-          autoAlpha: 1,
-          clearProps: "transform"
-        });
+        // Ensure no leftover transforms ever persist
+        gsap.set(text, { autoAlpha: 1, clearProps: "transform" });
 
         ScrollTrigger.create({
-          trigger: section,
+          trigger: frame,
           start: "top 75%",
           end: "bottom 25%",
 
@@ -50,10 +50,9 @@ export const DeliveredPanels = () => (
 
             gsap.killTweensOf(text);
 
-            const fromY =
-              self.direction === 1
-                ? TRAVEL_DISTANCE
-                : -TRAVEL_DISTANCE;
+            // direction === 1 means scrolling down
+            // Start BELOW and move UP into position
+            const fromY = self.direction === 1 ? TRAVEL_DISTANCE : -TRAVEL_DISTANCE;
 
             gsap.set(text, { y: fromY });
 
@@ -63,6 +62,7 @@ export const DeliveredPanels = () => (
               ease: "power3.out",
               overwrite: "auto",
               onComplete: () => {
+                // Critical: restore pure CSS resting state
                 gsap.set(text, { clearProps: "transform" });
               }
             });
@@ -241,20 +241,20 @@ export const DeliveredPanels = () => (
       .delivered-panel {
         position: relative;
         height: 100vh;
-        background: #0b0c0e;
-        overflow: hidden;
+        background: transparent;
+        display: grid;
+        place-items: center;
+        padding: clamp(1.5rem, 4vh, 3rem) clamp(1.25rem, 4vw, 3.25rem);
+        overflow: visible;
       }
 
       .panel-frame {
-        position: absolute;
-        top: clamp(1.5rem, 3vw, 3rem);
-        bottom: clamp(1.5rem, 3vw, 3rem);
-        left: clamp(1rem, 2vw, 2.5rem);
-        right: clamp(1rem, 2vw, 2.5rem);
-        max-width: clamp(960px, 92vw, 1200px);
-        margin-inline: auto;
-        border-radius: clamp(1rem, 2vw, 1.5rem);
+        position: relative;
+        width: min(1400px, 100%);
+        height: min(84vh, 860px);
+        border-radius: 44px;
         overflow: hidden;
+        background: #0b0c0e;
       }
 
       .panel-frame .image-layer {
@@ -269,8 +269,8 @@ export const DeliveredPanels = () => (
       .panel-frame .content {
         position: relative;
         z-index: 1;
-        padding-top: 31vh;
-        padding-left: clamp(4rem, 8vw, 12rem);
+        padding-top: clamp(210px, 28vh, 310px);
+        padding-left: clamp(3rem, 6vw, 7.5rem);
         padding-right: 2rem;
       }
 
