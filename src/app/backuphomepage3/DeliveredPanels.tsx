@@ -57,7 +57,7 @@ export const DeliveredPanels = () => (
       });
     `}</Script>
 
-    <section className="delivered-wrap">
+    <section id="deliver" className="delivered-wrap">
       <section
         className="delivered-panel contained"
         style={
@@ -235,6 +235,7 @@ export const DeliveredPanels = () => (
         height: 82vh;
         border-radius: 28px;
         overflow: hidden;
+        background: #0b0c0e;
       }
 
       .image-layer {
