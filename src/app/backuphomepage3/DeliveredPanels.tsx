@@ -220,6 +220,10 @@ export const DeliveredPanels = () => (
       .quiet-list li {
         color: #bfc3cc;
       }
+
+      .quiet-list {
+        list-style: disc;
+      }
     `}</style>
   </>
 );
