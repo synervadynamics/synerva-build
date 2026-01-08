@@ -63,7 +63,8 @@ export const DeliveredPanels = () => (
         style={
           {
             "--bg": "url('https://files.catbox.moe/p3wb1k.png')",
-            "--text-offset": "30vh"
+            "--text-offset": "50%",
+            "--text-shift": "-50%"
           } as CSSProperties
         }
       >
@@ -182,6 +183,7 @@ export const DeliveredPanels = () => (
         padding-top: var(--text-offset);
         padding-left: clamp(4rem, 8vw, 12rem);
         padding-right: 2rem;
+        transform: translateY(var(--text-shift, 0));
       }
 
       .text-block {
