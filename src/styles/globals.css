@@ -964,3 +964,18 @@
 .wd-text {
   will-change: transform, opacity;
 }
+
+/* ===============================
+   WHAT’S DELIVERED – SCROLL GAP FIX
+================================ */
+
+.wd-panel {
+  position: relative;
+  min-height: auto;
+}
+
+.wd-text {
+  position: relative;
+  transform: translateY(0);
+  will-change: transform, opacity;
+}
