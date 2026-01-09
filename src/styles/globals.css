@@ -882,27 +882,11 @@
     text-transform: uppercase;
     opacity: 0.9;
   }
-
-  /* ENSURE NO GAP BEFORE EXISTING HERO */
-  #synerva-scroll-hero + section {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
 }
 
 /* ===============================
    SYNERVA FORCED SCROLL HERO
 ================================ */
-
-#synerva-scroll-hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-  transform: none !important;
-}
 
 .scroll-hero-inner {
   position: relative;
@@ -942,16 +926,6 @@
   color: white;
 }
 
-/* ZERO GAP GUARANTEE */
-#synerva-scroll-hero + section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#synerva-scroll-hero .hero-image:first-child {
-  opacity: 1;
-}
-
 /* ===============================
    WHAT’S DELIVERED SCROLL FIX
 ================================ */
@@ -972,6 +946,21 @@
 .wd-panel {
   position: relative;
   min-height: auto;
+}
+
+.wd-text {
+  position: relative;
+  transform: translateY(0);
+  will-change: transform, opacity;
+}
+
+/* =========================================
+   WHAT’S DELIVERED — SCROLL TEXT STABILITY
+========================================= */
+
+.wd-panel {
+  position: relative;
+  overflow: visible;
 }
 
 .wd-text {

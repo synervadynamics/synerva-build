@@ -6,19 +6,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TRAVEL_DISTANCE = 180;
+const TRAVEL_DISTANCE = 160;
 
 export default function WhatsDeliveredScroll() {
   useEffect(() => {
     const panels = document.querySelectorAll<HTMLElement>(".wd-panel");
-
     const triggers: ScrollTrigger[] = [];
 
     panels.forEach((panel) => {
       const text = panel.querySelector<HTMLElement>(".wd-text");
       if (!text) return;
 
-      // Reset to neutral baseline
       gsap.set(text, {
         y: 0,
         opacity: 1
@@ -27,8 +25,8 @@ export default function WhatsDeliveredScroll() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: panel,
-          start: "top 70%",
-          end: "top 40%",
+          start: "top 65%",
+          end: "top 45%",
           scrub: true,
           pin: false,
           invalidateOnRefresh: true
@@ -45,7 +43,7 @@ export default function WhatsDeliveredScroll() {
     });
 
     return () => {
-      triggers.forEach((t) => t.kill());
+      triggers.forEach(t => t.kill());
     };
   }, []);
 

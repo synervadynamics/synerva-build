@@ -8,66 +8,87 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollHero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<ScrollTrigger | null>(null);
 
   useEffect(() => {
     if (!heroRef.current) return;
 
-    // HARD RESET — prevent interference
-    ScrollTrigger.getAll().forEach(t => t.kill());
+    const images = heroRef.current.querySelectorAll<HTMLImageElement>(
+      ".scroll-hero-image"
+    );
 
-    const images = heroRef.current.querySelectorAll<HTMLImageElement>(".hero-image");
     const totalImages = images.length;
 
-    // Force layout stabilization
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        ScrollTrigger.create({
-          trigger: heroRef.current,
-          start: "top top",
-          end: () => `+=${window.innerHeight * totalImages}`,
-          pin: true,
-          scrub: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onUpdate: self => {
-            const index = Math.min(
-              totalImages - 1,
-              Math.floor(self.progress * totalImages)
-            );
+    gsap.set(images, {
+      opacity: 0,
+      scale: 1.05
+    });
 
-            images.forEach((img, i) => {
-              gsap.to(img, {
-                opacity: i === index ? 1 : 0,
-                scale: i === index ? 1 : 1.05,
-                duration: 0.3,
-                overwrite: true
-              });
-            });
-          }
-        });
+    gsap.set(images[0], {
+      opacity: 1,
+      scale: 1
+    });
 
-        ScrollTrigger.refresh();
-      }, 50);
+    const tl = gsap.timeline();
+
+    images.forEach((img, i) => {
+      if (i === 0) return;
+
+      tl.to(
+        images[i - 1],
+        { opacity: 0, scale: 1.05, duration: 1 },
+        i
+      ).to(
+        img,
+        { opacity: 1, scale: 1, duration: 1 },
+        i
+      );
+    });
+
+    triggerRef.current = ScrollTrigger.create({
+      trigger: heroRef.current,
+      start: "top top",
+      end: `+=${window.innerHeight * totalImages}`,
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+      animation: tl,
+      invalidateOnRefresh: true
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      triggerRef.current?.kill();
+      triggerRef.current = null;
     };
   }, []);
 
   return (
     <section id="synerva-scroll-hero" ref={heroRef}>
       <div className="scroll-hero-inner">
-        <div className="image-stack">
-          <img src="https://files.catbox.moe/417il8.WEBP" className="hero-image" />
-          <img src="https://files.catbox.moe/1m6fi4.WEBP" className="hero-image" />
-          <img src="https://files.catbox.moe/d0v9e1.PNG" className="hero-image" />
-          <img src="https://files.catbox.moe/80kuy1.WEBP" className="hero-image" />
+
+        <div className="scroll-hero-images">
+          <img
+            src="https://files.catbox.moe/417il8.WEBP"
+            className="scroll-hero-image"
+          />
+          <img
+            src="https://files.catbox.moe/1m6fi4.WEBP"
+            className="scroll-hero-image"
+          />
+          <img
+            src="https://files.catbox.moe/d0v9e1.PNG"
+            className="scroll-hero-image"
+          />
+          <img
+            src="https://files.catbox.moe/80kuy1.WEBP"
+            className="scroll-hero-image"
+          />
         </div>
 
-        <div className="hero-overlay">
+        <div className="scroll-hero-overlay">
           <h1>Synerva Dynamics</h1>
         </div>
+
       </div>
     </section>
   );
