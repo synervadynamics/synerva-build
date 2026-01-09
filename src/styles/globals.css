@@ -61,6 +61,15 @@
 	padding-top: 0;
 }
 
+.scroll-hero {
+	z-index: 20;
+}
+
+#existing-hero {
+	position: relative;
+	z-index: 10;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
