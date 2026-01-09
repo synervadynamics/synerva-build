@@ -64,16 +64,12 @@ export default function ScrollHero() {
           });
         });
 
-      },
-      onLeave: (self) => {
-        if (introCompleted) return;
+        if (progress >= 1 && !introCompleted) {
+          introCompleted = true;
 
-        introCompleted = true;
-
-        lenis.off("scroll", ScrollTrigger.update);
-        lenis.destroy();
-
-        self.kill(false);
+          lenis.off("scroll", ScrollTrigger.update);
+          lenis.destroy();
+        }
       },
     });
   }, []);
