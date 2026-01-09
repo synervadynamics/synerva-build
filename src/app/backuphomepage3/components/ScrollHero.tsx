@@ -28,11 +28,14 @@ export default function ScrollHero() {
     const heroSection = document.querySelector("#homepage-hero");
     let heroTop = 0;
     let clampActive = false;
+    let lastScrollY = window.scrollY;
     const clampToHeroTop = () => {
       if (!clampActive) return;
-      if (window.scrollY < heroTop) {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < heroTop && currentScrollY < lastScrollY) {
         window.scrollTo(0, heroTop);
       }
+      lastScrollY = window.scrollY;
     };
     const blockScrollUp = (event: Event) => {
       if (!clampActive) return;
@@ -108,6 +111,7 @@ export default function ScrollHero() {
         if (!heroSection) return;
         heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
         clampActive = true;
+        lastScrollY = window.scrollY;
         scrollHero.style.visibility = "hidden";
         scrollHero.style.pointerEvents = "none";
         window.addEventListener("scroll", clampToHeroTop, { passive: true });
