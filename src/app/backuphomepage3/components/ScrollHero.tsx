@@ -108,8 +108,8 @@ export default function ScrollHero() {
         if (!heroSection) return;
         heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
         clampActive = true;
-        window.scrollTo(0, heroTop);
-        scrollHero.style.display = "none";
+        scrollHero.style.visibility = "hidden";
+        scrollHero.style.pointerEvents = "none";
         window.addEventListener("scroll", clampToHeroTop, { passive: true });
         window.addEventListener("wheel", blockScrollUp, { passive: false });
         window.addEventListener("touchmove", blockScrollUp, { passive: false });
