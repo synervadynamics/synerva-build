@@ -34,7 +34,24 @@ export default function ScrollHero() {
       scrub: 1,
 
       onUpdate: (self) => {
-        if (introCompleted) return;
+        if (introCompleted) {
+          const images = gsap.utils.toArray<HTMLImageElement>(
+            ".scroll-hero .mask-img"
+          );
+
+          images.forEach((img) => {
+            const imageProgress = 1;
+            const leftgradie = 50 - imageProgress * 50;
+            const rightgradie = 50 + imageProgress * 50;
+            const deg = 90 + imageProgress * 40;
+
+            gsap.set(img, {
+              maskImage: `linear-gradient(${deg}deg, black ${leftgradie}%, transparent ${leftgradie}%, transparent ${rightgradie}%, black ${rightgradie}%)`
+            });
+          });
+
+          return;
+        }
 
         const progress = self.progress;
 
@@ -70,6 +87,10 @@ export default function ScrollHero() {
           lenis.off("scroll", ScrollTrigger.update);
           lenis.destroy();
         }
+      },
+      onLeaveBack: (self) => {
+        if (!introCompleted) return;
+        window.scrollTo(0, self.start);
       },
     });
   }, []);
