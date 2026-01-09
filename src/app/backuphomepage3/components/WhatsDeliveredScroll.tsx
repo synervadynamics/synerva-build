@@ -17,29 +17,59 @@ export default function WhatsDeliveredScroll() {
       const text = panel.querySelector<HTMLElement>(".wd-text");
       if (!text) return;
 
-      gsap.set(text, {
-        y: 0,
-        opacity: 1
-      });
+      const setY = gsap.quickSetter(text, "y", "px");
+      const setOpacity = gsap.quickSetter(text, "opacity");
+      let enterFrom: "top" | "bottom" = "top";
+      let startY = TRAVEL_DISTANCE;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: panel,
-          start: "top 65%",
-          end: "top 45%",
-          scrub: true,
-          pin: false,
-          invalidateOnRefresh: true
+      const applyProgress = (progress: number) => {
+        if (enterFrom === "top") {
+          setY(startY * (1 - progress));
+          setOpacity(progress);
+        } else {
+          setY(startY * progress);
+          setOpacity(1 - progress);
+        }
+      };
+
+      gsap.set(text, { y: startY, opacity: 0 });
+
+      const trigger = ScrollTrigger.create({
+        trigger: panel,
+        start: "top 70%",
+        end: "top 40%",
+        scrub: true,
+        invalidateOnRefresh: true,
+        onEnter: (self) => {
+          enterFrom = "top";
+          startY = TRAVEL_DISTANCE;
+          setY(startY);
+          setOpacity(0);
+          applyProgress(self.progress);
+        },
+        onEnterBack: (self) => {
+          enterFrom = "bottom";
+          startY = -TRAVEL_DISTANCE;
+          setY(startY);
+          setOpacity(0);
+          applyProgress(self.progress);
+        },
+        onUpdate: (self) => {
+          applyProgress(self.progress);
+        },
+        onLeave: () => {
+          setY(0);
+          setOpacity(1);
+        },
+        onLeaveBack: () => {
+          enterFrom = "top";
+          startY = TRAVEL_DISTANCE;
+          setY(startY);
+          setOpacity(0);
         }
       });
 
-      tl.fromTo(
-        text,
-        { y: TRAVEL_DISTANCE, opacity: 0 },
-        { y: 0, opacity: 1, ease: "none" }
-      );
-
-      triggers.push(tl.scrollTrigger!);
+      triggers.push(trigger);
     });
 
     return () => {
