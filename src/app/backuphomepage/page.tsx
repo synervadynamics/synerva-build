@@ -5,5 +5,5 @@ import BackupHomepageContent from "@/app/backuphomepage/BackupHomepage";
 // Optional: add visual debug banners here later.
 // Optional: add robots/noindex rules here later.
 export default function BackupHomepage() {
-  return <BackupHomepageContent />;
+  return <BackupHomepageContent mobileVariant="beats" />;
 }
