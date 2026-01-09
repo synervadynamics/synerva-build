@@ -30,7 +30,7 @@ export default function ScrollHero() {
       start: "top top",
       end: `+=${window.innerHeight * 4}px`,
       pin: true,
-      pinSpacing: false,
+      pinSpacing: true,
       scrub: 1,
 
       onUpdate: (self) => {
@@ -64,13 +64,13 @@ export default function ScrollHero() {
           });
         });
 
-        if (progress === 1 && !introCompleted) {
+        if (progress >= 1 && !introCompleted) {
           introCompleted = true;
 
           self.kill();
 
-          lenis.stop();
           lenis.off("scroll", ScrollTrigger.update);
+          lenis.destroy();
 
           ScrollTrigger.refresh();
         }
