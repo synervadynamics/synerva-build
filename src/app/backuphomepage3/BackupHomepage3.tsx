@@ -1,5 +1,5 @@
 import { About } from "@/components/About";
-import { DeliveredPanels } from "@/app/backuphomepage3/DeliveredPanels";
+import { Deliver } from "@/components/Deliver";
 import { Footer } from "@/components/Footer";
 import { Labs } from "@/components/Labs";
 import { Merch } from "@/components/Merch";
@@ -14,7 +14,6 @@ import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import ScrollHero from "./components/ScrollHero";
-import WhatsDeliveredScroll from "./components/WhatsDeliveredScroll";
 
 const backgroundSources = [
   "/jan-4-new-background-transition/v8/1.png",
@@ -31,31 +30,45 @@ export default function BackupHomepage3({
   mobileVariant = "beats",
 }: BackupHomepage3Props) {
   return (
-    <main className="relative text-white backuphomepage backuphomepage-variant backuphomepage3">
-      <div id="scroll-root">
-        <ScrollHero />
-        <section id="existing-hero">
-          <MainHero mobileVariant="beats" />
-        </section>
-      </div>
+    <main
+      id="backup-homepage"
+      className="relative text-white backuphomepage backuphomepage-variant backuphomepage3"
+    >
+      <ScrollMorphBackground imageSources={backgroundSources} />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <Narrative mobileVariant={mobileVariant} />
-        <Offerings />
-        <WhatsDeliveredScroll />
-        <DeliveredPanels />
-        <Systems />
+        <section id="scroll-hero-addon">
+          <ScrollHero />
+        </section>
+        <section id="homepage-hero">
+          <MainHero mobileVariant={mobileVariant} />
+        </section>
+        <section id="loop-coverage">
+          <Narrative mobileVariant={mobileVariant} />
+        </section>
+        <section id="core-systems">
+          <Offerings />
+        </section>
+        <section id="operating-posture">
+          <section id="whats-delivered">
+            <Deliver mobileVariant={mobileVariant} />
+          </section>
+        </section>
+        <section id="infrastructure">
+          <Systems />
+        </section>
         <Publications />
         <Labs variant="signup-only" />
         <Merch />
         <Philosophy />
         <Roadmap />
         <SynervaDimensionsSection />
-        <About />
+        <section id="founder">
+          <About />
+        </section>
         <Footer />
       </div>
-      <ScrollMorphBackground imageSources={backgroundSources} />
-      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
     </main>
   );
 }

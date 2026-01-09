@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:opsz,wght@14..32,300..700&display=swap');
 
-#scroll-root {
+#scroll-hero-addon {
 	position: relative;
 	width: 100%;
 	margin: 0;
@@ -57,7 +57,7 @@
 	margin: 0;
 }
 
-.scroll-hero + #existing-hero {
+#scroll-hero-addon + #homepage-hero {
 	margin-top: 0;
 	padding-top: 0;
 }
@@ -66,7 +66,7 @@
 	z-index: 20;
 }
 
-#existing-hero {
+#homepage-hero {
 	position: relative;
 	z-index: 10;
 }
