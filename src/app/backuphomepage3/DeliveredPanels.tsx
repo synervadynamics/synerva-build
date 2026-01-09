@@ -7,14 +7,23 @@ export const DeliveredPanels = () => (
   <>
     <Script id="delivered-panels" strategy="afterInteractive">{`
       gsap.registerPlugin(ScrollTrigger);
-
-      ScrollTrigger.getAll().forEach(t => {
-        if (t.trigger && t.trigger.classList && t.trigger.classList.contains("delivered-panel")) {
-          t.kill();
-        }
-      });
+      if (window.__deliveredPanelsInit) return;
+      window.__deliveredPanelsInit = true;
 
       const TRAVEL_DISTANCE = 450;
+      const animateText = (text, fromY) => {
+        gsap.killTweensOf(text);
+        gsap.set(text, { y: fromY });
+        gsap.to(text, {
+          y: 0,
+          duration: 1.6,
+          ease: "power3.out",
+          overwrite: "auto",
+          onComplete: () => {
+            gsap.set(text, { clearProps: "transform" });
+          }
+        });
+      };
 
       gsap.utils.toArray(".delivered-panel").forEach(section => {
         const text = section.querySelector(".gs-reveal");
@@ -28,27 +37,8 @@ export const DeliveredPanels = () => (
           trigger: section,
           start: "top 75%",
           end: "bottom 25%",
-          onToggle: self => {
-            if (!self.isActive) return;
-
-            gsap.killTweensOf(text);
-
-            const fromY = self.direction === 1
-              ? TRAVEL_DISTANCE
-              : -TRAVEL_DISTANCE;
-
-            gsap.set(text, { y: fromY });
-
-            gsap.to(text, {
-              y: 0,
-              duration: 1.6,
-              ease: "power3.out",
-              overwrite: "auto",
-              onComplete: () => {
-                gsap.set(text, { clearProps: "transform" });
-              }
-            });
-          }
+          onEnter: () => animateText(text, TRAVEL_DISTANCE),
+          onEnterBack: () => animateText(text, -TRAVEL_DISTANCE)
         });
       });
     `}</Script>
