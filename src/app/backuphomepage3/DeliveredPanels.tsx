@@ -5,18 +5,14 @@ import Script from "next/script";
 
 export const DeliveredPanels = () => (
   <>
-    <Script
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"
-      strategy="beforeInteractive"
-    />
-    <Script
-      src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"
-      strategy="beforeInteractive"
-    />
     <Script id="delivered-panels" strategy="afterInteractive">{`
       gsap.registerPlugin(ScrollTrigger);
 
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.trigger && t.trigger.classList && t.trigger.classList.contains("delivered-panel")) {
+          t.kill();
+        }
+      });
 
       const TRAVEL_DISTANCE = 450;
 

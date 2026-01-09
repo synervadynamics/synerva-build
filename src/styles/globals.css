@@ -825,4 +825,67 @@
       transition: none;
     }
   }
+
+  /* ===============================
+     SYNERVA SCROLL HERO
+  ================================ */
+
+  #synerva-scroll-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .scroll-hero-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-stack {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  .hero-image.active {
+    opacity: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .hero-overlay h1 {
+    font-family: inherit;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* ENSURE NO GAP BEFORE EXISTING HERO */
+  #synerva-scroll-hero + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 }
