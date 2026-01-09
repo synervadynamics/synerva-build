@@ -50,7 +50,6 @@ export default function WhatsDeliveredScroll() {
       const setY = gsap.quickSetter(text, "y", "px");
       const setOpacity = gsap.quickSetter(text, "opacity");
       let targetY = 0;
-      let enterFrom: "top" | "bottom" = "top";
       let startY = TRAVEL_DISTANCE;
 
       const applyProgress = (progress: number) => {
@@ -65,7 +64,7 @@ export default function WhatsDeliveredScroll() {
 
       gsap.set(text, { opacity: 0 });
 
-      const trigger = ScrollTrigger.create({
+      const triggerDown = ScrollTrigger.create({
         trigger: panel,
         start: "top 70%",
         end: "top 40%",
@@ -83,22 +82,13 @@ export default function WhatsDeliveredScroll() {
         onEnter: (self) => {
           computeReferenceOffsets();
           updateTargetY();
-          enterFrom = "top";
           startY = targetY + TRAVEL_DISTANCE;
           setY(startY);
           setOpacity(0);
           applyProgress(self.progress);
         },
-        onEnterBack: (self) => {
-          computeReferenceOffsets();
-          updateTargetY();
-          enterFrom = "bottom";
-          startY = targetY - TRAVEL_DISTANCE;
-          setY(startY);
-          setOpacity(0);
-          applyProgress(self.progress);
-        },
         onUpdate: (self) => {
+          if (self.direction !== 1) return;
           applyProgress(self.progress);
         },
         onLeave: () => {
@@ -106,14 +96,51 @@ export default function WhatsDeliveredScroll() {
           setOpacity(1);
         },
         onLeaveBack: () => {
-          enterFrom = "top";
           startY = targetY + TRAVEL_DISTANCE;
           setY(startY);
           setOpacity(0);
         }
       });
 
-      triggers.push(trigger);
+      const triggerUp = ScrollTrigger.create({
+        trigger: panel,
+        start: "bottom 30%",
+        end: "bottom 60%",
+        scrub: true,
+        invalidateOnRefresh: true,
+        onRefresh: () => {
+          computeReferenceOffsets();
+          updateTargetY();
+          if (!ScrollTrigger.isInViewport(panel)) {
+            startY = targetY - TRAVEL_DISTANCE;
+            setY(startY);
+            setOpacity(0);
+          }
+        },
+        onEnterBack: (self) => {
+          computeReferenceOffsets();
+          updateTargetY();
+          startY = targetY - TRAVEL_DISTANCE;
+          setY(startY);
+          setOpacity(0);
+          applyProgress(self.progress);
+        },
+        onUpdate: (self) => {
+          if (self.direction !== -1) return;
+          applyProgress(self.progress);
+        },
+        onLeaveBack: () => {
+          setY(targetY);
+          setOpacity(1);
+        },
+        onLeave: () => {
+          startY = targetY - TRAVEL_DISTANCE;
+          setY(startY);
+          setOpacity(0);
+        }
+      });
+
+      triggers.push(triggerDown, triggerUp);
     });
 
     computeReferenceOffsets();
