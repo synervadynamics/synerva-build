@@ -1,77 +1,12 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import Script from "next/script";
 
 export const DeliveredPanels = () => (
   <>
-    <Script id="delivered-panels" strategy="afterInteractive">{`
-      const initDeliveredPanels = () => {
-        if (!window.gsap || !window.ScrollTrigger) return;
-        if (window.__deliveredPanelsInit) return;
-        window.__deliveredPanelsInit = true;
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        ScrollTrigger.getAll().forEach(t => {
-          if (t.vars && typeof t.vars.id === "string" && t.vars.id.startsWith("delivered-panel-")) {
-            t.kill();
-          }
-        });
-
-        const TRAVEL_DISTANCE = 450;
-
-        gsap.utils.toArray(".delivered-panel").forEach((section, index) => {
-          const text = section.querySelector(".gs-reveal");
-          if (!text) return;
-
-          gsap.set(text, {
-            autoAlpha: 1,
-            clearProps: "transform"
-          });
-
-          ScrollTrigger.create({
-            id: "delivered-panel-" + index,
-            trigger: section,
-            start: "top 75%",
-            end: "bottom 25%",
-            onToggle: self => {
-              if (!self.isActive) return;
-
-              gsap.killTweensOf(text);
-
-              const fromY = self.direction === 1
-                ? TRAVEL_DISTANCE
-                : -TRAVEL_DISTANCE;
-
-              gsap.set(text, { y: fromY });
-
-              gsap.to(text, {
-                y: 0,
-                duration: 1.6,
-                ease: "power3.out",
-                overwrite: "auto",
-                onComplete: () => {
-                  gsap.set(text, { clearProps: "transform" });
-                }
-              });
-            }
-          });
-        });
-
-        ScrollTrigger.refresh();
-      };
-
-      if (document.readyState === "complete") {
-        initDeliveredPanels();
-      } else {
-        window.addEventListener("load", initDeliveredPanels, { once: true });
-      }
-    `}</Script>
-
     <section className="delivered-wrap">
       <section
-        className="delivered-panel contained"
+        className="delivered-panel contained wd-panel"
         style={
           {
             "--bg": "url('https://files.catbox.moe/p3wb1k.png')",
@@ -83,7 +18,7 @@ export const DeliveredPanels = () => (
         <div className="panel-frame">
           <div className="image-layer"></div>
           <div className="content">
-            <div className="text-block gs-reveal">
+            <div className="text-block gs-reveal wd-text">
               <h2>Strategic Direction</h2>
               <p>
                 This work establishes clear direction before execution begins.
@@ -110,7 +45,7 @@ export const DeliveredPanels = () => (
       </section>
 
       <section
-        className="delivered-panel contained"
+        className="delivered-panel contained wd-panel"
         style={
           {
             "--bg": "url('https://files.catbox.moe/sa9fgc.png')",
@@ -121,7 +56,7 @@ export const DeliveredPanels = () => (
         <div className="panel-frame">
           <div className="image-layer"></div>
           <div className="content">
-            <div className="text-block gs-reveal">
+            <div className="text-block gs-reveal wd-text">
               <h2>Integrated Execution</h2>
               <p>
                 Execution is treated as a single, connected system rather than a
@@ -147,7 +82,7 @@ export const DeliveredPanels = () => (
       </section>
 
       <section
-        className="delivered-panel contained"
+        className="delivered-panel contained wd-panel"
         style={
           {
             "--bg": "url('https://files.catbox.moe/4bhxrn.png')",
@@ -158,7 +93,7 @@ export const DeliveredPanels = () => (
         <div className="panel-frame">
           <div className="image-layer"></div>
           <div className="content">
-            <div className="text-block gs-reveal">
+            <div className="text-block gs-reveal wd-text">
               <h2>Durable Assets</h2>
               <p>
                 The work produces assets you continue to use. These are not
@@ -179,7 +114,7 @@ export const DeliveredPanels = () => (
       </section>
 
       <section
-        className="delivered-panel contained"
+        className="delivered-panel contained wd-panel"
         style={
           {
             "--bg": "url('https://files.catbox.moe/m5ysd0.png')",
@@ -190,7 +125,7 @@ export const DeliveredPanels = () => (
         <div className="panel-frame">
           <div className="image-layer"></div>
           <div className="content">
-            <div className="text-block gs-reveal">
+            <div className="text-block gs-reveal wd-text">
               <h2>Operating Judgment</h2>
               <p>
                 You engage experienced judgment without the overhead that usually

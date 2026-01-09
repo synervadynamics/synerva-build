@@ -14,6 +14,7 @@ import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import ScrollHero from "./components/ScrollHero";
+import WhatsDeliveredScrollController from "./components/WhatsDeliveredScrollController";
 
 const backgroundSources = [
   "/jan-4-new-background-transition/v8/1.png",
@@ -39,6 +40,7 @@ export default function BackupHomepage3({
         <MainHero mobileVariant="beats" />
         <Narrative mobileVariant={mobileVariant} />
         <Offerings />
+        <WhatsDeliveredScrollController />
         <DeliveredPanels />
         <Systems />
         <Publications />

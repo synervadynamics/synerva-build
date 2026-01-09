@@ -951,3 +951,16 @@
 #synerva-scroll-hero .hero-image:first-child {
   opacity: 1;
 }
+
+/* ===============================
+   WHAT’S DELIVERED SCROLL FIX
+================================ */
+
+.wd-panel {
+  position: relative;
+  overflow: visible;
+}
+
+.wd-text {
+  will-change: transform, opacity;
+}
