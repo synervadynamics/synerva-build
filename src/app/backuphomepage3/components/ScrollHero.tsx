@@ -21,19 +21,20 @@ export default function ScrollHero() {
 
     gsap.ticker.lagSmoothing(0);
 
+    const images = gsap.utils.toArray<HTMLImageElement>(
+      ".scroll-hero .mask-img"
+    );
+
     ScrollTrigger.create({
       trigger: scrollHero,
       start: "top top",
-      end: `+=${window.innerHeight * 4}px`,
+      end: () => `+=${window.innerHeight * Math.max(1, images.length)}px`,
       pin: true,
-      pinSpacing: false,
+      pinSpacing: true,
       scrub: 1,
+      invalidateOnRefresh: true,
       onUpdate: (self) => {
         const progress = self.progress;
-
-        const images = gsap.utils.toArray<HTMLImageElement>(
-          ".scroll-hero .mask-img"
-        );
         const segmentSize = 1 / images.length;
 
         images.forEach((img, index) => {
