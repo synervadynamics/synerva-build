@@ -26,11 +26,34 @@ export default function ScrollHero() {
     gsap.ticker.lagSmoothing(0);
 
     const heroSection = document.querySelector("#homepage-hero");
+    let heroTop = 0;
+    let clampActive = false;
     const clampToHeroTop = () => {
-      if (!heroSection) return;
-      const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+      if (!clampActive) return;
       if (window.scrollY < heroTop) {
         window.scrollTo(0, heroTop);
+      }
+    };
+    const blockScrollUp = (event: Event) => {
+      if (!clampActive) return;
+
+      if (event.type === "wheel") {
+        const wheelEvent = event as WheelEvent;
+        if (wheelEvent.deltaY < 0 && window.scrollY <= heroTop) {
+          wheelEvent.preventDefault();
+        }
+      } else if (event.type === "touchmove") {
+        if (window.scrollY <= heroTop) {
+          event.preventDefault();
+        }
+      } else if (event.type === "keydown") {
+        const keyEvent = event as KeyboardEvent;
+        if (
+          ["ArrowUp", "PageUp", "Home"].includes(keyEvent.key) &&
+          window.scrollY <= heroTop
+        ) {
+          keyEvent.preventDefault();
+        }
       }
     };
 
@@ -82,7 +105,15 @@ export default function ScrollHero() {
       },
       onLeave: () => {
         if (!introCompleted) return;
+        if (!heroSection) return;
+        heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+        clampActive = true;
+        window.scrollTo(0, heroTop);
+        scrollHero.style.display = "none";
         window.addEventListener("scroll", clampToHeroTop, { passive: true });
+        window.addEventListener("wheel", blockScrollUp, { passive: false });
+        window.addEventListener("touchmove", blockScrollUp, { passive: false });
+        window.addEventListener("keydown", blockScrollUp);
       },
     });
   }, []);
