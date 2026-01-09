@@ -41,8 +41,6 @@ export default function BackupHomepage3({
       />
       <Script id="synerva-scroll-hero" strategy="afterInteractive">{`
         const initScrollHero = () => {
-          if (!window.gsap || !window.ScrollTrigger) return;
-
           gsap.registerPlugin(ScrollTrigger);
 
           const images = Array.from(document.querySelectorAll(".hero-image"));
@@ -57,7 +55,10 @@ export default function BackupHomepage3({
             start: "top top",
             end: () => "+=" + window.innerHeight * totalImages,
             pin: true,
+            pinSpacing: true,
             scrub: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
             onUpdate: self => {
               const progress = self.progress;
               const index = Math.min(
@@ -79,10 +80,25 @@ export default function BackupHomepage3({
           ScrollTrigger.refresh();
         };
 
+        const waitForGSAP = () => {
+          let attempts = 0;
+          const timer = window.setInterval(() => {
+            if (window.gsap && window.ScrollTrigger) {
+              window.clearInterval(timer);
+              initScrollHero();
+            }
+
+            attempts += 1;
+            if (attempts > 200) {
+              window.clearInterval(timer);
+            }
+          }, 50);
+        };
+
         if (document.readyState === "complete") {
-          initScrollHero();
+          waitForGSAP();
         } else {
-          window.addEventListener("load", initScrollHero, { once: true });
+          window.addEventListener("load", waitForGSAP, { once: true });
         }
       `}</Script>
       <ScrollMorphBackground imageSources={backgroundSources} />
