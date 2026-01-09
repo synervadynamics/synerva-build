@@ -11,39 +11,66 @@ import { Roadmap } from "@/components/Roadmap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
-import { BackupHero } from "@/app/backuphomepage/BackupHero";
-import { ScrollMorphBackground } from "@/app/backuphomepage/ScrollMorphBackground";
+import { MainHero } from "@/app/homepage/MainHero";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import { DeliveredPanels } from "@/app/backuphomepage/DeliveredPanels";
+import ScrollHero from "./components/ScrollHero";
+import WhatsDeliveredScroll from "./components/WhatsDeliveredScroll";
+
+const backgroundSources = [
+  "/jan-4-new-background-transition/v8/1.png",
+  "/jan-4-new-background-transition/v8/2.png",
+  "/jan-4-new-background-transition/v8/3.png",
+  "/jan-4-new-background-transition/v8/4.png",
+];
 
 type BackupHomepageProps = {
-  className?: string;
-  backgroundSources?: string[];
+  mobileVariant?: "default" | "beats";
 };
 
-export default function BackupHomepage(props: BackupHomepageProps) {
-  const { className, backgroundSources } = props;
+export default function BackupHomepage({
+  mobileVariant = "beats",
+}: BackupHomepageProps) {
   return (
     <main
-      className={`relative text-white backuphomepage${className ? ` ${className}` : ""}`}
+      id="backup-homepage"
+      className="relative text-white backuphomepage backuphomepage-variant backuphomepage3"
     >
       <ScrollMorphBackground imageSources={backgroundSources} />
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 z-[5] bg-gradient-to-b from-[rgba(8,12,18,0.18)] via-[rgba(8,12,18,0.12)] to-[rgba(8,12,18,0.16)]"
-      />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <BackupHero />
-        <Narrative />
-        <Offerings />
-        <Deliver />
-        <Systems />
+        <section id="scroll-hero-addon">
+          <ScrollHero />
+        </section>
+        <section id="homepage-hero">
+          <MainHero mobileVariant={mobileVariant} />
+        </section>
+        <section id="loop-coverage">
+          <Narrative mobileVariant={mobileVariant} />
+        </section>
+        <section id="core-systems">
+          <Offerings />
+        </section>
+        <section id="operating-posture">
+          <section id="whats-delivered">
+            <Deliver mobileVariant={mobileVariant} />
+            <WhatsDeliveredScroll />
+            <DeliveredPanels />
+          </section>
+        </section>
+        <section id="infrastructure">
+          <Systems />
+        </section>
         <Publications />
         <Labs variant="signup-only" />
         <Merch />
         <Philosophy />
         <Roadmap />
         <SynervaDimensionsSection />
-        <About />
+        <section id="founder">
+          <About />
+        </section>
         <Footer />
       </div>
     </main>

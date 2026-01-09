@@ -28,7 +28,6 @@ export default function ScrollHero() {
     const heroSection = document.querySelector("#homepage-hero");
     let heroTop = 0;
     let clampActive = false;
-    let exitPending = false;
     const clampToHeroTop = () => {
       if (!clampActive) return;
       if (window.scrollY < heroTop) {
@@ -57,23 +56,6 @@ export default function ScrollHero() {
         }
       }
     };
-    const finalizeExit = () => {
-      if (!exitPending || clampActive) return;
-      const scrollHeroRect = scrollHero.getBoundingClientRect();
-      if (scrollHeroRect.bottom > 0) return;
-      if (!heroSection) return;
-
-      heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-      clampActive = true;
-      scrollHero.style.visibility = "hidden";
-      scrollHero.style.pointerEvents = "none";
-      window.addEventListener("scroll", clampToHeroTop, { passive: true });
-      window.addEventListener("wheel", blockScrollUp, { passive: false });
-      window.addEventListener("touchmove", blockScrollUp, { passive: false });
-      window.addEventListener("keydown", blockScrollUp);
-      window.removeEventListener("scroll", finalizeExit);
-    };
-
     const introTrigger = ScrollTrigger.create({
       trigger: scrollHero,
       start: "top top",
@@ -122,9 +104,15 @@ export default function ScrollHero() {
       },
       onLeave: () => {
         if (!introCompleted) return;
-        exitPending = true;
-        window.addEventListener("scroll", finalizeExit, { passive: true });
-        finalizeExit();
+        if (!heroSection) return;
+        heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+        clampActive = true;
+        scrollHero.style.visibility = "hidden";
+        scrollHero.style.pointerEvents = "none";
+        window.addEventListener("scroll", clampToHeroTop, { passive: true });
+        window.addEventListener("wheel", blockScrollUp, { passive: false });
+        window.addEventListener("touchmove", blockScrollUp, { passive: false });
+        window.addEventListener("keydown", blockScrollUp);
       },
     });
   }, []);
