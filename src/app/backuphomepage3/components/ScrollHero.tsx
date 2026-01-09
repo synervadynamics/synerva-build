@@ -30,10 +30,14 @@ export default function ScrollHero() {
       onUpdate: (self) => {
         const progress = self.progress;
 
-        const totalImages = gsap.utils.toArray(".scroll-hero .mask-img").length;
+        const totalImages = gsap.utils.toArray<HTMLImageElement>(
+          ".scroll-hero .mask-img"
+        ).length;
         const segmentSize = 1 / totalImages;
 
-        gsap.utils.toArray(".scroll-hero .mask-img").forEach((img, index) => {
+        gsap.utils
+          .toArray<HTMLImageElement>(".scroll-hero .mask-img")
+          .forEach((img, index) => {
           const imageStart = index * segmentSize;
           const imageEnd = (index + 1) * segmentSize;
 
