@@ -32,9 +32,13 @@ export default function BackupHomepage3({
 }: BackupHomepage3Props) {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant backuphomepage3">
-      <ScrollHero />
+      <div id="scroll-root">
+        <ScrollHero />
+        <section id="existing-hero">
+          <MainHero mobileVariant="beats" />
+        </section>
+      </div>
       <div className="relative z-10">
-        <MainHero mobileVariant="beats" />
         <ScrollProgress />
         <Narrative mobileVariant={mobileVariant} />
         <Offerings />

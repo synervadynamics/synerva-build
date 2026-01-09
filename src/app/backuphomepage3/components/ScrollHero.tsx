@@ -7,7 +7,8 @@ import Lenis from "lenis";
 
 export default function ScrollHero() {
   useEffect(() => {
-    if (!document.querySelector(".scroll-hero")) return;
+    const scrollHero = document.querySelector(".scroll-hero");
+    if (!scrollHero) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -21,23 +22,21 @@ export default function ScrollHero() {
     gsap.ticker.lagSmoothing(0);
 
     ScrollTrigger.create({
-      trigger: ".scroll-hero",
+      trigger: scrollHero,
       start: "top top",
       end: `+=${window.innerHeight * 4}px`,
       pin: true,
-      pinSpacing: true,
+      pinSpacing: false,
       scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
 
-        const totalImages = gsap.utils.toArray<HTMLImageElement>(
+        const images = gsap.utils.toArray<HTMLImageElement>(
           ".scroll-hero .mask-img"
-        ).length;
-        const segmentSize = 1 / totalImages;
+        );
+        const segmentSize = 1 / images.length;
 
-        gsap.utils
-          .toArray<HTMLImageElement>(".scroll-hero .mask-img")
-          .forEach((img, index) => {
+        images.forEach((img, index) => {
           const imageStart = index * segmentSize;
           const imageEnd = (index + 1) * segmentSize;
 

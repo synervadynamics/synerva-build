@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:opsz,wght@14..32,300..700&display=swap');
+
+#scroll-root {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.scroll-hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.scroll-hero .hero {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.scroll-hero .images {
+	position: absolute;
+	inset: 0;
+}
+
+.scroll-hero .images img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	z-index: var(--index);
+	will-change: mask-image;
+}
+
+.scroll-hero .content {
+	position: relative;
+	z-index: 10;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+}
+
+.scroll-hero .title-center h1 {
+	font-family: "Space Grotesk Variable", "Space Grotesk", "Inter", system-ui, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-size: clamp(44px, 7vw, 96px);
+	line-height: 1.05;
+	margin: 0;
+}
+
+.scroll-hero + #existing-hero {
+	margin-top: 0;
+	padding-top: 0;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -826,64 +889,6 @@
     }
   }
 
-  /* ===============================
-     SYNERVA SCROLL HERO
-  ================================ */
-
-  .scroll-hero {
-    position: relative;
-    width: 100%;
-    height: 100svh;
-    margin: 0;
-    padding: 0;
-  }
-
-  .scroll-hero .hero {
-    position: relative;
-    width: 100%;
-    height: 100svh;
-    overflow: hidden;
-  }
-
-  .scroll-hero .images {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  .scroll-hero .images img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: var(--index);
-    will-change: mask-image;
-  }
-
-  .scroll-hero .content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    color: #ffffff;
-  }
-
-  .scroll-hero .title-center h1 {
-    font-family: "Space Grotesk Variable", "Space Grotesk", "Inter", system-ui,
-      sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    font-size: clamp(44px, 7vw, 96px);
-    line-height: 1.05;
-    margin: 0;
-  }
 }
 
 /* ===============================
