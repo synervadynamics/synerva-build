@@ -13,6 +13,31 @@ export default function ScrollHero() {
     gsap.registerPlugin(ScrollTrigger);
 
     let introCompleted = false;
+    const root = document.documentElement;
+    const body = document.body;
+    const previousGutter = root.style.scrollbarGutter;
+    const previousOverflow = body.style.overflowY;
+    root.style.scrollbarGutter = "stable";
+    body.style.overflowY = "scroll";
+    const title = scrollHero.querySelector<HTMLElement>(".title-center h1");
+    const titleBaseTransform = title?.style.transform ?? "";
+    const centerTitle = () => {
+      if (!title) return;
+      const rect = title.getBoundingClientRect();
+      const delta = window.innerWidth / 2 - (rect.left + rect.width / 2);
+      const translate = `translateX(${delta}px)`;
+      title.style.transform = titleBaseTransform
+        ? `${titleBaseTransform} ${translate}`
+        : translate;
+    };
+    const titleResizeObserver = title
+      ? new ResizeObserver(centerTitle)
+      : null;
+    if (title && titleResizeObserver) {
+      titleResizeObserver.observe(title);
+      window.addEventListener("resize", centerTitle, { passive: true });
+      centerTitle();
+    }
 
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
@@ -129,6 +154,16 @@ export default function ScrollHero() {
         checkExit();
       },
     });
+    return () => {
+      introTrigger.kill();
+      root.style.scrollbarGutter = previousGutter;
+      body.style.overflowY = previousOverflow;
+      if (title && titleResizeObserver) {
+        titleResizeObserver.disconnect();
+        window.removeEventListener("resize", centerTitle);
+        title.style.transform = titleBaseTransform;
+      }
+    };
   }, []);
 
   return (
