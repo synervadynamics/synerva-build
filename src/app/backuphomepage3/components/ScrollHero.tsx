@@ -13,7 +13,6 @@ export default function ScrollHero() {
     gsap.registerPlugin(ScrollTrigger);
 
     let introCompleted = false;
-    document.documentElement.style.scrollbarGutter = "stable";
 
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
@@ -36,10 +35,15 @@ export default function ScrollHero() {
       const rect = scrollHero.getBoundingClientRect();
       if (rect.bottom <= 0) {
         exitWatchActive = false;
-        scrollHero.style.display = "none";
         heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-        clampActive = false;
+        clampActive = true;
+        scrollHero.style.visibility = "hidden";
+        scrollHero.style.pointerEvents = "none";
         window.scrollTo(0, heroTop);
+        window.addEventListener("scroll", clampToHeroTop, { passive: true });
+        window.addEventListener("wheel", blockScrollUp, { passive: false });
+        window.addEventListener("touchmove", blockScrollUp, { passive: false });
+        window.addEventListener("keydown", blockScrollUp);
         window.removeEventListener("scroll", checkExit);
       }
     };
