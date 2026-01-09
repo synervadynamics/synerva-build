@@ -13,13 +13,6 @@ export default function ScrollHero() {
     gsap.registerPlugin(ScrollTrigger);
 
     let introCompleted = false;
-    const introStart = scrollHero.getBoundingClientRect().top + window.scrollY;
-    const clampToIntroTop = () => {
-      if (!introCompleted) return;
-      if (window.scrollY < introStart) {
-        window.scrollTo(0, introStart);
-      }
-    };
 
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
@@ -31,6 +24,15 @@ export default function ScrollHero() {
     });
 
     gsap.ticker.lagSmoothing(0);
+
+    const heroSection = document.querySelector("#homepage-hero");
+    const clampToHeroTop = () => {
+      if (!heroSection) return;
+      const heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY < heroTop) {
+        window.scrollTo(0, heroTop);
+      }
+    };
 
     const introTrigger = ScrollTrigger.create({
       trigger: scrollHero,
@@ -76,10 +78,11 @@ export default function ScrollHero() {
 
           lenis.off("scroll", ScrollTrigger.update);
           lenis.destroy();
-          window.addEventListener("scroll", clampToIntroTop, {
-            passive: true,
-          });
         }
+      },
+      onLeave: () => {
+        if (!introCompleted) return;
+        window.addEventListener("scroll", clampToHeroTop, { passive: true });
       },
     });
   }, []);
