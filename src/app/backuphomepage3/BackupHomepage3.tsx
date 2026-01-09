@@ -33,11 +33,9 @@ export default function BackupHomepage3({
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant backuphomepage3">
       <ScrollHero />
-      <ScrollMorphBackground imageSources={backgroundSources} />
-      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
-        <ScrollProgress />
         <MainHero mobileVariant="beats" />
+        <ScrollProgress />
         <Narrative mobileVariant={mobileVariant} />
         <Offerings />
         <WhatsDeliveredScroll />
@@ -52,6 +50,8 @@ export default function BackupHomepage3({
         <About />
         <Footer />
       </div>
+      <ScrollMorphBackground imageSources={backgroundSources} />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
     </main>
   );
 }

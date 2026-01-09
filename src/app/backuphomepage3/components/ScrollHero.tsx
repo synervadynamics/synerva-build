@@ -1,94 +1,94 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, type CSSProperties } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import Lenis from "lenis";
 
 export default function ScrollHero() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<ScrollTrigger | null>(null);
-
   useEffect(() => {
-    if (!heroRef.current) return;
+    if (!document.querySelector(".scroll-hero")) return;
 
-    const images = heroRef.current.querySelectorAll<HTMLImageElement>(
-      ".scroll-hero-image"
-    );
+    gsap.registerPlugin(ScrollTrigger);
 
-    const totalImages = images.length;
+    const lenis = new Lenis();
+    lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.set(images, {
-      opacity: 0,
-      scale: 1.05
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
 
-    gsap.set(images[0], {
-      opacity: 1,
-      scale: 1
-    });
+    gsap.ticker.lagSmoothing(0);
 
-    const tl = gsap.timeline();
-
-    images.forEach((img, i) => {
-      if (i === 0) return;
-
-      tl.to(
-        images[i - 1],
-        { opacity: 0, scale: 1.05, duration: 1 },
-        i
-      ).to(
-        img,
-        { opacity: 1, scale: 1, duration: 1 },
-        i
-      );
-    });
-
-    triggerRef.current = ScrollTrigger.create({
-      trigger: heroRef.current,
+    ScrollTrigger.create({
+      trigger: ".scroll-hero",
       start: "top top",
-      end: `+=${window.innerHeight * totalImages}`,
-      scrub: true,
+      end: `+=${window.innerHeight * 4}px`,
       pin: true,
-      anticipatePin: 1,
-      animation: tl,
-      invalidateOnRefresh: true
-    });
+      pinSpacing: true,
+      scrub: 1,
+      onUpdate: (self) => {
+        const progress = self.progress;
 
-    return () => {
-      triggerRef.current?.kill();
-      triggerRef.current = null;
-    };
+        const totalImages = gsap.utils.toArray(".scroll-hero .mask-img").length;
+        const segmentSize = 1 / totalImages;
+
+        gsap.utils.toArray(".scroll-hero .mask-img").forEach((img, index) => {
+          const imageStart = index * segmentSize;
+          const imageEnd = (index + 1) * segmentSize;
+
+          let imageProgress = 0;
+
+          if (progress >= imageStart && progress <= imageEnd) {
+            imageProgress = (progress - imageStart) / segmentSize;
+          } else if (progress > imageEnd) {
+            imageProgress = 1;
+          }
+
+          const leftgradie = 50 - imageProgress * 50;
+          const rightgradie = 50 + imageProgress * 50;
+          const deg = 90 + imageProgress * 40;
+
+          gsap.set(img, {
+            maskImage: `linear-gradient(${deg}deg, black ${leftgradie}%, transparent ${leftgradie}%, transparent ${rightgradie}%, black ${rightgradie}%)`
+          });
+        });
+      }
+    });
   }, []);
 
   return (
-    <section id="synerva-scroll-hero" ref={heroRef}>
-      <div className="scroll-hero-inner">
-
-        <div className="scroll-hero-images">
-          <img
-            src="https://files.catbox.moe/417il8.WEBP"
-            className="scroll-hero-image"
-          />
+    <section className="scroll-hero">
+      <div className="hero">
+        <div className="images">
+          <img src="https://files.catbox.moe/417il8.WEBP" alt="image" />
           <img
             src="https://files.catbox.moe/1m6fi4.WEBP"
-            className="scroll-hero-image"
+            alt="image"
+            className="mask-img"
+            style={{ "--index": 4 } as CSSProperties}
           />
           <img
             src="https://files.catbox.moe/d0v9e1.PNG"
-            className="scroll-hero-image"
+            alt="image"
+            className="mask-img"
+            style={{ "--index": 3 } as CSSProperties}
           />
           <img
             src="https://files.catbox.moe/80kuy1.WEBP"
-            className="scroll-hero-image"
+            alt="image"
+            className="mask-img"
+            style={{ "--index": 2 } as CSSProperties}
           />
         </div>
 
-        <div className="scroll-hero-overlay">
-          <h1>Synerva Dynamics</h1>
+        <div className="content">
+          <div className="center">
+            <div className="title-center">
+              <h1>Synerva Dynamics</h1>
+            </div>
+          </div>
         </div>
-
       </div>
     </section>
   );
