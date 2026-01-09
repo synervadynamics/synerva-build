@@ -40,36 +40,50 @@ export default function BackupHomepage3({
         strategy="beforeInteractive"
       />
       <Script id="synerva-scroll-hero" strategy="afterInteractive">{`
-        gsap.registerPlugin(ScrollTrigger);
+        const initScrollHero = () => {
+          if (!window.gsap || !window.ScrollTrigger) return;
 
-        const images = document.querySelectorAll(".hero-image");
-        const totalImages = images.length;
+          gsap.registerPlugin(ScrollTrigger);
 
-        ScrollTrigger.create({
-          trigger: "#synerva-scroll-hero",
-          start: "top top",
-          end: () => "+=" + window.innerHeight * totalImages,
-          pin: true,
-          scrub: true,
-          onUpdate: self => {
-            const progress = self.progress;
-            const index = Math.min(
-              totalImages - 1,
-              Math.floor(progress * totalImages)
-            );
+          const images = Array.from(document.querySelectorAll(".hero-image"));
+          const totalImages = images.length;
+          if (!totalImages) return;
 
-            images.forEach((img, i) => {
-              if (i === index) {
-                gsap.to(img, { opacity: 1, scale: 1, duration: 0.3, overwrite: true });
-              } else {
-                gsap.to(img, { opacity: 0, scale: 1.05, duration: 0.3, overwrite: true });
-              }
-            });
-          }
-        });
+          gsap.set(images, { opacity: 0, scale: 1.05 });
+          gsap.set(images[0], { opacity: 1, scale: 1 });
 
-        /* SAFETY RESET */
-        ScrollTrigger.refresh();
+          ScrollTrigger.create({
+            trigger: "#synerva-scroll-hero",
+            start: "top top",
+            end: () => "+=" + window.innerHeight * totalImages,
+            pin: true,
+            scrub: true,
+            onUpdate: self => {
+              const progress = self.progress;
+              const index = Math.min(
+                totalImages - 1,
+                Math.floor(progress * totalImages)
+              );
+
+              images.forEach((img, i) => {
+                if (i === index) {
+                  gsap.to(img, { opacity: 1, scale: 1, duration: 0.3, overwrite: true });
+                } else {
+                  gsap.to(img, { opacity: 0, scale: 1.05, duration: 0.3, overwrite: true });
+                }
+              });
+            }
+          });
+
+          /* SAFETY RESET */
+          ScrollTrigger.refresh();
+        };
+
+        if (document.readyState === "complete") {
+          initScrollHero();
+        } else {
+          window.addEventListener("load", initScrollHero, { once: true });
+        }
       `}</Script>
       <ScrollMorphBackground imageSources={backgroundSources} />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
