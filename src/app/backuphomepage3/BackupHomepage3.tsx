@@ -13,7 +13,9 @@ import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection"
 import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import { DeliveredPanels } from "@/app/backuphomepage3/DeliveredPanels";
 import ScrollHero from "./components/ScrollHero";
+import WhatsDeliveredScroll from "./components/WhatsDeliveredScroll";
 
 const backgroundSources = [
   "/jan-4-new-background-transition/v8/1.png",
@@ -53,6 +55,8 @@ export default function BackupHomepage3({
         <section id="operating-posture">
           <section id="whats-delivered">
             <Deliver mobileVariant={mobileVariant} />
+            <WhatsDeliveredScroll />
+            <DeliveredPanels />
           </section>
         </section>
         <section id="infrastructure">
