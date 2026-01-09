@@ -12,29 +12,35 @@ export default function ScrollHero() {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    let introCompleted = false;
+
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
+      if (!introCompleted) {
+        lenis.raf(time * 1000);
+      }
     });
 
     gsap.ticker.lagSmoothing(0);
 
-    const images = gsap.utils.toArray<HTMLImageElement>(
-      ".scroll-hero .mask-img"
-    );
-
-    ScrollTrigger.create({
+    const introTrigger = ScrollTrigger.create({
       trigger: scrollHero,
       start: "top top",
-      end: () => `+=${window.innerHeight * Math.max(1, images.length)}px`,
+      end: `+=${window.innerHeight * 4}px`,
       pin: true,
-      pinSpacing: true,
+      pinSpacing: false,
       scrub: 1,
-      invalidateOnRefresh: true,
+
       onUpdate: (self) => {
+        if (introCompleted) return;
+
         const progress = self.progress;
+
+        const images = gsap.utils.toArray<HTMLImageElement>(
+          ".scroll-hero .mask-img"
+        );
         const segmentSize = 1 / images.length;
 
         images.forEach((img, index) => {
@@ -57,6 +63,17 @@ export default function ScrollHero() {
             maskImage: `linear-gradient(${deg}deg, black ${leftgradie}%, transparent ${leftgradie}%, transparent ${rightgradie}%, black ${rightgradie}%)`
           });
         });
+
+        if (progress === 1 && !introCompleted) {
+          introCompleted = true;
+
+          self.kill();
+
+          lenis.stop();
+          lenis.off("scroll", ScrollTrigger.update);
+
+          ScrollTrigger.refresh();
+        }
       }
     });
   }, []);
