@@ -6,41 +6,67 @@ import Script from "next/script";
 export const DeliveredPanels = () => (
   <>
     <Script id="delivered-panels" strategy="afterInteractive">{`
-      gsap.registerPlugin(ScrollTrigger);
-      if (window.__deliveredPanelsInit) return;
-      window.__deliveredPanelsInit = true;
+      const initDeliveredPanels = () => {
+        if (!window.gsap || !window.ScrollTrigger) return;
+        if (window.__deliveredPanelsInit) return;
+        window.__deliveredPanelsInit = true;
 
-      const TRAVEL_DISTANCE = 450;
-      const animateText = (text, fromY) => {
-        gsap.killTweensOf(text);
-        gsap.set(text, { y: fromY });
-        gsap.to(text, {
-          y: 0,
-          duration: 1.6,
-          ease: "power3.out",
-          overwrite: "auto",
-          onComplete: () => {
-            gsap.set(text, { clearProps: "transform" });
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.getAll().forEach(t => {
+          if (t.vars && typeof t.vars.id === "string" && t.vars.id.startsWith("delivered-panel-")) {
+            t.kill();
           }
         });
+
+        const TRAVEL_DISTANCE = 450;
+
+        gsap.utils.toArray(".delivered-panel").forEach((section, index) => {
+          const text = section.querySelector(".gs-reveal");
+          if (!text) return;
+
+          gsap.set(text, {
+            autoAlpha: 1,
+            clearProps: "transform"
+          });
+
+          ScrollTrigger.create({
+            id: "delivered-panel-" + index,
+            trigger: section,
+            start: "top 75%",
+            end: "bottom 25%",
+            onToggle: self => {
+              if (!self.isActive) return;
+
+              gsap.killTweensOf(text);
+
+              const fromY = self.direction === 1
+                ? TRAVEL_DISTANCE
+                : -TRAVEL_DISTANCE;
+
+              gsap.set(text, { y: fromY });
+
+              gsap.to(text, {
+                y: 0,
+                duration: 1.6,
+                ease: "power3.out",
+                overwrite: "auto",
+                onComplete: () => {
+                  gsap.set(text, { clearProps: "transform" });
+                }
+              });
+            }
+          });
+        });
+
+        ScrollTrigger.refresh();
       };
 
-      gsap.utils.toArray(".delivered-panel").forEach(section => {
-        const text = section.querySelector(".gs-reveal");
-
-        gsap.set(text, {
-          autoAlpha: 1,
-          clearProps: "transform"
-        });
-
-        ScrollTrigger.create({
-          trigger: section,
-          start: "top 75%",
-          end: "bottom 25%",
-          onEnter: () => animateText(text, TRAVEL_DISTANCE),
-          onEnterBack: () => animateText(text, -TRAVEL_DISTANCE)
-        });
-      });
+      if (document.readyState === "complete") {
+        initDeliveredPanels();
+      } else {
+        window.addEventListener("load", initDeliveredPanels, { once: true });
+      }
     `}</Script>
 
     <section className="delivered-wrap">
