@@ -12,6 +12,36 @@ export default function WhatsDeliveredScroll() {
   useEffect(() => {
     const panels = document.querySelectorAll<HTMLElement>(".wd-panel");
     const triggers: ScrollTrigger[] = [];
+    const targets = new Map<HTMLElement, number>();
+
+    const computeReferenceOffsets = () => {
+      const panelArray = Array.from(panels);
+      const referencePanel = panelArray[0];
+      if (!referencePanel) return;
+      const referenceText =
+        referencePanel.querySelector<HTMLElement>(".wd-text");
+      if (!referenceText) return;
+
+      panelArray.forEach((panel) => {
+        const text = panel.querySelector<HTMLElement>(".wd-text");
+        if (!text) return;
+        gsap.set(text, { y: 0, opacity: 0 });
+      });
+
+      const referencePanelRect = referencePanel.getBoundingClientRect();
+      const referenceTextRect = referenceText.getBoundingClientRect();
+      const referenceOffset =
+        referenceTextRect.top - referencePanelRect.top;
+
+      panelArray.forEach((panel) => {
+        const text = panel.querySelector<HTMLElement>(".wd-text");
+        if (!text) return;
+        const panelRect = panel.getBoundingClientRect();
+        const textRect = text.getBoundingClientRect();
+        const currentOffset = textRect.top - panelRect.top;
+        targets.set(text, referenceOffset - currentOffset);
+      });
+    };
 
     panels.forEach((panel) => {
       const text = panel.querySelector<HTMLElement>(".wd-text");
@@ -30,15 +60,10 @@ export default function WhatsDeliveredScroll() {
       };
 
       const updateTargetY = () => {
-        const panelRect = panel.getBoundingClientRect();
-        const textRect = text.getBoundingClientRect();
-        const desiredTop =
-          panelRect.top + panelRect.height / 2 - textRect.height / 2;
-        targetY = desiredTop - textRect.top;
+        targetY = targets.get(text) ?? 0;
       };
 
-      updateTargetY();
-      gsap.set(text, { y: targetY + TRAVEL_DISTANCE, opacity: 0 });
+      gsap.set(text, { opacity: 0 });
 
       const trigger = ScrollTrigger.create({
         trigger: panel,
@@ -47,9 +72,16 @@ export default function WhatsDeliveredScroll() {
         scrub: true,
         invalidateOnRefresh: true,
         onRefresh: () => {
+          computeReferenceOffsets();
           updateTargetY();
+          if (!ScrollTrigger.isInViewport(panel)) {
+            startY = targetY + TRAVEL_DISTANCE;
+            setY(startY);
+            setOpacity(0);
+          }
         },
         onEnter: (self) => {
+          computeReferenceOffsets();
           updateTargetY();
           enterFrom = "top";
           startY = targetY + TRAVEL_DISTANCE;
@@ -58,6 +90,7 @@ export default function WhatsDeliveredScroll() {
           applyProgress(self.progress);
         },
         onEnterBack: (self) => {
+          computeReferenceOffsets();
           updateTargetY();
           enterFrom = "bottom";
           startY = targetY - TRAVEL_DISTANCE;
@@ -82,6 +115,8 @@ export default function WhatsDeliveredScroll() {
 
       triggers.push(trigger);
     });
+
+    computeReferenceOffsets();
 
     return () => {
       triggers.forEach(t => t.kill());
