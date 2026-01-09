@@ -7,7 +7,7 @@ import Lenis from "lenis";
 
 export default function ScrollHero() {
   useEffect(() => {
-    const scrollHero = document.querySelector(".scroll-hero");
+    const scrollHero = document.querySelector<HTMLElement>(".scroll-hero");
     if (!scrollHero) return;
 
     gsap.registerPlugin(ScrollTrigger);
