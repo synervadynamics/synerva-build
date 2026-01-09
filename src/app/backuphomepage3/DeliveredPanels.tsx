@@ -63,8 +63,8 @@ export const DeliveredPanels = () => (
         style={
           {
             "--bg": "url('https://files.catbox.moe/p3wb1k.png')",
-            "--text-offset": "50%",
-            "--text-shift": "-50%"
+            "--text-offset": "0",
+            "--text-justify": "center"
           } as CSSProperties
         }
       >
@@ -246,10 +246,13 @@ export const DeliveredPanels = () => (
       .content {
         position: relative;
         z-index: 1;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: var(--text-justify, flex-start);
         padding-top: var(--text-offset);
         padding-left: clamp(4rem, 8vw, 12rem);
         padding-right: 2rem;
-        transform: translateY(var(--text-shift, 0));
       }
 
       .text-block {
