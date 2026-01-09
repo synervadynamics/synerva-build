@@ -28,6 +28,25 @@ export default function ScrollHero() {
     const heroSection = document.querySelector("#homepage-hero");
     let heroTop = 0;
     let clampActive = false;
+    let exitWatchActive = false;
+    const checkExit = () => {
+      if (!exitWatchActive) return;
+      if (!heroSection) return;
+      const rect = scrollHero.getBoundingClientRect();
+      if (rect.bottom <= 0) {
+        exitWatchActive = false;
+        heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
+        clampActive = true;
+        scrollHero.style.visibility = "hidden";
+        scrollHero.style.pointerEvents = "none";
+        window.scrollTo(0, heroTop);
+        window.addEventListener("scroll", clampToHeroTop, { passive: true });
+        window.addEventListener("wheel", blockScrollUp, { passive: false });
+        window.addEventListener("touchmove", blockScrollUp, { passive: false });
+        window.addEventListener("keydown", blockScrollUp);
+        window.removeEventListener("scroll", checkExit);
+      }
+    };
     const clampToHeroTop = () => {
       if (!clampActive) return;
       if (window.scrollY < heroTop) {
@@ -105,14 +124,9 @@ export default function ScrollHero() {
       onLeave: () => {
         if (!introCompleted) return;
         if (!heroSection) return;
-        heroTop = heroSection.getBoundingClientRect().top + window.scrollY;
-        clampActive = true;
-        scrollHero.style.visibility = "hidden";
-        scrollHero.style.pointerEvents = "none";
-        window.addEventListener("scroll", clampToHeroTop, { passive: true });
-        window.addEventListener("wheel", blockScrollUp, { passive: false });
-        window.addEventListener("touchmove", blockScrollUp, { passive: false });
-        window.addEventListener("keydown", blockScrollUp);
+        exitWatchActive = true;
+        window.addEventListener("scroll", checkExit, { passive: true });
+        checkExit();
       },
     });
   }, []);
