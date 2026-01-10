@@ -196,14 +196,20 @@ export const DeliveredPanels = () => (
         min-height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: var(--text-justify, flex-start);
-        padding-top: var(--text-offset);
+        justify-content: center;
+        padding-top: 0;
         padding-left: clamp(4rem, 8vw, 12rem);
         padding-right: 2rem;
       }
 
       .text-block {
         max-width: 42ch;
+      }
+
+      .gs-reveal {
+        opacity: 0;
+        visibility: hidden;
+        will-change: transform, opacity;
       }
 
       h2 {
