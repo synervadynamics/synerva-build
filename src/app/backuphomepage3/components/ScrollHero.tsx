@@ -64,18 +64,10 @@ export default function ScrollHero() {
         clampActive = true;
         scrollHero.style.visibility = "hidden";
         scrollHero.style.pointerEvents = "none";
-        window.scrollTo(0, heroTop);
-        window.addEventListener("scroll", clampToHeroTop, { passive: true });
         window.addEventListener("wheel", blockScrollUp, { passive: false });
         window.addEventListener("touchmove", blockScrollUp, { passive: false });
         window.addEventListener("keydown", blockScrollUp);
         window.removeEventListener("scroll", checkExit);
-      }
-    };
-    const clampToHeroTop = () => {
-      if (!clampActive) return;
-      if (window.scrollY < heroTop) {
-        window.scrollTo(0, heroTop);
       }
     };
     const blockScrollUp = (event: Event) => {
