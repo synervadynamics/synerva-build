@@ -40,14 +40,11 @@ export default function WhatsDeliveredScroll() {
   useEffect(() => {
     const triggers: ScrollTrigger[] = [];
 
-    const panels = gsap.utils.toArray<HTMLElement>(".wd-panel");
-    panels.forEach((panel) => {
-      const elem = panel.querySelector<HTMLElement>(".gs-reveal");
-      if (!elem) return;
+    gsap.utils.toArray<HTMLElement>(".gs-reveal").forEach((elem) => {
       hide(elem);
       triggers.push(
         ScrollTrigger.create({
-          trigger: panel,
+          trigger: elem,
           onEnter: () => animateFrom(elem),
           onEnterBack: () => animateFrom(elem, -1),
           onLeave: () => hide(elem)
