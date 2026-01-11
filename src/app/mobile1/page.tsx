@@ -10,10 +10,12 @@ export const metadata = buildPageMetadata({
 
 export default function Mobile1Page() {
   return (
-    <main className="min-h-screen bg-[#02050b] text-white">
-      <div className="mx-auto flex w-full max-w-[420px] flex-col gap-10 px-5 py-10">
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/70">Hero</p>
+    <main className="bg-[#02050b] text-white">
+      <div className="mx-auto flex w-full max-w-[420px] flex-col gap-12 px-5 py-12">
+        <section className="mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+            HERO
+          </p>
           <div
             aria-hidden
             className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
@@ -36,22 +38,22 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
-            The Problem
+            THE PROBLEM
+          </p>
+          <h2 className="text-2xl font-light leading-snug text-white">
+            Fragmentation Kills Velocity
+          </h2>
+          <p className="text-[0.95rem] leading-6 text-white/80">
+            Most teams don’t stall from lack of ambition. They stall from
+            friction: handoffs, resets, and process that replaces judgment.
           </p>
           <div
             aria-hidden
             className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
           />
-          <div className="flex flex-col gap-3">
-            <h2 className="text-2xl font-light leading-snug text-white">
-              Fragmentation Kills Velocity
-            </h2>
-            <p className="text-[0.95rem] leading-6 text-white/80">
-              Most teams don’t stall from lack of ambition. They stall from
-              friction: handoffs, resets, and process that replaces judgment.
-            </p>
+          <div className="rounded-[1.5rem] bg-white/[0.04] px-5 py-5">
             <p className="text-[0.95rem] leading-6 text-white/80">
               Synerva collapses that fragmentation into one operating system for
               shipping work that holds.
@@ -59,39 +61,38 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
-          <div
-            aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
-          <div className="flex flex-col gap-3">
-            <h2 className="text-2xl font-light leading-snug text-white">
-              System Guardrails
-            </h2>
-            <p className="text-[0.95rem] leading-6 text-white/80">
-              Replace coordination overhead with clear decisions.
-            </p>
-            <p className="text-[0.95rem] leading-6 text-white/80">
-              Convert repetition into automation without losing intent.
-            </p>
-            <p className="text-[0.95rem] leading-6 text-white/80">
-              Build delivery so progress compounds instead of resetting.
-            </p>
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+            <div className="absolute inset-0 bg-black/35" aria-hidden />
+            <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 pb-5">
+              <h2 className="text-2xl font-light leading-snug text-white">
+                System Guardrails
+              </h2>
+              <p className="text-[0.95rem] leading-6 text-white/85">
+                Replace coordination overhead with clear decisions.
+              </p>
+              <p className="text-[0.95rem] leading-6 text-white/85">
+                Convert repetition into automation without losing intent.
+              </p>
+              <p className="text-[0.95rem] leading-6 text-white/85">
+                Build delivery so progress compounds instead of resetting.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Operating Posture
           </p>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5"
           />
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-2xl font-light leading-snug text-white">
               Calm Execution Under Real Conditions
             </h2>
@@ -106,7 +107,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How to Engage
           </p>
@@ -139,17 +140,13 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             What You Get
           </p>
           <h2 className="text-2xl font-light leading-snug text-white">
             What’s Delivered
           </h2>
-          <div
-            aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
           <div className="flex flex-col gap-3">
             <p className="text-[0.95rem] leading-6 text-white/80">
               Strategic direction that clarifies priorities before execution
@@ -166,18 +163,24 @@ export default function Mobile1Page() {
               with it.
             </p>
           </div>
-        </section>
-
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/70">
-            Internal Engines
-          </p>
-          <h2 className="text-2xl font-light leading-snug text-white">Systems</h2>
           <div
             aria-hidden
             className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
           />
-          <div className="flex flex-col gap-3">
+        </section>
+
+        <section className="flex flex-col gap-5">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+            Internal Engines
+          </p>
+          <div
+            aria-hidden
+            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+          />
+          <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
+            <h2 className="text-2xl font-light leading-snug text-white">
+              Systems
+            </h2>
             <p className="text-[0.95rem] leading-6 text-white/80">
               Synerva is built so standards hold, context persists, and decisions
               don’t evaporate between meetings.
@@ -195,18 +198,18 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/70">
-            Synerva Dimensions
-          </p>
-          <h2 className="text-2xl font-light leading-snug text-white">
-            Constructed Realities
-          </h2>
+        <section className="flex flex-col gap-5">
           <div
             aria-hidden
             className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
           />
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 px-2">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+              Synerva Dimensions
+            </p>
+            <h2 className="text-2xl font-light leading-snug text-white">
+              Constructed Realities
+            </h2>
             <p className="text-[0.95rem] leading-6 text-white/80">
               An ongoing artwork series exploring systems, identity, and inner
               architecture through editorial-grade visual worlds.
@@ -224,18 +227,18 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Writing
           </p>
-          <h2 className="text-2xl font-light leading-snug text-white">
-            Written Under Real Conditions
-          </h2>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5"
           />
           <div className="flex flex-col gap-3">
+            <h2 className="text-2xl font-light leading-snug text-white">
+              Written Under Real Conditions
+            </h2>
             <p className="text-[0.95rem] leading-6 text-white/80">
               Long-form thinking shaped by pressure, not theory.
             </p>
@@ -252,7 +255,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Merch
           </p>
@@ -280,7 +283,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Next Step
           </p>
