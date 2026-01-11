@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
+import Mobile1Shell from "./Mobile1Shell";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -16,7 +17,7 @@ export const viewport = {
 export default function Mobile1Page() {
   return (
     <main className="bg-[#02050b] text-white">
-      <div className="mx-auto flex w-full max-w-[420px] flex-col gap-12 px-5 py-12">
+      <Mobile1Shell>
         <section className="mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             HERO
@@ -312,7 +313,7 @@ export default function Mobile1Page() {
             Start with a 30-Minute Plan
           </Link>
         </section>
-      </div>
+      </Mobile1Shell>
     </main>
   );
 }
