@@ -14,7 +14,6 @@ import { Systems } from "@/components/Systems";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import { DeliveredPanels } from "@/app/backuphomepage/DeliveredPanels";
-import ScrollHero from "./components/ScrollHero";
 import WhatsDeliveredScroll from "./components/WhatsDeliveredScroll";
 
 const backgroundSources = [
@@ -40,9 +39,6 @@ export default function BackupHomepage({
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <section id="scroll-hero-addon">
-          <ScrollHero />
-        </section>
         <section id="homepage-hero">
           <MainHero mobileVariant={mobileVariant} />
         </section>
