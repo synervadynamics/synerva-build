@@ -12,7 +12,7 @@ export default function Mobile1Page() {
   return (
     <main className="min-h-screen bg-[#02050b] text-white">
       <div className="mx-auto flex w-full max-w-[420px] flex-col gap-10 px-5 py-10">
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">Hero</p>
           <div
             aria-hidden
@@ -36,7 +36,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             The Problem
           </p>
@@ -59,7 +59,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
@@ -83,7 +83,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Operating Posture
           </p>
@@ -106,7 +106,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How to Engage
           </p>
@@ -139,7 +139,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             What You Get
           </p>
@@ -168,7 +168,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Internal Engines
           </p>
@@ -195,7 +195,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Synerva Dimensions
           </p>
@@ -224,7 +224,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Writing
           </p>
@@ -252,7 +252,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Merch
           </p>
@@ -280,7 +280,7 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section className="flex min-h-[100svh] flex-col justify-center gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Next Step
           </p>
