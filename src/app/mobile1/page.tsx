@@ -8,6 +8,11 @@ export const metadata = buildPageMetadata({
   path: "/mobile1",
 });
 
+export const viewport = {
+  width: 420,
+  initialScale: 1,
+};
+
 export default function Mobile1Page() {
   return (
     <main className="bg-[#02050b] text-white">
