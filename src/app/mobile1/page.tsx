@@ -125,24 +125,8 @@ export default function Mobile1Page() {
             Operating Posture
           </p>
           <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/the-rockstar-server-playbook.png"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/the-reflective-dose.png"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
           </div>
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
@@ -229,16 +213,8 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          >
-            <Image
-              src="/mobile-images/homepage/merch.PNG"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
-            />
-          </div>
+            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          />
         </section>
 
         <section className="flex flex-col gap-5">
@@ -304,8 +280,24 @@ export default function Mobile1Page() {
             Writing
           </p>
           <div className={styles.portraitPair} aria-hidden>
-            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
-            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/the-rockstar-server-playbook.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/the-reflective-dose.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
@@ -338,8 +330,16 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/homepage/merch.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <p className="text-[1.05rem] leading-6 text-white/80">
               Physical editions derived from the same standards as the work:
