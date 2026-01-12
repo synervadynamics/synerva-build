@@ -125,8 +125,8 @@ export default function Mobile1Page() {
             Operating Posture
           </p>
           <div className={styles.portraitPair} aria-hidden>
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
           </div>
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
@@ -248,8 +248,8 @@ export default function Mobile1Page() {
 
         <section className="flex flex-col gap-5">
           <div className={styles.portraitPair} aria-hidden>
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
           </div>
           <div className="flex flex-col gap-3 px-2">
             <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
@@ -280,8 +280,8 @@ export default function Mobile1Page() {
             Writing
           </p>
           <div className={styles.portraitPair} aria-hidden>
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
-            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
           </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">

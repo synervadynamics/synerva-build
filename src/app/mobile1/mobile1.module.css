@@ -81,7 +81,7 @@
 
 .shell[data-mode="expanded"] .portraitPair {
   max-width: calc(
-    ((var(--portrait-max-height) * 9) / 16) * 2 + var(--portrait-gap)
+    ((var(--portrait-max-height) * 2) / 3) * 2 + var(--portrait-gap)
   );
   margin-left: auto;
   margin-right: auto;
