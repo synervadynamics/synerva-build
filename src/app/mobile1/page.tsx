@@ -125,8 +125,24 @@ export default function Mobile1Page() {
             Operating Posture
           </p>
           <div className={styles.portraitPair} aria-hidden>
-            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
-            <div className="aspect-[2/3] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/what-synerva-builds.PNG"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/how-synerva-operates.PNG"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
