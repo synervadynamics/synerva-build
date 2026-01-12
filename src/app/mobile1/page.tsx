@@ -217,7 +217,7 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
         </section>
 
@@ -227,7 +227,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-2xl font-light leading-snug text-white">
@@ -318,7 +318,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <p className="text-[0.95rem] leading-6 text-white/80">
@@ -348,7 +348,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
+            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <p className="text-[0.95rem] leading-6 text-white/80">
