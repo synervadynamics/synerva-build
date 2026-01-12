@@ -222,7 +222,7 @@ export default function Mobile1Page() {
             Internal Engines
           </p>
           <div className={styles.landscapeTriple} aria-hidden>
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               <Image
                 src="/mobile-images/homepage/lucentra.webp"
                 alt=""
@@ -231,7 +231,7 @@ export default function Mobile1Page() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               <Image
                 src="/mobile-images/homepage/verisense.webp"
                 alt=""
@@ -240,7 +240,7 @@ export default function Mobile1Page() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               <Image
                 src="/mobile-images/homepage/synerva-os.webp"
                 alt=""
