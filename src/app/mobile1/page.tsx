@@ -28,15 +28,14 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/hero.png"
               alt=""
-              width={1640}
-              height={981}
+              fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="h-auto w-full object-cover max-h-[40vh] sm:max-h-none"
+              className="object-cover"
               priority
             />
           </div>
@@ -71,15 +70,14 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/the-problem.PNG"
               alt=""
-              width={1536}
-              height={1024}
+              fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="h-auto w-full object-cover max-h-[40vh] sm:max-h-none"
+              className="object-cover"
             />
           </div>
           <div
@@ -96,14 +94,13 @@ export default function Mobile1Page() {
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
+          <div className="relative aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
             <Image
               src="/mobile-images/homepage/how-work-moves.png"
               alt=""
-              width={1536}
-              height={1024}
+              fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="h-auto w-full object-cover max-h-[40vh] sm:max-h-none"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black/35" aria-hidden />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 pb-5">
@@ -157,15 +154,14 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/offerings.png"
               alt=""
-              width={1536}
-              height={1024}
+              fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="h-auto w-full object-cover max-h-[40vh] sm:max-h-none"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -217,7 +213,7 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
         </section>
 
@@ -227,7 +223,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
@@ -318,7 +314,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <p className="text-[1.05rem] leading-6 text-white/80">
@@ -348,7 +344,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <p className="text-[1.05rem] leading-6 text-white/80">
