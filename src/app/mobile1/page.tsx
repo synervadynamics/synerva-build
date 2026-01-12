@@ -157,7 +157,7 @@ export default function Mobile1Page() {
             className="relative aspect-[1618/1000] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/offerings.png"
+              src="/mobile-images/homepage/how-to-engage.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
