@@ -206,10 +206,10 @@ export default function Mobile1Page() {
         </section>
 
         <section className="flex flex-col gap-5">
-          <div
-            aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
+          <div className={styles.portraitPair} aria-hidden>
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+          </div>
           <div className="flex flex-col gap-3 px-2">
             <p className="text-xs uppercase tracking-[0.4em] text-white/70">
               Synerva Dimensions
