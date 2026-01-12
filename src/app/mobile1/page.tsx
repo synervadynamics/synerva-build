@@ -17,9 +17,11 @@ export const viewport = {
 
 export default function Mobile1Page() {
   return (
-    <main className="bg-[#02050b] text-white">
+    <main className="text-white">
       <Mobile1Shell>
-        <section className="mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section
+          className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             HERO
           </p>
@@ -60,7 +62,9 @@ export default function Mobile1Page() {
             aria-hidden
             className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
           />
-          <div className="rounded-[1.5rem] bg-white/[0.04] px-5 py-5">
+          <div
+            className={`rounded-[1.5rem] bg-white/[0.04] px-5 py-5 ${styles.panelTransparent}`}
+          >
             <p className="text-[0.95rem] leading-6 text-white/80">
               Synerva collapses that fragmentation into one operating system for
               shipping work that holds.
@@ -114,7 +118,9 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How to Engage
           </p>
@@ -147,7 +153,9 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             What You Get
           </p>
@@ -262,7 +270,9 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Merch
           </p>
@@ -290,7 +300,9 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6">
+        <section
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Next Step
           </p>

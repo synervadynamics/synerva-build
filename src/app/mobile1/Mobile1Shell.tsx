@@ -1,9 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import styles from "./mobile1.module.css";
 
 const STORAGE_KEY = "mobile1LayoutMode";
+const backgroundSources = [
+  "/jan-4-new-background-transition/v8/1.png",
+  "/jan-4-new-background-transition/v8/2.png",
+  "/jan-4-new-background-transition/v8/3.png",
+  "/jan-4-new-background-transition/v8/4.png",
+];
 
 type LayoutMode = "compact" | "expanded";
 
@@ -57,7 +64,11 @@ export default function Mobile1Shell({ children }: Mobile1ShellProps) {
 
   return (
     <div id="mobile1-shell" data-mode={mode} className={styles.shell}>
-      <div className="flex w-full flex-col gap-12 py-12">{children}</div>
+      <ScrollMorphBackground imageSources={backgroundSources} />
+      <div className={styles.contentOverlay} aria-hidden />
+      <div className={`flex w-full flex-col gap-12 py-12 ${styles.content}`}>
+        {children}
+      </div>
       <button
         type="button"
         aria-label="Toggle layout width"
