@@ -417,8 +417,16 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/homepage/next step.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <p className="text-[1.05rem] leading-6 text-white/80">
               A 30-minute session to clarify direction, pressure-test
