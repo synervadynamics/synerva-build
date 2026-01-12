@@ -35,7 +35,7 @@ export default function Mobile1Page() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
               priority
             />
           </div>
@@ -77,7 +77,7 @@ export default function Mobile1Page() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div
@@ -100,7 +100,7 @@ export default function Mobile1Page() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black/35" aria-hidden />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 pb-5">
@@ -161,7 +161,7 @@ export default function Mobile1Page() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-3">
