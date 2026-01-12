@@ -65,15 +65,32 @@ export default function Mobile1Page() {
             Fragmentation Kills Velocity
           </h2>
           <p className="text-[1.05rem] leading-6 text-white/80">
-            Most teams don’t stall from lack of ambition. They stall from
-            friction: handoffs, resets, and process that replaces judgment.
+            Most teams don’t slow down because they lack drive.
+            <br />
+            They slow down because work must pass through too many systems
+            before it can move.
+            <br />
+            <br />
+            Each function optimizes locally. Each tool reframes the problem.
+            <br />
+            Decisions are deferred, reinterpreted, and reset as work crosses
+            boundaries.
+            <br />
+            <br />
+            Judgment gets replaced by interfaces.
+            <br />
+            Momentum gets traded for alignment rituals.
+            <br />
+            <br />
+            What looks like progress becomes controlled motion — constrained,
+            buffered, and diluted at every layer.
           </p>
           <div
             aria-hidden
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/the-problem.PNG"
+              src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
