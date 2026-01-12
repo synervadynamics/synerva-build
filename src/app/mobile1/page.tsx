@@ -213,8 +213,16 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/homepage/what-you-get.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
         </section>
 
         <section className="flex flex-col gap-5">
