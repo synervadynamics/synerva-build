@@ -382,7 +382,7 @@ export default function Mobile1Page() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/merch-showcase.WEBP"
+              src="/mobile-images/homepage/merch-showcase.WEBP?v=1"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
