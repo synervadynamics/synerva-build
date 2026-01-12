@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
@@ -27,8 +28,17 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
+            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+          >
+            <Image
+              src="/mobile-images/homepage/hero.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+              priority
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <p className="text-[0.65rem] uppercase tracking-[0.5em] text-white/60">
               Synerva Dynamics
@@ -60,8 +70,16 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
+            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+          >
+            <Image
+              src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div
             className={`rounded-[1.5rem] bg-white/[0.04] px-5 py-5 ${styles.panelTransparent}`}
           >
@@ -77,6 +95,13 @@ export default function Mobile1Page() {
             How Work Moves
           </p>
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+            <Image
+              src="/mobile-images/homepage/how-work-moves.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
             <div className="absolute inset-0 bg-black/35" aria-hidden />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 pb-5">
               <h2 className="text-2xl font-light leading-snug text-white">
@@ -129,8 +154,16 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="aspect-video w-full rounded-2xl border border-white/12 bg-white/5"
-          />
+            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+          >
+            <Image
+              src="/mobile-images/homepage/offerings.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <p className="text-[0.95rem] leading-6 text-white/80">
               Operator Hourly for audits, positioning, unblocking, and fast
