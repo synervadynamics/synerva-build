@@ -28,7 +28,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
           >
             <Image
               src="/mobile-images/homepage/hero.png"
@@ -70,7 +70,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
           >
             <Image
               src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
@@ -94,7 +94,7 @@ export default function Mobile1Page() {
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
             <Image
               src="/mobile-images/homepage/how-work-moves.png"
               alt=""
@@ -154,7 +154,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
           >
             <Image
               src="/mobile-images/homepage/offerings.png"
