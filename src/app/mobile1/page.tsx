@@ -73,7 +73,7 @@ export default function Mobile1Page() {
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5"
           >
             <Image
-              src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
+              src="/mobile-images/homepage/the-problem.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
