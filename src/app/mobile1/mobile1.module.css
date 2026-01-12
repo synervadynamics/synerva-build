@@ -79,6 +79,14 @@
   width: 100%;
 }
 
+.landscapeTriple {
+  --landscape-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--landscape-gap);
+  width: 100%;
+}
+
 .shell[data-mode="expanded"] .portraitPair {
   max-width: calc(
     ((var(--portrait-max-height) * 2) / 3) * 2 + var(--portrait-gap)
