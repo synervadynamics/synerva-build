@@ -53,14 +53,20 @@
   outline-offset: 3px;
 }
 
+.portraitPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
 @media (max-width: 1024px) {
-  .portraitMedia {
-    max-height: clamp(320px, 60svh, 520px);
+  .portraitPair {
+    max-height: clamp(300px, 60svh, 520px);
     overflow: hidden;
   }
 
-  .portraitMedia img,
-  .portraitMedia video {
+  .portraitPair img,
+  .portraitPair video {
     width: 100%;
     height: 100%;
     object-fit: cover;

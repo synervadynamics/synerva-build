@@ -95,10 +95,10 @@ export default function Mobile1Page() {
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Operating Posture
           </p>
-          <div
-            aria-hidden
-            className={`aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5 ${styles.portraitMedia}`}
-          />
+          <div className={styles.portraitPair} aria-hidden>
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+          </div>
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-2xl font-light leading-snug text-white">
               Calm Execution Under Real Conditions
@@ -238,10 +238,10 @@ export default function Mobile1Page() {
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">
             Writing
           </p>
-          <div
-            aria-hidden
-            className={`aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5 ${styles.portraitMedia}`}
-          />
+          <div className={styles.portraitPair} aria-hidden>
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+            <div className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5" />
+          </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-2xl font-light leading-snug text-white">
               Written Under Real Conditions
