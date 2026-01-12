@@ -52,3 +52,17 @@
   outline: 2px solid rgba(255, 255, 255, 0.65);
   outline-offset: 3px;
 }
+
+@media (max-width: 1024px) {
+  .portraitMedia {
+    max-height: clamp(320px, 60svh, 520px);
+    overflow: hidden;
+  }
+
+  .portraitMedia img,
+  .portraitMedia video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

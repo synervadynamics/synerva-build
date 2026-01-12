@@ -2,6 +2,7 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import Mobile1Shell from "./Mobile1Shell";
+import styles from "./mobile1.module.css";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -96,7 +97,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5"
+            className={`aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5 ${styles.portraitMedia}`}
           />
           <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
             <h2 className="text-2xl font-light leading-snug text-white">
@@ -239,7 +240,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5"
+            className={`aspect-[9/16] w-full rounded-2xl border border-white/12 bg-white/5 ${styles.portraitMedia}`}
           />
           <div className="flex flex-col gap-3">
             <h2 className="text-2xl font-light leading-snug text-white">
