@@ -35,7 +35,7 @@ export default function MainHomepage() {
         <Deliver />
         <SystemsThatHoldSection
           className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
-          innerClassName="mx-auto w-full max-w-[44rem]"
+          innerClassName="mx-auto w-full max-w-5xl"
         />
         <Systems />
         <Publications />
