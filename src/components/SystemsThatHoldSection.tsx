@@ -16,10 +16,10 @@ export const SystemsThatHoldSection = ({
     .join(" ");
   const pairClassName =
     portraitPairClassName ??
-    "grid w-full gap-6 md:grid-cols-2 md:gap-8 lg:gap-10";
+    "grid w-full gap-4 md:grid-cols-2 md:gap-6 lg:gap-8";
   const content = (
-    <div className="flex flex-col gap-6">
-      <p className="text-center text-xs uppercase tracking-[0.4em] text-white/65">
+    <div className="flex flex-col gap-4">
+      <p className="text-center text-[0.7rem] uppercase tracking-[0.4em] text-white/65">
         SYSTEMS THAT HOLD
       </p>
       <div className={pairClassName} aria-hidden>
@@ -42,20 +42,20 @@ export const SystemsThatHoldSection = ({
           />
         </div>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-8">
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-light leading-snug text-white">
+          <h2 className="text-lg font-light leading-snug text-white">
             What Synerva Builds
           </h2>
-          <p className="whitespace-pre-line text-base leading-6 text-white/75">
+          <p className="whitespace-pre-line text-[0.95rem] leading-6 text-white/75">
             {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nWhat emerges is durable capacity\nthat holds as scope, pace, and complexity increase."}
           </p>
         </div>
         <div className="flex flex-col gap-3">
-          <h2 className="text-xl font-light leading-snug text-white">
+          <h2 className="text-lg font-light leading-snug text-white">
             How Synerva Operates
           </h2>
-          <p className="whitespace-pre-line text-base leading-6 text-white/75">
+          <p className="whitespace-pre-line text-[0.95rem] leading-6 text-white/75">
             {"Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork stays controlled under real conditions,\nadvancing without noise, drift, or heroics."}
           </p>
         </div>
