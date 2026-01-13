@@ -11,6 +11,7 @@ import { Roadmap } from "@/components/Roadmap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
+import { SystemsThatHoldSection } from "@/components/SystemsThatHoldSection";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
@@ -32,6 +33,10 @@ export default function MainHomepage() {
         <Narrative />
         <Offerings />
         <Deliver />
+        <SystemsThatHoldSection
+          className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
+          innerClassName="mx-auto w-full max-w-[44rem]"
+        />
         <Systems />
         <Publications />
         <Labs variant="signup-only" />

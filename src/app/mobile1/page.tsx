@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
+import { SystemsThatHoldSection } from "@/components/SystemsThatHoldSection";
 import Mobile1Shell from "./Mobile1Shell";
 import styles from "./mobile1.module.css";
 
@@ -137,63 +138,7 @@ export default function Mobile1Page() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5">
-          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
-            Systems That Hold
-          </p>
-          <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/what-synerva-builds.PNG"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/how-synerva-operates.PNG"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              What Synerva Builds
-            </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Synerva builds the underlying structure work depends on: shared
-              interfaces, reusable components, and non-negotiable boundaries.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Consistency is enforced by the system itself, not by meetings,
-              memory, or management.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              What emerges is durable capacity that holds as scope, pace, and
-              complexity increase.
-            </p>
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              How Synerva Operates
-            </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Synerva defines how the system responds when plans fail, signals
-              conflict, or pressure arrives.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Decisions resolve through explicit priorities and constraints, not
-              escalation or consensus.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Work stays controlled under real conditions, advancing without
-              noise, drift, or heroics.
-            </p>
-          </div>
-        </section>
+        <SystemsThatHoldSection portraitPairClassName={styles.portraitPair} />
 
         <section
           className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
