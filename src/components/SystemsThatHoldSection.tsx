@@ -48,7 +48,7 @@ export const SystemsThatHoldSection = ({
             What Synerva Builds
           </h2>
           <p className="whitespace-pre-line text-[0.95rem] leading-6 text-white/75">
-            {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nWhat emerges is durable capacity\nthat holds as scope, pace, and complexity increase."}
+            {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase."}
           </p>
         </div>
         <div className="flex flex-col gap-3">
@@ -56,7 +56,7 @@ export const SystemsThatHoldSection = ({
             How Synerva Operates
           </h2>
           <p className="whitespace-pre-line text-[0.95rem] leading-6 text-white/75">
-            {"Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork stays controlled under real conditions,\nadvancing without noise, drift, or heroics."}
+            {"Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork advances under real conditions\nwithout noise, drift, or heroics."}
           </p>
         </div>
       </div>
