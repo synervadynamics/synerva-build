@@ -19,7 +19,7 @@ export const SystemsThatHoldSection = ({
     "grid w-full gap-4 md:grid-cols-2 md:gap-6 lg:gap-8";
   const content = (
     <div className="flex flex-col gap-4">
-      <p className="text-center text-[0.7rem] uppercase tracking-[0.4em] text-white/65">
+      <p className="text-center text-[0.75rem] uppercase tracking-[0.4em] text-white/65">
         SYSTEMS THAT HOLD
       </p>
       <div className={pairClassName} aria-hidden>
