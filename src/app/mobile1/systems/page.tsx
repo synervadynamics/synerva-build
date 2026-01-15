@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/metadata";
 import Mobile1Shell from "../Mobile1Shell";
 import styles from "../mobile1.module.css";
@@ -21,10 +22,6 @@ export default function Mobile1SystemsPage() {
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <div
-            aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
               Systems
@@ -54,10 +51,6 @@ export default function Mobile1SystemsPage() {
         <section
           className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <div
-            aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Why Systems Exist
@@ -84,7 +77,15 @@ export default function Mobile1SystemsPage() {
           <div
             aria-hidden
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+          >
+            <Image
+              src="/systems-homepage-logos/lucentra-homepage-v3.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Lucentra
@@ -113,7 +114,15 @@ export default function Mobile1SystemsPage() {
           <div
             aria-hidden
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+          >
+            <Image
+              src="/systems-homepage-logos/verisense-homepage.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Verisense
@@ -142,7 +151,15 @@ export default function Mobile1SystemsPage() {
           <div
             aria-hidden
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+          >
+            <Image
+              src="/systems-homepage-logos/synerva-os-homepage.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover object-[center_60%]"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Synerva OS
