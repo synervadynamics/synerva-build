@@ -176,6 +176,28 @@ export default function ParallaxLoomImageSystem() {
             type="button"
             onClick={(event) => {
               event.stopPropagation();
+              showPrev();
+            }}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/30 px-3 py-2 text-lg text-white/70"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              showNext();
+            }}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/30 px-3 py-2 text-lg text-white/70"
+          >
+            →
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
               closeViewer();
             }}
             className="absolute right-4 top-4 rounded-full border border-white/30 px-3 py-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
