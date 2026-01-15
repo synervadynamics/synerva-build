@@ -81,10 +81,10 @@ export default function Mobile1SystemsPage() {
         <section
           className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5" />
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5" />
-          </div>
+          <div
+            aria-hidden
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          />
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Lucentra
@@ -110,10 +110,10 @@ export default function Mobile1SystemsPage() {
         <section
           className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5" />
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5" />
-          </div>
+          <div
+            aria-hidden
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          />
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Verisense
