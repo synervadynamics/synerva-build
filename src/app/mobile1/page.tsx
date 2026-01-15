@@ -368,12 +368,20 @@ export default function Mobile1Page() {
               structured, and designed to feel operational, not conceptual.
             </p>
           </div>
-          <Link
-            href="/dimensions"
-            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
-          >
-            View Dimensions
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/mobile1/dimensions/quiet-divine"
+              className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
+            >
+              View Quiet Divine
+            </Link>
+            <Link
+              href="/mobile1/dimensions/parallax-loom"
+              className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
+            >
+              View Parallax Loom
+            </Link>
+          </div>
         </section>
 
         <section className="flex flex-col gap-5">

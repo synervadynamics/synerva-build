@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/metadata";
 import Mobile1Shell from "../../Mobile1Shell";
 import styles from "../../mobile1.module.css";
@@ -22,10 +23,26 @@ export default function Mobile1ParallaxLoomPage() {
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <div
-            aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          />
+          <div className={styles.portraitPair} aria-hidden>
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/parallax-loom-designs/gaslighting-myself-into-greatness-v1.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/parallax-loom-designs/divorced-millenial-v1.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+          </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
               Parallax Loom
