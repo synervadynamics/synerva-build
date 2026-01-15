@@ -22,6 +22,18 @@ export default function Mobile1SystemsPage() {
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
+          <div
+            aria-hidden
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/systems/systems-hero.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
               Systems
