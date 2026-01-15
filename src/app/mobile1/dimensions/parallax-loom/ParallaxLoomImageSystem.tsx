@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-
-const IMAGE_COUNT = 30;
+import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 type ViewMode = "grid" | "linear";
 
@@ -12,10 +12,7 @@ type TouchPoint = {
 };
 
 export default function ParallaxLoomImageSystem() {
-  const images = useMemo(
-    () => Array.from({ length: IMAGE_COUNT }, (_, index) => index),
-    [],
-  );
+  const images = useMemo(() => [...parallaxLoomImages], []);
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const touchStart = useRef<TouchPoint | null>(null);
@@ -122,22 +119,29 @@ export default function ParallaxLoomImageSystem() {
 
       {viewMode === "grid" ? (
         <div className="grid grid-cols-2 gap-3">
-          {images.map((index) => (
+          {images.map((image, index) => (
             <button
-              key={`grid-${index}`}
+              key={`grid-${image.id}`}
               type="button"
               onClick={() => openViewer(index)}
               className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5"
             >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
               <span className="sr-only">Open image {index + 1}</span>
             </button>
           ))}
         </div>
       ) : (
         <div className="flex flex-col gap-4">
-          {images.map((index) => (
+          {images.map((image, index) => (
             <div
-              key={`linear-${index}`}
+              key={`linear-${image.id}`}
               className="rounded-[2rem] border border-white/20 bg-white/[0.04] p-4"
             >
               <button
@@ -145,6 +149,13 @@ export default function ParallaxLoomImageSystem() {
                 onClick={() => openViewer(index)}
                 className="relative min-h-[70vh] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5"
               >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  className="object-cover"
+                />
                 <span className="sr-only">Open image {index + 1}</span>
               </button>
             </div>
@@ -175,7 +186,15 @@ export default function ParallaxLoomImageSystem() {
             className="relative w-full max-w-[85vw] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="aspect-[4/5] max-h-[75vh] w-full" />
+            <div className="relative aspect-[4/5] max-h-[75vh] w-full">
+              <Image
+                src={images[activeIndex].src}
+                alt={images[activeIndex].alt}
+                fill
+                sizes="(max-width: 768px) 90vw, 420px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       ) : null}
