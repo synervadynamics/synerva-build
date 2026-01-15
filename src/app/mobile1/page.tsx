@@ -231,7 +231,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/offerings"
+            href="/mobile1/offerings"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Offerings
@@ -324,7 +324,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/systems"
+            href="/mobile1/systems"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Systems
@@ -459,7 +459,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/merch"
+            href="/mobile1/merch"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Merch
