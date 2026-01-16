@@ -4,14 +4,10 @@ import type { NextRequest } from "next/server";
 const mobileUserAgentPattern =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
 
-const mobileRewriteMap: Record<string, string> = {
-  "/": "/mobile1",
-  "/offerings": "/mobile1/offerings",
-  "/systems": "/mobile1/systems",
-  "/merch": "/mobile1/merch",
-  "/dimensions/quiet-divine": "/mobile1/dimensions/quiet-divine",
-  "/dimensions/parallax-loom": "/mobile1/dimensions/parallax-loom",
-};
+const mobileBasePaths = ["/offerings", "/systems", "/merch", "/dimensions"];
+
+const isPathMatch = (pathname: string, basePath: string) =>
+  pathname === basePath || pathname.startsWith(`${basePath}/`);
 
 const isMobileUserAgent = (userAgent: string | null) =>
   Boolean(userAgent && mobileUserAgentPattern.test(userAgent));
@@ -23,7 +19,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const targetPath = mobileRewriteMap[pathname];
+  const targetPath =
+    pathname === "/"
+      ? "/mobile1"
+      : mobileBasePaths.some((basePath) => isPathMatch(pathname, basePath))
+        ? `/mobile1${pathname}`
+        : null;
+
   if (!targetPath) {
     return NextResponse.next();
   }
@@ -36,9 +38,9 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     "/",
-    "/offerings",
-    "/systems",
-    "/merch",
+    "/offerings/:path*",
+    "/systems/:path*",
+    "/merch/:path*",
     "/dimensions/:path*",
   ],
 };
