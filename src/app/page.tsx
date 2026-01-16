@@ -1,6 +1,7 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
-import MainHomepage from "@/app/homepage/MainHomepage";
+import HomeDesktop from "@/app/HomeDesktop";
+import HomeMobile from "@/app/HomeMobile";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -9,5 +10,14 @@ export const metadata = buildPageMetadata({
 });
 
 export default function HomePage() {
-  return <MainHomepage />;
+  return (
+    <>
+      <div className="hidden lg:block">
+        <HomeDesktop />
+      </div>
+      <div className="block lg:hidden">
+        <HomeMobile />
+      </div>
+    </>
+  );
 }
