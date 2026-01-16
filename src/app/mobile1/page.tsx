@@ -28,14 +28,14 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-[1640/981] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/hero.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -87,14 +87,14 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div
@@ -111,13 +111,13 @@ export default function Mobile1Page() {
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
             <Image
               src="/mobile-images/homepage/how-work-moves.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
             <div className="absolute inset-0 bg-black/35" aria-hidden />
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 px-5 pb-5">
@@ -206,14 +206,14 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/how-to-engage.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -265,14 +265,14 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/what-you-get.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </section>
@@ -439,14 +439,14 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/merch-showcase.WEBP"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -477,14 +477,14 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/next step.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
