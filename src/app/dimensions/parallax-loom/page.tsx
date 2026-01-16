@@ -4,10 +4,10 @@ import ParallaxLoomMobile from "@/app/dimensions/parallax-loom/ParallaxLoomMobil
 export default function ParallaxLoomPage() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <ParallaxLoomDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <ParallaxLoomMobile />
       </div>
     </>

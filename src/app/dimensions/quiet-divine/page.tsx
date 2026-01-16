@@ -4,10 +4,10 @@ import QuietDivineMobile from "@/app/dimensions/quiet-divine/QuietDivineMobile";
 export default function QuietDivinePage() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <QuietDivineDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <QuietDivineMobile />
       </div>
     </>

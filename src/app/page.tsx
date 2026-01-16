@@ -12,10 +12,10 @@ export const metadata = buildPageMetadata({
 export default function HomePage() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <HomeDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <HomeMobile />
       </div>
     </>

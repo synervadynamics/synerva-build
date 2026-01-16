@@ -12,10 +12,10 @@ export const metadata = buildPageMetadata({
 export default function OfferingsPage() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <OfferingsDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <OfferingsMobile />
       </div>
     </>

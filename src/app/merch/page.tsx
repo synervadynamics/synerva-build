@@ -12,10 +12,10 @@ export const metadata = buildPageMetadata({
 export default function MerchPage() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <MerchDesktop />
       </div>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <MerchMobile />
       </div>
     </>
