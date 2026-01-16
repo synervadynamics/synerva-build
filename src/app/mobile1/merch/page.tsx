@@ -25,7 +25,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/partial-exception.PNG"
@@ -59,7 +59,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/thermal-drift-v2.png"
@@ -95,7 +95,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/merch-hero.png"
@@ -138,7 +138,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/weightless-resolve.png"
@@ -173,7 +173,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/there-all-along.PNG"
@@ -211,7 +211,7 @@ export default function Mobile1MerchPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/merch-v1/while-you-wait.PNG"

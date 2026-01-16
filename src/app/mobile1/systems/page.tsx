@@ -24,7 +24,7 @@ export default function Mobile1SystemsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/systems/systems-hero.PNG"
@@ -88,7 +88,7 @@ export default function Mobile1SystemsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/systems-homepage-logos/lucentra-homepage-v3.png"
@@ -125,7 +125,7 @@ export default function Mobile1SystemsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/systems-homepage-logos/verisense-homepage.png"
@@ -162,7 +162,7 @@ export default function Mobile1SystemsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/systems-homepage-logos/synerva-os-homepage.png"

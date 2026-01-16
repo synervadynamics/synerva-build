@@ -28,7 +28,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[1640/981] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/hero.png"
@@ -87,7 +87,7 @@ export default function Mobile1Page() {
           </p>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
@@ -111,7 +111,7 @@ export default function Mobile1Page() {
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
             <Image
               src="/mobile-images/homepage/how-work-moves.png"
               alt=""
@@ -206,7 +206,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/how-to-engage.PNG"
@@ -265,7 +265,7 @@ export default function Mobile1Page() {
           </div>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/what-you-get.PNG"
@@ -439,7 +439,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/merch-showcase.WEBP"
@@ -477,7 +477,7 @@ export default function Mobile1Page() {
           </h2>
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/next step.PNG"

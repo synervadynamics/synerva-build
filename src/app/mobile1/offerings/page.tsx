@@ -25,7 +25,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
@@ -48,7 +48,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/hp-offerings-operator-hourly.PNG"
@@ -89,7 +89,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/hp-flat-rate-v2.PNG"
@@ -132,7 +132,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/hp-build-with-synerva.PNG"
@@ -223,7 +223,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
@@ -256,7 +256,7 @@ export default function Mobile1OfferingsPage() {
         >
           <div
             aria-hidden
-            className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           />
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
