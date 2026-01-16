@@ -54,8 +54,7 @@ export default function ViewModeToggle() {
     return defaultMode === "desktop" ? "mobile" : "desktop";
   }, [forcedMode, defaultMode]);
 
-  const labelLines =
-    nextMode === "desktop" ? ["SWITCH TO", "DESKTOP"] : ["SWITCH TO", "MOBILE"];
+  const label = nextMode === "desktop" ? "DESKTOP" : "MOBILE";
 
   const handleToggle = () => {
     setForcedMode(nextMode);
@@ -76,10 +75,7 @@ export default function ViewModeToggle() {
       aria-label={`Switch to ${nextMode} view`}
       onClick={handleToggle}
     >
-      <span className="flex flex-col items-center leading-none">
-        <span>{labelLines[0]}</span>
-        <span>{labelLines[1]}</span>
-      </span>
+      {label}
     </button>
   );
 }
