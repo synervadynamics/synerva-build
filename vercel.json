@@ -1,54 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/mobile1",
-      "has": [
-        {
-          "type": "host",
-          "value": "m.synervadynamics.com"
-        }
-      ]
-    },
-    {
-      "source": "/offerings",
-      "destination": "/mobile1/offerings",
-      "has": [
-        {
-          "type": "host",
-          "value": "m.synervadynamics.com"
-        }
-      ]
-    },
-    {
-      "source": "/systems",
-      "destination": "/mobile1/systems",
-      "has": [
-        {
-          "type": "host",
-          "value": "m.synervadynamics.com"
-        }
-      ]
-    },
-    {
-      "source": "/merch",
-      "destination": "/mobile1/merch",
-      "has": [
-        {
-          "type": "host",
-          "value": "m.synervadynamics.com"
-        }
-      ]
-    },
-    {
-      "source": "/dimensions/:path*",
-      "destination": "/mobile1/dimensions/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "m.synervadynamics.com"
-        }
-      ]
+      "source": "/__vercel_test__",
+      "destination": "/mobile1"
     }
   ]
 }
