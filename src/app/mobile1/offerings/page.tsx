@@ -51,11 +51,11 @@ export default function Mobile1OfferingsPage() {
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/offerings-subpage-jan-3/operator-hourly.PNG"
+              src="/homepage-post-12-25-2025/hp-offerings-operator-hourly.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -92,11 +92,11 @@ export default function Mobile1OfferingsPage() {
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/offerings-subpage-jan-3/flat-rate-projects-square.png"
+              src="/homepage-post-12-25-2025/hp-flat-rate-v2.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -135,11 +135,11 @@ export default function Mobile1OfferingsPage() {
             className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/offerings-subpage-jan-3/build-with-synerva.PNG"
+              src="/homepage-post-12-25-2025/hp-build-with-synerva.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col gap-3">
