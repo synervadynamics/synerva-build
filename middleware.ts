@@ -17,96 +17,33 @@ const isExcludedPath = (pathname: string) =>
   pathname.startsWith("/mobile1") ||
   isStaticAssetPath(pathname);
 
-const isMobileClientHint = (request: NextRequest) => {
-  const chMobile = request.headers.get("sec-ch-ua-mobile");
-  if (chMobile === "?1") {
-    return true;
-  }
-
-  const chPlatform = request.headers.get("sec-ch-ua-platform");
-  if (chPlatform) {
-    if (/iOS/i.test(chPlatform)) {
-      return true;
-    }
-    if (/macOS/i.test(chPlatform)) {
-      return false;
-    }
-  }
-
-  return false;
-};
-
-const isMobileUserAgent = (userAgent: string | null) => {
-  if (!userAgent) {
-    return false;
-  }
-
-  if (/iPhone|Android|Mobile/i.test(userAgent)) {
-    return true;
-  }
-
-  if (/iPad/i.test(userAgent)) {
-    return true;
-  }
-
-  if (/Macintosh/i.test(userAgent) && /Mobile/i.test(userAgent)) {
-    return true;
-  }
-
-  if (
-    /Macintosh/i.test(userAgent) &&
-    /Safari/i.test(userAgent) &&
-    !/iPad/i.test(userAgent)
-  ) {
-    return false;
-  }
-
-  if (
-    /Macintosh/i.test(userAgent) &&
-    /(CPU OS|like Mac OS X)/i.test(userAgent) &&
-    !/(Chrome|CriOS|FxiOS|Firefox|Edg|EdgiOS|OPR)/i.test(userAgent)
-  ) {
-    return true;
-  }
-
-  return false;
-};
-
-const classifyDevice = (request: NextRequest) => {
-  if (isMobileClientHint(request)) {
-    return "mobile";
-  }
-
-  return isMobileUserAgent(request.headers.get("user-agent"))
-    ? "mobile"
-    : "desktop";
-};
+const isMobileRoute = (pathname: string) =>
+  pathname === "/" || mobileBasePaths.some((basePath) => isPathMatch(pathname, basePath));
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const hostname = request.headers.get("host") ?? "";
 
   if (isExcludedPath(pathname)) {
-    const device = classifyDevice(request);
     const response = NextResponse.next();
     response.headers.set("x-synerva-mw", "1");
-    response.headers.set("x-synerva-device", device);
+    response.headers.set("x-synerva-host", hostname);
     return response;
   }
 
-  const device = classifyDevice(request);
-  const isMobile = device === "mobile";
+  const shouldRewrite =
+    hostname === "m.synervadynamics.com" && isMobileRoute(pathname);
 
-  const targetPath =
-    isMobile && pathname === "/"
+  const targetPath = shouldRewrite
+    ? pathname === "/"
       ? "/mobile1"
-      : isMobile && mobileBasePaths.some((basePath) => isPathMatch(pathname, basePath))
-        ? `/mobile1${pathname}`
-        : null;
+      : `/mobile1${pathname}`
+    : null;
 
   if (!targetPath) {
     const response = NextResponse.next();
     response.headers.set("x-synerva-mw", "1");
-    response.headers.set("x-synerva-device", device);
+    response.headers.set("x-synerva-host", hostname);
     return response;
   }
 
@@ -114,8 +51,8 @@ export function middleware(request: NextRequest) {
   rewriteUrl.pathname = targetPath;
   const response = NextResponse.rewrite(rewriteUrl);
   response.headers.set("x-synerva-mw", "1");
-  response.headers.set("x-synerva-device", device);
-  response.headers.set("x-synerva-rewrite-to", targetPath);
+  response.headers.set("x-synerva-host", hostname);
+  response.headers.set("x-synerva-rewrite", targetPath);
   return response;
 }
 
