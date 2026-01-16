@@ -399,11 +399,27 @@
     z-index: 0;
   }
 
-  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about) > *,
-  .backuphomepage footer > * {
-    position: relative;
-    z-index: 1;
-  }
+.backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about) > *,
+.backuphomepage footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-view="desktop"] .view-desktop-only {
+  display: block !important;
+}
+
+html[data-view="desktop"] .view-mobile-only {
+  display: none !important;
+}
+
+html[data-view="mobile"] .view-desktop-only {
+  display: none !important;
+}
+
+html[data-view="mobile"] .view-mobile-only {
+  display: block !important;
+}
 
   .reveal-line {
     display: block;
