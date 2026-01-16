@@ -231,7 +231,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/mobile1/offerings"
+            href="/offerings"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Offerings
@@ -324,7 +324,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/mobile1/systems"
+            href="/systems"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Systems
@@ -370,13 +370,13 @@ export default function Mobile1Page() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/mobile1/dimensions/quiet-divine"
+              href="/dimensions/quiet-divine"
               className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
             >
               View Quiet Divine
             </Link>
             <Link
-              href="/mobile1/dimensions/parallax-loom"
+              href="/dimensions/parallax-loom"
               className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
             >
               View Parallax Loom
@@ -459,7 +459,7 @@ export default function Mobile1Page() {
             </p>
           </div>
           <Link
-            href="/mobile1/merch"
+            href="/merch"
             className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
           >
             View Merch

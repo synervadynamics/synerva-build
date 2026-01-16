@@ -76,7 +76,7 @@ export default function Mobile1Shell({
       </div>
       {showBackButton ? (
         <Link
-          href="/mobile1"
+          href="/"
           aria-label="Back to mobile home"
           className={styles.backButton}
         >

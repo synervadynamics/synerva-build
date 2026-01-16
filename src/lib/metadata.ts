@@ -22,7 +22,10 @@ export const buildPageMetadata = ({
   path = "/",
   image,
 }: MetadataInput): Metadata => {
-  const url = new URL(path, siteUrl).toString();
+  const canonicalPath = path.startsWith("/mobile1")
+    ? path.replace(/^\/mobile1(\/|$)/, "/")
+    : path;
+  const url = new URL(canonicalPath, siteUrl).toString();
   const ogImage = image ?? defaultImage;
 
   return {
