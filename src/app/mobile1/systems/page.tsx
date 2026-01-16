@@ -31,7 +31,7 @@ export default function Mobile1SystemsPage() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -95,7 +95,7 @@ export default function Mobile1SystemsPage() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -132,7 +132,7 @@ export default function Mobile1SystemsPage() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
@@ -169,7 +169,7 @@ export default function Mobile1SystemsPage() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover object-[center_60%]"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col gap-3">
