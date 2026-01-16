@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import { ScrollMorphBackground } from "./homepage/ScrollMorphBackground";
 import styles from "./mobile1.module.css";
 
 const STORAGE_KEY = "mobile1LayoutMode";
