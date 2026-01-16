@@ -1,0 +1,134 @@
+.shell {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  overflow-x: hidden;
+  transition: max-width 180ms ease, width 180ms ease, padding 180ms ease;
+}
+
+.contentOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 5, 11, 0.52);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+}
+
+.panelTransparent {
+  background-color: transparent !important;
+}
+
+.shell[data-mode="expanded"] {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: clamp(16px, 4vw, 28px);
+  padding-right: clamp(16px, 4vw, 28px);
+}
+
+.toggleButton {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(2, 5, 11, 0.72);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  transition: background 180ms ease, border-color 180ms ease;
+  z-index: 50;
+}
+
+.backButton {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top));
+  left: calc(16px + env(safe-area-inset-left));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(2, 5, 11, 0.72);
+  color: #ffffff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  transition: background 180ms ease, border-color 180ms ease;
+  z-index: 50;
+}
+
+.backButton span:first-child {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.backButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+.toggleButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shell[data-mode="expanded"] .toggleButton {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.toggleButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
+.portraitPair {
+  --portrait-gap: 12px;
+  --portrait-max-height: clamp(300px, 60svh, 520px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--portrait-gap);
+  width: 100%;
+}
+
+.landscapeTriple {
+  --landscape-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--landscape-gap);
+  width: 100%;
+}
+
+.shell[data-mode="expanded"] .portraitPair {
+  max-width: calc(
+    ((var(--portrait-max-height) * 2) / 3) * 2 + var(--portrait-gap)
+  );
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portraitPair img,
+.portraitPair video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
