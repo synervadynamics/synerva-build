@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import styles from "./mobile1.module.css";
@@ -42,9 +43,13 @@ const collapseIcon = (
 
 type Mobile1ShellProps = {
   children: React.ReactNode;
+  showBackButton?: boolean;
 };
 
-export default function Mobile1Shell({ children }: Mobile1ShellProps) {
+export default function Mobile1Shell({
+  children,
+  showBackButton = false,
+}: Mobile1ShellProps) {
   const [mode, setMode] = useState<LayoutMode>("compact");
 
   useEffect(() => {
@@ -69,6 +74,16 @@ export default function Mobile1Shell({ children }: Mobile1ShellProps) {
       <div className={`flex w-full flex-col gap-12 py-12 ${styles.content}`}>
         {children}
       </div>
+      {showBackButton ? (
+        <Link
+          href="/mobile1"
+          aria-label="Back to mobile home"
+          className={styles.backButton}
+        >
+          <span aria-hidden>←</span>
+          <span>Home</span>
+        </Link>
+      ) : null}
       <button
         type="button"
         aria-label="Toggle layout width"

@@ -18,7 +18,7 @@ export const viewport = {
 export default function Mobile1SystemsPage() {
   return (
     <main className="text-white">
-      <Mobile1Shell>
+      <Mobile1Shell showBackButton>
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >

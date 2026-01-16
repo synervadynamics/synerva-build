@@ -55,6 +55,37 @@
   z-index: 50;
 }
 
+.backButton {
+  position: fixed;
+  top: calc(16px + env(safe-area-inset-top));
+  left: calc(16px + env(safe-area-inset-left));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(2, 5, 11, 0.72);
+  color: #ffffff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  transition: background 180ms ease, border-color 180ms ease;
+  z-index: 50;
+}
+
+.backButton span:first-child {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.backButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 3px;
+}
+
 .toggleButton svg {
   width: 20px;
   height: 20px;
