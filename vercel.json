@@ -5,8 +5,9 @@
       "destination": "/mobile1",
       "has": [
         {
-          "type": "host",
-          "value": "^m\\.synervadynamics\\.com$"
+          "type": "header",
+          "key": "host",
+          "value": "^m\\.synervadynamics\\.com(:\\d+)?$"
         }
       ]
     },
@@ -15,8 +16,9 @@
       "destination": "/mobile1/offerings",
       "has": [
         {
-          "type": "host",
-          "value": "^m\\.synervadynamics\\.com$"
+          "type": "header",
+          "key": "host",
+          "value": "^m\\.synervadynamics\\.com(:\\d+)?$"
         }
       ]
     },
@@ -25,8 +27,9 @@
       "destination": "/mobile1/systems",
       "has": [
         {
-          "type": "host",
-          "value": "^m\\.synervadynamics\\.com$"
+          "type": "header",
+          "key": "host",
+          "value": "^m\\.synervadynamics\\.com(:\\d+)?$"
         }
       ]
     },
@@ -35,8 +38,9 @@
       "destination": "/mobile1/merch",
       "has": [
         {
-          "type": "host",
-          "value": "^m\\.synervadynamics\\.com$"
+          "type": "header",
+          "key": "host",
+          "value": "^m\\.synervadynamics\\.com(:\\d+)?$"
         }
       ]
     },
@@ -45,8 +49,9 @@
       "destination": "/mobile1/dimensions/:path*",
       "has": [
         {
-          "type": "host",
-          "value": "^m\\.synervadynamics\\.com$"
+          "type": "header",
+          "key": "host",
+          "value": "^m\\.synervadynamics\\.com(:\\d+)?$"
         }
       ]
     }
