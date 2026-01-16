@@ -1,11 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const mobileBasePaths = ["/offerings", "/systems", "/merch", "/dimensions"];
-
-const isPathMatch = (pathname: string, basePath: string) =>
-  pathname === basePath || pathname.startsWith(`${basePath}/`);
-
 const isStaticAssetPath = (pathname: string) =>
   /\.(png|jpg|jpeg|webp|gif|svg|ico|css|js|map|txt|xml|json|woff|woff2|ttf|eot)$/i.test(
     pathname,
@@ -14,15 +9,21 @@ const isStaticAssetPath = (pathname: string) =>
 const isExcludedPath = (pathname: string) =>
   pathname.startsWith("/api/") ||
   pathname.startsWith("/_next/") ||
-  pathname.startsWith("/mobile1") ||
   isStaticAssetPath(pathname);
-
-const isMobileRoute = (pathname: string) =>
-  pathname === "/" || mobileBasePaths.some((basePath) => isPathMatch(pathname, basePath));
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const hostname = request.headers.get("host") ?? "";
+
+  if (hostname === "m.synervadynamics.com" && pathname.startsWith("/mobile1")) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname =
+      pathname === "/mobile1" ? "/" : pathname.replace(/^\/mobile1/, "");
+    const response = NextResponse.redirect(redirectUrl);
+    response.headers.set("x-synerva-mw", "1");
+    response.headers.set("x-synerva-host", hostname);
+    return response;
+  }
 
   if (isExcludedPath(pathname)) {
     const response = NextResponse.next();
@@ -31,8 +32,7 @@ export function middleware(request: NextRequest) {
     return response;
   }
 
-  const shouldRewrite =
-    hostname === "m.synervadynamics.com" && isMobileRoute(pathname);
+  const shouldRewrite = hostname === "m.synervadynamics.com";
 
   const targetPath = shouldRewrite
     ? pathname === "/"
@@ -57,15 +57,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/",
-    "/offerings",
-    "/offerings/:path((?!.*\\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|map|txt|xml|json|woff|woff2|ttf|eot)$).*)",
-    "/systems",
-    "/systems/:path((?!.*\\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|map|txt|xml|json|woff|woff2|ttf|eot)$).*)",
-    "/merch",
-    "/merch/:path((?!.*\\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|map|txt|xml|json|woff|woff2|ttf|eot)$).*)",
-    "/dimensions",
-    "/dimensions/:path((?!.*\\.(?:png|jpg|jpeg|webp|gif|svg|ico|css|js|map|txt|xml|json|woff|woff2|ttf|eot)$).*)",
-  ],
+  matcher: ["/:path*"],
 };
