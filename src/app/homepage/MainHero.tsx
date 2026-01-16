@@ -202,7 +202,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                         <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
                           {label}
                         </p>
-                        <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:whitespace-nowrap sm:leading-normal sm:text-sm">
+                        <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
                           {value}
                         </p>
                       </motion.div>
@@ -324,7 +324,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       <p className="text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
                         {label}
                       </p>
-                      <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:whitespace-nowrap sm:leading-normal sm:text-sm">
+                      <p className="mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
                         {value}
                       </p>
                     </motion.div>
