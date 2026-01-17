@@ -50,7 +50,7 @@ export default function Mobile1Shell({
   children,
   showBackButton = false,
 }: Mobile1ShellProps) {
-  const [mode, setMode] = useState<LayoutMode>("compact");
+  const [mode, setMode] = useState<LayoutMode>("expanded");
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
