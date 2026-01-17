@@ -7,7 +7,6 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
-import { useState } from "react";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 const labsMediaDimensions: Record<string, { width: number; height: number }> = {
@@ -36,28 +35,7 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const rockstar = copy.labs.rockstarPlaybook;
   const reflective = copy.labs.reflectiveDose;
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "pending" | "success" | "error">("idle");
   const isSignupOnly = variant === "signup-only";
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!email) return;
-    setStatus("pending");
-    try {
-      const res = await fetch("/api/labs-interest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
-      setEmail("");
-    } catch (error) {
-      console.error(error);
-      setStatus("error");
-    }
-  };
 
   return (
     <section
@@ -158,28 +136,31 @@ export const Labs = ({ variant = "full" }: LabsProps) => {
             </p>
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">No noise. Unsubscribe anytime.</p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <label className="text-xs uppercase tracking-[0.35em] text-white/60" htmlFor="labs-email">
-              Email
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/synervadynamics"
+            method="post"
+            className="embeddable-buttondown-form synerva-playbook-form"
+          >
+            <label htmlFor="bd-email" className="sr-only">
+              Email address
             </label>
+
             <input
-              id="labs-email"
               type="email"
+              name="email"
+              id="bd-email"
+              placeholder="Enter your email"
               required
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-white placeholder:text-white/40 focus:border-white/50"
-              placeholder="you@company.com"
             />
-            <button
+
+            <input
               type="submit"
-              disabled={status === "pending"}
-              className="w-full rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:bg-white/50"
-            >
-              {status === "pending" ? "Sending…" : "Get access"}
-            </button>
-            {status === "success" && <p className="text-sm text-emerald-300">Preview link is on the way.</p>}
-            {status === "error" && <p className="text-sm text-rose-300">Something went wrong. Please try again.</p>}
+              value="Get the Playbook Preview"
+            />
+
+            <p className="form-microcopy">
+              No spam. One or two emails max. Unsubscribe anytime.
+            </p>
           </form>
         </motion.div>
         {!isSignupOnly && (

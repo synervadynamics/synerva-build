@@ -8,6 +8,57 @@
 	z-index: 10;
 }
 
+.synerva-playbook-form {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.synerva-playbook-form input[type="email"] {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  outline: none;
+}
+
+.synerva-playbook-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.synerva-playbook-form input[type="email"]:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.synerva-playbook-form input[type="submit"] {
+  width: 100%;
+  border-radius: 9999px;
+  border: none;
+  background: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.synerva-playbook-form input[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.synerva-playbook-form .form-microcopy {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .scroll-hero {
 	position: relative;
 	height: 100vh;
