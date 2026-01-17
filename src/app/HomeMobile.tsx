@@ -77,7 +77,7 @@ export default function HomeMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/fragmentation-kills-velocity.PNG"
+              src="/mobile-images/homepage/the-problem-v2.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -467,7 +467,7 @@ export default function HomeMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/next step.PNG"
+              src="/mobile-images/homepage/next-step-v2.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
