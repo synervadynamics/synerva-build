@@ -48,7 +48,7 @@ export const copy = {
       { label: "Core Systems", value: "Lucentra · Verisense · Synerva OS" },
       {
         label: "Operating Posture",
-        value: "Clarity first · Execution without drag",
+        value: "Clarity first · Zero friction",
       },
     ],
   },
