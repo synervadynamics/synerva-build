@@ -69,3 +69,5 @@ export default function Labs() {
     </section>
   );
 }
+
+export { Labs };
