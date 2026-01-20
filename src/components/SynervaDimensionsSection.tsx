@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
 import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
-import { parallaxLoomContent } from "@/lib/dimensions/parallaxLoomContent";
-import { parallaxLoomImages } from "@/lib/dimensions/parallaxLoomImages";
 
 export function SynervaDimensionsSection() {
   const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
@@ -17,10 +15,10 @@ export function SynervaDimensionsSection() {
       (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
     ) ?? quietDivineImages[0];
 
-  const parallaxHero =
-    parallaxLoomImages.find(
-      (image) => image.id === "gaslighting-myself-into-greatness-v1",
-    ) ?? parallaxLoomImages[0];
+  const surfaceTensionHero = {
+    src: "/surface-tension/10.png",
+    alt: "Surface Tension artwork",
+  };
 
   return (
     <section
@@ -106,12 +104,12 @@ export function SynervaDimensionsSection() {
             </div>
 
             <div className="rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
-              {parallaxHero ? (
+              {surfaceTensionHero ? (
                 <div className="mb-5 flex justify-center lg:mb-4">
                   <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
                     <Image
-                      src={parallaxHero.src}
-                      alt={parallaxHero.alt}
+                      src={surfaceTensionHero.src}
+                      alt={surfaceTensionHero.alt}
                       width={720}
                       height={960}
                       className="h-auto w-full rounded-2xl border border-white/10"
@@ -126,20 +124,20 @@ export function SynervaDimensionsSection() {
                 </div>
               ) : null}
               <p className="text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
-                Behavior Under Soft Authority
+                Coherence Under Contact
               </p>
               <p className="mt-1 text-xs text-white/70 sm:text-sm leading-tight">
-                Studies how coping rituals form when everyday systems apply
-                subtle pressure.
+                Examines how internal stability behaves once returned to the
+                world and subjected to pressure.
               </p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight">
-                {parallaxLoomContent.title ?? "Parallax Loom Brewing Co."}
+                Surface Tension
               </h3>
               <Link
-                href="/dimensions/parallax-loom"
+                href="/dimensions/surface-tension"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
               >
-                View Parallax Loom
+                View Surface Tension
                 <span aria-hidden="true">↗</span>
               </Link>
             </div>

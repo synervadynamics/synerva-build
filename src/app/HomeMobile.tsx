@@ -363,10 +363,10 @@ export default function HomeMobile() {
               View Quiet Divine
             </Link>
             <Link
-              href="/dimensions/parallax-loom"
+              href="/dimensions/surface-tension"
               className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
             >
-              View Parallax Loom
+              View Surface Tension
             </Link>
           </div>
         </section>
