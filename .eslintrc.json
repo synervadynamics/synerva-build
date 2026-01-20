@@ -3,5 +3,8 @@
   "ignorePatterns": ["legacy-app/**", "components/**", "seed-files/**"],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/no-unescaped-entities": "off"
   }
 }

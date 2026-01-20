@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-export default function Labs() {
+type LabsProps = {
+  variant?: "signup-only";
+};
+
+export default function Labs(_props: LabsProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
