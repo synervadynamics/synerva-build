@@ -331,6 +331,88 @@ export default function Mobile1Page() {
           </Link>
         </section>
 
+        <section
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+        >
+          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
+            Merch
+          </p>
+          <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            Studio Artifacts You Can Wear
+          </h2>
+          <div
+            aria-hidden
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/homepage/merch-showcase.WEBP"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-contain"
+            />
+          </div>
+          <div className="flex flex-col gap-3">
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Physical editions derived from the same standards as the work:
+              restraint, structure, and durability.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Previewing now, with the first release coming soon.
+            </p>
+          </div>
+          <Link
+            href="/merch"
+            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
+          >
+            View Merch
+          </Link>
+        </section>
+
+        <section className="flex flex-col gap-5">
+          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
+            Writing
+          </p>
+          <div className={styles.portraitPair} aria-hidden>
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/the-rockstar-server-playbook.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+              <Image
+                src="/mobile-images/homepage/the-reflective-dose.png"
+                alt=""
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+              Written Under Real Conditions
+            </h2>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Long-form thinking shaped by pressure, not theory.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Books and essays that hold up when complexity, time, and people are
+              involved.
+            </p>
+          </div>
+          <Link
+            href="/#publications"
+            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
+          >
+            View Writing
+          </Link>
+        </section>
+
         <section className="flex flex-col gap-5">
           <div className={styles.portraitPair} aria-hidden>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
@@ -382,88 +464,6 @@ export default function Mobile1Page() {
               View Parallax Loom
             </Link>
           </div>
-        </section>
-
-        <section className="flex flex-col gap-5">
-          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
-            Writing
-          </p>
-          <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/the-rockstar-server-playbook.png"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/the-reflective-dose.png"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Written Under Real Conditions
-            </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Long-form thinking shaped by pressure, not theory.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Books and essays that hold up when complexity, time, and people are
-              involved.
-            </p>
-          </div>
-          <Link
-            href="/#publications"
-            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
-          >
-            View Writing
-          </Link>
-        </section>
-
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
-          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
-            Merch
-          </p>
-          <h2 className="text-[1.65rem] font-light leading-snug text-white">
-            Studio Artifacts You Can Wear
-          </h2>
-          <div
-            aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          >
-            <Image
-              src="/mobile-images/homepage/merch-showcase.WEBP"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
-            />
-          </div>
-          <div className="flex flex-col gap-3">
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Physical editions derived from the same standards as the work:
-              restraint, structure, and durability.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Previewing now, with the first release coming soon.
-            </p>
-          </div>
-          <Link
-            href="/merch"
-            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
-          >
-            View Merch
-          </Link>
         </section>
 
         <section

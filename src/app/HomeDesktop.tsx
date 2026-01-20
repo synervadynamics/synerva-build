@@ -40,10 +40,10 @@ export default function HomeDesktop() {
         <Systems />
         <Publications />
         <Labs variant="signup-only" />
-        <Merch />
+        <SynervaDimensionsSection />
         <Philosophy />
         <Roadmap />
-        <SynervaDimensionsSection />
+        <Merch />
         <About />
         <Footer />
       </div>
