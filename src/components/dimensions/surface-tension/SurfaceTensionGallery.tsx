@@ -324,7 +324,9 @@ export default function SurfaceTensionGallery() {
                     isVisible ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <p>{activeArtwork.description ?? EMPTY_PLACEHOLDER}</p>
+                  <p className="whitespace-pre-line">
+                    {activeArtwork.description ?? EMPTY_PLACEHOLDER}
+                  </p>
                 </div>
               </div>
 
