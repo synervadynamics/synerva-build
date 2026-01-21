@@ -61,13 +61,16 @@ export default function SurfaceTensionImageSystem() {
 
   useEffect(() => {
     if (activeIndex === null) {
+      document.body.classList.remove("artwork-open");
       document.body.classList.remove("overflow-hidden");
       return;
     }
 
+    document.body.classList.add("artwork-open");
     document.body.classList.add("overflow-hidden");
 
     return () => {
+      document.body.classList.remove("artwork-open");
       document.body.classList.remove("overflow-hidden");
     };
   }, [activeIndex]);
@@ -286,7 +289,7 @@ export default function SurfaceTensionImageSystem() {
               onClick={closeViewer}
               className="rounded-full border border-white/30 px-3 py-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
             >
-              Close
+              Exit
             </button>
             <div className="flex items-center gap-2">
               <button

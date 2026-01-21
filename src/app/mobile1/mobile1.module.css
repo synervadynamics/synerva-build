@@ -86,6 +86,11 @@
   outline-offset: 3px;
 }
 
+body.artwork-open .backButton,
+body.artwork-open .toggleButton {
+  display: none;
+}
+
 .toggleButton svg {
   width: 20px;
   height: 20px;
