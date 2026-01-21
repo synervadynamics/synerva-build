@@ -344,17 +344,10 @@ export default function SurfaceTensionImageSystem() {
                 </div>
               </div>
               <div className="mt-5 px-1">
-                <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/60">
-                  {images[activeIndex].artworkNumber}
-                </p>
-                {images[activeIndex].title ? (
-                  <h3 className="mt-2 text-[1.05rem] font-semibold leading-snug text-white">
-                    {images[activeIndex].title}
-                  </h3>
-                ) : null}
-              </div>
-              <div className="mt-4 px-1">
-                <div className="flex justify-center">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/60">
+                    {images[activeIndex].artworkNumber}
+                  </p>
                   <button
                     type="button"
                     onClick={() => setIsDescriptionOpen((value) => !value)}
@@ -363,6 +356,11 @@ export default function SurfaceTensionImageSystem() {
                     {isDescriptionOpen ? "Hide description" : "Read description"}
                   </button>
                 </div>
+                {images[activeIndex].title ? (
+                  <h3 className="mt-2 text-[1.05rem] font-semibold leading-snug text-white">
+                    {images[activeIndex].title}
+                  </h3>
+                ) : null}
                 {isDescriptionOpen && images[activeIndex].description ? (
                   <p className="mt-3 whitespace-pre-line text-[0.98rem] leading-6 text-white/85">
                     {images[activeIndex].description}
