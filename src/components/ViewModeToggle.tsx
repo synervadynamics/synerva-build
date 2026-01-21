@@ -71,7 +71,7 @@ export default function ViewModeToggle() {
   return (
     <button
       type="button"
-      className="fixed bottom-4 left-4 z-[200] rounded-full border border-white/30 bg-black/60 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_16px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-white/60"
+      className="view-mode-toggle fixed bottom-4 left-4 z-[200] rounded-full border border-white/30 bg-black/60 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white shadow-[0_16px_60px_rgba(0,0,0,0.55)] backdrop-blur-md transition hover:border-white/60"
       aria-label={`Switch to ${nextMode} view`}
       onClick={handleToggle}
     >
