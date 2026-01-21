@@ -63,15 +63,18 @@ export default function SurfaceTensionImageSystem() {
     if (activeIndex === null) {
       document.body.classList.remove("artwork-open");
       document.body.classList.remove("overflow-hidden");
+      window.dispatchEvent(new CustomEvent("artwork-close"));
       return;
     }
 
     document.body.classList.add("artwork-open");
     document.body.classList.add("overflow-hidden");
+    window.dispatchEvent(new CustomEvent("artwork-open"));
 
     return () => {
       document.body.classList.remove("artwork-open");
       document.body.classList.remove("overflow-hidden");
+      window.dispatchEvent(new CustomEvent("artwork-close"));
     };
   }, [activeIndex]);
 
@@ -96,8 +99,13 @@ export default function SurfaceTensionImageSystem() {
         closeViewer();
       }
     };
+    const handleExitRequest = () => closeViewer();
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("artwork-exit", handleExitRequest as EventListener);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("artwork-exit", handleExitRequest as EventListener);
+    };
   }, [activeIndex]);
 
   const clampPan = (nextPan: PanState, nextZoom = zoom) => {

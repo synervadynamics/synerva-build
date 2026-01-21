@@ -51,12 +51,24 @@ export default function Mobile1Shell({
   showBackButton = false,
 }: Mobile1ShellProps) {
   const [mode, setMode] = useState<LayoutMode>("expanded");
+  const [isArtworkOpen, setIsArtworkOpen] = useState(false);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
     if (stored === "compact" || stored === "expanded") {
       setMode(stored);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleOpen = () => setIsArtworkOpen(true);
+    const handleClose = () => setIsArtworkOpen(false);
+    window.addEventListener("artwork-open", handleOpen as EventListener);
+    window.addEventListener("artwork-close", handleClose as EventListener);
+    return () => {
+      window.removeEventListener("artwork-open", handleOpen as EventListener);
+      window.removeEventListener("artwork-close", handleClose as EventListener);
+    };
   }, []);
 
   const handleToggle = () => {
@@ -67,6 +79,10 @@ export default function Mobile1Shell({
     });
   };
 
+  const handleExitArtwork = () => {
+    window.dispatchEvent(new CustomEvent("artwork-exit"));
+  };
+
   return (
     <div id="mobile1-shell" data-mode={mode} className={styles.shell}>
       <ScrollMorphBackground imageSources={backgroundSources} />
@@ -75,24 +91,33 @@ export default function Mobile1Shell({
         {children}
       </div>
       {showBackButton ? (
-        <Link
-          href="/"
-          aria-label="Back to mobile home"
-          className={styles.backButton}
-        >
-          <span aria-hidden>←</span>
-          <span>Home</span>
-        </Link>
+        isArtworkOpen ? (
+          <button type="button" onClick={handleExitArtwork} className={styles.backButton}>
+            <span aria-hidden>×</span>
+            <span>Exit</span>
+          </button>
+        ) : (
+          <Link
+            href="/"
+            aria-label="Back to mobile home"
+            className={styles.backButton}
+          >
+            <span aria-hidden>←</span>
+            <span>Home</span>
+          </Link>
+        )
       ) : null}
-      <button
-        type="button"
-        aria-label="Toggle layout width"
-        aria-pressed={mode === "expanded"}
-        className={styles.toggleButton}
-        onClick={handleToggle}
-      >
-        {mode === "expanded" ? collapseIcon : expandIcon}
-      </button>
+      {!isArtworkOpen ? (
+        <button
+          type="button"
+          aria-label="Toggle layout width"
+          aria-pressed={mode === "expanded"}
+          className={styles.toggleButton}
+          onClick={handleToggle}
+        >
+          {mode === "expanded" ? collapseIcon : expandIcon}
+        </button>
+      ) : null}
     </div>
   );
 }
