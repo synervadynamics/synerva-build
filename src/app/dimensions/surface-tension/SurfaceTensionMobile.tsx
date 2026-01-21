@@ -85,8 +85,10 @@ export default function SurfaceTensionMobile() {
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Because no one stays inward forever. Eventually, other people,
-              time, and pressure resume their influence. What once worked
-              privately must now hold up publicly.
+              time, and pressure resume their influence.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              What once worked privately must now hold up publicly.
             </p>
           </div>
         </section>
@@ -109,8 +111,11 @@ export default function SurfaceTensionMobile() {
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Skin, light, and material act like membranes. They bend, absorb,
-              and distribute force without breaking. Distortion isn’t
-              decoration. It’s evidence of pressure being managed.
+              and distribute force without breaking.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Distortion isn’t decoration. It’s evidence of pressure being
+              managed.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               These are not portraits of emotion.
@@ -142,8 +147,10 @@ export default function SurfaceTensionMobile() {
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Light touches instead of overwhelms. Structures strain without
-              collapsing. What looks abstract is not symbolic. It’s physical
-              record.
+              collapsing.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              What looks abstract is not symbolic. It’s physical record.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               This is what it looks like to remain yourself while being seen,
@@ -170,8 +177,10 @@ export default function SurfaceTensionMobile() {
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Real strength shows up at the surface, where force is distributed,
-              boundaries hold, and identity remains intact without becoming
-              rigid.
+              boundaries hold,
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              and identity remains intact without becoming rigid.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Calm here is not softness.
@@ -197,7 +206,10 @@ export default function SurfaceTensionMobile() {
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Where the first series explored the inner work of becoming
-              coherent, this one asks a harder question:
+              coherent,
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              this one asks a harder question:
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
               Can that coherence survive contact with the world?
@@ -218,7 +230,13 @@ export default function SurfaceTensionMobile() {
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Surface Tension — Series Images
             </h2>
-            <SurfaceTensionImageSystem />
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              What follows is not an illustration of these ideas, but their
+              residue.
+            </p>
+            <div className="mt-6">
+              <SurfaceTensionImageSystem />
+            </div>
           </div>
         </section>
       </Mobile1Shell>
