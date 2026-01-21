@@ -32,17 +32,35 @@ export default function SurfaceTensionMobile() {
           </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
-              Quiet Divine
+              Surface Tension
             </h1>
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Series 001
+              Series 002
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Quiet Divine explores human divinity as an internal capacity.
+              Synerva Dimensions
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Not transcendence, but depth earned through reflection,
-              integration, and composure under pressure.
+              There comes a moment when understanding yourself is no longer
+              enough.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              When reflection has done its work.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              When clarity has settled.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              When who you are can no longer stay internal.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Surface Tension begins there.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Not in discovery, but in exposure.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Not in becoming, but in continuing.
             </p>
           </div>
         </section>
@@ -55,13 +73,20 @@ export default function SurfaceTensionMobile() {
               Orientation
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Inner Architecture
+              What Happens After the Inside Work
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              These portraits treat the inner life as a structure: shaped by
-              experience, clarified by attention, and held together by honesty
-              that can't be performed. The face becomes evidence of thought,
-              memory, resilience, and self-recognition.
+              These works look at what happens when a life returns to the world.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">After insight.</p>
+            <p className="text-[1.05rem] leading-6 text-white/80">After growth.</p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              After the self has been shaped.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Because no one stays inward forever. Eventually, other people,
+              time, and pressure resume their influence. What once worked
+              privately must now hold up publicly.
             </p>
           </div>
         </section>
@@ -74,12 +99,24 @@ export default function SurfaceTensionMobile() {
               What the Work Examines
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Stillness as Authority
+              Stability Under Pressure
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Quiet Divine looks at what remains when someone stops negotiating
-              with the world and listens clearly to themselves. The stillness in
-              these figures is not retreat. It is orientation.
+              Here, surface is not about appearance.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              It’s about function.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Skin, light, and material act like membranes. They bend, absorb,
+              and distribute force without breaking. Distortion isn’t
+              decoration. It’s evidence of pressure being managed.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              These are not portraits of emotion.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              They are portraits of endurance.
             </p>
           </div>
         </section>
@@ -92,13 +129,25 @@ export default function SurfaceTensionMobile() {
               Visual Language
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Motifs as Structure
+              Quiet Strength
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Fracture, crystal, floral permeability, geometric order, and gold
-              appear not as ornament, but as diagrams of inner organization.
-              Each motif represents a different way a person learns to carry
-              what has shaped them without collapsing under its weight.
+              There is no spectacle here.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Pressure builds slowly.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              It leaves traces, not damage.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Light touches instead of overwhelms. Structures strain without
+              collapsing. What looks abstract is not symbolic. It’s physical
+              record.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              This is what it looks like to remain yourself while being seen,
+              judged, misread, and acted upon.
             </p>
           </div>
         </section>
@@ -111,12 +160,24 @@ export default function SurfaceTensionMobile() {
               Underlying Claim
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Divinity Without Spectacle
+              What Strength Actually Is
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Here, divinity is not display. It is the coherence that forms when
-              someone arranges their inner world into something they can live
-              inside with integrity.
+              Depth alone is not strength.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              If coherence only survives in isolation, it is fragile.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Real strength shows up at the surface, where force is distributed,
+              boundaries hold, and identity remains intact without becoming
+              rigid.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Calm here is not softness.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              It is control.
             </p>
           </div>
         </section>
@@ -132,9 +193,20 @@ export default function SurfaceTensionMobile() {
               Series Context
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Quiet Divine is the first series in Synerva Dimensions. It
-              establishes the collection's central idea: identity as a system
-              under constant revision.
+              Surface Tension follows Quiet Divine.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Where the first series explored the inner work of becoming
+              coherent, this one asks a harder question:
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Can that coherence survive contact with the world?
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              Strength is not hardness.
+            </p>
+            <p className="text-[1.05rem] leading-6 text-white/80">
+              It is precision.
             </p>
           </div>
         </section>
@@ -144,7 +216,7 @@ export default function SurfaceTensionMobile() {
         >
           <div className="flex flex-col gap-4">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Quiet Divine — Series Images
+              Surface Tension — Series Images
             </h2>
             <SurfaceTensionImageSystem />
           </div>
