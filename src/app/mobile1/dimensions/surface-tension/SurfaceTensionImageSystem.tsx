@@ -100,12 +100,16 @@ export default function SurfaceTensionImageSystem() {
     const mediaQuery = window.matchMedia("(orientation: portrait)");
     const handleChange = () => setIsPortrait(mediaQuery.matches);
     handleChange();
-    if ("addEventListener" in mediaQuery) {
+    if (typeof mediaQuery.addEventListener === "function") {
       mediaQuery.addEventListener("change", handleChange);
       return () => mediaQuery.removeEventListener("change", handleChange);
     }
-    mediaQuery.addListener(handleChange);
-    return () => mediaQuery.removeListener(handleChange);
+    const legacyMediaQuery = mediaQuery as MediaQueryList & {
+      addListener?: (listener: () => void) => void;
+      removeListener?: (listener: () => void) => void;
+    };
+    legacyMediaQuery.addListener?.(handleChange);
+    return () => legacyMediaQuery.removeListener?.(handleChange);
   }, []);
 
   return (
