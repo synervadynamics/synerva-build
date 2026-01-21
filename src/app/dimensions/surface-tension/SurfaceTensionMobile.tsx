@@ -13,7 +13,7 @@ export default function SurfaceTensionMobile() {
           <div className={styles.portraitPair} aria-hidden>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/mobile-images/homepage/the-fractured-self.webp"
+                src="/surface-tension/01.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"
@@ -22,7 +22,7 @@ export default function SurfaceTensionMobile() {
             </div>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/mobile-images/homepage/constructed-innocence.webp"
+                src="/surface-tension/30.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"
