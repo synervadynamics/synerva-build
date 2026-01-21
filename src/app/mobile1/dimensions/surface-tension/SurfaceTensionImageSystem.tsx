@@ -343,15 +343,17 @@ export default function SurfaceTensionImageSystem() {
                 ) : null}
               </div>
               <div className="mt-4 px-1">
-                <button
-                  type="button"
-                  onClick={() => setIsDescriptionOpen((value) => !value)}
-                  className="rounded-full border border-white/30 px-4 py-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
-                >
-                  {isDescriptionOpen ? "Hide description" : "Read description"}
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => setIsDescriptionOpen((value) => !value)}
+                    className="rounded-full border border-white/30 px-4 py-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
+                  >
+                    {isDescriptionOpen ? "Hide description" : "Read description"}
+                  </button>
+                </div>
                 {isDescriptionOpen && images[activeIndex].description ? (
-                  <p className="mt-4 whitespace-pre-line text-[0.98rem] leading-6 text-white/85">
+                  <p className="mt-3 whitespace-pre-line text-[0.98rem] leading-6 text-white/85">
                     {images[activeIndex].description}
                   </p>
                 ) : null}
