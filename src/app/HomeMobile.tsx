@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
+import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import styles from "@/app/mobile1/mobile1.module.css";
 
 export default function HomeMobile() {
@@ -400,58 +401,7 @@ export default function HomeMobile() {
           </Link>
         </section>
 
-        <section className="flex flex-col gap-5">
-          <div className={styles.portraitPair} aria-hidden>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/the-fractured-self.webp"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/constructed-innocence.webp"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 px-2">
-            <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
-              Synerva Dimensions
-            </p>
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Constructed Realities
-            </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              An ongoing artwork series exploring systems, identity, and inner
-              architecture through editorial-grade visual worlds.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Each series is built like a real brand or artifact: cohesive,
-              structured, and designed to feel operational, not conceptual.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/dimensions/quiet-divine"
-              className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
-            >
-              View Quiet Divine
-            </Link>
-            <Link
-              href="/dimensions/surface-tension"
-              className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
-            >
-              View Surface Tension
-            </Link>
-          </div>
-        </section>
+        <SynervaDimensionsSection />
 
         <section
           className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
