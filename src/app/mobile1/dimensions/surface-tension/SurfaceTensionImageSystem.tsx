@@ -15,6 +15,8 @@ export default function SurfaceTensionImageSystem() {
   const images = useMemo(() => [...surfaceTensionArtworks], []);
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [showDescription, setShowDescription] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(false);
   const touchStart = useRef<TouchPoint | null>(null);
 
   const openViewer = (index: number) => {
@@ -86,6 +88,25 @@ export default function SurfaceTensionImageSystem() {
       document.body.classList.remove("overflow-hidden");
     };
   }, [activeIndex]);
+
+  useEffect(() => {
+    if (activeIndex !== null) {
+      setShowDescription(false);
+    }
+  }, [activeIndex]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(orientation: portrait)");
+    const handleChange = () => setIsPortrait(mediaQuery.matches);
+    handleChange();
+    if ("addEventListener" in mediaQuery) {
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
+    }
+    mediaQuery.addListener(handleChange);
+    return () => mediaQuery.removeListener(handleChange);
+  }, []);
 
   return (
     <div className="flex flex-col gap-5">
@@ -203,18 +224,65 @@ export default function SurfaceTensionImageSystem() {
           >
             Close
           </button>
+          {isPortrait ? (
+            <button
+              type="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                setShowDescription((current) => !current);
+              }}
+              className="absolute left-4 top-4 rounded-full border border-white/30 px-3 py-2 text-[0.65rem] uppercase tracking-[0.35em] text-white/70"
+            >
+              {showDescription ? "Hide Description" : "Show Description"}
+            </button>
+          ) : null}
           <div
-            className="relative w-full max-w-[85vw] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5"
+            className={`relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 ${
+              showDescription && isPortrait ? "max-w-[92vw]" : "max-w-[85vw]"
+            }`}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative aspect-[4/5] max-h-[75vh] w-full">
-              <Image
-                src={images[activeIndex].imageSrc}
-                alt={`Surface Tension artwork ${images[activeIndex].id}`}
-                fill
-                sizes="(max-width: 768px) 90vw, 420px"
-                className="object-contain"
-              />
+            <div
+              className={`flex ${
+                showDescription && isPortrait ? "flex-row gap-4" : "flex-col"
+              }`}
+            >
+              <div
+                className={`relative ${
+                  showDescription && isPortrait ? "w-[48%]" : "w-full"
+                }`}
+              >
+                <div
+                  className={`relative aspect-[4/5] ${
+                    showDescription && isPortrait ? "max-h-[70vh]" : "max-h-[75vh]"
+                  } w-full`}
+                >
+                  <Image
+                    src={images[activeIndex].imageSrc}
+                    alt={`Surface Tension artwork ${images[activeIndex].id}`}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 420px"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+              {showDescription && isPortrait ? (
+                <div className="w-[52%] overflow-y-auto px-3 py-4 text-white/90">
+                  <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/60">
+                    {images[activeIndex].artworkNumber}
+                  </p>
+                  {images[activeIndex].title ? (
+                    <h3 className="mt-2 text-[1.05rem] font-semibold leading-snug text-white">
+                      {images[activeIndex].title}
+                    </h3>
+                  ) : null}
+                  {images[activeIndex].description ? (
+                    <p className="mt-3 whitespace-pre-line text-[0.98rem] leading-6 text-white/85">
+                      {images[activeIndex].description}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
