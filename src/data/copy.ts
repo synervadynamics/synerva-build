@@ -14,7 +14,7 @@ export const copy = {
       { label: "Contact", href: "/contact" },
     ],
     contact: {
-      email: "synerva-dynamics@gmail.com",
+      email: "synerva.dynamics@gmail.com",
       phone: "+1 (905) 380-7790",
       address: "259 St. Paul Street, St. Catharines, Ontario L2R 3M7",
     },
