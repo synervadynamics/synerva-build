@@ -17,14 +17,17 @@ const defaultSections: SectionItem[] = [
 type Props = {
   sections?: SectionItem[];
   getScrollOffset?: () => number;
+  variant?: "default" | "homepage";
 };
 
 export const SectionIndex = ({
   sections = defaultSections,
   getScrollOffset,
+  variant = "default",
 }: Props) => {
   const resolvedSections = sections.length ? sections : defaultSections;
   const [active, setActive] = useState<string>(resolvedSections[0]?.id ?? "");
+  const isHomepage = variant === "homepage";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -86,16 +89,28 @@ export const SectionIndex = ({
                 }
               : undefined
           }
-          className={`flex flex-col items-center gap-2 transition ${
-            item.isActive ? "text-white" : "hover:text-white/80"
+          className={`group flex flex-col items-center gap-2 transition ${
+            item.isActive
+              ? "text-white"
+              : isHomepage
+                ? "text-white/70 hover:text-white"
+                : "hover:text-white/80"
           }`}
         >
           <span>{item.label}</span>
           <span
-            className={`h-1 w-10 rounded-full bg-white/30 transition ${
-              item.isActive
-                ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
-                : ""
+            className={`h-1 w-10 rounded-full transition ${
+              isHomepage
+                ? `origin-center bg-white/40 opacity-0 scale-x-0 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:scale-x-100 group-hover:bg-white group-hover:shadow-[0_0_18px_rgba(255,255,255,0.6)] ${
+                    item.isActive
+                      ? "opacity-100 scale-x-100 bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                      : ""
+                  }`
+                : `bg-white/30 transition ${
+                    item.isActive
+                      ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                      : ""
+                  }`
             }`}
           />
         </a>

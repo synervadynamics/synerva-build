@@ -14,6 +14,7 @@ export default function Labs(_props: LabsProps) {
     "idle"
   );
   const playbook = copy.labs.rockstarPlaybook;
+  const playbookImage = copy.labs.feature.image;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -113,8 +114,8 @@ export default function Labs(_props: LabsProps) {
             <div className="w-full max-w-[520px] overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)]">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black/30">
                 <Image
-                  src={playbook.image.src}
-                  alt={playbook.image.alt}
+                  src={playbookImage.src}
+                  alt={playbookImage.alt}
                   width={1024}
                   height={1536}
                   className="block w-full object-cover"

@@ -11,10 +11,14 @@ import { SectionIndex } from "@/components/SectionIndex";
 import type { Easing } from "framer-motion";
 
 const sectionMap = [
+  { id: "narrative", label: "Orientation" },
+  { id: "offerings", label: "Offerings" },
   { id: "deliver", label: "Deliverables" },
   { id: "systems", label: "Systems" },
-  { id: "philosophy", label: "Philosophy" },
-  { id: "roadmap", label: "Roadmap" },
+  { id: "publications", label: "Publications" },
+  { id: "synerva-dimensions", label: "Artwork" },
+  { id: "merch", label: "Merch" },
+  { id: "about", label: "About" },
 ];
 
 type MainHeroProps = {
@@ -109,18 +113,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                 >
                   Synerva Dynamics
                 </Link>
-                <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-                  {copy.global.nav.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="transition hover:text-white"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-                <SectionIndex sections={sectionMap} />
+                <SectionIndex sections={sectionMap} variant="homepage" />
               </header>
               <div className="flex flex-col gap-10">
                 <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
@@ -231,18 +224,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
               >
                 Synerva Dynamics
               </Link>
-              <nav className="flex flex-wrap items-center gap-4 text-sm text-white/70">
-                {copy.global.nav.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="transition hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-              <SectionIndex sections={sectionMap} />
+              <SectionIndex sections={sectionMap} variant="homepage" />
             </header>
             <div className="flex flex-col gap-10">
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
