@@ -30,6 +30,7 @@ export const SectionIndex = ({
   const [active, setActive] = useState<string>(
     isHomepage ? "" : resolvedSections[0]?.id ?? "",
   );
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const hasActivatedRef = useRef(false);
 
   useEffect(() => {
@@ -74,62 +75,76 @@ export const SectionIndex = ({
   return (
     <div
       className={`flex items-center text-xs uppercase tracking-[0.3em] ${
-        isHomepage ? "gap-1.5 text-white group" : "gap-2 text-white/50"
+        isHomepage ? "gap-1 text-white" : "gap-2 text-white/50"
       }`}
+      onMouseLeave={() => setHoveredId(null)}
     >
-      {items.map((item) => (
-        <a
-          key={item.id}
-          href={`#${item.id}`}
-          data-cursor="accent"
-          onClick={
-            getScrollOffset
-              ? (event) => {
-                  event.preventDefault();
-                  const el = document.getElementById(item.id);
-                  if (!el) return;
-                  const offset = getScrollOffset();
-                  const top = el.getBoundingClientRect().top + window.scrollY - offset;
-                  const reduceMotion = window.matchMedia(
-                    "(prefers-reduced-motion: reduce)",
-                  ).matches;
-                  window.scrollTo({
-                    top,
-                    behavior: reduceMotion ? "auto" : "smooth",
-                  });
-                }
-              : undefined
-          }
-          className={`group flex flex-col items-center gap-2 transition ${
-            item.id === "systems" && isHomepage ? "mr-4" : ""
-          } ${
-            isHomepage
-              ? `text-white opacity-75 transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hover:opacity-100 ${
-                  item.isActive ? "opacity-100" : "sm:group-hover:opacity-60"
-                }`
-              : item.isActive
-                ? "text-white"
-                : "hover:text-white/80"
-          }`}
-        >
-          <span>{item.label}</span>
-          <span
-            className={`h-1 w-10 rounded-full transition ${
+      {items.map((item) => {
+        const isHovering = hoveredId !== null;
+        const isHovered = hoveredId === item.id;
+        const isActive = !isHovering && item.isActive;
+        const isDimmed = isHovering && !isHovered;
+
+        return (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            data-cursor="accent"
+            onMouseEnter={() => setHoveredId(item.id)}
+            onClick={
+              getScrollOffset
+                ? (event) => {
+                    event.preventDefault();
+                    const el = document.getElementById(item.id);
+                    if (!el) return;
+                    const offset = getScrollOffset();
+                    const top =
+                      el.getBoundingClientRect().top + window.scrollY - offset;
+                    const reduceMotion = window.matchMedia(
+                      "(prefers-reduced-motion: reduce)",
+                    ).matches;
+                    window.scrollTo({
+                      top,
+                      behavior: reduceMotion ? "auto" : "smooth",
+                    });
+                  }
+                : undefined
+            }
+            className={`flex flex-col items-center gap-2 transition ${
+              item.id === "systems" && isHomepage ? "mr-6" : ""
+            } ${
               isHomepage
-                ? `origin-center bg-white/40 opacity-0 scale-x-0 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:scale-x-100 group-hover:bg-white group-hover:shadow-[0_0_18px_rgba(255,255,255,0.6)] ${
-                    item.isActive
-                      ? "opacity-100 scale-x-100 bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
-                      : ""
+                ? `text-white transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    isHovered || isActive
+                      ? "opacity-100"
+                      : isDimmed
+                        ? "opacity-60"
+                        : "opacity-75"
                   }`
-                : `bg-white/30 transition ${
-                    item.isActive
-                      ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
-                      : ""
-                  }`
+                : item.isActive
+                  ? "text-white"
+                  : "hover:text-white/80"
             }`}
-          />
-        </a>
-      ))}
+          >
+            <span>{item.label}</span>
+            <span
+              className={`h-1 w-10 rounded-full transition ${
+                isHomepage
+                  ? `origin-center bg-white/40 opacity-0 scale-x-0 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      isHovered || isActive
+                        ? "opacity-100 scale-x-100 bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                        : ""
+                    }`
+                  : `bg-white/30 transition ${
+                      item.isActive
+                        ? "bg-white shadow-[0_0_18px_rgba(255,255,255,0.6)]"
+                        : ""
+                    }`
+              }`}
+            />
+          </a>
+        );
+      })}
     </div>
   );
 };
