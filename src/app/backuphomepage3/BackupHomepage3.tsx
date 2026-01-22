@@ -13,19 +13,12 @@ import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection"
 import { Systems } from "@/components/Systems";
 import { SystemsThatHoldSection } from "@/components/SystemsThatHoldSection";
 import { MainHero } from "@/app/homepage/MainHero";
-import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
 export default function BackupHomepage3() {
-  const backgroundSources = [
-    "/jan-4-new-background-transition/v8/1.png",
-    "/jan-4-new-background-transition/v8/2.png",
-    "/jan-4-new-background-transition/v8/3.png",
-    "/jan-4-new-background-transition/v8/4.png",
-  ];
-
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
-      <ScrollMorphBackground imageSources={backgroundSources} />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/72C55EE4-E7BB-49D9-BCF8-25D020BD0F83.jpeg" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />

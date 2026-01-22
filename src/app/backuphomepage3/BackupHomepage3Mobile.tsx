@@ -7,7 +7,7 @@ import styles from "@/app/mobile1/mobile1.module.css";
 export default function BackupHomepage3Mobile() {
   return (
     <main className="text-white">
-      <Mobile1Shell>
+      <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/72C55EE4-E7BB-49D9-BCF8-25D020BD0F83.jpeg">
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
