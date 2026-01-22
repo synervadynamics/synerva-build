@@ -4,14 +4,13 @@ import { FormEvent, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { copy } from "@/data/copy";
 import { AmbientVideo } from "@/components/AmbientVideo";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
 export default function ContactPageClient() {
   return (
     <div className="relative bg-[var(--bg)] text-white">
-      <div
-        className="fixed inset-0 -z-10 bg-[url('/contact/3B38E9FD-24E1-41B7-BA01-BB4412EB06CD.jpeg')] bg-cover bg-center bg-no-repeat"
-        aria-hidden="true"
-      />
+      <ScrollMorphBackground />
+      <div className="pointer-events-none fixed inset-0 z-[2] bg-black/80" />
       <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/footer/footer_motif.webp"
