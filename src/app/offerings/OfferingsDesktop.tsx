@@ -69,7 +69,7 @@ export default function OfferingsDesktop() {
 
   return (
     <main className="relative text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/398FE3E8-80C5-4106-8B6B-C9E4B3201C0D.jpeg" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/72C55EE4-E7BB-49D9-BCF8-25D020BD0F83.jpeg" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
