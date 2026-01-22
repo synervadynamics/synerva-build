@@ -3,7 +3,6 @@
 import { FormEvent, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { copy } from "@/data/copy";
-import { AmbientVideo } from "@/components/AmbientVideo";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 
 export default function ContactPageClient() {
@@ -13,114 +12,89 @@ export default function ContactPageClient() {
       <div className="pointer-events-none fixed inset-0 z-[2] bg-black/80" />
       <div className="relative z-10">
         <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
-        <AmbientVideo
-          src="/visuals/footer/footer_motif.webp"
-          opacity={0.45}
-          blur
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-black/70 to-cyan-500/20" />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative mx-auto flex max-w-5xl flex-col gap-5 rounded-[3rem] border border-white/10 bg-black/50 p-10 backdrop-blur-2xl">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-            Contact
-          </p>
-          <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Start a Conversation
-          </h1>
-          <p className="text-lg text-white/75">
-            If you’re reaching out, you likely have something specific in mind.
-          </p>
-          <div className="space-y-2 text-base text-white/70">
-            <p>A deliverable.</p>
-            <p>A system that isn’t holding.</p>
-            <p>A piece of work that needs to move — cleanly and without drift.</p>
-          </div>
-          <p className="text-base text-white/70">
-            This page is simply the next step.
-          </p>
-        </div>
-        </section>
-        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
-        <AmbientVideo
-          src="/visuals/about/about_tile_2.webp"
-          opacity={0.35}
-          blur
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/80" />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto max-w-5xl">
-          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-              What to Include
-            </p>
-            <div className="mt-4 space-y-3 text-base text-white/75">
-              <p>You don’t need to sell yourself.</p>
-              <p>You don’t need a perfect brief.</p>
-              <p>A short note is enough.</p>
-            </div>
-            <div className="mt-5 space-y-3 text-base text-white/70">
-              <p>Please include:</p>
-              <ul className="list-disc space-y-2 pl-5 text-base text-white/70">
-                <li>what you want delivered</li>
-                <li>the timeline you’re targeting</li>
-                <li>any constraints that matter</li>
-              </ul>
-              <p>That’s it.</p>
-            </div>
-            <p className="mt-5 text-base text-white/70">
-              Brief is fine. Clarity matters more than polish.
-            </p>
-          </div>
-        </div>
-        </section>
-        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
-        <AmbientVideo
-          src="/visuals/hero/hero_main_render.webp"
-          opacity={0.3}
-          blur
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/95 via-black/70 to-black/85" />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative mx-auto max-w-5xl">
-          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-              What Happens Next
-            </p>
-            <div className="mt-4 space-y-3 text-base text-white/75">
-              <p>I’ll review your note personally.</p>
-              <p>
-                If it’s a fit, I’ll confirm scope, timeline, and the best way to
-                engage.
+          <div className="relative mx-auto max-w-5xl">
+            <div className="glass-panel flex flex-col gap-5 rounded-[3rem] border border-white/10 p-10">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                Contact
               </p>
-              <p>If it’s not, I’ll tell you directly.</p>
-              <p>Either way, you’ll get a clear answer.</p>
+              <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
+                Start a Conversation
+              </h1>
+              <p className="text-lg text-white/75">
+                If you’re reaching out, you likely have something specific in
+                mind.
+              </p>
+              <div className="space-y-2 text-base text-white/70">
+                <p>A deliverable.</p>
+                <p>A system that isn’t holding.</p>
+                <p>
+                  A piece of work that needs to move — cleanly and without
+                  drift.
+                </p>
+              </div>
+              <p className="text-base text-white/70">
+                This page is simply the next step.
+              </p>
             </div>
           </div>
-        </div>
+        </section>
+        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
+          <div className="relative mx-auto max-w-5xl">
+            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                What to Include
+              </p>
+              <div className="mt-4 space-y-3 text-base text-white/75">
+                <p>You don’t need to sell yourself.</p>
+                <p>You don’t need a perfect brief.</p>
+                <p>A short note is enough.</p>
+              </div>
+              <div className="mt-5 space-y-3 text-base text-white/70">
+                <p>Please include:</p>
+                <ul className="list-disc space-y-2 pl-5 text-base text-white/70">
+                  <li>what you want delivered</li>
+                  <li>the timeline you’re targeting</li>
+                  <li>any constraints that matter</li>
+                </ul>
+                <p>That’s it.</p>
+              </div>
+              <p className="mt-5 text-base text-white/70">
+                Brief is fine. Clarity matters more than polish.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
+          <div className="relative mx-auto max-w-5xl">
+            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                What Happens Next
+              </p>
+              <div className="mt-4 space-y-3 text-base text-white/75">
+                <p>I’ll review your note personally.</p>
+                <p>
+                  If it’s a fit, I’ll confirm scope, timeline, and the best way
+                  to engage.
+                </p>
+                <p>If it’s not, I’ll tell you directly.</p>
+                <p>Either way, you’ll get a clear answer.</p>
+              </div>
+            </div>
+          </div>
         </section>
         <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
-        <AmbientVideo
-          src="/visuals/hero/hero_main_render.webp"
-          opacity={0.25}
-          blur
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-black/95 via-black/70 to-black/85" />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-            <div className="space-y-2">
-              <h2 className="text-2xl text-white">Get in Touch</h2>
-              <p className="text-sm text-white/70">
-                Use the form below to send a message.
-              </p>
+          <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+              <div className="space-y-2">
+                <h2 className="text-2xl text-white">Get in Touch</h2>
+                <p className="text-sm text-white/70">
+                  Use the form below to send a message.
+                </p>
+              </div>
+              <ContactForm />
             </div>
-            <ContactForm />
+            <div className="hidden lg:block" aria-hidden="true" />
           </div>
-          <div
-            className="hidden lg:block"
-            aria-hidden="true"
-          />
-        </div>
         </section>
         <Footer />
       </div>
