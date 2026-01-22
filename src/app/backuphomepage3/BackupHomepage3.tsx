@@ -11,62 +11,40 @@ import { Roadmap } from "@/components/Roadmap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
+import { SystemsThatHoldSection } from "@/components/SystemsThatHoldSection";
 import { MainHero } from "@/app/homepage/MainHero";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
-import ScrollHero from "./components/ScrollHero";
 
-const backgroundSources = [
-  "/jan-4-new-background-transition/v8/1.png",
-  "/jan-4-new-background-transition/v8/2.png",
-  "/jan-4-new-background-transition/v8/3.png",
-  "/jan-4-new-background-transition/v8/4.png",
-];
+export default function BackupHomepage3() {
+  const backgroundSources = [
+    "/jan-4-new-background-transition/v8/1.png",
+    "/jan-4-new-background-transition/v8/2.png",
+    "/jan-4-new-background-transition/v8/3.png",
+    "/jan-4-new-background-transition/v8/4.png",
+  ];
 
-type BackupHomepage3Props = {
-  mobileVariant?: "default" | "beats";
-};
-
-export default function BackupHomepage3({
-  mobileVariant = "beats",
-}: BackupHomepage3Props) {
   return (
-    <main
-      id="backup-homepage"
-      className="relative text-white backuphomepage backuphomepage-variant backuphomepage3"
-    >
+    <main className="relative text-white backuphomepage backuphomepage-variant">
       <ScrollMorphBackground imageSources={backgroundSources} />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <section id="scroll-hero-addon">
-          <ScrollHero />
-        </section>
-        <section id="homepage-hero">
-          <MainHero mobileVariant={mobileVariant} />
-        </section>
-        <section id="loop-coverage">
-          <Narrative mobileVariant={mobileVariant} />
-        </section>
-        <section id="core-systems">
-          <Offerings />
-        </section>
-        <section id="operating-posture">
-          <section id="whats-delivered">
-            <Deliver mobileVariant={mobileVariant} />
-          </section>
-        </section>
-        <section id="infrastructure">
-          <Systems />
-        </section>
+        <MainHero />
+        <Narrative />
+        <Offerings />
+        <Deliver />
+        <SystemsThatHoldSection
+          className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
+          innerClassName="mx-auto w-full max-w-3xl"
+        />
+        <Systems />
         <Publications />
         <Labs variant="signup-only" />
-        <Merch />
+        <SynervaDimensionsSection />
         <Philosophy />
         <Roadmap />
-        <SynervaDimensionsSection />
-        <section id="founder">
-          <About />
-        </section>
+        <Merch />
+        <About />
         <Footer />
       </div>
     </main>
