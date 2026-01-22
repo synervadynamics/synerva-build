@@ -5,6 +5,7 @@ type VideoPlaceholderProps = {
   className?: string;
   ratio?: string;
   ariaLabel?: string;
+  variant?: "default" | "neutral";
 };
 
 export default function VideoPlaceholder({
@@ -12,6 +13,7 @@ export default function VideoPlaceholder({
   className,
   ratio,
   ariaLabel,
+  variant = "default",
 }: VideoPlaceholderProps) {
   const ratioClass = ratio ?? "aspect-[16/9]";
 
@@ -25,8 +27,12 @@ export default function VideoPlaceholder({
         className,
       )}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,170,255,0.18),transparent_62%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]" />
+      {variant === "default" && (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,170,255,0.18),transparent_62%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))]" />
+        </>
+      )}
       <div
         className="pointer-events-none absolute inset-x-4 inset-y-3 rounded-2xl border border-white/12"
         aria-hidden="true"

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import styles from "./mobile1.module.css";
 
 const STORAGE_KEY = "mobile1LayoutMode";
@@ -44,11 +45,13 @@ const collapseIcon = (
 type Mobile1ShellProps = {
   children: React.ReactNode;
   showBackButton?: boolean;
+  backgroundImageUrl?: string;
 };
 
 export default function Mobile1Shell({
   children,
   showBackButton = false,
+  backgroundImageUrl,
 }: Mobile1ShellProps) {
   const [mode, setMode] = useState<LayoutMode>("expanded");
   const [isArtworkOpen, setIsArtworkOpen] = useState(false);
@@ -85,7 +88,11 @@ export default function Mobile1Shell({
 
   return (
     <div id="mobile1-shell" data-mode={mode} className={styles.shell}>
-      <ScrollMorphBackground imageSources={backgroundSources} />
+      {backgroundImageUrl ? (
+        <SubpageStaticBackground imageUrl={backgroundImageUrl} />
+      ) : (
+        <ScrollMorphBackground imageSources={backgroundSources} />
+      )}
       <div className={styles.contentOverlay} aria-hidden />
       <div className={`flex w-full flex-col gap-12 py-12 ${styles.content}`}>
         {children}
