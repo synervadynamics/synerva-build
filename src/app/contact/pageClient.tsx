@@ -11,7 +11,8 @@ export default function ContactPageClient() {
     <div className="relative bg-[var(--bg)] text-white">
       <ScrollMorphBackground />
       <div className="pointer-events-none fixed inset-0 z-[2] bg-black/80" />
-      <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
+      <div className="relative z-10">
+        <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/footer/footer_motif.webp"
           opacity={0.45}
@@ -38,8 +39,8 @@ export default function ContactPageClient() {
             This page is simply the next step.
           </p>
         </div>
-      </section>
-      <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
+        </section>
+        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/about/about_tile_2.webp"
           opacity={0.35}
@@ -71,8 +72,8 @@ export default function ContactPageClient() {
             </p>
           </div>
         </div>
-      </section>
-      <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
+        </section>
+        <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/hero/hero_main_render.webp"
           opacity={0.3}
@@ -96,8 +97,8 @@ export default function ContactPageClient() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
+        </section>
+        <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/hero/hero_main_render.webp"
           opacity={0.25}
@@ -120,8 +121,9 @@ export default function ContactPageClient() {
             aria-hidden="true"
           />
         </div>
-      </section>
-      <Footer />
+        </section>
+        <Footer />
+      </div>
     </div>
   );
 }
