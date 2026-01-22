@@ -74,8 +74,10 @@ export const SectionIndex = ({
 
   return (
     <div
-      className={`flex items-center text-xs uppercase tracking-[0.3em] ${
-        isHomepage ? "gap-1 text-white" : "gap-2 text-white/50"
+      className={`flex items-center text-xs uppercase ${
+        isHomepage
+          ? "gap-[0.3rem] tracking-[0.28em] text-white"
+          : "gap-2 tracking-[0.3em] text-white/50"
       }`}
       onMouseLeave={() => setHoveredId(null)}
     >
@@ -84,6 +86,11 @@ export const SectionIndex = ({
         const isHovered = hoveredId === item.id;
         const isActive = !isHovering && item.isActive;
         const isDimmed = isHovering && !isHovered;
+        const isSecondaryGroup = isHomepage
+          ? ["publications", "synerva-dimensions", "merch", "about"].includes(
+              item.id,
+            )
+          : false;
 
         return (
           <a
@@ -111,7 +118,7 @@ export const SectionIndex = ({
                 : undefined
             }
             className={`flex flex-col items-center gap-2 transition ${
-              item.id === "systems" && isHomepage ? "mr-6" : ""
+              item.id === "systems" && isHomepage ? "mr-[1.8rem]" : ""
             } ${
               isHomepage
                 ? `text-white transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -119,7 +126,9 @@ export const SectionIndex = ({
                       ? "opacity-100"
                       : isDimmed
                         ? "opacity-60"
-                        : "opacity-75"
+                        : isSecondaryGroup
+                          ? "opacity-70"
+                          : "opacity-75"
                   }`
                 : item.isActive
                   ? "text-white"
