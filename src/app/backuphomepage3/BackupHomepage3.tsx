@@ -18,7 +18,7 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 export default function BackupHomepage3() {
   return (
     <main className="relative text-white backuphomepage backuphomepage-variant">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/72C55EE4-E7BB-49D9-BCF8-25D020BD0F83.jpeg" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT Image Jan 22, 2026, 12_00_43 AM.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
