@@ -7,7 +7,11 @@ import { AmbientVideo } from "@/components/AmbientVideo";
 
 export default function ContactPageClient() {
   return (
-    <div className="bg-[var(--bg)] bg-[url('/contact/B5BFB4CF-9143-4D2C-8066-E02320714BDD.jpeg')] bg-cover bg-center bg-no-repeat text-white">
+    <div className="relative bg-[var(--bg)] text-white">
+      <div
+        className="fixed inset-0 -z-10 bg-[url('/contact/B5BFB4CF-9143-4D2C-8066-E02320714BDD.jpeg')] bg-contain bg-center bg-no-repeat"
+        aria-hidden="true"
+      />
       <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/footer/footer_motif.webp"
