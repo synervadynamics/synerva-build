@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type SectionItem = {
   id: string;
@@ -26,8 +26,11 @@ export const SectionIndex = ({
   variant = "default",
 }: Props) => {
   const resolvedSections = sections.length ? sections : defaultSections;
-  const [active, setActive] = useState<string>(resolvedSections[0]?.id ?? "");
   const isHomepage = variant === "homepage";
+  const [active, setActive] = useState<string>(
+    isHomepage ? "" : resolvedSections[0]?.id ?? "",
+  );
+  const hasActivatedRef = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,6 +39,10 @@ export const SectionIndex = ({
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target.id) {
+          if (isHomepage && !hasActivatedRef.current) {
+            if (window.scrollY <= 0) return;
+            hasActivatedRef.current = true;
+          }
           setActive(visible.target.id);
         }
       },
@@ -51,7 +58,7 @@ export const SectionIndex = ({
     });
 
     return () => observer.disconnect();
-  }, [resolvedSections]);
+  }, [resolvedSections, isHomepage]);
 
   const items = useMemo(
     () =>
@@ -65,7 +72,11 @@ export const SectionIndex = ({
   if (!items.length) return null;
 
   return (
-    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-white/50">
+    <div
+      className={`flex items-center text-xs uppercase tracking-[0.3em] ${
+        isHomepage ? "gap-1.5 text-white group" : "gap-2 text-white/50"
+      }`}
+    >
       {items.map((item) => (
         <a
           key={item.id}
@@ -90,10 +101,14 @@ export const SectionIndex = ({
               : undefined
           }
           className={`group flex flex-col items-center gap-2 transition ${
-            item.isActive
-              ? "text-white"
-              : isHomepage
-                ? "text-white/70 hover:text-white"
+            item.id === "systems" && isHomepage ? "mr-4" : ""
+          } ${
+            isHomepage
+              ? `text-white opacity-75 transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hover:opacity-100 ${
+                  item.isActive ? "opacity-100" : "sm:group-hover:opacity-60"
+                }`
+              : item.isActive
+                ? "text-white"
                 : "hover:text-white/80"
           }`}
         >
