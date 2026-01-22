@@ -55,6 +55,7 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(apiKey);
+  const recipient = "synerva.dynamics@gmail.com";
 
   try {
     const attachmentPayload =
@@ -68,7 +69,7 @@ export async function POST(request: Request) {
         : undefined;
     await resend.emails.send({
       from: "Synerva Dynamics <notifications@synerva-dynamics.com>",
-      to: copy.global.contact.email,
+      to: recipient,
       replyTo: email,
       subject: `New Synerva inquiry from ${name}`,
       text,
