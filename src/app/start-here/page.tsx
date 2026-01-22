@@ -43,12 +43,12 @@ export default function StartHerePage() {
                   </Link>
                 </div>
                 <div className="w-full">
-                  <div className="relative aspect-[2/3] w-full overflow-hidden rounded-3xl border border-white/12">
+                  <div className="relative aspect-[2/3] w-full max-h-[60vh] overflow-hidden rounded-3xl border border-white/12 md:max-h-none">
                     <Image
                       src="/homepage-post-12-25-2025/founder-start-hero.png"
                       alt="Founder portrait"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       sizes="(min-width: 1024px) 38vw, 100vw"
                       priority
                     />
