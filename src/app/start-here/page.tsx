@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { buildPageMetadata } from "@/lib/metadata";
 import { Footer } from "@/components/Footer";
-import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const metadata = buildPageMetadata({
@@ -13,7 +13,7 @@ export const metadata = buildPageMetadata({
 export default function StartHerePage() {
   return (
     <div className="relative bg-[var(--bg)] text-white">
-      <ScrollMorphBackground />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <div className="pointer-events-none fixed inset-0 z-[2] bg-black/80" />
 
       <div className="relative z-10">

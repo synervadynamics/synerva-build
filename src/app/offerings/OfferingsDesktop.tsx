@@ -69,7 +69,7 @@ export default function OfferingsDesktop() {
 
   return (
     <main className="relative text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/72C55EE4-E7BB-49D9-BCF8-25D020BD0F83.jpeg" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
