@@ -63,19 +63,22 @@ export default function Labs(_props: LabsProps) {
                 Get Early Drops
               </h2>
               <p className="text-base leading-relaxed text-white/75">
-                Enter your email to get an instant preview of The Rockstar
-                Server Playbook and The Reflective Dose. You’ll receive both
-                early editions delivered automatically to your inbox—no spam,
-                no noise, no algorithmic drip torture. Just two world-class
-                previews the moment you request them.
+                Enter your email to receive an instant preview of The Rockstar
+                Server Playbook—a survival manual drawn from high-pressure
+                restaurants, bars, and service floors, with lessons that
+                translate well beyond the industry. The full preview arrives in
+                one email. No drip campaigns. No algorithmic games. Just a
+                clear, substantial excerpt, delivered on request.
               </p>
               <p className="text-sm leading-relaxed text-white/70">
-                You’ll also get access to Synerva’s ongoing intelligence drops:
-                psychology-informed newsletters, bi-weekly wellness and
-                mental-health essays, tactical guides, behind-the-scenes
-                research notes, and occasional opportunities to collaborate or
-                contribute. Every message is intentional. Nothing wasted.
-                Nothing intrusive.
+                You’ll also receive thoughtfully written newsletters and essays
+                spanning psychology, business, technology, strategy, and applied
+                decision-making, along with free tools and materials, early
+                previews of upcoming releases—from publications to art—and
+                occasional member-only discounts on future products and
+                services. Every message is intentional, measured, and
+                respectful of your time. No spam. Just signal. You can opt out
+                at any time.
               </p>
             </div>
             <div className="flex flex-col gap-4">
