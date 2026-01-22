@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v2.png",
@@ -69,7 +69,7 @@ export default function OfferingsDesktop() {
 
   return (
     <main className="relative text-white">
-      <ScrollMorphBackground />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/398FE3E8-80C5-4106-8B6B-C9E4B3201C0D.jpeg" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
