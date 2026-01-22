@@ -64,18 +64,15 @@ export const About = () => {
 
             <div className="flex w-full items-center justify-center">
               <div className="flex w-full flex-col">
-                <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
-                  <div className="flex w-full items-center justify-center overflow-hidden rounded-2xl">
-                    <Image
-                      src="/homepage-post-12-25-2025/about-the-founder.PNG"
-                      alt="Portrait of Kyle Gruarin"
-                      width={900}
-                      height={1200}
-                      className="h-auto w-full max-h-[340px] rounded-2xl object-contain sm:max-h-[380px] lg:max-h-[400px]"
-                      sizes="(min-width: 1024px) 32vw, 100vw"
-                      priority
-                    />
-                  </div>
+                <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-[#E0DCD4] bg-white/[0.04]">
+                  <Image
+                    src="/homepage-post-12-25-2025/founder-start-hero.png"
+                    alt="Portrait of Kyle Gruarin"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 32vw, 100vw"
+                    priority
+                  />
                 </div>
               </div>
             </div>

@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildPageMetadata } from "@/lib/metadata";
 import { Footer } from "@/components/Footer";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
-import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export const metadata = buildPageMetadata({
   title: "Start Here — Synerva Dynamics",
@@ -43,14 +43,16 @@ export default function StartHerePage() {
                   </Link>
                 </div>
                 <div className="w-full">
-                  {/* HERO IMAGE PLACEHOLDER — portrait or abstract systems image */}
-                  <VideoPlaceholder
-                    label="Hero image placeholder"
-                    ratio="aspect-[4/5]"
-                    variant="neutral"
-                    className="rounded-3xl"
-                    ariaLabel="Hero image placeholder"
-                  />
+                  <div className="relative aspect-[2/3] w-full overflow-hidden rounded-3xl border border-white/12">
+                    <Image
+                      src="/homepage-post-12-25-2025/founder-start-hero.png"
+                      alt="Founder portrait"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 38vw, 100vw"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
             </div>
