@@ -1,35 +1,9 @@
 "use client";
 
-import { ChangeEvent, FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { copy } from "@/data/copy";
 import { AmbientVideo } from "@/components/AmbientVideo";
-
-const contactCopy = copy.pages.contact;
-
-type FormState = {
-  name: string;
-  email: string;
-  company: string;
-  project: string;
-  consent: boolean;
-};
-
-const initialState: FormState = {
-  name: "",
-  email: "",
-  company: "",
-  project: "",
-  consent: false,
-};
-
-const renderWithBreaks = (text: string) =>
-  text.split("\n").map((line, index, arr) => (
-    <span key={`${index}-${line}`}>
-      {line}
-      {index < arr.length - 1 && <br />}
-    </span>
-  ));
 
 export default function ContactPageClient() {
   return (
@@ -44,19 +18,25 @@ export default function ContactPageClient() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative mx-auto flex max-w-5xl flex-col gap-5 rounded-[3rem] border border-white/10 bg-black/50 p-10 backdrop-blur-2xl">
           <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-            {contactCopy.eyebrow}
+            Contact
           </p>
           <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            {contactCopy.heading}
+            Start a Conversation
           </h1>
-          <p className="text-lg text-white/70">{contactCopy.description}</p>
-          <p className="text-sm text-white/60">{copy.contact.subhead}</p>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-            {copy.contact.responseTime}
+          <p className="text-lg text-white/75">
+            If you’re reaching out, you likely have something specific in mind.
+          </p>
+          <div className="space-y-2 text-base text-white/70">
+            <p>A deliverable.</p>
+            <p>A system that isn’t holding.</p>
+            <p>A piece of work that needs to move — cleanly and without drift.</p>
+          </div>
+          <p className="text-base text-white/70">
+            This page is simply the next step.
           </p>
         </div>
       </section>
-      <section className="relative overflow-visible px-6 py-12 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/about/about_tile_2.webp"
           opacity={0.35}
@@ -64,21 +44,32 @@ export default function ContactPageClient() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/80" />
         <div className="absolute inset-0 bg-black/65" />
-        <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
-          {copy.contactProcess.map((step) => (
-            <div
-              key={step.title}
-              className="glass-panel rounded-3xl border border-white/10 p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                {step.title}
-              </p>
-              <p className="mt-2 text-sm text-white/75">{step.detail}</p>
+        <div className="relative mx-auto max-w-5xl">
+          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              What to Include
+            </p>
+            <div className="mt-4 space-y-3 text-base text-white/75">
+              <p>You don’t need to sell yourself.</p>
+              <p>You don’t need a perfect brief.</p>
+              <p>A short note is enough.</p>
             </div>
-          ))}
+            <div className="mt-5 space-y-3 text-base text-white/70">
+              <p>Please include:</p>
+              <ul className="list-disc space-y-2 pl-5 text-base text-white/70">
+                <li>what you want delivered</li>
+                <li>the timeline you’re targeting</li>
+                <li>any constraints that matter</li>
+              </ul>
+              <p>That’s it.</p>
+            </div>
+            <p className="mt-5 text-base text-white/70">
+              Brief is fine. Clarity matters more than polish.
+            </p>
+          </div>
         </div>
       </section>
-      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
+      <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
         <AmbientVideo
           src="/visuals/hero/hero_main_render.webp"
           opacity={0.3}
@@ -86,33 +77,45 @@ export default function ContactPageClient() {
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/95 via-black/70 to-black/85" />
         <div className="absolute inset-0 bg-black/70" />
-        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <ContactForm />
-          <aside className="glass-panel h-full rounded-3xl border border-white/10 p-8">
-            <h2 className="text-xl text-white">{contactCopy.sidebarTitle}</h2>
-            <p className="mt-4 text-sm text-white/70">
-              {renderWithBreaks(copy.global.contact.address)}
+        <div className="relative mx-auto max-w-5xl">
+          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              What Happens Next
             </p>
-            <div className="mt-6 space-y-2 text-sm text-white/80">
-              <a
-                className="block hover:text-white"
-                href={`tel:${copy.global.contact.phone.replace(/[^0-9+]/g, "")}`}
-              >
-                {copy.global.contact.phone}
-              </a>
-              <a
-                className="block hover:text-white"
-                href={`mailto:${copy.global.contact.email}`}
-              >
-                {copy.global.contact.email}
-              </a>
+            <div className="mt-4 space-y-3 text-base text-white/75">
+              <p>I’ll review your note personally.</p>
+              <p>
+                If it’s a fit, I’ll confirm scope, timeline, and the best way to
+                engage.
+              </p>
+              <p>If it’s not, I’ll tell you directly.</p>
+              <p>Either way, you’ll get a clear answer.</p>
             </div>
-            <div className="mt-8 space-y-2 text-sm text-white/60">
-              {contactCopy.sidebarBullets.map((item) => (
-                <p key={item}>{item}</p>
-              ))}
+          </div>
+        </div>
+      </section>
+      <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
+        <AmbientVideo
+          src="/visuals/hero/hero_main_render.webp"
+          opacity={0.25}
+          blur
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/95 via-black/70 to-black/85" />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
+            <div className="space-y-2">
+              <h2 className="text-2xl text-white">Get in Touch</h2>
+              <p className="text-sm text-white/70">
+                Use the form below to send a message.
+              </p>
             </div>
-          </aside>
+            <ContactForm />
+          </div>
+          <div
+            className="hidden lg:block"
+            aria-hidden="true"
+          />
         </div>
       </section>
       <Footer />
@@ -121,40 +124,23 @@ export default function ContactPageClient() {
 }
 
 function ContactForm() {
-  const [formState, setFormState] = useState<FormState>(initialState);
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
-  const formCopy = copy.contactForm;
-
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const target = event.target;
-    const { name, value } = target;
-    const isCheckbox =
-      target instanceof HTMLInputElement && target.type === "checkbox";
-    setFormState((prev) => ({
-      ...prev,
-      [name]: isCheckbox ? target.checked : value,
-    }));
-  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!formState.consent) return;
     setStatus("submitting");
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+        body: new FormData(event.currentTarget),
       });
       if (!response.ok) {
         throw new Error("Request failed");
       }
       setStatus("success");
-      setFormState(initialState);
+      event.currentTarget.reset();
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -164,30 +150,23 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass-panel space-y-6 rounded-3xl border border-white/10 p-8 shadow-[0_40px_80px_rgba(0,0,0,0.35)]"
+      className="mt-8 space-y-6"
+      encType="multipart/form-data"
     >
       <div>
-        <label
-          className="text-sm uppercase tracking-[0.3em] text-white/60"
-          htmlFor="name"
-        >
-          {formCopy.labels.name}
+        <label className="text-sm text-white/70" htmlFor="name">
+          Name
         </label>
         <input
           className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-white/30 focus:border-white/40"
           id="name"
           name="name"
           required
-          value={formState.name}
-          onChange={handleChange}
         />
       </div>
       <div>
-        <label
-          className="text-sm uppercase tracking-[0.3em] text-white/60"
-          htmlFor="email"
-        >
-          {formCopy.labels.email}
+        <label className="text-sm text-white/70" htmlFor="email">
+          Email
         </label>
         <input
           className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-white/30 focus:border-white/40"
@@ -195,68 +174,46 @@ function ContactForm() {
           name="email"
           type="email"
           required
-          value={formState.email}
-          onChange={handleChange}
         />
       </div>
       <div>
-        <label
-          className="text-sm uppercase tracking-[0.3em] text-white/60"
-          htmlFor="company"
-        >
-          {formCopy.labels.company}
-        </label>
-        <input
-          className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-white/30 focus:border-white/40"
-          id="company"
-          name="company"
-          required
-          value={formState.company}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label
-          className="text-sm uppercase tracking-[0.3em] text-white/60"
-          htmlFor="project"
-        >
-          {formCopy.labels.project}
+        <label className="text-sm text-white/70" htmlFor="message">
+          Message (what you want delivered + timeline)
         </label>
         <textarea
           className="mt-2 min-h-[140px] w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-white/30 focus:border-white/40"
-          id="project"
-          name="project"
+          id="message"
+          name="message"
           required
-          value={formState.project}
-          onChange={handleChange}
         />
+        <div className="mt-3">
+          <label className="text-xs text-white/60" htmlFor="attachments">
+            Attachments (optional)
+          </label>
+          <input
+            className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white/80 file:mr-4 file:rounded-full file:border-0 file:bg-white/10 file:px-4 file:py-2 file:text-xs file:uppercase file:tracking-[0.3em] file:text-white/80 hover:file:bg-white/20"
+            id="attachments"
+            name="attachments"
+            type="file"
+            multiple
+          />
+        </div>
       </div>
-      <label className="flex items-start gap-3 text-sm text-white/70">
-        <input
-          type="checkbox"
-          name="consent"
-          className="mt-1 h-4 w-4 accent-cyan-400"
-          checked={formState.consent}
-          onChange={handleChange}
-          required
-        />
-        <span>{formCopy.labels.consent}</span>
-      </label>
       <button
         type="submit"
-        disabled={status === "submitting" || !formState.consent}
+        disabled={status === "submitting"}
         className="w-full rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black disabled:cursor-not-allowed disabled:bg-white/40"
       >
-        {status === "submitting"
-          ? formCopy.submit.pending
-          : formCopy.submit.idle}
+        {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
       {status === "success" && (
-        <p className="text-sm text-emerald-300">{formCopy.success}</p>
+        <p className="text-sm text-emerald-300">
+          Got it. I’ll take a look and get back to you shortly.
+        </p>
       )}
       {status === "error" && (
         <p className="text-sm text-rose-300">
-          {formCopy.errorTemplate.replace("{email}", copy.global.contact.email)}
+          Something went wrong. Please email {copy.global.contact.email}.
         </p>
       )}
     </form>

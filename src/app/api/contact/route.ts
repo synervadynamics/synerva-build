@@ -6,16 +6,17 @@ import { copy } from "@/data/copy";
 const bodySchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
-  company: z.string().min(2),
-  project: z.string().min(10),
-  consent: z.boolean().refine((value) => value === true, {
-    message: "Consent is required",
-  }),
+  message: z.string().min(2),
 });
 
 export async function POST(request: Request) {
-  const json = await request.json();
-  const result = bodySchema.safeParse(json);
+  const formData = await request.formData();
+  const payload = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+  const result = bodySchema.safeParse(payload);
 
   if (!result.success) {
     return NextResponse.json(
@@ -24,13 +25,22 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, company, project } = result.data;
+  const { name, email, message } = result.data;
+  const attachments = formData
+    .getAll("attachments")
+    .filter((entry): entry is File => entry instanceof File && entry.size > 0);
   const text = [
     `Name: ${name}`,
     `Email: ${email}`,
-    `Company: ${company}`,
-    `Project: ${project}`,
-  ].join("\n");
+    "",
+    "Message:",
+    message,
+    attachments.length > 0
+      ? `Attachments: ${attachments.map((file) => file.name).join(", ")}`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   const apiKey = process.env.RESEND_API_KEY;
 
@@ -47,12 +57,22 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   try {
+    const attachmentPayload =
+      attachments.length > 0
+        ? await Promise.all(
+            attachments.map(async (file) => ({
+              filename: file.name,
+              content: Buffer.from(await file.arrayBuffer()),
+            })),
+          )
+        : undefined;
     await resend.emails.send({
       from: "Synerva Dynamics <notifications@synerva-dynamics.com>",
       to: copy.global.contact.email,
       replyTo: email,
-      subject: `New Synerva inquiry from ${company}`,
+      subject: `New Synerva inquiry from ${name}`,
       text,
+      attachments: attachmentPayload,
     });
     return NextResponse.json({ delivered: true });
   } catch (error) {
