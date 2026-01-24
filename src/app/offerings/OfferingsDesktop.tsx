@@ -9,8 +9,8 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
   hiring: "/offerings-subpage-jan-3/what-you're-actually-hiring.PNG",
-  scope: "/offerings-subpage-jan-3/scope-discipline.PNG",
-  operator: "/offerings-subpage-jan-3/operator-hourly.PNG",
+  scope: "/offerings-subpage-jan-3/scope-discipline-v2.PNG",
+  operator: "/offerings-subpage-jan-3/operator-hourly-v4.PNG",
   flatRate: "/offerings-subpage-jan-3/flat-rate-projects-square.png",
   build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
 } as const;
@@ -254,7 +254,7 @@ export default function OfferingsDesktop() {
             <div className="grid gap-4 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center">
               <div className="w-full">
                 <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6">
-                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-white/10">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10">
                     <Image
                       src={imagePaths.scope}
                       alt="Scope discipline visual"
