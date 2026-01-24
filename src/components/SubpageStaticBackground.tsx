@@ -5,9 +5,10 @@ type SubpageStaticBackgroundProps = {
 export default function SubpageStaticBackground({
   imageUrl,
 }: SubpageStaticBackgroundProps) {
-  const safeUrl = imageUrl.includes("%")
-    ? imageUrl
-    : imageUrl.split("/").map(encodeURIComponent).join("/");
+  const safeUrl = decodeURI(imageUrl)
+    .split("/")
+    .map(encodeURIComponent)
+    .join("/");
   return (
     <div
       aria-hidden
