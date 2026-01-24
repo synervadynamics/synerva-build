@@ -7,7 +7,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
 const imagePaths = {
-  hero: "/offerings-subpage-jan-3/hero-v2.png",
+  hero: "/offerings-subpage-jan-3/hero-v3.JPG",
   hiring: "/offerings-subpage-jan-3/what-you're-actually-hiring.PNG",
   scope: "/offerings-subpage-jan-3/scope-discipline.PNG",
   operator: "/offerings-subpage-jan-3/operator-hourly.PNG",
