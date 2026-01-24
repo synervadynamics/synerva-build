@@ -20,7 +20,7 @@ const offeringsMedia = {
     height: 1024,
   },
   "Build with Synerva": {
-    src: "/homepage-post-12-25-2025/hp-build-with-synerva.PNG",
+    src: "/homepage-post-12-25-2025/build-with-synerva-v3.PNG",
     alt: "Full-stack system builds offering",
     width: 1024,
     height: 1024,
