@@ -323,7 +323,7 @@ export default function OfferingsDesktop() {
             </div>
 
             <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
-              <div className="relative mx-auto aspect-[16/9] w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10">
+              <div className="relative mx-auto aspect-[3/2] w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10">
                 <Image
                   src={imagePaths.operator}
                   alt="Operator Hourly visual"
