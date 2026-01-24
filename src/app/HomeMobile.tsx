@@ -78,7 +78,7 @@ export default function HomeMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/the-problem-v2.png"
+              src="/mobile-images/homepage/fragmentation-v3.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
