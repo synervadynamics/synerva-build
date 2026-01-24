@@ -9,6 +9,7 @@ export default function QuietDivineMobile() {
       <Mobile1Shell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2023,%202026,%2010_00_46%20PM.png"
+        backgroundOverlayEnabled={false}
       >
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}

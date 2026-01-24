@@ -46,12 +46,14 @@ type Mobile1ShellProps = {
   children: React.ReactNode;
   showBackButton?: boolean;
   backgroundImageUrl?: string;
+  backgroundOverlayEnabled?: boolean;
 };
 
 export default function Mobile1Shell({
   children,
   showBackButton = false,
   backgroundImageUrl,
+  backgroundOverlayEnabled = true,
 }: Mobile1ShellProps) {
   const [mode, setMode] = useState<LayoutMode>("expanded");
   const [isArtworkOpen, setIsArtworkOpen] = useState(false);
@@ -89,11 +91,16 @@ export default function Mobile1Shell({
   return (
     <div id="mobile1-shell" data-mode={mode} className={styles.shell}>
       {backgroundImageUrl ? (
-        <SubpageStaticBackground imageUrl={backgroundImageUrl} />
+        <SubpageStaticBackground
+          imageUrl={backgroundImageUrl}
+          showOverlay={backgroundOverlayEnabled}
+        />
       ) : (
         <ScrollMorphBackground imageSources={backgroundSources} />
       )}
-      <div className={styles.contentOverlay} aria-hidden />
+      {backgroundOverlayEnabled ? (
+        <div className={styles.contentOverlay} aria-hidden />
+      ) : null}
       <div className={`flex w-full flex-col gap-12 py-12 ${styles.content}`}>
         {children}
       </div>
