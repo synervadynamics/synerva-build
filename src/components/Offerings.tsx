@@ -14,7 +14,7 @@ const offeringsMedia = {
     height: 1024,
   },
   "Flat-Rate Projects": {
-    src: "/homepage-post-12-25-2025/flat-rate-scoped-project-v4.PNG",
+    src: "/homepage-post-12-25-2025/flat-rate-project-v5.PNG",
     alt: "Flat-rate sprints offering",
     width: 1536,
     height: 1024,
