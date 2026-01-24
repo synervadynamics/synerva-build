@@ -154,6 +154,10 @@ export default function QuietDivineMobile() {
           </div>
         </section>
       </Mobile1Shell>
+      <div
+        className="pointer-events-none fixed inset-0 z-[2] bg-black/20"
+        aria-hidden
+      />
     </main>
   );
 }
