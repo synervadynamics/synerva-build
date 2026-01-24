@@ -8,7 +8,7 @@ import { copy } from "@/data/copy";
 
 const offeringsMedia = {
   "Operator Hourly": {
-    src: "/homepage-post-12-25-2025/operator-hourly-v6.png",
+    src: "/homepage-post-12-25-2025/operatorr-hourrly-v9.png",
     alt: "Operator Hourly offering",
     width: 1536,
     height: 1024,
