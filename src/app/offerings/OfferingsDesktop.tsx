@@ -271,12 +271,16 @@ export default function OfferingsDesktop() {
                     <p>
                       To keep work predictable and pricing fair, all engagements are
                       scoped after intake. Pricing reflects output and complexity,
-                      not vibes.
+                      not vibes, urgency, or shifting interpretation once work is
+                      underway. What’s being built, how much of it, and how tightly
+                      it needs to hold together are all defined up front.
                     </p>
                     <p>
-                      Every project lives inside a defined scope band. Expansion is
-                      deliberate. Nothing grows silently, and expectations don’t
-                      shift midstream.
+                      Every project lives inside a defined scope band. That boundary
+                      is explicit and shared. Expansion is deliberate and surfaced
+                      early, not absorbed quietly as expectations drift. Nothing
+                      grows silently, and scope does not stretch midstream without
+                      acknowledgment, adjustment, and re-alignment.
                     </p>
                   </div>
                   <ul className="space-y-3 text-sm text-white/78">
