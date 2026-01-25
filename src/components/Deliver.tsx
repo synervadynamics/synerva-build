@@ -56,7 +56,7 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
     width: 1536,
     height: 1024,
   },
-  "/whats-delivered-v3/integrated-execution.PNG": {
+  "/homepage-post-12-25-2025/integrated-execution-v1a.png": {
     width: 1536,
     height: 1024,
   },

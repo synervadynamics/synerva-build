@@ -673,7 +673,7 @@ export const copy = {
           "compounding forward motion",
         ],
         video: {
-          src: "/whats-delivered-v3/integrated-execution.PNG",
+          src: "/homepage-post-12-25-2025/integrated-execution-v1a.png",
           label: "Integrated Execution",
         },
         href: "/contact",
