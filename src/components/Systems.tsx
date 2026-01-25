@@ -115,7 +115,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                       <p className="mt-3 text-sm text-white/55 sm:mt-4">
                         {card.status}
                       </p>
-                      <ul className="mt-4 space-y-2 text-sm text-sky-200/80 sm:mt-5">
+                      <ul className="mt-4 space-y-2 text-sm text-white/75 sm:mt-5">
                         {card.bullets.map((item) => (
                           <li key={item} className="flex items-start gap-3">
                             <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />
@@ -192,7 +192,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                     <p className="mt-3 text-sm text-white/55 sm:mt-4">
                       {card.status}
                     </p>
-                  <ul className="mt-4 space-y-2 text-sm text-sky-200/80 sm:mt-5">
+                  <ul className="mt-4 space-y-2 text-sm text-white/75 sm:mt-5">
                     {card.bullets.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />

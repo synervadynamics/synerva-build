@@ -107,7 +107,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   <p className="text-xs uppercase tracking-[0.4em] text-white/64">
                     System Guardrails
                   </p>
-                  <ul className="space-y-2 text-sm text-sky-200/80">
+                  <ul className="space-y-2 text-sm text-white/78">
                     {story.bullets.map((point) => (
                       <li key={point} className="story-bullet flex items-start gap-3">
                         <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
@@ -176,7 +176,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 <p className="text-xs uppercase tracking-[0.4em] text-white/64">
                   System Guardrails
                 </p>
-                <ul className="space-y-2 text-sm text-sky-200/80">
+                <ul className="space-y-2 text-sm text-white/78">
                   {story.bullets.map((point) => (
                     <li key={point} className="story-bullet flex items-start gap-3">
                       <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />

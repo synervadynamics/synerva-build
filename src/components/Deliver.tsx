@@ -313,7 +313,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                     {activeItem.panelDetail ?? activeItem.detail}
                   </p>
                   {activeItem.panelPoints?.length ? (
-                    <ul className="mt-3 space-y-2 text-sm text-sky-200/80">
+                    <ul className="mt-3 space-y-2 text-sm text-white/70">
                       {activeItem.panelPoints.map((point) => (
                         <li key={point} className="flex items-start gap-3">
                           <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
@@ -451,7 +451,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                   {activeItem.panelDetail ?? activeItem.detail}
                 </p>
                 {activeItem.panelPoints?.length ? (
-                  <ul className="mt-3 space-y-2 text-sm text-sky-200/80">
+                  <ul className="mt-3 space-y-2 text-sm text-white/70">
                     {activeItem.panelPoints.map((point) => (
                       <li key={point} className="flex items-start gap-3">
                         <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
