@@ -265,7 +265,7 @@ export default function OfferingsDesktop() {
                   </div>
                 </div>
               </div>
-              <div className="flex h-full flex-col justify-between gap-4">
+              <div className="flex h-full flex-col justify-center gap-6">
                 <div className="space-y-4 text-base text-white/75">
                   <p>
                     To keep work predictable and pricing fair, all engagements are
