@@ -31,8 +31,8 @@ export const About = () => {
                   attention when they went wrong.
                 </p>
                 <p>
-                  Kyle holds a BA in Psychology, an MBA, and most of a BSc in
-                  Computer Science. He has also spent years working in
+                  Kyle holds a BA in Psychology, an MBA, and is steadily
+                  chipping away at a BSc in Computer Science. He has also spent years working in
                   marketing management, marketing research, and business
                   ownership roles. His work has involved designing strategy,
                   analyzing behavior, and making decisions with real
