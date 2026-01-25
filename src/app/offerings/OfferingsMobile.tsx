@@ -49,7 +49,7 @@ export default function OfferingsMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/homepage-post-12-25-2025/hp-offerings-operator-hourly.PNG"
+              src="/offerings-subpage-jan-3/operator-hourly-v67.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
