@@ -328,33 +328,40 @@ export default function OfferingsDesktop() {
               </p>
             </div>
 
-            <div className="rounded-[2.5rem] border border-white/12 bg-transparent p-6 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)] backdrop-blur-2xl">
-              <div className="relative mx-auto aspect-[3/2] w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10">
-                <Image
-                  src={imagePaths.operator}
-                  alt="Operator Hourly visual"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 672px, 100vw"
-                />
+            <div className="mx-auto w-full max-w-xl overflow-hidden rounded-2xl border border-white/12 bg-white/[0.03]">
+              <Image
+                src={imagePaths.operator}
+                alt="Operator Hourly visual"
+                width={960}
+                height={640}
+                className="block h-auto w-full"
+                sizes="(min-width: 1024px) 576px, 100vw"
+              />
+              <div className="flex flex-col items-center gap-1 pb-5 pt-4 text-center">
+                <p className="text-base text-white/85">
+                  Judgment applied across your system.
+                </p>
+                <p className="text-sm text-white/70">
+                  A system-level view that replaces coordination overhead with
+                  decisive action.
+                </p>
               </div>
             </div>
 
             <div className="grid gap-6 text-base text-white/75 lg:grid-cols-2 lg:gap-10">
               <div className="space-y-4">
                 <p className="text-lg text-white/85">$100 CAD per hour</p>
-                <p>
-                  Used when the goal is to audit, fix, unblock, or ship without
-                  waiting for a full specification cycle. This mode exists for live
-                  work under uncertainty, where judgment matters more than
-                  documentation.
-                </p>
+              <p>
+                Used to audit, unblock, re-prioritize, or ship under real conditions.
+                Designed for situations where clarity and judgment matter more than
+                documentation.
+              </p>
                 <p>
                   You are not buying time. You are buying progress with fewer cycles.
                 </p>
               </div>
               <div className="space-y-3">
-                <p className="text-base text-white/85">How It Works</p>
+              <p className="text-base text-white/85">How it Works</p>
                 <ul className="space-y-3 text-sm text-white/78">
                   <li className="flex items-start gap-3">
                     <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
