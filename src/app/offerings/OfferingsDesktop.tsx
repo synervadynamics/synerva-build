@@ -8,11 +8,11 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
-  hiring: "/offerings-subpage-jan-3/offerings-section-2.png",
-  scope: "/homepage-post-12-25-2025/scope-discipline-v2a.png",
+  hiring: "/homepage-post-12-25-2025/operator-hourly-final-1.png",
+  scope: "/homepage-post-12-25-2025/scope-discipline-final-1.png",
   operator: "/offerings-subpage-jan-3/operator-hourly-v67.PNG",
   flatRate: "/offerings-subpage-jan-3/flat-rate-projects-v1b.PNG",
-  build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
+  build: "/homepage-post-12-25-2025/build-with-synerva-final-1.png",
 } as const;
 
 const sectionMap = [
