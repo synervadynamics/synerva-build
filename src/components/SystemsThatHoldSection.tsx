@@ -16,7 +16,7 @@ export const SystemsThatHoldSection = ({
     .join(" ");
   const pairClassName =
     portraitPairClassName ??
-    "grid w-full gap-4 md:grid-cols-2 md:gap-6 lg:gap-8";
+    "grid w-full max-w-[80%] mx-auto gap-4 md:grid-cols-2 md:gap-6 lg:gap-8";
   const content = (
     <div className="flex flex-col gap-4">
       <p className="text-[0.75rem] uppercase tracking-[0.4em] text-white/65">
