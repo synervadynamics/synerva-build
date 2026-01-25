@@ -251,53 +251,55 @@ export default function OfferingsDesktop() {
               </h2>
             </div>
 
-            <div className="grid gap-4 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center">
-              <div className="w-full">
-                <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6">
-                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10">
-                    <Image
-                      src={imagePaths.scope}
-                      alt="Scope discipline visual"
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 35vw, 100vw"
-                    />
+            <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center">
+                <div className="w-full">
+                  <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6">
+                    <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/10">
+                      <Image
+                        src={imagePaths.scope}
+                        alt="Scope discipline visual"
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 35vw, 100vw"
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex h-full flex-col justify-center gap-6">
-                <div className="space-y-4 text-base text-white/75">
-                  <p>
-                    To keep work predictable and pricing fair, all engagements are
-                    scoped after intake. Pricing reflects output and complexity,
-                    not vibes.
-                  </p>
-                  <p>
-                    Every project lives inside a defined scope band. Expansion is
-                    deliberate. Nothing grows silently, and expectations don’t
-                    shift midstream.
-                  </p>
+                <div className="flex h-full flex-col justify-center gap-6">
+                  <div className="space-y-4 text-base text-white/75">
+                    <p>
+                      To keep work predictable and pricing fair, all engagements are
+                      scoped after intake. Pricing reflects output and complexity,
+                      not vibes.
+                    </p>
+                    <p>
+                      Every project lives inside a defined scope band. Expansion is
+                      deliberate. Nothing grows silently, and expectations don’t
+                      shift midstream.
+                    </p>
+                  </div>
+                  <ul className="space-y-3 text-sm text-white/78">
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
+                      <span>Band 1: Single asset or short deliverable</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
+                      <span>Band 2: Campaign pack or multi-asset set</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
+                      <span>Band 3: System build</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
+                      <span>
+                        Band 4: Deep production (books, multi-week cycles)
+                      </span>
+                    </li>
+                  </ul>
                 </div>
-                <ul className="space-y-3 text-sm text-white/78">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>Band 1: Single asset or short deliverable</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>Band 2: Campaign pack or multi-asset set</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>Band 3: System build</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>
-                      Band 4: Deep production (books, multi-week cycles)
-                    </span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
