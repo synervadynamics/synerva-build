@@ -10,7 +10,7 @@ const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
   hiring: "/offerings-subpage-jan-3/offerings-section-2.png",
   scope: "/homepage-post-12-25-2025/scope-discipline-v2a.png",
-  operator: "/offerings-subpage-jan-3/operator-hourly-v4.PNG",
+  operator: "/offerings-subpage-jan-3/operator-hourly-v67.PNG",
   flatRate: "/offerings-subpage-jan-3/flat-rate-projects-square.png",
   build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
 } as const;
