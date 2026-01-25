@@ -30,28 +30,17 @@ export const SystemsThatHoldSection = ({
       >
         Designed to Survive Reality
       </h2>
-      <div className={pairClassName} aria-hidden>
-        <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-          <Image
-            src="/homepage-post-12-25-2025/what-synerva-builds.png"
-            alt=""
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
-            className="object-cover"
-          />
-        </div>
-        <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
-          <Image
-            src="/homepage-post-12-25-2025/how-synerva-operates.png"
-            alt=""
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
-            className="object-cover"
-          />
-        </div>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:gap-6">
-        <div className="flex flex-col gap-2">
+      <div className={pairClassName}>
+        <div className="flex flex-col gap-3">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+            <Image
+              src="/homepage-post-12-25-2025/what-synerva-builds.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
+              className="object-cover"
+            />
+          </div>
           <h2 className="text-base font-light leading-snug text-white">
             What Synerva Builds
           </h2>
@@ -59,7 +48,16 @@ export const SystemsThatHoldSection = ({
             {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase."}
           </p>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
+          <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+            <Image
+              src="/homepage-post-12-25-2025/how-synerva-operates.png"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
+              className="object-cover"
+            />
+          </div>
           <h2 className="text-base font-light leading-snug text-white">
             How Synerva Operates
           </h2>
