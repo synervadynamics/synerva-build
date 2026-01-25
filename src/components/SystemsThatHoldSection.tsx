@@ -19,7 +19,7 @@ export const SystemsThatHoldSection = ({
     portraitPairClassName ??
     `grid ${alignClassName} items-start gap-4 md:grid-cols-2 md:gap-5 lg:gap-6`;
   const content = (
-    <div className="rounded-3xl border border-white/10 bg-black/90 px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
+    <div className="rounded-3xl border border-[rgba(224,220,212,0.1)] bg-transparent px-6 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
       <div className="flex flex-col gap-6">
         <div className={alignClassName}>
           <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/65">
@@ -36,7 +36,7 @@ export const SystemsThatHoldSection = ({
         </div>
         <div className={pairClassName}>
           <div className="flex flex-col gap-3">
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/homepage-post-12-25-2025/what-synerva-builds-5-4.png"
                 alt=""
@@ -53,7 +53,7 @@ export const SystemsThatHoldSection = ({
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/homepage-post-12-25-2025/how-synerva-operates-5-4.png"
                 alt=""
