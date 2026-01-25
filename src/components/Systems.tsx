@@ -115,10 +115,10 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                       <p className="mt-3 text-sm text-white/55 sm:mt-4">
                         {card.status}
                       </p>
-                      <ul className="mt-4 space-y-1 text-sm text-white/75 sm:mt-5 sm:space-y-1.5">
+                      <ul className="mt-4 space-y-2 text-sm text-sky-200/80 sm:mt-5">
                         {card.bullets.map((item) => (
                           <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-1 w-6 rounded-full bg-white/40" />
+                            <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -192,14 +192,14 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                     <p className="mt-3 text-sm text-white/55 sm:mt-4">
                       {card.status}
                     </p>
-                    <ul className="mt-4 space-y-1 text-sm text-white/75 sm:mt-5 sm:space-y-1.5">
-                      {card.bullets.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <span className="mt-2 h-1 w-6 rounded-full bg-white/40" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <ul className="mt-4 space-y-2 text-sm text-sky-200/80 sm:mt-5">
+                    {card.bullets.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                     <Link
                       href={card.href}
                       className="mt-auto inline-flex w-fit rounded-full border border-white/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
