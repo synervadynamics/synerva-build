@@ -364,38 +364,39 @@ export default function OfferingsDesktop() {
                 </div>
               </div>
 
-              <div className="space-y-4 text-white/80 lg:pt-4">
+              <div className="max-w-sm space-y-3 text-sm leading-snug text-white/70 lg:pt-3">
                 <p className="text-base text-white/85">How it Works</p>
-                <ul className="space-y-4 text-base">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
-                    <span>Minimum: 1 Hour</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
-                    <span>Billed in 15-minute increments after</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
-                    <div>
-                      <p>Short written recap after each working block:</p>
-                      <ul className="mt-2 space-y-1 text-sm text-white/70">
-                        <li className="flex items-start gap-2">
-                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
-                          <span>What changed</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
-                          <span>What shipped</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
-                          <span>What happens next</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
+                <div className="space-y-2">
+                  <p className="text-white/85">Minimum: 1 Hour</p>
+                  <p>
+                    Work begins immediately inside the live system. Time is used
+                    to assess structure, surface constraints, and determine where
+                    intervention will have the most impact before action is taken.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-white/85">Billed: In 15-minute increments after</p>
+                  <p>
+                    Billing scales with what&apos;s required to restore momentum.
+                    There is no fixed cadence or obligation to continue once
+                    clarity is reached and progress is unblocked.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-white/85">
+                    After each working block: Short written recap
+                  </p>
+                  <p className="text-white/70">A concise summary outlines:</p>
+                  <ul className="space-y-1 text-sm text-white/65">
+                    <li>what changed</li>
+                    <li>what shipped</li>
+                    <li>what happens next</li>
+                  </ul>
+                  <p>
+                    This preserves continuity without creating unnecessary
+                    documentation or slowing execution.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
