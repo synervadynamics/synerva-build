@@ -9,7 +9,7 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
   hiring: "/offerings-subpage-jan-3/what-you're-actually-hiring.PNG",
-  scope: "/offerings-subpage-jan-3/scope-discipline-v2.PNG",
+  scope: "/homepage-post-12-25-2025/scope-discipline-v2a.png",
   operator: "/offerings-subpage-jan-3/operator-hourly-v4.PNG",
   flatRate: "/offerings-subpage-jan-3/flat-rate-projects-square.png",
   build: "/offerings-subpage-jan-3/build-with-synerva.PNG",
