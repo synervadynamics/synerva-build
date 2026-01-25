@@ -652,7 +652,7 @@ export const copy = {
           "actions that can begin immediately",
         ],
         video: {
-          src: "/whats-delivered-v3/strategic-direction.PNG",
+          src: "/homepage-post-12-25-2025/strategic-direction-v1a.PNG",
           label: "Strategic Direction",
         },
         href: "/contact",

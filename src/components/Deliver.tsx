@@ -52,7 +52,7 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
     width: 1536,
     height: 1024,
   },
-  "/whats-delivered-v3/strategic-direction.PNG": {
+  "/homepage-post-12-25-2025/strategic-direction-v1a.PNG": {
     width: 1536,
     height: 1024,
   },
