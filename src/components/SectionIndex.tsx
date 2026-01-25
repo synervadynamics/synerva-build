@@ -11,7 +11,6 @@ const defaultSections: SectionItem[] = [
   { id: "deliver", label: "Deliver" },
   { id: "systems", label: "Systems" },
   { id: "philosophy", label: "Philosophy" },
-  { id: "roadmap", label: "Roadmap" },
 ];
 
 type Props = {

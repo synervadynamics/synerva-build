@@ -13,7 +13,6 @@ const sectionMap = [
   { id: "deliver", label: "Deliverables" },
   { id: "systems", label: "Systems" },
   { id: "philosophy", label: "Philosophy" },
-  { id: "roadmap", label: "Roadmap" },
 ];
 
 export const BackupHero = () => {

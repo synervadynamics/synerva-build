@@ -19,9 +19,17 @@ export const SystemsThatHoldSection = ({
     "grid w-full gap-4 md:grid-cols-2 md:gap-6 lg:gap-8";
   const content = (
     <div className="flex flex-col gap-4">
-      <p className="text-center text-[0.75rem] uppercase tracking-[0.4em] text-white/65">
+      <p className="text-[0.75rem] uppercase tracking-[0.4em] text-white/65">
         SYSTEMS THAT HOLD
       </p>
+      <h2
+        data-type-compression="headline"
+        data-type-compression-line-height="1.25"
+        data-type-compression-letter-spacing="0"
+        className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+      >
+        Designed to Survive Reality
+      </h2>
       <div className={pairClassName} aria-hidden>
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
           <Image

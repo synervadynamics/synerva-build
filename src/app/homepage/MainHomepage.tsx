@@ -7,7 +7,6 @@ import { Narrative } from "@/components/Narrative";
 import { Offerings } from "@/components/Offerings";
 import { Philosophy } from "@/components/Philosophy";
 import { Publications } from "@/components/Publications";
-import { Roadmap } from "@/components/Roadmap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import { Systems } from "@/components/Systems";
@@ -42,7 +41,6 @@ export default function MainHomepage() {
         <Labs variant="signup-only" />
         <Merch />
         <Philosophy />
-        <Roadmap />
         <SynervaDimensionsSection />
         <About />
         <Footer />
