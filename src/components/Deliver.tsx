@@ -60,7 +60,7 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
     width: 1536,
     height: 1024,
   },
-  "/whats-delivered-v3/operating-judgement.PNG": {
+  "/homepage-post-12-25-2025/operating-judgement-v1a.PNG": {
     width: 1536,
     height: 1024,
   },

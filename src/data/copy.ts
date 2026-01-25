@@ -713,7 +713,7 @@ export const copy = {
           "composed execution under constraint",
         ],
         video: {
-          src: "/whats-delivered-v3/operating-judgement.PNG",
+          src: "/homepage-post-12-25-2025/operating-judgement-v1a.PNG",
           label: "Operating Judgment",
         },
         href: "/contact",
