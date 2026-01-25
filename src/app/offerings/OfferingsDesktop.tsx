@@ -192,7 +192,7 @@ export default function OfferingsDesktop() {
           className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-12 lg:pt-10"
         >
           <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-[rgba(224,220,212,0.1)] bg-transparent px-8 py-12 text-white sm:px-10 sm:py-14 lg:px-12 lg:py-16">
+            <div className="rounded-3xl border border-[#E0DCD4]/35 bg-transparent px-8 py-12 text-white sm:px-10 sm:py-14 lg:px-12 lg:py-16">
               <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
                 <div className="flex max-w-2xl flex-col gap-4">
                   <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
