@@ -693,7 +693,7 @@ export const copy = {
           "less dependence on outside interpretation",
         ],
         video: {
-          src: "/whats-delivered-v3/durable-assets.PNG",
+          src: "/homepage-post-12-25-2025/durable-assets-v1a.WEBP",
           label: "Durable Assets",
         },
         href: "/contact",

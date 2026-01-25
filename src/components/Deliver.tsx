@@ -64,7 +64,7 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
     width: 1536,
     height: 1024,
   },
-  "/whats-delivered-v3/durable-assets.PNG": {
+  "/homepage-post-12-25-2025/durable-assets-v1a.WEBP": {
     width: 1536,
     height: 1024,
   },
