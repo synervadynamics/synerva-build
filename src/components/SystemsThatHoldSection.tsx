@@ -19,7 +19,7 @@ export const SystemsThatHoldSection = ({
     portraitPairClassName ??
     `grid ${alignClassName} items-start gap-4 md:grid-cols-2 md:gap-5 lg:gap-6`;
   const content = (
-    <div className="rounded-3xl border border-[rgba(224,220,212,0.1)] bg-transparent px-8 py-12 sm:px-10 sm:py-14 lg:px-12 lg:py-16">
+    <div className="rounded-[28px] border border-[rgba(243,238,228,0.4)] bg-transparent px-8 py-12 shadow-[0_0_0_1px_rgba(243,238,228,0.2)] sm:px-10 sm:py-14 lg:px-12 lg:py-16">
       <div className="flex flex-col gap-8">
         <div className={alignClassName}>
           <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/65">

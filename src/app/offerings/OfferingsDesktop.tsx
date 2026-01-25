@@ -313,7 +313,7 @@ export default function OfferingsDesktop() {
           id="operator-hourly"
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
-          <div className="relative mx-auto flex max-w-5xl flex-col gap-6 text-white">
+          <div className="relative mx-auto flex max-w-6xl flex-col gap-6 text-white">
             <div className="space-y-2">
               <h2
                 data-type-compression="headline"
@@ -328,59 +328,72 @@ export default function OfferingsDesktop() {
               </p>
             </div>
 
-            <div className="mx-auto w-full max-w-xl overflow-hidden rounded-2xl border border-white/12 bg-white/[0.03]">
-              <Image
-                src={imagePaths.operator}
-                alt="Operator Hourly visual"
-                width={960}
-                height={640}
-                className="block h-auto w-full"
-                sizes="(min-width: 1024px) 576px, 100vw"
-              />
-              <div className="flex flex-col items-center gap-1 pb-5 pt-4 text-center">
-                <p className="text-base text-white/85">
-                  Judgment applied across your system.
-                </p>
-                <p className="text-sm text-white/70">
-                  A system-level view that replaces coordination overhead with
-                  decisive action.
-                </p>
-              </div>
-            </div>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:items-start lg:gap-12">
+              <div className="space-y-6">
+                <div className="w-full overflow-hidden rounded-[28px] border border-white/12 bg-white/[0.03] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+                  <Image
+                    src={imagePaths.operator}
+                    alt="Operator Hourly visual"
+                    width={1200}
+                    height={800}
+                    className="block h-auto w-full"
+                    sizes="(min-width: 1024px) 720px, 100vw"
+                  />
+                  <div className="flex flex-col items-center gap-1 px-6 pb-6 pt-4 text-center">
+                    <p className="text-base text-white/85">
+                      Judgment applied across your system.
+                    </p>
+                    <p className="text-sm text-white/70">
+                      A system-level view that replaces coordination overhead with
+                      decisive action.
+                    </p>
+                  </div>
+                </div>
 
-            <div className="grid gap-6 text-base text-white/75 lg:grid-cols-2 lg:gap-10">
-              <div className="space-y-4">
-                <p className="text-lg text-white/85">$100 CAD per hour</p>
-              <p>
-                Used to audit, unblock, re-prioritize, or ship under real conditions.
-                Designed for situations where clarity and judgment matter more than
-                documentation.
-              </p>
-                <p>
-                  You are not buying time. You are buying progress with fewer cycles.
-                </p>
+                <div className="space-y-3 text-base text-white/75">
+                  <p className="text-lg text-white/85">$100 CAD per hour</p>
+                  <p>
+                    Used to audit, unblock, re-prioritize, or ship under real
+                    conditions. Designed for situations where clarity and judgment
+                    matter more than documentation.
+                  </p>
+                  <p>
+                    You are not buying time. You are buying progress with fewer
+                    cycles.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-3">
-              <p className="text-base text-white/85">How it Works</p>
-                <ul className="space-y-3 text-sm text-white/78">
+
+              <div className="space-y-4 text-white/80 lg:pt-4">
+                <p className="text-base text-white/85">How it Works</p>
+                <ul className="space-y-4 text-base">
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>Minimum: 1 hour</span>
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
+                    <span>Minimum: 1 Hour</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
                     <span>Billed in 15-minute increments after</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-white/40" />
-                    <span>
-                      Short written recap after each working block:
-                      <span className="mt-2 block text-white/70">
-                        what changed
-                      </span>
-                      <span className="block text-white/70">what shipped</span>
-                      <span className="block text-white/70">what happens next</span>
-                    </span>
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-white/70" />
+                    <div>
+                      <p>Short written recap after each working block:</p>
+                      <ul className="mt-2 space-y-1 text-sm text-white/70">
+                        <li className="flex items-start gap-2">
+                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
+                          <span>What changed</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
+                          <span>What shipped</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-white/50" />
+                          <span>What happens next</span>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </div>
