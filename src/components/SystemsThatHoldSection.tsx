@@ -31,7 +31,7 @@ export const SystemsThatHoldSection = ({
         Designed to Survive Reality
       </h2>
       <div className={pairClassName} aria-hidden>
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
           <Image
             src="/homepage-post-12-25-2025/what-synerva-builds.png"
             alt=""
@@ -40,7 +40,7 @@ export const SystemsThatHoldSection = ({
             className="object-cover"
           />
         </div>
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
           <Image
             src="/homepage-post-12-25-2025/how-synerva-operates.png"
             alt=""
