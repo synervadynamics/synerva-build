@@ -23,7 +23,7 @@ const sectionMap = [
   { id: "build-with-synerva", labelLines: ["FULL BUILD"] },
   { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
   { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
-  { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
+  { id: "next-step", labelLines: ["NEXT", "STEP"] },
 ];
 
 export default function OfferingsDesktop() {
@@ -675,25 +675,67 @@ export default function OfferingsDesktop() {
         </section>
 
         <section
-          id="final-cta"
+          id="next-step"
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
-          <div className="relative mx-auto max-w-5xl">
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
-              <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
-                <p>Choose an entry point and we’ll handle the compression.</p>
-                <p>
-                  If you want a fast, low-commitment starting point, begin with a
-                  Clarity Diagnostic
-                </p>
+          <div className="relative mx-auto max-w-6xl">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+              <div className="flex max-w-2xl flex-col gap-4">
+                <h2
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.25"
+                  data-type-compression-letter-spacing="0"
+                  className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                >
+                  Next Step
+                </h2>
+                <div className="space-y-4 text-sm leading-snug text-white/80 sm:text-base">
+                  <p>
+                    You don’t need to commit to a full system build to move
+                    forward.
+                    <br />
+                    You just need to choose where judgment enters the loop.
+                  </p>
+                  <p>
+                    If speed and unblockage matter most, Operator Hourly applies
+                    decision-making directly inside live work.
+                    <br />
+                    If the finish line is clear and you want certainty, Flat-Rate
+                    Projects lock scope, criteria, and delivery before execution
+                    begins.
+                    <br />
+                    If what you need is cohesion across strategy, execution, and
+                    release, Build With Synerva compresses senior-level work into
+                    a single operating system.
+                  </p>
+                  <p>
+                    And if the right entry point isn’t obvious yet, start with a
+                    Clarity Diagnostic. It’s designed to surface constraints,
+                    define leverage, and determine which path actually makes
+                    sense before time or money is wasted.
+                  </p>
+                  <p>
+                    Choose an entry point.
+                    <br />
+                    The compression happens automatically.
+                  </p>
+                </div>
+                <Link
+                  href="/contact"
+                  aria-label="Start the conversation with Synerva"
+                  data-cursor="accent"
+                  className="w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                >
+                  Start the Conversation
+                </Link>
               </div>
               <div className="flex w-full items-center justify-center">
                 <div className="flex w-full flex-col">
                   <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
-                    <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
+                    <div className="aspect-[9/16] w-full overflow-hidden rounded-xl">
                       <img
                         src="/offerings-subpage-jan-3/next-steps.PNG"
-                        alt="Entry point visual"
+                        alt="Systemic architectural visual"
                         className="h-full w-full rounded-xl object-cover"
                       />
                     </div>
