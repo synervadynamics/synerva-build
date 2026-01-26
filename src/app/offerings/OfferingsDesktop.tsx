@@ -607,9 +607,9 @@ export default function OfferingsDesktop() {
                 <div className="flex w-full items-center justify-center">
                   <div className="flex w-full flex-col">
                     <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
-                      <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
+                      <div className="aspect-[4/6] w-full overflow-hidden rounded-xl">
                         <img
-                          src="/offerings-subpage-jan-3/additional-capabilities.png"
+                          src="/offerings-subpage-jan-3/additional-capabilities-4-6.PNG"
                           alt="Additional capabilities visual"
                           className="h-full w-full rounded-xl object-cover"
                         />
