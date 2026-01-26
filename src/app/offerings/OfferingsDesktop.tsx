@@ -23,7 +23,7 @@ const sectionMap = [
   { id: "build-with-synerva", labelLines: ["FULL BUILD"] },
   { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
   { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
-  { id: "next-step", labelLines: ["NEXT", "STEP"] },
+  { id: "next-step", labelLines: ["NEXT", "STEPS"] },
 ];
 
 export default function OfferingsDesktop() {
@@ -687,7 +687,7 @@ export default function OfferingsDesktop() {
                   data-type-compression-letter-spacing="0"
                   className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
-                  Next Step
+                  Next Steps
                 </h2>
                 <div className="space-y-4 text-sm leading-snug text-white/80 sm:text-base">
                   <p>
