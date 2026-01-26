@@ -66,7 +66,7 @@ export const Merch = () => {
                       src={activeCard.previewImage}
                       alt={`${activeCard.title} preview`}
                       fill
-                      className="object-contain p-6"
+                      className="rounded-2xl object-cover"
                       sizes="(min-width: 1024px) 44vw, (min-width: 768px) 80vw, 100vw"
                     />
                   ) : null}
@@ -85,7 +85,7 @@ export const Merch = () => {
                         src={card.previewImage}
                         alt={`${card.title} preview`}
                         fill
-                        className="object-contain p-4"
+                        className="rounded-2xl object-cover"
                         sizes="100vw"
                       />
                     </div>
