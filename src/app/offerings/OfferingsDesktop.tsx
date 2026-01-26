@@ -597,6 +597,17 @@ export default function OfferingsDesktop() {
                         across contexts, not just look good in isolation.
                       </p>
                     </div>
+                    <div className="space-y-2">
+                      <p className="text-base text-white/85">Plans & Reports</p>
+                      <p>
+                        Plans and reports are built as decision tools, not
+                        presentation artifacts. Work includes business plans,
+                        marketing plans, go-to-market strategies, executive slide
+                        decks with presentation scripts, analytics summaries,
+                        budget models, and strategic reports designed to support
+                        clear action.
+                      </p>
+                    </div>
                     <p className="text-base text-white/80">
                       These capabilities are available within Operator Hourly,
                       Flat-Rate Projects, or Build with Synerva engagements.
