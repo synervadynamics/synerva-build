@@ -672,7 +672,7 @@ export default function OfferingsDesktop() {
                     <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
                       <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
                         <img
-                          src="/offerings-subpage-jan-3/clarity-diagnostic.png"
+                          src="/offerings-subpage-jan-3/clarity-diagnostic-v2.png"
                           alt="Clarity diagnostic visual"
                           className="h-full w-full rounded-xl object-cover"
                         />
