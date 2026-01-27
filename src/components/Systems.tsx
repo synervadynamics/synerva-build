@@ -1,7 +1,6 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +10,6 @@ type SystemsProps = {
 };
 
 export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
-  const shouldReduceMotion = useReducedMotion();
   const sectionCopy = copy.systemsSection;
   void mobileVariant;
   const bodyParagraphs = sectionCopy.body.split("\n\n");
@@ -54,7 +52,7 @@ Its architecture evolves directly from the work it supports.`,
       className="relative px-4 pb-6 pt-6 sm:px-10 sm:pb-14 sm:pt-10 md:h-screen md:pb-6 md:pt-8 lg:px-16 lg:pb-10 lg:pt-10"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-7 text-white md:h-full md:justify-between md:gap-6 lg:gap-8">
-        <div className="contrast-field space-y-3 md:max-h-[32vh]">
+        <div className="contrast-field space-y-3 md:shrink-0 md:max-h-[34vh]">
           <p className="text-xs uppercase tracking-[0.4em] text-white/62">
             {sectionCopy.eyebrow}
           </p>
@@ -78,13 +76,7 @@ Its architecture evolves directly from the work it supports.`,
           </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 overflow-hidden md:h-[min(56vh,720px)] md:flex-row md:items-stretch md:gap-6 md:overflow-hidden"
-        >
+        <div className="flex flex-col gap-4 overflow-hidden md:h-[min(56vh,720px)] md:flex-row md:items-stretch md:gap-6 md:pt-1 md:overflow-hidden">
           {systemCards.map((card) => {
             return (
               <article
@@ -93,52 +85,42 @@ Its architecture evolves directly from the work it supports.`,
                 className="relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem]"
               >
                 <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
-                  <div className="flex h-full w-full flex-col md:flex-row">
-                  <div
-                    className={`relative flex h-full w-full flex-col overflow-hidden border-white/12 bg-black/40 ${
-                      shouldReduceMotion
-                        ? "rounded-t-[1.9rem] border-b border-white/12"
-                        : "md:w-1/2 md:rounded-[1.65rem] md:border md:border-white/15"
-                    }`}
-                  >
-                    <div className="relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)]">
-                      <div className="relative h-full w-full">
-                        <Image
-                          src={card.image}
-                          alt={card.imageAlt}
-                          fill
-                          className="object-contain object-center md:p-2"
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
+                  <div className="flex h-full w-full flex-col md:flex-row md:items-stretch md:gap-6 md:p-5">
+                    <div className="relative flex h-full w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 bg-black/40 md:w-1/2 md:rounded-[1.65rem] md:border-0">
+                      <div className="relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-0 md:py-0">
+                        <div className="relative h-full w-full">
+                          <Image
+                            src={card.image}
+                            alt={card.imageAlt}
+                            fill
+                            className="object-contain object-center md:p-2"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div
-                    className={`flex h-full w-full flex-col justify-center border-white/12 bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 ${
-                      shouldReduceMotion ? "rounded-b-[1.9rem]" : "md:w-1/2"
-                    } md:rounded-[1.65rem] md:border md:border-white/15 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)]`}
-                  >
-                    <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
-                      {card.headline}
-                    </h3>
-                    <p className="mt-2 text-xs uppercase tracking-[0.32em] text-white/60 sm:text-sm">
-                      {card.title}
-                    </p>
-                    <div className="mt-4 space-y-4 text-[0.98rem] leading-relaxed text-white/80 lg:text-[1.02rem]">
-                      {card.body.split("\n\n").map((paragraph) => (
-                        <p key={`${card.title}-${paragraph}`} className="whitespace-pre-line">
-                          {paragraph}
-                        </p>
-                      ))}
+                    <div className="flex h-full w-full flex-col justify-center rounded-b-[1.9rem] bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 md:w-1/2 md:rounded-[1.65rem] md:px-0 md:py-0">
+                      <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
+                        {card.headline}
+                      </h3>
+                      <p className="mt-2 text-xs uppercase tracking-[0.32em] text-white/60 sm:text-sm">
+                        {card.title}
+                      </p>
+                      <div className="mt-4 space-y-4 text-[0.98rem] leading-relaxed text-white/80 lg:text-[1.02rem]">
+                        {card.body.split("\n\n").map((paragraph) => (
+                          <p key={`${card.title}-${paragraph}`} className="whitespace-pre-line">
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               </article>
             );
           })}
-        </motion.div>
+        </div>
 
         <div className="flex justify-center pt-1 sm:pt-3">
           <Link
