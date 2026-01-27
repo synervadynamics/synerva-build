@@ -1,23 +1,98 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+const transitionEase = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 export default function HomepageScrollGlow() {
   const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
+  const heroRef = useRef<HTMLElement | null>(null);
+  const narrativeRef = useRef<HTMLElement | null>(null);
+  const systemsRef = useRef<HTMLElement | null>(null);
+  const publicationsRef = useRef<HTMLElement | null>(null);
+  const merchRef = useRef<HTMLElement | null>(null);
+  const aboutRef = useRef<HTMLElement | null>(null);
 
-  const glowOneOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
-  const glowTwoOpacity = useTransform(
-    scrollYProgress,
-    [0.2, 0.55, 0.75],
-    [0, 1, 0],
+  useEffect(() => {
+    heroRef.current = document.getElementById("hero");
+    narrativeRef.current = document.getElementById("narrative");
+    systemsRef.current = document.getElementById("systems");
+    publicationsRef.current = document.getElementById("publications");
+    merchRef.current = document.getElementById("merch");
+    aboutRef.current = document.getElementById("about");
+  }, []);
+
+  const heroScroll = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const narrativeScroll = useScroll({
+    target: narrativeRef,
+    offset: ["start end", "end start"],
+  });
+  const systemsScroll = useScroll({
+    target: systemsRef,
+    offset: ["start end", "end start"],
+  });
+  const publicationsScroll = useScroll({
+    target: publicationsRef,
+    offset: ["start end", "end start"],
+  });
+  const merchScroll = useScroll({
+    target: merchRef,
+    offset: ["start end", "end start"],
+  });
+  const aboutScroll = useScroll({
+    target: aboutRef,
+    offset: ["start end", "end start"],
+  });
+
+  const heroOpacity = useTransform(
+    heroScroll.scrollYProgress,
+    [0, 0.15, 0.75, 1],
+    [0, 0.08, 0.08, 0],
   );
-  const glowThreeOpacity = useTransform(
-    scrollYProgress,
-    [0.45, 0.8, 0.95],
-    [0, 1, 0],
+  const narrativeOpacity = useTransform(
+    narrativeScroll.scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 0.1, 0.1, 0],
   );
-  const glowFourOpacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
+  const narrativeShift = useTransform(
+    narrativeScroll.scrollYProgress,
+    [0, 1],
+    ["-2vh", "2vh"],
+  );
+  const systemsOpacity = useTransform(
+    systemsScroll.scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 0.09, 0.09, 0],
+  );
+  const systemsShiftX = useTransform(
+    systemsScroll.scrollYProgress,
+    [0, 1],
+    ["-1.5vw", "1.5vw"],
+  );
+  const publicationsOpacity = useTransform(
+    publicationsScroll.scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 0.05, 0.05, 0],
+  );
+  const merchOpacity = useTransform(
+    merchScroll.scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 0.07, 0.07, 0],
+  );
+  const merchScale = useTransform(
+    merchScroll.scrollYProgress,
+    [0, 0.3],
+    [1, 1.03],
+  );
+  const aboutOpacity = useTransform(
+    aboutScroll.scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 0.06, 0.06, 0],
+  );
 
   if (shouldReduceMotion) {
     return (
@@ -26,12 +101,9 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           background:
-            "radial-gradient(circle at 18% 16%, rgba(24, 132, 170, 0.42), transparent 55%), radial-gradient(circle at 78% 22%, rgba(52, 192, 214, 0.34), transparent 52%), radial-gradient(circle at 52% 72%, rgba(50, 120, 196, 0.3), transparent 60%), radial-gradient(circle at 58% 36%, rgba(168, 182, 194, 0.22), transparent 58%)",
-          backgroundSize: "175% 175%",
-          WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(circle at 65% 35%, #1F6F5B 0%, transparent 55%)",
+          opacity: 0.08,
+          mixBlendMode: "screen",
         }}
       />
     );
@@ -43,56 +115,69 @@ export default function HomepageScrollGlow() {
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
-          opacity: glowOneOpacity,
+          opacity: heroOpacity,
           background:
-            "radial-gradient(circle at 18% 16%, rgba(16, 126, 170, 0.48), transparent 55%), radial-gradient(circle at 76% 24%, rgba(38, 190, 214, 0.36), transparent 52%), radial-gradient(circle at 52% 70%, rgba(26, 104, 160, 0.3), transparent 60%)",
-          backgroundSize: "175% 175%",
-          WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(circle at 65% 35%, #1F6F5B 0%, transparent 58%)",
+          mixBlendMode: "screen",
+          transition: `opacity 700ms ${transitionEase}`,
         }}
       />
       <motion.div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
-          opacity: glowTwoOpacity,
+          opacity: narrativeOpacity,
+          y: narrativeShift,
           background:
-            "radial-gradient(circle at 22% 18%, rgba(32, 176, 206, 0.4), transparent 56%), radial-gradient(circle at 72% 22%, rgba(32, 124, 182, 0.34), transparent 52%), radial-gradient(circle at 50% 74%, rgba(14, 92, 132, 0.26), transparent 62%)",
-          backgroundSize: "175% 175%",
-          WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(120% 60% at 12% 10%, #3A6E4E 0%, transparent 58%), radial-gradient(120% 60% at 88% 90%, #3A6E4E 0%, transparent 58%)",
+          mixBlendMode: "soft-light",
+          transition: `opacity 750ms ${transitionEase}`,
         }}
       />
       <motion.div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
-          opacity: glowThreeOpacity,
+          opacity: systemsOpacity,
+          x: systemsShiftX,
           background:
-            "radial-gradient(circle at 24% 18%, rgba(52, 144, 200, 0.38), transparent 56%), radial-gradient(circle at 70% 26%, rgba(24, 96, 150, 0.32), transparent 54%), radial-gradient(circle at 50% 76%, rgba(16, 70, 108, 0.26), transparent 62%)",
-          backgroundSize: "175% 175%",
-          WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(80% 45% at 50% 68%, #8B7A3A 0%, transparent 62%)",
+          mixBlendMode: "soft-light",
+          transition: `opacity 850ms ${transitionEase}`,
         }}
       />
       <motion.div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
-          opacity: glowFourOpacity,
+          opacity: publicationsOpacity,
           background:
-            "radial-gradient(circle at 24% 20%, rgba(164, 176, 188, 0.24), transparent 58%), radial-gradient(circle at 76% 26%, rgba(110, 126, 140, 0.22), transparent 56%), radial-gradient(circle at 52% 78%, rgba(70, 84, 96, 0.2), transparent 62%)",
-          backgroundSize: "175% 175%",
-          WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            "radial-gradient(circle at 50% 40%, #5E6F66 0%, transparent 65%), radial-gradient(circle at 50% 75%, #5E6F66 0%, transparent 70%)",
+          mixBlendMode: "soft-light",
+          transition: `opacity 700ms ${transitionEase}`,
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[6]"
+        style={{
+          opacity: merchOpacity,
+          scale: merchScale,
+          background:
+            "radial-gradient(circle at 52% 46%, #7A5C3E 0%, transparent 45%)",
+          mixBlendMode: "soft-light",
+          transition: `opacity 700ms ${transitionEase}`,
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[6]"
+        style={{
+          opacity: aboutOpacity,
+          background:
+            "radial-gradient(circle at 50% 70%, #2F4F4A 0%, transparent 60%)",
+          mixBlendMode: "soft-light",
+          transition: `opacity 800ms ${transitionEase}`,
         }}
       />
     </>

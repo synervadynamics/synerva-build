@@ -17,7 +17,7 @@ import HomepageScrollGlow from "@/components/HomepageScrollGlow";
 
 export default function HomeDesktop() {
   return (
-    <main className="relative text-white backuphomepage backuphomepage-variant">
+    <main className="relative bg-[#0E1514] text-white backuphomepage backuphomepage-variant">
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <HomepageScrollGlow />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />

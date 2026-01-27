@@ -72,10 +72,19 @@ export const Offerings = () => {
             return (
               <div
                 key={card.title}
-                className="flex h-full flex-col gap-2 rounded-[2rem] border border-white/12 bg-transparent p-3 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-3 sm:p-5"
+                className="group relative flex h-full flex-col gap-2 rounded-[2rem] border border-white/12 bg-transparent p-3 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-3 sm:p-5"
               >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-[0.06] transition-opacity duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-[0.08]"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 50% 35%, #6A8F5A 0%, transparent 60%)",
+                    mixBlendMode: "screen",
+                  }}
+                />
                 {media ? (
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
+                  <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
                     <Image
                       src={media.src}
                       alt={media.alt}
@@ -86,14 +95,16 @@ export const Offerings = () => {
                     />
                   </div>
                 ) : null}
-                <div className="space-y-2">
+                <div className="relative z-10 space-y-2">
                   <p className="text-xs uppercase tracking-[0.35em] text-white/60">
                     {card.title}
                   </p>
                   <p className="text-sm text-white/70">{card.meta}</p>
                 </div>
-                <p className="text-sm text-white/80">{card.text}</p>
-                <div className="mt-auto pt-1 sm:pt-2">
+                <p className="relative z-10 text-sm text-white/80">
+                  {card.text}
+                </p>
+                <div className="relative z-10 mt-auto pt-1 sm:pt-2">
                   <Link
                     href={card.href}
                     className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
