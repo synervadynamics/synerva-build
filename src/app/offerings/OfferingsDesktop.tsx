@@ -3,6 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
@@ -27,10 +33,23 @@ const sectionMap = [
 ];
 
 export default function OfferingsDesktop() {
+  const mainRef = useRef<HTMLElement | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const [activeSection, setActiveSection] = useState<string>(
     sectionMap[0]?.id ?? "",
   );
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["start start", "end end"],
+  });
+  const glowOneOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const glowTwoOpacity = useTransform(
+    scrollYProgress,
+    [0.2, 0.6, 0.85],
+    [0, 1, 0],
+  );
+  const glowThreeOpacity = useTransform(scrollYProgress, [0.6, 1], [0, 1]);
   const getToolbarOffset = () =>
     headerRef.current?.getBoundingClientRect().height ?? 0;
 
@@ -68,8 +87,68 @@ export default function OfferingsDesktop() {
   );
 
   return (
-    <main className="relative text-white">
+    <main ref={mainRef} className="relative text-white">
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v1a.jpg" />
+      {shouldReduceMotion ? (
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 z-[6]"
+          style={{
+            background:
+              "radial-gradient(circle at 18% 14%, rgba(46, 122, 104, 0.42), transparent 52%), radial-gradient(circle at 78% 22%, rgba(162, 126, 86, 0.32), transparent 50%), radial-gradient(circle at 52% 72%, rgba(82, 64, 44, 0.26), transparent 55%)",
+            backgroundSize: "170% 170%",
+            WebkitMaskImage:
+              "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+          }}
+        />
+      ) : (
+        <>
+          <motion.div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-[6]"
+            style={{
+              opacity: glowOneOpacity,
+              background:
+                "radial-gradient(circle at 20% 16%, rgba(36, 136, 110, 0.46), transparent 52%), radial-gradient(circle at 76% 24%, rgba(112, 92, 64, 0.3), transparent 48%), radial-gradient(circle at 52% 70%, rgba(64, 98, 80, 0.26), transparent 58%)",
+              backgroundSize: "170% 170%",
+              WebkitMaskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+              maskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+          <motion.div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-[6]"
+            style={{
+              opacity: glowTwoOpacity,
+              background:
+                "radial-gradient(circle at 22% 18%, rgba(54, 120, 96, 0.4), transparent 54%), radial-gradient(circle at 74% 22%, rgba(176, 140, 90, 0.38), transparent 50%), radial-gradient(circle at 52% 72%, rgba(106, 78, 50, 0.28), transparent 56%)",
+              backgroundSize: "170% 170%",
+              WebkitMaskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+              maskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+          <motion.div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-[6]"
+            style={{
+              opacity: glowThreeOpacity,
+              background:
+                "radial-gradient(circle at 24% 18%, rgba(32, 98, 76, 0.36), transparent 54%), radial-gradient(circle at 70% 24%, rgba(186, 150, 102, 0.32), transparent 52%), radial-gradient(circle at 50% 76%, rgba(90, 64, 40, 0.3), transparent 58%)",
+              backgroundSize: "170% 170%",
+              WebkitMaskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+              maskImage:
+                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+        </>
+      )}
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
@@ -79,7 +158,6 @@ export default function OfferingsDesktop() {
           className="relative overflow-visible px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20"
         >
           <div className="hero-grid" />
-          <div className="hero-gradient" />
           <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
             <header ref={headerRef} className="flex flex-col gap-4 pb-6">
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
