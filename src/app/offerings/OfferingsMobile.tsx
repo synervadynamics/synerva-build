@@ -8,7 +8,7 @@ export default function OfferingsMobile() {
     <main className="text-white">
       <Mobile1Shell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/425AF1E5-3DD4-4C7C-8D62-4F8CA4F6407F.PNG"
+        backgroundImageUrl="/subpage-backgrounds/offerings-v1a.jpg"
       >
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
