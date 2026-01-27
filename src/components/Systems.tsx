@@ -88,17 +88,11 @@ Its architecture evolves directly from the work it supports.`,
         >
           {systemCards.map((card) => {
             const isLeftCard = card.direction === "left";
-            const startShift = shouldReduceMotion ? "0%" : "0%";
+            const startShift = shouldReduceMotion ? "0%" : isLeftCard ? "0%" : "-100%";
             const hoverShift = shouldReduceMotion ? "0%" : "-50%";
-            const panelRestShift = shouldReduceMotion || isLeftCard ? "0%" : "-100%";
-            const panelHoverShift = shouldReduceMotion || isLeftCard ? "0%" : "100%";
             const trackStyle = {
               "--card-start": startShift,
               "--card-hover": hoverShift,
-              "--image-rest": panelRestShift,
-              "--image-hover": panelHoverShift,
-              "--copy-rest": panelRestShift,
-              "--copy-hover": panelHoverShift,
             } as CSSProperties;
 
             return (
@@ -106,7 +100,7 @@ Its architecture evolves directly from the work it supports.`,
                 key={card.key}
                 tabIndex={0}
                 style={trackStyle}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem] md:[--card-shift:var(--card-start)] md:[--image-shift:var(--image-rest)] md:[--copy-shift:var(--copy-rest)] md:focus-visible:[--card-shift:var(--card-hover)] md:focus-visible:[--image-shift:var(--image-hover)] md:focus-visible:[--copy-shift:var(--copy-hover)] md:group-hover:[--card-shift:var(--card-hover)] md:group-hover:[--image-shift:var(--image-hover)] md:group-hover:[--copy-shift:var(--copy-hover)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem] md:[--card-shift:var(--card-start)] md:focus-visible:[--card-shift:var(--card-hover)] md:group-hover:[--card-shift:var(--card-hover)]"
               >
                 <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
                   <div
@@ -121,7 +115,7 @@ Its architecture evolves directly from the work it supports.`,
                       shouldReduceMotion
                         ? "rounded-t-[1.9rem] border-b border-white/12"
                         : "md:w-1/2 md:rounded-[1.65rem] md:border md:border-white/15"
-                    } ${!shouldReduceMotion && !isLeftCard ? "md:order-2 md:[transform:translateX(var(--image-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out" : ""}`}
+                    } ${!shouldReduceMotion && !isLeftCard ? "md:order-2" : ""}`}
                   >
                     <div
                       className={`relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)] ${
@@ -145,7 +139,7 @@ Its architecture evolves directly from the work it supports.`,
                       shouldReduceMotion ? "rounded-b-[1.9rem]" : "md:w-1/2"
                     } md:rounded-[1.65rem] md:border md:border-white/15 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)] ${
                       !shouldReduceMotion && !isLeftCard
-                        ? "md:order-1 md:[transform:translateX(var(--copy-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
+                        ? "md:order-1"
                         : ""
                     }`}
                   >
