@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  type MotionValue,
+  animate,
   motion,
   useMotionValue,
   useMotionValueEvent,
@@ -14,6 +16,7 @@ import {
 } from "framer-motion";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
+import { useSearchParams } from "next/navigation";
 
 const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
@@ -35,7 +38,64 @@ const sectionMap = [
   { id: "next-step", labelLines: ["NEXT", "STEPS"] },
 ];
 
+const glowSectionIds = [
+  "hero",
+  "scope-discipline",
+  "operator-hourly",
+  "flat-rate-projects",
+  "build-with-synerva",
+  "additional-capabilities",
+  "clarity-diagnostic",
+  "next-step",
+] as const;
+type GlowSectionId = (typeof glowSectionIds)[number];
+type GlowState = "inactive" | "entering" | "active" | "exiting";
+const switchThreshold = 0.02;
+// Invariants: these are structural constraints, not stylistic preferences.
+const activationWindow = 0.15; // Section center within ±15% of viewport center defines activity.
+const singleActiveGlowInvariant = true; // Exactly one section glow may be active at any time.
+const enterDurationSeconds = 0.7;
+const exitDurationDownSeconds = 0.7;
+const exitDurationUpSeconds = 0.5;
+const resetDurationMs = 150; // A brief zero-glow reset between sections is required.
+const minStableOpacity = 0.09; // No active glow below 0.09.
+const targetRangeMin = 0.11;
+const targetRangeMax = 0.15;
+const absoluteMaxOpacity = 0.18;
+const arrivalRampMs = 300;
+const overlayAlpha = 0.8;
+const transitionEase = [0.22, 1, 0.36, 1] as const;
+const isDev = process.env.NODE_ENV !== "production";
+
+const buildThresholds = (steps: number) =>
+  Array.from({ length: steps + 1 }, (_, index) => index / steps);
+
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(max, Math.max(min, value));
+
+const parseRgba = (value: string) => {
+  const match = value.match(/rgba?\(([^)]+)\)/i);
+  if (!match) return { r: 0, g: 0, b: 0, a: 1 };
+  const parts = match[1].split(",").map((p) => Number.parseFloat(p.trim()));
+  const [r = 0, g = 0, b = 0, a = 1] = parts;
+  return { r, g, b, a: Number.isFinite(a) ? a : 1 };
+};
+
+const srgbToLinear = (channel: number) => {
+  const c = channel / 255;
+  if (c <= 0.04045) return c / 12.92;
+  return ((c + 0.055) / 1.055) ** 2.4;
+};
+
+const computeLuminance = (r: number, g: number, b: number) =>
+  0.2126 * srgbToLinear(r) + 0.7152 * srgbToLinear(g) + 0.0722 * srgbToLinear(b);
+
 export default function OfferingsDesktop() {
+  /*
+   * This system is intentionally perceptible.
+   * Do not reduce opacity, remove reset moments, or allow overlapping glows
+   * without validating perceptibility on standard displays.
+   */
   const mainRef = useRef<HTMLElement | null>(null);
   const heroRef = useRef<HTMLDivElement | null>(null);
   const scopeRef = useRef<HTMLElement | null>(null);
@@ -49,9 +109,51 @@ export default function OfferingsDesktop() {
   const [activeSection, setActiveSection] = useState<string>(
     sectionMap[0]?.id ?? "",
   );
+  const searchParams = useSearchParams();
+  const glowDebug = searchParams.get("glowdebug") === "1";
+  const perceptibilityModeActive = glowDebug;
+  const thresholds = useMemo(() => buildThresholds(100), []);
+  const [sectionMetrics, setSectionMetrics] = useState<
+    Record<GlowSectionId, { centerOffset: number }>
+  >(
+    glowSectionIds.reduce(
+      (acc, id) => {
+        acc[id] = { centerOffset: Number.POSITIVE_INFINITY };
+        return acc;
+      },
+      {} as Record<GlowSectionId, { centerOffset: number }>,
+    ),
+  );
+  const [activeSectionId, setActiveSectionId] = useState<GlowSectionId>("hero");
+  const [pendingSectionId, setPendingSectionId] = useState<GlowSectionId | null>(
+    null,
+  );
+  const [sectionStates, setSectionStates] = useState<
+    Record<GlowSectionId, GlowState>
+  >(
+    glowSectionIds.reduce(
+      (acc, id) => {
+        acc[id] = id === "hero" ? "entering" : "inactive";
+        return acc;
+      },
+      {} as Record<GlowSectionId, GlowState>,
+    ),
+  );
+  const [activeGlowId, setActiveGlowId] = useState("hero-glow");
+  const [activeOpacityValue, setActiveOpacityValue] = useState(0);
+  const [direction, setDirection] = useState<"up" | "down">("down");
+  const [activePhase, setActivePhase] = useState<GlowState>("entering");
+  const [phaseProgress, setPhaseProgress] = useState(0);
+  const phaseStartRef = useRef<number>(performance.now());
+  const phaseDurationRef = useRef<number>(enterDurationSeconds * 1000);
+  const phaseProgressRef = useRef(0);
+  const [resetInProgress, setResetInProgress] = useState(false);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [backgroundLuminance, setBackgroundLuminance] = useState(0);
+  const [glowOpacities, setGlowOpacities] = useState<Record<string, number>>({});
   const shouldReduceMotion = useReducedMotion();
   const buildHoverIndex = useMotionValue(-1);
-  const scrollDirection = useMotionValue(1);
+  const [buildHoverValue, setBuildHoverValue] = useState(-1);
   const lastScrollY = useRef(0);
   const mainScroll = useScroll({
     target: mainRef,
@@ -90,42 +192,17 @@ export default function OfferingsDesktop() {
     offset: ["start end", "end start"],
   });
 
-  const heroProgress = useSpring(heroScroll.scrollYProgress, {
+  const scopeDriftProgress = useSpring(scopeScroll.scrollYProgress, {
     stiffness: 70,
     damping: 20,
     mass: 1,
   });
-  const scopeProgress = useSpring(scopeScroll.scrollYProgress, {
+  const operatorDriftProgress = useSpring(operatorScroll.scrollYProgress, {
     stiffness: 70,
     damping: 20,
     mass: 1,
   });
-  const operatorProgress = useSpring(operatorScroll.scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    mass: 1,
-  });
-  const flatRateProgress = useSpring(flatRateScroll.scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    mass: 1,
-  });
-  const buildProgress = useSpring(buildScroll.scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    mass: 1,
-  });
-  const additionalProgress = useSpring(additionalScroll.scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    mass: 1,
-  });
-  const clarityProgress = useSpring(clarityScroll.scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    mass: 1,
-  });
-  const nextProgress = useSpring(nextScroll.scrollYProgress, {
+  const clarityDriftProgress = useSpring(clarityScroll.scrollYProgress, {
     stiffness: 70,
     damping: 20,
     mass: 1,
@@ -134,93 +211,567 @@ export default function OfferingsDesktop() {
   useMotionValueEvent(mainScroll.scrollY, "change", (latest) => {
     const previous = lastScrollY.current;
     if (latest === previous) return;
-    scrollDirection.set(latest > previous ? 1 : -1);
+    setDirection(latest > previous ? "down" : "up");
     lastScrollY.current = latest;
   });
+  useMotionValueEvent(buildHoverIndex, "change", (latest) => {
+    setBuildHoverValue(latest);
+  });
 
-  const computeSectionOpacity = (
-    value: number,
-    direction: number,
-    targetOpacity: number,
-  ) => {
-    const enterStart = 0.15;
-    const enterEnd = 0.35;
-    const exitStart = 0.7;
-    const exitEnd = direction < 0 ? 0.9 : 1;
-    if (value <= enterStart) return 0;
-    if (value < enterEnd) {
-      return ((value - enterStart) / (enterEnd - enterStart)) * targetOpacity;
-    }
-    if (value < exitStart) return targetOpacity;
-    if (value < exitEnd) {
-      return ((exitEnd - value) / (exitEnd - exitStart)) * targetOpacity;
-    }
-    return 0;
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const viewportCenter = window.innerHeight / 2;
+        setSectionMetrics((prev) => {
+          const next = { ...prev };
+          entries.forEach((entry) => {
+            const id = entry.target.id as GlowSectionId;
+            if (glowSectionIds.includes(id)) {
+              const rect = entry.boundingClientRect;
+              const center = rect.top + rect.height / 2;
+              next[id] = { centerOffset: center - viewportCenter };
+            }
+          });
+          return next;
+        });
+      },
+      { threshold: thresholds },
+    );
 
-  const heroOpacity = useTransform([heroProgress, scrollDirection], ([v, d]) =>
-    computeSectionOpacity(v as number, d as number, 0.1),
-  );
-  const scopeOpacity = useTransform([scopeProgress, scrollDirection], ([v, d]) =>
-    computeSectionOpacity(v as number, d as number, 0.13),
-  );
-  const operatorOpacity = useTransform(
-    [operatorProgress, scrollDirection],
-    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.12),
-  );
-  const flatRateOpacity = useTransform(
-    [flatRateProgress, scrollDirection],
-    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.14),
-  );
-  const buildBaseOpacity = useTransform(
-    [buildProgress, scrollDirection],
-    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.11),
-  );
-  const additionalOpacity = useTransform(
-    [additionalProgress, scrollDirection],
-    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.08),
-  );
-  const clarityOpacity = useTransform(
-    [clarityProgress, scrollDirection],
-    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.11),
-  );
-  const nextOpacityBase = useTransform([nextProgress, scrollDirection], ([v, d]) =>
-    computeSectionOpacity(v as number, d as number, 0.12),
+    glowSectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [thresholds]);
+
+  useEffect(() => {
+    const updateLuminance = () => {
+      const bodyStyle = window.getComputedStyle(document.body);
+      const { r, g, b } = parseRgba(bodyStyle.backgroundColor || "rgb(0,0,0)");
+      const baseLuminance = computeLuminance(r, g, b);
+      setBackgroundLuminance(baseLuminance * (1 - overlayAlpha));
+    };
+    updateLuminance();
+    window.addEventListener("resize", updateLuminance);
+    return () => window.removeEventListener("resize", updateLuminance);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (resetTimerRef.current) {
+        clearTimeout(resetTimerRef.current);
+      }
+    },
+    [],
   );
 
-  const scopeShift = useTransform(scopeProgress, [0, 1], ["-1.5vw", "1.5vw"]);
-  const operatorShift = useTransform(
-    operatorProgress,
+  const heroBaseOpacity = useMotionValue<number>(0.115);
+  const scopeBaseOpacity = useMotionValue<number>(0.132);
+  const operatorBaseOpacity = useMotionValue<number>(0.115);
+  const flatRateBaseOpacity = useMotionValue<number>(0.14);
+  const buildBaseOpacity = useMotionValue<number>(0.123);
+  const additionalBaseOpacity = useMotionValue<number>(0.11);
+  const clarityBaseOpacity = useMotionValue<number>(0.123);
+  const nextBaseOpacity = useMotionValue<number>(0.132);
+
+  const scopeShift = useTransform(
+    scopeDriftProgress,
     [0, 1],
     ["-1.5vw", "1.5vw"],
   );
-  const clarityShift = useTransform(clarityProgress, [0, 1], ["1vh", "-1vh"]);
-  const pageFadeOut = useTransform(
-    mainScroll.scrollYProgress,
-    [0.75, 1],
-    [1, 0],
+  const operatorShift = useTransform(
+    operatorDriftProgress,
+    [0, 1],
+    ["-1.5vw", "1.5vw"],
   );
-  const nextOpacity = useTransform(
-    [nextOpacityBase, pageFadeOut],
-    ([base, fade]) => (base as number) * (fade as number),
+  const clarityShift = useTransform(
+    clarityDriftProgress,
+    [0, 1],
+    ["1vh", "-1vh"],
   );
-  const buildGlowOneOpacity = useTransform(
-    [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) =>
-      Math.min(0.16, (base as number) + (index === 0 ? 0.02 : 0)),
-  );
-  const buildGlowTwoOpacity = useTransform(
-    [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) =>
-      Math.min(0.16, (base as number) + (index === 1 ? 0.02 : 0)),
-  );
-  const buildGlowThreeOpacity = useTransform(
-    [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) =>
-      Math.min(0.16, (base as number) + (index === 2 ? 0.02 : 0)),
-  );
+  const buildGlowOneBaseOpacity = useTransform(buildHoverIndex, (index) =>
+    Math.min(0.16, buildBaseOpacity.get() + (index === 0 ? 0.02 : 0)),
+  ) as MotionValue<number>;
+  const buildGlowTwoBaseOpacity = useTransform(buildHoverIndex, (index) =>
+    Math.min(0.16, buildBaseOpacity.get() + (index === 1 ? 0.02 : 0)),
+  ) as MotionValue<number>;
+  const buildGlowThreeBaseOpacity = useTransform(buildHoverIndex, (index) =>
+    Math.min(0.16, buildBaseOpacity.get() + (index === 2 ? 0.02 : 0)),
+  ) as MotionValue<number>;
   const getToolbarOffset = () =>
     headerRef.current?.getBoundingClientRect().height ?? 0;
+
+  const candidateSectionId = useMemo(() => {
+    const viewportHeight = typeof window === "undefined" ? 0 : window.innerHeight;
+    const windowSize = viewportHeight * activationWindow;
+    let bestId: GlowSectionId = "hero";
+    let bestDistance = Number.POSITIVE_INFINITY;
+    let bestWithinWindow = false;
+    glowSectionIds.forEach((id) => {
+      const offset =
+        sectionMetrics[id]?.centerOffset ?? Number.POSITIVE_INFINITY;
+      const distance = Math.abs(offset);
+      const withinWindow = distance <= windowSize;
+      if (withinWindow && !bestWithinWindow) {
+        bestWithinWindow = true;
+        bestDistance = distance;
+        bestId = id;
+        return;
+      }
+      if (withinWindow && bestWithinWindow && distance < bestDistance) {
+        bestDistance = distance;
+        bestId = id;
+        return;
+      }
+      if (!bestWithinWindow && distance < bestDistance) {
+        bestDistance = distance;
+        bestId = id;
+      }
+    });
+    return bestId;
+  }, [sectionMetrics]);
+
+  const buildActiveGlowId =
+    buildHoverValue === 1
+      ? "build-glow-2"
+      : buildHoverValue === 2
+        ? "build-glow-3"
+        : "build-glow-1";
+  const derivedActiveGlowId =
+    activeSectionId === "build-with-synerva"
+      ? buildActiveGlowId
+      : `${activeSectionId}-glow`;
+
+  const heroGlowOpacity = useMotionValue<number>(0);
+  const scopeGlowOpacity = useMotionValue<number>(0);
+  const operatorGlowOpacity = useMotionValue<number>(0);
+  const flatRateGlowOpacity = useMotionValue<number>(0);
+  const buildGlowOneOpacity = useMotionValue<number>(0);
+  const buildGlowTwoOpacity = useMotionValue<number>(0);
+  const buildGlowThreeOpacity = useMotionValue<number>(0);
+  const additionalGlowOpacity = useMotionValue<number>(0);
+  const clarityGlowOpacity = useMotionValue<number>(0);
+  const nextGlowOpacity = useMotionValue<number>(0);
+
+  const glowOpacityById = useMemo<Record<string, MotionValue<number>>>(
+    () => ({
+      "hero-glow": heroGlowOpacity,
+      "scope-discipline-glow": scopeGlowOpacity,
+      "operator-hourly-glow": operatorGlowOpacity,
+      "flat-rate-projects-glow": flatRateGlowOpacity,
+      "build-glow-1": buildGlowOneOpacity,
+      "build-glow-2": buildGlowTwoOpacity,
+      "build-glow-3": buildGlowThreeOpacity,
+      "additional-capabilities-glow": additionalGlowOpacity,
+      "clarity-diagnostic-glow": clarityGlowOpacity,
+      "next-step-glow": nextGlowOpacity,
+    }),
+    [
+      heroGlowOpacity,
+      scopeGlowOpacity,
+      operatorGlowOpacity,
+      flatRateGlowOpacity,
+      buildGlowOneOpacity,
+      buildGlowTwoOpacity,
+      buildGlowThreeOpacity,
+      additionalGlowOpacity,
+      clarityGlowOpacity,
+      nextGlowOpacity,
+    ],
+  );
+
+  const glowToSection = useMemo(
+    () =>
+      ({
+        "hero-glow": "hero",
+        "scope-discipline-glow": "scope-discipline",
+        "operator-hourly-glow": "operator-hourly",
+        "flat-rate-projects-glow": "flat-rate-projects",
+        "build-glow-1": "build-with-synerva",
+        "build-glow-2": "build-with-synerva",
+        "build-glow-3": "build-with-synerva",
+        "additional-capabilities-glow": "additional-capabilities",
+        "clarity-diagnostic-glow": "clarity-diagnostic",
+        "next-step-glow": "next-step",
+      }) as Record<string, GlowSectionId>,
+    [],
+  );
+
+  const baseOpacityByGlow = useMemo<Record<string, MotionValue<number>>>(
+    () => ({
+      "hero-glow": heroBaseOpacity,
+      "scope-discipline-glow": scopeBaseOpacity,
+      "operator-hourly-glow": operatorBaseOpacity,
+      "flat-rate-projects-glow": flatRateBaseOpacity,
+      "build-glow-1": buildGlowOneBaseOpacity,
+      "build-glow-2": buildGlowTwoBaseOpacity,
+      "build-glow-3": buildGlowThreeBaseOpacity,
+      "additional-capabilities-glow": additionalBaseOpacity,
+      "clarity-diagnostic-glow": clarityBaseOpacity,
+      "next-step-glow": nextBaseOpacity,
+    }),
+    [
+      heroBaseOpacity,
+      scopeBaseOpacity,
+      operatorBaseOpacity,
+      flatRateBaseOpacity,
+      buildGlowOneBaseOpacity,
+      buildGlowTwoBaseOpacity,
+      buildGlowThreeBaseOpacity,
+      additionalBaseOpacity,
+      clarityBaseOpacity,
+      nextBaseOpacity,
+    ],
+  );
+
+  const activeSectionRef = useRef<GlowSectionId>(activeSectionId);
+  const pendingSectionRef = useRef<GlowSectionId | null>(pendingSectionId);
+  const activeGlowRef = useRef(activeGlowId);
+  const lastTargetByGlowRef = useRef<Record<string, number>>({});
+  const resetInProgressRef = useRef(resetInProgress);
+
+  useEffect(() => {
+    activeSectionRef.current = activeSectionId;
+  }, [activeSectionId]);
+  useEffect(() => {
+    pendingSectionRef.current = pendingSectionId;
+  }, [pendingSectionId]);
+  useEffect(() => {
+    activeGlowRef.current = activeGlowId;
+  }, [activeGlowId]);
+  useEffect(() => {
+    resetInProgressRef.current = resetInProgress;
+  }, [resetInProgress]);
+
+  const warnRef = useRef<Record<string, boolean>>({});
+  const warnOnce = (key: string, message: string) => {
+    if (!isDev || warnRef.current[key]) return;
+    warnRef.current[key] = true;
+    // eslint-disable-next-line no-console
+    console.warn(`[glow] ${message}`);
+  };
+
+  useEffect(() => {
+    if (!isDev) return;
+    const activeGlows = Object.entries(glowOpacities)
+      .filter(([, value]) => value > 0.001)
+      .map(([id]) => id);
+    if (singleActiveGlowInvariant && activeGlows.length > 1) {
+      warnOnce(
+        "multi-active-offerings",
+        `Multiple glows active simultaneously: ${activeGlows.join(", ")}`,
+      );
+    }
+  }, [glowOpacities]);
+
+  useEffect(() => {
+    if (pendingSectionId || candidateSectionId === activeSectionId) return;
+    setPendingSectionId(candidateSectionId);
+    setResetInProgress(false);
+    resetInProgressRef.current = false;
+    if (resetTimerRef.current) {
+      clearTimeout(resetTimerRef.current);
+      resetTimerRef.current = null;
+    }
+    setSectionStates((prev) => ({
+      ...prev,
+      [activeSectionId]: "exiting",
+    }));
+    setActivePhase("exiting");
+    phaseStartRef.current = performance.now();
+    phaseDurationRef.current =
+      (direction === "up" ? exitDurationUpSeconds : exitDurationDownSeconds) * 1000;
+  }, [candidateSectionId, activeSectionId, pendingSectionId, direction]);
+
+  useEffect(() => {
+    if (!pendingSectionId) {
+      setActiveGlowId(derivedActiveGlowId);
+    }
+  }, [derivedActiveGlowId, pendingSectionId]);
+
+  const commitPendingSwitch = (nextId: GlowSectionId) => {
+    setActiveSectionId(nextId);
+    setPendingSectionId(null);
+    setSectionStates(
+      glowSectionIds.reduce(
+        (acc, id) => {
+          acc[id] = id === nextId ? "entering" : "inactive";
+          return acc;
+        },
+        {} as Record<GlowSectionId, GlowState>,
+      ),
+    );
+    setActivePhase("entering");
+    phaseStartRef.current = performance.now();
+    phaseDurationRef.current = enterDurationSeconds * 1000;
+  };
+
+  const updateGlowTargets = () => {
+    const pendingId = pendingSectionRef.current;
+    const sectionId = activeSectionRef.current;
+    const exitingGlowId = activeGlowRef.current;
+    const currentDerivedGlowId =
+      sectionId === "build-with-synerva" ? buildActiveGlowId : `${sectionId}-glow`;
+    const activeGlowKey = pendingId ? exitingGlowId : currentDerivedGlowId;
+    const activeBaseRaw = baseOpacityByGlow[activeGlowKey]?.get() ?? 0;
+    const activeBaseClamped = clamp(activeBaseRaw, targetRangeMin, targetRangeMax);
+    const activeGlowTarget = clamp(
+      activeBaseClamped,
+      minStableOpacity,
+      absoluteMaxOpacity,
+    );
+    if (isDev && activeGlowTarget < minStableOpacity) {
+      warnOnce(
+        `opacity-floor-offerings-${activeGlowKey}`,
+        `${activeGlowKey} target opacity ${activeGlowTarget.toFixed(3)} is below floor ${minStableOpacity.toFixed(2)}`,
+      );
+    }
+    if (isDev && backgroundLuminance > 0.4 && activeGlowTarget <= minStableOpacity + 0.01) {
+      warnOnce(
+        `blend-suppression-offerings-${activeGlowKey}`,
+        `${activeGlowKey} may be suppressed by bright backgrounds with blend modes; consider screen or +0.01 opacity`,
+      );
+    }
+    const rampFraction = Math.min(0.45, arrivalRampMs / (enterDurationSeconds * 1000));
+
+    Object.entries(glowOpacityById).forEach(([glowId, opacity]) => {
+      const glowSectionId = glowToSection[glowId];
+      const baseOpacityRaw = baseOpacityByGlow[glowId]?.get() ?? 0;
+      const baseOpacityClamped = clamp(baseOpacityRaw, targetRangeMin, targetRangeMax);
+      const baseOpacity = clamp(
+        baseOpacityClamped,
+        minStableOpacity,
+        absoluteMaxOpacity,
+      );
+      const isExitingActiveGlow = Boolean(pendingId && glowId === exitingGlowId);
+      const isActiveGlow =
+        !pendingId && glowId === currentDerivedGlowId && glowSectionId === sectionId;
+      const target =
+        resetInProgress || !(isExitingActiveGlow || isActiveGlow) ? 0 : baseOpacity;
+      const nextTarget = Math.max(0, target);
+      const previousTarget = lastTargetByGlowRef.current[glowId];
+      if (previousTarget !== undefined && Math.abs(previousTarget - nextTarget) < 0.001) {
+        return;
+      }
+      lastTargetByGlowRef.current[glowId] = nextTarget;
+
+      const current = opacity.get();
+      const isDecaying = nextTarget < current;
+      const duration = isDecaying
+        ? direction === "up"
+          ? exitDurationUpSeconds
+          : exitDurationDownSeconds
+        : enterDurationSeconds;
+
+      if (isActiveGlow && !pendingId && nextTarget > 0 && activePhase !== "entering") {
+        setActivePhase("entering");
+        phaseStartRef.current = performance.now();
+        phaseDurationRef.current = enterDurationSeconds * 1000;
+      }
+      if (isExitingActiveGlow && activePhase !== "exiting") {
+        setActivePhase("exiting");
+        phaseStartRef.current = performance.now();
+        phaseDurationRef.current =
+          (direction === "up" ? exitDurationUpSeconds : exitDurationDownSeconds) *
+          1000;
+      }
+
+      const onComplete = () => {
+        const stillPending = pendingSectionRef.current;
+        const stillActiveSection = activeSectionRef.current === sectionId;
+        const stillActiveGlow =
+          !stillPending &&
+          (activeSectionRef.current === "build-with-synerva"
+            ? buildActiveGlowId
+            : `${activeSectionRef.current}-glow`) === glowId;
+        if (stillActiveSection && stillActiveGlow && nextTarget > 0) {
+          setActivePhase("active");
+          phaseProgressRef.current = 1;
+          setPhaseProgress(1);
+        }
+      };
+
+      if (nextTarget > 0 && !isDecaying) {
+        animate(opacity, [0, minStableOpacity, nextTarget], {
+          duration,
+          ease: transitionEase,
+          times: [0, rampFraction, 1],
+          onComplete,
+        });
+      } else {
+        animate(opacity, nextTarget, {
+          duration,
+          ease: transitionEase,
+          onComplete,
+        });
+      }
+    });
+
+    const activeGlowOpacity = glowOpacityById[activeGlowKey]?.get() ?? 0;
+    const nextActiveState: GlowState = pendingId
+      ? activeGlowOpacity <= 0.001
+        ? "inactive"
+        : "exiting"
+      : activeGlowOpacity < activeGlowTarget - 0.005
+        ? "entering"
+        : "active";
+
+    setSectionStates(
+      glowSectionIds.reduce(
+        (acc, id) => {
+          acc[id] = id === sectionId ? nextActiveState : "inactive";
+          return acc;
+        },
+        {} as Record<GlowSectionId, GlowState>,
+      ),
+    );
+  };
+
+  useEffect(() => {
+    updateGlowTargets();
+  }, [
+    derivedActiveGlowId,
+    activeSectionId,
+    pendingSectionId,
+    sectionMetrics,
+    buildActiveGlowId,
+    resetInProgress,
+    direction,
+    backgroundLuminance,
+  ]);
+
+  useMotionValueEvent(heroBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(scopeBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(operatorBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(flatRateBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(buildGlowOneBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(buildGlowTwoBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(buildGlowThreeBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(additionalBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(clarityBaseOpacity, "change", updateGlowTargets);
+  useMotionValueEvent(nextBaseOpacity, "change", updateGlowTargets);
+
+  const startReset = (nextId: GlowSectionId) => {
+    if (resetInProgressRef.current) return;
+    setResetInProgress(true);
+    setActivePhase("inactive");
+    phaseStartRef.current = performance.now();
+    phaseDurationRef.current = resetDurationMs;
+    if (resetTimerRef.current) {
+      clearTimeout(resetTimerRef.current);
+    }
+    resetTimerRef.current = setTimeout(() => {
+      setResetInProgress(false);
+      commitPendingSwitch(nextId);
+    }, resetDurationMs);
+  };
+
+  const handleActiveGlowChange = (glowId: string, latest: number) => {
+    const pendingId = pendingSectionRef.current;
+    const sectionId = activeSectionRef.current;
+    const exitingGlowId = activeGlowRef.current;
+    const currentDerivedGlowId =
+      sectionId === "build-with-synerva" ? buildActiveGlowId : `${sectionId}-glow`;
+    const isTrackedGlow = pendingId ? glowId === exitingGlowId : glowId === currentDerivedGlowId;
+    if (!isTrackedGlow) return;
+    setActiveOpacityValue(latest);
+    if (pendingId && latest <= switchThreshold) {
+      startReset(pendingId);
+    }
+  };
+
+  useMotionValueEvent(heroGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("hero-glow", latest),
+  );
+  useMotionValueEvent(scopeGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("scope-discipline-glow", latest),
+  );
+  useMotionValueEvent(operatorGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("operator-hourly-glow", latest),
+  );
+  useMotionValueEvent(flatRateGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("flat-rate-projects-glow", latest),
+  );
+  useMotionValueEvent(buildGlowOneOpacity, "change", (latest) =>
+    handleActiveGlowChange("build-glow-1", latest),
+  );
+  useMotionValueEvent(buildGlowTwoOpacity, "change", (latest) =>
+    handleActiveGlowChange("build-glow-2", latest),
+  );
+  useMotionValueEvent(buildGlowThreeOpacity, "change", (latest) =>
+    handleActiveGlowChange("build-glow-3", latest),
+  );
+  useMotionValueEvent(additionalGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("additional-capabilities-glow", latest),
+  );
+  useMotionValueEvent(clarityGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("clarity-diagnostic-glow", latest),
+  );
+  useMotionValueEvent(nextGlowOpacity, "change", (latest) =>
+    handleActiveGlowChange("next-step-glow", latest),
+  );
+
+  useMotionValueEvent(heroGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "hero-glow": latest })),
+  );
+  useMotionValueEvent(scopeGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "scope-discipline-glow": latest })),
+  );
+  useMotionValueEvent(operatorGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "operator-hourly-glow": latest })),
+  );
+  useMotionValueEvent(flatRateGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "flat-rate-projects-glow": latest })),
+  );
+  useMotionValueEvent(buildGlowOneOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "build-glow-1": latest })),
+  );
+  useMotionValueEvent(buildGlowTwoOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "build-glow-2": latest })),
+  );
+  useMotionValueEvent(buildGlowThreeOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "build-glow-3": latest })),
+  );
+  useMotionValueEvent(additionalGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "additional-capabilities-glow": latest })),
+  );
+  useMotionValueEvent(clarityGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "clarity-diagnostic-glow": latest })),
+  );
+  useMotionValueEvent(nextGlowOpacity, "change", (latest) =>
+    setGlowOpacities((prev) => ({ ...prev, "next-step-glow": latest })),
+  );
+
+  useEffect(() => {
+    const pendingId = pendingSectionId;
+    if (!pendingId) return;
+    const activeOpacity = glowOpacityById[activeGlowId]?.get() ?? 0;
+    if (activeOpacity <= switchThreshold) {
+      startReset(pendingId);
+    }
+  }, [pendingSectionId, activeGlowId, glowOpacityById]);
+
+  useEffect(() => {
+    let rafId = 0;
+    const tick = () => {
+      const duration = phaseDurationRef.current;
+      if (duration <= 0) {
+        phaseProgressRef.current = 1;
+        setPhaseProgress(1);
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
+      const elapsed = performance.now() - phaseStartRef.current;
+      const progress = Math.max(0, Math.min(1, elapsed / duration));
+      phaseProgressRef.current = progress;
+      setPhaseProgress(progress);
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -258,110 +809,126 @@ export default function OfferingsDesktop() {
   return (
     <main ref={mainRef} className="relative bg-[#0E1514] text-white">
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v1a.jpg" />
+      <div className="pointer-events-none fixed inset-0 z-[4] bg-black/80" />
+      {glowDebug ? (
+        <div className="pointer-events-none fixed inset-0 z-[6] border border-dashed border-white/35" />
+      ) : null}
+      {perceptibilityModeActive ? (
+        <div className="pointer-events-none fixed left-3 top-3 z-[60] w-56 rounded border border-white/15 bg-black/70 p-2 font-mono text-[11px] text-white/90">
+          <div>PERCEPTIBILITY MODE ACTIVE</div>
+          <div>Active section: {activeSectionId}</div>
+          <div>Active glow: {pendingSectionId ? activeGlowId : derivedActiveGlowId}</div>
+          <div>Opacity: {activeOpacityValue.toFixed(3)}</div>
+          <div>Background L: {backgroundLuminance.toFixed(3)}</div>
+          <div>Direction: {direction}</div>
+          <div>Phase: {activePhase}</div>
+          <div>Timer: {(phaseProgress * 100).toFixed(0)}%</div>
+          <div>State: {sectionStates[activeSectionId]}</div>
+        </div>
+      ) : null}
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: heroOpacity,
+          opacity: heroGlowOpacity,
           background:
-            "radial-gradient(circle at 60% 35%, #1D5748 0%, transparent 58%)",
-          mixBlendMode: "screen",
+            "radial-gradient(circle at 60% 35%, #1E6A55 0%, transparent 58%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: scopeOpacity,
+          opacity: scopeGlowOpacity,
           x: shouldReduceMotion ? 0 : scopeShift,
           y: shouldReduceMotion ? 0 : scopeShift,
-          background: "linear-gradient(25deg, #2F543D 0%, transparent 70%)",
-          mixBlendMode: "soft-light",
+          background: "linear-gradient(25deg, #4E5A33 0%, transparent 70%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: operatorOpacity,
+          opacity: operatorGlowOpacity,
           x: shouldReduceMotion ? 0 : operatorShift,
           background:
-            "radial-gradient(circle at 33% 50%, #356F64 0%, #264C45 45%, transparent 65%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 33% 50%, #2E7C78 0%, #1E5551 45%, transparent 65%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: flatRateOpacity,
+          opacity: flatRateGlowOpacity,
           background:
-            "radial-gradient(90% 45% at 50% 68%, #6A6130 0%, transparent 70%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(95% 48% at 50% 68%, #9A7A2E 0%, transparent 70%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
           opacity: buildGlowOneOpacity,
           background:
-            "radial-gradient(circle at 22% 40%, #486B55 0%, transparent 52%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 22% 40%, #2F5E4C 0%, transparent 52%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
           opacity: buildGlowTwoOpacity,
           background:
-            "radial-gradient(circle at 70% 38%, #2D4338 0%, transparent 52%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 70% 38%, #1F3C33 0%, transparent 52%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
           opacity: buildGlowThreeOpacity,
           background:
-            "radial-gradient(circle at 50% 72%, #486B55 0%, transparent 52%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 50% 72%, #2F5E4C 0%, transparent 52%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: additionalOpacity,
+          opacity: additionalGlowOpacity,
           background:
-            "radial-gradient(circle at 50% 42%, #3A5E5E 0%, transparent 72%), radial-gradient(circle at 50% 82%, #223F3F 0%, transparent 75%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 50% 42%, #2E6B6B 0%, transparent 72%), radial-gradient(circle at 50% 82%, #1C4F56 0%, transparent 75%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: clarityOpacity,
+          opacity: clarityGlowOpacity,
           y: shouldReduceMotion ? 0 : clarityShift,
           background:
-            "linear-gradient(180deg, transparent 0%, #6D7C65 45%, transparent 85%)",
-          mixBlendMode: "soft-light",
+            "linear-gradient(180deg, transparent 0%, #6F7E58 45%, transparent 85%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[4]"
+        className="pointer-events-none fixed inset-0 z-[5]"
         style={{
-          opacity: nextOpacity,
+          opacity: nextGlowOpacity,
           background:
-            "radial-gradient(circle at 50% 72%, #826538 0%, transparent 65%)",
-          mixBlendMode: "soft-light",
+            "radial-gradient(circle at 50% 72%, #9A6A32 0%, transparent 65%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
-      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
 
