@@ -58,9 +58,9 @@ const enterDurationSeconds = 0.7;
 const exitDurationDownSeconds = 0.7;
 const exitDurationUpSeconds = 0.5;
 const resetDurationMs = 150; // A brief zero-glow reset between sections is required.
-const minStableOpacity = 0.09; // No active glow below 0.09.
-const targetRangeMin = 0.11;
-const targetRangeMax = 0.15;
+const minStableOpacity = 0.11; // Production floor raised to ensure visibility.
+const targetRangeMin = 0.13;
+const targetRangeMax = 0.17;
 const absoluteMaxOpacity = 0.18;
 const arrivalRampMs = 300;
 const overlayAlpha = 0.8;
@@ -267,14 +267,14 @@ export default function OfferingsDesktop() {
     [],
   );
 
-  const heroBaseOpacity = useMotionValue<number>(0.115);
-  const scopeBaseOpacity = useMotionValue<number>(0.132);
-  const operatorBaseOpacity = useMotionValue<number>(0.115);
-  const flatRateBaseOpacity = useMotionValue<number>(0.14);
-  const buildBaseOpacity = useMotionValue<number>(0.123);
-  const additionalBaseOpacity = useMotionValue<number>(0.11);
-  const clarityBaseOpacity = useMotionValue<number>(0.123);
-  const nextBaseOpacity = useMotionValue<number>(0.132);
+  const heroBaseOpacity = useMotionValue<number>(0.145);
+  const scopeBaseOpacity = useMotionValue<number>(0.162);
+  const operatorBaseOpacity = useMotionValue<number>(0.148);
+  const flatRateBaseOpacity = useMotionValue<number>(0.17);
+  const buildBaseOpacity = useMotionValue<number>(0.155);
+  const additionalBaseOpacity = useMotionValue<number>(0.14);
+  const clarityBaseOpacity = useMotionValue<number>(0.152);
+  const nextBaseOpacity = useMotionValue<number>(0.162);
 
   const scopeShift = useTransform(
     scopeDriftProgress,
@@ -832,7 +832,7 @@ export default function OfferingsDesktop() {
         style={{
           opacity: heroGlowOpacity,
           background:
-            "radial-gradient(circle at 60% 35%, #1E6A55 0%, transparent 58%)",
+            "radial-gradient(circle at 60% 35%, #1E7F6B 0%, transparent 60%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
@@ -843,8 +843,8 @@ export default function OfferingsDesktop() {
           opacity: scopeGlowOpacity,
           x: shouldReduceMotion ? 0 : scopeShift,
           y: shouldReduceMotion ? 0 : scopeShift,
-          background: "linear-gradient(25deg, #4E5A33 0%, transparent 70%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+          background: "linear-gradient(25deg, #8C7A2A 0%, transparent 72%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -854,7 +854,7 @@ export default function OfferingsDesktop() {
           opacity: operatorGlowOpacity,
           x: shouldReduceMotion ? 0 : operatorShift,
           background:
-            "radial-gradient(circle at 33% 50%, #2E7C78 0%, #1E5551 45%, transparent 65%)",
+            "radial-gradient(circle at 33% 50%, #2B6EA0 0%, #1B466A 46%, transparent 67%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -864,8 +864,8 @@ export default function OfferingsDesktop() {
         style={{
           opacity: flatRateGlowOpacity,
           background:
-            "radial-gradient(95% 48% at 50% 68%, #9A7A2E 0%, transparent 70%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "radial-gradient(100% 50% at 50% 68%, #B35A36 0%, transparent 72%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -874,8 +874,8 @@ export default function OfferingsDesktop() {
         style={{
           opacity: buildGlowOneOpacity,
           background:
-            "radial-gradient(circle at 22% 40%, #2F5E4C 0%, transparent 52%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "radial-gradient(circle at 22% 40%, #2C7A6A 0%, transparent 54%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -884,7 +884,7 @@ export default function OfferingsDesktop() {
         style={{
           opacity: buildGlowTwoOpacity,
           background:
-            "radial-gradient(circle at 70% 38%, #1F3C33 0%, transparent 52%)",
+            "radial-gradient(circle at 70% 38%, #225A9A 0%, transparent 54%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -894,7 +894,7 @@ export default function OfferingsDesktop() {
         style={{
           opacity: buildGlowThreeOpacity,
           background:
-            "radial-gradient(circle at 50% 72%, #2F5E4C 0%, transparent 52%)",
+            "radial-gradient(circle at 50% 72%, #6B4AA3 0%, transparent 56%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -904,7 +904,7 @@ export default function OfferingsDesktop() {
         style={{
           opacity: additionalGlowOpacity,
           background:
-            "radial-gradient(circle at 50% 42%, #2E6B6B 0%, transparent 72%), radial-gradient(circle at 50% 82%, #1C4F56 0%, transparent 75%)",
+            "radial-gradient(circle at 50% 42%, #2D6FA8 0%, transparent 74%), radial-gradient(circle at 50% 82%, #1F3E7A 0%, transparent 78%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -915,8 +915,8 @@ export default function OfferingsDesktop() {
           opacity: clarityGlowOpacity,
           y: shouldReduceMotion ? 0 : clarityShift,
           background:
-            "linear-gradient(180deg, transparent 0%, #6F7E58 45%, transparent 85%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "linear-gradient(180deg, transparent 0%, #8A6A9A 46%, transparent 88%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -925,8 +925,8 @@ export default function OfferingsDesktop() {
         style={{
           opacity: nextGlowOpacity,
           background:
-            "radial-gradient(circle at 50% 72%, #9A6A32 0%, transparent 65%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "radial-gradient(circle at 50% 72%, #B33B5A 0%, transparent 68%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <div className="relative z-10">

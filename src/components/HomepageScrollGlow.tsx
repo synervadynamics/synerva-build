@@ -23,9 +23,9 @@ const enterDurationSeconds = 0.7;
 const exitDurationDownSeconds = 0.7;
 const exitDurationUpSeconds = 0.5;
 const resetDurationMs = 150; // A brief zero-glow reset between sections is required.
-const minStableOpacity = 0.09; // No active glow below 0.09.
-const targetRangeMin = 0.11;
-const targetRangeMax = 0.15;
+const minStableOpacity = 0.11; // Production floor raised to ensure visibility.
+const targetRangeMin = 0.13;
+const targetRangeMax = 0.17;
 const absoluteMaxOpacity = 0.18;
 const arrivalRampMs = 300;
 const isDev = process.env.NODE_ENV !== "production";
@@ -235,14 +235,14 @@ export default function HomepageScrollGlow() {
   const sectionConfig = useMemo(
     () =>
       ({
-        hero: { baseOpacity: 0.115 },
-        narrative: { baseOpacity: 0.132 },
-        offerings: { baseOpacity: 0.123 },
-        "systems-that-hold": { baseOpacity: 0.14 },
-        systems: { baseOpacity: 0.115 },
-        publications: { baseOpacity: 0.105 },
-        merch: { baseOpacity: 0.123 },
-        about: { baseOpacity: 0.115 },
+        hero: { baseOpacity: 0.145 },
+        narrative: { baseOpacity: 0.162 },
+        offerings: { baseOpacity: 0.152 },
+        "systems-that-hold": { baseOpacity: 0.17 },
+        systems: { baseOpacity: 0.145 },
+        publications: { baseOpacity: 0.135 },
+        merch: { baseOpacity: 0.155 },
+        about: { baseOpacity: 0.148 },
       }) satisfies Record<SectionId, { baseOpacity: number }>,
     [],
   );
@@ -659,7 +659,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: heroOpacity,
           background:
-            "radial-gradient(78% 76% at 65% 40%, #1E6A56 0%, transparent 60%)",
+            "radial-gradient(82% 78% at 66% 40%, #1E7C67 0%, transparent 62%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
@@ -671,7 +671,7 @@ export default function HomepageScrollGlow() {
           x: narrativeDriftX,
           y: narrativeDriftY,
           background:
-            "linear-gradient(25deg, rgba(46,128,110,0) 15%, rgba(46,128,110,1) 48%, rgba(46,128,110,0) 82%)",
+            "linear-gradient(25deg, rgba(40,140,150,0) 12%, rgba(40,140,150,1) 48%, rgba(40,140,150,0) 84%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -681,7 +681,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: offeringsOpacity,
           background:
-            "radial-gradient(40% 42% at 20% 48%, #7E8F4A 0%, transparent 70%), radial-gradient(40% 42% at 50% 52%, #7E8F4A 0%, transparent 70%), radial-gradient(40% 42% at 80% 48%, #7E8F4A 0%, transparent 70%)",
+            "radial-gradient(42% 44% at 20% 48%, #9A8F38 0%, transparent 72%), radial-gradient(42% 44% at 50% 52%, #9A8F38 0%, transparent 72%), radial-gradient(42% 44% at 80% 48%, #9A8F38 0%, transparent 72%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
@@ -692,8 +692,8 @@ export default function HomepageScrollGlow() {
           opacity: systemsThatHoldOpacity,
           x: systemsThatHoldDriftX,
           background:
-            "radial-gradient(145% 48% at 50% 72%, #A07A3A 0%, transparent 65%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "radial-gradient(150% 50% at 50% 72%, #B26A3A 0%, transparent 66%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -702,7 +702,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: systemsOpacity,
           background:
-            "radial-gradient(34% 40% at 18% 46%, #3F6654 0%, transparent 70%), radial-gradient(30% 36% at 18% 46%, #243E36 0%, transparent 68%), radial-gradient(34% 40% at 50% 50%, #3F6654 0%, transparent 70%), radial-gradient(30% 36% at 50% 50%, #243E36 0%, transparent 68%), radial-gradient(34% 40% at 82% 46%, #3F6654 0%, transparent 70%), radial-gradient(30% 36% at 82% 46%, #243E36 0%, transparent 68%)",
+            "radial-gradient(36% 42% at 18% 46%, #2F4E72 0%, transparent 72%), radial-gradient(32% 38% at 18% 46%, #1E2F48 0%, transparent 70%), radial-gradient(36% 42% at 50% 50%, #2F4E72 0%, transparent 72%), radial-gradient(32% 38% at 50% 50%, #1E2F48 0%, transparent 70%), radial-gradient(36% 42% at 82% 46%, #2F4E72 0%, transparent 72%), radial-gradient(32% 38% at 82% 46%, #1E2F48 0%, transparent 70%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -712,7 +712,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: publicationsOpacity,
           background:
-            "radial-gradient(125% 125% at 50% 55%, #4F6872 0%, transparent 72%)",
+            "radial-gradient(128% 128% at 50% 55%, #6B5A8A 0%, transparent 74%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
@@ -722,8 +722,8 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: merchOpacity,
           background:
-            "radial-gradient(42% 47% at 50% 55%, #8A5A36 0%, transparent 62%)",
-          mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
+            "radial-gradient(44% 49% at 50% 55%, #B14A3A 0%, transparent 64%)",
+          mixBlendMode: perceptibilityModeActive ? "normal" : "screen",
         }}
       />
       <motion.div
@@ -732,7 +732,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: aboutOpacity,
           background:
-            "radial-gradient(68% 62% at 50% 72%, #2B4C56 0%, transparent 66%)",
+            "radial-gradient(70% 64% at 50% 72%, #3A4F8F 0%, transparent 68%)",
           mixBlendMode: perceptibilityModeActive ? "normal" : "soft-light",
         }}
       />
