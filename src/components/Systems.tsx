@@ -77,10 +77,10 @@ Its architecture evolves directly from the work it supports.`,
                 className="relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem]"
               >
                 <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
-                  <div className="flex h-full w-full flex-col md:flex-row md:items-center md:gap-8 md:px-6 md:py-6 lg:px-8">
-                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 md:w-[46%] md:rounded-[1.65rem] md:border-0">
+                  <div className="flex h-full w-full flex-col md:flex-row md:items-stretch md:gap-8 md:px-6 md:py-6 lg:px-8">
+                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 md:h-full md:w-[46%] md:rounded-[1.65rem] md:border-0">
                       <div className="relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-0 md:py-0">
-                        <div className="relative h-full w-full overflow-hidden rounded-[1.65rem]">
+                        <div className="relative h-full w-full overflow-hidden rounded-[1.65rem] md:h-full">
                           <Image
                             src={card.image}
                             alt={card.imageAlt}
