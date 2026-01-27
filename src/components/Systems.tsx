@@ -13,205 +13,86 @@ type SystemsProps = {
 export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
   const shouldReduceMotion = useReducedMotion();
   const sectionCopy = copy.systemsSection;
-  const bodySentences = sectionCopy.body
-    .replace(/\n+/g, " ")
-    .split(/(?<=\.)\s+/)
-    .map((sentence) => sentence.trim())
-    .filter(Boolean);
-  const sentenceA = bodySentences[0] ?? sectionCopy.heading;
-  const sentenceB = bodySentences[1] ?? "";
-  const sentenceC = bodySentences[2] ?? "";
-  const sentenceD = bodySentences[3] ?? "";
-  const sentenceE = bodySentences[4] ?? "";
-  const sentenceF = bodySentences[5] ?? "";
+  void mobileVariant;
+  const bodyParagraphs = sectionCopy.body.split("\n\n");
 
   return (
     <section
       id="systems"
-      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
+      className="relative bg-[#05070c] px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
     >
-      <div className="relative mx-auto max-w-6xl space-y-6 text-white">
-        {mobileVariant === "beats" ? (
-          <>
-            <div className="flex flex-col md:hidden">
-              <div className="flex flex-col justify-start gap-4 pb-3 pt-4 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:pb-8 sm:pt-10">
-                <h2 className="text-2xl font-light leading-snug text-white">
-                  {sentenceA}
-                </h2>
-                <p className="text-base text-white/80">{sentenceB}</p>
-              </div>
-              <div className="flex flex-col justify-start gap-4 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
-                <h3 className="text-xl font-light leading-snug text-white/90">
-                  {sentenceC}
-                </h3>
-                <p className="text-base text-white/75">{sentenceD}</p>
-              </div>
-              <div className="flex flex-col justify-start gap-4 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-5 sm:py-12">
-                <h3 className="text-xl font-light leading-snug text-white/90">
-                  {sentenceE}
-                </h3>
-                <p className="text-base text-white/75">{sentenceF}</p>
-              </div>
-              <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[100svh] sm:justify-center sm:gap-4 sm:py-12">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-                  {sectionCopy.eyebrow}
-                </p>
-                <p className="text-base text-white/80">{sectionCopy.heading}</p>
-              </div>
-            </div>
-            <div className="hidden flex-col md:flex">
-              <div className="contrast-field space-y-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/65">
-                  {sectionCopy.eyebrow}
-                </p>
-                <h2
-                  data-type-compression="headline"
-                  data-type-compression-line-height="1.5"
-                  data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
-                >
-                  {sectionCopy.heading}
-                </h2>
-                <div className="space-y-4 text-lg text-white/75">
-                  {sectionCopy.body.split("\n\n").map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-                className="bubble-drift rounded-[2.75rem] border border-white/20 bg-gradient-to-br from-[rgba(13,27,38,0.86)] via-[rgba(16,30,42,0.78)] to-[rgba(10,20,32,0.88)] p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),_0_55px_170px_-90px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-6 lg:p-8"
-              >
-                <div className="grid gap-5 sm:gap-6 lg:gap-8 md:grid-cols-2 xl:grid-cols-3">
-                  {sectionCopy.cards.map((card) => (
-                    <article
-                      key={card.title}
-                      className="flex h-full flex-col rounded-[2.25rem] border border-white/15 bg-gradient-to-b from-[rgba(16,30,42,0.92)] via-[rgba(15,28,40,0.86)] to-[rgba(12,24,34,0.92)] p-4 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.85)] sm:p-6"
-                    >
-                      <div className="relative mb-4 overflow-hidden rounded-2xl border border-white/10 bg-[rgba(6,12,20,0.9)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] sm:mb-5">
-                        <div className="relative aspect-[16/9] w-full">
-                          <Image
-                            src={card.image}
-                            alt={card.imageAlt}
-                            fill
-                            className={
-                              card.title === "Synerva OS"
-                                ? "object-cover object-[center_60%]"
-                                : "object-cover"
-                            }
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          />
-                        </div>
-                      </div>
-                      <p className="text-[0.65rem] uppercase tracking-[0.35em] text-white/60">
-                        {card.descriptor}
-                      </p>
-                      <p className="mt-2 text-base text-white/85 sm:mt-3">
-                        {card.body}
-                      </p>
-                      <p className="mt-3 text-sm text-white/55 sm:mt-4">
-                        {card.status}
-                      </p>
-                      <ul className="mt-4 space-y-2 text-sm text-white/75 sm:mt-5">
-                        {card.bullets.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href={card.href}
-                        className="mt-auto inline-flex w-fit rounded-full border border-white/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                      >
-                        LEARN MORE
-                      </Link>
-                    </article>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="contrast-field space-y-4">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/65">
-                {sectionCopy.eyebrow}
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 text-white">
+        <div className="contrast-field space-y-4">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+            {sectionCopy.eyebrow}
+          </p>
+          <h2
+            data-type-compression="headline"
+            data-type-compression-line-height="1.25"
+            data-type-compression-letter-spacing="0"
+            className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+          >
+            {sectionCopy.heading}
+          </h2>
+          <div className="space-y-5 text-base text-white/78 sm:text-lg">
+            {bodyParagraphs.map((paragraph) => (
+              <p key={paragraph} className="whitespace-pre-line">
+                {paragraph}
               </p>
-              <h2
-                data-type-compression="headline"
-                data-type-compression-line-height="1.5"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
-              >
-                {sectionCopy.heading}
-              </h2>
-              <div className="space-y-4 text-lg text-white/75">
-                {sectionCopy.body.split("\n\n").map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="bubble-drift rounded-[2.75rem] border border-white/20 bg-gradient-to-br from-[rgba(13,27,38,0.86)] via-[rgba(16,30,42,0.78)] to-[rgba(10,20,32,0.88)] p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),_0_55px_170px_-90px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-6 lg:p-8"
+            ))}
+          </div>
+          <p className="max-w-4xl text-sm text-white/60 sm:text-[0.95rem]">
+            {sectionCopy.developmentNote}
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="grid items-stretch gap-6 md:grid-cols-2 lg:gap-8"
+        >
+          {sectionCopy.cards.map((card) => (
+            <article
+              key={card.title}
+              className="flex h-full flex-col rounded-[2rem] border border-white/20 bg-white/[0.03] p-5 shadow-[0_40px_140px_-100px_rgba(0,0,0,0.88)] backdrop-blur-xl sm:p-6"
             >
-              <div className="grid gap-5 sm:gap-6 lg:gap-8 md:grid-cols-2 xl:grid-cols-3">
-                {sectionCopy.cards.map((card) => (
-                  <article
-                    key={card.title}
-                    className="flex h-full flex-col rounded-[2.25rem] border border-white/15 bg-gradient-to-b from-[rgba(16,30,42,0.92)] via-[rgba(15,28,40,0.86)] to-[rgba(12,24,34,0.92)] p-4 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.85)] sm:p-6"
-                  >
-                    <div className="relative mb-4 overflow-hidden rounded-2xl border border-white/10 bg-[rgba(6,12,20,0.9)] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)] sm:mb-5">
-                      <div className="relative aspect-[16/9] w-full">
-                        <Image
-                          src={card.image}
-                          alt={card.imageAlt}
-                          fill
-                          className={
-                            card.title === "Synerva OS"
-                              ? "object-cover object-[center_60%]"
-                              : "object-cover"
-                          }
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      </div>
-                    </div>
-                    <p className="text-[0.65rem] uppercase tracking-[0.35em] text-white/60">
-                      {card.descriptor}
-                    </p>
-                    <p className="mt-2 text-base text-white/85 sm:mt-3">
-                      {card.body}
-                    </p>
-                    <p className="mt-3 text-sm text-white/55 sm:mt-4">
-                      {card.status}
-                    </p>
-                  <ul className="mt-4 space-y-2 text-sm text-white/75 sm:mt-5">
-                    {card.bullets.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 h-1 w-4 rounded-full bg-sky-300/60" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                    <Link
-                      href={card.href}
-                      className="mt-auto inline-flex w-fit rounded-full border border-white/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                    >
-                      LEARN MORE
-                    </Link>
-                  </article>
+              <div className="mb-6 overflow-hidden rounded-2xl border border-white/12 bg-black/30">
+                <Image
+                  src={card.image}
+                  alt={card.imageAlt}
+                  width={1600}
+                  height={1000}
+                  className="h-auto w-full rounded-2xl object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+              <h3 className="text-xl font-medium text-white sm:text-[1.45rem]">
+                {card.headline}
+              </h3>
+              <p className="mt-2 text-sm uppercase tracking-[0.32em] text-white/60">
+                {card.title}
+              </p>
+              <div className="mt-4 space-y-4 text-sm text-white/80 sm:text-[1rem]">
+                {card.body.split("\n\n").map((paragraph) => (
+                  <p key={`${card.title}-${paragraph}`} className="whitespace-pre-line">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
-            </motion.div>
-          </>
-        )}
+            </article>
+          ))}
+        </motion.div>
+
+        <div className="flex justify-center pt-2 sm:pt-4">
+          <Link
+            href={sectionCopy.cta.href}
+            className="inline-flex rounded-full border border-white/45 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10 sm:text-sm"
+          >
+            {sectionCopy.cta.label}
+          </Link>
+        </div>
       </div>
     </section>
   );

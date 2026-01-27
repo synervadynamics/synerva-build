@@ -310,57 +310,34 @@ export const copy = {
     },
   },
   systemsSection: {
-    eyebrow: "Systems",
-    heading: "Internal engines. Public outcomes.",
+    eyebrow: "SYSTEMS",
+    heading: "Internal engines. Durable outcomes.",
     body:
-      "Synerva is built around a simple advantage: decisions persist. Standards don’t evaporate. Context doesn’t reset.\n\nBehind the scenes, we’re developing a small stack of internal systems designed to preserve judgment and reduce operational drag over time. They’re not public products yet, and they’re not what you’re hiring.\n\nWhat you can hire today is the output: strategy, writing, design, builds, and the operational loops that make the work compound.",
+      "Synerva is built around a simple advantage: decisions persist.\n\nStandards don’t evaporate.\nContext doesn’t reset.\nSignal isn’t drowned out by volume.\n\nBehind the scenes, a small set of internal systems preserves judgment across strategy, execution, and iteration. They reduce operational drag, surface what actually matters, and keep work coherent as complexity scales.\n\nYou’re not hiring these systems directly.\nYou’re hiring the outcomes they make possible.",
+    developmentNote:
+      "Lucentra and Verisense are internal systems under active development. They are not public products. Their development is driven by real client work, real constraints, and real outcomes.",
     cards: [
       {
-        title: "Lucentra",
-        descriptor: "LUCENTRA — STRATEGY INTELLIGENCE LAYER",
-        body:
-          "Lucentra is being built to capture how a team thinks, decides, and writes, then keep that standard intact as output scales. Not a template machine. A disciplined memory for judgment.",
-        status: "In private development. Not publicly released yet.",
-        bullets: [
-          "Voice constraints + editorial guardrails",
-          "Decision mapping + scenario pressure tests",
-          "Brief architecture that survives revisions",
-        ],
-        href: "/lucentra",
-        image: "/systems-homepage-logos/lucentra-homepage-v3.png",
-        imageAlt: "Lucentra logo",
-      },
-      {
         title: "Verisense",
-        descriptor: "VERISENSE — BEHAVIORAL SIGNAL ENGINE",
+        headline: "Read the signal. Ignore the noise.",
         body:
-          "Verisense is being built to surface what communication is doing, not just what it says, with emphasis on tone, intent, confidence, and friction. The goal is clearer conversations, fewer avoidable misreads.",
-        status: "In private development. Not publicly released yet.",
-        bullets: [
-          "Signal detection beyond transcripts",
-          "Patterns of certainty, avoidance, and emphasis",
-          "Review views for leadership and coaching",
-        ],
-        href: "/verisense",
-        image: "/systems-homepage-logos/verisense-homepage.png",
-        imageAlt: "Verisense logo",
+          "Verisense surfaces how communication is actually landing beneath the words.\n\nTone, intent, confidence, avoidance, friction.\nThe signals that shape decisions long before they appear in transcripts, decks, or metrics.\n\nIts development is continuously informed by live work across strategy and execution.",
+        image: "/homepage-post-12-25-2025/verisense_edit_masterr4.png",
+        imageAlt: "Verisense interface preview",
       },
       {
-        title: "Synerva OS",
-        descriptor: "SYNERVA OS — OPERATIONAL STRUCTURE LAYER",
+        title: "Lucentra",
+        headline: "People leave. Structure stays.",
         body:
-          "Synerva OS is being built as modular execution infrastructure: workflows, handoffs, compliance-aware messaging logic, and scaffolding that scales without turning your week into meetings about meetings.",
-        status: "In private development. Not publicly released yet.",
-        bullets: [
-          "Automation building blocks + guardrails",
-          "Consent-aware messaging architecture",
-          "Clear visibility into ownership + flow",
-        ],
-        href: "/synerva-os",
-        image: "/systems-homepage-logos/synerva-os-homepage.png",
-        imageAlt: "Synerva OS logo",
+          "Lucentra preserves strategic structure over time.\n\nIt captures how decisions are made, why they were made, and what they depend on, so progress doesn’t decay as people rotate or priorities shift.\n\nIts architecture evolves directly from the work it supports.",
+        image: "/homepage-post-12-25-2025/lucentra-v3.png",
+        imageAlt: "Lucentra interface preview",
       },
     ],
+    cta: {
+      label: "View Systems",
+      href: "/systems",
+    },
   },
   stack: {
     heading: "The Flagship Systems That Anchor the Roadmap",
