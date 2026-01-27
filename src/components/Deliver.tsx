@@ -126,6 +126,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
         y: 40,
         stagger: 0.15,
         ease: "power3.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: cardsRef.current,
           start: "top 75%",
