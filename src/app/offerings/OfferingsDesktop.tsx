@@ -37,7 +37,7 @@ const sectionMap = [
 
 export default function OfferingsDesktop() {
   const mainRef = useRef<HTMLElement | null>(null);
-  const heroRef = useRef<HTMLElement | null>(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
   const scopeRef = useRef<HTMLElement | null>(null);
   const operatorRef = useRef<HTMLElement | null>(null);
   const flatRateRef = useRef<HTMLElement | null>(null);
@@ -138,38 +138,55 @@ export default function OfferingsDesktop() {
     lastScrollY.current = latest;
   });
 
-  const buildSectionOpacity = (
-    progress: ReturnType<typeof useSpring>,
+  const computeSectionOpacity = (
+    value: number,
+    direction: number,
     targetOpacity: number,
-  ) =>
-    useTransform([progress, scrollDirection], ([value, direction]) => {
-      const enterStart = 0.15;
-      const enterEnd = 0.35;
-      const exitStart = 0.7;
-      const exitEnd = direction < 0 ? 0.9 : 1;
-      if (value <= enterStart) return 0;
-      if (value < enterEnd) {
-        return (
-          ((value - enterStart) / (enterEnd - enterStart)) * targetOpacity
-        );
-      }
-      if (value < exitStart) return targetOpacity;
-      if (value < exitEnd) {
-        return (
-          ((exitEnd - value) / (exitEnd - exitStart)) * targetOpacity
-        );
-      }
-      return 0;
-    });
+  ) => {
+    const enterStart = 0.15;
+    const enterEnd = 0.35;
+    const exitStart = 0.7;
+    const exitEnd = direction < 0 ? 0.9 : 1;
+    if (value <= enterStart) return 0;
+    if (value < enterEnd) {
+      return ((value - enterStart) / (enterEnd - enterStart)) * targetOpacity;
+    }
+    if (value < exitStart) return targetOpacity;
+    if (value < exitEnd) {
+      return ((exitEnd - value) / (exitEnd - exitStart)) * targetOpacity;
+    }
+    return 0;
+  };
 
-  const heroOpacity = buildSectionOpacity(heroProgress, 0.1);
-  const scopeOpacity = buildSectionOpacity(scopeProgress, 0.13);
-  const operatorOpacity = buildSectionOpacity(operatorProgress, 0.12);
-  const flatRateOpacity = buildSectionOpacity(flatRateProgress, 0.14);
-  const buildBaseOpacity = buildSectionOpacity(buildProgress, 0.11);
-  const additionalOpacity = buildSectionOpacity(additionalProgress, 0.08);
-  const clarityOpacity = buildSectionOpacity(clarityProgress, 0.11);
-  const nextOpacityBase = buildSectionOpacity(nextProgress, 0.12);
+  const heroOpacity = useTransform([heroProgress, scrollDirection], ([v, d]) =>
+    computeSectionOpacity(v as number, d as number, 0.1),
+  );
+  const scopeOpacity = useTransform([scopeProgress, scrollDirection], ([v, d]) =>
+    computeSectionOpacity(v as number, d as number, 0.13),
+  );
+  const operatorOpacity = useTransform(
+    [operatorProgress, scrollDirection],
+    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.12),
+  );
+  const flatRateOpacity = useTransform(
+    [flatRateProgress, scrollDirection],
+    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.14),
+  );
+  const buildBaseOpacity = useTransform(
+    [buildProgress, scrollDirection],
+    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.11),
+  );
+  const additionalOpacity = useTransform(
+    [additionalProgress, scrollDirection],
+    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.08),
+  );
+  const clarityOpacity = useTransform(
+    [clarityProgress, scrollDirection],
+    ([v, d]) => computeSectionOpacity(v as number, d as number, 0.11),
+  );
+  const nextOpacityBase = useTransform([nextProgress, scrollDirection], ([v, d]) =>
+    computeSectionOpacity(v as number, d as number, 0.12),
+  );
 
   const scopeShift = useTransform(scopeProgress, [0, 1], ["-1.5vw", "1.5vw"]);
   const operatorShift = useTransform(
@@ -185,19 +202,22 @@ export default function OfferingsDesktop() {
   );
   const nextOpacity = useTransform(
     [nextOpacityBase, pageFadeOut],
-    ([base, fade]) => base * fade,
+    ([base, fade]) => (base as number) * (fade as number),
   );
   const buildGlowOneOpacity = useTransform(
     [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) => Math.min(0.16, base + (index === 0 ? 0.02 : 0)),
+    ([base, index]) =>
+      Math.min(0.16, (base as number) + (index === 0 ? 0.02 : 0)),
   );
   const buildGlowTwoOpacity = useTransform(
     [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) => Math.min(0.16, base + (index === 1 ? 0.02 : 0)),
+    ([base, index]) =>
+      Math.min(0.16, (base as number) + (index === 1 ? 0.02 : 0)),
   );
   const buildGlowThreeOpacity = useTransform(
     [buildBaseOpacity, buildHoverIndex],
-    ([base, index]) => Math.min(0.16, base + (index === 2 ? 0.02 : 0)),
+    ([base, index]) =>
+      Math.min(0.16, (base as number) + (index === 2 ? 0.02 : 0)),
   );
   const getToolbarOffset = () =>
     headerRef.current?.getBoundingClientRect().height ?? 0;

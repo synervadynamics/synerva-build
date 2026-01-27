@@ -15,6 +15,16 @@ const transitionEase = [0.22, 1, 0.36, 1] as const;
 const rampStart = 0.15;
 const fullAt = 0.35;
 const defaultDecayStart = 0.3;
+const sectionIds = [
+  "hero",
+  "narrative",
+  "offerings",
+  "systems-that-hold",
+  "systems",
+  "publications",
+  "merch",
+  "about",
+] as const;
 
 const buildThresholds = (steps: number) =>
   Array.from({ length: steps + 1 }, (_, index) => index / steps);
@@ -64,17 +74,6 @@ export default function HomepageScrollGlow() {
       { threshold: thresholds },
     );
 
-    const sectionIds = [
-      "hero",
-      "narrative",
-      "offerings",
-      "systems-that-hold",
-      "systems",
-      "publications",
-      "merch",
-      "about",
-    ];
-
     sectionIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -87,6 +86,19 @@ export default function HomepageScrollGlow() {
 
     return () => observer.disconnect();
   }, [thresholds]);
+
+  const activeSectionId = useMemo(() => {
+    let bestId: (typeof sectionIds)[number] = "hero";
+    let bestRatio = -1;
+    sectionIds.forEach((id) => {
+      const ratio = ratios[id] ?? 0;
+      if (ratio > bestRatio) {
+        bestRatio = ratio;
+        bestId = id;
+      }
+    });
+    return bestId;
+  }, [ratios]);
 
   const useSectionOpacity = (
     id: string,
@@ -102,7 +114,8 @@ export default function HomepageScrollGlow() {
       const isDecreasing = ratio < lastRatio.current;
       lastRatio.current = ratio;
       const intensity = computeIntensity(ratio, isDecreasing, decayStart);
-      const target = intensity * baseOpacity;
+      const gatedIntensity = activeSectionId === id ? intensity : 0;
+      const target = gatedIntensity * baseOpacity;
       const current = opacity.get();
       const isDecaying = target < current;
       let duration = durationMs / 1000;
@@ -115,7 +128,14 @@ export default function HomepageScrollGlow() {
         duration,
         ease: transitionEase,
       });
-    }, [ratio, baseOpacity, durationMs, decayStart, opacity]);
+    }, [
+      ratio,
+      baseOpacity,
+      durationMs,
+      decayStart,
+      opacity,
+      activeSectionId,
+    ]);
 
     return opacity;
   };
@@ -140,7 +160,7 @@ export default function HomepageScrollGlow() {
   const aboutExitFade = useTransform(aboutScrollProgress, [0, 0.8, 1], [1, 1, 0]);
   const aboutOpacity = useTransform(
     [aboutBaseOpacity, aboutExitFade],
-    ([opacity, fade]) => opacity * fade,
+    ([opacity, fade]) => (opacity as number) * (fade as number),
   );
 
   if (shouldReduceMotion) {
