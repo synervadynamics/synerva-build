@@ -84,13 +84,15 @@ Its architecture evolves directly from the work it supports.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 overflow-hidden md:h-[min(60vh,45rem)] md:flex-row md:items-stretch md:gap-6 md:overflow-hidden"
+          className="flex flex-col gap-4 overflow-hidden md:h-[min(56vh,720px)] md:flex-row md:items-stretch md:gap-6 md:overflow-hidden"
         >
           {systemCards.map((card) => {
             const isLeftCard = card.direction === "left";
+            const startShift = shouldReduceMotion ? "0%" : isLeftCard ? "0%" : "-100%";
+            const hoverShift = shouldReduceMotion ? "0%" : "-50%";
             const trackStyle = {
-              "--card-shift": shouldReduceMotion ? "0%" : isLeftCard ? "0%" : "-100%",
-              "--card-shift-hover": shouldReduceMotion ? "0%" : "-50%",
+              "--card-start": startShift,
+              "--card-hover": hoverShift,
             } as CSSProperties;
 
             return (
@@ -98,20 +100,21 @@ Its architecture evolves directly from the work it supports.`,
                 key={card.key}
                 tabIndex={0}
                 style={trackStyle}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem] md:focus-visible:[--card-shift:var(--card-shift-hover)] md:group-hover:[--card-shift:var(--card-shift-hover)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem] md:[--card-shift:var(--card-start)] md:focus-visible:[--card-shift:var(--card-hover)] md:group-hover:[--card-shift:var(--card-hover)]"
               >
-                <div
-                  className={
-                    shouldReduceMotion
-                      ? "flex h-full w-full flex-col"
-                      : "flex h-full w-full flex-col md:w-[200%] md:flex-row md:[transform:translateX(var(--card-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
-                  }
-                >
+                <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
+                  <div
+                    className={
+                      shouldReduceMotion
+                        ? "flex h-full w-full flex-col"
+                        : "flex h-full w-[200%] flex-col md:flex-row md:[transform:translateX(var(--card-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
+                    }
+                  >
                   <div
                     className={`relative flex h-full w-full flex-col overflow-hidden border-white/12 bg-black/40 ${
                       shouldReduceMotion
                         ? "rounded-t-[1.9rem] border-b border-white/12"
-                        : "md:rounded-[1.65rem] md:border md:border-white/15"
+                        : "md:w-1/2 md:rounded-[1.65rem] md:border md:border-white/15"
                     } ${!shouldReduceMotion && !isLeftCard ? "md:order-2" : ""}`}
                   >
                     <div
@@ -119,12 +122,12 @@ Its architecture evolves directly from the work it supports.`,
                         !shouldReduceMotion ? (isLeftCard ? "md:justify-start" : "md:justify-end") : ""
                       }`}
                     >
-                      <div className="relative aspect-[9/16] h-full max-h-[min(62vh,40rem)] w-full max-w-[min(24rem,78%)] md:max-w-[48%]">
+                      <div className="relative h-full w-full">
                         <Image
                           src={card.image}
                           alt={card.imageAlt}
                           fill
-                          className="rounded-[1.4rem] object-contain object-center"
+                          className="object-contain object-center md:p-2"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       </div>
@@ -133,7 +136,7 @@ Its architecture evolves directly from the work it supports.`,
 
                   <div
                     className={`flex h-full w-full flex-col justify-center border-white/12 bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 ${
-                      shouldReduceMotion ? "rounded-b-[1.9rem]" : ""
+                      shouldReduceMotion ? "rounded-b-[1.9rem]" : "md:w-1/2"
                     } md:rounded-[1.65rem] md:border md:border-white/15 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)] ${
                       !shouldReduceMotion && !isLeftCard ? "md:order-1" : ""
                     }`}
@@ -151,6 +154,7 @@ Its architecture evolves directly from the work it supports.`,
                         </p>
                       ))}
                     </div>
+                  </div>
                   </div>
                 </div>
               </article>
