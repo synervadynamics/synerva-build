@@ -78,21 +78,21 @@ Its architecture evolves directly from the work it supports.`,
               >
                 <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
                   <div className="flex h-full w-full flex-col md:flex-row md:items-stretch md:gap-8 md:px-6 md:py-6 lg:px-8">
-                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 md:w-[58%] md:rounded-[1.65rem] md:border-0">
+                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 md:w-[64%] md:rounded-[1.65rem] md:border-0">
                       <div className="relative flex w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-0 md:py-0">
-                        <div className="relative w-full overflow-hidden rounded-[1.65rem] aspect-[16/10] md:aspect-auto md:min-h-[380px] lg:min-h-[430px]">
+                        <div className="relative w-full overflow-hidden rounded-[1.65rem] aspect-[16/10] md:aspect-auto md:min-h-[480px] lg:min-h-[560px]">
                           <Image
                             src={card.image}
                             alt={card.imageAlt}
                             fill
                             className="rounded-[1.65rem] object-contain object-center"
-                            sizes="(max-width: 1024px) 100vw, 58vw"
+                            sizes="(max-width: 1024px) 100vw, 64vw"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex w-full flex-col justify-start rounded-b-[1.9rem] px-6 py-7 text-left sm:px-7 sm:py-8 md:w-[42%] md:rounded-[1.65rem] md:px-0 md:py-0">
+                    <div className="flex w-full flex-col justify-start rounded-b-[1.9rem] px-6 py-7 text-left sm:px-7 sm:py-8 md:w-[36%] md:rounded-[1.65rem] md:px-0 md:py-0">
                       <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
                         {card.headline}
                       </h3>
