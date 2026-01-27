@@ -2,6 +2,7 @@ import { buildPageMetadata } from "@/lib/metadata";
 import { copy } from "@/data/copy";
 import HomeDesktop from "@/app/HomeDesktop";
 import HomeMobile from "@/app/HomeMobile";
+import { Suspense } from "react";
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -13,7 +14,9 @@ export default function HomePage() {
   return (
     <>
       <div className="view-desktop-only hidden xl:block">
-        <HomeDesktop />
+        <Suspense fallback={null}>
+          <HomeDesktop />
+        </Suspense>
       </div>
       <div className="view-mobile-only block xl:hidden">
         <HomeMobile />

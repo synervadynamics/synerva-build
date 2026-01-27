@@ -1,6 +1,7 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import OfferingsDesktop from "@/app/offerings/OfferingsDesktop";
 import OfferingsMobile from "@/app/offerings/OfferingsMobile";
+import { Suspense } from "react";
 
 export const metadata = buildPageMetadata({
   title: "Offerings — Synerva Dynamics",
@@ -13,7 +14,9 @@ export default function OfferingsPage() {
   return (
     <>
       <div className="view-desktop-only hidden xl:block">
-        <OfferingsDesktop />
+        <Suspense fallback={null}>
+          <OfferingsDesktop />
+        </Suspense>
       </div>
       <div className="view-mobile-only block xl:hidden">
         <OfferingsMobile />
