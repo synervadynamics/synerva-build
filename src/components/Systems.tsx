@@ -12,7 +12,6 @@ type SystemsProps = {
 export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
   const sectionCopy = copy.systemsSection;
   void mobileVariant;
-  const bodyParagraphs = sectionCopy.body.split("\n\n");
   const verisenseCard = sectionCopy.cards.find((card) => card.title === "Verisense");
   const lucentraCard = sectionCopy.cards.find((card) => card.title === "Lucentra");
 
@@ -52,7 +51,7 @@ Its architecture evolves directly from the work it supports.`,
       className="relative px-4 pb-6 pt-6 sm:px-10 sm:pb-14 sm:pt-10 md:h-screen md:pb-6 md:pt-8 lg:px-16 lg:pb-10 lg:pt-10"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-7 text-white md:h-full md:justify-between md:gap-6 lg:gap-8">
-        <div className="contrast-field space-y-3 md:shrink-0 md:max-h-[34vh]">
+        <div className="contrast-field space-y-3 md:shrink-0">
           <p className="text-xs uppercase tracking-[0.4em] text-white/62">
             {sectionCopy.eyebrow}
           </p>
@@ -64,13 +63,6 @@ Its architecture evolves directly from the work it supports.`,
           >
             {sectionCopy.heading}
           </h2>
-          <div className="space-y-3 text-base text-white/78 sm:text-[1.02rem]">
-            {bodyParagraphs.map((paragraph) => (
-              <p key={paragraph} className="whitespace-pre-line">
-                {paragraph}
-              </p>
-            ))}
-          </div>
           <p className="max-w-4xl text-xs text-white/60 sm:text-sm">
             {sectionCopy.developmentNote}
           </p>
@@ -85,22 +77,22 @@ Its architecture evolves directly from the work it supports.`,
                 className="relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem]"
               >
                 <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
-                  <div className="flex h-full w-full flex-col md:flex-row md:items-stretch md:gap-6 md:p-5">
-                    <div className="relative flex h-full w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 bg-black/40 md:w-1/2 md:rounded-[1.65rem] md:border-0">
+                  <div className="flex h-full w-full flex-col md:flex-row md:items-center md:gap-8 md:px-6 md:py-6 lg:px-8">
+                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/12 md:w-[46%] md:rounded-[1.65rem] md:border-0">
                       <div className="relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-0 md:py-0">
-                        <div className="relative h-full w-full">
+                        <div className="relative h-full w-full overflow-hidden rounded-[1.65rem]">
                           <Image
                             src={card.image}
                             alt={card.imageAlt}
                             fill
-                            className="object-contain object-center md:p-2"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-contain object-center md:p-3"
+                            sizes="(max-width: 1024px) 100vw, 46vw"
                           />
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex h-full w-full flex-col justify-center rounded-b-[1.9rem] bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 md:w-1/2 md:rounded-[1.65rem] md:px-0 md:py-0">
+                    <div className="flex h-full w-full flex-col justify-center rounded-b-[1.9rem] px-6 py-7 text-left sm:px-7 sm:py-8 md:w-[54%] md:rounded-[1.65rem] md:px-0 md:py-0">
                       <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
                         {card.headline}
                       </h3>
