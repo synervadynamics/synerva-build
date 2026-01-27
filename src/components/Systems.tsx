@@ -107,7 +107,7 @@ Its architecture evolves directly from the work it supports.`,
                     className={
                       shouldReduceMotion
                         ? "flex h-full w-full flex-col"
-                        : "flex h-full w-[200%] flex-col md:flex-row md:[transform:translateX(var(--card-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
+                        : "flex h-full w-full flex-col md:w-[200%] md:flex-row md:[transform:translateX(var(--card-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
                     }
                   >
                   <div
