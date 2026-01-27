@@ -129,6 +129,7 @@ export default function HomepageScrollGlow() {
         ease: transitionEase,
       });
     }, [
+      id,
       ratio,
       baseOpacity,
       durationMs,
