@@ -14,7 +14,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const transitionEase = [0.22, 1, 0.36, 1] as const;
 const rampStart = 0.15;
 const fullAt = 0.35;
-const defaultDecayStart = 0.3;
+const defaultDecayStart = 0.26;
 const sectionIds = [
   "hero",
   "narrative",
@@ -141,14 +141,14 @@ export default function HomepageScrollGlow() {
     return opacity;
   };
 
-  const heroOpacity = useSectionOpacity("hero", 0.1, 900);
-  const narrativeOpacity = useSectionOpacity("narrative", 0.13, 800);
-  const offeringsOpacity = useSectionOpacity("offerings", 0.11, 750);
-  const systemsThatHoldOpacity = useSectionOpacity("systems-that-hold", 0.14, 980);
-  const systemsOpacity = useSectionOpacity("systems", 0.1, 900);
-  const publicationsOpacity = useSectionOpacity("publications", 0.08, 720);
-  const merchOpacity = useSectionOpacity("merch", 0.12, 820);
-  const aboutBaseOpacity = useSectionOpacity("about", 0.09, 780);
+  const heroOpacity = useSectionOpacity("hero", 0.11, 900);
+  const narrativeOpacity = useSectionOpacity("narrative", 0.145, 820);
+  const offeringsOpacity = useSectionOpacity("offerings", 0.12, 760);
+  const systemsThatHoldOpacity = useSectionOpacity("systems-that-hold", 0.155, 1000);
+  const systemsOpacity = useSectionOpacity("systems", 0.115, 920);
+  const publicationsOpacity = useSectionOpacity("publications", 0.095, 720);
+  const merchOpacity = useSectionOpacity("merch", 0.135, 840);
+  const aboutBaseOpacity = useSectionOpacity("about", 0.105, 800);
 
   const narrativeDriftX = useTransform(scrollYProgress, [0, 1], ["-3vw", "3vw"]);
   const narrativeDriftY = useTransform(scrollYProgress, [0, 1], ["-3vh", "3vh"]);
