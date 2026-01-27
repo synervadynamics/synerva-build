@@ -76,7 +76,7 @@ export const Offerings = () => {
               >
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-[0.06] transition-opacity duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-[0.08]"
+                  className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-[0.11] transition-opacity duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-[0.14]"
                   style={{
                     background:
                       "radial-gradient(circle at 50% 35%, #6A8F5A 0%, transparent 60%)",

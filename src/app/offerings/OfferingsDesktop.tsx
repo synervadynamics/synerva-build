@@ -5,8 +5,11 @@ import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   motion,
+  useMotionValue,
+  useMotionValueEvent,
   useReducedMotion,
   useScroll,
+  useSpring,
   useTransform,
 } from "framer-motion";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -34,22 +37,168 @@ const sectionMap = [
 
 export default function OfferingsDesktop() {
   const mainRef = useRef<HTMLElement | null>(null);
+  const heroRef = useRef<HTMLElement | null>(null);
+  const scopeRef = useRef<HTMLElement | null>(null);
+  const operatorRef = useRef<HTMLElement | null>(null);
+  const flatRateRef = useRef<HTMLElement | null>(null);
+  const buildRef = useRef<HTMLElement | null>(null);
+  const additionalRef = useRef<HTMLElement | null>(null);
+  const clarityRef = useRef<HTMLElement | null>(null);
+  const nextRef = useRef<HTMLElement | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const [activeSection, setActiveSection] = useState<string>(
     sectionMap[0]?.id ?? "",
   );
   const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({
+  const buildHoverIndex = useMotionValue(-1);
+  const scrollDirection = useMotionValue(1);
+  const lastScrollY = useRef(0);
+  const mainScroll = useScroll({
     target: mainRef,
     offset: ["start start", "end end"],
   });
-  const glowOneOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  const glowTwoOpacity = useTransform(
-    scrollYProgress,
-    [0.2, 0.6, 0.85],
-    [0, 1, 0],
+  const heroScroll = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const scopeScroll = useScroll({
+    target: scopeRef,
+    offset: ["start end", "end start"],
+  });
+  const operatorScroll = useScroll({
+    target: operatorRef,
+    offset: ["start end", "end start"],
+  });
+  const flatRateScroll = useScroll({
+    target: flatRateRef,
+    offset: ["start end", "end start"],
+  });
+  const buildScroll = useScroll({
+    target: buildRef,
+    offset: ["start end", "end start"],
+  });
+  const additionalScroll = useScroll({
+    target: additionalRef,
+    offset: ["start end", "end start"],
+  });
+  const clarityScroll = useScroll({
+    target: clarityRef,
+    offset: ["start end", "end start"],
+  });
+  const nextScroll = useScroll({
+    target: nextRef,
+    offset: ["start end", "end start"],
+  });
+
+  const heroProgress = useSpring(heroScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const scopeProgress = useSpring(scopeScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const operatorProgress = useSpring(operatorScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const flatRateProgress = useSpring(flatRateScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const buildProgress = useSpring(buildScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const additionalProgress = useSpring(additionalScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const clarityProgress = useSpring(clarityScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+  const nextProgress = useSpring(nextScroll.scrollYProgress, {
+    stiffness: 70,
+    damping: 20,
+    mass: 1,
+  });
+
+  useMotionValueEvent(mainScroll.scrollY, "change", (latest) => {
+    const previous = lastScrollY.current;
+    if (latest === previous) return;
+    scrollDirection.set(latest > previous ? 1 : -1);
+    lastScrollY.current = latest;
+  });
+
+  const buildSectionOpacity = (
+    progress: ReturnType<typeof useSpring>,
+    targetOpacity: number,
+  ) =>
+    useTransform([progress, scrollDirection], ([value, direction]) => {
+      const enterStart = 0.15;
+      const enterEnd = 0.35;
+      const exitStart = 0.7;
+      const exitEnd = direction < 0 ? 0.9 : 1;
+      if (value <= enterStart) return 0;
+      if (value < enterEnd) {
+        return (
+          ((value - enterStart) / (enterEnd - enterStart)) * targetOpacity
+        );
+      }
+      if (value < exitStart) return targetOpacity;
+      if (value < exitEnd) {
+        return (
+          ((exitEnd - value) / (exitEnd - exitStart)) * targetOpacity
+        );
+      }
+      return 0;
+    });
+
+  const heroOpacity = buildSectionOpacity(heroProgress, 0.1);
+  const scopeOpacity = buildSectionOpacity(scopeProgress, 0.13);
+  const operatorOpacity = buildSectionOpacity(operatorProgress, 0.12);
+  const flatRateOpacity = buildSectionOpacity(flatRateProgress, 0.14);
+  const buildBaseOpacity = buildSectionOpacity(buildProgress, 0.11);
+  const additionalOpacity = buildSectionOpacity(additionalProgress, 0.08);
+  const clarityOpacity = buildSectionOpacity(clarityProgress, 0.11);
+  const nextOpacityBase = buildSectionOpacity(nextProgress, 0.12);
+
+  const scopeShift = useTransform(scopeProgress, [0, 1], ["-1.5vw", "1.5vw"]);
+  const operatorShift = useTransform(
+    operatorProgress,
+    [0, 1],
+    ["-1.5vw", "1.5vw"],
   );
-  const glowThreeOpacity = useTransform(scrollYProgress, [0.6, 1], [0, 1]);
+  const clarityShift = useTransform(clarityProgress, [0, 1], ["1vh", "-1vh"]);
+  const pageFadeOut = useTransform(
+    mainScroll.scrollYProgress,
+    [0.75, 1],
+    [1, 0],
+  );
+  const nextOpacity = useTransform(
+    [nextOpacityBase, pageFadeOut],
+    ([base, fade]) => base * fade,
+  );
+  const buildGlowOneOpacity = useTransform(
+    [buildBaseOpacity, buildHoverIndex],
+    ([base, index]) => Math.min(0.16, base + (index === 0 ? 0.02 : 0)),
+  );
+  const buildGlowTwoOpacity = useTransform(
+    [buildBaseOpacity, buildHoverIndex],
+    ([base, index]) => Math.min(0.16, base + (index === 1 ? 0.02 : 0)),
+  );
+  const buildGlowThreeOpacity = useTransform(
+    [buildBaseOpacity, buildHoverIndex],
+    ([base, index]) => Math.min(0.16, base + (index === 2 ? 0.02 : 0)),
+  );
   const getToolbarOffset = () =>
     headerRef.current?.getBoundingClientRect().height ?? 0;
 
@@ -87,76 +236,120 @@ export default function OfferingsDesktop() {
   );
 
   return (
-    <main ref={mainRef} className="relative text-white">
+    <main ref={mainRef} className="relative bg-[#0E1514] text-white">
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v1a.jpg" />
-      {shouldReduceMotion ? (
-        <div
-          aria-hidden
-          className="pointer-events-none fixed inset-0 z-[6]"
-          style={{
-            background:
-              "radial-gradient(circle at 18% 14%, rgba(46, 122, 104, 0.42), transparent 52%), radial-gradient(circle at 78% 22%, rgba(162, 126, 86, 0.32), transparent 50%), radial-gradient(circle at 52% 72%, rgba(82, 64, 44, 0.26), transparent 55%)",
-            backgroundSize: "170% 170%",
-            WebkitMaskImage:
-              "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-            maskImage:
-              "linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-          }}
-        />
-      ) : (
-        <>
-          <motion.div
-            aria-hidden
-            className="pointer-events-none fixed inset-0 z-[6]"
-            style={{
-              opacity: glowOneOpacity,
-              background:
-                "radial-gradient(circle at 20% 16%, rgba(36, 136, 110, 0.46), transparent 52%), radial-gradient(circle at 76% 24%, rgba(112, 92, 64, 0.3), transparent 48%), radial-gradient(circle at 52% 70%, rgba(64, 98, 80, 0.26), transparent 58%)",
-              backgroundSize: "170% 170%",
-              WebkitMaskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-            }}
-          />
-          <motion.div
-            aria-hidden
-            className="pointer-events-none fixed inset-0 z-[6]"
-            style={{
-              opacity: glowTwoOpacity,
-              background:
-                "radial-gradient(circle at 22% 18%, rgba(54, 120, 96, 0.4), transparent 54%), radial-gradient(circle at 74% 22%, rgba(176, 140, 90, 0.38), transparent 50%), radial-gradient(circle at 52% 72%, rgba(106, 78, 50, 0.28), transparent 56%)",
-              backgroundSize: "170% 170%",
-              WebkitMaskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-            }}
-          />
-          <motion.div
-            aria-hidden
-            className="pointer-events-none fixed inset-0 z-[6]"
-            style={{
-              opacity: glowThreeOpacity,
-              background:
-                "radial-gradient(circle at 24% 18%, rgba(32, 98, 76, 0.36), transparent 54%), radial-gradient(circle at 70% 24%, rgba(186, 150, 102, 0.32), transparent 52%), radial-gradient(circle at 50% 76%, rgba(90, 64, 40, 0.3), transparent 58%)",
-              backgroundSize: "170% 170%",
-              WebkitMaskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-              maskImage:
-                "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
-            }}
-          />
-        </>
-      )}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: heroOpacity,
+          background:
+            "radial-gradient(circle at 60% 35%, #1D5748 0%, transparent 58%)",
+          mixBlendMode: "screen",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: scopeOpacity,
+          x: shouldReduceMotion ? 0 : scopeShift,
+          y: shouldReduceMotion ? 0 : scopeShift,
+          background: "linear-gradient(25deg, #2F543D 0%, transparent 70%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: operatorOpacity,
+          x: shouldReduceMotion ? 0 : operatorShift,
+          background:
+            "radial-gradient(circle at 33% 50%, #356F64 0%, #264C45 45%, transparent 65%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: flatRateOpacity,
+          background:
+            "radial-gradient(90% 45% at 50% 68%, #6A6130 0%, transparent 70%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: buildGlowOneOpacity,
+          background:
+            "radial-gradient(circle at 22% 40%, #486B55 0%, transparent 52%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: buildGlowTwoOpacity,
+          background:
+            "radial-gradient(circle at 70% 38%, #2D4338 0%, transparent 52%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: buildGlowThreeOpacity,
+          background:
+            "radial-gradient(circle at 50% 72%, #486B55 0%, transparent 52%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: additionalOpacity,
+          background:
+            "radial-gradient(circle at 50% 42%, #3A5E5E 0%, transparent 72%), radial-gradient(circle at 50% 82%, #223F3F 0%, transparent 75%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: clarityOpacity,
+          y: shouldReduceMotion ? 0 : clarityShift,
+          background:
+            "linear-gradient(180deg, transparent 0%, #6D7C65 45%, transparent 85%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[4]"
+        style={{
+          opacity: nextOpacity,
+          background:
+            "radial-gradient(circle at 50% 72%, #826538 0%, transparent 65%)",
+          mixBlendMode: "soft-light",
+        }}
+      />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
 
-        <section
-          id="hero"
-          className="relative overflow-visible px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20"
-        >
+        <div ref={heroRef}>
+          <section
+            id="hero"
+            className="relative overflow-visible px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20"
+          >
           <div className="hero-grid" />
           <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
             <header ref={headerRef} className="flex flex-col gap-4 pb-6">
@@ -265,10 +458,10 @@ export default function OfferingsDesktop() {
           </div>
         </section>
 
-        <section
-          id="hiring"
-          className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-12 lg:pt-10"
-        >
+          <section
+            id="hiring"
+            className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-12 lg:pt-10"
+          >
           <div className="relative mx-auto max-w-6xl">
             <div className="rounded-3xl border border-[#E0DCD4]/35 bg-transparent px-8 py-12 text-white sm:px-10 sm:py-14 lg:px-12 lg:py-16">
               <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
@@ -311,10 +504,12 @@ export default function OfferingsDesktop() {
               </div>
             </div>
           </div>
-        </section>
+          </section>
+        </div>
 
         <section
           id="scope-discipline"
+          ref={scopeRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto max-w-6xl space-y-6 text-white">
@@ -389,6 +584,7 @@ export default function OfferingsDesktop() {
 
         <section
           id="operator-hourly"
+          ref={operatorRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto flex max-w-6xl flex-col gap-6 text-white">
@@ -482,6 +678,7 @@ export default function OfferingsDesktop() {
 
         <section
           id="flat-rate-projects"
+          ref={flatRateRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto flex max-w-5xl flex-col gap-6 text-white">
@@ -573,12 +770,19 @@ export default function OfferingsDesktop() {
 
         <section
           id="build-with-synerva"
+          ref={buildRef}
+          onMouseEnter={() => buildHoverIndex.set(2)}
+          onMouseLeave={() => buildHoverIndex.set(-1)}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto max-w-6xl">
             <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
               <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
-                <div className="flex max-w-2xl flex-col gap-4">
+                <div
+                  className="flex max-w-2xl flex-col gap-4"
+                  onMouseEnter={() => buildHoverIndex.set(0)}
+                  onMouseLeave={() => buildHoverIndex.set(2)}
+                >
                   <h2
                     data-type-compression="headline"
                     data-type-compression-line-height="1.25"
@@ -607,7 +811,11 @@ export default function OfferingsDesktop() {
                   </div>
                 </div>
 
-                <div className="flex w-full items-center justify-center">
+                <div
+                  className="flex w-full items-center justify-center"
+                  onMouseEnter={() => buildHoverIndex.set(1)}
+                  onMouseLeave={() => buildHoverIndex.set(2)}
+                >
                   <div className="flex w-full flex-col">
                     <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3 sm:p-4">
                       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
@@ -629,6 +837,7 @@ export default function OfferingsDesktop() {
 
         <section
           id="additional-capabilities"
+          ref={additionalRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto max-w-6xl">
@@ -713,6 +922,7 @@ export default function OfferingsDesktop() {
 
         <section
           id="clarity-diagnostic"
+          ref={clarityRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto max-w-6xl">
@@ -765,6 +975,7 @@ export default function OfferingsDesktop() {
 
         <section
           id="next-step"
+          ref={nextRef}
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
           <div className="relative mx-auto max-w-6xl">

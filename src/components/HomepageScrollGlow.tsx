@@ -1,97 +1,146 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import {
+  animate,
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-const transitionEase = "cubic-bezier(0.22, 1, 0.36, 1)";
+const transitionEase = [0.22, 1, 0.36, 1] as const;
+const rampStart = 0.15;
+const fullAt = 0.35;
+const defaultDecayStart = 0.3;
+
+const buildThresholds = (steps: number) =>
+  Array.from({ length: steps + 1 }, (_, index) => index / steps);
+
+const computeIntensity = (
+  ratio: number,
+  isDecreasing: boolean,
+  decayStart: number,
+) => {
+  if (ratio <= rampStart) return 0;
+  if (!isDecreasing) {
+    if (ratio < fullAt) {
+      return (ratio - rampStart) / (fullAt - rampStart);
+    }
+    return 1;
+  }
+  if (ratio >= decayStart) return 1;
+  return Math.max(0, ratio / decayStart);
+};
 
 export default function HomepageScrollGlow() {
   const shouldReduceMotion = useReducedMotion();
-  const heroRef = useRef<HTMLElement | null>(null);
-  const narrativeRef = useRef<HTMLElement | null>(null);
-  const systemsRef = useRef<HTMLElement | null>(null);
-  const publicationsRef = useRef<HTMLElement | null>(null);
-  const merchRef = useRef<HTMLElement | null>(null);
+  const { scrollY, scrollYProgress } = useScroll();
+  const scrollDirection = useRef<"up" | "down">("down");
+  const lastScroll = useRef(0);
+  const [ratios, setRatios] = useState<Record<string, number>>({});
   const aboutRef = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    heroRef.current = document.getElementById("hero");
-    narrativeRef.current = document.getElementById("narrative");
-    systemsRef.current = document.getElementById("systems");
-    publicationsRef.current = document.getElementById("publications");
-    merchRef.current = document.getElementById("merch");
-    aboutRef.current = document.getElementById("about");
-  }, []);
+  const thresholds = useMemo(() => buildThresholds(100), []);
 
-  const heroScroll = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    scrollDirection.current = latest > lastScroll.current ? "down" : "up";
+    lastScroll.current = latest;
   });
-  const narrativeScroll = useScroll({
-    target: narrativeRef,
-    offset: ["start end", "end start"],
-  });
-  const systemsScroll = useScroll({
-    target: systemsRef,
-    offset: ["start end", "end start"],
-  });
-  const publicationsScroll = useScroll({
-    target: publicationsRef,
-    offset: ["start end", "end start"],
-  });
-  const merchScroll = useScroll({
-    target: merchRef,
-    offset: ["start end", "end start"],
-  });
-  const aboutScroll = useScroll({
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setRatios((prev) => {
+          const next = { ...prev };
+          entries.forEach((entry) => {
+            next[entry.target.id] = entry.intersectionRatio;
+          });
+          return next;
+        });
+      },
+      { threshold: thresholds },
+    );
+
+    const sectionIds = [
+      "hero",
+      "narrative",
+      "offerings",
+      "systems-that-hold",
+      "systems",
+      "publications",
+      "merch",
+      "about",
+    ];
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+        if (id === "about") {
+          aboutRef.current = element;
+        }
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [thresholds]);
+
+  const useSectionOpacity = (
+    id: string,
+    baseOpacity: number,
+    durationMs: number,
+    decayStart: number = defaultDecayStart,
+  ) => {
+    const opacity = useMotionValue(0);
+    const lastRatio = useRef(0);
+    const ratio = ratios[id] ?? 0;
+
+    useEffect(() => {
+      const isDecreasing = ratio < lastRatio.current;
+      lastRatio.current = ratio;
+      const intensity = computeIntensity(ratio, isDecreasing, decayStart);
+      const target = intensity * baseOpacity;
+      const current = opacity.get();
+      const isDecaying = target < current;
+      let duration = durationMs / 1000;
+
+      if (scrollDirection.current === "up" && isDecaying) {
+        duration *= 0.75;
+      }
+
+      animate(opacity, target, {
+        duration,
+        ease: transitionEase,
+      });
+    }, [ratio, baseOpacity, durationMs, decayStart, opacity]);
+
+    return opacity;
+  };
+
+  const heroOpacity = useSectionOpacity("hero", 0.1, 900);
+  const narrativeOpacity = useSectionOpacity("narrative", 0.13, 800);
+  const offeringsOpacity = useSectionOpacity("offerings", 0.11, 750);
+  const systemsThatHoldOpacity = useSectionOpacity("systems-that-hold", 0.14, 980);
+  const systemsOpacity = useSectionOpacity("systems", 0.1, 900);
+  const publicationsOpacity = useSectionOpacity("publications", 0.08, 720);
+  const merchOpacity = useSectionOpacity("merch", 0.12, 820);
+  const aboutBaseOpacity = useSectionOpacity("about", 0.09, 780);
+
+  const narrativeDriftX = useTransform(scrollYProgress, [0, 1], ["-3vw", "3vw"]);
+  const narrativeDriftY = useTransform(scrollYProgress, [0, 1], ["-3vh", "3vh"]);
+  const systemsThatHoldDriftX = useTransform(scrollYProgress, [0, 1], ["-2vw", "2vw"]);
+
+  const { scrollYProgress: aboutScrollProgress } = useScroll({
     target: aboutRef,
     offset: ["start end", "end start"],
   });
-
-  const heroOpacity = useTransform(
-    heroScroll.scrollYProgress,
-    [0, 0.15, 0.75, 1],
-    [0, 0.08, 0.08, 0],
-  );
-  const narrativeOpacity = useTransform(
-    narrativeScroll.scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 0.1, 0.1, 0],
-  );
-  const narrativeShift = useTransform(
-    narrativeScroll.scrollYProgress,
-    [0, 1],
-    ["-2vh", "2vh"],
-  );
-  const systemsOpacity = useTransform(
-    systemsScroll.scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 0.09, 0.09, 0],
-  );
-  const systemsShiftX = useTransform(
-    systemsScroll.scrollYProgress,
-    [0, 1],
-    ["-1.5vw", "1.5vw"],
-  );
-  const publicationsOpacity = useTransform(
-    publicationsScroll.scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 0.05, 0.05, 0],
-  );
-  const merchOpacity = useTransform(
-    merchScroll.scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 0.07, 0.07, 0],
-  );
-  const merchScale = useTransform(
-    merchScroll.scrollYProgress,
-    [0, 0.3],
-    [1, 1.03],
-  );
+  const aboutExitFade = useTransform(aboutScrollProgress, [0, 0.8, 1], [1, 1, 0]);
   const aboutOpacity = useTransform(
-    aboutScroll.scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 0.06, 0.06, 0],
+    [aboutBaseOpacity, aboutExitFade],
+    ([opacity, fade]) => opacity * fade,
   );
 
   if (shouldReduceMotion) {
@@ -101,8 +150,8 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           background:
-            "radial-gradient(circle at 65% 35%, #1F6F5B 0%, transparent 55%)",
-          opacity: 0.08,
+            "radial-gradient(75% 75% at 65% 40%, #1F6F5B 0%, transparent 60%)",
+          opacity: 0.1,
           mixBlendMode: "screen",
         }}
       />
@@ -117,9 +166,8 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: heroOpacity,
           background:
-            "radial-gradient(circle at 65% 35%, #1F6F5B 0%, transparent 58%)",
+            "radial-gradient(75% 75% at 65% 40%, #1F6F5B 0%, transparent 60%)",
           mixBlendMode: "screen",
-          transition: `opacity 700ms ${transitionEase}`,
         }}
       />
       <motion.div
@@ -127,11 +175,32 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           opacity: narrativeOpacity,
-          y: narrativeShift,
+          x: narrativeDriftX,
+          y: narrativeDriftY,
           background:
-            "radial-gradient(120% 60% at 12% 10%, #3A6E4E 0%, transparent 58%), radial-gradient(120% 60% at 88% 90%, #3A6E4E 0%, transparent 58%)",
+            "linear-gradient(25deg, rgba(58,110,78,0) 15%, rgba(58,110,78,1) 48%, rgba(58,110,78,0) 82%)",
           mixBlendMode: "soft-light",
-          transition: `opacity 750ms ${transitionEase}`,
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[6]"
+        style={{
+          opacity: offeringsOpacity,
+          background:
+            "radial-gradient(38% 40% at 20% 48%, #6A8F5A 0%, transparent 70%), radial-gradient(38% 40% at 50% 52%, #6A8F5A 0%, transparent 70%), radial-gradient(38% 40% at 80% 48%, #6A8F5A 0%, transparent 70%)",
+          mixBlendMode: "screen",
+        }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[6]"
+        style={{
+          opacity: systemsThatHoldOpacity,
+          x: systemsThatHoldDriftX,
+          background:
+            "radial-gradient(140% 45% at 50% 72%, #8B7A3A 0%, transparent 65%)",
+          mixBlendMode: "soft-light",
         }}
       />
       <motion.div
@@ -139,11 +208,9 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           opacity: systemsOpacity,
-          x: systemsShiftX,
           background:
-            "radial-gradient(80% 45% at 50% 68%, #8B7A3A 0%, transparent 62%)",
+            "radial-gradient(32% 38% at 18% 46%, #486B55 0%, transparent 70%), radial-gradient(28% 34% at 18% 46%, #2D4338 0%, transparent 68%), radial-gradient(32% 38% at 50% 50%, #486B55 0%, transparent 70%), radial-gradient(28% 34% at 50% 50%, #2D4338 0%, transparent 68%), radial-gradient(32% 38% at 82% 46%, #486B55 0%, transparent 70%), radial-gradient(28% 34% at 82% 46%, #2D4338 0%, transparent 68%)",
           mixBlendMode: "soft-light",
-          transition: `opacity 850ms ${transitionEase}`,
         }}
       />
       <motion.div
@@ -152,9 +219,8 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: publicationsOpacity,
           background:
-            "radial-gradient(circle at 50% 40%, #5E6F66 0%, transparent 65%), radial-gradient(circle at 50% 75%, #5E6F66 0%, transparent 70%)",
+            "radial-gradient(120% 120% at 50% 55%, #5E6F66 0%, transparent 72%)",
           mixBlendMode: "soft-light",
-          transition: `opacity 700ms ${transitionEase}`,
         }}
       />
       <motion.div
@@ -162,11 +228,9 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           opacity: merchOpacity,
-          scale: merchScale,
           background:
-            "radial-gradient(circle at 52% 46%, #7A5C3E 0%, transparent 45%)",
+            "radial-gradient(40% 45% at 50% 55%, #7A5C3E 0%, transparent 62%)",
           mixBlendMode: "soft-light",
-          transition: `opacity 700ms ${transitionEase}`,
         }}
       />
       <motion.div
@@ -175,9 +239,8 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: aboutOpacity,
           background:
-            "radial-gradient(circle at 50% 70%, #2F4F4A 0%, transparent 60%)",
+            "radial-gradient(65% 60% at 50% 72%, #2F4F4A 0%, transparent 66%)",
           mixBlendMode: "soft-light",
-          transition: `opacity 800ms ${transitionEase}`,
         }}
       />
     </>

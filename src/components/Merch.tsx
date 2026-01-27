@@ -124,13 +124,22 @@ export const Merch = () => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   tabIndex={0}
-                  className={`rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
+                  className={`group relative overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
                     activeIndex === index
                       ? "border-white/30 shadow-[0_24px_70px_-40px_rgba(0,0,0,0.55)]"
                       : ""
                   }`}
                 >
-                  <div className="space-y-3">
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-[0.12] transition-opacity duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-[0.14]"
+                    style={{
+                      background:
+                        "radial-gradient(circle at 50% 45%, #7A5C3E 0%, transparent 60%)",
+                      mixBlendMode: "soft-light",
+                    }}
+                  />
+                  <div className="relative z-10 space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-white/60">
                       Collection
                     </p>
@@ -143,7 +152,7 @@ export const Merch = () => {
                   </div>
                   <Link
                     href={card.ctaHref}
-                    className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                    className="relative z-10 mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
                   >
                     {card.ctaLabel}
                   </Link>
