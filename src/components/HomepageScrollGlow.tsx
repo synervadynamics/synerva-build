@@ -26,7 +26,7 @@ export default function HomepageScrollGlow() {
         className="pointer-events-none fixed inset-0 z-[6]"
         style={{
           background:
-            "radial-gradient(circle at 18% 16%, rgba(30, 152, 170, 0.4), transparent 55%), radial-gradient(circle at 78% 22%, rgba(88, 214, 206, 0.34), transparent 52%), radial-gradient(circle at 52% 72%, rgba(66, 132, 196, 0.3), transparent 60%), radial-gradient(circle at 58% 36%, rgba(176, 188, 196, 0.22), transparent 58%)",
+            "radial-gradient(circle at 18% 16%, rgba(24, 132, 170, 0.42), transparent 55%), radial-gradient(circle at 78% 22%, rgba(52, 192, 214, 0.34), transparent 52%), radial-gradient(circle at 52% 72%, rgba(50, 120, 196, 0.3), transparent 60%), radial-gradient(circle at 58% 36%, rgba(168, 182, 194, 0.22), transparent 58%)",
           backgroundSize: "175% 175%",
           WebkitMaskImage:
             "linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
@@ -45,7 +45,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: glowOneOpacity,
           background:
-            "radial-gradient(circle at 18% 16%, rgba(28, 156, 170, 0.46), transparent 55%), radial-gradient(circle at 76% 24%, rgba(60, 206, 214, 0.34), transparent 52%), radial-gradient(circle at 52% 70%, rgba(32, 120, 150, 0.28), transparent 60%)",
+            "radial-gradient(circle at 18% 16%, rgba(16, 126, 170, 0.48), transparent 55%), radial-gradient(circle at 76% 24%, rgba(38, 190, 214, 0.36), transparent 52%), radial-gradient(circle at 52% 70%, rgba(26, 104, 160, 0.3), transparent 60%)",
           backgroundSize: "175% 175%",
           WebkitMaskImage:
             "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
@@ -59,7 +59,7 @@ export default function HomepageScrollGlow() {
         style={{
           opacity: glowTwoOpacity,
           background:
-            "radial-gradient(circle at 22% 18%, rgba(68, 210, 198, 0.4), transparent 56%), radial-gradient(circle at 72% 22%, rgba(44, 140, 176, 0.34), transparent 52%), radial-gradient(circle at 50% 74%, rgba(22, 110, 128, 0.26), transparent 62%)",
+            "radial-gradient(circle at 22% 18%, rgba(32, 176, 206, 0.4), transparent 56%), radial-gradient(circle at 72% 22%, rgba(32, 124, 182, 0.34), transparent 52%), radial-gradient(circle at 50% 74%, rgba(14, 92, 132, 0.26), transparent 62%)",
           backgroundSize: "175% 175%",
           WebkitMaskImage:
             "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 100%)",
