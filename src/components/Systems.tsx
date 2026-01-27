@@ -84,7 +84,7 @@ Its architecture evolves directly from the work it supports.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col gap-4 overflow-hidden md:grid md:grid-cols-2 lg:flex lg:h-[min(58vh,44rem)] lg:flex-row lg:items-stretch lg:gap-6 lg:overflow-hidden"
+          className="flex flex-col gap-4 overflow-hidden md:h-[min(60vh,45rem)] md:flex-row md:items-stretch md:gap-6 md:overflow-hidden"
         >
           {systemCards.map((card) => {
             const isLeftCard = card.direction === "left";
@@ -98,28 +98,28 @@ Its architecture evolves directly from the work it supports.`,
                 key={card.key}
                 tabIndex={0}
                 style={trackStyle}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 lg:h-full lg:min-h-0 lg:flex-1 lg:[--panel-pad:1.6rem] lg:focus-visible:[--card-shift:var(--card-shift-hover)] lg:group-hover:[--card-shift:var(--card-shift-hover)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-[1.9rem] border border-white/35 bg-white/[0.03] shadow-[0_40px_140px_-110px_rgba(0,0,0,0.88)] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:h-full md:min-h-0 md:flex-1 md:[--panel-pad:1.6rem] md:focus-visible:[--card-shift:var(--card-shift-hover)] md:group-hover:[--card-shift:var(--card-shift-hover)]"
               >
                 <div
                   className={
                     shouldReduceMotion
                       ? "flex h-full w-full flex-col"
-                      : "flex h-full w-full flex-col lg:w-[200%] lg:flex-row lg:[transform:translateX(var(--card-shift))] lg:transition-transform lg:duration-[350ms] lg:ease-in-out"
+                      : "flex h-full w-full flex-col md:w-[200%] md:flex-row md:[transform:translateX(var(--card-shift))] md:transition-transform md:duration-[350ms] md:ease-in-out"
                   }
                 >
                   <div
                     className={`relative flex h-full w-full flex-col overflow-hidden border-white/12 bg-black/40 ${
                       shouldReduceMotion
                         ? "rounded-t-[1.9rem] border-b border-white/12"
-                        : "lg:rounded-[1.65rem] lg:border lg:border-white/15"
-                    } ${!shouldReduceMotion && !isLeftCard ? "lg:order-2" : ""}`}
+                        : "md:rounded-[1.65rem] md:border md:border-white/15"
+                    } ${!shouldReduceMotion && !isLeftCard ? "md:order-2" : ""}`}
                   >
                     <div
-                      className={`relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 lg:px-[var(--panel-pad)] lg:py-[var(--panel-pad)] ${
-                        !shouldReduceMotion ? (isLeftCard ? "lg:justify-start" : "lg:justify-end") : ""
+                      className={`relative flex h-full w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)] ${
+                        !shouldReduceMotion ? (isLeftCard ? "md:justify-start" : "md:justify-end") : ""
                       }`}
                     >
-                      <div className="relative aspect-[9/16] h-full max-h-[min(62vh,40rem)] w-full max-w-[min(24rem,78%)] lg:max-w-[48%]">
+                      <div className="relative aspect-[9/16] h-full max-h-[min(62vh,40rem)] w-full max-w-[min(24rem,78%)] md:max-w-[48%]">
                         <Image
                           src={card.image}
                           alt={card.imageAlt}
@@ -132,9 +132,11 @@ Its architecture evolves directly from the work it supports.`,
                   </div>
 
                   <div
-                    className={`flex h-full w-full flex-col justify-center border-white/12 bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 lg:rounded-[1.65rem] lg:border lg:border-white/15 lg:px-[var(--panel-pad)] lg:py-[var(--panel-pad)] ${
+                    className={`flex h-full w-full flex-col justify-center border-white/12 bg-[#060708] px-6 py-7 text-left sm:px-7 sm:py-8 ${
                       shouldReduceMotion ? "rounded-b-[1.9rem]" : ""
-                    } ${!shouldReduceMotion && !isLeftCard ? "lg:order-1" : ""}`}
+                    } md:rounded-[1.65rem] md:border md:border-white/15 md:px-[var(--panel-pad)] md:py-[var(--panel-pad)] ${
+                      !shouldReduceMotion && !isLeftCard ? "md:order-1" : ""
+                    }`}
                   >
                     <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
                       {card.headline}
