@@ -310,18 +310,17 @@ export const copy = {
     },
   },
   systemsSection: {
-    eyebrow: "SYSTEMS",
-    heading: "Internal engines. Durable outcomes.",
+    eyebrow: "",
+    heading: "Systems",
     body:
-      "Synerva is built around a simple advantage: decisions persist.\n\nStandards don’t evaporate.\nContext doesn’t reset.\nSignal isn’t drowned out by volume.\n\nBehind the scenes, a small set of internal systems preserves judgment across strategy, execution, and iteration. They reduce operational drag, surface what actually matters, and keep work coherent as complexity scales.\n\nYou’re not hiring these systems directly.\nYou’re hiring the outcomes they make possible.",
-    developmentNote:
-      "Lucentra and Verisense are internal systems under active development. They are not public products. Their development is driven by real client work, real constraints, and real outcomes.",
+      "Synerva is built around a simple advantage: decisions persist.\nStandards hold. Context compounds. Signal survives scale.\n\nA small set of internal systems absorbs real-world use across strategy and execution, refining judgment while keeping work coherent as complexity increases.\n\nYou’re not hiring these systems.\nYou’re hiring the outcomes they make possible.",
+    developmentNote: "",
     cards: [
       {
         title: "Verisense",
         headline: "Read the signal. Ignore the noise.",
         body:
-          "Verisense surfaces how communication is actually landing beneath the words.\n\nTone, intent, confidence, avoidance, friction.\nThe signals that shape decisions long before they appear in transcripts, decks, or metrics.\n\nIts development is continuously informed by live work across strategy and execution.",
+          "Verisense reveals how communication is actually landing beneath the words.\n\nIt surfaces tone, intent, confidence, friction, and avoidance before they harden into decisions.",
         image: "/homepage-post-12-25-2025/verisense_edit_masterr4.png",
         imageAlt: "Verisense interface preview",
       },
@@ -329,7 +328,7 @@ export const copy = {
         title: "Lucentra",
         headline: "People leave. Structure stays.",
         body:
-          "Lucentra preserves strategic structure over time.\n\nIt captures how decisions are made, why they were made, and what they depend on, so progress doesn’t decay as people rotate or priorities shift.\n\nIts architecture evolves directly from the work it supports.",
+          "Lucentra preserves strategic structure over time.\n\nIt records how decisions were made, what they depend on, and why they mattered so progress doesn’t decay as people rotate.",
         image: "/homepage-post-12-25-2025/lucentra-v3.png",
         imageAlt: "Lucentra interface preview",
       },
