@@ -20,7 +20,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
       className="relative px-4 pb-5 pt-5 sm:px-10 sm:pb-10 sm:pt-8 md:pb-8 md:pt-7 lg:px-16 lg:pb-9 lg:pt-8"
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-6 text-white md:gap-7 lg:gap-8">
-        <div className="contrast-field space-y-3 md:shrink-0">
+        <div className="contrast-field space-y-4 md:shrink-0">
           {sectionCopy.eyebrow ? (
             <p className="text-xs uppercase tracking-[0.4em] text-white/62">
               {sectionCopy.eyebrow}
@@ -34,35 +34,41 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
           >
             {sectionCopy.heading}
           </h2>
-          <div className="max-w-3xl space-y-3 text-xs text-white/60 sm:text-sm">
+          <div className="max-w-3xl space-y-4 text-lg font-semibold text-white/88 sm:text-xl">
             {sectionCopy.body.split("\n\n").map((paragraph) => (
-              <p key={paragraph} className="whitespace-pre-line">
+              <p key={paragraph} className="whitespace-pre-line leading-relaxed">
                 {paragraph}
               </p>
             ))}
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 md:gap-6 lg:gap-7">
+        <div className="grid gap-5 md:flex md:justify-center md:gap-8 lg:gap-10">
           {systemCards.map((card) => {
             return (
               <article
                 key={card.title}
-                tabIndex={0}
-                className="relative flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:gap-5 sm:p-5 md:h-[520px] lg:h-[560px]"
+                className="relative flex w-full max-w-[20rem] flex-col gap-2.5 rounded-[2rem] border border-white/12 bg-transparent p-2.5 sm:max-w-[21rem] sm:gap-3 sm:p-3"
               >
                 <div className="relative w-full overflow-hidden rounded-[1.65rem] border border-white/10 bg-white/5">
-                  <div className="relative w-full aspect-[4/5] md:h-[400px] md:aspect-auto lg:h-[440px]">
+                  <div className="relative aspect-[4/5] w-full">
                     <Image
                       src={card.image}
                       alt={card.imageAlt}
                       fill
                       className="rounded-[1.65rem] object-contain object-center"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 1024px) 100vw, 25vw"
                     />
                   </div>
                 </div>
-                <p className="text-sm text-white/70 sm:text-base">{card.body}</p>
+                <div className="space-y-1 sm:space-y-1.5">
+                  <p className="text-base font-semibold text-white sm:text-lg">
+                    {card.headline}
+                  </p>
+                  <p className="text-sm text-white/70 sm:text-base">
+                    {card.body}
+                  </p>
+                </div>
               </article>
             );
           })}
