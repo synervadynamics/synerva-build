@@ -39,7 +39,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
               </p>
             ))}
           </div>
-          <div className="flex flex-col items-end gap-5 sm:gap-6">
+          <div className="flex flex-col items-end gap-5 sm:gap-6 md:justify-self-end">
             {systemCards.map((card) => {
               return (
                 <article
