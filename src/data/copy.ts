@@ -319,17 +319,16 @@ export const copy = {
       {
         title: "Verisense",
         headline: "Read the signal. Ignore the noise.",
-        body:
-          "Verisense reveals how communication is actually landing beneath the words.\n\nIt surfaces tone, intent, confidence, friction, and avoidance before they harden into decisions.",
-        image: "/homepage-post-12-25-2025/verisense_edit_masterr4.png",
+        body: "Signals that shape decisions before they harden into conclusions.",
+        image: "/homepage-post-12-25-2025/verisense_4x5_exact.png",
         imageAlt: "Verisense interface preview",
       },
       {
         title: "Lucentra",
         headline: "People leave. Structure stays.",
         body:
-          "Lucentra preserves strategic structure over time.\n\nIt records how decisions were made, what they depend on, and why they mattered so progress doesn’t decay as people rotate.",
-        image: "/homepage-post-12-25-2025/lucentra-v3.png",
+          "Strategic memory that preserves intent, dependencies, and progress over time.",
+        image: "/homepage-post-12-25-2025/lucentra_4x5_exact.png",
         imageAlt: "Lucentra interface preview",
       },
     ],

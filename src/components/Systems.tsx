@@ -43,47 +43,26 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 md:flex-row md:items-stretch md:gap-6 lg:gap-7">
+        <div className="grid gap-4 rounded-[2.5rem] border border-white/12 bg-transparent p-4 sm:gap-6 sm:p-6 lg:grid-cols-2 lg:p-8">
           {systemCards.map((card) => {
             return (
               <article
                 key={card.title}
                 tabIndex={0}
-                className="relative flex flex-col overflow-hidden rounded-[1.9rem] border-2 border-white/70 bg-white/[0.03] backdrop-blur-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 md:flex-1"
+                className="relative flex h-full flex-col gap-4 rounded-[2rem] border border-white/10 bg-transparent p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:gap-5 sm:p-5 md:h-[520px] lg:h-[560px]"
               >
-                <div className="relative h-full w-full overflow-hidden rounded-[1.9rem]">
-                  <div className="flex h-full w-full flex-col md:flex-row md:items-stretch md:gap-8 md:px-6 md:py-6 lg:px-8">
-                    <div className="relative flex w-full flex-col overflow-hidden rounded-t-[1.9rem] border-b border-white/20 md:w-[65%] md:rounded-[1.65rem] md:border-0">
-                      <div className="relative flex w-full items-center justify-center px-5 py-6 sm:px-6 sm:py-7 md:px-0 md:py-0">
-                        <div className="relative w-full overflow-hidden rounded-[1.65rem] aspect-[16/10] md:aspect-auto md:min-h-[520px] lg:min-h-[600px]">
-                          <Image
-                            src={card.image}
-                            alt={card.imageAlt}
-                            fill
-                            className="rounded-[1.65rem] object-contain object-center"
-                            sizes="(max-width: 1024px) 100vw, 65vw"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex w-full flex-col justify-start rounded-b-[1.9rem] px-6 py-6 text-left sm:px-7 sm:py-7 md:w-[35%] md:rounded-[1.65rem] md:px-0 md:py-0">
-                      <h3 className="text-xl font-medium text-white sm:text-[1.55rem] lg:text-[1.75rem]">
-                        {card.headline}
-                      </h3>
-                      <p className="mt-2 text-xs uppercase tracking-[0.32em] text-white/60 sm:text-sm">
-                        {card.title}
-                      </p>
-                      <div className="mt-4 space-y-4 text-[0.98rem] font-light leading-7 text-white/80 lg:text-[1.02rem]">
-                        {card.body.split("\n\n").map((paragraph) => (
-                          <p key={`${card.title}-${paragraph}`} className="whitespace-pre-line">
-                            {paragraph}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
+                <div className="relative w-full overflow-hidden rounded-[1.65rem] border border-white/10 bg-white/5">
+                  <div className="relative w-full aspect-[4/5] md:h-[400px] md:aspect-auto lg:h-[440px]">
+                    <Image
+                      src={card.image}
+                      alt={card.imageAlt}
+                      fill
+                      className="rounded-[1.65rem] object-contain object-center"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
                 </div>
+                <p className="text-sm text-white/70 sm:text-base">{card.body}</p>
               </article>
             );
           })}
