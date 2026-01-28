@@ -43,13 +43,13 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
           </div>
         </div>
 
-        <div className="grid gap-4 rounded-[2.5rem] border border-white/12 bg-transparent p-4 sm:gap-6 sm:p-6 lg:grid-cols-2 lg:p-8">
+        <div className="grid gap-5 md:grid-cols-2 md:gap-6 lg:gap-7">
           {systemCards.map((card) => {
             return (
               <article
                 key={card.title}
                 tabIndex={0}
-                className="relative flex h-full flex-col gap-4 rounded-[2rem] border border-white/10 bg-transparent p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:gap-5 sm:p-5 md:h-[520px] lg:h-[560px]"
+                className="relative flex h-full flex-col gap-4 rounded-[2rem] border border-white/12 bg-transparent p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:gap-5 sm:p-5 md:h-[520px] lg:h-[560px]"
               >
                 <div className="relative w-full overflow-hidden rounded-[1.65rem] border border-white/10 bg-white/5">
                   <div className="relative w-full aspect-[4/5] md:h-[400px] md:aspect-auto lg:h-[440px]">
