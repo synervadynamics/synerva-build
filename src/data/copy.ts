@@ -318,14 +318,14 @@ export const copy = {
     cards: [
       {
         title: "Verisense",
-        headline: "Read the signal. Ignore the noise.",
+        headline: "Verisense",
         body: "Signals that shape decisions before they harden into conclusions.",
         image: "/homepage-post-12-25-2025/verisense_4x5_exact.png",
         imageAlt: "Verisense interface preview",
       },
       {
         title: "Lucentra",
-        headline: "People leave. Structure stays.",
+        headline: "Lucentra",
         body:
           "Strategic memory that preserves intent, dependencies, and progress over time.",
         image: "/homepage-post-12-25-2025/lucentra_4x5_exact.png",
