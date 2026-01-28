@@ -313,7 +313,7 @@ export const copy = {
     eyebrow: "",
     heading: "Systems",
     body:
-      "Synerva is built around a simple advantage: decisions persist.\nStandards hold. Context compounds. Signal survives scale.\n\nA small set of internal systems absorbs real-world use across strategy and execution, refining judgment while keeping work coherent as complexity increases.\n\nYou’re not hiring these systems.\nYou’re hiring the outcomes they make possible.",
+      "Synerva is built around a simple advantage: decisions persist.\nStandards hold. Context compounds. Signal survives scale.\n\nA small set of internal systems captures real-world use across strategy and execution, converting experience into durable structure. Judgment improves with exposure, while work stays aligned as complexity, scope, and time increase.\n\nYou’re not hiring these systems.\nYou’re hiring the outcomes they make possible.",
     developmentNote: "",
     cards: [
       {
