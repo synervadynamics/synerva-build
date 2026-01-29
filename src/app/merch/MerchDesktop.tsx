@@ -9,7 +9,7 @@ export default function MerchDesktop() {
 
   return (
     <main className="relative text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/merch.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
