@@ -1589,11 +1589,11 @@ export default function OfferingsDesktop() {
                   data-type-compression="headline"
                   data-type-compression-line-height="1.25"
                   data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                  className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
                   Next Steps
                 </h2>
-                <div className="space-y-4 text-sm leading-snug text-white/80 sm:text-base">
+                <div className="space-y-4 text-sm leading-snug text-[color:var(--ink-human)] sm:text-base">
                   <p>
                     You don’t need to commit to a full system build to move
                     forward.
@@ -1628,14 +1628,14 @@ export default function OfferingsDesktop() {
                   href="/contact"
                   aria-label="Start the conversation with Synerva"
                   data-cursor="accent"
-                  className="w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                  className="w-fit rounded-full border border-[color:var(--offerings-cta-outline)] bg-transparent px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--offerings-cta-text)] transition hover:opacity-90"
                 >
                   Start the Conversation
                 </Link>
               </div>
               <div className="flex w-full items-center justify-center">
                 <div className="flex w-full flex-col">
-                  <div className="rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-4 sm:p-5">
+                  <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
                     <div className="aspect-[1/1] w-full overflow-hidden rounded-xl">
                       <img
                         src="/offerings-subpage-jan-3/next-steps-v3.PNG"

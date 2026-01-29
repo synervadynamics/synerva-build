@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
+import styles from "./offerings.module.css";
 
 export default function OfferingsMobile() {
   return (
-    <main className="text-white">
+    <main className={styles.offeringsPage}>
       <Mobile1Shell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/offerings-v1a.jpg"
       >
         <section
-          className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className="mt-6 flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6"
         >
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/offerings/hero.png"
@@ -26,13 +26,13 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h1 className="text-[2.05rem] font-light leading-snug text-white">
+            <h1 className="text-[2.05rem] font-light leading-snug text-[color:var(--ink-human)]">
               Offerings
             </h1>
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               Ways to Work With Synerva
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               Different problems require different levels of intervention.
               <br />
               Each option exists to preserve judgment, reduce drag, and keep work
@@ -41,12 +41,10 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/offerings-subpage-jan-3/operator-hourly-v67.PNG"
@@ -57,24 +55,26 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               Operator Hourly
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               Judgment, When It Matters
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               For moments where momentum is blocked by uncertainty, not effort.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">Used for:</p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              Used for:
+            </p>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               Audits, positioning, and fast diagnosis
               <br />
               Unblocking stalled decisions
               <br />
               Direction-setting under real constraints
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               This is not advisory theater.
               <br />
               You’re buying senior judgment, applied in real time.
@@ -82,12 +82,10 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/hp-flat-rate-v2.PNG"
@@ -98,24 +96,26 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               Flat-Rate Projects
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               Defined Outcomes. Clean Finish.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               For work that needs to ship without drift.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">Best for:</p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              Best for:
+            </p>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               Brand systems and positioning
               <br />
               Websites, writing, and core assets
               <br />
               Structural fixes where clarity must survive execution
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               The scope is tight.
               <br />
               The outcome is explicit.
@@ -125,12 +125,10 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/hp-build-with-synerva.PNG"
@@ -141,74 +139,82 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               Build With Synerva
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               One System. One Release.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               For work that breaks when split across vendors.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               Choose this when:
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               Strategy, writing, design, and systems must move together
               <br />
               Context loss would be expensive
               <br />
               You need one operating loop from first decision to final ship
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               This is senior-level integration, end to end.
             </p>
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               What Gets Built
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-structural)]">
               Capabilities
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               The work spans strategy, systems, and execution—but always ships as
               something real.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Brand &amp; Positioning</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">
+                Brand &amp; Positioning
+              </span>
               <br />
               Identity, naming, and messaging systems that hold under pressure.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Analytics &amp; Signals</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">
+                Analytics &amp; Signals
+              </span>
               <br />
               Behavioral and performance analysis used for decisions, not
               dashboards.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Content Production</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">
+                Content Production
+              </span>
               <br />
               Short- and long-form writing, editorial systems, and full-book
               ghostwriting.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Design</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">Design</span>
               <br />
               Graphic and visual systems built with structure, not decoration.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Web &amp; App Design</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">
+                Web &amp; App Design
+              </span>
               <br />
               Operating surfaces shaped around behavior, not features.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              <span className="text-white">Automation &amp; Systems</span>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              <span className="text-[color:var(--ink-analytical)]">
+                Automation &amp; Systems
+              </span>
               <br />
               Internal workflows that reduce coordination drag without process
               theater.
@@ -216,12 +222,10 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/offerings/what-you're-buying.png"
@@ -232,20 +236,22 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               What You’re Buying
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               Output, Not Access
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-editorial)]">
               You are not purchasing hours, tools, or frameworks.
               <br />
               You are engaging a system where decisions persist and execution
               compounds.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">What remains:</p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
+              What remains:
+            </p>
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-analytical)]">
               Clear direction you keep using
               <br />
               Assets that don’t decay after delivery
@@ -255,12 +261,10 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
-        >
+        <section className="flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6">
           <div
             aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/mobile-images/homepage/next step.PNG"
@@ -271,17 +275,17 @@ export default function OfferingsMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
+            <h2 className="text-[1.65rem] font-light leading-snug text-[color:var(--ink-structural)]">
               Start Here
             </h2>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-human)]">
               Begin With a Plan
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-human)]">
               A short working session to clarify direction, pressure-test
               assumptions, and choose the cleanest path forward.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
+            <p className="text-[1.05rem] leading-6 text-[color:var(--ink-human)]">
               No pitch. No commitment.
               <br />
               Just clarity.
@@ -289,7 +293,7 @@ export default function OfferingsMobile() {
           </div>
           <Link
             href="/#preview-access"
-            className="inline-flex w-fit rounded-full bg-white px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-black"
+            className="inline-flex w-fit rounded-full border border-[color:var(--offerings-cta-outline)] bg-transparent px-5 py-2.5 text-[0.78rem] font-semibold uppercase tracking-wide text-[color:var(--offerings-cta-text)] transition hover:opacity-90"
           >
             Start with a 30-Minute Plan
           </Link>
