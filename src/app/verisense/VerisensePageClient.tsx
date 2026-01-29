@@ -111,11 +111,17 @@ export default function VerisensePageClient() {
                 <div className="mt-10 max-w-3xl text-base leading-relaxed text-white/75 sm:mt-12">
                   <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
                 </div>
-                <div className="mt-10 inline-flex flex-wrap gap-5 rounded-full border border-white/15 bg-black/25 px-5 py-3 text-sm text-white/70 sm:mt-12">
-                  <Link href="/contact" className="transition hover:text-white">
+                <div className="mt-10 flex flex-wrap gap-4 text-sm text-white/70 sm:mt-12">
+                  <Link
+                    href="/contact"
+                    className="rounded-full border border-white/15 bg-white/10 px-5 py-3 transition hover:text-white"
+                  >
                     Work with Synerva
                   </Link>
-                  <Link href="/contact" className="transition hover:text-white">
+                  <Link
+                    href="/contact"
+                    className="rounded-full border border-white/10 bg-white/5 px-5 py-3 transition hover:text-white"
+                  >
                     Download the technical brief
                   </Link>
                 </div>
@@ -312,11 +318,17 @@ export default function VerisensePageClient() {
                   brief:
                 </p>
               </div>
-              <div className="flex flex-wrap gap-6 text-sm text-white/60">
-                <Link href="/contact" className="transition hover:text-white">
+              <div className="flex flex-wrap gap-4 text-sm text-white/60">
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-white/15 bg-white/10 px-5 py-3 transition hover:text-white"
+                >
                   Work with Synerva
                 </Link>
-                <Link href="/contact" className="transition hover:text-white">
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 transition hover:text-white"
+                >
                   Download the technical brief
                 </Link>
               </div>
