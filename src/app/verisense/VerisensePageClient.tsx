@@ -170,13 +170,15 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex justify-start">
                 <div className="w-full max-w-md">
-                  <div
-                    className="aspect-[4/5] w-full rounded-[2.5rem] bg-[#121416]/85 p-6"
-                    role="img"
-                    aria-label="Verisense instrument plate placeholder"
-                  >
-                    <div className="flex h-full items-center justify-center rounded-[2rem] bg-[#121416]/90 text-center text-sm text-[#DCD8D1]/55">
-                      Instrument plate
+                  <div className="flex h-[300px] items-start overflow-hidden rounded-[2.5rem] sm:h-[340px] lg:h-[360px]">
+                    <div
+                      className="aspect-[4/5] w-full translate-y-0 bg-[#121416]/85 p-6"
+                      role="img"
+                      aria-label="Verisense instrument plate placeholder"
+                    >
+                      <div className="flex h-full items-start justify-center rounded-[2rem] bg-[#121416]/90 pt-6 text-center text-sm text-[#DCD8D1]/55">
+                        Instrument plate
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -293,44 +295,57 @@ export default function VerisensePageClient() {
 
         <section className="px-6 pb-24 sm:px-8 sm:pb-28 lg:px-12">
           <div className="mx-auto max-w-5xl rounded-[3rem] border border-[#E6E3DC]/70 bg-[#121416]/85 p-8 sm:p-10">
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h2 className="text-3xl leading-tight text-[#DCD8D1] sm:text-4xl">
-                  System Commitments
-                </h2>
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.75fr)] lg:items-start">
+              <div className="space-y-8">
+                <div className="space-y-3">
+                  <h2 className="text-3xl leading-tight text-[#DCD8D1] sm:text-4xl">
+                    System Commitments
+                  </h2>
+                </div>
+                <ul className="space-y-3 text-sm text-[#DCD8D1]/70">
+                  {commitments.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-[#9FA6A0]/60" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="space-y-3 text-base leading-relaxed text-[#DCD8D1]/75">
+                  <p>Verisense is in active development.</p>
+                  <p>A working, end-to-end system exists.</p>
+                  <p>It has been tested internally and in limited private contexts.</p>
+                  <p>It is not yet publicly available.</p>
+                  <p>Access will be staged.</p>
+                  <p>
+                    For updates, early access opportunities, or the technical
+                    brief:
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4 text-sm text-[#DCD8D1]/70">
+                  <Link
+                    href="/contact"
+                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/85 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]"
+                  >
+                    Work with Synerva
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/75 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]/90"
+                  >
+                    Download the technical brief
+                  </Link>
+                </div>
               </div>
-              <ul className="space-y-3 text-sm text-[#DCD8D1]/70">
-                {commitments.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-[#9FA6A0]/60" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="space-y-3 text-base leading-relaxed text-[#DCD8D1]/75">
-                <p>Verisense is in active development.</p>
-                <p>A working, end-to-end system exists.</p>
-                <p>It has been tested internally and in limited private contexts.</p>
-                <p>It is not yet publicly available.</p>
-                <p>Access will be staged.</p>
-                <p>
-                  For updates, early access opportunities, or the technical
-                  brief:
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4 text-sm text-[#DCD8D1]/70">
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/85 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]"
-                >
-                  Work with Synerva
-                </Link>
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/75 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]/90"
-                >
-                  Download the technical brief
-                </Link>
+              <div className="flex justify-end">
+                <div className="w-full max-w-[240px]">
+                  <div
+                    className="aspect-[3/5] w-full rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4"
+                    role="img"
+                    aria-label="Verisense commitments image placeholder"
+                  >
+                    <div className="h-full w-full rounded-[2rem] border border-[#E6E3DC]/45" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
