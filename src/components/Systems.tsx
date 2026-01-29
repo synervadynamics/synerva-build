@@ -13,7 +13,11 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
   const sectionCopy = copy.systemsSection;
   void mobileVariant;
   const systemCards = sectionCopy.cards;
-  const cardCtas = {
+  type CardCta = {
+    label: string;
+    href?: string;
+  };
+  const cardCtas: Record<"Verisense" | "Lucentra", CardCta> = {
     Verisense: {
       label: "View Verisense",
       href: "https://synervadynamics.com/verisense",
@@ -21,7 +25,9 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
     Lucentra: {
       label: "Lucentra page coming soon",
     },
-  } as const;
+  };
+  const ctaBaseClass =
+    "inline-flex w-fit rounded-full border border-white/45 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] transition-colors sm:px-6 sm:py-3 sm:text-sm";
 
   return (
     <section
@@ -75,19 +81,17 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                   </p>
                 </div>
                 {cta?.href ? (
-                  <Link
-                    href={cta.href}
-                    className="inline-flex w-fit rounded-full border border-white/45 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-white sm:px-6 sm:py-3 sm:text-sm"
-                  >
+                  <Link href={cta.href} className={`${ctaBaseClass} text-white`}>
                     {cta.label}
                   </Link>
                 ) : (
-                  <span
+                  <button
+                    type="button"
                     aria-disabled="true"
-                    className="inline-flex w-fit cursor-default rounded-full border border-white/45 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-white/70 sm:px-6 sm:py-3 sm:text-sm"
+                    className={`${ctaBaseClass} cursor-default text-white/70`}
                   >
-                    {cta?.label}
-                  </span>
+                    {cta.label}
+                  </button>
                 )}
               </article>
             );
