@@ -1,19 +1,19 @@
 .offeringsPage {
   --offerings-bg-ref: #0c1210;
-  --offerings-outline-primary: rgba(42, 51, 48, 0.55);
-  --offerings-outline-secondary: rgba(35, 43, 40, 0.45);
-  --offerings-panel-fill: rgba(15, 21, 19, 0.72);
-  --offerings-divider: rgba(46, 55, 52, 0.4);
-  --offerings-cta-outline: rgba(95, 106, 102, 0.7);
-  --offerings-cta-text: #e3e8e6;
-  --offerings-link: #8fa39b;
-  --offerings-bullet: #6f8079;
-  --offerings-overlay-line: rgba(58, 71, 66, 0.55);
-  --offerings-overlay-label: rgba(154, 168, 162, 0.75);
-  --ink-editorial: #d8dedb;
-  --ink-structural: #c4cbc7;
-  --ink-analytical: #aeb7b2;
-  --ink-human: #e1e6e3;
+  --offerings-outline-primary: rgba(42, 50, 48, 0.60);
+  --offerings-outline-secondary: rgba(35, 43, 41, 0.48);
+  --offerings-panel-fill: rgba(12, 16, 15, 0.78);
+  --offerings-divider: rgba(48, 56, 54, 0.38);
+  --offerings-cta-outline: rgba(97, 107, 103, 0.72);
+  --offerings-cta-text: #E2E7E4;
+  --offerings-link: #8EA29A;
+  --offerings-bullet: #6E8079;
+  --offerings-overlay-line: rgba(58, 70, 66, 0.58);
+  --offerings-overlay-label: rgba(154, 168, 161, 0.74);
+  --ink-editorial: #D7DDDA;
+  --ink-structural: #C3CAC6;
+  --ink-analytical: #ADB6B1;
+  --ink-human: #E0E5E2;
   background-color: var(--offerings-bg-ref);
   color: var(--ink-editorial);
 }
