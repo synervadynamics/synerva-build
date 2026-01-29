@@ -189,10 +189,11 @@ export default function VerisensePageClient() {
                 It makes it possible to:
               </p>
             </div>
-            <ul className="mt-8 space-y-4 pl-5 text-base leading-relaxed text-white/75">
+            <ul className="mt-8 space-y-4 text-base leading-relaxed text-white/75">
               {promiseBullets.map((item) => (
-                <li key={item} className="list-disc">
-                  {item}
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -216,8 +217,9 @@ export default function VerisensePageClient() {
               </div>
               <ul className="grid gap-4 pt-4 text-sm text-white/70 sm:grid-cols-2">
                 {contextModes.map((mode) => (
-                  <li key={mode} className="leading-relaxed">
-                    {mode}
+                  <li key={mode} className="flex items-start gap-3 leading-relaxed">
+                    <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                    <span>{mode}</span>
                   </li>
                 ))}
               </ul>
@@ -265,10 +267,11 @@ export default function VerisensePageClient() {
             <p className="text-base leading-relaxed text-white/75">
               Across an interaction, it surfaces:
             </p>
-            <ul className="space-y-4 pl-5 text-base leading-relaxed text-white/75">
+            <ul className="space-y-4 text-base leading-relaxed text-white/75">
               {pressureBullets.map((item) => (
-                <li key={item} className="list-disc">
-                  {item}
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -292,7 +295,10 @@ export default function VerisensePageClient() {
               </div>
               <ul className="space-y-3 text-sm text-white/70">
                 {commitments.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
               <div className="space-y-3 text-base leading-relaxed text-white/75">
