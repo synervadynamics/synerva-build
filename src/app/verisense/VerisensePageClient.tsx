@@ -86,10 +86,10 @@ const commitments = [
 export default function VerisensePageClient() {
   return (
     <main className="relative bg-[#0E1514] text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/verisense.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
-        <section className="px-6 pb-16 pt-24 sm:px-8 sm:pb-20 sm:pt-28 lg:px-12 lg:pb-24 lg:pt-32">
+        <section className="px-6 pb-8 pt-24 sm:px-8 sm:pb-12 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
           <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/14 bg-black/35 p-8 sm:p-10 lg:p-12">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-start">
               <div className="max-w-3xl">
@@ -140,7 +140,7 @@ export default function VerisensePageClient() {
             </div>
           </div>
         </section>
-        <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
+        <div className="px-6 py-4 sm:px-8 sm:py-6 lg:px-12">
           <div className="mx-auto max-w-6xl">
             <CascadingText
               className="text-white/70"
@@ -154,7 +154,7 @@ export default function VerisensePageClient() {
           </div>
         </div>
 
-        <section className="px-6 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24">
+        <section className="px-6 pt-8 sm:px-8 sm:pt-10 lg:px-12 lg:pt-12">
           <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/40 p-10 sm:p-12 lg:p-14">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
               <div className="max-w-xl space-y-6 text-base leading-relaxed text-white/75">
