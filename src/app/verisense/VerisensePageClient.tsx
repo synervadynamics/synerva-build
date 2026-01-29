@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 
 type Output = {
   title: string;
@@ -83,39 +84,55 @@ const commitments = [
 
 export default function VerisensePageClient() {
   return (
-    <main className="relative text-white">
-      <div className="pointer-events-none fixed inset-0 z-[1] bg-black/85" />
+    <main className="relative bg-[#0E1514] text-white">
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="px-6 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-32">
-          <div className="mx-auto max-w-4xl">
-            <div className="space-y-5 sm:space-y-6">
-              <h1 className="text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-                VERISENSE
-              </h1>
-              <p className="text-lg text-white/80 sm:text-xl">
-                Where communication moves outcomes.
-              </p>
-            </div>
-            <div className="mt-10 space-y-6 text-base leading-relaxed text-white/75 sm:mt-12 sm:space-y-7">
-              <p className="whitespace-pre-line">{heroParagraphs[0]}</p>
-              <p className="whitespace-pre-line">{heroParagraphs[2]}</p>
-              <p className="whitespace-pre-line">
-                Verisense replaces impression with structure.
-              </p>
-            </div>
-            <div className="mt-10 max-w-3xl text-base leading-relaxed text-white/75 sm:mt-12">
-              <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
-            </div>
-            <div className="mt-10 flex flex-wrap gap-6 text-sm uppercase tracking-[0.25em] text-white/60 sm:mt-12">
-              <Link href="/contact" className="transition hover:text-white">
-                Work with Synerva
-              </Link>
-              <Link
-                href="/#preview-access"
-                className="transition hover:text-white"
-              >
-                Get Verisense updates
-              </Link>
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.7fr)] lg:items-start">
+              <div className="max-w-3xl">
+                <div className="space-y-5 sm:space-y-6">
+                  <h1 className="text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                    VERISENSE
+                  </h1>
+                  <p className="text-lg text-white/80 sm:text-xl">
+                    Where communication moves outcomes.
+                  </p>
+                </div>
+                <div className="mt-10 space-y-6 text-base leading-relaxed text-white/75 sm:mt-12 sm:space-y-7">
+                  <p className="whitespace-pre-line">{heroParagraphs[0]}</p>
+                  <p className="whitespace-pre-line">{heroParagraphs[2]}</p>
+                  <p className="whitespace-pre-line">
+                    Verisense replaces impression with structure.
+                  </p>
+                </div>
+                <div className="mt-10 max-w-3xl text-base leading-relaxed text-white/75 sm:mt-12">
+                  <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
+                </div>
+                <div className="mt-10 flex flex-wrap gap-6 text-sm uppercase tracking-[0.25em] text-white/60 sm:mt-12">
+                  <Link href="/contact" className="transition hover:text-white">
+                    Work with Synerva
+                  </Link>
+                  <Link
+                    href="/#preview-access"
+                    className="transition hover:text-white"
+                  >
+                    Get Verisense updates
+                  </Link>
+                </div>
+              </div>
+              <div className="flex justify-start lg:justify-end">
+                <div
+                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-white/15 bg-black/45 p-5 text-center text-xs uppercase tracking-[0.28em] text-white/55 sm:max-w-sm"
+                  role="img"
+                  aria-label="Verisense hero image placeholder"
+                >
+                  <div className="flex h-full items-center justify-center rounded-[2rem] border border-white/10">
+                    9:16 Image Placeholder
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
