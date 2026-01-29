@@ -23,11 +23,13 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
       href: "https://synervadynamics.com/verisense",
     },
     Lucentra: {
-      label: "Lucentra page coming soon",
+      label: "Page coming soon",
     },
   };
   const ctaBaseClass =
-    "inline-flex w-fit rounded-full border border-white/45 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] transition-colors sm:px-6 sm:py-3 sm:text-sm";
+    "inline-flex w-fit rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] transition-colors sm:px-6 sm:py-3 sm:text-sm";
+  const activeCtaClass = `${ctaBaseClass} border border-white/45 text-white`;
+  const inactiveCtaClass = `${ctaBaseClass} border border-white/30 bg-[#111214] text-white/70`;
 
   return (
     <section
@@ -81,14 +83,14 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                   </p>
                 </div>
                 {cta?.href ? (
-                  <Link href={cta.href} className={`${ctaBaseClass} text-white`}>
+                  <Link href={cta.href} className={activeCtaClass}>
                     {cta.label}
                   </Link>
                 ) : (
                   <button
                     type="button"
                     aria-disabled="true"
-                    className={`${ctaBaseClass} cursor-default text-white/70`}
+                    className={`${inactiveCtaClass} cursor-default`}
                   >
                     {cta.label}
                   </button>

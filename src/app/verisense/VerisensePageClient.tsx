@@ -336,10 +336,10 @@ export default function VerisensePageClient() {
                   </Link>
                 </div>
               </div>
-              <div className="flex justify-end">
-                <div className="w-full max-w-[240px]">
+              <div className="flex items-start justify-end">
+                <div className="w-full">
                   <div
-                    className="aspect-[3/5] w-full rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4"
+                    className="min-h-[360px] w-full rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4 sm:min-h-[420px]"
                     role="img"
                     aria-label="Verisense commitments image placeholder"
                   >
