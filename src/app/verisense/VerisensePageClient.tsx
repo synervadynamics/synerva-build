@@ -89,7 +89,7 @@ export default function VerisensePageClient() {
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
-        <section className="px-6 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-32">
+        <section className="px-6 pb-16 pt-24 sm:px-8 sm:pb-20 sm:pt-28 lg:px-12 lg:pb-24 lg:pt-32">
           <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/14 bg-black/35 p-8 sm:p-10 lg:p-12">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-start">
               <div className="max-w-3xl">
@@ -134,7 +134,7 @@ export default function VerisensePageClient() {
             </div>
           </div>
         </section>
-        <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-12">
+        <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
           <div className="mx-auto max-w-6xl">
             <CascadingText
               className="text-white/70"
@@ -148,7 +148,7 @@ export default function VerisensePageClient() {
           </div>
         </div>
 
-        <section className="px-6 sm:px-8 lg:px-12">
+        <section className="px-6 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24">
           <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/40 p-10 sm:p-12 lg:p-14">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
               <div className="max-w-xl space-y-6 text-base leading-relaxed text-white/75">
@@ -192,7 +192,7 @@ export default function VerisensePageClient() {
             <ul className="mt-8 space-y-4 text-base leading-relaxed text-white/75">
               {promiseBullets.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                  <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -218,7 +218,7 @@ export default function VerisensePageClient() {
               <ul className="grid gap-4 pt-4 text-sm text-white/70 sm:grid-cols-2">
                 {contextModes.map((mode) => (
                   <li key={mode} className="flex items-start gap-3 leading-relaxed">
-                    <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                    <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                     <span>{mode}</span>
                   </li>
                 ))}
@@ -270,7 +270,7 @@ export default function VerisensePageClient() {
             <ul className="space-y-4 text-base leading-relaxed text-white/75">
               {pressureBullets.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                  <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -296,7 +296,7 @@ export default function VerisensePageClient() {
               <ul className="space-y-3 text-sm text-white/70">
                 {commitments.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                    <span className="mt-1.5 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                     <span>{item}</span>
                   </li>
                 ))}
