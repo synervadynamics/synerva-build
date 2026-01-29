@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
+import { CascadingText } from "@/components/CascadingText";
 
 type Output = {
   title: string;
@@ -62,16 +63,16 @@ const pressureBullets = [
 ] as const;
 
 const contextModes = [
-  "FINANCE / INVESTOR COMMUNICATION",
-  "LEADERSHIP / EXECUTIVE COMMUNICATION",
-  "POLITICAL SPEECH & PUBLIC MESSAGING",
-  "MEDIA & INTERVIEW PERFORMANCE",
-  "SALES & PERSUASION",
-  "SECURITY & CREDIBILITY RISK",
-  "THERAPY & SUPPORT (NON-DIAGNOSTIC)",
-  "EDUCATION & TEACHING",
-  "CUSTOMER SUPPORT",
-  "GENERAL (BASELINE MODE)",
+  "Finance / Investor communication",
+  "Leadership / Executive communication",
+  "Political speech & public messaging",
+  "Media & interview performance",
+  "Sales & persuasion",
+  "Security & credibility risk",
+  "Therapy & support (non-diagnostic)",
+  "Education & teaching",
+  "Customer support",
+  "General (baseline mode)",
 ] as const;
 
 const commitments = [
@@ -89,12 +90,12 @@ export default function VerisensePageClient() {
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="px-6 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-32">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.7fr)] lg:items-start">
+          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/14 bg-black/55 p-8 sm:p-10 lg:p-12">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-start">
               <div className="max-w-3xl">
                 <div className="space-y-5 sm:space-y-6">
                   <h1 className="text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
-                    VERISENSE
+                    Verisense
                   </h1>
                   <p className="text-lg text-white/80 sm:text-xl">
                     Where communication moves outcomes.
@@ -110,35 +111,45 @@ export default function VerisensePageClient() {
                 <div className="mt-10 max-w-3xl text-base leading-relaxed text-white/75 sm:mt-12">
                   <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
                 </div>
-                <div className="mt-10 flex flex-wrap gap-6 text-sm uppercase tracking-[0.25em] text-white/60 sm:mt-12">
+                <div className="mt-10 inline-flex flex-wrap gap-5 rounded-full border border-white/15 bg-black/45 px-5 py-3 text-sm text-white/70 sm:mt-12">
                   <Link href="/contact" className="transition hover:text-white">
                     Work with Synerva
                   </Link>
-                  <Link
-                    href="/#preview-access"
-                    className="transition hover:text-white"
-                  >
-                    Get Verisense updates
+                  <Link href="/contact" className="transition hover:text-white">
+                    Download the technical brief
                   </Link>
                 </div>
               </div>
               <div className="flex justify-start lg:justify-end">
                 <div
-                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-white/15 bg-black/45 p-5 text-center text-xs uppercase tracking-[0.28em] text-white/55 sm:max-w-sm"
+                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-white/12 bg-black/45 p-5 text-center text-sm text-white/55 sm:max-w-sm"
                   role="img"
                   aria-label="Verisense hero image placeholder"
                 >
                   <div className="flex h-full items-center justify-center rounded-[2rem] border border-white/10">
-                    9:16 Image Placeholder
+                    9:16 image placeholder
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <div className="px-6 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-6xl">
+            <CascadingText
+              className="py-6 text-white/70"
+              items={[
+                "Structure before interpretation.",
+                "Context compounds.",
+                "Signal survives pressure.",
+              ]}
+              speed={140}
+            />
+          </div>
+        </div>
 
         <section className="px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/60 p-8 sm:p-10 lg:p-12">
+          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/60 p-10 sm:p-12 lg:p-14">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
               <div className="max-w-xl space-y-6 text-base leading-relaxed text-white/75">
                 <div className="space-y-3">
@@ -147,7 +158,7 @@ export default function VerisensePageClient() {
                   </h2>
                 </div>
                 <p className="whitespace-pre-line">{heroParagraphs[1]}</p>
-                <div className="space-y-2 text-sm uppercase tracking-[0.24em] text-white/60">
+                <div className="space-y-2 text-sm text-white/60">
                   <p className="whitespace-pre-line">{epistemicRestraint}</p>
                 </div>
               </div>
@@ -158,8 +169,8 @@ export default function VerisensePageClient() {
                     role="img"
                     aria-label="Verisense instrument plate placeholder"
                   >
-                    <div className="flex h-full items-center justify-center rounded-[2rem] bg-black/60 text-center text-xs uppercase tracking-[0.3em] text-white/55">
-                      Instrument Plate
+                    <div className="flex h-full items-center justify-center rounded-[2rem] bg-black/60 text-center text-sm text-white/55">
+                      Instrument plate
                     </div>
                   </div>
                 </div>
@@ -203,7 +214,7 @@ export default function VerisensePageClient() {
                   A structured analysis whose emphasis depends on context.
                 </p>
               </div>
-              <ul className="grid gap-4 pt-4 text-xs uppercase tracking-[0.28em] text-white/70 sm:grid-cols-2">
+              <ul className="grid gap-4 pt-4 text-sm text-white/70 sm:grid-cols-2">
                 {contextModes.map((mode) => (
                   <li key={mode} className="leading-relaxed">
                     {mode}
@@ -225,7 +236,7 @@ export default function VerisensePageClient() {
                 artifacts designed to be inspected, questioned, and used.
               </p>
             </div>
-            <div className="rounded-[3rem] border border-white/16 bg-black/40 p-7 sm:p-8">
+            <div className="rounded-[3rem] border border-white/12 bg-black/35 p-7 sm:p-8">
               <div className="space-y-7">
                 {outputs.map((item) => (
                   <div key={item.title} className="space-y-2">
@@ -272,14 +283,14 @@ export default function VerisensePageClient() {
         </section>
 
         <section className="px-6 pb-24 sm:px-8 sm:pb-28 lg:px-12">
-          <div className="mx-auto max-w-5xl rounded-[3rem] border border-white/16 bg-black/40 p-8 sm:p-10">
+          <div className="mx-auto max-w-5xl rounded-[3rem] border border-white/12 bg-black/35 p-8 sm:p-10">
             <div className="space-y-8">
               <div className="space-y-3">
                 <h2 className="text-3xl leading-tight text-white sm:text-4xl">
                   System Commitments
                 </h2>
               </div>
-              <ul className="space-y-3 text-sm uppercase tracking-[0.22em] text-white/70">
+              <ul className="space-y-3 text-sm text-white/70">
                 {commitments.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -295,12 +306,12 @@ export default function VerisensePageClient() {
                   brief:
                 </p>
               </div>
-              <div className="flex flex-wrap gap-6 text-sm uppercase tracking-[0.25em] text-white/60">
+              <div className="flex flex-wrap gap-6 text-sm text-white/60">
                 <Link href="/contact" className="transition hover:text-white">
                   Work with Synerva
                 </Link>
                 <Link href="/contact" className="transition hover:text-white">
-                  Download the Technical Brief
+                  Download the technical brief
                 </Link>
               </div>
             </div>
