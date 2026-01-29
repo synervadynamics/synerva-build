@@ -19,7 +19,7 @@ export const SystemsThatHoldSection = ({
     portraitPairClassName ??
     `grid ${alignClassName} items-stretch gap-4 md:grid-cols-2 md:gap-5 lg:gap-6`;
   const content = (
-    <div className="filled-panel rounded-[28px] border border-[rgba(243,238,228,0.4)] bg-transparent px-7 py-10 shadow-[0_0_0_1px_rgba(243,238,228,0.2)] sm:px-9 sm:py-12 lg:px-10 lg:py-14">
+    <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
       <div className="flex flex-col gap-8">
         <div className={alignClassName}>
           <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/65">
@@ -35,7 +35,7 @@ export const SystemsThatHoldSection = ({
           </h2>
         </div>
         <div className={pairClassName}>
-          <div className="flex h-full flex-col gap-4 rounded-2xl border border-white/55 bg-white/0 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.12)] sm:gap-5 sm:p-6 lg:p-7">
+          <div className="flex h-full flex-col gap-4 rounded-3xl bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:gap-5 lg:p-5">
             <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/homepage-post-12-25-2025/what-synerva-builds-5-4.png"
@@ -52,7 +52,7 @@ export const SystemsThatHoldSection = ({
               {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase."}
             </p>
           </div>
-          <div className="flex h-full flex-col gap-4 rounded-2xl border border-white/55 bg-white/0 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.12)] sm:gap-5 sm:p-6 lg:p-7">
+          <div className="flex h-full flex-col gap-4 rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:gap-5 lg:p-5">
             <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/homepage-post-12-25-2025/how-synerva-operates-5-4.png"
