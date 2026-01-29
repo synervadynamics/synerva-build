@@ -8,7 +8,7 @@ export default function OfferingsMobile() {
     <main className={styles.offeringsPage}>
       <Mobile1Shell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/offerings-v1a.jpg"
+        backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
       >
         <section
           className="mt-6 flex flex-col gap-5 rounded-[2rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-5 py-6"
