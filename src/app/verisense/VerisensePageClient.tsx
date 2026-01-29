@@ -193,10 +193,10 @@ export default function VerisensePageClient() {
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 space-y-14 sm:space-y-16 lg:space-y-20">
-        <section className="rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-8 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-10 lg:p-12">
+        <section className="rounded-[3rem] border border-white/12 bg-gradient-to-br from-[#0d1b2c] via-[#0f2336] to-[#0a1422] p-7 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-9 lg:p-10">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div className="space-y-6">
-              <div className="space-y-3">
+            <div className="space-y-8">
+              <div className="space-y-4">
                 <p className="text-xs uppercase tracking-[0.5em] text-white/60">
                   VERISENSE
                 </p>
@@ -222,7 +222,7 @@ export default function VerisensePageClient() {
               <div className="space-y-4 text-base leading-relaxed text-white/75">
                 {renderParagraphs(heroParagraphs[3])}
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-5">
                 <Link
                   href="/contact"
                   className="inline-flex rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
@@ -237,9 +237,14 @@ export default function VerisensePageClient() {
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="w-full max-w-md rounded-[2.5rem] border border-white/12 bg-black/50 p-6 shadow-[0_36px_120px_-78px_rgba(0,0,0,0.8)]">
-                <div className="flex min-h-[320px] items-center justify-center rounded-[2rem] border border-white/15 bg-black/40 p-6 text-center text-sm text-white/60">
+            <div className="flex items-center justify-center lg:-mr-6">
+              <div className="relative w-full max-w-lg rounded-[2.75rem] border border-white/18 bg-black/55 p-6 shadow-[0_36px_120px_-78px_rgba(0,0,0,0.8)]">
+                <div className="relative flex min-h-[360px] items-center justify-center rounded-[2.2rem] bg-black/45 p-6 text-center text-sm text-white/60">
+                  <div className="pointer-events-none absolute inset-4 rounded-[1.8rem] border border-white/10" />
+                  <div className="pointer-events-none absolute left-6 top-6 h-3 w-0.5 bg-white/20" />
+                  <div className="pointer-events-none absolute right-6 top-6 h-3 w-0.5 bg-white/20" />
+                  <div className="pointer-events-none absolute left-6 bottom-6 h-3 w-0.5 bg-white/20" />
+                  <div className="pointer-events-none absolute right-6 bottom-6 h-3 w-0.5 bg-white/20" />
                   [ VERISENSE INSTRUMENT PLATE — SVG / static image placeholder ]
                 </div>
                 <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/55">
@@ -250,12 +255,17 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="max-w-4xl space-y-6">
+        <section className="max-w-3xl space-y-6 py-6 sm:py-8">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-              The Promise
-            </p>
-            <h2 className="text-3xl leading-tight text-white sm:text-4xl">
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                The Promise
+              </p>
+              <span className="text-[0.55rem] font-mono uppercase tracking-[0.5em] text-white/35">
+                THE PROMISE
+              </span>
+            </div>
+            <h2 className="text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
               Verisense replaces impression with structure.
             </h2>
           </div>
@@ -273,7 +283,7 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[2.75rem] border border-white/10 bg-white/[0.018] p-8 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-10">
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">
@@ -284,20 +294,20 @@ export default function VerisensePageClient() {
                 artifacts designed to be inspected, questioned, and used.
               </h2>
             </div>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {outputs.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/12 bg-white/[0.03] p-6"
+                  className="rounded-2xl border border-white/12 bg-white/[0.03] p-5"
                 >
                   <p className="text-[0.65rem] font-mono uppercase tracking-[0.4em] text-white/55">
                     {item.label}
                   </p>
-                  <h3 className="mt-3 text-lg text-white">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/75">
+                  <h3 className="mt-2 text-lg text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/75">
                     {item.body}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-white/70">
+                  <p className="mt-2 text-sm leading-relaxed text-white/70">
                     {item.why}
                   </p>
                 </div>
@@ -306,7 +316,7 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[3rem] bg-white/[0.02] p-10 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-12">
           <div className="space-y-5">
             <div className="space-y-2">
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">
@@ -337,11 +347,16 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="space-y-8">
+        <section className="space-y-10 py-8 sm:py-10 my-6 sm:my-10 mb-8 sm:mb-12">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-              Context Modes
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                Context Modes
+              </p>
+              <span className="text-[0.55rem] font-mono uppercase tracking-[0.5em] text-white/35">
+                CONTEXT MODES
+              </span>
+            </div>
             <h2 className="text-3xl leading-tight text-white sm:text-4xl">
               A structured analysis whose emphasis depends on context.
             </h2>
@@ -349,99 +364,107 @@ export default function VerisensePageClient() {
               Why it matters: Strength in one setting may be risk in another.
             </p>
           </div>
-          <div className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-6 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-8">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:items-start">
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {contextModes.map((mode) => {
-                  const isExpanded = activeModeId === mode.id;
-                  const emphasis = mode.flagship
-                    ? "border-white/35 bg-white/[0.05]"
-                    : "border-white/12 bg-white/[0.02]";
-                  const titleTone = mode.flagship
-                    ? "text-white"
-                    : "text-white/80";
+          <div className="relative sm:-mx-2 lg:-mx-4">
+            <div className="pointer-events-none absolute -inset-x-[6%] inset-y-6 rounded-[3.5rem] border border-white/10 bg-black/45" />
+            <div className="relative rounded-[3rem] border border-white/16 bg-black/40 p-6 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-8">
+              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:items-start">
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {contextModes.map((mode) => {
+                    const isExpanded = activeModeId === mode.id;
+                    const emphasis = mode.flagship
+                      ? "border-white/35 bg-white/[0.02]"
+                      : "border-white/14 bg-white/[0.02]";
+                    const titleTone = mode.flagship
+                      ? "text-white"
+                      : "text-white/80";
 
-                  return (
-                    <article
-                      key={mode.id}
-                      onMouseEnter={() => setActiveModeId(mode.id)}
-                      onMouseLeave={() => setActiveModeId(null)}
-                      className={`flex h-full flex-col rounded-2xl border p-4 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${emphasis}`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setActiveModeId((prev) =>
-                            prev === mode.id ? null : mode.id
-                          )
-                        }
-                        onKeyDown={(event) => {
-                          if (event.key === "Enter" || event.key === " ") {
-                            event.preventDefault();
+                    return (
+                      <article
+                        key={mode.id}
+                        onMouseEnter={() => setActiveModeId(mode.id)}
+                        onMouseLeave={() => setActiveModeId(null)}
+                        className={`flex h-full min-h-[170px] flex-col rounded-2xl border p-5 ${emphasis}`}
+                      >
+                        <button
+                          type="button"
+                          onClick={() =>
                             setActiveModeId((prev) =>
                               prev === mode.id ? null : mode.id
-                            );
+                            )
                           }
-                        }}
-                        onFocus={() => setActiveModeId(mode.id)}
-                        aria-expanded={isExpanded}
-                        aria-controls={`mode-${mode.id}`}
-                        className="text-left"
-                      >
-                        <div className="space-y-2">
-                          <p
-                            className={`text-[0.65rem] uppercase tracking-[0.32em] ${titleTone}`}
-                          >
-                            {mode.title}
-                          </p>
-                          <p className="text-sm text-white/80">
-                            {mode.thesis}
-                          </p>
-                          <p className="text-[0.55rem] font-mono uppercase tracking-[0.4em] text-white/50">
-                            MODE GOVERNS INTERPRETATION
-                          </p>
+                          onKeyDown={(event) => {
+                            if (event.key === "Enter" || event.key === " ") {
+                              event.preventDefault();
+                              setActiveModeId((prev) =>
+                                prev === mode.id ? null : mode.id
+                              );
+                            }
+                          }}
+                          onFocus={() => setActiveModeId(mode.id)}
+                          aria-expanded={isExpanded}
+                          aria-controls={`mode-${mode.id}`}
+                          className="text-left"
+                        >
+                          <div className="space-y-3">
+                            <p
+                              className={`text-[0.65rem] uppercase tracking-[0.32em] ${titleTone}`}
+                            >
+                              {mode.title}
+                            </p>
+                            <p className="text-sm text-white/80">
+                              {mode.thesis}
+                            </p>
+                            <p className="text-[0.55rem] font-mono uppercase tracking-[0.4em] text-white/55">
+                              MODE GOVERNS INTERPRETATION
+                            </p>
+                          </div>
+                        </button>
+                        <div
+                          id={`mode-${mode.id}`}
+                          className={`${
+                            isExpanded
+                              ? "mt-5 max-h-[360px] opacity-100"
+                              : "max-h-0 opacity-0"
+                          } overflow-hidden`}
+                        >
+                          <div className="max-h-[360px] max-w-[32rem] space-y-3 overflow-y-auto pr-3 text-sm leading-relaxed text-white/75">
+                            {renderParagraphs(mode.body)}
+                          </div>
                         </div>
-                      </button>
-                      <div
-                        id={`mode-${mode.id}`}
-                        className={`transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                          isExpanded
-                            ? "mt-4 max-h-[360px] opacity-100"
-                            : "max-h-0 opacity-0"
-                        } overflow-hidden`}
-                      >
-                        <div className="max-h-[360px] space-y-3 overflow-y-auto pr-2 text-sm leading-relaxed text-white/75">
-                          {renderParagraphs(mode.body)}
-                        </div>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-              <div className="rounded-[2rem] border border-white/12 bg-black/40 p-5">
-                <div className="flex min-h-[260px] items-center justify-center rounded-[1.75rem] border border-white/12 bg-black/40 p-4 text-center text-sm text-white/60">
-                  [ ABSTRACT SIGNAL DIAGRAM — illustrative ]
+                      </article>
+                    );
+                  })}
+                </div>
+                <div className="rounded-[2rem] border border-white/10 bg-black/45 p-5">
+                  <div className="flex min-h-[260px] items-center justify-center rounded-[1.75rem] border border-white/10 bg-black/50 p-4 text-center text-sm text-white/50">
+                    [ ABSTRACT SIGNAL DIAGRAM — illustrative ]
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[2.6rem] border border-white/14 bg-white/[0.02] p-8 shadow-[0_50px_170px_-90px_rgba(0,0,0,0.82)] backdrop-blur-2xl sm:p-10">
           <div className="space-y-6">
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-                How the System Works
-              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                  How the System Works
+                </p>
+                <span className="text-[0.55rem] font-mono uppercase tracking-[0.5em] text-white/35">
+                  HOW THE SYSTEM WORKS
+                </span>
+              </div>
               <h2 className="text-3xl leading-tight text-white sm:text-4xl">
                 How the System Works
               </h2>
             </div>
-            <ol className="space-y-4">
+            <ol className="space-y-6">
               {systemSteps.map((step, index) => (
                 <li
                   key={step.title}
-                  className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-white/[0.02] p-4"
+                  className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4"
                 >
                   <div className="flex items-center gap-3">
                     <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-mono text-white/70">
@@ -461,7 +484,7 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[2.8rem] bg-white/[0.018] p-7 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.8)] backdrop-blur-2xl sm:p-9">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">
               Capability Status
@@ -476,12 +499,12 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_36px_120px_-90px_rgba(0,0,0,0.78)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[2.7rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_36px_120px_-90px_rgba(0,0,0,0.78)] backdrop-blur-2xl sm:p-10 mt-6 sm:mt-8">
           <div className="space-y-5">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">
               Design Commitments
             </p>
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {commitments.map((item) => (
                 <li
                   key={item}
@@ -494,8 +517,8 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-          <div className="space-y-4 text-base leading-relaxed text-white/75">
+        <section className="grid gap-6 lg:grid-cols-2 lg:gap-10 mt-6 sm:mt-8">
+          <div className="space-y-5 text-base leading-loose text-white/75">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">
               Where Verisense Fits
             </p>
@@ -506,7 +529,7 @@ export default function VerisensePageClient() {
               in context.
             </p>
           </div>
-          <div className="space-y-4 text-base leading-relaxed text-white/75">
+          <div className="space-y-5 text-base leading-loose text-white/75">
             <p>
               The system can analyze communication from recorded interactions or
               from live communication streams, allowing signal to be examined
@@ -517,7 +540,7 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_36px_120px_-90px_rgba(0,0,0,0.72)] backdrop-blur-2xl sm:p-10">
+        <section className="rounded-[3rem] border border-white/12 bg-white/[0.02] p-8 shadow-[0_36px_120px_-90px_rgba(0,0,0,0.72)] backdrop-blur-2xl sm:p-10 mt-8 sm:mt-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.4em] text-white/60">
@@ -553,7 +576,7 @@ export default function VerisensePageClient() {
           </div>
         </section>
 
-        <section className="max-w-4xl space-y-4 pb-6">
+        <section className="max-w-3xl space-y-4 pb-6 pt-10 sm:pt-14 mt-8 sm:mt-12">
           <p className="text-lg leading-relaxed text-white/80">
             Outcomes rarely move on words alone.
           </p>
