@@ -1,26 +1,13 @@
-import { ProductPage } from "@/components/ProductPage";
-import { copy } from "@/data/copy";
 import { buildPageMetadata } from "@/lib/metadata";
-import SubpageStaticBackground from "@/components/SubpageStaticBackground";
-
-const product = copy.products.verisense;
-const disclaimer =
-  "Verisense is currently in active development. Functional components, UI, and live release information will appear here. Stay tuned for upcoming updates.";
+import VerisensePageClient from "@/app/verisense/VerisensePageClient";
 
 export const metadata = buildPageMetadata({
-  title: `${product.title} — ${product.tagline} | Synerva Dynamics`,
-  description: product.description[0],
-  path: `/${product.slug}`,
+  title: "Verisense — Where communication moves outcomes. | Synerva Dynamics",
+  description:
+    "Verisense is a diagnostic system for human communication. It models delivery as structured signal across voice, expression, posture, pacing, and language, tracked over time and interpreted in context.",
+  path: "/verisense",
 });
 
 export default function VerisensePage() {
-  return (
-    <main className="relative text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
-      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
-      <div className="relative z-10">
-        <ProductPage product={product} disclaimer={disclaimer} />
-      </div>
-    </main>
-  );
+  return <VerisensePageClient />;
 }
