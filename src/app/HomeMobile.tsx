@@ -3,10 +3,11 @@ import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import styles from "@/app/mobile1/mobile1.module.css";
+import homeStyles from "@/app/homepage/homepage.module.css";
 
 export default function HomeMobile() {
   return (
-    <main className="text-white">
+    <main className={`sd-home ${homeStyles.sdHome} text-white`}>
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
@@ -95,7 +96,7 @@ export default function HomeMobile() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5">
+        <section className={`flex flex-col gap-5 ${homeStyles.analytical}`}>
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             How Work Moves
           </p>
@@ -125,7 +126,7 @@ export default function HomeMobile() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5">
+        <section className={`flex flex-col gap-5 ${homeStyles.analytical}`}>
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             Systems That Hold
           </p>
@@ -265,7 +266,7 @@ export default function HomeMobile() {
           </div>
         </section>
 
-        <section className="flex flex-col gap-5">
+        <section className={`flex flex-col gap-5 ${homeStyles.analytical}`}>
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             Internal Engines
           </p>

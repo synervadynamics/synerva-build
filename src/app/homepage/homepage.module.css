@@ -1,0 +1,161 @@
+.sdHome {
+  --page-bg-ref: #060A0D;
+  --outline-primary: rgba(199, 210, 216, 0.12);
+  --outline-secondary: rgba(199, 210, 216, 0.08);
+  --panel-fill: rgba(11, 17, 21, 0.58);
+  --rule: rgba(199, 210, 216, 0.10);
+  --cta-outline: rgba(210, 199, 180, 0.18);
+  --cta-text: rgba(216, 224, 228, 0.86);
+  --link: rgba(210, 199, 180, 0.72);
+  --bullet: rgba(191, 201, 205, 0.60);
+  --overlay-line: rgba(199, 210, 216, 0.09);
+  --overlay-label: rgba(191, 201, 205, 0.55);
+  --ink-editorial: #D5DEE3;
+  --ink-analytical: #C7D1D7;
+  --ink-human: #D2CBC2;
+  --ink-structural: #BFC9CD;
+  color: var(--ink-editorial);
+  background-color: var(--page-bg-ref);
+}
+
+.analytical {
+  --ink-current: var(--ink-analytical);
+}
+
+.human {
+  --ink-current: var(--ink-human);
+}
+
+.structural {
+  --ink-current: var(--ink-structural);
+}
+
+.sdHome h1,
+.sdHome h2,
+.sdHome h3 {
+  color: rgba(213, 222, 227, 0.92);
+}
+
+.sdHome p,
+.sdHome li {
+  color: var(--ink-current, var(--ink-editorial));
+}
+
+.sdHome li::marker {
+  color: var(--bullet);
+}
+
+.sdHome p.uppercase,
+.sdHome span.uppercase {
+  color: var(--ink-structural);
+}
+
+.sdHome a[class*="uppercase"]:not([class*="rounded-full"]):not([class*="border"]) {
+  color: var(--ink-structural);
+}
+
+.sdHome :global(.border-white\/12),
+.sdHome :global(.border-white\/55),
+.sdHome :global(.border-\[\#E0DCD4\]),
+.sdHome :global(.border-\[rgba\(243,238,228,0.4\)\]) {
+  border-color: var(--outline-primary);
+}
+
+.sdHome section[class*="border-white/20"],
+.sdHome div[class*="border-white/20"],
+.sdHome article[class*="border-white/20"] {
+  border-color: var(--outline-primary);
+}
+
+.sdHome :global(.border-white\/10),
+.sdHome :global(.border-white\/8),
+.sdHome :global(.border-white\/5) {
+  border-color: var(--outline-secondary);
+}
+
+.sdHome :global(.bg-white\/\[0\.02\]),
+.sdHome :global(.bg-white\/\[0\.03\]),
+.sdHome :global(.bg-white\/\[0\.035\]),
+.sdHome :global(.bg-white\/\[0\.04\]),
+.sdHome :global(.bg-white\/\[0\.06\]),
+.sdHome :global(.bg-white\/5) {
+  background-color: var(--panel-fill);
+}
+
+.sdHome :global(.h-px.bg-white\/10),
+.sdHome :global(.w-px.bg-white\/10) {
+  background-color: var(--rule);
+}
+
+.sdHome a[class*="border-white/"],
+.sdHome span[class*="border-white/"],
+.sdHome button[class*="border-white/"] {
+  border-color: var(--cta-outline);
+  color: var(--cta-text);
+}
+
+.sdHome a[class*="border-white/"]:hover,
+.sdHome span[class*="border-white/"]:hover,
+.sdHome button[class*="border-white/"]:hover {
+  border-color: rgba(210, 199, 180, 0.24);
+  color: rgba(216, 224, 228, 0.92);
+}
+
+.sdHome a:not([class*="rounded-full"]):not([class*="border"]):not([class*="uppercase"]) {
+  color: var(--link);
+}
+
+.sdHome a:not([class*="rounded-full"]):not([class*="border"]):not([class*="uppercase"]):hover {
+  color: rgba(210, 199, 180, 0.85);
+}
+
+.sdHome :global(.bg-sky-300\/60) {
+  background-color: var(--bullet);
+}
+
+.sdHome :global(.synerva-playbook-form input[type="email"]) {
+  border-color: var(--outline-primary);
+  background-color: var(--panel-fill);
+  color: var(--ink-editorial);
+}
+
+.sdHome :global(.synerva-playbook-form input[type="email"]::placeholder) {
+  color: var(--ink-structural);
+}
+
+.sdHome :global(.synerva-playbook-form input[type="email"]:focus) {
+  border-color: var(--outline-secondary);
+}
+
+.sdHome :global(.synerva-playbook-form .form-microcopy) {
+  color: var(--ink-structural);
+}
+
+.sdHome :global(#narrative .bubble-drift) {
+  --ink-current: var(--ink-analytical);
+}
+
+.sdHome :global(#systems-that-hold) {
+  --ink-current: var(--ink-analytical);
+}
+
+.sdHome :global(#systems .max-w-3xl) {
+  --ink-current: var(--ink-analytical);
+}
+
+.sdHome :global(#about .space-y-3) {
+  --ink-current: var(--ink-human);
+}
+
+.sdHome :global(#synerva-dimensions p),
+.sdHome :global(#publications p),
+.sdHome :global(#merch p) {
+  color: var(--ink-editorial);
+}
+
+.sdHome :global(#synerva-dimensions .text-white\/60),
+.sdHome :global(#publications .text-white\/55),
+.sdHome :global(#merch .text-white\/50),
+.sdHome :global(#merch .text-white\/60) {
+  color: var(--ink-structural);
+}

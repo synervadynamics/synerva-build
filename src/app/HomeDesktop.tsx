@@ -14,10 +14,13 @@ import { SystemsThatHoldSection } from "@/components/SystemsThatHoldSection";
 import { MainHero } from "@/app/homepage/MainHero";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import HomepageScrollGlow from "@/components/HomepageScrollGlow";
+import styles from "@/app/homepage/homepage.module.css";
 
 export default function HomeDesktop() {
   return (
-    <main className="relative bg-[#0E1514] text-white backuphomepage backuphomepage-variant">
+    <main
+      className={`sd-home ${styles.sdHome} relative bg-[#0E1514] text-white backuphomepage backuphomepage-variant`}
+    >
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <HomepageScrollGlow />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
