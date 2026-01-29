@@ -121,7 +121,7 @@
 }
 
 .sdHome .filled-panel {
-  background-color: var(--panel-fill);
+  background-color: var(--panel-fill) !important;
 }
 
 .sdHome :global(.synerva-playbook-form input[type="email"]) {
