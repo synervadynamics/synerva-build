@@ -1,0 +1,21 @@
+.merchPage {
+  --merch-overlay: rgba(14, 20, 22, 0.46);
+  --merch-outline-primary: #2B3438;
+  --merch-outline-secondary: #232A2D;
+  --merch-panel-fill: rgba(18, 24, 26, 0.62);
+  --merch-divider: #2A3134;
+  --merch-cta-outline: #3A4448;
+  --merch-cta-text: #E2E6E4;
+  --merch-link: #C9D2CE;
+  --merch-bullet: #6F7C78;
+  --merch-overlay-line: #2E383B;
+  --merch-overlay-label: #8F9B97;
+  --ink-editorial: #E4E8E6;
+  --ink-structural: #C7D0CC;
+  --ink-analytical: #AEB8B4;
+  --ink-deemphasized: #8F9B97;
+  color: var(--ink-editorial);
+}
+.merchPage :global(.contentOverlay) {
+  background: var(--merch-overlay);
+}
