@@ -229,12 +229,9 @@ export default function VerisensePageClient() {
                 >
                   Work with Synerva
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex rounded-full border border-white/50 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                >
-                  Download the Technical Brief
-                </Link>
+                <span className="inline-flex cursor-not-allowed rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                  Downloadable Technical Brief Coming Soon
+                </span>
               </div>
             </div>
             <div className="flex items-center justify-center lg:-mr-6">
