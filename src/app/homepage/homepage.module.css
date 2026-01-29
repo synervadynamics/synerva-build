@@ -4,6 +4,7 @@
   --outline-secondary: rgba(199, 210, 216, 0.08);
   --divider-rule: rgba(199, 210, 216, 0.10);
   --panel-fill: rgba(11, 17, 21, 0.58);
+  --panel-fill-focus: rgba(15, 20, 24, 0.65);
   --cta-outline: rgba(210, 199, 180, 0.18);
   --cta-text: rgba(216, 224, 228, 0.86);
   --link-color: rgba(210, 199, 180, 0.72);
@@ -112,7 +113,7 @@
 }
 
 .sdHome a:not([class*="rounded-full"]):not([class*="border"]):not([class*="uppercase"]):hover {
-  color: rgba(210, 199, 180, 0.85);
+  color: rgba(210, 199, 180, 0.9);
 }
 
 .sdHome :global(.bg-sky-300\/60) {
@@ -135,6 +136,7 @@
 
 .sdHome :global(.synerva-playbook-form input[type="email"]:focus) {
   border-color: var(--outline-secondary);
+  background-color: var(--panel-fill-focus);
 }
 
 .sdHome :global(.synerva-playbook-form .form-microcopy) {
