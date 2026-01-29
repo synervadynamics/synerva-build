@@ -319,7 +319,7 @@ export const copy = {
       {
         title: "Verisense",
         headline: "Verisense",
-        body: "Signals that shape decisions before they harden into conclusions.",
+        body: "Signal clarity at the point of decision.",
         image: "/homepage-post-12-25-2025/verisense_4x5_exact.png",
         imageAlt: "Verisense interface preview",
       },
