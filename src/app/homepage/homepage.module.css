@@ -3,8 +3,8 @@
   --outline-primary: rgba(199, 210, 216, 0.12);
   --outline-secondary: rgba(199, 210, 216, 0.08);
   --divider-rule: rgba(199, 210, 216, 0.10);
-  --panel-fill: rgba(11, 17, 21, 0.58);
-  --panel-fill-focus: rgba(15, 20, 24, 0.65);
+  --panel-fill: transparent;
+  --panel-fill-focus: transparent;
   --cta-outline: rgba(210, 199, 180, 0.18);
   --cta-text: rgba(216, 224, 228, 0.86);
   --link-color: rgba(210, 199, 180, 0.72);
@@ -174,4 +174,48 @@
 .sdHome :global(#merch .text-white\/50),
 .sdHome :global(#merch .text-white\/60) {
   color: var(--ink-structural);
+}
+
+.sdHome :global(#systems-that-hold .dsr-room) {
+  background-color: rgba(11, 17, 21, 0.58);
+}
+
+.sdHome :global(#preview-access > div > div) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.sdHome :global(#synerva-dimensions > .pointer-events-none) {
+  display: none;
+}
+
+.sdHome :global(#synerva-dimensions [class*="shadow-"]) {
+  box-shadow: none;
+}
+
+.sdHome :global(#philosophy .bubble-drift) {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.sdHome :global(#merch [class*="shadow-"]) {
+  box-shadow: none;
+}
+
+.sdHome :global(#merch [style*="radial-gradient"]) {
+  background: none !important;
+}
+
+.sdHome :global(#about > div > div) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.sdHome :global(footer > div) {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }

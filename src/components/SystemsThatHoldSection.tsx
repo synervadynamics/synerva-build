@@ -19,7 +19,7 @@ export const SystemsThatHoldSection = ({
     portraitPairClassName ??
     `grid ${alignClassName} items-stretch gap-4 md:grid-cols-2 md:gap-5 lg:gap-6`;
   const content = (
-    <div className="filled-panel rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
+    <div className="dsr-room filled-panel rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
       <div className="flex flex-col gap-8">
         <div className={alignClassName}>
           <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/65">

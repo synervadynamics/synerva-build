@@ -268,13 +268,13 @@ export default function MerchCatalog() {
       {categories.map((category, categoryIndex) => (
         <section key={category.id} id={category.id} className="space-y-6">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+            <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--ink-structural)]">
               Merch category
             </p>
-            <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h3 className="text-2xl font-semibold tracking-tight text-[color:var(--ink-structural)] sm:text-3xl">
               {category.title}
             </h3>
-            <p className="text-base text-white/70 sm:text-lg">
+            <p className="text-base text-[color:var(--ink-analytical)] sm:text-lg">
               {category.description}
             </p>
           </div>
@@ -284,7 +284,7 @@ export default function MerchCatalog() {
                 key={item.name}
                 type="button"
                 onClick={() => openLightbox(category.id, itemIndex)}
-                className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.03] text-left shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition hover:border-white/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)] text-left shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition hover:border-[color:var(--merch-outline-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--merch-outline-primary)]"
               >
                 <div className="relative aspect-[3/2] w-full">
                   <Image
@@ -297,7 +297,7 @@ export default function MerchCatalog() {
                   />
                 </div>
                 <div className="flex w-full items-center justify-between px-5 pb-5 pt-2">
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-sm font-semibold text-[color:var(--ink-primary)]">
                     {item.name}
                   </span>
                 </div>
@@ -309,7 +309,7 @@ export default function MerchCatalog() {
 
       {isOpen && activeCategory && activeItem ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[color:var(--merch-panel-fill)] px-4 py-6 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="merch-lightbox-title"
@@ -322,10 +322,10 @@ export default function MerchCatalog() {
             tabIndex={-1}
           />
           <div ref={modalRef} className="relative z-10 w-full max-w-6xl">
-            <div className="rounded-[2.5rem] border border-white/12 bg-black/70 p-6 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.9)]">
+            <div className="rounded-[2.5rem] border border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)] p-6 shadow-[0_40px_140px_-90px_rgba(0,0,0,0.9)]">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                  <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--ink-structural)]">
                     {activeCategory.title}
                   </p>
                   <h3
@@ -339,7 +339,7 @@ export default function MerchCatalog() {
                   <button
                     type="button"
                     onClick={handleZoomOut}
-                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    className="rounded-full border border-[color:var(--merch-outline-secondary)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--ink-analytical)] transition hover:opacity-90"
                     aria-label="Zoom out"
                   >
                     -
@@ -347,7 +347,7 @@ export default function MerchCatalog() {
                   <button
                     type="button"
                     onClick={handleZoomIn}
-                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    className="rounded-full border border-[color:var(--merch-outline-secondary)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--ink-analytical)] transition hover:opacity-90"
                     aria-label="Zoom in"
                   >
                     +
@@ -355,14 +355,14 @@ export default function MerchCatalog() {
                   <button
                     type="button"
                     onClick={handleZoomReset}
-                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    className="rounded-full border border-[color:var(--merch-outline-secondary)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--ink-analytical)] transition hover:opacity-90"
                   >
                     Reset
                   </button>
                   <button
                     type="button"
                     onClick={closeLightbox}
-                    className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/40 hover:text-white"
+                    className="rounded-full border border-[color:var(--merch-outline-secondary)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--ink-analytical)] transition hover:opacity-90"
                   >
                     Close
                   </button>
@@ -372,7 +372,7 @@ export default function MerchCatalog() {
               <div className="relative mt-5">
                 <div
                   ref={containerRef}
-                  className={`relative flex h-[70vh] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-[0_24px_80px_-60px_rgba(0,0,0,0.8)] touch-none ${
+                  className={`relative flex h-[70vh] w-full items-center justify-center overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] shadow-[0_24px_80px_-60px_rgba(0,0,0,0.8)] touch-none ${
                     zoom > MIN_ZOOM
                       ? "cursor-grab active:cursor-grabbing"
                       : "cursor-default"
@@ -402,7 +402,7 @@ export default function MerchCatalog() {
                     <button
                       type="button"
                       onClick={showPrev}
-                      className="rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
+                      className="rounded-full border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] px-3 py-2 text-sm font-medium text-[color:var(--ink-primary)] shadow transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--merch-outline-primary)]"
                       aria-label="Previous shirt"
                     >
                       Prev
@@ -412,7 +412,7 @@ export default function MerchCatalog() {
                     <button
                       type="button"
                       onClick={showNext}
-                      className="rounded-full bg-white/10 px-3 py-2 text-sm font-medium text-white shadow hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]"
+                      className="rounded-full border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] px-3 py-2 text-sm font-medium text-[color:var(--ink-primary)] shadow transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--merch-outline-primary)]"
                       aria-label="Next shirt"
                     >
                       Next
@@ -420,7 +420,7 @@ export default function MerchCatalog() {
                   </div>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between text-sm text-white/70">
+                <div className="mt-4 flex items-center justify-between text-sm text-[color:var(--ink-analytical)]">
                   <span>
                     {activeIndex + 1} of {items.length}
                   </span>
@@ -437,8 +437,8 @@ export default function MerchCatalog() {
                       aria-current={index === activeIndex}
                       className={`relative h-16 w-24 flex-none overflow-hidden rounded-xl border transition ${
                         index === activeIndex
-                          ? "border-white/70 bg-white/10"
-                          : "border-white/10 bg-white/5 hover:border-white/30"
+                          ? "border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)]"
+                          : "border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] hover:border-[color:var(--merch-outline-primary)]"
                       }`}
                     >
                       <Image
