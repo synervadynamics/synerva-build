@@ -134,10 +134,10 @@ export default function VerisensePageClient() {
             </div>
           </div>
         </section>
-        <div className="px-6 sm:px-8 lg:px-12">
+        <div className="px-6 py-10 sm:px-8 sm:py-12 lg:px-12">
           <div className="mx-auto max-w-6xl">
             <CascadingText
-              className="py-6 text-white/70"
+              className="text-white/70"
               items={[
                 "Structure before interpretation.",
                 "Context compounds.",
