@@ -90,7 +90,7 @@ export default function VerisensePageClient() {
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="px-6 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:px-12 lg:pb-28 lg:pt-32">
-          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/14 bg-black/55 p-8 sm:p-10 lg:p-12">
+          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/14 bg-black/35 p-8 sm:p-10 lg:p-12">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-start">
               <div className="max-w-3xl">
                 <div className="space-y-5 sm:space-y-6">
@@ -111,7 +111,7 @@ export default function VerisensePageClient() {
                 <div className="mt-10 max-w-3xl text-base leading-relaxed text-white/75 sm:mt-12">
                   <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
                 </div>
-                <div className="mt-10 inline-flex flex-wrap gap-5 rounded-full border border-white/15 bg-black/45 px-5 py-3 text-sm text-white/70 sm:mt-12">
+                <div className="mt-10 inline-flex flex-wrap gap-5 rounded-full border border-white/15 bg-black/25 px-5 py-3 text-sm text-white/70 sm:mt-12">
                   <Link href="/contact" className="transition hover:text-white">
                     Work with Synerva
                   </Link>
@@ -122,7 +122,7 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex justify-start lg:justify-end">
                 <div
-                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-white/12 bg-black/45 p-5 text-center text-sm text-white/55 sm:max-w-sm"
+                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-white/12 bg-black/25 p-5 text-center text-sm text-white/55 sm:max-w-sm"
                   role="img"
                   aria-label="Verisense hero image placeholder"
                 >
@@ -149,7 +149,7 @@ export default function VerisensePageClient() {
         </div>
 
         <section className="px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/60 p-10 sm:p-12 lg:p-14">
+          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/25 bg-black/40 p-10 sm:p-12 lg:p-14">
             <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
               <div className="max-w-xl space-y-6 text-base leading-relaxed text-white/75">
                 <div className="space-y-3">
@@ -165,11 +165,11 @@ export default function VerisensePageClient() {
               <div className="flex justify-start">
                 <div className="w-full max-w-md">
                   <div
-                    className="aspect-[4/5] w-full rounded-[2.5rem] bg-black/50 p-6"
+                    className="aspect-[4/5] w-full rounded-[2.5rem] bg-black/30 p-6"
                     role="img"
                     aria-label="Verisense instrument plate placeholder"
                   >
-                    <div className="flex h-full items-center justify-center rounded-[2rem] bg-black/60 text-center text-sm text-white/55">
+                    <div className="flex h-full items-center justify-center rounded-[2rem] bg-black/40 text-center text-sm text-white/55">
                       Instrument plate
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export default function VerisensePageClient() {
         </section>
 
         <section className="px-6 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/16 bg-black/40 p-8 sm:p-9 lg:p-10">
+          <div className="mx-auto max-w-6xl rounded-[3rem] border border-white/16 bg-black/25 p-8 sm:p-9 lg:p-10">
             <div className="space-y-4">
               <div className="space-y-2">
                 <h2 className="text-3xl leading-tight text-white sm:text-4xl">
@@ -236,7 +236,7 @@ export default function VerisensePageClient() {
                 artifacts designed to be inspected, questioned, and used.
               </p>
             </div>
-            <div className="rounded-[3rem] border border-white/12 bg-black/35 p-7 sm:p-8">
+            <div className="rounded-[3rem] border border-white/12 bg-black/22 p-7 sm:p-8">
               <div className="space-y-7">
                 {outputs.map((item) => (
                   <div key={item.title} className="space-y-2">
@@ -283,7 +283,7 @@ export default function VerisensePageClient() {
         </section>
 
         <section className="px-6 pb-24 sm:px-8 sm:pb-28 lg:px-12">
-          <div className="mx-auto max-w-5xl rounded-[3rem] border border-white/12 bg-black/35 p-8 sm:p-10">
+          <div className="mx-auto max-w-5xl rounded-[3rem] border border-white/12 bg-black/22 p-8 sm:p-10">
             <div className="space-y-8">
               <div className="space-y-3">
                 <h2 className="text-3xl leading-tight text-white sm:text-4xl">
