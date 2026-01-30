@@ -173,15 +173,15 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex justify-start">
                 <div className="w-full max-w-md">
-                  <div className="flex h-[300px] items-start overflow-hidden rounded-[2.5rem] sm:h-[340px] lg:h-[360px]">
-                    <div
-                      className="aspect-[4/5] w-full translate-y-0 bg-[#121416]/85 p-6"
-                      role="img"
-                      aria-label="Verisense instrument plate placeholder"
-                    >
-                      <div className="flex h-full items-start justify-center rounded-[2rem] bg-[#121416]/90 pt-6 text-center text-sm text-[#DCD8D1]/55">
-                        Instrument plate
-                      </div>
+                  <div className="flex h-[440px] items-start overflow-hidden rounded-[2.5rem] sm:h-[480px] lg:h-[520px]">
+                    <div className="relative aspect-[1024/1536] w-full">
+                      <Image
+                        src="/verisense-subapge/verisense-section-2.PNG"
+                        alt="Verisense instrument plate"
+                        fill
+                        className="rounded-[2rem] object-cover"
+                        sizes="(max-width: 1024px) 80vw, 320px"
+                      />
                     </div>
                   </div>
                 </div>
