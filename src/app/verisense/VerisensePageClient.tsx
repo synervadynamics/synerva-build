@@ -20,9 +20,9 @@ const heroParagraphs = [
 
 const instrumentParagraphs = [
   "Verisense is a diagnostic system for human communication. It models expression as structured signal, captured across voice, facial activity, posture, pacing, and language, then synchronized and evaluated over time.",
-  "Each signal stream is observed independently and fused into a unified analytical field. Facial tension, gaze behavior, vocal cadence, postural shifts, and linguistic structure are treated as dynamic variables whose significance emerges through alignment, divergence, persistence, and change. Communication is understood as behavior under conditions, not as isolated moments.",
+  "Each signal stream is observed independently and fused into a unified analytical field. Facial tension, gaze behavior, vocal cadence, postural shifts, and linguistic structure are treated as dynamic variables whose significance emerges through alignment, divergence, persistence, and change. Communication is understood as behavior under conditions, not isolated moments.",
   "The system operates temporally. Signals are tracked across sequences, compared against baselines, and weighted by context. What matters is trajectory: how patterns stabilize, escalate, resolve, or fracture as pressure increases. Meaning is derived from motion, not snapshots.",
-  "Verisense translates complexity into legible structure. Layered signal fields surface coherence, strain, and internal alignment as they develop, enabling insight into credibility and intent without collapsing human behavior into a single dimension.",
+  "Verisense translates complexity into legible structure. Layered signal fields surface coherence, strain, and internal alignment as they develop, enabling insight into credibility and intent without reducing human behavior to a single dimension.",
   "The result is clearer perception in high-stakes environments. Verisense reveals how delivery aligns with message, where communication holds, and where it begins to fail, sharpening human judgment by making subtle signal visible and comparable over time.",
 ] as const;
 
