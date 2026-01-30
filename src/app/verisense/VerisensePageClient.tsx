@@ -26,6 +26,11 @@ const instrumentParagraphs = [
   "The result is clearer perception in high-stakes environments. Verisense reveals how delivery aligns with message, where communication holds, and where it begins to fail, sharpening human judgment by making subtle signal visible and comparable over time.",
 ] as const;
 
+const workWithSynervaButtonClasses =
+  "rounded-full border border-[#E6E3DC]/70 bg-[#E6E3DC]/80 px-5 py-3 text-[0.85rem] font-semibold uppercase tracking-wide text-[#0D0D0D] transition hover:border-[#E6E3DC]/85 hover:text-[#0D0D0D]";
+const futureBriefButtonClasses =
+  "rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/75 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]/90 disabled:cursor-not-allowed disabled:opacity-60";
+
 const promiseBullets = [
   "See where communication holds, not just where it breaks",
   "Understand why a moment mattered, not just that it felt significant",
@@ -118,18 +123,16 @@ export default function VerisensePageClient() {
                   <p className="whitespace-pre-line">{heroParagraphs[3]}</p>
                 </div>
                 <div className="mt-10 flex flex-wrap gap-4 text-sm text-[#DCD8D1]/70 sm:mt-12">
-                  <Link
-                    href="/contact"
-                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/85 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]"
-                  >
+                  <Link href="/contact" className={workWithSynervaButtonClasses}>
                     Work with Synerva
                   </Link>
-                  <Link
-                    href="/contact"
-                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/75 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]/90"
+                  <button
+                    type="button"
+                    disabled
+                    className={futureBriefButtonClasses}
                   >
-                    Download the technical brief
-                  </Link>
+                    Technical brief coming soon
+                  </button>
                 </div>
               </div>
               <div className="flex justify-start lg:justify-end">
@@ -329,18 +332,16 @@ export default function VerisensePageClient() {
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4 text-sm text-[#DCD8D1]/70">
-                  <Link
-                    href="/contact"
-                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/85 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]"
-                  >
+                  <Link href="/contact" className={workWithSynervaButtonClasses}>
                     Work with Synerva
                   </Link>
-                  <Link
-                    href="/contact"
-                    className="rounded-full border border-[#E6E3DC]/70 px-5 py-3 text-[#DCD8D1]/75 transition hover:border-[#E6E3DC]/85 hover:text-[#DCD8D1]/90"
+                  <button
+                    type="button"
+                    disabled
+                    className={futureBriefButtonClasses}
                   >
-                    Download the technical brief
-                  </Link>
+                    Technical brief coming soon
+                  </button>
                 </div>
               </div>
               <div className="flex items-start justify-end">
