@@ -13,13 +13,10 @@ type Output = {
 
 const heroParagraphs = [
   "Communication already determines outcomes.\nVerisense exists to observe how.",
-  "Verisense is a diagnostic system for human communication. It models delivery as structured signal across voice, expression, posture, pacing, and language, tracked over time and interpreted in context.",
+  "Verisense is a diagnostic system for human communication. It models expression as structured signal, captured across voice, facial activity, posture, pacing, and language, then synchronized and evaluated over time. Each signal stream is observed independently and fused into a unified analytical field. Facial tension, gaze behavior, vocal cadence, postural shifts, and linguistic structure are treated as dynamic variables whose significance emerges through alignment, divergence, persistence, and change. Communication is understood as behavior under conditions, not as isolated moments. The system operates temporally. Signals are tracked across sequences, compared against baselines, and weighted by context. What matters is trajectory: how patterns stabilize, escalate, resolve, or fracture as pressure increases. Meaning is derived from motion, not snapshots. Verisense translates complexity into legible structure. Layered signal fields surface coherence, strain, suppression, and authenticity as they develop, allowing insight into credibility, intent, and internal alignment without collapsing human behavior into a single dimension. The result is clearer perception in high-stakes environments. Verisense reveals how delivery aligns with message, where communication holds, and where it begins to fail. It functions as an interpretive engine, sharpening human judgment by making subtle signal visible, comparable, and intelligible over time.",
   "The system can analyze communication from recorded interactions or from live communication streams, allowing signal to be examined retrospectively or as it unfolds.",
   "Its purpose is to surface patterns of strength, alignment, strain, and recovery,\nso judgment can operate on evidence rather than intuition\nwhen outcomes are at stake.",
 ] as const;
-
-const epistemicRestraint =
-  "Not to guess blindly.\nNot to confuse statistical inference with certainty.\nNot to flatten human behavior into scores without context.";
 
 const promiseBullets = [
   "See where communication holds, not just where it breaks",
@@ -163,13 +160,10 @@ export default function VerisensePageClient() {
               <div className="max-w-xl space-y-6 text-base leading-relaxed text-[#DCD8D1]/75">
                 <div className="space-y-3">
                   <h2 className="text-3xl leading-tight text-[#DCD8D1] sm:text-4xl">
-                    The Instrument
+                    How Expression Becomes Evidence
                   </h2>
                 </div>
                 <p className="whitespace-pre-line">{heroParagraphs[1]}</p>
-                <div className="space-y-2 text-sm text-[#DCD8D1]/60">
-                  <p className="whitespace-pre-line">{epistemicRestraint}</p>
-                </div>
               </div>
               <div className="flex justify-start">
                 <div className="w-full max-w-md">
