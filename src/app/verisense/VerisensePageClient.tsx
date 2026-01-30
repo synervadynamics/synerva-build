@@ -173,16 +173,14 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex justify-start">
                 <div className="w-full max-w-md">
-                  <div className="flex h-[440px] items-start overflow-hidden rounded-[2.5rem] sm:h-[480px] lg:h-[520px]">
-                    <div className="relative aspect-[9/16] w-full">
-                      <Image
-                        src="/verisense-subapge/verisense-section2b.png"
-                        alt="Verisense instrument plate"
-                        fill
-                        className="rounded-[2rem] object-cover"
-                        sizes="(max-width: 1024px) 80vw, 320px"
-                      />
-                    </div>
+                  <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45">
+                    <Image
+                      src="/verisense-subapge/verisense-section2b.png"
+                      alt="Verisense instrument plate"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 80vw, 320px"
+                    />
                   </div>
                 </div>
               </div>
