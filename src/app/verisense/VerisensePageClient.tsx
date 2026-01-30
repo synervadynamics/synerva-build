@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import { CascadingText } from "@/components/CascadingText";
@@ -127,13 +128,15 @@ export default function VerisensePageClient() {
                 </div>
               </div>
               <div className="flex justify-start lg:justify-end">
-                <div
-                  className="aspect-[1024/1536] w-full max-w-xs rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-5 text-center text-sm text-[#DCD8D1]/55 sm:max-w-sm"
-                  role="img"
-                  aria-label="Verisense hero image placeholder"
-                >
-                  <div className="flex h-full items-center justify-center rounded-[2rem] border border-[#E6E3DC]/45">
-                    1024:1536 image placeholder
+                <div className="aspect-[1024/1536] w-full max-w-xs rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-5 text-center text-sm text-[#DCD8D1]/55 sm:max-w-sm">
+                  <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-[#E6E3DC]/45">
+                    <Image
+                      src="/verisense-subapge/verisense_section1b.png"
+                      alt="Verisense hero visual"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 80vw, 320px"
+                    />
                   </div>
                 </div>
               </div>
