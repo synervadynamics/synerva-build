@@ -128,12 +128,12 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex justify-start lg:justify-end">
                 <div
-                  className="aspect-[9/16] w-full max-w-xs rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-5 text-center text-sm text-[#DCD8D1]/55 sm:max-w-sm"
+                  className="aspect-[1024/1536] w-full max-w-xs rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-5 text-center text-sm text-[#DCD8D1]/55 sm:max-w-sm"
                   role="img"
                   aria-label="Verisense hero image placeholder"
                 >
                   <div className="flex h-full items-center justify-center rounded-[2rem] border border-[#E6E3DC]/45">
-                    9:16 image placeholder
+                    1024:1536 image placeholder
                   </div>
                 </div>
               </div>
