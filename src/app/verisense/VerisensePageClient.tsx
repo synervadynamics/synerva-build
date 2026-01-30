@@ -346,12 +346,16 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex items-start justify-end">
                 <div className="w-full">
-                  <div
-                    className="min-h-[360px] w-full rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4 sm:min-h-[420px]"
-                    role="img"
-                    aria-label="Verisense commitments image placeholder"
-                  >
-                    <div className="h-full w-full rounded-[2rem] border border-[#E6E3DC]/45" />
+                  <div className="aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4 sm:p-6 lg:p-8">
+                    <div className="relative h-full w-full rounded-[2rem] border border-[#E6E3DC]/45">
+                      <Image
+                        src="/verisense-subapge/verisense-3.png"
+                        alt="Verisense System Commitments visual"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 80vw, 320px"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
