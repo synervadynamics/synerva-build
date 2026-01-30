@@ -131,7 +131,7 @@ export default function VerisensePageClient() {
                     disabled
                     className={futureBriefButtonClasses}
                   >
-                    Technical brief coming soon
+                    TECHNICAL BRIEF COMING SOON
                   </button>
                 </div>
               </div>

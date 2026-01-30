@@ -29,7 +29,7 @@ export const copy = {
     subhead:
       "Senior-level brand, systems, and execution—delivered in weeks instead of quarters. Strategy, design, web, and operations function as one coherent loop, removing the overhead, handoffs, and translation loss that slow traditional teams.",
     primaryCta: { label: "START WITH A 30-MINUTE PLAN", href: "/contact" },
-    secondaryCta: { label: "SEE PROOF OF LIFT", href: "/proof" },
+    secondaryCta: { label: "EXPLORE OFFERINGS", href: "https://synervadynamics.com/offerings" },
     video: {
       src: "/visuals/hero/hero_main_render.webp",
       poster: "/visuals/hero/hero_main_render.webp",
