@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "@/styles/globals.css";
 import { copy } from "@/data/copy";
 import GlobalBackground from "@/components/GlobalBackground";
+import SubpageHomeButton from "@/components/SubpageHomeButton";
 import ViewModeToggle from "@/components/ViewModeToggle";
 
 const metadataBase = new URL(copy.meta.url);
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         suppressHydrationWarning
       >
         <GlobalBackground />
+        <SubpageHomeButton />
         <div className="page-shell">{children}</div>
         <ViewModeToggle />
         <script
