@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { copy } from "@/data/copy";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
+import VideoPlaceholder from "@/components/VideoPlaceholder";
 
 export default function ContactPageClient() {
   return (
@@ -13,87 +14,133 @@ export default function ContactPageClient() {
       <div className="relative z-10">
         <section className="relative overflow-visible px-6 pt-28 sm:px-10 lg:px-16">
           <div className="relative mx-auto max-w-5xl">
-            <div className="glass-panel flex flex-col gap-5 rounded-[3rem] border border-white/10 p-10">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-                Contact
-              </p>
-              <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
-                Start a Conversation
-              </h1>
-              <p className="text-lg text-white/75">
-                If you’re reaching out, you likely have something specific in
-                mind.
-              </p>
-              <div className="space-y-2 text-base text-white/70">
-                <p>A deliverable.</p>
-                <p>A system that isn’t holding.</p>
+            <div className="rounded-[3rem] border border-[#E0DCD4] bg-white/[0.04] p-8 text-white shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:p-10">
+              <div className="max-w-3xl space-y-4 text-base text-white/80 sm:text-lg">
+                <h1 className="text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Start with context.
+                </h1>
                 <p>
-                  A piece of work that needs to move — cleanly and without
-                  drift.
+                  Synerva works with a small number of people at a time. Not as
+                  a posture, but as a requirement. Clarity, speed, and depth
+                  don’t survive crowds.
+                </p>
+                <p>This isn’t a generic contact form. It’s a threshold.</p>
+                <p>
+                  A place to start a conversation when the work calls for
+                  judgment, not volume.
+                </p>
+                <p>
+                  If that sounds like what you’re building, you’re in the right
+                  place.
                 </p>
               </div>
-              <p className="text-base text-white/70">
-                This page is simply the next step.
-              </p>
             </div>
           </div>
         </section>
         <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
           <div className="relative mx-auto max-w-5xl">
-            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                What to Include
-              </p>
-              <div className="mt-4 space-y-3 text-base text-white/75">
-                <p>You don’t need to sell yourself.</p>
-                <p>You don’t need a perfect brief.</p>
-                <p>A short note is enough.</p>
+            <div className="rounded-[3rem] border border-[#E0DCD4] bg-white/[0.04] p-8 text-white shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:p-10">
+              <div className="space-y-4">
+                <h2 className="text-2xl text-white sm:text-3xl">
+                  How engagement usually works
+                </h2>
+                <div className="grid gap-6 text-base text-white/80 sm:text-lg lg:grid-cols-2">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">
+                      Operator Hourly
+                    </h3>
+                    <p className="text-white/75">
+                      Senior-level strategy and execution applied exactly where
+                      leverage is highest. Built for moments when thinking and
+                      doing can’t be separated.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">
+                      Project-Based Work
+                    </h3>
+                    <p className="text-white/75">
+                      Defined outcomes. Tight timelines. Clear ownership. Best
+                      suited for launches, restructures, and work that needs to
+                      ship cleanly.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">
+                      Advisory / Ongoing Support
+                    </h3>
+                    <p className="text-white/75">
+                      For leaders who need a steady signal rather than a one-off
+                      intervention. Quiet, continuous, and oriented around
+                      outcomes, not optics.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">Other</h3>
+                    <p className="text-white/75">
+                      If the work doesn’t fit neatly into a category, describe
+                      the problem, not the format.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="mt-5 space-y-3 text-base text-white/70">
-                <p>Please include:</p>
-                <ul className="list-disc space-y-2 pl-5 text-base text-white/70">
-                  <li>what you want delivered</li>
-                  <li>the timeline you’re targeting</li>
-                  <li>any constraints that matter</li>
-                </ul>
-                <p>That’s it.</p>
-              </div>
-              <p className="mt-5 text-base text-white/70">
-                Brief is fine. Clarity matters more than polish.
-              </p>
             </div>
           </div>
         </section>
         <section className="relative overflow-visible px-6 py-14 sm:px-10 lg:px-16">
           <div className="relative mx-auto max-w-5xl">
-            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-                What Happens Next
-              </p>
-              <div className="mt-4 space-y-3 text-base text-white/75">
-                <p>I’ll review your note personally.</p>
-                <p>
-                  If it’s a fit, I’ll confirm scope, timeline, and the best way
-                  to engage.
-                </p>
-                <p>If it’s not, I’ll tell you directly.</p>
-                <p>Either way, you’ll get a clear answer.</p>
+            <div className="rounded-[3rem] border border-[#E0DCD4] bg-white/[0.04] p-8 text-white shadow-[0_24px_70px_rgba(0,0,0,0.35)] sm:p-10">
+              <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+                <div className="flex justify-center lg:justify-start">
+                  <div className="w-full max-w-md rounded-2xl border border-[#E0DCD4] bg-white/[0.04] p-3">
+                    <VideoPlaceholder
+                      label="Contact threshold image"
+                      ratio="aspect-[5/4]"
+                      className="rounded-2xl"
+                      variant="neutral"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4 text-base text-white/80 sm:text-lg">
+                  <p>
+                    The work Synerva does tends to sit upstream of aesthetics
+                    and downstream of chaos.
+                  </p>
+                  <p>
+                    It’s where ideas are forced to become operational. Where
+                    decisions are tested against reality. Where momentum either
+                    compounds or collapses.
+                  </p>
+                  <p>
+                    If you’re here to explore possibilities, this may not be
+                    the right door. If you’re here because something needs to
+                    work, it might be.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section className="relative overflow-visible px-6 py-16 sm:px-10 lg:px-16">
-          <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="glass-panel rounded-3xl border border-white/10 p-8 sm:p-10">
-              <div className="space-y-2">
-                <h2 className="text-2xl text-white">Get in Touch</h2>
-                <p className="text-sm text-white/70">
-                  Use the form below to send a message.
-                </p>
+          <div className="relative mx-auto max-w-6xl">
+            <div className="rounded-[3rem] border border-[#E0DCD4] bg-white/[0.06] p-8 text-white shadow-[0_32px_90px_rgba(0,0,0,0.45)] sm:p-10 lg:p-12">
+              <div className="max-w-3xl space-y-4">
+                <h2 className="text-3xl text-white sm:text-4xl">
+                  Initiate the conversation.
+                </h2>
+                <div className="space-y-3 text-base text-white/80 sm:text-lg">
+                  <p>Clarity matters more than polish.</p>
+                  <p>
+                    You don’t need perfect language. You do need context. What
+                    you’re trying to do. Where it’s breaking down. Why it
+                    matters now.
+                  </p>
+                  <p>If there’s a fit, you’ll hear back.</p>
+                  <p>If there isn’t, you’ll still get a straight answer.</p>
+                </div>
               </div>
               <ContactForm />
             </div>
-            <div className="hidden lg:block" aria-hidden="true" />
           </div>
         </section>
         <Footer />
@@ -157,7 +204,7 @@ function ContactForm() {
       </div>
       <div>
         <label className="text-sm text-white/70" htmlFor="message">
-          Message (what you want delivered + timeline)
+          Message (context, constraints, timeline)
         </label>
         <textarea
           className="mt-2 min-h-[140px] w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-white/30 focus:border-white/40"
