@@ -369,6 +369,7 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: none;
+  white-space: nowrap;
   transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
