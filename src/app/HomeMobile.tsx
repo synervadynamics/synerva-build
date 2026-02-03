@@ -382,15 +382,7 @@ export default function HomeMobile() {
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
           </p>
-          <div className={styles.finalCtaImage}>
-            <Image
-              src="/mobile-images/homepage/next-step.PNG"
-              alt=""
-              fill
-              className="object-cover"
-              priority={false}
-            />
-          </div>
+          <div className={styles.finalCtaImage} aria-hidden />
           <h2 className="text-[1.35rem] font-medium text-cyan-300">
             Start With a Plan
           </h2>
