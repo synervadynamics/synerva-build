@@ -1000,6 +1000,14 @@ html[data-view="mobile"] .view-mobile-only {
   will-change: transform, opacity;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --signal-cyan: #3FD6E6;
+    --panel-outline-cyan: #2BB8C6;
+    --image-outline-cyan: #1F8F9C;
+  }
+}
+
 /* =========================================
    WHAT’S DELIVERED — SCROLL TEXT STABILITY
 ========================================= */

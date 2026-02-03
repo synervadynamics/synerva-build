@@ -221,12 +221,6 @@
 }
 
 @media (max-width: 768px) {
-  :global(:root) {
-    --signal-cyan: #3FD6E6;
-    --panel-outline-cyan: #2BB8C6;
-    --image-outline-cyan: #1F8F9C;
-  }
-
   .sdHome h1,
   .sdHome h2,
   .sdHome h3,
