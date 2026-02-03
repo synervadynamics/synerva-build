@@ -221,24 +221,51 @@
 }
 
 @media (max-width: 768px) {
-  .sdHome {
+  :global(:root) {
     --signal-cyan: #3FD6E6;
     --panel-outline-cyan: #2BB8C6;
-    --ink-editorial: #FFFFFF;
-    --ink-analytical: #FFFFFF;
-    --ink-human: #FFFFFF;
-    --ink-structural: #FFFFFF;
+    --image-outline-cyan: #1F8F9C;
   }
 
   .sdHome h1,
   .sdHome h2,
   .sdHome h3,
-  .sdHome h4 {
+  .sdHome :global(.section-label),
+  .sdHome :global(.section-title),
+  .sdHome :global(.section-heading) {
     color: var(--signal-cyan) !important;
   }
 
-  .sdHome p[class*="uppercase"],
-  .sdHome span[class*="uppercase"] {
+  .sdHome :global(.panel) h1,
+  .sdHome :global(.panel) h2,
+  .sdHome :global(.panel) h3 {
     color: var(--signal-cyan) !important;
+  }
+
+  .sdHome p,
+  .sdHome :global(.body-text),
+  .sdHome :global(.panel) p {
+    color: #FFFFFF !important;
+  }
+
+  .sdHome :global(.panel),
+  .sdHome :global(.container-panel),
+  .sdHome :global(.content-panel) {
+    border: 1px solid var(--panel-outline-cyan) !important;
+    box-shadow: none !important;
+  }
+
+  .sdHome img,
+  .sdHome :global(.image-card) img,
+  .sdHome :global(.hero-image) img {
+    border: 1px solid var(--image-outline-cyan) !important;
+  }
+
+  .sdHome button,
+  .sdHome :global(.button),
+  .sdHome :global(.cta-button) {
+    background: inherit !important;
+    color: inherit !important;
+    border: inherit !important;
   }
 }
