@@ -6,11 +6,6 @@ import styles from "@/app/mobile1/mobile1.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
 export default function HomeMobile() {
-  const ctaBaseClass =
-    "inline-flex w-fit items-center justify-center rounded-full border px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.28em]";
-  const primaryCtaClass = `${ctaBaseClass} border-white/30 bg-white/[0.06] text-white/90`;
-  const secondaryCtaClass = `${ctaBaseClass} border-white/20 text-white/65`;
-
   return (
     <main className={`sd-home ${homeStyles.sdHome} text-white`}>
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
@@ -39,8 +34,8 @@ export default function HomeMobile() {
             className="relative aspect-[1640/981] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/visuals/hero/hero_main_render.webp"
-              alt="Synerva system interface"
+              src="/homepage-post-12-25-2025/synerva-hero-5 (1).webp"
+              alt="Synerva Dynamics system interface"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className="object-contain"
@@ -59,7 +54,7 @@ export default function HomeMobile() {
               Senior-level strategy, systems, and execution—delivered as one
               coherent operating loop.
             </p>
-            <Link href="/contact" className={primaryCtaClass}>
+            <Link href="/contact" className={styles.synervaCta}>
               START WITH A 30-MINUTE PLAN →
             </Link>
           </div>
@@ -77,7 +72,7 @@ export default function HomeMobile() {
             <li>Judgment gets replaced by interfaces and rituals.</li>
             <li>Momentum resets instead of compounding.</li>
           </ul>
-          <Link href="/start-here" className={secondaryCtaClass}>
+          <Link href="/start-here" className={styles.synervaCtaSecondary}>
             READ HOW THIS WORKS →
           </Link>
         </section>

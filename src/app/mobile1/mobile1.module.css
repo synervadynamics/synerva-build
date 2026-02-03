@@ -132,3 +132,83 @@
   height: 100%;
   object-fit: cover;
 }
+
+.synervaCta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(88, 229, 255, 0.35);
+  background: var(--bg-elevated);
+  color: rgba(230, 247, 255, 0.92);
+  padding: 0.75rem 1.35rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  box-shadow:
+    0 0 0 1px rgba(88, 229, 255, 0.18),
+    0 14px 34px rgba(0, 170, 255, 0.22);
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.synervaCta::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.synervaCta:hover {
+  border-color: rgba(88, 229, 255, 0.5);
+  color: rgba(240, 252, 255, 0.98);
+  box-shadow:
+    0 0 0 1px rgba(88, 229, 255, 0.28),
+    0 16px 38px rgba(0, 170, 255, 0.28);
+}
+
+.synervaCtaSecondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(88, 229, 255, 0.2);
+  background: rgba(8, 13, 22, 0.65);
+  color: rgba(200, 228, 240, 0.78);
+  padding: 0.7rem 1.2rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.synervaCtaSecondary::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.synervaCtaSecondary:hover {
+  border-color: rgba(88, 229, 255, 0.35);
+  color: rgba(214, 240, 250, 0.9);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
