@@ -157,7 +157,15 @@ export default function HomeMobile() {
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW TO ENGAGE
           </p>
-          <div aria-hidden className={styles.offeringsImage} />
+          <div className={styles.offeringsImage} aria-hidden>
+            <Image
+              src="/mobile-images/homepage/offerings-2.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <h2 className="text-[1.35rem] font-light leading-snug text-white">
             Offerings
           </h2>
