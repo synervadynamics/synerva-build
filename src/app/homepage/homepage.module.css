@@ -221,12 +221,25 @@
 }
 
 @media (max-width: 768px) {
+  .sdHome {
+    --signal-cyan: #3FD6E6;
+    --panel-outline-cyan: #2BB8C6;
+    --image-outline-cyan: #1F8F9C;
+  }
+
   .sdHome h1,
   .sdHome h2,
   .sdHome h3,
   .sdHome :global(.section-label),
   .sdHome :global(.section-title),
   .sdHome :global(.section-heading) {
+    color: var(--signal-cyan) !important;
+  }
+
+  .sdHome p.uppercase,
+  .sdHome span.uppercase,
+  .sdHome p[class*="uppercase"],
+  .sdHome span[class*="uppercase"] {
     color: var(--signal-cyan) !important;
   }
 
@@ -244,7 +257,14 @@
 
   .sdHome :global(.panel),
   .sdHome :global(.container-panel),
-  .sdHome :global(.content-panel) {
+  .sdHome :global(.content-panel),
+  .sdHome section[class*="border-white/20"],
+  .sdHome div[class*="border-white/20"],
+  .sdHome article[class*="border-white/20"],
+  .sdHome :global(.border-white\/12),
+  .sdHome :global(.border-white\/10),
+  .sdHome :global(.border-white\/8),
+  .sdHome :global(.border-white\/5) {
     border: 1px solid var(--panel-outline-cyan) !important;
     box-shadow: none !important;
   }
