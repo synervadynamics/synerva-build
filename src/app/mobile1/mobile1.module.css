@@ -263,7 +263,7 @@
 .systemsImage {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   border-radius: 12px;
   border: 1px solid rgba(120, 150, 170, 0.18);
   background: rgba(10, 16, 22, 0.5);
@@ -284,7 +284,7 @@
 .offeringsImage {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   max-height: 160px;
   border-radius: 12px;
   border: 1px solid rgba(120, 150, 170, 0.16);
