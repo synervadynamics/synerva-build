@@ -262,7 +262,7 @@ export default function HomeMobile() {
               <div className={styles.publicationCovers} aria-hidden>
                 <div className={styles.publicationCover}>
                   <Image
-                    src="/mobile-images/homepage/the-rockstar-server-playbook.png"
+                    src="/mobile-images/homepage/the-rockstar-server-playbook-2.png"
                     alt=""
                     fill
                     sizes="(max-width: 768px) 50vw, 180px"
@@ -285,7 +285,7 @@ export default function HomeMobile() {
             </div>
             <div className="flex flex-col gap-3">
               <p className="text-[1rem] font-medium text-white">
-                Synerva Dimensions
+                Synerva Dimensions Artwork
               </p>
               <p className="text-[0.9rem] leading-[1.45] text-white/70">
                 Visual research where structure, attention, and coherence are
@@ -293,13 +293,29 @@ export default function HomeMobile() {
               </p>
               <div className={styles.publicationCovers}>
                 <div className="flex flex-col gap-2">
-                  <div className={styles.publicationCover} aria-hidden />
+                  <div className={styles.publicationCover} aria-hidden>
+                    <Image
+                      src="/mobile-images/homepage/the-fractured-self.webp"
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 50vw, 180px"
+                      className="object-cover"
+                    />
+                  </div>
                   <Link href="/dimensions/quiet-divine" className={styles.secondaryCta}>
                     Quiet Divine →
                   </Link>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div className={styles.publicationCover} aria-hidden />
+                  <div className={styles.publicationCover} aria-hidden>
+                    <Image
+                      src="/mobile-images/homepage/surface-tension.png"
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 50vw, 180px"
+                      className="object-cover"
+                    />
+                  </div>
                   <Link
                     href="/dimensions/surface-tension"
                     className={styles.secondaryCta}
