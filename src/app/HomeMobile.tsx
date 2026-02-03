@@ -383,6 +383,13 @@ export default function HomeMobile() {
             NEXT STEP
           </p>
           <div className={styles.finalCtaImage} aria-hidden>
+            <Image
+              src="/mobile-images/homepage/next-step.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
           </div>
           <h2 className="text-[1.45rem] font-light leading-snug text-white">
             Start With a Plan
