@@ -219,3 +219,26 @@
   box-shadow: none;
   backdrop-filter: none;
 }
+
+@media (max-width: 768px) {
+  .sdHome {
+    --signal-cyan: #3FD6E6;
+    --panel-outline-cyan: #2BB8C6;
+    --ink-editorial: #FFFFFF;
+    --ink-analytical: #FFFFFF;
+    --ink-human: #FFFFFF;
+    --ink-structural: #FFFFFF;
+  }
+
+  .sdHome h1,
+  .sdHome h2,
+  .sdHome h3,
+  .sdHome h4 {
+    color: var(--signal-cyan);
+  }
+
+  .sdHome p[class*="uppercase"],
+  .sdHome span[class*="uppercase"] {
+    color: var(--signal-cyan);
+  }
+}
