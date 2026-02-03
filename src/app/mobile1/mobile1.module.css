@@ -210,7 +210,7 @@
 }
 
 .panelBlue {
-  border-color: rgba(120, 190, 230, 0.35) !important;
-  background-color: rgba(18, 42, 62, 0.62) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(150, 210, 240, 0.6) !important;
+  border-width: 1.5px !important;
+  background-color: transparent !important;
 }

@@ -31,14 +31,14 @@ export default function HomeMobile() {
           </div>
           <div
             aria-hidden
-            className="relative aspect-[1640/981] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
+            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
               src="/homepage-post-12-25-2025/synerva-hero-5 (1).webp"
               alt="Synerva Dynamics system interface"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
+              className="rounded-2xl object-contain"
               priority
             />
           </div>
