@@ -131,7 +131,15 @@ export default function HomeMobile() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <div aria-hidden className={styles.systemsImage} />
+              <div className={styles.systemsImage} aria-hidden>
+                <Image
+                  src="/mobile-images/homepage/systems-that-hold-2.PNG"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  className="object-cover"
+                />
+              </div>
               <p className="text-[0.9rem] leading-[1.35] text-white/80">
                 Clarity under load.
                 <br />
