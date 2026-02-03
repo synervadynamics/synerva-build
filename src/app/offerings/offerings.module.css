@@ -1,19 +1,403 @@
+.offeringsTheme {
+  --bg-0: #070A0A;
+  --bg-1: #0B1010;
+  --bg-2: #101818;
+  --ink-0: #F2F5F2;
+  --ink-1: rgba(242, 245, 242, 0.78);
+  --ink-2: rgba(242, 245, 242, 0.58);
+  --hairline: rgba(242, 245, 242, 0.08);
+
+  --ol-0: rgba(170, 206, 162, 0.42);
+  --ol-1: rgba(170, 206, 162, 0.18);
+  --ol-2: rgba(170, 206, 162, 0.10);
+  --hdr: #BFD7B2;
+  --label: rgba(191, 215, 178, 0.75);
+
+  --fill-0: rgba(110, 140, 110, 0.10);
+  --fill-1: rgba(110, 140, 110, 0.16);
+  --fill-2: rgba(20, 28, 22, 0.72);
+
+  --cta: #C8A36A;
+  --cta-hover: #D7B57B;
+  --cta-press: #B79057;
+  --cta-ink: #0B1010;
+  --cta-ghost: rgba(191, 215, 178, 0.16);
+  --cta-ghost-border: rgba(191, 215, 178, 0.35);
+  --cta-ghost-ink: #DCEAD2;
+  --focus: rgba(200, 163, 106, 0.55);
+}
+
 .offeringsPage {
-  --offerings-bg-ref: #0c1210;
-  --offerings-outline-primary: rgba(42, 50, 48, 0.60);
-  --offerings-outline-secondary: rgba(35, 43, 41, 0.48);
-  --offerings-panel-fill: rgba(12, 16, 15, 0.78);
-  --offerings-divider: rgba(48, 56, 54, 0.38);
-  --offerings-cta-outline: rgba(97, 107, 103, 0.72);
-  --offerings-cta-text: #E2E7E4;
-  --offerings-link: #8EA29A;
-  --offerings-bullet: #6E8079;
-  --offerings-overlay-line: rgba(58, 70, 66, 0.58);
-  --offerings-overlay-label: rgba(154, 168, 161, 0.74);
-  --ink-editorial: #D7DDDA;
-  --ink-structural: #C3CAC6;
-  --ink-analytical: #ADB6B1;
-  --ink-human: #E0E5E2;
-  background-color: var(--offerings-bg-ref);
-  color: var(--ink-editorial);
+  background-color: var(--bg-0);
+  color: var(--ink-1);
+}
+
+.sectionPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--ol-0);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 24px var(--ol-1);
+}
+
+.sectionPanelFilled {
+  background: linear-gradient(180deg, var(--fill-1), var(--fill-0));
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(170, 206, 162, 0.10);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--label);
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--hdr);
+}
+
+.sectionSubhead {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--ink-1);
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(191, 215, 178, 0.20);
+  background: linear-gradient(
+    135deg,
+    rgba(191, 215, 178, 0.08),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.imageLandscape {
+  aspect-ratio: 3 / 2;
+  max-height: 42vh;
+}
+
+.imagePortrait {
+  aspect-ratio: 2 / 3;
+  min-height: 220px;
+}
+
+.imageFill {
+  object-fit: cover;
+}
+
+.portraitPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 360px) {
+  .portraitPair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 1.1rem;
+  margin: 0;
+  list-style: square;
+  color: var(--ink-1);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bulletList li::marker {
+  color: var(--ol-0);
+}
+
+.bulletGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groupLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--label);
+}
+
+.ctaStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-weight: 650;
+  transition: background 160ms ease, border-color 160ms ease,
+    transform 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.btnPrimary {
+  background: var(--cta);
+  color: var(--cta-ink);
+  border: 1px solid transparent;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.btnPrimary:hover {
+  background: var(--cta-hover);
+}
+
+.btnPrimary:active {
+  background: var(--cta-press);
+  transform: translateY(1px);
+}
+
+.btnSecondary {
+  background: var(--cta-ghost);
+  border: 1px solid var(--cta-ghost-border);
+  color: var(--cta-ghost-ink);
+}
+
+.btnSecondary:hover {
+  background: rgba(191, 215, 178, 0.22);
+}
+
+.btnSecondary:active {
+  border-color: rgba(191, 215, 178, 0.5);
+}
+
+.btnPrimary:focus-visible,
+.btnSecondary:focus-visible,
+.jumpLink:focus-visible,
+.miniCardCta:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.microLine {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.jumpBar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.jumpLink {
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 8px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--ol-2);
+  color: var(--ink-2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.miniCardStack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.miniCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(191, 215, 178, 0.22);
+  background: rgba(0, 0, 0, 0.28);
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.miniCard:hover {
+  background: rgba(0, 0, 0, 0.32);
+  border-color: rgba(191, 215, 178, 0.28);
+}
+
+.miniCard:active {
+  background: rgba(0, 0, 0, 0.34);
+  border-color: rgba(191, 215, 178, 0.3);
+}
+
+.miniCardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.miniCardSubhead {
+  font-size: 14px;
+  color: var(--ink-1);
+}
+
+.miniCardList {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: square;
+  color: var(--ink-1);
+  font-size: 13px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.miniCardList li::marker {
+  color: var(--ol-0);
+}
+
+.miniCardCta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--hdr);
+}
+
+.requirementsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--ol-2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.requirementsText {
+  font-size: 14px;
+  color: var(--ink-1);
+}
+
+.microPanelGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.microPanel {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--ol-2);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.microPanelTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.microPanelList {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: square;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.microPanelList li::marker {
+  color: var(--ol-0);
+}
+
+.stepStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stepCard {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--ol-2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.stepNumber {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--label);
+  padding-top: 2px;
+}
+
+.stepTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.stepBody {
+  font-size: 13px;
+  color: var(--ink-1);
+  line-height: 1.4;
+}
+
+.faqStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--ol-2);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.faqQuestion {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.faqAnswer {
+  font-size: 13px;
+  color: var(--ink-1);
+  line-height: 1.4;
 }
