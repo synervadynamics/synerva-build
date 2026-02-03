@@ -205,37 +205,62 @@ export default function HomeMobile() {
           </ul>
         </section>
 
-        <section className={`flex flex-col gap-4 ${homeStyles.analytical} mt-8`}>
+        <section
+          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} mt-6`}
+        >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             INTERNAL ENGINES
           </p>
-          <div className={styles.landscapeTriple} aria-hidden>
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/lucentra.webp"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 33vw, 140px"
-                className="object-cover"
-              />
+          <h2 className="text-[1.35rem] font-light leading-snug text-white">
+            Systems
+          </h2>
+          <p className="text-[0.9rem] leading-[1.45] text-white/70">
+            A small set of internal systems that preserve judgment, reduce noise,
+            and keep decisions coherent as complexity scales.
+          </p>
+          <div className={styles.publicationCovers}>
+            <div className="flex flex-col gap-3">
+              <div className={styles.publicationCover} aria-hidden>
+                <Image
+                  src="/mobile-images/homepage/verisense_edit_masterr4%20copy.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 50vw, 180px"
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-[1rem] font-medium text-white">Verisense</p>
+              <p className="text-[0.85rem] leading-[1.45] text-white/70">
+                Signal clarity at the point of decision.
+              </p>
+              <Link
+                href="https://synervadynamics.com/verisense"
+                className={styles.secondaryCta}
+              >
+                View Verisense →
+              </Link>
             </div>
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/verisense.webp"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 33vw, 140px"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-              <Image
-                src="/mobile-images/homepage/synerva-os.webp"
-                alt=""
-                fill
-                sizes="(max-width: 768px) 33vw, 140px"
-                className="object-cover"
-              />
+            <div className="flex flex-col gap-3">
+              <div className={styles.publicationCover} aria-hidden>
+                <Image
+                  src="/mobile-images/homepage/lucentra-v3%20copy.png"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 50vw, 180px"
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-[1rem] font-medium text-white">Lucentra</p>
+              <p className="text-[0.85rem] leading-[1.45] text-white/70">
+                Strategic memory that preserves intent, dependencies, and progress
+                over time.
+              </p>
+              <span
+                className={`${styles.secondaryCta} pointer-events-none opacity-60`}
+                aria-disabled
+              >
+                Page Coming Soon
+              </span>
             </div>
           </div>
         </section>
