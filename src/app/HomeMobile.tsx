@@ -260,8 +260,24 @@ export default function HomeMobile() {
                 Books and essays shaped by pressure, not theory.
               </p>
               <div className={styles.publicationCovers} aria-hidden>
-                <div className={styles.publicationCover} />
-                <div className={styles.publicationCover} />
+                <div className={styles.publicationCover}>
+                  <Image
+                    src="/mobile-images/homepage/the-rockstar-server-playbook.png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 50vw, 180px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className={styles.publicationCover}>
+                  <Image
+                    src="/mobile-images/homepage/TRD%20Cover%20Page%20(1).png"
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 50vw, 180px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <Link href="/#publications" className={styles.secondaryCta}>
                 View Writing →
