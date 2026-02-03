@@ -379,6 +379,10 @@
   color: rgba(224, 244, 252, 0.92);
 }
 
+.secondaryCtaTight {
+  font-size: 0.66rem;
+}
+
 .authorityPanel {
   border-color: rgba(18, 82, 140, 0.9);
   background-color: transparent;

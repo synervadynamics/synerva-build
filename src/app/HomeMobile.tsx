@@ -342,7 +342,7 @@ export default function HomeMobile() {
                   </div>
                   <Link
                     href="/dimensions/surface-tension"
-                    className={styles.secondaryCta}
+                    className={`${styles.secondaryCta} ${styles.secondaryCtaTight}`}
                   >
                     Surface Tension →
                   </Link>
