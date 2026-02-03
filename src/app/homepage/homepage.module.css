@@ -234,11 +234,11 @@
   .sdHome h2,
   .sdHome h3,
   .sdHome h4 {
-    color: var(--signal-cyan);
+    color: var(--signal-cyan) !important;
   }
 
   .sdHome p[class*="uppercase"],
   .sdHome span[class*="uppercase"] {
-    color: var(--signal-cyan);
+    color: var(--signal-cyan) !important;
   }
 }
