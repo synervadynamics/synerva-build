@@ -388,7 +388,7 @@ export default function HomeMobile() {
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
           <h2 className="text-[1.45rem] font-light leading-snug text-white">
@@ -399,7 +399,7 @@ export default function HomeMobile() {
             and choose the cleanest path forward.
           </p>
           <Link href="/#preview-access" className={styles.synervaCta}>
-            Start with a 30-minute plan →
+            START WITH A 30-MINUTE PLAN →
           </Link>
         </section>
       </Mobile1Shell>
