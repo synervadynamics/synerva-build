@@ -382,23 +382,23 @@ export default function HomeMobile() {
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
           </p>
-          <div className={styles.finalCtaImage} aria-hidden>
+          <div className={styles.finalCtaImage}>
             <Image
               src="/mobile-images/homepage/next-step.PNG"
               alt=""
               fill
-              sizes="(max-width: 768px) 100vw, 420px"
               className="object-cover"
+              priority={false}
             />
           </div>
-          <h2 className="text-[1.45rem] font-light leading-snug text-white">
+          <h2 className="text-[1.35rem] font-medium text-cyan-300">
             Start With a Plan
           </h2>
-          <p className="text-[0.92rem] leading-[1.5] text-white/70">
+          <p className="text-white/70 text-[0.95rem] leading-relaxed">
             A 30-minute session to clarify direction, pressure-test assumptions,
             and choose the cleanest path forward.
           </p>
-          <Link href="/#preview-access" className={styles.synervaCta}>
+          <Link href="/start-with-a-plan" className={styles.synervaCta}>
             START WITH A 30-MINUTE PLAN →
           </Link>
         </section>
