@@ -30,9 +30,17 @@ export default function HomeMobile() {
             <span aria-hidden className="h-9 w-9" />
           </div>
           <div
-            aria-hidden
-            className="relative aspect-video w-full overflow-hidden rounded-[14px] border border-white/10 bg-white/5 max-h-[34vh] sm:max-h-none"
-          />
+            className="relative aspect-[1640/981] w-full overflow-hidden rounded-[14px] border border-white/10 bg-white/5 max-h-[34vh] sm:max-h-none"
+          >
+            <Image
+              src="/mobile-images/homepage/hero.png"
+              alt="Synerva Dynamics hero image"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-contain"
+              priority
+            />
+          </div>
           <div className="flex flex-col gap-3">
             <p className="text-[0.7rem] uppercase tracking-[0.32em] text-[rgba(160,190,214,0.7)]">
               SYNERVA DYNAMICS
