@@ -10,7 +10,7 @@ export default function HomeMobile() {
     <main className={`sd-home ${homeStyles.sdHome} text-white`}>
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
-          className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent} ${styles.panelBlue}`}
         >
           <div className="grid grid-cols-[auto_1fr_auto] items-center">
             <button
@@ -131,7 +131,9 @@ export default function HomeMobile() {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
+          <div
+            className={`flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5 ${styles.panelBlue}`}
+          >
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               What Synerva Builds
             </h2>
@@ -166,7 +168,7 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent} ${styles.panelBlue}`}
         >
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             How to Engage
@@ -209,7 +211,7 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent} ${styles.panelBlue}`}
         >
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             What You Get
@@ -280,7 +282,9 @@ export default function HomeMobile() {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5">
+          <div
+            className={`flex flex-col gap-3 rounded-[1.5rem] border border-white/10 px-5 py-5 ${styles.panelBlue}`}
+          >
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
               Systems
             </h2>
@@ -302,7 +306,7 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent} ${styles.panelBlue}`}
         >
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             Merch
@@ -386,7 +390,7 @@ export default function HomeMobile() {
         <SynervaDimensionsSection />
 
         <section
-          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
+          className={`flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent} ${styles.panelBlue}`}
         >
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             Next Step

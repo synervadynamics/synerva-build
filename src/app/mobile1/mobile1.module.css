@@ -139,17 +139,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid rgba(88, 229, 255, 0.35);
-  background: var(--bg-elevated);
-  color: rgba(230, 247, 255, 0.92);
+  border: 1px solid rgba(88, 229, 255, 0.24);
+  background: rgba(8, 13, 22, 0.72);
+  color: rgba(210, 236, 248, 0.9);
   padding: 0.75rem 1.35rem;
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.28em;
-  box-shadow:
-    0 0 0 1px rgba(88, 229, 255, 0.18),
-    0 14px 34px rgba(0, 170, 255, 0.22);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.42);
   transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -160,19 +158,17 @@
   border-radius: 999px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0)
   );
-  opacity: 0.55;
+  opacity: 0.45;
   pointer-events: none;
 }
 
 .synervaCta:hover {
-  border-color: rgba(88, 229, 255, 0.5);
-  color: rgba(240, 252, 255, 0.98);
-  box-shadow:
-    0 0 0 1px rgba(88, 229, 255, 0.28),
-    0 16px 38px rgba(0, 170, 255, 0.28);
+  border-color: rgba(88, 229, 255, 0.35);
+  color: rgba(224, 244, 252, 0.98);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 .synervaCtaSecondary {
@@ -211,4 +207,10 @@
   border-color: rgba(88, 229, 255, 0.35);
   color: rgba(214, 240, 250, 0.9);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.panelBlue {
+  border-color: rgba(120, 190, 230, 0.35) !important;
+  background-color: rgba(18, 42, 62, 0.62) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
