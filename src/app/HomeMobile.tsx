@@ -303,9 +303,12 @@ export default function HomeMobile() {
                   />
                 </div>
               </div>
-              <Link href="/#publications" className={styles.secondaryCta}>
-                View Writing →
-              </Link>
+              <span
+                className={`${styles.secondaryCta} pointer-events-none opacity-60`}
+                aria-disabled
+              >
+                Page Coming Soon
+              </span>
             </div>
             <div className="flex flex-col gap-3">
               <p className="text-[1rem] font-medium text-white">
@@ -371,7 +374,15 @@ export default function HomeMobile() {
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
           </p>
-          <div aria-hidden className={styles.finalCtaImage} />
+          <div className={styles.finalCtaImage} aria-hidden>
+            <Image
+              src="/mobile-images/homepage/next-step.PNG"
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+          </div>
           <h2 className="text-[1.45rem] font-light leading-snug text-white">
             Start With a Plan
           </h2>
