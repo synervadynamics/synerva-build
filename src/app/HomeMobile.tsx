@@ -6,22 +6,41 @@ import styles from "@/app/mobile1/mobile1.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
 export default function HomeMobile() {
+  const ctaBaseClass =
+    "inline-flex w-fit items-center justify-center rounded-full border px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.28em]";
+  const primaryCtaClass = `${ctaBaseClass} border-white/30 bg-white/[0.06] text-white/90`;
+  const secondaryCtaClass = `${ctaBaseClass} border-white/20 text-white/65`;
+
   return (
     <main className={`sd-home ${homeStyles.sdHome} text-white`}>
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
-          <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
-            HERO
-          </p>
+          <div className="grid grid-cols-[auto_1fr_auto] items-center">
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="flex h-9 w-9 items-center justify-center text-white/70"
+            >
+              <span className="flex flex-col gap-1">
+                <span className="h-px w-5 bg-white/70" />
+                <span className="h-px w-4 bg-white/70" />
+                <span className="h-px w-5 bg-white/70" />
+              </span>
+            </button>
+            <span className="text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70">
+              Synerva Dynamics
+            </span>
+            <span aria-hidden className="h-9 w-9" />
+          </div>
           <div
             aria-hidden
             className="relative aspect-[1640/981] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/mobile-images/homepage/hero.png"
-              alt=""
+              src="/visuals/hero/hero_main_render.webp"
+              alt="Synerva system interface"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className="object-contain"
@@ -29,71 +48,38 @@ export default function HomeMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <p className="text-[0.72rem] uppercase tracking-[0.5em] text-white/60">
-              Synerva Dynamics
+            <p className="text-[0.68rem] uppercase tracking-[0.35em] text-white/55">
+              SYNERVA DYNAMICS
             </p>
-            <h1 className="text-[2.05rem] font-light leading-snug text-white">
-              The Power of Many, Engineered for One
+            <h1 className="text-[2.05rem] font-light leading-[1.2] text-white">
+              <span className="block">The Power of Many,</span>
+              <span className="block">Engineered for One</span>
             </h1>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Senior-level strategy, systems, and execution—delivered as a single
-              coherent loop.
+              Senior-level strategy, systems, and execution—delivered as one
+              coherent operating loop.
             </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              We remove coordination drag so decisions persist and momentum
-              compounds.
-            </p>
+            <Link href="/contact" className={primaryCtaClass}>
+              START WITH A 30-MINUTE PLAN →
+            </Link>
           </div>
         </section>
 
-        <section className="flex flex-col gap-5">
+        <section className="flex flex-col gap-4">
           <p className="text-[0.82rem] uppercase tracking-[0.4em] text-white/70">
             THE PROBLEM
           </p>
           <h2 className="text-[1.65rem] font-light leading-snug text-white">
             Fragmentation Kills Velocity
           </h2>
-          <p className="text-[1.05rem] leading-6 text-white/80">
-            Most teams don’t slow down because they lack drive.
-            <br />
-            They slow down because work must pass through too many systems
-            before it can move.
-            <br />
-            <br />
-            Each function optimizes locally. Each tool reframes the problem.
-            <br />
-            Decisions are deferred, reinterpreted, and reset as work crosses
-            boundaries.
-            <br />
-            <br />
-            Judgment gets replaced by interfaces.
-            <br />
-            Momentum gets traded for alignment rituals.
-            <br />
-            <br />
-            What looks like progress becomes controlled motion — constrained,
-            buffered, and diluted at every layer.
-          </p>
-          <div
-            aria-hidden
-            className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none"
-          >
-            <Image
-              src="/mobile-images/homepage/fragmentation-v3.PNG"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className="object-contain"
-            />
-          </div>
-          <div
-            className={`rounded-[1.5rem] bg-white/[0.04] px-5 py-5 ${styles.panelTransparent}`}
-          >
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Synerva collapses that fragmentation into one operating system for
-              shipping work that holds.
-            </p>
-          </div>
+          <ul className="flex flex-col gap-2 pl-5 text-[1.02rem] leading-6 text-white/80">
+            <li>Decisions stall as work crosses too many systems.</li>
+            <li>Judgment gets replaced by interfaces and rituals.</li>
+            <li>Momentum resets instead of compounding.</li>
+          </ul>
+          <Link href="/start-here" className={secondaryCtaClass}>
+            READ HOW THIS WORKS →
+          </Link>
         </section>
 
         <section className={`flex flex-col gap-5 ${homeStyles.analytical}`}>
