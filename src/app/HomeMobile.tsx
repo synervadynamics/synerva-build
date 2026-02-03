@@ -252,8 +252,7 @@ export default function HomeMobile() {
               </div>
               <p className="text-[1rem] font-medium text-white">Lucentra</p>
               <p className="text-[0.85rem] leading-[1.45] text-white/70">
-                Strategic memory that preserves intent, dependencies, and progress
-                over time.
+                Structural memory that preserves intent.
               </p>
               <span
                 className={`${styles.secondaryCta} pointer-events-none opacity-60`}

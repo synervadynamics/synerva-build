@@ -326,8 +326,7 @@ export const copy = {
       {
         title: "Lucentra",
         headline: "Lucentra",
-        body:
-          "Strategic memory that preserves intent, dependencies, and progress over time.",
+        body: "Structural memory that preserves intent.",
         image: "/homepage-post-12-25-2025/lucentra_4x5_exact.png",
         imageAlt: "Lucentra interface preview",
       },
