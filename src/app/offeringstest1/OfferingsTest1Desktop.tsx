@@ -452,7 +452,7 @@ export default function OfferingsTest1Desktop() {
           </div>
           <div className={styles.portraitPairDesktop}>
             <div className={styles.imageFrame}>
-              <div className={styles.img2x3}>
+              <div className={styles.img4x5}>
                 <Image
                   src="/placeholders/offeringstest1/buying-left-2x3.png"
                   alt="What you're buying left placeholder"
@@ -463,7 +463,7 @@ export default function OfferingsTest1Desktop() {
               </div>
             </div>
             <div className={styles.imageFrame}>
-              <div className={styles.img2x3}>
+              <div className={styles.img4x5}>
                 <Image
                   src="/placeholders/offeringstest1/buying-right-2x3.png"
                   alt="What you're buying right placeholder"

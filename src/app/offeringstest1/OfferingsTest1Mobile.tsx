@@ -405,23 +405,27 @@ export default function OfferingsTest1Mobile() {
             and create systems that keep working after delivery.
           </p>
           <div className={styles.portraitPair}>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
-              <Image
-                src="/placeholders/offerings/standards-left-2x3.png"
-                alt="2:3 portrait placeholder: clean craft, material authority"
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className={styles.imageFill}
-              />
+            <div className={styles.imageFrame}>
+              <div className={styles.img4x5}>
+                <Image
+                  src="/placeholders/offerings/standards-left-2x3.png"
+                  alt="2:3 portrait placeholder: clean craft, material authority"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 210px"
+                  className={styles.imageFill}
+                />
+              </div>
             </div>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
-              <Image
-                src="/placeholders/offerings/standards-right-2x3.png"
-                alt="2:3 portrait placeholder: calm output, resolved design"
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className={styles.imageFill}
-              />
+            <div className={styles.imageFrame}>
+              <div className={styles.img4x5}>
+                <Image
+                  src="/placeholders/offerings/standards-right-2x3.png"
+                  alt="2:3 portrait placeholder: calm output, resolved design"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 210px"
+                  className={styles.imageFill}
+                />
+              </div>
             </div>
           </div>
           <div className={styles.bulletGroup}>

@@ -146,6 +146,11 @@
   width: 100%;
 }
 
+.img4x5 {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+}
 .imgWidePlate {
   position: relative;
   aspect-ratio: 1.9 / 1;
@@ -664,7 +669,7 @@
   }
 
   .buildAnchorFrame {
-    width: 112%;
+    width: 92%;
     justify-self: end;
   }
 
