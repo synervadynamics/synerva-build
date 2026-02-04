@@ -69,7 +69,7 @@ export default function OfferingsDesktop() {
   );
 
   return (
-    <main className={`${styles.offeringsPage} relative`}>
+    <main className={`${styles.offeringsPage} ${styles.offeringsPageDesktop} relative`}>
       <SubpageStaticBackground
         imageUrl="/subpage-backgrounds/offerings-v3.png"
         showOverlay={false}

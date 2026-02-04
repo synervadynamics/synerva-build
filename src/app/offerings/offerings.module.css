@@ -32,6 +32,10 @@
   color: var(--ink-1);
 }
 
+.offeringsPageDesktop {
+  background-color: transparent;
+}
+
 .sectionPanel {
   display: flex;
   flex-direction: column;
