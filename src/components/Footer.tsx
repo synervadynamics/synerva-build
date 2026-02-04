@@ -19,24 +19,18 @@ export const Footer = () => {
             {renderWithBreaks(copy.global.contact.address)}
           </p>
           <p className="role-body text-sm">
-            <a
-              href={`tel:${copy.global.contact.phone.replace(/[^0-9+]/g, "")}`}
-              className="inline-cta"
-            >
+            <a href={`tel:${copy.global.contact.phone.replace(/[^0-9+]/g, "")}`}>
               {copy.global.contact.phone}
             </a>{" "}
             ·{" "}
-            <a
-              href={`mailto:${copy.global.contact.email}`}
-              className="inline-cta"
-            >
+            <a href={`mailto:${copy.global.contact.email}`}>
               {copy.global.contact.email}
             </a>
           </p>
         </div>
         <nav className="role-body flex flex-wrap gap-4 text-sm">
           {copy.global.nav.map((item) => (
-            <Link key={item.href} className="inline-cta" href={item.href}>
+            <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
@@ -48,7 +42,6 @@ export const Footer = () => {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-cta"
             >
               {social.label}
             </a>

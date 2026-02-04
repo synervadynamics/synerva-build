@@ -279,16 +279,14 @@ export default function OfferingsTest1Desktop() {
               isolation.
             </p>
           </div>
-          <div className={styles.imageFrame}>
-            <div className={styles.imgDivider3x1}>
-              <Image
-                src="/placeholders/offeringstest1/capabilities-3x2.png"
-                alt="Capabilities placeholder"
-                fill
-                className={styles.imageFill}
-                sizes="(max-width: 1280px) 100vw, 960px"
-              />
-            </div>
+          <div className={`${styles.imageFrame} ${styles.imgDivider3x1}`}>
+            <Image
+              src="/placeholders/offeringstest1/capabilities-3x2.png"
+              alt="Capabilities placeholder"
+              fill
+              className={styles.imageFill}
+              sizes="(max-width: 1280px) 100vw, 960px"
+            />
           </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>
         </section>
@@ -451,27 +449,23 @@ export default function OfferingsTest1Desktop() {
             </p>
           </div>
           <div className={styles.portraitPairDesktop}>
-            <div className={styles.imageFrame}>
-              <div className={styles.imgStandardsBand}>
-                <Image
-                  src="/placeholders/offeringstest1/buying-left-2x3.png"
-                  alt="What you're buying left placeholder"
-                  fill
-                  className={styles.imageFill}
-                  sizes="(max-width: 1280px) 45vw, 360px"
-                />
-              </div>
+            <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+              <Image
+                src="/placeholders/offeringstest1/buying-left-2x3.png"
+                alt="What you're buying left placeholder"
+                fill
+                className={styles.imageFill}
+                sizes="(max-width: 1280px) 45vw, 360px"
+              />
             </div>
-            <div className={styles.imageFrame}>
-              <div className={styles.imgStandardsBand}>
-                <Image
-                  src="/placeholders/offeringstest1/buying-right-2x3.png"
-                  alt="What you're buying right placeholder"
-                  fill
-                  className={styles.imageFill}
-                  sizes="(max-width: 1280px) 45vw, 360px"
-                />
-              </div>
+            <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+              <Image
+                src="/placeholders/offeringstest1/buying-right-2x3.png"
+                alt="What you're buying right placeholder"
+                fill
+                className={styles.imageFill}
+                sizes="(max-width: 1280px) 45vw, 360px"
+              />
             </div>
           </div>
           <div className={styles.grid2}>

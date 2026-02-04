@@ -260,7 +260,7 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             Depending on the engagement, this may include:
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
+          <div className={`${styles.imageFrame} ${styles.imgDivider3x1}`}>
             <Image
               src="/placeholders/offerings/capabilities-3x2.png"
               alt="3:2 landscape placeholder: overview map, blueprint grid, modular system diagram aesthetic"
@@ -405,27 +405,23 @@ export default function OfferingsTest1Mobile() {
             and create systems that keep working after delivery.
           </p>
           <div className={styles.portraitPair}>
-            <div className={styles.imageFrame}>
-              <div className={styles.imgStandardsHalf}>
-                <Image
-                  src="/placeholders/offerings/standards-left-2x3.png"
-                  alt="2:3 portrait placeholder: clean craft, material authority"
-                  fill
-                  sizes="(max-width: 768px) 50vw, 210px"
-                  className={styles.imageFill}
-                />
-              </div>
+            <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+              <Image
+                src="/placeholders/offerings/standards-left-2x3.png"
+                alt="2:3 portrait placeholder: clean craft, material authority"
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className={styles.imageFill}
+              />
             </div>
-            <div className={styles.imageFrame}>
-              <div className={styles.imgStandardsHalf}>
-                <Image
-                  src="/placeholders/offerings/standards-right-2x3.png"
-                  alt="2:3 portrait placeholder: calm output, resolved design"
-                  fill
-                  sizes="(max-width: 768px) 50vw, 210px"
-                  className={styles.imageFill}
-                />
-              </div>
+            <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+              <Image
+                src="/placeholders/offerings/standards-right-2x3.png"
+                alt="2:3 portrait placeholder: calm output, resolved design"
+                fill
+                sizes="(max-width: 768px) 50vw, 210px"
+                className={styles.imageFill}
+              />
             </div>
           </div>
           <div className={styles.bulletGroup}>
