@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import styles from "./offerings.module.css";
@@ -18,13 +18,13 @@ const imagePaths = {
 
 const sectionMap = [
   { id: "hiring", labelLines: ["HIRING"] },
-  { id: "scope-discipline", labelLines: ["SCOPE"] },
-  { id: "operator-hourly", labelLines: ["HOURLY"] },
-  { id: "flat-rate-projects", labelLines: ["FLAT-RATE"] },
-  { id: "build-with-synerva", labelLines: ["FULL BUILD"] },
+  { id: "scope", labelLines: ["SCOPE"] },
+  { id: "hourly", labelLines: ["HOURLY"] },
+  { id: "flat-rate", labelLines: ["FLAT-RATE"] },
+  { id: "full-build", labelLines: ["FULL BUILD"] },
   { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
   { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
-  { id: "next-step", labelLines: ["NEXT", "STEPS"] },
+  { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
 ];
 
 export default function OfferingsDesktop() {
@@ -32,8 +32,17 @@ export default function OfferingsDesktop() {
   const [activeSection, setActiveSection] = useState<string>(
     sectionMap[0]?.id ?? "",
   );
-  const getToolbarOffset = () =>
-    headerRef.current?.getBoundingClientRect().height ?? 0;
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY;
+    window.history.replaceState(null, "", `#${sectionId}`);
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -93,11 +102,14 @@ export default function OfferingsDesktop() {
                   </div>
                   <div className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-[color:var(--offerings-link)]">
                     {items.map((item) => (
-                      <div
+                      <Link
                         key={item.id}
+                        href={`#${item.id}`}
+                        onClick={(event) => scrollToSection(event, item.id)}
                         className={`flex w-fit flex-col items-center gap-2 transition ${
                           item.isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
                         }`}
+                        aria-current={item.isActive ? "true" : undefined}
                       >
                         <span className="text-center leading-tight">
                           {item.labelLines.map((line) => (
@@ -111,7 +123,7 @@ export default function OfferingsDesktop() {
                             item.isActive ? "opacity-100" : "opacity-60"
                           }`}
                         />
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
