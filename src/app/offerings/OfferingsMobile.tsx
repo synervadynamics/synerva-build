@@ -69,6 +69,7 @@ export default function OfferingsMobile() {
 
   return (
     <main className={`${styles.offeringsPage} ${styles.offeringsTheme}`}>
+      <div className="pointer-events-none fixed inset-0 z-[4] bg-[color:var(--offerings-panel-fill)]" />
       <Mobile1Shell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"

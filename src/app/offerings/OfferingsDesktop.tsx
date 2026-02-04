@@ -129,7 +129,7 @@ export default function OfferingsDesktop() {
                 </div>
               </header>
               <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)]">
-                <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                <div className="flex flex-col gap-8">
                   <div className="flex flex-col gap-6 text-balance">
                     <h1
                       data-type-compression="headline"
@@ -159,24 +159,21 @@ export default function OfferingsDesktop() {
                       drift, noise, or unnecessary process.
                     </p>
                   </div>
+                  <div className="flex w-full items-center justify-center">
+                    <div className="w-full max-w-[600px] overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4">
+                      <div className="aspect-[21/9] w-full overflow-hidden rounded-xl">
+                        <img
+                          src={imagePaths.hero}
+                          alt="Synerva Dynamics offerings hero"
+                          className="h-full w-full rounded-xl object-cover object-[50%_45%] opacity-90"
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <div className="max-w-[240px]">
                     <Link href="/contact" className={styles.btnPrimary}>
                       Start a Conversation
                     </Link>
-                  </div>
-                </div>
-
-                <div className="w-full lg:w-auto">
-                  <div className="flex w-full items-center justify-center">
-                    <div className="w-full max-w-[520px] overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
-                      <div className="aspect-[9/16] w-full overflow-hidden rounded-xl">
-                        <img
-                          src={imagePaths.hero}
-                          alt="Synerva Dynamics offerings hero"
-                          className="h-full w-full rounded-xl object-cover"
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -330,28 +327,8 @@ export default function OfferingsDesktop() {
               </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:items-start lg:gap-12">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
               <div className="space-y-6">
-                <div className="w-full overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                  <Image
-                    src={imagePaths.operator}
-                    alt="Operator Hourly visual"
-                    width={1200}
-                    height={800}
-                    className="block h-auto w-full"
-                    sizes="(min-width: 1024px) 720px, 100vw"
-                  />
-                  <div className="flex flex-col items-center gap-1 px-6 pb-6 pt-4 text-center">
-                    <p className="text-base text-[color:var(--ink-editorial)]">
-                      Judgment applied across your system.
-                    </p>
-                    <p className="text-sm text-[color:var(--ink-editorial)]">
-                      A system-level view that replaces coordination overhead with
-                      decisive action.
-                    </p>
-                  </div>
-                </div>
-
                 <div className="space-y-3 text-base text-[color:var(--ink-editorial)]">
                   <p className="text-lg text-[color:var(--ink-analytical)]">
                     $100 CAD per hour
@@ -366,48 +343,71 @@ export default function OfferingsDesktop() {
                     cycles.
                   </p>
                 </div>
+
+                <div className="max-w-xl space-y-3 text-sm leading-snug text-[color:var(--ink-analytical)]">
+                  <p className="text-base text-[color:var(--ink-analytical)]">
+                    How it Works
+                  </p>
+                  <div className="space-y-2">
+                    <p className="text-[color:var(--ink-analytical)]">
+                      Minimum: 1 Hour
+                    </p>
+                    <p>
+                      Work begins immediately inside the live system. Time is used
+                      to assess structure, surface constraints, and determine where
+                      intervention will have the most impact before action is taken.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[color:var(--ink-analytical)]">
+                      Billed: In 15-minute increments after
+                    </p>
+                    <p>
+                      Billing scales with what&apos;s required to restore momentum.
+                      There is no fixed cadence or obligation to continue once
+                      clarity is reached and progress is unblocked.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[color:var(--ink-analytical)]">
+                      After each working block: Short written recap
+                    </p>
+                    <p className="text-[color:var(--ink-analytical)]">
+                      A concise summary outlines:
+                    </p>
+                    <ul className="space-y-1 text-sm text-[color:var(--ink-analytical)]">
+                      <li>what changed</li>
+                      <li>what shipped</li>
+                      <li>what happens next</li>
+                    </ul>
+                    <p>
+                      This preserves continuity without creating unnecessary
+                      documentation or slowing execution.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="max-w-sm space-y-3 text-sm leading-snug text-[color:var(--ink-analytical)] lg:pt-3">
-                <p className="text-base text-[color:var(--ink-analytical)]">
-                  How it Works
-                </p>
-                <div className="space-y-2">
-                  <p className="text-[color:var(--ink-analytical)]">
-                    Minimum: 1 Hour
-                  </p>
-                  <p>
-                    Work begins immediately inside the live system. Time is used
-                    to assess structure, surface constraints, and determine where
-                    intervention will have the most impact before action is taken.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-[color:var(--ink-analytical)]">
-                    Billed: In 15-minute increments after
-                  </p>
-                  <p>
-                    Billing scales with what&apos;s required to restore momentum.
-                    There is no fixed cadence or obligation to continue once
-                    clarity is reached and progress is unblocked.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-[color:var(--ink-analytical)]">
-                    After each working block: Short written recap
-                  </p>
-                  <p className="text-[color:var(--ink-analytical)]">
-                    A concise summary outlines:
-                  </p>
-                  <ul className="space-y-1 text-sm text-[color:var(--ink-analytical)]">
-                    <li>what changed</li>
-                    <li>what shipped</li>
-                    <li>what happens next</li>
-                  </ul>
-                  <p>
-                    This preserves continuity without creating unnecessary
-                    documentation or slowing execution.
-                  </p>
+              <div className="flex w-full items-center justify-center lg:justify-end">
+                <div className="w-full max-w-[480px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <Image
+                      src={imagePaths.operator}
+                      alt="Operator Hourly visual"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 420px, 100vw"
+                    />
+                  </div>
+                  <div className="flex flex-col items-center gap-1 px-6 pb-6 pt-4 text-center">
+                    <p className="text-base text-[color:var(--ink-editorial)]">
+                      Judgment applied across your system.
+                    </p>
+                    <p className="text-sm text-[color:var(--ink-editorial)]">
+                      A system-level view that replaces coordination overhead with
+                      decisive action.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -445,14 +445,18 @@ export default function OfferingsDesktop() {
               </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
               <div className="flex w-full justify-center lg:justify-start">
-                <div className="image-frame w-full max-w-[420px] aspect-square rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 box-border">
-                  <img
-                    src={imagePaths.flatRate}
-                    alt="Flat-Rate Projects"
-                    className="image block h-full w-full rounded-[22px] object-cover"
-                  />
+                <div className="w-full lg:w-[90%]">
+                  <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3">
+                    <div className="aspect-[16/9] w-full overflow-hidden rounded-[22px]">
+                      <img
+                        src={imagePaths.flatRate}
+                        alt="Flat-Rate Projects"
+                        className="block h-full w-full object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="space-y-3">
@@ -549,21 +553,30 @@ export default function OfferingsDesktop() {
                   </div>
                 </div>
 
-                <div
-                  className="flex w-full items-center justify-center"
-                >
-                  <div className="flex w-full flex-col">
-                    <div
-                      className={`${styles.mediaCompactWide} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4`}
-                    >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                        <Image
-                          src={imagePaths.build}
-                          alt="Build with Synerva visual"
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 32vw, 100vw"
-                        />
+                <div className="flex w-full items-center justify-center">
+                  <div className="w-full">
+                    <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+                      <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2 sm:p-3">
+                        <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+                          <Image
+                            src={imagePaths.build}
+                            alt="Build with Synerva visual"
+                            fill
+                            className="object-cover object-[40%_50%]"
+                            sizes="(min-width: 1024px) 36vw, 100vw"
+                          />
+                        </div>
+                      </div>
+                      <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2 sm:p-3">
+                        <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+                          <Image
+                            src={imagePaths.build}
+                            alt="Build with Synerva visual"
+                            fill
+                            className="object-cover object-[60%_50%]"
+                            sizes="(min-width: 1024px) 32vw, 100vw"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -590,7 +603,7 @@ export default function OfferingsDesktop() {
         >
           <div className="relative mx-auto max-w-6xl">
             <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-5 text-[color:var(--ink-editorial)] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
+              <div className="flex flex-col gap-8">
                 <div className="flex max-w-2xl flex-col gap-4">
                   <h2
                     data-type-compression="headline"
@@ -653,13 +666,10 @@ export default function OfferingsDesktop() {
                     </p>
                   </div>
                 </div>
-
                 <div className="flex w-full items-center justify-center">
-                  <div className="flex w-full flex-col">
-                    <div
-                      className={`${styles.mediaCompactPortrait} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
-                    >
-                      <div className="aspect-[4/6] w-full overflow-hidden rounded-xl">
+                  <div className="w-full max-w-[300px]">
+                    <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3">
+                      <div className="aspect-[5/4] w-full overflow-hidden rounded-xl">
                         <img
                           src="/offerings-subpage-jan-3/additional-capabilities-4-6.PNG"
                           alt="Additional capabilities visual"
@@ -784,10 +794,10 @@ export default function OfferingsDesktop() {
                   Get in Touch
                 </Link>
               </div>
-              <div className="flex w-full items-center justify-center">
-                <div className="flex w-full flex-col">
+              <div className="flex w-full items-center justify-center lg:justify-end">
+                <div className="flex w-full max-w-[320px] flex-col lg:max-w-[360px]">
                   <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
-                    <div className="aspect-[1/1] w-full overflow-hidden rounded-xl">
+                    <div className="aspect-[4/5] w-full overflow-hidden rounded-xl">
                       <img
                         src="/offerings-subpage-jan-3/next-steps-v3.PNG"
                         alt="Systemic architectural visual"
