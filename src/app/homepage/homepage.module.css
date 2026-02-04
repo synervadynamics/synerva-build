@@ -353,9 +353,23 @@
   .sdHome :global(.section-label),
   .sdHome p.uppercase,
   .sdHome span.uppercase,
+  .sdHome div.uppercase,
+  .sdHome li.uppercase,
   .sdHome p[class*="uppercase"],
   .sdHome span[class*="uppercase"],
+  .sdHome div[class*="uppercase"],
+  .sdHome li[class*="uppercase"],
   .sdHome a[class*="uppercase"]:not([class*="rounded-full"]):not([class*="border"]) {
+    color: var(--ink-eyebrow) !important;
+  }
+
+  .sdHome div[class*="uppercase"] a,
+  .sdHome div[class*="uppercase"] span {
+    color: var(--ink-eyebrow) !important;
+  }
+
+  .sdHome :global(#hero header),
+  .sdHome :global(#hero header) * {
     color: var(--ink-eyebrow) !important;
   }
 }
