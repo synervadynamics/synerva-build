@@ -1,12 +1,12 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import OfferingsTest1Desktop from "@/app/offeringstest1/OfferingsTest1Desktop";
-import OfferingsTest1Mobile from "@/app/offeringstest1/OfferingsTest1Mobile";
+import OfferingsDesktop from "@/app/offerings/OfferingsDesktop";
+import OfferingsMobile from "@/app/offerings/OfferingsMobile";
 import { Suspense } from "react";
 
 export const metadata = buildPageMetadata({
-  title: "Offerings Test 1 — Synerva Dynamics",
+  title: "Offerings — Synerva Dynamics",
   description:
-    "Offerings test page for desktop layout translation and structural validation.",
+    "High-output execution, without the headcount tax. Synerva helps founders and teams ship brand, web, content, and systems faster and cleaner.",
   path: "/offeringstest1",
 });
 
@@ -15,11 +15,11 @@ export default function OfferingsTest1Page() {
     <>
       <div className="view-desktop-only hidden xl:block">
         <Suspense fallback={null}>
-          <OfferingsTest1Desktop />
+          <OfferingsDesktop />
         </Suspense>
       </div>
       <div className="view-mobile-only block xl:hidden">
-        <OfferingsTest1Mobile />
+        <OfferingsMobile />
       </div>
     </>
   );
