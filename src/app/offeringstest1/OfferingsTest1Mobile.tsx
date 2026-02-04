@@ -9,7 +9,7 @@ export default function OfferingsTest1Mobile() {
       <Mobile1Shell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
-        backgroundOverlayOpacity={0.15}
+        backgroundOverlayEnabled={false}
       >
         <section id="hero" className={`${styles.sectionPanel} mt-6`}>
           <p className={styles.eyebrow}>Offerings</p>
