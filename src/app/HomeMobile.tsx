@@ -105,8 +105,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="mint"
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} ${styles.panelFilled} mt-6`}
-          style={{ background: "var(--fill-weak)" }}
+          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} mt-6`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             SYSTEMS THAT HOLD

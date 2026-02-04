@@ -89,26 +89,37 @@
   --section-gap-top: clamp(2.5rem, 6vw, 4.5rem);
 }
 
-.sdHome :global(#narrative),
-.sdHome :global(#systems) {
-  background-color: #0E1514;
-}
-
 .sdHome .role-action {
   color: var(--role-action) !important;
   font-weight: 500 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 9999px;
+  border: 1px solid var(--cta-outline);
+  padding: 0.55rem 1.35rem;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 .sdHome .inline-cta {
   color: var(--role-body) !important;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 9999px;
+  border: 1px solid var(--cta-outline);
+  padding: 0.55rem 1.35rem;
+  background-color: transparent;
+  text-decoration: none;
 }
 
-.sdHome .inline-cta:hover {
+.sdHome .inline-cta:hover,
+.sdHome .role-action:hover {
   opacity: 0.85;
 }
 
