@@ -43,25 +43,9 @@ export default function OfferingsTest1Mobile() {
             <li>Fast, disciplined execution</li>
             <li>Systems that compound instead of decaying</li>
           </ul>
-          <div className={styles.ctaStack}>
-            <Link href="#next-step" className={styles.btnSecondary}>
-              See the next step
-            </Link>
-          </div>
           <p className={styles.microLine}>
             Response within 24 hours. No sales calls. No waiting room.
           </p>
-          <nav className={styles.jumpBar} aria-label="Jump to engagement modes">
-            <Link href="#operator-hourly" className={styles.jumpLink}>
-              Operator Hourly
-            </Link>
-            <Link href="#flat-rate" className={styles.jumpLink}>
-              Flat-Rate
-            </Link>
-            <Link href="#build-with-synerva" className={styles.jumpLink}>
-              Build With Synerva
-            </Link>
-          </nav>
         </section>
 
         <section
@@ -141,6 +125,11 @@ export default function OfferingsTest1Mobile() {
                 <li>Designed to scale without rewrites or regret</li>
               </ul>
             </article>
+          </div>
+          <div className={styles.ctaStack}>
+            <Link href="#next-step" className={styles.btnSecondary}>
+              See the next step
+            </Link>
           </div>
         </section>
 
@@ -525,6 +514,11 @@ export default function OfferingsTest1Mobile() {
               </div>
             </article>
           </div>
+          <div className={styles.ctaStack}>
+            <Link href="#next-step" className={styles.btnSecondary}>
+              What happens next
+            </Link>
+          </div>
         </section>
 
         <section id="proof" className={styles.sectionPanel}>
@@ -639,7 +633,7 @@ export default function OfferingsTest1Mobile() {
           </ul>
           <div className={styles.ctaStack}>
             <Link href="/contact" className={styles.btnPrimary}>
-              Contact Synerva
+              Start a conversation
             </Link>
           </div>
           <p className={styles.microLine}>

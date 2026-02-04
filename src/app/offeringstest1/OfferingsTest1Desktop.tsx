@@ -37,11 +37,6 @@ export default function OfferingsTest1Desktop() {
                   <li>Fast, disciplined execution</li>
                   <li>Systems that compound instead of decaying</li>
                 </ul>
-                <div className={styles.ctaRow}>
-                  <Link href="#next-step" className={styles.btnSecondary}>
-                    See the next step
-                  </Link>
-                </div>
                 <p className={styles.microLine}>
                   Response within 24 hours. No sales calls. No waiting room.
                 </p>
@@ -119,6 +114,11 @@ export default function OfferingsTest1Desktop() {
                   <li>Designed to scale without rewrites or regret</li>
                 </ul>
               </article>
+            </div>
+            <div className={styles.ctaRow}>
+              <Link href="#next-step" className={styles.btnSecondary}>
+                See the next step
+              </Link>
             </div>
           </section>
 
@@ -569,6 +569,11 @@ export default function OfferingsTest1Desktop() {
               </p>
             </article>
           </div>
+          <div className={styles.ctaRow}>
+            <Link href="#next-step" className={styles.btnSecondary}>
+              What happens next
+            </Link>
+          </div>
         </section>
 
         <section id="proof" className={`${styles.sectionPanel} ${styles.section}`}>
@@ -688,7 +693,7 @@ export default function OfferingsTest1Desktop() {
               </ul>
               <div className={styles.ctaRow}>
                 <Link href="/contact" className={styles.btnPrimary}>
-                  Contact Synerva
+                  Start a conversation
                 </Link>
               </div>
               <p className={styles.microLine}>
