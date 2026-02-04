@@ -162,6 +162,19 @@
   aspect-ratio: 1.9 / 1;
   width: 100%;
 }
+.imgDivider3x1 {
+  position: relative;
+  aspect-ratio: 3 / 1;
+  width: 100%;
+  max-width: 720px;
+}
+
+.imgStandardsBand {
+  position: relative;
+  aspect-ratio: 4 / 1;
+  width: 100%;
+  max-width: 640px;
+}
 .imageFill {
   object-fit: cover;
 }
@@ -679,6 +692,14 @@
     justify-self: end;
   }
 
+  .imgDivider3x1 {
+    max-height: 240px;
+  }
+
+  .imgStandardsBand {
+    max-height: 160px;
+  }
+
   .capabilityGrid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 18px;
@@ -706,6 +727,15 @@
 
   .tableDivider {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .imgDivider3x1 {
+    max-height: 180px;
+  }
+
+  .imgStandardsBand {
+    max-height: 140px;
   }
 }
   .cardTitle {
