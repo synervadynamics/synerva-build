@@ -275,65 +275,94 @@ export default function OfferingsMobile() {
           <p className={styles.eyebrow}>Capabilities</p>
           <h2 className={styles.sectionTitle}>What gets built</h2>
           <p className={styles.sectionSubhead}>
-            A compact map of what Synerva can ship, end-to-end.
+            A clear, concrete map of what Synerva can design, build, and deliver.
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
-            <Image
-              src="/placeholders/offerings/capabilities-3x2.png"
-              alt="3:2 landscape placeholder: overview map, blueprint grid, modular system diagram aesthetic"
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className={styles.imageFill}
-            />
-          </div>
+          <p className={styles.sectionSubhead}>
+            Synerva builds integrated systems end-to-end. You can engage at the
+            system level or for individual components.
+          </p>
+          <p className={styles.sectionSubhead}>
+            Every capability below can be delivered independently, but none are
+            treated in isolation.
+          </p>
           <div className={styles.microPanelGrid}>
             <article className={styles.microPanel}>
               <h3 className={styles.microPanelTitle}>Strategy + Positioning</h3>
               <ul className={styles.microPanelList}>
-                <li>Positioning that’s defensible, not poetic</li>
+                <li>Business and product strategy</li>
+                <li>Defensible positioning and differentiation</li>
                 <li>Offer architecture and pricing logic</li>
+                <li>Go-to-market planning</li>
                 <li>Decision frameworks that reduce noise</li>
               </ul>
             </article>
             <article className={styles.microPanel}>
               <h3 className={styles.microPanelTitle}>Brand + Identity Systems</h3>
               <ul className={styles.microPanelList}>
-                <li>Visual system rules (type, layout, hierarchy, usage)</li>
-                <li>Voice + messaging system (what to say, how to say it)</li>
-                <li>Templates that keep quality consistent</li>
+                <li>Brand strategy and narrative</li>
+                <li>Visual identity systems (type, layout, hierarchy)</li>
+                <li>Brand guidelines and usage rules</li>
+                <li>Voice, tone, and messaging frameworks</li>
+                <li>Brand audits and refinements</li>
+              </ul>
+            </article>
+            <article className={styles.microPanel}>
+              <h3 className={styles.microPanelTitle}>Marketing Systems</h3>
+              <ul className={styles.microPanelList}>
+                <li>Market and audience research</li>
+                <li>Campaign strategy and planning</li>
+                <li>Multi-platform execution (social, email, SEO)</li>
+                <li>Funnel and lifecycle design</li>
+                <li>Conversion optimization</li>
+              </ul>
+            </article>
+            <article className={styles.microPanel}>
+              <h3 className={styles.microPanelTitle}>Content + Messaging</h3>
+              <ul className={styles.microPanelList}>
+                <li>Short- and long-form writing</li>
+                <li>Website and landing page copy</li>
+                <li>Blog and editorial content</li>
+                <li>Thought leadership and ghostwriting</li>
+                <li>Visual and graphic content</li>
               </ul>
             </article>
             <article className={styles.microPanel}>
               <h3 className={styles.microPanelTitle}>Website + Product UI</h3>
               <ul className={styles.microPanelList}>
-                <li>Mobile-first pages that convert cleanly</li>
-                <li>UI systems that feel engineered, not decorated</li>
-                <li>Information architecture that reduces friction</li>
+                <li>Websites and landing pages</li>
+                <li>Product and app UI/UX</li>
+                <li>Design systems and component libraries</li>
+                <li>Frontend and full-stack development</li>
+                <li>Performance and accessibility improvements</li>
               </ul>
             </article>
             <article className={styles.microPanel}>
               <h3 className={styles.microPanelTitle}>Automation + AI Tooling</h3>
               <ul className={styles.microPanelList}>
-                <li>Workflow automation that saves real time</li>
-                <li>Internal tools that reduce operational drag</li>
-                <li>AI integration where it increases leverage and clarity</li>
+                <li>Workflow automation</li>
+                <li>Internal tools and dashboards</li>
+                <li>AI-assisted content and ops systems</li>
+                <li>Process optimization</li>
+                <li>Lightweight custom tooling</li>
               </ul>
             </article>
             <article className={styles.microPanel}>
-              <h3 className={styles.microPanelTitle}>Content + Messaging Systems</h3>
+              <h3 className={styles.microPanelTitle}>Audits + Reports</h3>
               <ul className={styles.microPanelList}>
-                <li>Landing pages, funnels, and conversion narratives</li>
-                <li>Editorial systems that stay on-voice</li>
-                <li>Content that supports the machine (not vanity posts)</li>
+                <li>Brand, website, and UX audits</li>
+                <li>Marketing and funnel audits</li>
+                <li>Content and messaging audits</li>
+                <li>Strategic reports and briefs</li>
+                <li>Implementation roadmaps</li>
               </ul>
             </article>
           </div>
           <div className={styles.ctaStack}>
             <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you’re building
+              Tell me what you need
             </Link>
             <Link href="#modes" className={styles.btnSecondary}>
-              Back to engagement modes
+              See engagement modes
             </Link>
           </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>

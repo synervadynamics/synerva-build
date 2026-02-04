@@ -1,5 +1,5 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import OfferingsClient from "@/app/offerings/OfferingsClient";
+import OfferingsMobile from "@/app/offerings/OfferingsMobile";
 
 export const metadata = buildPageMetadata({
   title: "Offerings — Synerva Dynamics",
@@ -9,5 +9,5 @@ export const metadata = buildPageMetadata({
 });
 
 export default function OfferingsTest2Page() {
-  return <OfferingsClient />;
+  return <OfferingsMobile />;
 }
