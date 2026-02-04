@@ -85,11 +85,10 @@
 
 .homeMobileTheme .panelTransparent {
   border: 1px solid var(--ol-primary) !important;
-  background: transparent !important;
 }
 
 .homeMobileTheme .panelFilled {
-  background: var(--fill-weak) !important;
+  background: var(--fill-weak);
   border: 1px solid var(--ol-primary) !important;
   box-shadow: 0 0 24px var(--ol-glow) !important;
 }
@@ -260,19 +259,24 @@
 .homeMobileTheme .offeringsCta {
   background: var(--cta-bg);
   color: var(--cta-text);
-  border-color: rgba(0, 0, 0, 0.18);
+  border-color: var(--ol-primary);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
 .homeMobileTheme .synervaCta:hover,
 .homeMobileTheme .offeringsCta:hover {
   background: var(--cta-bg-hover);
   color: var(--cta-text);
+  border-color: var(--ol-primary);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
 .homeMobileTheme .synervaCta:active,
 .homeMobileTheme .offeringsCta:active {
   background: var(--cta-bg-active);
   color: var(--cta-text);
+  border-color: var(--ol-primary);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
 }
 
 .homeMobileTheme .synervaCta:focus-visible,
@@ -360,15 +364,13 @@
 }
 
 .panelBlue {
-  border-color: #2BB8C6 !important;
+  border-color: var(--ol-primary) !important;
   border-width: 1px !important;
   background-color: transparent !important;
 }
 
 .systemsPanel {
-  border-color: rgba(24, 122, 186, 0.8);
-  background: linear-gradient(180deg, rgba(10, 18, 28, 0.55), rgba(6, 10, 14, 0.72));
-  box-shadow: inset 0 0 0 1px rgba(6, 12, 18, 0.25);
+  border-color: var(--ol-primary);
 }
 
 .systemsImage {
@@ -384,13 +386,11 @@
 }
 
 .offeringsPanel {
-  border-color: rgba(70, 170, 220, 0.6);
-  background-color: transparent;
+  border-color: var(--ol-primary);
 }
 
 .deliveredPanel {
-  border-color: rgba(36, 120, 180, 0.75);
-  background-color: transparent;
+  border-color: var(--ol-primary);
 }
 
 .offeringsImage {
@@ -433,8 +433,7 @@
 }
 
 .publicationsPanel {
-  border-color: rgba(56, 150, 200, 0.5);
-  background-color: transparent;
+  border-color: var(--ol-primary);
 }
 
 .publicationCovers {
@@ -520,13 +519,11 @@
 }
 
 .authorityPanel {
-  border-color: rgba(18, 82, 140, 0.9);
-  background-color: transparent;
+  border-color: var(--ol-primary);
 }
 
 .finalCtaPanel {
-  border-color: rgba(72, 190, 240, 0.8);
-  background-color: transparent;
+  border-color: var(--ol-primary);
 }
 
 .finalCtaImage {
