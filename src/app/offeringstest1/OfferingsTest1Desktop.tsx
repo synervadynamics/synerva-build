@@ -11,7 +11,7 @@ export default function OfferingsTest1Desktop() {
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
       <div
         className="pointer-events-none fixed inset-0 z-[5] bg-black"
-        style={{ opacity: 0.6 }}
+        style={{ opacity: 0.8 }}
         aria-hidden
       />
       <div className="relative z-10">
