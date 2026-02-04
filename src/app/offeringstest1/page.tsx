@@ -1,6 +1,6 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import OfferingsTest1Desktop from "@/app/offeringstest1/OfferingsTest1Desktop";
-import OfferingsTest1Mobile from "@/app/offeringstest1/OfferingsTest1Mobile";
+import OfferingsDesktop from "@/app/offerings/OfferingsDesktop";
+import OfferingsMobile from "@/app/offerings/OfferingsMobile";
 import { Suspense } from "react";
 
 export const metadata = buildPageMetadata({
@@ -15,11 +15,11 @@ export default function OfferingsTest1Page() {
     <>
       <div className="view-desktop-only hidden xl:block">
         <Suspense fallback={null}>
-          <OfferingsTest1Desktop />
+          <OfferingsDesktop />
         </Suspense>
       </div>
       <div className="view-mobile-only block xl:hidden">
-        <OfferingsTest1Mobile />
+        <OfferingsMobile />
       </div>
     </>
   );
