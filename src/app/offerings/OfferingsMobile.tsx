@@ -33,25 +33,11 @@ export default function OfferingsMobile() {
             <li>Work that holds up under real-world pressure.</li>
           </ul>
           <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              See engagement modes
+            <Link href="/contact" className={styles.btnPrimary}>
+              Start a Conversation
             </Link>
           </div>
           <p className={styles.microLine}>Response within 24 hours on weekdays.</p>
-          <nav className={styles.jumpBar} aria-label="Jump to engagement modes">
-            <Link href="#operator-hourly" className={styles.jumpLink}>
-              Operator Hourly
-            </Link>
-            <Link href="#flat-rate" className={styles.jumpLink}>
-              Flat-Rate
-            </Link>
-            <Link href="#build-with-synerva" className={styles.jumpLink}>
-              Build With Synerva
-            </Link>
-          </nav>
         </section>
 
         <section
@@ -94,9 +80,6 @@ export default function OfferingsMobile() {
                 <li>Strategy + build in the same room</li>
                 <li>Ideal for pivots, audits, launches, fixes</li>
               </ul>
-              <Link href="#operator-hourly" className={styles.miniCardCta}>
-                Go to Operator Hourly
-              </Link>
             </article>
             <article className={styles.miniCard}>
               <h3 className={styles.miniCardTitle}>Flat-Rate Projects</h3>
@@ -108,9 +91,6 @@ export default function OfferingsMobile() {
                 <li>Crafted assets and systems</li>
                 <li>Minimal meetings, maximum throughput</li>
               </ul>
-              <Link href="#flat-rate" className={styles.miniCardCta}>
-                Go to Flat-Rate Projects
-              </Link>
             </article>
             <article className={styles.miniCard}>
               <h3 className={styles.miniCardTitle}>Build With Synerva</h3>
@@ -122,9 +102,6 @@ export default function OfferingsMobile() {
                 <li>Integrated pipeline, not disconnected deliverables</li>
                 <li>Best for serious builds with real stakes</li>
               </ul>
-              <Link href="#build-with-synerva" className={styles.miniCardCta}>
-                Go to System Builds
-              </Link>
             </article>
           </div>
         </section>
@@ -161,14 +138,6 @@ export default function OfferingsMobile() {
               <li>Define acceptance criteria and ship-ready outputs</li>
               <li>Leave you with next actions that actually connect</li>
             </ul>
-          </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Book Operator Hourly
-            </Link>
-            <Link href="#capabilities" className={styles.btnSecondary}>
-              See coverage
-            </Link>
           </div>
           <p className={styles.microLine}>Minimum friction. Maximum leverage.</p>
         </section>
@@ -211,14 +180,6 @@ export default function OfferingsMobile() {
           <p className={styles.microLine}>
             You’ll know exactly what you’re getting before we build.
           </p>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              View flat-rate options
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Request a quote
-            </Link>
-          </div>
         </section>
 
         <section id="build-with-synerva" className={styles.sectionPanel}>
@@ -260,15 +221,12 @@ export default function OfferingsMobile() {
               You want the whole machine built, not just a nicer dashboard.
             </span>
           </div>
+          <p className={styles.microLine}>This is the flagship lane.</p>
           <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start a system build
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Talk scope first
+            <Link href="/contact" className={styles.btnPrimary}>
+              Discuss Your Project
             </Link>
           </div>
-          <p className={styles.microLine}>This is the flagship lane.</p>
         </section>
 
         <section id="capabilities" className={styles.sectionPanel}>
@@ -357,14 +315,6 @@ export default function OfferingsMobile() {
               </ul>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you need
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              See engagement modes
-            </Link>
-          </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>
         </section>
 
@@ -414,14 +364,6 @@ export default function OfferingsMobile() {
               <li>Craft over “good enough”</li>
               <li>Delivery that doesn’t collapse two weeks later</li>
             </ul>
-          </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#how-it-works" className={styles.btnSecondary}>
-              How it works
-            </Link>
           </div>
           <p className={styles.microLine}>This is taste, translated into structure.</p>
         </section>
@@ -492,14 +434,6 @@ export default function OfferingsMobile() {
               </div>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#faq" className={styles.btnSecondary}>
-              Read FAQs
-            </Link>
-          </div>
           <p className={styles.microLine}>No theater. Just build.</p>
         </section>
 
@@ -531,14 +465,6 @@ export default function OfferingsMobile() {
           <p className={styles.microLine}>
             If you want “fine”, hire literally anyone else.
           </p>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Email instead
-            </Link>
-          </div>
         </section>
 
         <section id="faq" className={styles.sectionPanel}>
@@ -595,14 +521,6 @@ export default function OfferingsMobile() {
               </p>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#hero" className={styles.btnSecondary}>
-              Back to top
-            </Link>
-          </div>
         </section>
 
         <section
@@ -629,11 +547,8 @@ export default function OfferingsMobile() {
             <li>We move into a build loop with clear constraints</li>
           </ul>
           <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              Choose engagement mode
+            <Link href="/contact" className={styles.btnPrimary}>
+              Get in Touch
             </Link>
           </div>
           <p className={styles.microLine}>

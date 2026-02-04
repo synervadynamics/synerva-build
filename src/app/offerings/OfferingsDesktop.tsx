@@ -87,36 +87,14 @@ export default function OfferingsDesktop() {
             <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
               <header ref={headerRef} className="flex flex-col gap-4 pb-6">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                  <Link
-                    href="/"
-                    className="font-mono text-xs uppercase tracking-[0.5em] text-[color:var(--offerings-link)] hover:brightness-105"
-                  >
+                  <div className="font-mono text-xs uppercase tracking-[0.5em] text-[color:var(--offerings-link)]">
                     <span className="block">Synerva</span>
                     <span className="block">Dynamics</span>
-                  </Link>
-                  <nav className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-[color:var(--offerings-link)]">
+                  </div>
+                  <div className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-[color:var(--offerings-link)]">
                     {items.map((item) => (
-                      <a
+                      <div
                         key={item.id}
-                        href={`#${item.id}`}
-                        data-cursor="accent"
-                        onClick={(event) => {
-                          event.preventDefault();
-                          const el = document.getElementById(item.id);
-                          if (!el) return;
-                          const offset = getToolbarOffset();
-                          const top =
-                            el.getBoundingClientRect().top +
-                            window.scrollY -
-                            offset;
-                          const reduceMotion = window.matchMedia(
-                            "(prefers-reduced-motion: reduce)",
-                          ).matches;
-                          window.scrollTo({
-                            top,
-                            behavior: reduceMotion ? "auto" : "smooth",
-                          });
-                        }}
                         className={`flex w-fit flex-col items-center gap-2 transition ${
                           item.isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
                         }`}
@@ -133,9 +111,9 @@ export default function OfferingsDesktop() {
                             item.isActive ? "opacity-100" : "opacity-60"
                           }`}
                         />
-                      </a>
+                      </div>
                     ))}
-                  </nav>
+                  </div>
                 </div>
               </header>
               <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)]">
@@ -168,6 +146,11 @@ export default function OfferingsDesktop() {
                       interconnected system, there are clear ways to engage—without
                       drift, noise, or unnecessary process.
                     </p>
+                  </div>
+                  <div className="max-w-[240px]">
+                    <Link href="/contact" className={styles.btnPrimary}>
+                      Start a Conversation
+                    </Link>
                   </div>
                 </div>
 
@@ -578,6 +561,16 @@ export default function OfferingsDesktop() {
           </div>
         </section>
 
+        <section className="relative px-6 pb-10 pt-2 sm:px-10 sm:pb-12 lg:px-16 lg:pb-12">
+          <div className="mx-auto flex max-w-6xl justify-center">
+            <div className="w-full max-w-[240px]">
+              <Link href="/contact" className={styles.btnPrimary}>
+                Discuss Your Project
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section
           id="additional-capabilities"
           
@@ -773,11 +766,10 @@ export default function OfferingsDesktop() {
                 </div>
                 <Link
                   href="/contact"
-                  aria-label="Start the conversation with Synerva"
-                  data-cursor="accent"
-                  className="w-fit rounded-full border border-[color:var(--offerings-cta-outline)] bg-transparent px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--offerings-cta-text)] transition hover:opacity-90"
+                  aria-label="Get in touch with Synerva"
+                  className={styles.btnPrimary}
                 >
-                  Start the Conversation
+                  Get in Touch
                 </Link>
               </div>
               <div className="flex w-full items-center justify-center">
