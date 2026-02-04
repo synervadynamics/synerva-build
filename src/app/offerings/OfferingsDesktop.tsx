@@ -388,17 +388,17 @@ export default function OfferingsDesktop() {
                 </div>
               </div>
 
-              <div className="flex w-full items-center justify-center lg:justify-end">
-                <div className="w-full max-w-[560px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                  <div className="relative aspect-[5/4] w-full overflow-hidden">
-                    <Image
-                      src={imagePaths.operator}
-                      alt="Operator Hourly visual"
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 420px, 100vw"
-                    />
-                  </div>
+                <div className="flex w-full items-center justify-center lg:justify-end">
+                  <div className="w-full max-w-[560px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+                    <div className="relative aspect-[5/4] w-full overflow-hidden">
+                      <Image
+                        src={imagePaths.operator}
+                        alt="Operator Hourly visual"
+                        fill
+                        className="object-cover object-[50%_50%]"
+                        sizes="(min-width: 1024px) 420px, 100vw"
+                      />
+                    </div>
                   <div className="flex flex-col items-center gap-1 px-6 pb-4 pt-3 text-center">
                     <p className="text-base text-[color:var(--ink-editorial)]">
                       Judgment applied across your system.
@@ -445,7 +445,7 @@ export default function OfferingsDesktop() {
               </p>
             </div>
 
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
               <div className="flex w-full justify-center lg:justify-start">
                 <div className="w-full max-w-[560px] lg:max-w-[560px] lg:mx-0">
                   <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2">
@@ -453,7 +453,7 @@ export default function OfferingsDesktop() {
                       <img
                         src={imagePaths.flatRate}
                         alt="Flat-Rate Projects"
-                        className="block h-full w-full object-cover"
+                        className="block h-full w-full object-cover object-[50%_50%]"
                       />
                     </div>
                   </div>
