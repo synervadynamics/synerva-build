@@ -220,22 +220,13 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             Strategy, design, engineering, and automation as one chain.
           </p>
-          <div className={styles.portraitPair}>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
+          <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
+            <div className={styles.imgWidePlate}>
               <Image
                 src="/placeholders/offerings/build-left-2x3.png"
-                alt="2:3 portrait placeholder: modular infrastructure, stacked volumes, integrated pathways"
+                alt="Landscape placeholder: modular infrastructure, stacked volumes, integrated pathways"
                 fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className={styles.imageFill}
-              />
-            </div>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
-              <Image
-                src="/placeholders/offerings/build-right-2x3.png"
-                alt="2:3 portrait placeholder: flow, loops, unification with grounded material palette"
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
+                sizes="(max-width: 768px) 100vw, 520px"
                 className={styles.imageFill}
               />
             </div>

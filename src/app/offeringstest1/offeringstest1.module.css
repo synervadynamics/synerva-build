@@ -146,6 +146,11 @@
   width: 100%;
 }
 
+.imgWidePlate {
+  position: relative;
+  aspect-ratio: 1.9 / 1;
+  width: 100%;
+}
 .imageFill {
   object-fit: cover;
 }
@@ -489,6 +494,12 @@
   width: 100%;
 }
 
+.buildAnchorFrame {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
 .card {
   background: rgba(0, 0, 0, 0.28);
   border: 1px solid rgba(191, 215, 178, 0.22);
@@ -638,6 +649,10 @@
     align-items: start;
   }
 
+  .buildSectionGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .grid3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -645,6 +660,11 @@
 
   .offeringsAnchorFrame {
     width: 92%;
+    justify-self: end;
+  }
+
+  .buildAnchorFrame {
+    width: 112%;
     justify-self: end;
   }
 

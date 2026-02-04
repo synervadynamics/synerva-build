@@ -217,7 +217,7 @@ export default function OfferingsTest1Desktop() {
           id="build-with-synerva"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
         >
-          <div className={styles.grid2Asym}>
+          <div className={`${styles.grid2Asym} ${styles.buildSectionGrid}`}>
             <div className={styles.textStack}>
               <p className={styles.eyebrow}>Build With Synerva</p>
               <h2 className={styles.sectionTitle}>Full-stack systems, end-to-end</h2>
@@ -239,28 +239,15 @@ export default function OfferingsTest1Desktop() {
               </div>
               <p className={styles.microLine}>This is the flagship lane.</p>
             </div>
-            <div className={styles.portraitPairDesktop}>
-              <div className={styles.imageFrame}>
-                <div className={styles.img2x3}>
-                  <Image
-                    src="/placeholders/offeringstest1/build-left-2x3.png"
-                    alt="Build with Synerva left placeholder"
-                    fill
-                    className={styles.imageFill}
-                    sizes="(max-width: 1280px) 45vw, 360px"
-                  />
-                </div>
-              </div>
-              <div className={styles.imageFrame}>
-                <div className={styles.img2x3}>
-                  <Image
-                    src="/placeholders/offeringstest1/build-right-2x3.png"
-                    alt="Build with Synerva right placeholder"
-                    fill
-                    className={styles.imageFill}
-                    sizes="(max-width: 1280px) 45vw, 360px"
-                  />
-                </div>
+            <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
+              <div className={styles.imgWidePlate}>
+                <Image
+                  src="/placeholders/offeringstest1/build-left-2x3.png"
+                  alt="Build with Synerva placeholder"
+                  fill
+                  className={styles.imageFill}
+                  sizes="(max-width: 1280px) 60vw, 640px"
+                />
               </div>
             </div>
           </div>
