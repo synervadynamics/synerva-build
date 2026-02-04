@@ -6,16 +6,11 @@ import styles from "./offeringstest1.module.css";
 export default function OfferingsTest1Mobile() {
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
-      <div
-        className="pointer-events-none fixed inset-0 z-[5] bg-black"
-        style={{ opacity: 0.8 }}
-        aria-hidden
-      />
       <div className="relative z-10">
         <Mobile1Shell
           showBackButton
           backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
-          backgroundOverlayOpacity={0.15}
+          backgroundOverlayOpacity={0.8}
         >
         <section id="hero" className={`${styles.sectionPanel} mt-6`}>
           <p className={styles.eyebrow}>Offerings</p>
