@@ -104,6 +104,41 @@
   object-fit: cover;
 }
 
+.mediaCompact {
+  width: 100%;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mediaCompactWide {
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mediaCompactPortrait {
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .mediaCompact {
+    max-width: 380px;
+  }
+
+  .mediaCompactWide {
+    max-width: 440px;
+  }
+
+  .mediaCompactPortrait {
+    max-width: 340px;
+  }
+}
+
 .portraitPair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

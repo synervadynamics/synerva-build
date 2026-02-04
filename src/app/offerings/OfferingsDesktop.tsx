@@ -219,7 +219,9 @@ export default function OfferingsDesktop() {
 
                 <div className="flex w-full items-center justify-center">
                   <div className="flex w-full flex-col">
-                    <div className="overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
+                    <div
+                      className={`${styles.mediaCompactWide} overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
+                    >
                       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
                         <Image
                           src={imagePaths.hiring}
@@ -556,7 +558,9 @@ export default function OfferingsDesktop() {
                   className="flex w-full items-center justify-center"
                 >
                   <div className="flex w-full flex-col">
-                    <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4">
+                    <div
+                      className={`${styles.mediaCompactWide} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4`}
+                    >
                       <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl">
                         <Image
                           src={imagePaths.build}
@@ -647,7 +651,9 @@ export default function OfferingsDesktop() {
 
                 <div className="flex w-full items-center justify-center">
                   <div className="flex w-full flex-col">
-                    <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
+                    <div
+                      className={`${styles.mediaCompactPortrait} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
+                    >
                       <div className="aspect-[4/6] w-full overflow-hidden rounded-xl">
                         <img
                           src="/offerings-subpage-jan-3/additional-capabilities-4-6.PNG"
@@ -700,7 +706,9 @@ export default function OfferingsDesktop() {
 
                 <div className="flex w-full items-center justify-center">
                   <div className="flex w-full flex-col">
-                    <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
+                    <div
+                      className={`${styles.mediaCompactWide} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
+                    >
                       <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
                         <img
                           src="/offerings-subpage-jan-3/clarity-diagnostic-v3.png"
