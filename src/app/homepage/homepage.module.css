@@ -319,10 +319,12 @@
 
 @media (min-width: 1024px) {
   .sdHome {
-    --ink-body: #F5F7FA;
-    --ink-eyebrow: #7FA8B8;
-    --ink-header: #4F7FA6;
-    --ink-subheader: #6FB7A8;
+    --ink-body: #FFFFFF;
+    --ink-eyebrow: #FFFFFF;
+    --ink-header: #FFFFFF;
+    --ink-subheader: #FFFFFF;
+    --link-color: #FFFFFF;
+    --cta-text: #FFFFFF;
   }
 
   .sdHome p,
