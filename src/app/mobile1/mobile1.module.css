@@ -90,9 +90,11 @@
 
 .homeMobileTheme .panelFilled {
   background: var(--fill-weak) !important;
-  box-shadow: 0 0 0 1px var(--ol-primary), 0 0 24px var(--ol-glow) !important;
+  border: 1px solid var(--ol-primary) !important;
+  box-shadow: 0 0 24px var(--ol-glow) !important;
 }
 
+.homeMobileTheme h1,
 .homeMobileTheme h2,
 .homeMobileTheme h3 {
   color: var(--hdr-accent) !important;
