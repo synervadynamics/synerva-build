@@ -39,11 +39,8 @@ export default function OfferingsTest1Mobile() {
             <li>Systems that compound instead of decaying</li>
           </ul>
           <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              See engagement modes
+            <Link href="#next-step" className={styles.btnSecondary}>
+              See the next step
             </Link>
           </div>
           <p className={styles.microLine}>
@@ -109,9 +106,6 @@ export default function OfferingsTest1Mobile() {
                 <li>Strategy and execution in the same room</li>
                 <li>Best for pivots, audits, fixes, and pressure points</li>
               </ul>
-              <Link href="#operator-hourly" className={styles.miniCardCta}>
-                Go to Operator Hourly
-              </Link>
             </article>
             <article className={styles.miniCard}>
               <h3 className={styles.miniCardTitle}>Flat-Rate Projects</h3>
@@ -127,9 +121,6 @@ export default function OfferingsTest1Mobile() {
                 <li>Crafted assets and systems</li>
                 <li>Minimal meetings, maximum throughput</li>
               </ul>
-              <Link href="#flat-rate" className={styles.miniCardCta}>
-                Go to Flat-Rate Projects
-              </Link>
             </article>
             <article className={styles.miniCard}>
               <h3 className={styles.miniCardTitle}>Build With Synerva</h3>
@@ -144,9 +135,6 @@ export default function OfferingsTest1Mobile() {
                 <li>One system, not a pile of deliverables</li>
                 <li>Designed to scale without rewrites or regret</li>
               </ul>
-              <Link href="#build-with-synerva" className={styles.miniCardCta}>
-                Go to System Builds
-              </Link>
             </article>
           </div>
         </section>
@@ -183,14 +171,6 @@ export default function OfferingsTest1Mobile() {
               <li>Define acceptance criteria and ship-ready outputs</li>
               <li>Leave you with next actions that actually connect</li>
             </ul>
-          </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Book Operator Hourly
-            </Link>
-            <Link href="#capabilities" className={styles.btnSecondary}>
-              See coverage
-            </Link>
           </div>
           <p className={styles.microLine}>Minimum friction. Maximum leverage.</p>
         </section>
@@ -233,14 +213,6 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.microLine}>
             You’ll know exactly what you’re getting before we build.
           </p>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              View flat-rate options
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Request a quote
-            </Link>
-          </div>
         </section>
 
         <section id="build-with-synerva" className={styles.sectionPanel}>
@@ -282,14 +254,6 @@ export default function OfferingsTest1Mobile() {
               You want the whole machine built, not just a nicer dashboard.
             </span>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start a system build
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Talk scope first
-            </Link>
-          </div>
           <p className={styles.microLine}>This is the flagship lane.</p>
         </section>
 
@@ -326,14 +290,6 @@ export default function OfferingsTest1Mobile() {
             Everything is designed to work together. Nothing is shipped in
             isolation.
           </p>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you’re building
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              Back to engagement modes
-            </Link>
-          </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>
         </section>
 
@@ -435,14 +391,6 @@ export default function OfferingsTest1Mobile() {
               </ul>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you need
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              See engagement modes
-            </Link>
-          </div>
           <p className={styles.microLine}>
             If it’s on the list, it’s fair game. If it isn’t, ask anyway.
           </p>
@@ -503,14 +451,6 @@ export default function OfferingsTest1Mobile() {
               <li>Craft over “good enough”</li>
               <li>Delivery that doesn’t collapse two weeks later</li>
             </ul>
-          </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#how-it-works" className={styles.btnSecondary}>
-              How it works
-            </Link>
           </div>
         </section>
 
@@ -580,14 +520,6 @@ export default function OfferingsTest1Mobile() {
               </div>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#faq" className={styles.btnSecondary}>
-              Read FAQs
-            </Link>
-          </div>
         </section>
 
         <section id="proof" className={styles.sectionPanel}>
@@ -619,14 +551,6 @@ export default function OfferingsTest1Mobile() {
             If you want comfort, reassurance, or consensus, this is not the right
             fit.
           </p>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#start" className={styles.btnSecondary}>
-              Email instead
-            </Link>
-          </div>
         </section>
 
         <section id="faq" className={styles.sectionPanel}>
@@ -683,21 +607,13 @@ export default function OfferingsTest1Mobile() {
               </p>
             </article>
           </div>
-          <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#hero" className={styles.btnSecondary}>
-              Back to top
-            </Link>
-          </div>
         </section>
 
         <section
-          id="start"
+          id="next-step"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled}`}
         >
-          <p className={styles.eyebrow}>Start Here</p>
+          <p className={styles.eyebrow}>Next Step</p>
           <h2 className={styles.sectionTitle}>Ready when you are</h2>
           <p className={styles.sectionSubhead}>
             One short intake. Then we choose the fastest path to a real outcome.
@@ -717,11 +633,8 @@ export default function OfferingsTest1Mobile() {
             <li>We move into a build loop with clear constraints</li>
           </ul>
           <div className={styles.ctaStack}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              Choose engagement mode
+            <Link href="/contact" className={styles.btnPrimary}>
+              Contact Synerva
             </Link>
           </div>
           <p className={styles.microLine}>

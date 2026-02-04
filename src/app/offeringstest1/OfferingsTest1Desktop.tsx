@@ -38,11 +38,8 @@ export default function OfferingsTest1Desktop() {
                   <li>Systems that compound instead of decaying</li>
                 </ul>
                 <div className={styles.ctaRow}>
-                  <Link href="#start" className={styles.btnPrimary}>
-                    Start here
-                  </Link>
-                  <Link href="#modes" className={styles.btnSecondary}>
-                    See engagement modes
+                  <Link href="#next-step" className={styles.btnSecondary}>
+                    See the next step
                   </Link>
                 </div>
                 <p className={styles.microLine}>
@@ -92,9 +89,6 @@ export default function OfferingsTest1Desktop() {
                   <li>Strategy and execution in the same room</li>
                   <li>Best for pivots, audits, fixes, and pressure points</li>
                 </ul>
-                <Link href="#operator-hourly" className={styles.cardCta}>
-                  Go to Operator Hourly
-                </Link>
               </article>
               <article className={styles.card}>
                 <h3 className={styles.cardTitle}>Flat-Rate Projects</h3>
@@ -110,9 +104,6 @@ export default function OfferingsTest1Desktop() {
                   <li>Crafted assets and systems</li>
                   <li>Minimal meetings, maximum throughput</li>
                 </ul>
-                <Link href="#flat-rate" className={styles.cardCta}>
-                  Go to Flat-Rate Projects
-                </Link>
               </article>
               <article className={styles.card}>
                 <h3 className={styles.cardTitle}>Build With Synerva</h3>
@@ -127,9 +118,6 @@ export default function OfferingsTest1Desktop() {
                   <li>One system, not a pile of deliverables</li>
                   <li>Designed to scale without rewrites or regret</li>
                 </ul>
-                <Link href="#build-with-synerva" className={styles.cardCta}>
-                  Go to System Builds
-                </Link>
               </article>
             </div>
           </section>
@@ -162,14 +150,6 @@ export default function OfferingsTest1Desktop() {
                   <li>Define acceptance criteria and ship-ready outputs</li>
                   <li>Leave with next actions that actually connect</li>
                 </ul>
-              </div>
-              <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  Book Operator Hourly
-                </Link>
-                <Link href="#capabilities" className={styles.btnSecondary}>
-                  See coverage
-                </Link>
               </div>
               <p className={styles.microLine}>Minimum friction. Maximum leverage.</p>
             </div>
@@ -218,14 +198,6 @@ export default function OfferingsTest1Desktop() {
               <p className={styles.microLine}>
                 You’ll know exactly what you’re getting before we build.
               </p>
-              <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  View flat-rate options
-                </Link>
-                <Link href="#start" className={styles.btnSecondary}>
-                  Request a quote
-                </Link>
-              </div>
             </div>
             <div className={styles.imageFrame}>
               <div className={styles.img3x2}>
@@ -264,14 +236,6 @@ export default function OfferingsTest1Desktop() {
                 <span className={styles.requirementsText}>
                   You want the whole machine built, not just a nicer dashboard.
                 </span>
-              </div>
-              <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  Start a system build
-                </Link>
-                <Link href="#start" className={styles.btnSecondary}>
-                  Talk scope first
-                </Link>
               </div>
               <p className={styles.microLine}>This is the flagship lane.</p>
             </div>
@@ -338,14 +302,6 @@ export default function OfferingsTest1Desktop() {
                 sizes="(max-width: 1280px) 100vw, 960px"
               />
             </div>
-          </div>
-          <div className={styles.ctaRow}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you’re building
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              Back to engagement modes
-            </Link>
           </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>
         </section>
@@ -482,14 +438,6 @@ export default function OfferingsTest1Desktop() {
               </div>
             </article>
           </div>
-          <div className={styles.ctaRow}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Tell me what you need
-            </Link>
-            <Link href="#modes" className={styles.btnSecondary}>
-              See engagement modes
-            </Link>
-          </div>
           <p className={styles.microLine}>
             If it’s on the list, it’s fair game. If it isn’t, ask anyway.
           </p>
@@ -559,14 +507,6 @@ export default function OfferingsTest1Desktop() {
               </ul>
             </div>
           </div>
-          <div className={styles.ctaRow}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start here
-            </Link>
-            <Link href="#how-it-works" className={styles.btnSecondary}>
-              How it works
-            </Link>
-          </div>
         </section>
 
         <section
@@ -629,14 +569,6 @@ export default function OfferingsTest1Desktop() {
               </p>
             </article>
           </div>
-          <div className={styles.ctaRow}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#faq" className={styles.btnSecondary}>
-              Read FAQs
-            </Link>
-          </div>
         </section>
 
         <section id="proof" className={`${styles.sectionPanel} ${styles.section}`}>
@@ -661,14 +593,6 @@ export default function OfferingsTest1Desktop() {
                 If you want comfort, reassurance, or consensus, this is not the
                 right fit.
               </p>
-              <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  Start here
-                </Link>
-                <Link href="#start" className={styles.btnSecondary}>
-                  Email instead
-                </Link>
-              </div>
             </div>
             <div className={styles.imageFrame}>
               <div className={styles.img3x2}>
@@ -743,23 +667,15 @@ export default function OfferingsTest1Desktop() {
               </article>
             </div>
           </div>
-          <div className={styles.ctaRow}>
-            <Link href="#start" className={styles.btnPrimary}>
-              Start intake
-            </Link>
-            <Link href="#hero" className={styles.btnSecondary}>
-              Back to top
-            </Link>
-          </div>
         </section>
 
         <section
-          id="start"
+          id="next-step"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
         >
           <div className={styles.grid2}>
             <div className={styles.textStack}>
-              <p className={styles.eyebrow}>Start Here</p>
+              <p className={styles.eyebrow}>Next Step</p>
               <h2 className={styles.sectionTitle}>Ready when you are</h2>
               <p className={styles.sectionSubhead}>
                 One short intake. Then we choose the fastest path to a real
@@ -771,11 +687,8 @@ export default function OfferingsTest1Desktop() {
                 <li>We move into a build loop with clear constraints</li>
               </ul>
               <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  Start intake
-                </Link>
-                <Link href="#modes" className={styles.btnSecondary}>
-                  Choose engagement mode
+                <Link href="/contact" className={styles.btnPrimary}>
+                  Contact Synerva
                 </Link>
               </div>
               <p className={styles.microLine}>
