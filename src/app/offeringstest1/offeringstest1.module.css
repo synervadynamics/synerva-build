@@ -181,6 +181,12 @@
   width: 100%;
   max-width: 440px;
 }
+
+.imgProcessHalf {
+  position: relative;
+  aspect-ratio: 3 / 1;
+  width: 100%;
+}
 .imageFill {
   object-fit: cover;
 }

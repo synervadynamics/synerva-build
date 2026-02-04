@@ -506,7 +506,7 @@ export default function OfferingsTest1Desktop() {
             </p>
           </div>
           <div className={styles.imageFrame}>
-            <div className={styles.img3x2}>
+            <div className={styles.imgProcessHalf}>
               <Image
                 src="/placeholders/offeringstest1/process-3x2.png"
                 alt="Process placeholder"
