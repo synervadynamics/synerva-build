@@ -7,16 +7,20 @@
   --panel-fill-focus: transparent;
   --cta-outline: rgba(210, 199, 180, 0.18);
   --cta-text: rgba(216, 224, 228, 0.86);
-  --link-color: rgba(210, 199, 180, 0.72);
+  --link-color: #F5F7FA;
   --bullet-color: rgba(191, 201, 205, 0.60);
-  --micro-ink: rgba(191, 201, 205, 0.55);
+  --ink-body: #F5F7FA;
+  --ink-eyebrow: #7FA8B8;
+  --ink-header: #4F7FA6;
+  --ink-subheader: #6FB7A8;
+  --micro-ink: var(--ink-eyebrow);
   --overlay-line: rgba(199, 210, 216, 0.09);
   --overlay-label: rgba(191, 201, 205, 0.55);
-  --ink-editorial: #D5DEE3;
-  --ink-analytical: #C7D1D7;
-  --ink-human: #D2CBC2;
-  --ink-structural: #BFC9CD;
-  color: var(--ink-editorial);
+  --ink-editorial: var(--ink-body);
+  --ink-analytical: var(--ink-body);
+  --ink-human: var(--ink-body);
+  --ink-structural: var(--ink-body);
+  color: var(--ink-body);
   background-color: var(--page-bg-ref);
 }
 
@@ -33,24 +37,46 @@
 }
 
 .sdHome h1,
-.sdHome h2,
+.sdHome h2 {
+  color: var(--ink-header) !important;
+}
+
 .sdHome h3,
 .sdHome h4 {
-  color: rgba(213, 222, 227, 0.92);
+  color: var(--ink-subheader) !important;
 }
 
 .sdHome p,
 .sdHome li {
-  color: var(--ink-current, var(--ink-editorial));
+  color: var(--ink-current, var(--ink-editorial)) !important;
 }
 
 .sdHome li::marker {
   color: var(--bullet-color);
 }
 
+.sdHome [data-type-compression="headline"] {
+  color: var(--ink-header) !important;
+}
+
+.sdHome [data-type-compression="subhead"] {
+  color: var(--ink-subheader) !important;
+}
+
+.sdHome :global(.section-label) {
+  color: var(--ink-eyebrow) !important;
+}
+
+.sdHome :global(.section-title),
+.sdHome :global(.section-heading) {
+  color: var(--ink-header) !important;
+}
+
 .sdHome p.uppercase,
-.sdHome span.uppercase {
-  color: var(--micro-ink);
+.sdHome span.uppercase,
+.sdHome p[class*="uppercase"],
+.sdHome span[class*="uppercase"] {
+  color: var(--micro-ink) !important;
 }
 
 .sdHome a[class*="uppercase"]:not([class*="rounded-full"]):not([class*="border"]) {
@@ -113,7 +139,7 @@
 }
 
 .sdHome a:not([class*="rounded-full"]):not([class*="border"]):not([class*="uppercase"]):hover {
-  color: rgba(210, 199, 180, 0.9);
+  color: #FFFFFF;
 }
 
 .sdHome :global(.bg-sky-300\/60) {
@@ -140,7 +166,7 @@
 }
 
 .sdHome :global(.synerva-playbook-form .form-microcopy) {
-  color: var(--micro-ink);
+  color: var(--ink-body) !important;
 }
 
 .sdHome :global(#narrative) {
@@ -173,7 +199,7 @@
 .sdHome :global(#publications .text-white\/55),
 .sdHome :global(#merch .text-white\/50),
 .sdHome :global(#merch .text-white\/60) {
-  color: var(--ink-structural);
+  color: var(--ink-body);
 }
 
 .sdHome :global(#systems-that-hold .dsr-room) {
@@ -222,7 +248,7 @@
 
 @media (max-width: 768px) {
   .sdHome {
-    --signal-cyan: #3FD6E6;
+    --signal-cyan: var(--ink-header);
     --panel-outline-cyan: #2BB8C6;
     --image-outline-cyan: #1F8F9C;
   }
@@ -230,23 +256,26 @@
   .sdHome h1,
   .sdHome h2,
   .sdHome h3,
-  .sdHome :global(.section-label),
   .sdHome :global(.section-title),
   .sdHome :global(.section-heading) {
-    color: var(--signal-cyan) !important;
+    color: var(--ink-header) !important;
+  }
+
+  .sdHome :global(.section-label) {
+    color: var(--ink-eyebrow) !important;
   }
 
   .sdHome p.uppercase,
   .sdHome span.uppercase,
   .sdHome p[class*="uppercase"],
   .sdHome span[class*="uppercase"] {
-    color: var(--signal-cyan) !important;
+    color: var(--ink-eyebrow) !important;
   }
 
   .sdHome :global(.panel) h1,
   .sdHome :global(.panel) h2,
   .sdHome :global(.panel) h3 {
-    color: var(--signal-cyan) !important;
+    color: var(--ink-header) !important;
   }
 
   .sdHome p,
