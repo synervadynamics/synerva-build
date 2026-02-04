@@ -9,6 +9,11 @@ export default function OfferingsTest1Desktop() {
   return (
       <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
+      <div
+        className="pointer-events-none fixed inset-0 z-[5] bg-black"
+        style={{ opacity: 0.06 }}
+        aria-hidden
+      />
       <div className="relative z-10">
         <div className={styles.pageWrapper}>
           <section id="hero" className={`${styles.sectionPanel} ${styles.section}`}>

@@ -11,7 +11,7 @@ export default function HomeMobile() {
         <section
           data-accent="blue"
           className={`mt-6 flex flex-col gap-4 rounded-[16px] border bg-white/[0.04] px-5 py-5 ${styles.panelTransparent}`}
-          style={{ borderColor: "var(--ol-0)" }}
+          style={{ borderColor: "var(--ol-primary)" }}
         >
           <div className="grid grid-cols-[auto_1fr_auto] items-center">
             <button
@@ -63,7 +63,7 @@ export default function HomeMobile() {
         <section
           data-accent="turquoise"
           className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] -mt-8 ${styles.panelTransparent} ${styles.panelFilled}`}
-          style={{ borderColor: "var(--ol-0)" }}
+          style={{ borderColor: "var(--ol-primary)" }}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             THE PROBLEM
@@ -82,7 +82,7 @@ export default function HomeMobile() {
           data-accent="seagreen"
           className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent} ${styles.panelFilled}`}
           style={{
-            borderColor: "var(--ol-0)",
+            borderColor: "var(--ol-primary)",
           }}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
