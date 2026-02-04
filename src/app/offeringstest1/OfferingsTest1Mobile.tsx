@@ -6,6 +6,11 @@ import styles from "./offeringstest1.module.css";
 export default function OfferingsTest1Mobile() {
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
+      <div
+        className="pointer-events-none fixed inset-0 z-[5] bg-black"
+        style={{ opacity: 0.8 }}
+        aria-hidden
+      />
       <Mobile1Shell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
