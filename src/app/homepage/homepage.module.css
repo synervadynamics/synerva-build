@@ -5,8 +5,13 @@
   --divider-rule: rgba(199, 210, 216, 0.10);
   --panel-fill: transparent;
   --panel-fill-focus: transparent;
-  --cta-outline: rgba(230, 227, 220, 0.55);
-  --cta-text: rgba(216, 224, 228, 0.86);
+  --cta-outline: rgba(152, 168, 176, 0.32);
+  --cta-outline-hover: rgba(190, 202, 210, 0.5);
+  --cta-outline-active: rgba(205, 214, 221, 0.6);
+  --cta-fill: rgba(10, 14, 18, 0.08);
+  --cta-fill-hover: rgba(10, 14, 18, 0.1);
+  --cta-fill-active: rgba(10, 14, 18, 0.12);
+  --cta-text: rgba(214, 222, 227, 0.85);
   --link-color: #F5F7FA;
   --bullet-color: rgba(191, 201, 205, 0.60);
   --ink-body: #F5F7FA;
@@ -23,7 +28,7 @@
   --role-authority: var(--ink-header);
   --role-orientation: var(--ink-subheader);
   --role-body: var(--cta-text);
-  --role-action: var(--link-color);
+  --role-action: var(--cta-text);
   --section-gap-top: clamp(1.75rem, 4vw, 3rem);
   --section-gap-bottom: clamp(1.75rem, 4vw, 3rem);
   background-color: var(--page-bg-ref);
@@ -89,8 +94,9 @@
   --section-gap-top: clamp(2.5rem, 6vw, 4.5rem);
 }
 
-.sdHome .role-action {
-  color: var(--role-action) !important;
+.sdHome .role-action,
+.sdHome .inline-cta {
+  color: var(--cta-text) !important;
   font-weight: 500 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase;
@@ -101,26 +107,31 @@
   border-radius: 9999px;
   border: 1px solid var(--cta-outline);
   padding: 0.55rem 1.35rem;
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--cta-fill);
   text-decoration: none;
-}
-
-.sdHome .inline-cta {
-  color: var(--role-body) !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  border-radius: 9999px;
-  border: 1px solid var(--cta-outline);
-  padding: 0.55rem 1.35rem;
-  background-color: rgba(255, 255, 255, 0.04);
-  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .sdHome .inline-cta:hover,
 .sdHome .role-action:hover {
-  opacity: 0.85;
+  background-color: var(--cta-fill-hover);
+  border-color: var(--cta-outline-hover);
+  color: var(--cta-text) !important;
+}
+
+.sdHome .inline-cta:active,
+.sdHome .role-action:active {
+  background-color: var(--cta-fill-active);
+  border-color: var(--cta-outline-active);
+  color: var(--cta-text) !important;
+}
+
+.sdHome .inline-cta:focus-visible,
+.sdHome .role-action:focus-visible {
+  outline: none;
+  background-color: var(--cta-fill-active);
+  border-color: var(--cta-outline-active);
+  color: var(--cta-text) !important;
 }
 
 .sdHome li::marker {
