@@ -91,7 +91,28 @@
 }
 
 .panelTransparent {
-  background-color: transparent !important;
+  background-color: transparent;
+}
+
+.homeMobileTheme .panelTransparent {
+  border: 1px solid var(--ol-0) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 22px var(--ol-1) !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+}
+
+.homeMobileTheme .panelFilled {
+  background: linear-gradient(180deg, var(--fill-1), var(--fill-0)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 18px var(--ol-1) !important;
+}
+
+.homeMobileTheme h2,
+.homeMobileTheme h3 {
+  color: var(--hdr) !important;
+}
+
+.homeMobileTheme :global(.uppercase) {
+  color: var(--label) !important;
 }
 
 .shell[data-mode="expanded"] {
@@ -216,7 +237,8 @@
   letter-spacing: 0.28em;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.42),
     0 0 24px rgba(88, 229, 255, 0.18);
-  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .synervaCta::after {
@@ -240,6 +262,31 @@
     0 0 28px rgba(88, 229, 255, 0.22);
 }
 
+.homeMobileTheme .synervaCta,
+.homeMobileTheme .offeringsCta {
+  background: var(--cta);
+  color: var(--cta-ink);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+.homeMobileTheme .synervaCta:hover,
+.homeMobileTheme .offeringsCta:hover {
+  background: var(--cta-hover);
+}
+
+.homeMobileTheme .synervaCta:active,
+.homeMobileTheme .offeringsCta:active {
+  background: var(--cta-press);
+}
+
+.homeMobileTheme .synervaCta:focus-visible,
+.homeMobileTheme .offeringsCta:focus-visible,
+.homeMobileTheme .secondaryCta:focus-visible,
+.homeMobileTheme .synervaCtaSecondary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
 .synervaCtaSecondary {
   position: relative;
   display: inline-flex;
@@ -255,7 +302,8 @@
   text-transform: uppercase;
   letter-spacing: 0.26em;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
-  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .synervaCtaSecondary::after {
@@ -377,7 +425,8 @@
   text-transform: none;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4),
     0 0 20px rgba(88, 229, 255, 0.16);
-  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .offeringsCta:hover {
@@ -440,12 +489,31 @@
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: none;
-  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  transition: border-color 160ms ease, color 160ms ease, box-shadow 160ms ease,
+    background 160ms ease;
 }
 
 .secondaryCta:hover {
   border-color: rgba(88, 229, 255, 0.32);
   color: rgba(224, 244, 252, 0.92);
+}
+
+.homeMobileTheme .synervaCtaSecondary,
+.homeMobileTheme .secondaryCta {
+  background: var(--cta-ghost);
+  border: 1px solid var(--cta-ghost-border);
+  color: var(--cta-ghost-ink);
+}
+
+.homeMobileTheme .synervaCtaSecondary:hover,
+.homeMobileTheme .secondaryCta:hover {
+  background: rgba(95, 183, 177, 0.20);
+}
+
+.homeMobileTheme .synervaCtaSecondary:active,
+.homeMobileTheme .secondaryCta:active {
+  background: rgba(95, 183, 177, 0.12);
+  border-color: rgba(95, 183, 177, 0.46);
 }
 
 .secondaryCtaTight {
