@@ -47,6 +47,7 @@ type Mobile1ShellProps = {
   showBackButton?: boolean;
   backgroundImageUrl?: string;
   backgroundOverlayEnabled?: boolean;
+  backgroundOverlayOpacity?: number;
 };
 
 export default function Mobile1Shell({
@@ -54,6 +55,7 @@ export default function Mobile1Shell({
   showBackButton = false,
   backgroundImageUrl,
   backgroundOverlayEnabled = true,
+  backgroundOverlayOpacity = 1,
 }: Mobile1ShellProps) {
   const [mode, setMode] = useState<LayoutMode>("expanded");
   const [isArtworkOpen, setIsArtworkOpen] = useState(false);
@@ -99,7 +101,11 @@ export default function Mobile1Shell({
         <ScrollMorphBackground imageSources={backgroundSources} />
       )}
       {backgroundOverlayEnabled ? (
-        <div className={styles.contentOverlay} aria-hidden />
+        <div
+          className={styles.contentOverlay}
+          style={backgroundOverlayOpacity < 1 ? { opacity: backgroundOverlayOpacity } : undefined}
+          aria-hidden
+        />
       ) : null}
       <div className={`flex w-full flex-col gap-12 py-12 ${styles.content}`}>
         {children}
