@@ -217,13 +217,7 @@ export default function OfferingsClient() {
                   href="/contact"
                   className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                 >
-                  Start with a 30-minute plan
-                </Link>
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                >
-                  Initiate Contact
+                  Start a Conversation
                 </Link>
               </div>
             </div>
@@ -549,13 +543,7 @@ export default function OfferingsClient() {
               href="/contact"
               className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
             >
-              Start with a 30-minute plan
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-            >
-              Initiate Contact
+              Work With Synerva
             </Link>
           </div>
         </div>
