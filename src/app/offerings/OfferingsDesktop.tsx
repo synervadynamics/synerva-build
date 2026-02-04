@@ -399,7 +399,7 @@ export default function OfferingsDesktop() {
                       sizes="(min-width: 1024px) 420px, 100vw"
                     />
                   </div>
-                  <div className="flex flex-col items-center gap-1 px-6 pb-6 pt-4 text-center">
+                  <div className="flex flex-col items-center gap-1 px-6 pb-4 pt-3 text-center">
                     <p className="text-base text-[color:var(--ink-editorial)]">
                       Judgment applied across your system.
                     </p>
@@ -448,8 +448,8 @@ export default function OfferingsDesktop() {
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
               <div className="flex w-full justify-center lg:justify-start">
                 <div className="w-full lg:w-[90%]">
-                  <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3">
-                    <div className="aspect-[16/9] w-full overflow-hidden rounded-[22px]">
+                  <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2">
+                    <div className="aspect-[5/4] w-full overflow-hidden rounded-[22px]">
                       <img
                         src={imagePaths.flatRate}
                         alt="Flat-Rate Projects"

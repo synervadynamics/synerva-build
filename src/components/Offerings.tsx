@@ -120,9 +120,6 @@ export const Offerings = () => {
           <p className="role-body text-xs uppercase tracking-[0.3em] text-white/50">
             {offerings.microline}
           </p>
-          <Link href="/offerings" className="role-action">
-            Explore Offerings →
-          </Link>
         </div>
       </div>
     </section>
