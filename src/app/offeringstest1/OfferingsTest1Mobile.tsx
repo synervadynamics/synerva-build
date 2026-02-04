@@ -406,7 +406,7 @@ export default function OfferingsTest1Mobile() {
           </p>
           <div className={styles.portraitPair}>
             <div className={styles.imageFrame}>
-              <div className={styles.img4x5}>
+              <div className={styles.imgStandardsHalf}>
                 <Image
                   src="/placeholders/offerings/standards-left-2x3.png"
                   alt="2:3 portrait placeholder: clean craft, material authority"
@@ -417,7 +417,7 @@ export default function OfferingsTest1Mobile() {
               </div>
             </div>
             <div className={styles.imageFrame}>
-              <div className={styles.img4x5}>
+              <div className={styles.imgStandardsHalf}>
                 <Image
                   src="/placeholders/offerings/standards-right-2x3.png"
                   alt="2:3 portrait placeholder: calm output, resolved design"

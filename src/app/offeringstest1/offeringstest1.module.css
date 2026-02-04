@@ -151,6 +151,12 @@
   aspect-ratio: 4 / 5;
   width: 100%;
 }
+
+.imgStandardsHalf {
+  position: relative;
+  aspect-ratio: 8 / 5;
+  width: 100%;
+}
 .imgWidePlate {
   position: relative;
   aspect-ratio: 1.9 / 1;
