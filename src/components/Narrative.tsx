@@ -53,10 +53,10 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 <div className={mobileBeatsWrapperClasses}>
                   {mobileBeats.map((beat) => (
                     <div key={beat.heading} className={mobileBeatClasses}>
-                      <h2 className="text-xl font-light leading-snug text-white">
+                      <h2 className="role-body text-xl font-light leading-snug text-white">
                         {beat.heading}
                       </h2>
-                      <p className="text-[0.95rem] leading-6 text-white/78">
+                      <p className="role-body text-[0.95rem] leading-6 text-white/78">
                         {beat.body}
                       </p>
                     </div>
@@ -67,14 +67,14 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
             <div className="hidden flex-col gap-8 lg:flex">
               <div className="space-y-5">
                 <div className="contrast-field space-y-5">
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
                     {story.eyebrow}
                   </p>
                   <h2
                     data-type-compression="headline"
                     data-type-compression-line-height="1.25"
                     data-type-compression-letter-spacing="0"
-                    className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                    className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                   >
                     {story.heading}
                   </h2>
@@ -82,11 +82,11 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                     data-type-compression="subhead"
                     data-type-compression-line-height="1.5"
                     data-type-compression-letter-spacing="0"
-                    className="text-lg text-white/85"
+                    className="role-orientation text-lg text-white/85"
                   >
                     {story.statement}
                   </p>
-                  <p className="text-base text-white/76">{story.proof}</p>
+                  <p className="role-body text-base text-white/76">{story.proof}</p>
                 </div>
                 <Link
                   href={story.cta.href}
@@ -104,12 +104,15 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
               >
                 <div className="space-y-4">
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
                     System Guardrails
                   </p>
                   <ul className="space-y-2 text-sm text-white/78">
                     {story.bullets.map((point) => (
-                      <li key={point} className="story-bullet flex items-start gap-3">
+                      <li
+                        key={point}
+                        className="role-body story-bullet flex items-start gap-3"
+                      >
                         <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                         <span>{point}</span>
                       </li>
@@ -117,14 +120,14 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   </ul>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
                     Engagement Stance
                   </p>
-                  <p className="text-sm text-white/80">
+                  <p className="role-body text-sm text-white/80">
                     We pair precision systems with human judgment, so delivery stays
                     fast without losing intent.
                   </p>
-                  <p className="text-sm text-white/74">
+                  <p className="role-body text-sm text-white/74">
                     Measured automation, tight guardrails, human oversight—momentum
                     holds after launch.
                   </p>
@@ -136,14 +139,14 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
           <>
             <div className="space-y-5">
               <div className="contrast-field space-y-5">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
                   {story.eyebrow}
                 </p>
                 <h2
                   data-type-compression="headline"
                   data-type-compression-line-height="1.25"
                   data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                  className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
                   {story.heading}
                 </h2>
@@ -151,11 +154,11 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   data-type-compression="subhead"
                   data-type-compression-line-height="1.5"
                   data-type-compression-letter-spacing="0"
-                  className="text-lg text-white/85"
+                  className="role-orientation text-lg text-white/85"
                 >
                   {story.statement}
                 </p>
-                <p className="text-base text-white/76">{story.proof}</p>
+                <p className="role-body text-base text-white/76">{story.proof}</p>
               </div>
               <Link
                 href={story.cta.href}
@@ -173,12 +176,15 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
               className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
             >
               <div className="space-y-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
                   System Guardrails
                 </p>
                 <ul className="space-y-2 text-sm text-white/78">
                   {story.bullets.map((point) => (
-                    <li key={point} className="story-bullet flex items-start gap-3">
+                    <li
+                      key={point}
+                      className="role-body story-bullet flex items-start gap-3"
+                    >
                       <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                       <span>{point}</span>
                     </li>
@@ -186,14 +192,14 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 </ul>
               </div>
               <div className="space-y-4">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/64">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
                   Engagement Stance
                 </p>
-                <p className="text-sm text-white/80">
+                <p className="role-body text-sm text-white/80">
                   We pair precision systems with human judgment, so delivery stays
                   fast without losing intent.
                 </p>
-                <p className="text-sm text-white/74">
+                <p className="role-body text-sm text-white/74">
                   Measured automation, tight guardrails, human oversight—momentum
                   holds after launch.
                 </p>

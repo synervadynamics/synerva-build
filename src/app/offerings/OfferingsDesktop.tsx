@@ -161,11 +161,11 @@ export default function OfferingsDesktop() {
                   </div>
                   <div className="flex w-full items-center justify-center">
                     <div className="w-full max-w-[600px] overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4">
-                      <div className="aspect-[21/9] w-full overflow-hidden rounded-xl">
+                      <div className="aspect-[856/676] w-full overflow-hidden rounded-xl">
                         <img
                           src={imagePaths.hero}
                           alt="Synerva Dynamics offerings hero"
-                          className="h-full w-full rounded-xl object-cover object-[50%_45%] opacity-90"
+                          className="h-full w-full rounded-xl object-cover object-[50%_50%] opacity-90"
                         />
                       </div>
                     </div>

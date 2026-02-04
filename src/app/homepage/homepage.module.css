@@ -20,7 +20,9 @@
   --ink-analytical: var(--ink-body);
   --ink-human: var(--ink-body);
   --ink-structural: var(--ink-body);
-  color: var(--ink-body);
+  --role-authority: var(--ink-header);
+  --role-orientation: var(--ink-subheader);
+  --role-body: var(--cta-text);
   background-color: var(--page-bg-ref);
 }
 
@@ -36,55 +38,32 @@
   --ink-current: var(--ink-structural);
 }
 
-.sdHome h1,
-.sdHome h2 {
-  color: var(--ink-header) !important;
+.sdHome .role-authority {
+  color: var(--role-authority) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.15 !important;
+  max-width: 34rem;
 }
 
-.sdHome h3,
-.sdHome h4 {
-  color: var(--ink-subheader) !important;
+.sdHome .role-orientation {
+  color: var(--role-orientation) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+  max-width: 40rem;
 }
 
-.sdHome p,
-.sdHome li {
-  color: var(--ink-current, var(--ink-editorial)) !important;
+.sdHome .role-body {
+  color: var(--role-body) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.65 !important;
+  max-width: 46rem;
 }
 
 .sdHome li::marker {
   color: var(--bullet-color);
-}
-
-.sdHome [data-type-compression="headline"] {
-  color: var(--ink-header) !important;
-}
-
-.sdHome :global(.section-label) {
-  color: var(--ink-eyebrow) !important;
-}
-
-.sdHome :global(.section-title),
-.sdHome :global(.section-heading) {
-  color: var(--ink-header) !important;
-}
-
-.sdHome :is(p, li, span, div)[class*="text-white/"] {
-  color: var(--ink-body) !important;
-}
-
-.sdHome :is(p, div, span)[data-type-compression="subhead"] {
-  color: var(--ink-subheader) !important;
-}
-
-.sdHome p.uppercase,
-.sdHome span.uppercase,
-.sdHome p[class*="uppercase"],
-.sdHome span[class*="uppercase"] {
-  color: var(--micro-ink) !important;
-}
-
-.sdHome a[class*="uppercase"]:not([class*="rounded-full"]):not([class*="border"]) {
-  color: var(--micro-ink);
 }
 
 .sdHome :global(.border-white\/12),
@@ -128,7 +107,7 @@
 .sdHome span[class*="border-white/"],
 .sdHome button[class*="border-white/"] {
   border-color: var(--cta-outline);
-  color: var(--cta-text);
+  color: var(--link-color);
 }
 
 .sdHome a[class*="border-white/"]:hover,
@@ -148,6 +127,10 @@
 
 .sdHome :global(.bg-sky-300\/60) {
   background-color: var(--bullet-color);
+}
+
+.sdHome :global(.cascade-token) {
+  color: var(--role-body);
 }
 
 .sdHome .filled-panel {

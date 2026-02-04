@@ -93,16 +93,6 @@
   box-shadow: 0 0 24px var(--ol-glow) !important;
 }
 
-.homeMobileTheme h1,
-.homeMobileTheme h2,
-.homeMobileTheme h3 {
-  color: var(--hdr-accent) !important;
-}
-
-.homeMobileTheme :global(.uppercase) {
-  color: var(--label-accent) !important;
-}
-
 .homeMobileTheme :global(:focus-visible) {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;

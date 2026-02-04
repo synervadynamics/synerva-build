@@ -75,7 +75,7 @@ export const SectionIndex = ({
     <div
       className={`flex items-center text-xs uppercase ${
         isHomepage
-          ? "gap-[0.3rem] tracking-[0.28em] text-white"
+          ? "role-body gap-[0.3rem] tracking-[0.28em]"
           : "gap-2 tracking-[0.3em] text-white/50"
       }`}
       onMouseLeave={() => setHoveredId(null)}
@@ -120,7 +120,7 @@ export const SectionIndex = ({
               item.id === "systems" && isHomepage ? "mr-[1.8rem]" : ""
             } ${
               isHomepage
-                ? `text-white transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                ? `role-body transition-opacity duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     isHovered || isActive
                       ? "opacity-100"
                       : isDimmed

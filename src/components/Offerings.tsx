@@ -38,14 +38,14 @@ export const Offerings = () => {
     >
       <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
         <div className="contrast-field space-y-4">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+          <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
             {offerings.eyebrow}
           </p>
           <h2
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
             data-type-compression-letter-spacing="0"
-            className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+            className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
           >
             {offerings.heading}
           </h2>
@@ -53,7 +53,7 @@ export const Offerings = () => {
             data-type-compression="subhead"
             data-type-compression-line-height="1.5"
             data-type-compression-letter-spacing="0"
-            className="text-lg text-white/75"
+            className="role-orientation text-lg text-white/75"
           >
             {offerings.body}
           </p>
@@ -96,12 +96,12 @@ export const Offerings = () => {
                   </div>
                 ) : null}
                 <div className="relative z-10 space-y-2">
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                  <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                     {card.title}
                   </p>
-                  <p className="text-sm text-white/70">{card.meta}</p>
+                  <p className="role-body text-sm text-white/70">{card.meta}</p>
                 </div>
-                <p className="relative z-10 text-sm text-white/80">
+                <p className="role-body relative z-10 text-sm text-white/80">
                   {card.text}
                 </p>
                 <div className="relative z-10 mt-auto pt-1 sm:pt-2">
@@ -116,7 +116,7 @@ export const Offerings = () => {
             );
           })}
         </motion.div>
-        <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+        <p className="role-body text-xs uppercase tracking-[0.3em] text-white/50">
           {offerings.microline}
         </p>
       </div>

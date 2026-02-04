@@ -155,7 +155,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
             <div className="md:hidden">
               <div className={mobileReadingContainerClasses}>
                 <div className="space-y-5">
-                  <h2 className="text-2xl font-light leading-snug text-white">
+                  <h2 className="role-authority text-2xl font-light leading-snug text-white">
                     {copy.deliver.heading}
                   </h2>
                   <div className="space-y-5">
@@ -181,10 +181,10 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                             </div>
                           ) : null}
                           <div className="space-y-2">
-                            <h3 className="text-xl font-light leading-snug text-white">
+                            <h3 className="role-body text-xl font-light leading-snug text-white">
                               {item.title}
                             </h3>
-                            <p className="text-[0.95rem] leading-6 text-white/78">
+                            <p className="role-body text-[0.95rem] leading-6 text-white/78">
                               {item.text}
                             </p>
                           </div>
@@ -201,7 +201,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                   data-type-compression="headline"
                   data-type-compression-line-height="1.25"
                   data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                  className="role-authority section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
                   {copy.deliver.heading}
                 </h2>
@@ -209,11 +209,11 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                   data-type-compression="subhead"
                   data-type-compression-line-height="1.5"
                   data-type-compression-letter-spacing="0"
-                  className="text-lg text-white/72"
+                  className="role-orientation text-lg text-white/72"
                 >
                   {copy.deliver.intro}
                 </p>
-                <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
+                <div className="role-body flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
                   <span>Scroll to explore</span>
                   <div className="h-px flex-1 bg-white/10" />
                   <span>{Math.round(activeProgress)}%</span>
@@ -237,12 +237,12 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                           : ""
                       }`}
                     >
-                      <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                      <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                         {item.title}
                       </p>
-                      <p className="text-base text-white/80">{item.text}</p>
+                      <p className="role-body text-base text-white/80">{item.text}</p>
                       <p
-                        className={`overflow-hidden text-sm text-white/60 transition-all duration-300 ${
+                        className={`role-body overflow-hidden text-sm text-white/60 transition-all duration-300 ${
                           activeIndex === index
                             ? "max-h-24 opacity-100"
                             : "max-h-0 opacity-0"
@@ -303,20 +303,22 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                       <VideoPlaceholder label={`${activeItem.title} visual`} />
                     )}
                   </div>
-                  <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
+                  <p className="role-body mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
                     {activeItem.video?.label ?? `${activeItem.title} visual`}
                   </p>
-                  <p className="mt-2 text-lg text-white">{activeItem.title}</p>
-                  <p className="text-sm text-white/70">
+                  <p className="role-body mt-2 text-lg text-white">
+                    {activeItem.title}
+                  </p>
+                  <p className="role-body text-sm text-white/70">
                     {activeItem.panelText ?? activeItem.text}
                   </p>
-                  <p className="text-sm text-white/60">
+                  <p className="role-body text-sm text-white/60">
                     {activeItem.panelDetail ?? activeItem.detail}
                   </p>
                   {activeItem.panelPoints?.length ? (
                     <ul className="mt-3 space-y-2 text-sm text-white/70">
                       {activeItem.panelPoints.map((point) => (
-                        <li key={point} className="flex items-start gap-3">
+                        <li key={point} className="role-body flex items-start gap-3">
                           <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                           <span>{point}</span>
                         </li>
@@ -326,7 +328,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 </motion.div>
               </div>
               <CascadingText
-                className="pt-4"
+                className="role-body pt-4"
                 items={copy.deliver.items.map((item) => item.title)}
                 speed={60}
               />
@@ -339,7 +341,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 data-type-compression="headline"
                 data-type-compression-line-height="1.25"
                 data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                className="role-authority section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
                 {copy.deliver.heading}
               </h2>
@@ -347,11 +349,11 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 data-type-compression="subhead"
                 data-type-compression-line-height="1.5"
                 data-type-compression-letter-spacing="0"
-                className="text-lg text-white/72"
+                className="role-orientation text-lg text-white/72"
               >
                 {copy.deliver.intro}
               </p>
-              <div className="flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
+              <div className="role-body flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
                 <span>Scroll to explore</span>
                 <div className="h-px flex-1 bg-white/10" />
                 <span>{Math.round(activeProgress)}%</span>
@@ -375,12 +377,12 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                         : ""
                     }`}
                   >
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                       {item.title}
                     </p>
-                    <p className="text-base text-white/80">{item.text}</p>
+                    <p className="role-body text-base text-white/80">{item.text}</p>
                     <p
-                      className={`overflow-hidden text-sm text-white/60 transition-all duration-300 ${
+                      className={`role-body overflow-hidden text-sm text-white/60 transition-all duration-300 ${
                         activeIndex === index
                           ? "max-h-24 opacity-100"
                           : "max-h-0 opacity-0"
@@ -441,20 +443,22 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                     <VideoPlaceholder label={`${activeItem.title} visual`} />
                   )}
                 </div>
-                <p className="mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
+                <p className="role-body mt-3 text-sm uppercase tracking-[0.3em] text-white/60">
                   {activeItem.video?.label ?? `${activeItem.title} visual`}
                 </p>
-                <p className="mt-2 text-lg text-white">{activeItem.title}</p>
-                <p className="text-sm text-white/70">
+                <p className="role-body mt-2 text-lg text-white">
+                  {activeItem.title}
+                </p>
+                <p className="role-body text-sm text-white/70">
                   {activeItem.panelText ?? activeItem.text}
                 </p>
-                <p className="text-sm text-white/60">
+                <p className="role-body text-sm text-white/60">
                   {activeItem.panelDetail ?? activeItem.detail}
                 </p>
                 {activeItem.panelPoints?.length ? (
                   <ul className="mt-3 space-y-2 text-sm text-white/70">
                     {activeItem.panelPoints.map((point) => (
-                      <li key={point} className="flex items-start gap-3">
+                      <li key={point} className="role-body flex items-start gap-3">
                         <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
                         <span>{point}</span>
                       </li>
@@ -464,7 +468,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
               </motion.div>
             </div>
             <CascadingText
-              className="pt-4"
+              className="role-body pt-4"
               items={copy.deliver.items.map((item) => item.title)}
               speed={60}
             />
