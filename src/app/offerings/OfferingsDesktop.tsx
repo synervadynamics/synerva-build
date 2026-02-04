@@ -236,7 +236,7 @@ export default function OfferingsDesktop() {
         </div>
 
         <section
-          id="scope-discipline"
+          id="scope"
           
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
@@ -311,7 +311,7 @@ export default function OfferingsDesktop() {
         </section>
 
         <section
-          id="operator-hourly"
+          id="hourly"
           
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
@@ -415,7 +415,7 @@ export default function OfferingsDesktop() {
         </section>
 
         <section
-          id="flat-rate-projects"
+          id="flat-rate"
           
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
@@ -511,7 +511,7 @@ export default function OfferingsDesktop() {
         </section>
 
         <section
-          id="build-with-synerva"
+          id="full-build"
           
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >
@@ -730,7 +730,7 @@ export default function OfferingsDesktop() {
         </section>
 
         <section
-          id="next-step"
+          id="next-steps"
           
           className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
         >

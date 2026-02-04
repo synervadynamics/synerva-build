@@ -1,9 +1,72 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
 import styles from "./offerings.module.css";
 
+const sectionMap = [
+  { id: "hiring", labelLines: ["HIRING"] },
+  { id: "scope", labelLines: ["SCOPE"] },
+  { id: "hourly", labelLines: ["HOURLY"] },
+  { id: "flat-rate", labelLines: ["FLAT-RATE"] },
+  { id: "full-build", labelLines: ["FULL BUILD"] },
+  { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
+  { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
+  { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
+];
+
 export default function OfferingsMobile() {
+  const [activeSection, setActiveSection] = useState<string>(
+    sectionMap[0]?.id ?? "",
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      {
+        rootMargin: "-40% 0px -40% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      },
+    );
+
+    sectionMap.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const items = useMemo(
+    () =>
+      sectionMap.map((item) => ({
+        ...item,
+        isActive: activeSection === item.id,
+      })),
+    [activeSection],
+  );
+
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+    const top = target.getBoundingClientRect().top + window.scrollY;
+    window.history.replaceState(null, "", `#${sectionId}`);
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
   return (
     <main className={`${styles.offeringsPage} ${styles.offeringsTheme}`}>
       <Mobile1Shell
@@ -12,6 +75,40 @@ export default function OfferingsMobile() {
         backgroundOverlayOpacity={0.8}
       >
         <section id="hero" className={`${styles.sectionPanel} mt-6`}>
+          <header className="flex flex-col gap-4 pb-6">
+            <div className="flex flex-col gap-4">
+              <div className="font-mono text-xs uppercase tracking-[0.5em] text-[color:var(--offerings-link)]">
+                <span className="block">Synerva</span>
+                <span className="block">Dynamics</span>
+              </div>
+              <div className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-[color:var(--offerings-link)]">
+                {items.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(event) => scrollToSection(event, item.id)}
+                    className={`flex w-fit flex-col items-center gap-2 transition ${
+                      item.isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
+                    }`}
+                    aria-current={item.isActive ? "true" : undefined}
+                  >
+                    <span className="text-center leading-tight">
+                      {item.labelLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </span>
+                    <span
+                      className={`h-1 w-full rounded-full bg-[color:var(--offerings-divider)] transition ${
+                        item.isActive ? "opacity-100" : "opacity-60"
+                      }`}
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </header>
           <p className={styles.eyebrow}>Offerings</p>
           <h1 className={styles.sectionTitle}>Ways to work with Synerva</h1>
           <p className={styles.sectionSubhead}>
@@ -106,7 +203,7 @@ export default function OfferingsMobile() {
           </div>
         </section>
 
-        <section id="operator-hourly" className={styles.sectionPanel}>
+        <section id="hourly" className={styles.sectionPanel}>
           <p className={styles.eyebrow}>Operator Hourly</p>
           <h2 className={styles.sectionTitle}>High-output, senior execution</h2>
           <p className={styles.sectionSubhead}>
@@ -182,7 +279,7 @@ export default function OfferingsMobile() {
           </p>
         </section>
 
-        <section id="build-with-synerva" className={styles.sectionPanel}>
+        <section id="full-build" className={styles.sectionPanel}>
           <p className={styles.eyebrow}>Build With Synerva</p>
           <h2 className={styles.sectionTitle}>Full-stack systems, end-to-end</h2>
           <p className={styles.sectionSubhead}>
@@ -222,14 +319,19 @@ export default function OfferingsMobile() {
             </span>
           </div>
           <p className={styles.microLine}>This is the flagship lane.</p>
-          <div className={styles.ctaStack}>
-            <Link href="/contact" className={styles.btnPrimary}>
-              Discuss Your Project
-            </Link>
+        </section>
+
+        <section className={styles.sectionPanel}>
+          <div className="flex justify-center">
+            <div className="w-full max-w-[240px]">
+              <Link href="/contact" className={styles.btnPrimary}>
+                Discuss Your Project
+              </Link>
+            </div>
           </div>
         </section>
 
-        <section id="capabilities" className={styles.sectionPanel}>
+        <section id="additional-capabilities" className={styles.sectionPanel}>
           <p className={styles.eyebrow}>Capabilities</p>
           <h2 className={styles.sectionTitle}>What gets built</h2>
           <p className={styles.sectionSubhead}>
@@ -319,7 +421,7 @@ export default function OfferingsMobile() {
         </section>
 
         <section
-          id="what-youre-buying"
+          id="hiring"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled}`}
         >
           <p className={styles.eyebrow}>Standards</p>
@@ -369,7 +471,7 @@ export default function OfferingsMobile() {
         </section>
 
         <section
-          id="how-it-works"
+          id="scope"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled}`}
         >
           <p className={styles.eyebrow}>Process</p>
@@ -437,7 +539,7 @@ export default function OfferingsMobile() {
           <p className={styles.microLine}>No theater. Just build.</p>
         </section>
 
-        <section id="proof" className={styles.sectionPanel}>
+        <section id="clarity-diagnostic" className={styles.sectionPanel}>
           <p className={styles.eyebrow}>Credibility</p>
           <h2 className={styles.sectionTitle}>
             Signals you’re in the right place
@@ -524,7 +626,7 @@ export default function OfferingsMobile() {
         </section>
 
         <section
-          id="start"
+          id="next-steps"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled}`}
         >
           <p className={styles.eyebrow}>Start Here</p>
