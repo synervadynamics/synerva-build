@@ -390,6 +390,12 @@
   color: var(--ol-0);
 }
 
+.tableDivider {
+  width: 100%;
+  height: 1px;
+  background: var(--hairline);
+}
+
 .stepStack {
   display: flex;
   flex-direction: column;
@@ -648,6 +654,10 @@
   .btnSecondary {
     width: auto;
     padding: 0 22px;
+  }
+
+  .tableDivider {
+    display: none;
   }
 }
   .cardTitle {

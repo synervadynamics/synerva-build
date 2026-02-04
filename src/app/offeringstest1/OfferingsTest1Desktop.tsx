@@ -22,13 +22,20 @@ export default function OfferingsTest1Desktop() {
                 <p className={styles.eyebrow}>Offerings</p>
                 <h1 className={styles.heroTitle}>Ways to work with Synerva</h1>
                 <p className={styles.sectionSubhead}>
-                  Pick the engagement that fits your scope, speed, and tolerance
-                  for mediocrity.
+                  Choose the engagement that matches your scope, urgency, and
+                  standards.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  Synerva delivers senior-level strategy and execution as a
+                  single system. No handoffs. No theater. No performative
+                  busywork.
+                  <br />
+                  This is work designed to hold up under real pressure.
                 </p>
                 <ul className={styles.bulletList}>
-                  <li>Senior-level strategy and execution, delivered as one system</li>
-                  <li>Clear constraints, clean decisions, fast shipping</li>
-                  <li>Work that holds up under real-world pressure</li>
+                  <li>Clear constraints and explicit decisions</li>
+                  <li>Fast, disciplined execution</li>
+                  <li>Systems that compound instead of decaying</li>
                 </ul>
                 <div className={styles.ctaRow}>
                   <Link href="#start" className={styles.btnPrimary}>
@@ -39,7 +46,7 @@ export default function OfferingsTest1Desktop() {
                   </Link>
                 </div>
                 <p className={styles.microLine}>
-                  Response within 24 hours on weekdays.
+                  Response within 24 hours. No sales calls. No waiting room.
                 </p>
               </div>
               <div className={styles.imageFrame}>
@@ -64,19 +71,26 @@ export default function OfferingsTest1Desktop() {
               <p className={styles.eyebrow}>Engagement Modes</p>
               <h2 className={styles.sectionTitle}>Choose your lane</h2>
               <p className={styles.sectionSubhead}>
-                Three ways to engage. Same standards. Different tempo.
+                Three ways to engage. Same standards. Different tempos.
+              </p>
+              <p className={styles.sectionSubhead}>
+                Each mode exists to solve a different kind of problem, cleanly.
               </p>
             </div>
             <div className={styles.grid3}>
               <article className={styles.card}>
                 <h3 className={styles.cardTitle}>Operator Hourly</h3>
                 <p className={styles.cardSubhead}>
-                  High-output sessions to cut through ambiguity and ship.
+                  Focused, high-leverage sessions to unblock decisions and move
+                  fast.
+                </p>
+                <p className={styles.cardSubhead}>
+                  Senior operator time, applied where it actually matters.
                 </p>
                 <ul className={styles.cardList}>
-                  <li>Fast decisions, tight scope, real progress</li>
-                  <li>Strategy and build in the same room</li>
-                  <li>Ideal for pivots, audits, launches, fixes</li>
+                  <li>Rapid diagnosis and direction</li>
+                  <li>Strategy and execution in the same room</li>
+                  <li>Best for pivots, audits, fixes, and pressure points</li>
                 </ul>
                 <Link href="#operator-hourly" className={styles.cardCta}>
                   Go to Operator Hourly
@@ -85,10 +99,14 @@ export default function OfferingsTest1Desktop() {
               <article className={styles.card}>
                 <h3 className={styles.cardTitle}>Flat-Rate Projects</h3>
                 <p className={styles.cardSubhead}>
-                  Defined outcome. Fixed price. Clean delivery.
+                  Defined outcomes, fixed scope, clean delivery.
+                </p>
+                <p className={styles.cardSubhead}>
+                  For teams who know what needs to be built and want it done
+                  properly.
                 </p>
                 <ul className={styles.cardList}>
-                  <li>Clear spec, clear timeline</li>
+                  <li>Clear scope, price, and finish line</li>
                   <li>Crafted assets and systems</li>
                   <li>Minimal meetings, maximum throughput</li>
                 </ul>
@@ -99,12 +117,15 @@ export default function OfferingsTest1Desktop() {
               <article className={styles.card}>
                 <h3 className={styles.cardTitle}>Build With Synerva</h3>
                 <p className={styles.cardSubhead}>
-                  Full-stack systems built end-to-end, the right way.
+                  End-to-end systems, built as one coherent whole.
+                </p>
+                <p className={styles.cardSubhead}>
+                  For serious builds with real consequences.
                 </p>
                 <ul className={styles.cardList}>
-                  <li>Strategy, design, engineering, automation</li>
-                  <li>Integrated pipeline, not disconnected deliverables</li>
-                  <li>Best for serious builds with real stakes</li>
+                  <li>Strategy, design, engineering, and automation</li>
+                  <li>One system, not a pile of deliverables</li>
+                  <li>Designed to scale without rewrites or regret</li>
                 </ul>
                 <Link href="#build-with-synerva" className={styles.cardCta}>
                   Go to System Builds
@@ -286,7 +307,25 @@ export default function OfferingsTest1Desktop() {
             <p className={styles.eyebrow}>Capabilities</p>
             <h2 className={styles.sectionTitle}>What gets built</h2>
             <p className={styles.sectionSubhead}>
-              A compact map of what Synerva can ship, end-to-end.
+              Systems, not isolated artifacts.
+            </p>
+            <p className={styles.sectionSubhead}>
+              Synerva builds integrated systems that remove friction across the
+              business.
+            </p>
+            <p className={styles.sectionSubhead}>
+              Depending on the engagement, this may include:
+            </p>
+            <ul className={styles.bulletList}>
+              <li>Strategy and positioning</li>
+              <li>Brand and identity systems</li>
+              <li>Websites, apps, and product UI</li>
+              <li>Content and messaging engines</li>
+              <li>Automation, AI tooling, and internal workflows</li>
+            </ul>
+            <p className={styles.sectionSubhead}>
+              Everything is designed to work together. Nothing is shipped in
+              isolation.
             </p>
           </div>
           <div className={styles.imageFrame}>
@@ -300,48 +339,6 @@ export default function OfferingsTest1Desktop() {
               />
             </div>
           </div>
-          <div className={styles.capabilityGrid}>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Strategy + Positioning</h3>
-              <ul className={styles.cardList}>
-                <li>Defensible positioning, not poetry</li>
-                <li>Offer architecture and pricing logic</li>
-                <li>Decision frameworks that reduce noise</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Brand + Identity Systems</h3>
-              <ul className={styles.cardList}>
-                <li>Visual system rules (type, layout, hierarchy, usage)</li>
-                <li>Voice and messaging system</li>
-                <li>Templates that keep quality consistent</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Website + Product UI</h3>
-              <ul className={styles.cardList}>
-                <li>Mobile-first pages that convert cleanly</li>
-                <li>Engineered UI systems, not decoration</li>
-                <li>Information architecture that reduces friction</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Automation + AI Tooling</h3>
-              <ul className={styles.cardList}>
-                <li>Workflow automation that saves real time</li>
-                <li>Internal tools that reduce operational drag</li>
-                <li>AI where it increases leverage and clarity</li>
-              </ul>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Content + Messaging Systems</h3>
-              <ul className={styles.cardList}>
-                <li>Landing pages, funnels, conversion narratives</li>
-                <li>Editorial systems that stay on-voice</li>
-                <li>Content that supports the machine</li>
-              </ul>
-            </article>
-          </div>
           <div className={styles.ctaRow}>
             <Link href="#start" className={styles.btnPrimary}>
               Tell me what you’re building
@@ -354,6 +351,151 @@ export default function OfferingsTest1Desktop() {
         </section>
 
         <section
+          id="individual-services"
+          className={`${styles.sectionPanel} ${styles.section}`}
+        >
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              Individual services &amp; deliverables
+            </h2>
+            <p className={styles.sectionSubhead}>
+              Yes, Synerva is systems-first by default.
+            </p>
+            <p className={styles.sectionSubhead}>
+              But you can absolutely engage Synerva for individual services or
+              specific deliverables when that’s what the situation calls for.
+            </p>
+            <p className={styles.sectionSubhead}>
+              The difference is that nothing here is treated as a throwaway
+              artifact. Every deliverable is designed with full awareness of the
+              larger system it lives inside.
+            </p>
+            <p className={styles.sectionSubhead}>
+              Below is a representative map of what Synerva can deliver
+              directly.
+            </p>
+          </div>
+          <div className={styles.stepStack}>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Strategy &amp; Advisory</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Business and product strategy</li>
+                  <li>Positioning and differentiation</li>
+                  <li>Offer architecture and pricing strategy</li>
+                  <li>Go-to-market planning</li>
+                  <li>Decision frameworks and operating principles</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Branding &amp; Identity</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Brand strategy and narrative</li>
+                  <li>Visual identity systems</li>
+                  <li>Brand guidelines and usage rules</li>
+                  <li>Voice, tone, and messaging frameworks</li>
+                  <li>Brand audits and refinements</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Marketing</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Marketing research and audience analysis</li>
+                  <li>Campaign strategy and planning</li>
+                  <li>Multi-platform campaigns (social, email, SEO)</li>
+                  <li>Funnel and lifecycle design</li>
+                  <li>Conversion optimization</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Content &amp; Messaging</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Short-form and long-form writing</li>
+                  <li>Website and landing page copy</li>
+                  <li>Blog and editorial content</li>
+                  <li>Thought leadership and ghostwriting</li>
+                  <li>Graphic and visual content</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Web &amp; App Development</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Websites and landing pages</li>
+                  <li>Product and app UI/UX</li>
+                  <li>Design systems and component libraries</li>
+                  <li>Frontend and full-stack development</li>
+                  <li>Performance and accessibility improvements</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>AI &amp; Automation</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Workflow automation</li>
+                  <li>Internal tools and dashboards</li>
+                  <li>AI-assisted content and operations systems</li>
+                  <li>Process optimization</li>
+                  <li>Lightweight custom tooling</li>
+                </ul>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <h3 className={styles.cardTitle}>Audits &amp; Reports</h3>
+                  <div className={styles.tableDivider} />
+                </div>
+                <ul className={styles.cardList}>
+                  <li>Brand, website, and UX audits</li>
+                  <li>Marketing and funnel audits</li>
+                  <li>Content and messaging audits</li>
+                  <li>Strategic reports and briefs</li>
+                  <li>Implementation roadmaps</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div className={styles.ctaRow}>
+            <Link href="#start" className={styles.btnPrimary}>
+              Tell me what you need
+            </Link>
+            <Link href="#modes" className={styles.btnSecondary}>
+              See engagement modes
+            </Link>
+          </div>
+          <p className={styles.microLine}>
+            If it’s on the list, it’s fair game. If it isn’t, ask anyway.
+          </p>
+        </section>
+
+        <section
           id="what-youre-buying"
           className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
         >
@@ -361,7 +503,16 @@ export default function OfferingsTest1Desktop() {
             <p className={styles.eyebrow}>Standards</p>
             <h2 className={styles.sectionTitle}>What you’re actually buying</h2>
             <p className={styles.sectionSubhead}>
-              Clarity, compounding systems, and work that holds up.
+              Not services. Outcomes that hold up.
+            </p>
+            <p className={styles.sectionSubhead}>Deliverables matter.</p>
+            <p className={styles.sectionSubhead}>
+              But what you’re really buying is clarity, structure, and momentum
+              that survives contact with reality.
+            </p>
+            <p className={styles.sectionSubhead}>
+              This work is designed to reduce friction, collapse decision time,
+              and create systems that keep working after delivery.
             </p>
           </div>
           <div className={styles.portraitPairDesktop}>
@@ -393,16 +544,16 @@ export default function OfferingsTest1Desktop() {
               <p className={styles.groupLabel}>Outcomes</p>
               <ul className={styles.bulletList}>
                 <li>Cleaner decisions and fewer dead ends</li>
-                <li>Systems that reduce cognitive load</li>
+                <li>Systems that reduce cognitive load instead of adding to it</li>
                 <li>Higher conversion without louder marketing</li>
-                <li>Momentum you can maintain after delivery</li>
+                <li>Momentum that continues after delivery</li>
               </ul>
             </div>
             <div className={styles.bulletGroup}>
               <p className={styles.groupLabel}>Standards</p>
               <ul className={styles.bulletList}>
                 <li>Coherence across copy, design, and structure</li>
-                <li>Constraints stated and enforced</li>
+                <li>Constraints stated early and enforced</li>
                 <li>Craft over “good enough”</li>
                 <li>Delivery that doesn’t collapse two weeks later</li>
               </ul>
@@ -416,7 +567,6 @@ export default function OfferingsTest1Desktop() {
               How it works
             </Link>
           </div>
-          <p className={styles.microLine}>Taste, translated into structure.</p>
         </section>
 
         <section
@@ -427,7 +577,7 @@ export default function OfferingsTest1Desktop() {
             <p className={styles.eyebrow}>Process</p>
             <h2 className={styles.sectionTitle}>How it works</h2>
             <p className={styles.sectionSubhead}>
-              A simple path from signal to shipped system.
+              A direct path from signal to shipped system.
             </p>
           </div>
           <div className={styles.imageFrame}>
@@ -446,35 +596,36 @@ export default function OfferingsTest1Desktop() {
               <span className={styles.stepNumber}>Step 1</span>
               <h3 className={styles.stepTitle}>Intake</h3>
               <p className={styles.stepBody}>
-                You outline the goal and what’s blocked
+                You outline the goal and what’s currently blocked.
               </p>
             </article>
             <article className={styles.stepCardDesktop}>
               <span className={styles.stepNumber}>Step 2</span>
               <h3 className={styles.stepTitle}>Scope + constraints</h3>
               <p className={styles.stepBody}>
-                We define the real problem and win condition
+                We define the real problem and the conditions it must operate
+                under.
               </p>
             </article>
             <article className={styles.stepCardDesktop}>
               <span className={styles.stepNumber}>Step 3</span>
-              <h3 className={styles.stepTitle}>Build sprint(s)</h3>
+              <h3 className={styles.stepTitle}>Build</h3>
               <p className={styles.stepBody}>
-                Decisions → build → proof, in tight loops
+                Tight loops. Fast feedback. Real progress.
               </p>
             </article>
             <article className={styles.stepCardDesktop}>
               <span className={styles.stepNumber}>Step 4</span>
               <h3 className={styles.stepTitle}>Review + harden</h3>
               <p className={styles.stepBody}>
-                Refine, stress-test, lock standards
+                Stress-test, refine, and lock standards.
               </p>
             </article>
             <article className={styles.stepCardDesktop}>
               <span className={styles.stepNumber}>Step 5</span>
               <h3 className={styles.stepTitle}>Launch + handoff</h3>
               <p className={styles.stepBody}>
-                Clean deliverables, docs, next actions
+                Final deliverables, documentation, and clear next actions.
               </p>
             </article>
           </div>
@@ -486,7 +637,6 @@ export default function OfferingsTest1Desktop() {
               Read FAQs
             </Link>
           </div>
-          <p className={styles.microLine}>No theater. Just build.</p>
         </section>
 
         <section id="proof" className={`${styles.sectionPanel} ${styles.section}`}>
@@ -501,14 +651,15 @@ export default function OfferingsTest1Desktop() {
               </p>
               <ul className={styles.bulletList}>
                 <li>Crisp options, not vague advice</li>
-                <li>Constraints, not endless brainstorms</li>
-                <li>Integration across the stack</li>
+                <li>Constraints instead of endless brainstorms</li>
+                <li>Integration across the entire stack</li>
                 <li>Momentum that doesn’t evaporate</li>
                 <li>No bloat, filler, or performative process</li>
                 <li>No “pretty” that breaks under load</li>
               </ul>
               <p className={styles.microLine}>
-                If you want “fine,” hire literally anyone else.
+                If you want comfort, reassurance, or consensus, this is not the
+                right fit.
               </p>
               <div className={styles.ctaRow}>
                 <Link href="#start" className={styles.btnPrimary}>
@@ -611,11 +762,12 @@ export default function OfferingsTest1Desktop() {
               <p className={styles.eyebrow}>Start Here</p>
               <h2 className={styles.sectionTitle}>Ready when you are</h2>
               <p className={styles.sectionSubhead}>
-                One short intake, then we pick the fastest path to a real outcome.
+                One short intake. Then we choose the fastest path to a real
+                outcome.
               </p>
               <ul className={styles.bulletList}>
                 <li>Tell me what you’re building and what’s blocked</li>
-                <li>I reply with next steps and the best engagement fit</li>
+                <li>I reply with next steps and the right engagement fit</li>
                 <li>We move into a build loop with clear constraints</li>
               </ul>
               <div className={styles.ctaRow}>
@@ -627,7 +779,7 @@ export default function OfferingsTest1Desktop() {
                 </Link>
               </div>
               <p className={styles.microLine}>
-                Clarity compounds. Confusion spreads. Let’s pick one.
+                Clarity compounds. Confusion spreads.
               </p>
             </div>
             <div className={styles.imageFrame}>
