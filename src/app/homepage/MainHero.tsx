@@ -131,12 +131,20 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                         data-type-compression="subhead"
                         data-type-compression-line-height="1.5"
                         data-type-compression-letter-spacing="0"
-                        className="role-orientation max-w-3xl text-lg text-white/80 sm:text-xl"
-                      >
-                        {copy.hero.subhead}
-                      </p>
+                      className="role-orientation max-w-3xl text-lg text-white/80 sm:text-xl"
+                    >
+                      {copy.hero.subhead}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <Link href="/contact" className="role-body inline-cta">
+                        START WITH A 30-MINUTE PLAN
+                      </Link>
+                      <Link href="/offerings" className="role-body inline-cta">
+                        EXPLORE OFFERINGS
+                      </Link>
                     </div>
                   </div>
+                </div>
 
                   <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
                     <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
@@ -230,6 +238,14 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                     >
                       {copy.hero.subhead}
                     </p>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <Link href="/contact" className="role-body inline-cta">
+                        START WITH A 30-MINUTE PLAN
+                      </Link>
+                      <Link href="/offerings" className="role-body inline-cta">
+                        EXPLORE OFFERINGS
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
