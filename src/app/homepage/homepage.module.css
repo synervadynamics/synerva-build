@@ -316,3 +316,46 @@
     border: inherit !important;
   }
 }
+
+@media (min-width: 1024px) {
+  .sdHome {
+    --ink-body: #F5F7FA;
+    --ink-eyebrow: #7FA8B8;
+    --ink-header: #4F7FA6;
+    --ink-subheader: #6FB7A8;
+  }
+
+  .sdHome p,
+  .sdHome li,
+  .sdHome :global(.body-text) {
+    color: var(--ink-body) !important;
+  }
+
+  .sdHome :is(p, li, span, div)[class*="text-white/"] {
+    color: var(--ink-body) !important;
+  }
+
+  .sdHome h1,
+  .sdHome h2,
+  .sdHome :global(.section-title),
+  .sdHome :global(.section-heading),
+  .sdHome :global(.section-header-lock),
+  .sdHome [data-type-compression="headline"] {
+    color: var(--ink-header) !important;
+  }
+
+  .sdHome h3,
+  .sdHome h4,
+  .sdHome :is(p, div, span)[data-type-compression="subhead"] {
+    color: var(--ink-subheader) !important;
+  }
+
+  .sdHome :global(.section-label),
+  .sdHome p.uppercase,
+  .sdHome span.uppercase,
+  .sdHome p[class*="uppercase"],
+  .sdHome span[class*="uppercase"],
+  .sdHome a[class*="uppercase"]:not([class*="rounded-full"]):not([class*="border"]) {
+    color: var(--ink-eyebrow) !important;
+  }
+}
