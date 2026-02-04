@@ -2,122 +2,126 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import styles from "./offeringstest1.module.css";
 
 export default function OfferingsTest1Desktop() {
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
-      <div className={styles.pageWrapper}>
-        <section id="hero" className={`${styles.sectionPanel} ${styles.section}`}>
-          <div className={styles.grid2Asym}>
-            <div className={styles.textStack}>
-              <p className={styles.eyebrow}>Offerings</p>
-              <h1 className={styles.heroTitle}>Ways to work with Synerva</h1>
-              <p className={styles.sectionSubhead}>
-                Pick the engagement that fits your scope, speed, and tolerance
-                for mediocrity.
-              </p>
-              <ul className={styles.bulletList}>
-                <li>Senior-level strategy and execution, delivered as one system</li>
-                <li>Clear constraints, clean decisions, fast shipping</li>
-                <li>Work that holds up under real-world pressure</li>
-              </ul>
-              <div className={styles.ctaRow}>
-                <Link href="#start" className={styles.btnPrimary}>
-                  Start here
-                </Link>
-                <Link href="#modes" className={styles.btnSecondary}>
-                  See engagement modes
-                </Link>
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
+      <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
+      <div className="relative z-10">
+        <div className={styles.pageWrapper}>
+          <section id="hero" className={`${styles.sectionPanel} ${styles.section}`}>
+            <div className={styles.grid2Asym}>
+              <div className={styles.textStack}>
+                <p className={styles.eyebrow}>Offerings</p>
+                <h1 className={styles.heroTitle}>Ways to work with Synerva</h1>
+                <p className={styles.sectionSubhead}>
+                  Pick the engagement that fits your scope, speed, and tolerance
+                  for mediocrity.
+                </p>
+                <ul className={styles.bulletList}>
+                  <li>Senior-level strategy and execution, delivered as one system</li>
+                  <li>Clear constraints, clean decisions, fast shipping</li>
+                  <li>Work that holds up under real-world pressure</li>
+                </ul>
+                <div className={styles.ctaRow}>
+                  <Link href="#start" className={styles.btnPrimary}>
+                    Start here
+                  </Link>
+                  <Link href="#modes" className={styles.btnSecondary}>
+                    See engagement modes
+                  </Link>
+                </div>
+                <p className={styles.microLine}>
+                  Response within 24 hours on weekdays.
+                </p>
               </div>
-              <p className={styles.microLine}>
-                Response within 24 hours on weekdays.
+              <div className={styles.imageFrame}>
+                <div className={styles.img3x2}>
+                  <Image
+                    src="/placeholders/offeringstest1/hero-3x2.png"
+                    alt="Offerings hero placeholder"
+                    fill
+                    className={styles.imageFill}
+                    sizes="(max-width: 1280px) 50vw, 560px"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="modes"
+            className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+          >
+            <div className={styles.sectionHeader}>
+              <p className={styles.eyebrow}>Engagement Modes</p>
+              <h2 className={styles.sectionTitle}>Choose your lane</h2>
+              <p className={styles.sectionSubhead}>
+                Three ways to engage. Same standards. Different tempo.
               </p>
             </div>
-            <div className={styles.imageFrame}>
-              <div className={styles.img3x2}>
-                <Image
-                  src="/placeholders/offeringstest1/hero-3x2.png"
-                  alt="Offerings hero placeholder"
-                  fill
-                  className={styles.imageFill}
-                  sizes="(max-width: 1280px) 50vw, 560px"
-                />
-              </div>
+            <div className={styles.grid3}>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Operator Hourly</h3>
+                <p className={styles.cardSubhead}>
+                  High-output sessions to cut through ambiguity and ship.
+                </p>
+                <ul className={styles.cardList}>
+                  <li>Fast decisions, tight scope, real progress</li>
+                  <li>Strategy and build in the same room</li>
+                  <li>Ideal for pivots, audits, launches, fixes</li>
+                </ul>
+                <Link href="#operator-hourly" className={styles.cardCta}>
+                  Go to Operator Hourly
+                </Link>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Flat-Rate Projects</h3>
+                <p className={styles.cardSubhead}>
+                  Defined outcome. Fixed price. Clean delivery.
+                </p>
+                <ul className={styles.cardList}>
+                  <li>Clear spec, clear timeline</li>
+                  <li>Crafted assets and systems</li>
+                  <li>Minimal meetings, maximum throughput</li>
+                </ul>
+                <Link href="#flat-rate" className={styles.cardCta}>
+                  Go to Flat-Rate Projects
+                </Link>
+              </article>
+              <article className={styles.card}>
+                <h3 className={styles.cardTitle}>Build With Synerva</h3>
+                <p className={styles.cardSubhead}>
+                  Full-stack systems built end-to-end, the right way.
+                </p>
+                <ul className={styles.cardList}>
+                  <li>Strategy, design, engineering, automation</li>
+                  <li>Integrated pipeline, not disconnected deliverables</li>
+                  <li>Best for serious builds with real stakes</li>
+                </ul>
+                <Link href="#build-with-synerva" className={styles.cardCta}>
+                  Go to System Builds
+                </Link>
+              </article>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section
-          id="modes"
-          className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
-        >
-          <div className={styles.sectionHeader}>
-            <p className={styles.eyebrow}>Engagement Modes</p>
-            <h2 className={styles.sectionTitle}>Choose your lane</h2>
-            <p className={styles.sectionSubhead}>
-              Three ways to engage. Same standards. Different tempo.
-            </p>
-          </div>
-          <div className={styles.grid3}>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Operator Hourly</h3>
-              <p className={styles.cardSubhead}>
-                High-output sessions to cut through ambiguity and ship.
-              </p>
-              <ul className={styles.cardList}>
-                <li>Fast decisions, tight scope, real progress</li>
-                <li>Strategy and build in the same room</li>
-                <li>Ideal for pivots, audits, launches, fixes</li>
-              </ul>
-              <Link href="#operator-hourly" className={styles.cardCta}>
-                Go to Operator Hourly
-              </Link>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Flat-Rate Projects</h3>
-              <p className={styles.cardSubhead}>
-                Defined outcome. Fixed price. Clean delivery.
-              </p>
-              <ul className={styles.cardList}>
-                <li>Clear spec, clear timeline</li>
-                <li>Crafted assets and systems</li>
-                <li>Minimal meetings, maximum throughput</li>
-              </ul>
-              <Link href="#flat-rate" className={styles.cardCta}>
-                Go to Flat-Rate Projects
-              </Link>
-            </article>
-            <article className={styles.card}>
-              <h3 className={styles.cardTitle}>Build With Synerva</h3>
-              <p className={styles.cardSubhead}>
-                Full-stack systems built end-to-end, the right way.
-              </p>
-              <ul className={styles.cardList}>
-                <li>Strategy, design, engineering, automation</li>
-                <li>Integrated pipeline, not disconnected deliverables</li>
-                <li>Best for serious builds with real stakes</li>
-              </ul>
-              <Link href="#build-with-synerva" className={styles.cardCta}>
-                Go to System Builds
-              </Link>
-            </article>
-          </div>
-        </section>
-
-        <section
-          id="operator-hourly"
-          className={`${styles.sectionPanel} ${styles.section}`}
-        >
-          <div className={styles.grid2}>
-            <div className={styles.textStack}>
-              <p className={styles.eyebrow}>Operator Hourly</p>
-              <h2 className={styles.sectionTitle}>High-output, senior execution</h2>
-              <p className={styles.sectionSubhead}>
-                The fastest way to turn “we should” into “it’s shipped.”
-              </p>
-              <div className={styles.bulletGroup}>
-                <p className={styles.groupLabel}>Best for</p>
+          <section
+            id="operator-hourly"
+            className={`${styles.sectionPanel} ${styles.section}`}
+          >
+            <div className={styles.grid2}>
+              <div className={styles.textStack}>
+                <p className={styles.eyebrow}>Operator Hourly</p>
+                <h2 className={styles.sectionTitle}>High-output, senior execution</h2>
+                <p className={styles.sectionSubhead}>
+                  The fastest way to turn “we should” into “it’s shipped.”
+                </p>
+                <div className={styles.bulletGroup}>
+                  <p className={styles.groupLabel}>Best for</p>
                 <ul className={styles.bulletList}>
                   <li>Clarifying direction when the signal is buried</li>
                   <li>Fixing what’s almost-working and expensive</li>
@@ -635,6 +639,7 @@ export default function OfferingsTest1Desktop() {
             </div>
           </div>
         </section>
+        </div>
       </div>
     </main>
   );
