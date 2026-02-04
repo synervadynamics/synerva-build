@@ -11,11 +11,12 @@ export default function OfferingsTest1Mobile() {
         style={{ opacity: 0.8 }}
         aria-hidden
       />
-      <Mobile1Shell
-        showBackButton
-        backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
-        backgroundOverlayOpacity={0.15}
-      >
+      <div className="relative z-10">
+        <Mobile1Shell
+          showBackButton
+          backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
+          backgroundOverlayOpacity={0.15}
+        >
         <section id="hero" className={`${styles.sectionPanel} mt-6`}>
           <p className={styles.eyebrow}>Offerings</p>
           <h1 className={styles.sectionTitle}>Ways to work with Synerva</h1>
@@ -640,7 +641,8 @@ export default function OfferingsTest1Mobile() {
             Clarity compounds. Confusion spreads.
           </p>
         </section>
-      </Mobile1Shell>
+        </Mobile1Shell>
+      </div>
     </main>
   );
 }
