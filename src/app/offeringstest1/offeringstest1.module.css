@@ -134,6 +134,12 @@
   width: 100%;
 }
 
+.imgSoftSquare {
+  position: relative;
+  aspect-ratio: 1.15 / 1;
+  width: 100%;
+}
+
 .img2x3 {
   position: relative;
   aspect-ratio: 2 / 3;
@@ -477,6 +483,12 @@
   gap: 16px;
 }
 
+.offeringsAnchorFrame {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+}
+
 .card {
   background: rgba(0, 0, 0, 0.28);
   border: 1px solid rgba(191, 215, 178, 0.22);
@@ -629,6 +641,11 @@
   .grid3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+  }
+
+  .offeringsAnchorFrame {
+    width: 92%;
+    justify-self: end;
   }
 
   .capabilityGrid {

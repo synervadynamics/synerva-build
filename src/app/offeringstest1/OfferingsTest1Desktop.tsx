@@ -153,8 +153,8 @@ export default function OfferingsTest1Desktop() {
               </div>
               <p className={styles.microLine}>Minimum friction. Maximum leverage.</p>
             </div>
-            <div className={styles.imageFrame}>
-              <div className={styles.img3x2}>
+            <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+              <div className={styles.imgSoftSquare}>
                 <Image
                   src="/placeholders/offeringstest1/operator-hourly-3x2.png"
                   alt="Operator hourly placeholder"
@@ -199,8 +199,8 @@ export default function OfferingsTest1Desktop() {
                 You’ll know exactly what you’re getting before we build.
               </p>
             </div>
-            <div className={styles.imageFrame}>
-              <div className={styles.img3x2}>
+            <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+              <div className={styles.imgSoftSquare}>
                 <Image
                   src="/placeholders/offeringstest1/flat-rate-3x2.png"
                   alt="Flat-rate projects placeholder"

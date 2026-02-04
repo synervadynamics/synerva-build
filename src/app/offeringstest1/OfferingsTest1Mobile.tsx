@@ -140,14 +140,16 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             The fastest way to turn “we should” into “it’s shipped.”
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
-            <Image
-              src="/placeholders/offerings/operator-hourly-3x2.png"
-              alt="3:2 landscape placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className={styles.imageFill}
-            />
+          <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+            <div className={styles.imgSoftSquare}>
+              <Image
+                src="/placeholders/offerings/operator-hourly-3x2.png"
+                alt="3:2 landscape placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className={styles.imageFill}
+              />
+            </div>
           </div>
           <div className={styles.bulletGroup}>
             <p className={styles.groupLabel}>Best for</p>
@@ -176,14 +178,16 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             Fixed scope, fixed price, built with taste and standards.
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
-            <Image
-              src="/placeholders/offerings/flat-rate-3x2.png"
-              alt="3:2 landscape placeholder: architectural model, constructed system, crafted artifact"
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              className={styles.imageFill}
-            />
+          <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+            <div className={styles.imgSoftSquare}>
+              <Image
+                src="/placeholders/offerings/flat-rate-3x2.png"
+                alt="3:2 landscape placeholder: architectural model, constructed system, crafted artifact"
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className={styles.imageFill}
+              />
+            </div>
           </div>
           <div className={styles.bulletGroup}>
             <p className={styles.groupLabel}>Common builds</p>
