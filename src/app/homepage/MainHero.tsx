@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
 import { SectionIndex } from "@/components/SectionIndex";
+import CtaPill from "@/components/CtaPill";
 import type { Easing } from "framer-motion";
 
 const sectionMap = [
@@ -136,12 +137,12 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       {copy.hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <Link href="/contact" className="role-body inline-cta">
+                      <CtaPill href="/contact" variant="primary">
                         START WITH A 30-MINUTE PLAN
-                      </Link>
-                      <Link href="/offerings" className="role-body inline-cta">
+                      </CtaPill>
+                      <CtaPill href="/offerings" variant="secondary">
                         EXPLORE OFFERINGS
-                      </Link>
+                      </CtaPill>
                     </div>
                   </div>
                 </div>
@@ -239,12 +240,12 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       {copy.hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <Link href="/contact" className="role-body inline-cta">
+                      <CtaPill href="/contact" variant="primary">
                         START WITH A 30-MINUTE PLAN
-                      </Link>
-                      <Link href="/offerings" className="role-body inline-cta">
+                      </CtaPill>
+                      <CtaPill href="/offerings" variant="secondary">
                         EXPLORE OFFERINGS
-                      </Link>
+                      </CtaPill>
                     </div>
                   </div>
                 </div>

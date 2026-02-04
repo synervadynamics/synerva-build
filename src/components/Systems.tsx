@@ -3,7 +3,7 @@
 
 import { copy } from "@/data/copy";
 import Image from "next/image";
-import Link from "next/link";
+import CtaPill from "@/components/CtaPill";
 
 type SystemsProps = {
   mobileVariant?: "default" | "beats";
@@ -81,13 +81,19 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                   </p>
                 </div>
                 {cta?.href ? (
-                  <Link href={cta.href} className="role-body inline-cta">
+                  <CtaPill href={cta.href} variant="secondary">
                     {cta.label} →
-                  </Link>
+                  </CtaPill>
                 ) : (
-                  <span className="role-body inline-cta opacity-60">
+                  <CtaPill
+                    href="#"
+                    variant="secondary"
+                    className="pointer-events-none opacity-60"
+                    aria-disabled
+                    tabIndex={-1}
+                  >
                     {cta.label}
-                  </span>
+                  </CtaPill>
                 )}
               </article>
             );

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
 import styles from "@/app/mobile1/mobile1.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
+import CtaPill from "@/components/CtaPill";
 
 export default function HomeMobile() {
   return (
@@ -205,9 +205,9 @@ export default function HomeMobile() {
               </p>
             </div>
           </div>
-          <Link href="/offerings" className="role-action">
+          <CtaPill href="/offerings" variant="primary">
             Explore Offerings →
-          </Link>
+          </CtaPill>
         </section>
 
         <section
@@ -266,12 +266,12 @@ export default function HomeMobile() {
               <p className="role-body text-[0.85rem] leading-[1.45] text-white/70">
                 Signal clarity at the point of decision.
               </p>
-              <Link
+              <CtaPill
                 href="https://synervadynamics.com/verisense"
-                className="role-body inline-cta"
+                variant="secondary"
               >
                 View Verisense →
-              </Link>
+              </CtaPill>
             </div>
             <div className="flex flex-col gap-3">
               <div className={styles.publicationCover} aria-hidden>
@@ -289,12 +289,15 @@ export default function HomeMobile() {
               <p className="role-body text-[0.85rem] leading-[1.45] text-white/70">
                 Structural memory that preserves intent.
               </p>
-              <span
-                className="role-body inline-cta pointer-events-none opacity-60"
+              <CtaPill
+                href="#"
+                variant="secondary"
+                className="pointer-events-none opacity-60"
                 aria-disabled
+                tabIndex={-1}
               >
                 Page Coming Soon
-              </span>
+              </CtaPill>
             </div>
           </div>
         </section>
@@ -341,12 +344,15 @@ export default function HomeMobile() {
                   />
                 </div>
               </div>
-              <span
-                className="role-body inline-cta pointer-events-none opacity-60"
+              <CtaPill
+                href="#"
+                variant="secondary"
+                className="pointer-events-none opacity-60"
                 aria-disabled
+                tabIndex={-1}
               >
                 Page Coming Soon
-              </span>
+              </CtaPill>
             </div>
             <div className="flex flex-col gap-3">
               <p className="role-body text-[1rem] font-medium text-white">
@@ -367,9 +373,9 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <Link href="/dimensions/quiet-divine" className="role-body inline-cta">
+                  <CtaPill href="/dimensions/quiet-divine" variant="secondary">
                     Quiet Divine →
-                  </Link>
+                  </CtaPill>
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className={styles.publicationCover} aria-hidden>
@@ -381,12 +387,9 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <Link
-                    href="/dimensions/surface-tension"
-                    className="role-body inline-cta"
-                  >
+                  <CtaPill href="/dimensions/surface-tension" variant="secondary">
                     Surface Tension →
-                  </Link>
+                  </CtaPill>
                 </div>
               </div>
             </div>

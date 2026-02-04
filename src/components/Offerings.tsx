@@ -1,10 +1,10 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { copy } from "@/data/copy";
+import CtaPill from "@/components/CtaPill";
 
 const offeringsMedia = {
   "Operator Hourly": {
@@ -105,12 +105,9 @@ export const Offerings = () => {
                   {card.text}
                 </p>
                 <div className="relative z-10 mt-auto pt-1 sm:pt-2">
-                  <Link
-                    href={card.href}
-                    className="role-body inline-cta"
-                  >
+                  <CtaPill href={card.href} variant="secondary">
                     {card.cta} →
-                  </Link>
+                  </CtaPill>
                 </div>
               </div>
             );

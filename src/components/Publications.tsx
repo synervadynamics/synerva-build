@@ -1,11 +1,11 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { copy } from "@/data/copy";
+import CtaPill from "@/components/CtaPill";
 
 export const Publications = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -75,16 +75,19 @@ export const Publications = () => {
                       {item.teaser}
                     </p>
                     {isCtaDisabled ? (
-                      <span className="role-body inline-cta opacity-60">
-                        {item.cta}
-                      </span>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="role-body inline-cta"
+                      <CtaPill
+                        href="#"
+                        variant="secondary"
+                        className="pointer-events-none opacity-60"
+                        aria-disabled
+                        tabIndex={-1}
                       >
+                        {item.cta}
+                      </CtaPill>
+                    ) : (
+                      <CtaPill href={item.href} variant="secondary">
                         {item.cta} →
-                      </Link>
+                      </CtaPill>
                     )}
                   </div>
                 </article>
@@ -178,17 +181,24 @@ export const Publications = () => {
                       </div>
                     </div>
                     {isCtaDisabled ? (
-                      <span className="role-body inline-cta mt-4 opacity-60">
+                      <CtaPill
+                        href="#"
+                        variant="secondary"
+                        className="mt-4 pointer-events-none opacity-60"
+                        aria-disabled
+                        tabIndex={-1}
+                      >
                         {item.cta}
-                      </span>
+                      </CtaPill>
                     ) : (
-                      <Link
+                      <CtaPill
                         href={item.href}
                         tabIndex={isActive ? 0 : -1}
-                        className="role-body inline-cta mt-4"
+                        className="mt-4"
+                        variant="secondary"
                       >
                         {item.cta} →
-                      </Link>
+                      </CtaPill>
                     )}
                   </article>
                 );

@@ -1,12 +1,12 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { copy } from "@/data/copy";
 import { merchV1Categories } from "@/data/merch-v1";
+import CtaPill from "@/components/CtaPill";
 
 export const Merch = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -47,12 +47,12 @@ export const Merch = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 pt-1 sm:pt-2">
-              <Link href={merch.ctas.primary.href} className="role-body inline-cta">
+              <CtaPill href={merch.ctas.primary.href} variant="primary">
                 {merch.ctas.primary.label} →
-              </Link>
-              <Link href={merch.ctas.secondary.href} className="role-body inline-cta">
+              </CtaPill>
+              <CtaPill href={merch.ctas.secondary.href} variant="secondary">
                 {merch.ctas.secondary.label} →
-              </Link>
+              </CtaPill>
             </div>
             <div className="bubble-drift mt-6 hidden rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)] sm:block">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -97,12 +97,9 @@ export const Merch = () => {
                       {card.description}
                     </p>
                   </div>
-                  <Link
-                    href={card.ctaHref}
-                    className="role-body inline-cta"
-                  >
+                  <CtaPill href={card.ctaHref} variant="secondary">
                     {card.ctaLabel} →
-                  </Link>
+                  </CtaPill>
                 </article>
               ))}
             </div>
@@ -148,12 +145,9 @@ export const Merch = () => {
                       {card.description}
                     </p>
                   </div>
-                  <Link
-                    href={card.ctaHref}
-                    className="role-body inline-cta mt-4"
-                  >
+                  <CtaPill href={card.ctaHref} variant="secondary" className="mt-4">
                     {card.ctaLabel} →
-                  </Link>
+                  </CtaPill>
                 </div>
               ))}
             </div>

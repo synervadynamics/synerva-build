@@ -1,9 +1,9 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 
 import Image from "next/image";
-import Link from "next/link";
 import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
 import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
+import CtaPill from "@/components/CtaPill";
 
 export function SynervaDimensionsSection() {
   const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
@@ -94,12 +94,9 @@ export function SynervaDimensionsSection() {
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 {quietDivineTitle}
               </h3>
-              <Link
-                href="/dimensions/quiet-divine"
-                className="role-body inline-cta mt-4"
-              >
+              <CtaPill href="/dimensions/quiet-divine" variant="secondary" className="mt-4">
                 View Quiet Divine →
-              </Link>
+              </CtaPill>
             </div>
 
             <div className="rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
@@ -132,12 +129,9 @@ export function SynervaDimensionsSection() {
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 Surface Tension
               </h3>
-              <Link
-                href="/dimensions/surface-tension"
-                className="role-body inline-cta mt-4"
-              >
+              <CtaPill href="/dimensions/surface-tension" variant="secondary" className="mt-4">
                 View Surface Tension →
-              </Link>
+              </CtaPill>
             </div>
           </div>
         </div>

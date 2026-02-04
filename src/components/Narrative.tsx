@@ -1,12 +1,12 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { copy } from "@/data/copy";
+import CtaPill from "@/components/CtaPill";
 
 type NarrativeProps = {
   mobileVariant?: "default" | "beats";
@@ -88,9 +88,9 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   </p>
                   <p className="role-body text-base text-white/76">{story.proof}</p>
                 </div>
-                <Link href={story.cta.href} className="role-body inline-cta">
+                <CtaPill href={story.cta.href} variant="secondary">
                   {story.cta.label} →
-                </Link>
+                </CtaPill>
               </div>
               <motion.div
                 ref={containerRef}
@@ -157,9 +157,9 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 </p>
                 <p className="role-body text-base text-white/76">{story.proof}</p>
               </div>
-              <Link href={story.cta.href} className="role-body inline-cta">
+              <CtaPill href={story.cta.href} variant="secondary">
                 {story.cta.label} →
-              </Link>
+              </CtaPill>
             </div>
             <motion.div
               ref={containerRef}
