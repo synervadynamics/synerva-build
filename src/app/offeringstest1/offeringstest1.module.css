@@ -494,6 +494,7 @@
 .cardTitle {
   font-size: 18px;
   font-weight: 600;
+  line-height: 1.25;
   color: var(--ink-0);
 }
 
@@ -649,3 +650,6 @@
     padding: 0 22px;
   }
 }
+  .cardTitle {
+    font-size: 20px;
+  }
