@@ -101,7 +101,7 @@
   border-radius: 9999px;
   border: 1px solid var(--cta-outline);
   padding: 0.55rem 1.35rem;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.04);
   text-decoration: none;
 }
 
@@ -114,7 +114,7 @@
   border-radius: 9999px;
   border: 1px solid var(--cta-outline);
   padding: 0.55rem 1.35rem;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.04);
   text-decoration: none;
 }
 

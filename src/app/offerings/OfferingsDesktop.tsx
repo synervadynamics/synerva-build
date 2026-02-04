@@ -389,8 +389,8 @@ export default function OfferingsDesktop() {
               </div>
 
               <div className="flex w-full items-center justify-center lg:justify-end">
-                <div className="w-full max-w-[480px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <div className="w-full max-w-[560px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
+                  <div className="relative aspect-[5/4] w-full overflow-hidden">
                     <Image
                       src={imagePaths.operator}
                       alt="Operator Hourly visual"
