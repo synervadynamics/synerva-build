@@ -6,11 +6,12 @@ import homeStyles from "@/app/homepage/homepage.module.css";
 
 export default function HomeMobile() {
   return (
-    <main className={`sd-home ${homeStyles.sdHome} text-white`}>
+    <main className={`sd-home ${homeStyles.sdHome} text-white ${styles.homeMobileTheme}`}>
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
+          data-accent="blue"
           className={`mt-6 flex flex-col gap-4 rounded-[16px] border bg-white/[0.04] px-5 py-5 ${styles.panelTransparent}`}
-          style={{ borderColor: "rgba(43, 184, 198, 0.55)" }}
+          style={{ borderColor: "var(--ol-0)" }}
         >
           <div className="grid grid-cols-[auto_1fr_auto] items-center">
             <button
@@ -60,8 +61,9 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className="flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] -mt-8"
-          style={{ borderColor: "rgba(30, 140, 190, 0.65)" }}
+          data-accent="turquoise"
+          className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] -mt-8 ${styles.panelTransparent} ${styles.panelFilled}`}
+          style={{ borderColor: "var(--ol-0)" }}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             THE PROBLEM
@@ -77,10 +79,10 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] ${homeStyles.analytical}`}
+          data-accent="seagreen"
+          className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent} ${styles.panelFilled}`}
           style={{
-            borderColor: "rgba(120, 210, 240, 0.4)",
-            backgroundColor: "rgba(6, 12, 18, 0.35)",
+            borderColor: "var(--ol-0)",
           }}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
@@ -99,7 +101,8 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} mt-6`}
+          data-accent="mint"
+          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} mt-6`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             SYSTEMS THAT HOLD
@@ -152,7 +155,8 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.offeringsPanel} mt-6`}
+          data-accent="blue"
+          className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.offeringsPanel} mt-6`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW TO ENGAGE
@@ -203,6 +207,7 @@ export default function HomeMobile() {
         </section>
 
         <section
+          data-accent="turquoise"
           className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel}`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
@@ -222,7 +227,8 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} mt-6`}
+          data-accent="seagreen"
+          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled} ${styles.publicationsPanel} mt-6`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             INTERNAL ENGINES
@@ -281,6 +287,7 @@ export default function HomeMobile() {
         </section>
 
         <section
+          data-accent="mint"
           className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} mt-6`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
@@ -372,7 +379,8 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-3 rounded-[20px] border px-[22px] py-[22px] text-center ${styles.panelTransparent} ${styles.authorityPanel} mt-6`}
+          data-accent="blue"
+          className={`flex flex-col gap-3 rounded-[20px] border px-[22px] py-[22px] text-center ${styles.panelTransparent} ${styles.panelFilled} ${styles.authorityPanel} mt-6`}
         >
           <p className="text-[1.4rem] font-semibold leading-snug text-white">
             Clarity compounds. Every decision either sharpens the signal or feeds
@@ -385,7 +393,8 @@ export default function HomeMobile() {
         </section>
 
         <section
-          className={`flex flex-col gap-4 rounded-[20px] border px-[22px] py-[22px] ${styles.panelTransparent} ${styles.finalCtaPanel} mt-6`}
+          data-accent="turquoise"
+          className={`flex flex-col gap-4 rounded-[20px] border px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} mt-6`}
         >
           <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP

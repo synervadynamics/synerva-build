@@ -23,6 +23,73 @@
   z-index: 3;
 }
 
+.homeMobileTheme {
+  /* Base neutrals */
+  --bg-0: #070A0A;
+  --bg-1: #0B1010;
+  --ink-0: #F2F6F4;
+  --ink-1: rgba(242, 246, 244, 0.78);
+  --ink-2: rgba(242, 246, 244, 0.58);
+  --hairline: rgba(242, 246, 244, 0.08);
+
+  /* Default accent (used when no per-section override exists) */
+  --ol-0: rgba(148, 198, 214, 0.42);
+  --ol-1: rgba(148, 198, 214, 0.18);
+  --ol-2: rgba(148, 198, 214, 0.10);
+
+  --fill-0: rgba(70, 120, 128, 0.10);
+  --fill-1: rgba(70, 120, 128, 0.16);
+
+  --hdr: #BFE6F2;
+  --label: rgba(191, 230, 242, 0.72);
+
+  /* CTA system */
+  --cta: #5FB7B1;
+  --cta-hover: #73C6C0;
+  --cta-press: #4AA39D;
+  --cta-ink: #061010;
+
+  --cta-ghost: rgba(95, 183, 177, 0.14);
+  --cta-ghost-border: rgba(95, 183, 177, 0.34);
+  --cta-ghost-ink: #D7FBF7;
+
+  --focus: rgba(95, 183, 177, 0.55);
+}
+
+/* Per-section accents */
+.homeMobileTheme [data-accent="blue"] {
+  --ol-0: rgba(132, 176, 214, 0.44);
+  --ol-1: rgba(132, 176, 214, 0.18);
+  --fill-0: rgba(56, 92, 132, 0.10);
+  --fill-1: rgba(56, 92, 132, 0.16);
+  --hdr: #BFDDF4;
+  --label: rgba(191, 221, 244, 0.72);
+}
+.homeMobileTheme [data-accent="turquoise"] {
+  --ol-0: rgba(120, 214, 206, 0.42);
+  --ol-1: rgba(120, 214, 206, 0.18);
+  --fill-0: rgba(50, 132, 126, 0.10);
+  --fill-1: rgba(50, 132, 126, 0.16);
+  --hdr: #BFF3EC;
+  --label: rgba(191, 243, 236, 0.70);
+}
+.homeMobileTheme [data-accent="seagreen"] {
+  --ol-0: rgba(142, 212, 176, 0.42);
+  --ol-1: rgba(142, 212, 176, 0.18);
+  --fill-0: rgba(58, 128, 98, 0.10);
+  --fill-1: rgba(58, 128, 98, 0.16);
+  --hdr: #C7F0DB;
+  --label: rgba(199, 240, 219, 0.70);
+}
+.homeMobileTheme [data-accent="mint"] {
+  --ol-0: rgba(186, 234, 206, 0.40);
+  --ol-1: rgba(186, 234, 206, 0.16);
+  --fill-0: rgba(80, 140, 112, 0.09);
+  --fill-1: rgba(80, 140, 112, 0.14);
+  --hdr: #D7F7E7;
+  --label: rgba(215, 247, 231, 0.68);
+}
+
 .panelTransparent {
   background-color: transparent !important;
 }
