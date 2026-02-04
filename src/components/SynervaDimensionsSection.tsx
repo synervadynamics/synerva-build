@@ -38,25 +38,25 @@ export function SynervaDimensionsSection() {
         <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
           <div className="space-y-1">
             <div className="space-y-1">
-              <p className="text-sm uppercase tracking-[0.28em] text-white/60">
+              <p className="role-body text-sm uppercase tracking-[0.28em] text-white/60">
                 ARTWORK
               </p>
               <h2
                 data-type-compression="headline"
                 data-type-compression-line-height="1.5"
                 data-type-compression-letter-spacing="-0.025"
-                className="section-header-lock text-3xl font-semibold tracking-tight sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
+                className="role-authority section-header-lock text-3xl font-semibold tracking-tight sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
               >
                 Synerva Dimensions
               </h2>
             </div>
             <div className="max-w-3xl space-y-2 text-sm text-white/80 sm:text-base">
-              <p>
+              <p className="role-body">
                 Synerva Dimensions is a visual research lab—where concepts are
                 built into repeatable, automated systems that compound progress
                 and translate across creative domains globally.
               </p>
-              <p>
+              <p className="role-body">
                 These works are not marketing artifacts. They are templates.
                 What survives becomes architecture now..
               </p>
@@ -84,22 +84,21 @@ export function SynervaDimensionsSection() {
                   </div>
                 </div>
               ) : null}
-              <p className="text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
+              <p className="role-body text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
                 Attention Under Internal Authority
               </p>
-              <p className="mt-1 text-xs text-white/70 sm:text-sm leading-tight">
+              <p className="role-body mt-1 text-xs text-white/70 sm:text-sm leading-tight">
                 Examines how focus stabilizes when self-governance replaces
                 external cues.
               </p>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+              <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 {quietDivineTitle}
               </h3>
               <Link
                 href="/dimensions/quiet-divine"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
+                className="role-body inline-cta mt-4"
               >
-                View Quiet Divine
-                <span aria-hidden="true">↗</span>
+                View Quiet Divine →
               </Link>
             </div>
 
@@ -123,22 +122,21 @@ export function SynervaDimensionsSection() {
                   </div>
                 </div>
               ) : null}
-              <p className="text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
+              <p className="role-body text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
                 Coherence Under Contact
               </p>
-              <p className="mt-1 text-xs text-white/70 sm:text-sm leading-tight">
+              <p className="role-body mt-1 text-xs text-white/70 sm:text-sm leading-tight">
                 Examines how internal stability behaves once returned to the
                 world and subjected to pressure.
               </p>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+              <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 Surface Tension
               </h3>
               <Link
                 href="/dimensions/surface-tension"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white underline-offset-4 hover:underline"
+                className="role-body inline-cta mt-4"
               >
-                View Surface Tension
-                <span aria-hidden="true">↗</span>
+                View Surface Tension →
               </Link>
             </div>
           </div>

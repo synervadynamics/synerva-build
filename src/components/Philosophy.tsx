@@ -16,12 +16,16 @@ export const Philosophy = () => {
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
             data-type-compression-letter-spacing="0"
-            className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+            className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
           >
             {copy.philosophy.quote}
           </blockquote>
-          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p1}</p>
-          <p className="max-w-3xl text-lg text-white/80">{copy.philosophy.p2}</p>
+          <p className="role-body max-w-3xl text-lg text-white/80">
+            {copy.philosophy.p1}
+          </p>
+          <p className="role-body max-w-3xl text-lg text-white/80">
+            {copy.philosophy.p2}
+          </p>
         </div>
       </div>
     </section>

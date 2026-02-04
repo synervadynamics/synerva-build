@@ -24,38 +24,34 @@ export const Merch = () => {
         <div className="grid gap-6 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-5">
             <div className="contrast-field space-y-5">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/62">
+              <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
                 {merch.eyebrow}
               </p>
               <h2
                 data-type-compression="headline"
                 data-type-compression-line-height="1.25"
                 data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
                 {merch.heading}
               </h2>
               <div className="space-y-4 text-lg text-white/75">
                 {merch.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} className="role-body">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+              <p className="role-body text-xs uppercase tracking-[0.3em] text-white/50">
                 {merch.microline}
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 pt-1 sm:gap-3 sm:pt-2">
-              <Link
-                href={merch.ctas.primary.href}
-                className="rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-              >
-                {merch.ctas.primary.label}
+            <div className="flex flex-wrap gap-3 pt-1 sm:pt-2">
+              <Link href={merch.ctas.primary.href} className="role-body inline-cta">
+                {merch.ctas.primary.label} →
               </Link>
-              <Link
-                href={merch.ctas.secondary.href}
-                className="rounded-full border border-white/40 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-              >
-                {merch.ctas.secondary.label}
+              <Link href={merch.ctas.secondary.href} className="role-body inline-cta">
+                {merch.ctas.secondary.label} →
               </Link>
             </div>
             <div className="bubble-drift mt-6 hidden rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)] sm:block">
@@ -91,19 +87,21 @@ export const Merch = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                       Collection
                     </p>
-                    <h3 className="text-2xl font-semibold tracking-tight">
+                    <h3 className="role-body text-2xl font-semibold tracking-tight">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-white/70">{card.description}</p>
+                    <p className="role-body text-sm text-white/70">
+                      {card.description}
+                    </p>
                   </div>
                   <Link
                     href={card.ctaHref}
-                    className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                    className="role-body inline-cta"
                   >
-                    {card.ctaLabel}
+                    {card.ctaLabel} →
                   </Link>
                 </article>
               ))}
@@ -140,21 +138,21 @@ export const Merch = () => {
                     }}
                   />
                   <div className="relative z-10 space-y-3">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                       Collection
                     </p>
-                    <h3 className="text-2xl font-semibold tracking-tight">
+                    <h3 className="role-body text-2xl font-semibold tracking-tight">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-white/70">
+                    <p className="role-body text-sm text-white/70">
                       {card.description}
                     </p>
                   </div>
                   <Link
                     href={card.ctaHref}
-                    className="relative z-10 mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                    className="role-body inline-cta mt-4"
                   >
-                    {card.ctaLabel}
+                    {card.ctaLabel} →
                   </Link>
                 </div>
               ))}

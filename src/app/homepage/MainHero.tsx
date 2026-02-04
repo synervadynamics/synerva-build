@@ -86,13 +86,6 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                 >
                   {copy.hero.subhead}
                 </p>
-                <Link
-                  data-cursor="accent"
-                  className="w-fit rounded-full bg-white px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
-                  href={copy.hero.primaryCta.href}
-                >
-                  {copy.hero.primaryCta.label}
-                </Link>
               </div>
               <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[70svh] sm:justify-center sm:py-8">
                 <h2
@@ -142,22 +135,6 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       >
                         {copy.hero.subhead}
                       </p>
-                    </div>
-                    <div className="flex flex-wrap gap-4">
-                      <Link
-                        data-cursor="accent"
-                        className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
-                        href={copy.hero.primaryCta.href}
-                      >
-                        {copy.hero.primaryCta.label}
-                      </Link>
-                      <Link
-                        data-cursor="accent"
-                        className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-white/10"
-                        href={copy.hero.secondaryCta.href}
-                      >
-                        {copy.hero.secondaryCta.label}
-                      </Link>
                     </div>
                   </div>
 
@@ -253,22 +230,6 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                     >
                       {copy.hero.subhead}
                     </p>
-                  </div>
-                  <div className="flex flex-wrap gap-4">
-                    <Link
-                      data-cursor="accent"
-                      className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-black transition hover:bg-white/90"
-                      href={copy.hero.primaryCta.href}
-                    >
-                      {copy.hero.primaryCta.label}
-                    </Link>
-                    <Link
-                      data-cursor="accent"
-                      className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-white/10"
-                      href={copy.hero.secondaryCta.href}
-                    >
-                      {copy.hero.secondaryCta.label}
-                    </Link>
                   </div>
                 </div>
 

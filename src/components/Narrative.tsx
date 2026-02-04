@@ -88,11 +88,8 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   </p>
                   <p className="role-body text-base text-white/76">{story.proof}</p>
                 </div>
-                <Link
-                  href={story.cta.href}
-                  className="inline-flex rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-                >
-                  {story.cta.label}
+                <Link href={story.cta.href} className="role-body inline-cta">
+                  {story.cta.label} →
                 </Link>
               </div>
               <motion.div
@@ -160,11 +157,8 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 </p>
                 <p className="role-body text-base text-white/76">{story.proof}</p>
               </div>
-              <Link
-                href={story.cta.href}
-                className="inline-flex rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
-              >
-                {story.cta.label}
+              <Link href={story.cta.href} className="role-body inline-cta">
+                {story.cta.label} →
               </Link>
             </div>
             <motion.div

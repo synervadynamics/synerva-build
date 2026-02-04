@@ -107,18 +107,23 @@ export const Offerings = () => {
                 <div className="relative z-10 mt-auto pt-1 sm:pt-2">
                   <Link
                     href={card.href}
-                    className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                    className="role-body inline-cta"
                   >
-                    {card.cta}
+                    {card.cta} →
                   </Link>
                 </div>
               </div>
             );
           })}
         </motion.div>
-        <p className="role-body text-xs uppercase tracking-[0.3em] text-white/50">
-          {offerings.microline}
-        </p>
+        <div className="space-y-3">
+          <p className="role-body text-xs uppercase tracking-[0.3em] text-white/50">
+            {offerings.microline}
+          </p>
+          <Link href="/offerings" className="role-action">
+            Explore Offerings →
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -28,8 +28,8 @@ export const copy = {
     headline: ["The Power of Many,", "Engineered for One"],
     subhead:
       "Senior-level brand, systems, and execution—delivered in weeks instead of quarters. Strategy, design, web, and operations function as one coherent loop, removing the overhead, handoffs, and translation loss that slow traditional teams.",
-    primaryCta: { label: "START WITH A 30-MINUTE PLAN", href: "/contact" },
-    secondaryCta: { label: "EXPLORE OFFERINGS", href: "https://synervadynamics.com/offerings" },
+    primaryCta: { label: "Explore Offerings", href: "/offerings" },
+    secondaryCta: { label: "Start With a Plan", href: "/contact" },
     video: {
       src: "/visuals/hero/hero_main_render.webp",
       poster: "/visuals/hero/hero_main_render.webp",

@@ -12,25 +12,25 @@ export const About = () => {
         <div className="rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
             <div className="flex max-w-2xl flex-col gap-4">
-              <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+              <p className="role-body text-xs uppercase tracking-[0.4em] text-white/60">
                 FOUNDER
               </p>
               <h2
                 data-type-compression="headline"
                 data-type-compression-line-height="1.25"
                 data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
                 About the Founder
               </h2>
               <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
-                <p>
+                <p className="role-body">
                   Synerva Dynamics was founded by Kyle Gruarin, a marketing
                   operator, business owner, and systems builder who learned
                   most of what he knows by doing things the hard way and paying
                   attention when they went wrong.
                 </p>
-                <p>
+                <p className="role-body">
                   Kyle holds a BA in Psychology, an MBA, and is steadily
                   chipping away at a BSc in Computer Science. He has also spent years working in
                   marketing management, marketing research, and business
@@ -39,12 +39,12 @@ export const About = () => {
                   consequences attached. Budgets. Deadlines. Clients. Mistakes.
                   Fixes.
                 </p>
-                <p>
+                <p className="role-body">
                   This was never marketing as theory. It was marketing as
                   practice. Work done with imperfect information, limited time,
                   and no room to hide behind slides.
                 </p>
-                <p>
+                <p className="role-body">
                   Before Synerva, Kyle spent fifteen years in bars and
                   restaurants, working nearly every role imaginable. Serving.
                   Bartending. Managing. Cleaning up messes in real time, where
@@ -52,7 +52,7 @@ export const About = () => {
                   right. It’s an unusually effective way to learn how people,
                   pressure, and systems actually behave.
                 </p>
-                <p>
+                <p className="role-body">
                   Synerva grew out of that overlap. The studio focuses on
                   building systems that compound. Visual systems. Cognitive
                   frameworks. Operational structures. Not to impress, but to
