@@ -26,11 +26,6 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
       label: "Page coming soon",
     },
   };
-  const ctaBaseClass =
-    "inline-flex w-fit rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] transition-colors sm:px-6 sm:py-3 sm:text-sm";
-  const activeCtaClass = `${ctaBaseClass} border border-white/45 text-white`;
-  const inactiveCtaClass = `${ctaBaseClass} border border-white/30 bg-[#111214] text-white/70`;
-
   return (
     <section
       id="systems"
@@ -42,7 +37,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
             data-type-compression-letter-spacing="0"
-            className="section-header-lock text-center text-3xl leading-tight sm:text-4xl lg:text-[2.9rem] [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:2.9rem] lg:[--section-title-line:3.05rem]"
+            className="role-authority section-header-lock text-center text-3xl leading-tight sm:text-4xl lg:text-[2.9rem] [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:2.9rem] lg:[--section-title-line:3.05rem]"
           >
             {sectionCopy.heading}
           </h2>
@@ -51,7 +46,10 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
         <div className="grid gap-6 md:grid-cols-3 md:items-start md:gap-8 lg:gap-10">
           <div className="max-w-3xl space-y-4 text-base font-normal text-white/80 sm:text-lg">
             {sectionCopy.body.split("\n\n").map((paragraph) => (
-              <p key={paragraph} className="whitespace-pre-line leading-relaxed">
+              <p
+                key={paragraph}
+                className="role-body whitespace-pre-line leading-relaxed"
+              >
                 {paragraph}
               </p>
             ))}
@@ -75,25 +73,21 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
                   </div>
                 </div>
                 <div className="space-y-1.5 sm:space-y-2">
-                  <p className="text-base font-semibold text-white sm:text-lg">
+                  <p className="role-body text-base font-semibold text-white sm:text-lg">
                     {card.headline}
                   </p>
-                  <p className="text-sm text-white/70 sm:text-base">
+                  <p className="role-body text-sm text-white/70 sm:text-base">
                     {card.body}
                   </p>
                 </div>
                 {cta?.href ? (
-                  <Link href={cta.href} className={activeCtaClass}>
-                    {cta.label}
+                  <Link href={cta.href} className="role-body inline-cta">
+                    {cta.label} →
                   </Link>
                 ) : (
-                  <button
-                    type="button"
-                    aria-disabled="true"
-                    className={`${inactiveCtaClass} cursor-default`}
-                  >
+                  <span className="role-body inline-cta opacity-60">
                     {cta.label}
-                  </button>
+                  </span>
                 )}
               </article>
             );

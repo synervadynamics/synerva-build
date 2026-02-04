@@ -22,14 +22,14 @@ export const SystemsThatHoldSection = ({
     <div className="dsr-room filled-panel rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
       <div className="flex flex-col gap-8">
         <div className={alignClassName}>
-          <p className="text-[0.7rem] uppercase tracking-[0.35em] text-white/65">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.35em] text-white/65">
             SYSTEMS THAT HOLD
           </p>
           <h2
             data-type-compression="headline"
             data-type-compression-line-height="1.25"
             data-type-compression-letter-spacing="0"
-            className="section-header-lock text-2xl leading-tight text-white sm:text-3xl lg:text-4xl [--section-title-size:1.5rem] [--section-title-line:2rem] [--section-title-tracking:-0.02em] sm:[--section-title-size:2rem] sm:[--section-title-line:2.25rem] lg:[--section-title-size:2.5rem] lg:[--section-title-line:2.75rem]"
+            className="role-authority section-header-lock text-2xl leading-tight text-white sm:text-3xl lg:text-4xl [--section-title-size:1.5rem] [--section-title-line:2rem] [--section-title-tracking:-0.02em] sm:[--section-title-size:2rem] sm:[--section-title-line:2.25rem] lg:[--section-title-size:2.5rem] lg:[--section-title-line:2.75rem]"
           >
             Designed to Survive Reality
           </h2>
@@ -45,10 +45,10 @@ export const SystemsThatHoldSection = ({
                 className="object-cover"
               />
             </div>
-            <h2 className="text-base font-light leading-snug text-white">
+            <h2 className="role-body text-base font-light leading-snug text-white">
               What Synerva Builds
             </h2>
-            <p className="whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
+            <p className="role-body whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
               {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase."}
             </p>
           </div>
@@ -62,10 +62,10 @@ export const SystemsThatHoldSection = ({
                 className="object-cover"
               />
             </div>
-            <h2 className="text-base font-light leading-snug text-white">
+            <h2 className="role-body text-base font-light leading-snug text-white">
               How Synerva Operates
             </h2>
-            <p className="whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
+            <p className="role-body whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
               {"Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork advances under real conditions\nwithout noise, drift, or heroics."}
             </p>
           </div>

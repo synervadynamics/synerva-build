@@ -26,14 +26,14 @@ export const Publications = () => {
       <div className="relative mx-auto max-w-6xl">
         <div className="flex flex-col gap-5 text-white">
           <div className="contrast-field space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+            <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">
               PUBLICATIONS
             </p>
             <h2
               data-type-compression="headline"
               data-type-compression-line-height="1.25"
               data-type-compression-letter-spacing="0"
-              className="section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+              className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
             >
               {publications.heading}
             </h2>
@@ -41,7 +41,7 @@ export const Publications = () => {
               data-type-compression="subhead"
               data-type-compression-line-height="1.625"
               data-type-compression-letter-spacing="0"
-              className="text-base leading-relaxed text-white/75"
+              className="role-orientation text-base leading-relaxed text-white/75"
             >
               {publications.body}
             </p>
@@ -65,25 +65,25 @@ export const Publications = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                       Publication
                     </p>
-                    <h3 className="text-2xl font-semibold tracking-tight text-white/95">
+                    <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
                       {item.title}
                     </h3>
-                    <p className="text-sm leading-snug text-white/70">
+                    <p className="role-body text-sm leading-snug text-white/70">
                       {item.teaser}
                     </p>
                     {isCtaDisabled ? (
-                      <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                      <span className="role-body inline-cta opacity-60">
                         {item.cta}
                       </span>
                     ) : (
                       <Link
                         href={item.href}
-                        className="inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                        className="role-body inline-cta"
                       >
-                        {item.cta}
+                        {item.cta} →
                       </Link>
                     )}
                   </div>
@@ -152,17 +152,17 @@ export const Publications = () => {
                     }`}
                     aria-expanded={isActive}
                   >
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/60">
+                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
                       Publication
                     </p>
-                    <h3 className="text-2xl font-semibold tracking-tight text-white/95">
+                    <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-snug text-white/70">
+                    <p className="role-body mt-2 text-sm leading-snug text-white/70">
                       {item.teaser}
                     </p>
                     <div
-                      className={`overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      className={`role-body overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isActive
                           ? "mt-3 max-h-[1200px] opacity-100"
                           : "max-h-0 opacity-0"
@@ -171,21 +171,23 @@ export const Publications = () => {
                     >
                       <div className="space-y-2">
                         {item.description.map((paragraph) => (
-                          <p key={paragraph}>{paragraph}</p>
+                          <p key={paragraph} className="role-body">
+                            {paragraph}
+                          </p>
                         ))}
                       </div>
                     </div>
                     {isCtaDisabled ? (
-                      <span className="mt-4 inline-flex rounded-full border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/50">
+                      <span className="role-body inline-cta mt-4 opacity-60">
                         {item.cta}
                       </span>
                     ) : (
                       <Link
                         href={item.href}
                         tabIndex={isActive ? 0 : -1}
-                        className="mt-4 inline-flex rounded-full border border-white/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-white/10"
+                        className="role-body inline-cta mt-4"
                       >
-                        {item.cta}
+                        {item.cta} →
                       </Link>
                     )}
                   </article>
