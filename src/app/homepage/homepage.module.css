@@ -5,7 +5,7 @@
   --divider-rule: rgba(199, 210, 216, 0.10);
   --panel-fill: transparent;
   --panel-fill-focus: transparent;
-  --cta-outline: rgba(210, 199, 180, 0.18);
+  --cta-outline: rgba(230, 227, 220, 0.55);
   --cta-text: rgba(216, 224, 228, 0.86);
   --link-color: #F5F7FA;
   --bullet-color: rgba(191, 201, 205, 0.60);
@@ -174,7 +174,7 @@
 .sdHome a[class*="border-white/"]:hover,
 .sdHome span[class*="border-white/"]:hover,
 .sdHome button[class*="border-white/"]:hover {
-  border-color: rgba(210, 199, 180, 0.24);
+  border-color: rgba(230, 227, 220, 0.7);
   color: rgba(216, 224, 228, 0.92);
 }
 

@@ -447,7 +447,7 @@ export default function OfferingsDesktop() {
 
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
               <div className="flex w-full justify-center lg:justify-start">
-                <div className="w-full lg:w-[90%]">
+                <div className="w-full max-w-[560px] lg:max-w-[560px] lg:mx-0">
                   <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2">
                     <div className="aspect-[5/4] w-full overflow-hidden rounded-[22px]">
                       <img
