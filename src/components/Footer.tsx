@@ -1,5 +1,5 @@
+import Link from "next/link";
 import { copy } from "@/data/copy";
-import CtaPill from "@/components/CtaPill";
 
 const renderWithBreaks = (text: string) =>
   text.split("\n").map((line, index, arr) => (
@@ -19,39 +19,39 @@ export const Footer = () => {
             {renderWithBreaks(copy.global.contact.address)}
           </p>
           <p className="role-body text-sm">
-            <CtaPill
+            <a
               href={`tel:${copy.global.contact.phone.replace(/[^0-9+]/g, "")}`}
-              variant="secondary"
+              className="inline-cta"
             >
               {copy.global.contact.phone}
-            </CtaPill>{" "}
+            </a>{" "}
             ·{" "}
-            <CtaPill
+            <a
               href={`mailto:${copy.global.contact.email}`}
-              variant="secondary"
+              className="inline-cta"
             >
               {copy.global.contact.email}
-            </CtaPill>
+            </a>
           </p>
         </div>
         <nav className="role-body flex flex-wrap gap-4 text-sm">
           {copy.global.nav.map((item) => (
-            <CtaPill key={item.href} href={item.href} variant="secondary">
+            <Link key={item.href} className="inline-cta" href={item.href}>
               {item.label}
-            </CtaPill>
+            </Link>
           ))}
         </nav>
         <div className="role-body flex gap-4 text-sm">
           {copy.footer.socials.map((social) => (
-            <CtaPill
+            <a
               key={social.label}
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              variant="secondary"
+              className="inline-cta"
             >
               {social.label}
-            </CtaPill>
+            </a>
           ))}
         </div>
       </div>
