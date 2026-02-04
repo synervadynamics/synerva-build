@@ -25,7 +25,7 @@ export default function HomeMobile() {
                 <span className="h-px w-5 bg-white/70" />
               </span>
             </button>
-            <span className="text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70">
+            <span className="role-body text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70">
               Synerva Dynamics
             </span>
             <span aria-hidden className="h-9 w-9" />
@@ -43,20 +43,17 @@ export default function HomeMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <p className="text-[0.7rem] uppercase tracking-[0.32em] text-[rgba(160,190,214,0.7)]">
+            <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-[rgba(160,190,214,0.7)]">
               SYNERVA DYNAMICS
             </p>
-            <h1 className="text-[2rem] font-light leading-[1.12] text-white">
+            <h1 className="role-authority text-[2rem] font-light leading-[1.12] text-white">
               <span className="block">The Power of Many,</span>
               <span className="block">Engineered for One</span>
             </h1>
-            <p className="text-[0.96rem] leading-[1.5] text-white/70">
+            <p className="role-orientation text-[0.96rem] leading-[1.5] text-white/70">
               Senior-level strategy, systems, and execution—delivered as one
               coherent operating loop.
             </p>
-            <Link href="/contact" className={styles.synervaCta}>
-              START WITH A 30-MINUTE PLAN →
-            </Link>
           </div>
         </section>
 
@@ -65,16 +62,16 @@ export default function HomeMobile() {
           className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] -mt-8 ${styles.panelTransparent}`}
           style={{ borderColor: "var(--ol-primary)" }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             THE PROBLEM
           </p>
-          <h2 className="text-[1.45rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.45rem] font-light leading-snug text-white">
             Fragmentation Kills Velocity
           </h2>
           <div className="flex flex-col gap-2 text-[0.93rem] leading-[1.5] text-white/70">
-            <p>Decisions stall as work crosses too many systems.</p>
-            <p>Judgment gets replaced by interfaces and rituals.</p>
-            <p>Momentum resets instead of compounding.</p>
+            <p className="role-body">Decisions stall as work crosses too many systems.</p>
+            <p className="role-body">Judgment gets replaced by interfaces and rituals.</p>
+            <p className="role-body">Momentum resets instead of compounding.</p>
           </div>
         </section>
 
@@ -85,18 +82,24 @@ export default function HomeMobile() {
             borderColor: "var(--ol-primary)",
           }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW WORK MOVES
           </p>
-          <h2 className="text-[1.3rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.3rem] font-light leading-snug text-white">
             System Guardrails
           </h2>
           <ul
             className={`list-disc pl-4 text-[0.88rem] leading-[1.45] text-white/70 ${styles.guardrailList}`}
           >
-            <li>Replace coordination overhead with clear decisions.</li>
-            <li>Convert repetition into automation without losing intent.</li>
-            <li>Build delivery so progress compounds instead of resetting.</li>
+            <li className="role-body">
+              Replace coordination overhead with clear decisions.
+            </li>
+            <li className="role-body">
+              Convert repetition into automation without losing intent.
+            </li>
+            <li className="role-body">
+              Build delivery so progress compounds instead of resetting.
+            </li>
           </ul>
         </section>
 
@@ -105,13 +108,13 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} ${styles.panelFilled} mt-6`}
           style={{ background: "var(--fill-weak)" }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             SYSTEMS THAT HOLD
           </p>
-          <h2 className="text-[1.45rem] font-semibold leading-snug text-white">
+          <h2 className="role-authority text-[1.45rem] font-semibold leading-snug text-white">
             Designed to Survive Reality
           </h2>
-          <p className="text-[0.92rem] leading-[1.45] text-white/70">
+          <p className="role-orientation text-[0.92rem] leading-[1.45] text-white/70">
             Synerva builds operating structures that enforce clarity, persist
             under pressure, and compound decision quality over time.
           </p>
@@ -126,7 +129,7 @@ export default function HomeMobile() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-[0.9rem] leading-[1.35] text-white/80">
+              <p className="role-body text-[0.9rem] leading-[1.35] text-white/80">
                 Shared interfaces.
                 <br />
                 Explicit constraints.
@@ -144,7 +147,7 @@ export default function HomeMobile() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-[0.9rem] leading-[1.35] text-white/80">
+              <p className="role-body text-[0.9rem] leading-[1.35] text-white/80">
                 Clarity under load.
                 <br />
                 Momentum without drift.
@@ -160,7 +163,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.offeringsPanel} mt-6`}
           style={{ background: "var(--fill-strong)" }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW TO ENGAGE
           </p>
           <div className={styles.offeringsImage} aria-hidden>
@@ -172,39 +175,39 @@ export default function HomeMobile() {
               className="object-cover"
             />
           </div>
-          <h2 className="text-[1.35rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
             Offerings
           </h2>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">
-              <p className="text-[0.96rem] font-medium text-white">
+              <p className="role-body text-[0.96rem] font-medium text-white">
                 Operator Hourly
               </p>
-              <p className="text-[0.9rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
                 Audits, positioning, and fast decisions where judgment is the
                 product.
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[0.96rem] font-medium text-white">
+              <p className="role-body text-[0.96rem] font-medium text-white">
                 Flat-Rate Projects
               </p>
-              <p className="text-[0.9rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
                 Defined outcomes with a clean finish line and no drift.
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[0.96rem] font-medium text-white">
+              <p className="role-body text-[0.96rem] font-medium text-white">
                 Build With Synerva
               </p>
-              <p className="text-[0.9rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
                 When strategy, writing, design, systems, and automation must ship
                 as one release.
               </p>
             </div>
           </div>
-          <Link href="/offerings" className={styles.offeringsCta}>
-            View Offerings →
+          <Link href="/offerings" className="role-action">
+            Explore Offerings →
           </Link>
         </section>
 
@@ -212,19 +215,23 @@ export default function HomeMobile() {
           data-accent="turquoise"
           className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel}`}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             WHAT YOU GET
           </p>
-          <h2 className="text-[1.3rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.3rem] font-light leading-snug text-white">
             What’s Delivered
           </h2>
           <ul className="list-disc pl-4 text-[0.9rem] leading-[1.45] text-white/70">
-            <li>Strategic direction before execution begins</li>
-            <li>
+            <li className="role-body">Strategic direction before execution begins</li>
+            <li className="role-body">
               Integrated execution across brand, content, web, and automation
             </li>
-            <li>Durable assets you keep using, not decks you outgrow</li>
-            <li>Senior operating judgment without the usual overhead</li>
+            <li className="role-body">
+              Durable assets you keep using, not decks you outgrow
+            </li>
+            <li className="role-body">
+              Senior operating judgment without the usual overhead
+            </li>
           </ul>
         </section>
 
@@ -233,13 +240,13 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled} ${styles.publicationsPanel} mt-6`}
           style={{ background: "var(--fill-weak)" }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             INTERNAL ENGINES
           </p>
-          <h2 className="text-[1.35rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
             Systems
           </h2>
-          <p className="text-[0.9rem] leading-[1.45] text-white/70">
+          <p className="role-orientation text-[0.9rem] leading-[1.45] text-white/70">
             A small set of internal systems that preserve judgment, reduce noise,
             and keep decisions coherent as complexity scales.
           </p>
@@ -254,13 +261,15 @@ export default function HomeMobile() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-[1rem] font-medium text-white">Verisense</p>
-              <p className="text-[0.85rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[1rem] font-medium text-white">
+                Verisense
+              </p>
+              <p className="role-body text-[0.85rem] leading-[1.45] text-white/70">
                 Signal clarity at the point of decision.
               </p>
               <Link
                 href="https://synervadynamics.com/verisense"
-                className={styles.secondaryCta}
+                className="role-body inline-cta"
               >
                 View Verisense →
               </Link>
@@ -275,12 +284,14 @@ export default function HomeMobile() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-[1rem] font-medium text-white">Lucentra</p>
-              <p className="text-[0.85rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[1rem] font-medium text-white">
+                Lucentra
+              </p>
+              <p className="role-body text-[0.85rem] leading-[1.45] text-white/70">
                 Structural memory that preserves intent.
               </p>
               <span
-                className={`${styles.secondaryCta} pointer-events-none opacity-60`}
+                className="role-body inline-cta pointer-events-none opacity-60"
                 aria-disabled
               >
                 Page Coming Soon
@@ -293,20 +304,22 @@ export default function HomeMobile() {
           data-accent="mint"
           className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} mt-6`}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             PUBLICATIONS & VISUAL SYSTEMS
           </p>
-          <h2 className="text-[1.35rem] font-light leading-snug text-white">
+          <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
             Work That Holds Under Pressure
           </h2>
-          <p className="text-[0.9rem] leading-[1.45] text-white/70">
+          <p className="role-orientation text-[0.9rem] leading-[1.45] text-white/70">
             Long-form thinking and visual systems forged under real conditions and
             built to endure complexity.
           </p>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-3">
-              <p className="text-[1rem] font-medium text-white">Writing</p>
-              <p className="text-[0.9rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[1rem] font-medium text-white">
+                Writing
+              </p>
+              <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
                 Books and essays shaped by pressure, not theory.
               </p>
               <div className={styles.publicationCovers} aria-hidden>
@@ -330,17 +343,17 @@ export default function HomeMobile() {
                 </div>
               </div>
               <span
-                className={`${styles.secondaryCta} pointer-events-none opacity-60`}
+                className="role-body inline-cta pointer-events-none opacity-60"
                 aria-disabled
               >
                 Page Coming Soon
               </span>
             </div>
             <div className="flex flex-col gap-3">
-              <p className="text-[1rem] font-medium text-white">
+              <p className="role-body text-[1rem] font-medium text-white">
                 Synerva Dimensions Artwork
               </p>
-              <p className="text-[0.9rem] leading-[1.45] text-white/70">
+              <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
                 Visual research where structure, attention, and coherence are
                 tested in public.
               </p>
@@ -355,7 +368,7 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <Link href="/dimensions/quiet-divine" className={styles.secondaryCta}>
+                  <Link href="/dimensions/quiet-divine" className="role-body inline-cta">
                     Quiet Divine →
                   </Link>
                 </div>
@@ -371,7 +384,7 @@ export default function HomeMobile() {
                   </div>
                   <Link
                     href="/dimensions/surface-tension"
-                    className={`${styles.secondaryCta} ${styles.secondaryCtaTight}`}
+                    className="role-body inline-cta"
                   >
                     Surface Tension →
                   </Link>
@@ -385,11 +398,11 @@ export default function HomeMobile() {
           data-accent="blue"
           className={`flex flex-col gap-3 rounded-[20px] border px-[22px] py-[22px] text-center ${styles.panelTransparent} ${styles.authorityPanel} mt-6`}
         >
-          <p className="text-[1.4rem] font-semibold leading-snug text-white">
+          <p className="role-authority text-[1.4rem] font-semibold leading-snug text-white">
             Clarity compounds. Every decision either sharpens the signal or feeds
             the noise.
           </p>
-          <p className="text-[0.9rem] leading-[1.5] text-white/70">
+          <p className="role-body text-[0.9rem] leading-[1.5] text-white/70">
             Synerva measures movement by lift alone. Fewer pages. Faster load
             times. Sharper story. Outcomes verified, never assumed.
           </p>
@@ -400,7 +413,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 rounded-[20px] border px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} mt-6`}
           style={{ background: "var(--fill-strong)" }}
         >
-          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
           </p>
           <div className={styles.finalCtaImage} aria-hidden>
@@ -412,16 +425,13 @@ export default function HomeMobile() {
               className="object-cover"
             />
           </div>
-          <h2 className="text-[1.35rem] font-medium text-cyan-300">
+          <h2 className="role-authority text-[1.35rem] font-medium">
             Start With a Plan
           </h2>
-          <p className="text-white/70 text-[0.95rem] leading-relaxed">
+          <p className="role-body text-white/70 text-[0.95rem] leading-relaxed">
             A 30-minute session to clarify direction, pressure-test assumptions,
             and choose the cleanest path forward.
           </p>
-          <Link href="/start-with-a-plan" className={styles.synervaCta}>
-            START WITH A 30-MINUTE PLAN →
-          </Link>
         </section>
       </Mobile1Shell>
     </main>
