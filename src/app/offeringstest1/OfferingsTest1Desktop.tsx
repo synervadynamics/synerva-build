@@ -254,39 +254,43 @@ export default function OfferingsTest1Desktop() {
         </section>
 
         <section id="capabilities" className={`${styles.sectionPanel} ${styles.section}`}>
-          <div className={styles.sectionHeader}>
-            <p className={styles.eyebrow}>Capabilities</p>
-            <h2 className={styles.sectionTitle}>What gets built</h2>
-            <p className={styles.sectionSubhead}>
-              Systems, not isolated artifacts.
-            </p>
-            <p className={styles.sectionSubhead}>
-              Synerva builds integrated systems that remove friction across the
-              business.
-            </p>
-            <p className={styles.sectionSubhead}>
-              Depending on the engagement, this may include:
-            </p>
-            <ul className={styles.bulletList}>
-              <li>Strategy and positioning</li>
-              <li>Brand and identity systems</li>
-              <li>Websites, apps, and product UI</li>
-              <li>Content and messaging engines</li>
-              <li>Automation, AI tooling, and internal workflows</li>
-            </ul>
-            <p className={styles.sectionSubhead}>
-              Everything is designed to work together. Nothing is shipped in
-              isolation.
-            </p>
-          </div>
-          <div className={`${styles.imageFrame} ${styles.imgDivider3x1}`}>
-            <Image
-              src="/placeholders/offeringstest1/capabilities-3x2.png"
-              alt="Capabilities placeholder"
-              fill
-              className={styles.imageFill}
-              sizes="(max-width: 1280px) 100vw, 960px"
-            />
+          <div className={styles.grid2}>
+            <div className={styles.textStack}>
+              <p className={styles.eyebrow}>Capabilities</p>
+              <h2 className={styles.sectionTitle}>What gets built</h2>
+              <p className={styles.sectionSubhead}>
+                Systems, not isolated artifacts.
+              </p>
+              <p className={styles.sectionSubhead}>
+                Synerva builds integrated systems that remove friction across the
+                business.
+              </p>
+              <p className={styles.sectionSubhead}>
+                Depending on the engagement, this may include:
+              </p>
+              <ul className={styles.bulletList}>
+                <li>Strategy and positioning</li>
+                <li>Brand and identity systems</li>
+                <li>Websites, apps, and product UI</li>
+                <li>Content and messaging engines</li>
+                <li>Automation, AI tooling, and internal workflows</li>
+              </ul>
+              <p className={styles.sectionSubhead}>
+                Everything is designed to work together. Nothing is shipped in
+                isolation.
+              </p>
+            </div>
+            <div
+              className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
+            >
+              <Image
+                src="/placeholders/offeringstest1/capabilities-3x2.png"
+                alt="Capabilities placeholder"
+                fill
+                className={styles.imageFill}
+                sizes="(max-width: 1280px) 100vw, 440px"
+              />
+            </div>
           </div>
           <p className={styles.microLine}>If it touches the system, it’s in scope.</p>
         </section>
