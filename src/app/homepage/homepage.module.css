@@ -71,7 +71,11 @@
   margin-bottom: var(--section-gap-bottom);
 }
 
-.sdHome :global(#hero),
+.sdHome :global(#hero) {
+  --section-gap-top: 0;
+  --section-gap-bottom: clamp(1rem, 2.5vw, 1.75rem);
+}
+
 .sdHome :global(#philosophy) {
   --section-gap-bottom: clamp(1rem, 2.5vw, 1.75rem);
 }
@@ -87,7 +91,7 @@
 
 .sdHome :global(#narrative),
 .sdHome :global(#systems) {
-  background-color: #0b1216;
+  background-color: #0E1514;
 }
 
 .sdHome .role-action {
@@ -202,38 +206,7 @@
   color: var(--ink-body) !important;
 }
 
-.sdHome :global(#narrative) {
-  --ink-current: var(--ink-analytical);
-}
 
-.sdHome :global(#narrative .bubble-drift) {
-  --ink-current: var(--ink-analytical);
-}
-
-.sdHome :global(#systems-that-hold) {
-  --ink-current: var(--ink-analytical);
-}
-
-.sdHome :global(#systems) {
-  --ink-current: var(--ink-analytical);
-}
-
-.sdHome :global(#about .space-y-3) {
-  --ink-current: var(--ink-human);
-}
-
-.sdHome :global(#synerva-dimensions p),
-.sdHome :global(#publications p),
-.sdHome :global(#merch p) {
-  color: var(--ink-editorial);
-}
-
-.sdHome :global(#synerva-dimensions .text-white\/60),
-.sdHome :global(#publications .text-white\/55),
-.sdHome :global(#merch .text-white\/50),
-.sdHome :global(#merch .text-white\/60) {
-  color: var(--ink-body);
-}
 
 .sdHome :global(#systems-that-hold .dsr-room) {
   background-color: rgba(11, 17, 21, 0.58);

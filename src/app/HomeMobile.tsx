@@ -43,7 +43,7 @@ export default function HomeMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-[rgba(160,190,214,0.7)]">
+            <p className="role-body text-[0.7rem] uppercase tracking-[0.32em]">
               SYNERVA DYNAMICS
             </p>
             <h1 className="role-authority text-[2rem] font-light leading-[1.12] text-white">
