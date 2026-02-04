@@ -70,7 +70,10 @@ export default function OfferingsDesktop() {
 
   return (
     <main className={`${styles.offeringsPage} relative`}>
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
+      <SubpageStaticBackground
+        imageUrl="/subpage-backgrounds/offerings-v3.png"
+        showOverlay={false}
+      />
       <div className="pointer-events-none fixed inset-0 z-[4] bg-[color:var(--offerings-panel-fill)]" />
       <div className="relative z-10">
         <ScrollProgress />
