@@ -210,10 +210,10 @@ export default function OfferingsMobile() {
           <p className={styles.sectionSubhead}>
             The fastest way to turn “we should” into “it’s shipped.”
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
+          <div className={`${styles.imageFrame} ${styles.imageFiveFour}`}>
             <Image
-              src="/placeholders/offerings/operator-hourly-3x2.png"
-              alt="3:2 landscape placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
+              src="/placeholders/offerings/operator-hourly_5x4.png"
+              alt="5:4 placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className={styles.imageFill}
@@ -246,7 +246,7 @@ export default function OfferingsMobile() {
           <p className={styles.sectionSubhead}>
             Fixed scope, fixed price, built with taste and standards.
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
+          <div className={`${styles.imageFrame} ${styles.imageFiveFour}`}>
             <Image
               src="/placeholders/offerings/flat-rate-3x2.png"
               alt="3:2 landscape placeholder: architectural model, constructed system, crafted artifact"

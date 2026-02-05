@@ -95,6 +95,11 @@
   max-height: 42vh;
 }
 
+.imageFiveFour {
+  aspect-ratio: 5 / 4;
+  max-height: 42vh;
+}
+
 .imagePortrait {
   aspect-ratio: 2 / 3;
   min-height: 220px;
