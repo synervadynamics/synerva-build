@@ -140,6 +140,12 @@
   width: 100%;
 }
 
+.imgOperatorHourly {
+  position: relative;
+  aspect-ratio: 1536 / 1024;
+  width: 100%;
+}
+
 .img2x3 {
   position: relative;
   aspect-ratio: 2 / 3;

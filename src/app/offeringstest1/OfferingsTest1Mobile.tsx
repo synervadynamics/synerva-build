@@ -136,10 +136,10 @@ export default function OfferingsTest1Mobile() {
             The fastest way to turn “we should” into “it’s shipped.”
           </p>
           <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
-            <div className={styles.imgSoftSquare}>
+            <div className={styles.imgOperatorHourly}>
               <Image
-                src="/placeholders/offerings/operator-hourly-3x2.png"
-                alt="3:2 landscape placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
+                src="/offerings-2026-feb/operator-hourly.PNG"
+                alt="Operator hourly offering"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
                 className={styles.imageFill}

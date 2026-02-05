@@ -154,10 +154,10 @@ export default function OfferingsTest1Desktop() {
               <p className={styles.microLine}>Minimum friction. Maximum leverage.</p>
             </div>
             <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
-              <div className={styles.imgSoftSquare}>
+              <div className={styles.imgOperatorHourly}>
                 <Image
-                  src="/placeholders/offeringstest1/operator-hourly-3x2.png"
-                  alt="Operator hourly placeholder"
+                  src="/offerings-2026-feb/operator-hourly.PNG"
+                  alt="Operator hourly offering"
                   fill
                   className={styles.imageFill}
                   sizes="(max-width: 1280px) 50vw, 560px"
