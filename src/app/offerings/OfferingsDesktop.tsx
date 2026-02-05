@@ -12,7 +12,7 @@ const imagePaths = {
   hiring: "/homepage-post-12-25-2025/operator-hourly-final-1.png",
   scope: "/homepage-post-12-25-2025/scope-discipline-final-1.png",
   operator: "/offerings-2026-feb/operator-hourly_5x4.png",
-  flatRate: "/offerings-subpage-jan-3/flat-rate-projects-v1b.PNG",
+  flatRate: "/offerings-2026-feb/flat-rate-projects.jpg",
   build: "/homepage-post-12-25-2025/build-with-synerva-final-1.png",
 } as const;
 
@@ -449,7 +449,7 @@ export default function OfferingsDesktop() {
               <div className="flex w-full justify-center lg:justify-start">
                 <div className="w-full max-w-[560px] lg:max-w-[560px] lg:mx-0">
                   <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2">
-                    <div className="aspect-[5/4] w-full overflow-hidden rounded-[22px]">
+                    <div className="aspect-[1536/1024] w-full overflow-hidden rounded-[22px]">
                       <img
                         src={imagePaths.flatRate}
                         alt="Flat-Rate Projects"
