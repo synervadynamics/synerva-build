@@ -464,8 +464,8 @@ export default function OfferingsTest1Desktop() {
             </div>
             <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
               <Image
-                src="/placeholders/offeringstest1/buying-right-2x3.png"
-                alt="What you're buying right placeholder"
+                src="/offerings-2026-feb/standards-right.PNG"
+                alt="Synerva standards right"
                 fill
                 className={styles.imageFill}
                 sizes="(max-width: 1280px) 45vw, 360px"
