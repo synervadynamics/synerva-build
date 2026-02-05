@@ -218,8 +218,8 @@ export default function OfferingsTest1Mobile() {
           <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
             <div className={styles.imgWidePlate}>
               <Image
-                src="/placeholders/offerings/build-left-2x3.png"
-                alt="Landscape placeholder: modular infrastructure, stacked volumes, integrated pathways"
+                src="/offerings-2026-feb/build-with-synerva.jpg"
+                alt="Build with Synerva systems overview"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
                 className={styles.imageFill}

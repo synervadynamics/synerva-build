@@ -242,8 +242,8 @@ export default function OfferingsTest1Desktop() {
             <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
               <div className={styles.imgWidePlate}>
                 <Image
-                  src="/placeholders/offeringstest1/build-left-2x3.png"
-                  alt="Build with Synerva placeholder"
+                  src="/offerings-2026-feb/build-with-synerva.jpg"
+                  alt="Build with Synerva systems overview"
                   fill
                   className={styles.imageFill}
                   sizes="(max-width: 1280px) 60vw, 640px"
