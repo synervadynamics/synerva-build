@@ -174,10 +174,10 @@ export default function OfferingsTest1Mobile() {
             Fixed scope, fixed price, built with taste and standards.
           </p>
           <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
-            <div className={styles.imgSoftSquare}>
+            <div className={styles.imgOperatorHourly}>
               <Image
-                src="/placeholders/offerings/flat-rate-3x2.png"
-                alt="3:2 landscape placeholder: architectural model, constructed system, crafted artifact"
+                src="/offerings-2026-feb/flat-rate-projects.jpg"
+                alt="Flat-Rate Projects"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
                 className={styles.imageFill}

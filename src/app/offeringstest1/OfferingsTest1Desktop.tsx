@@ -200,10 +200,10 @@ export default function OfferingsTest1Desktop() {
               </p>
             </div>
             <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
-              <div className={styles.imgSoftSquare}>
+              <div className={styles.imgOperatorHourly}>
                 <Image
-                  src="/placeholders/offeringstest1/flat-rate-3x2.png"
-                  alt="Flat-rate projects placeholder"
+                  src="/offerings-2026-feb/flat-rate-projects.jpg"
+                  alt="Flat-Rate Projects"
                   fill
                   className={styles.imageFill}
                   sizes="(max-width: 1280px) 50vw, 560px"
