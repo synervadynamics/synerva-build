@@ -11,7 +11,7 @@ const imagePaths = {
   hero: "/offerings-subpage-jan-3/hero-v3.JPG",
   hiring: "/homepage-post-12-25-2025/operator-hourly-final-1.png",
   scope: "/homepage-post-12-25-2025/scope-discipline-final-1.png",
-  operator: "/offerings-subpage-jan-3/operator-hourly-v67.PNG",
+  operator: "/offerings-2026-feb/operator-hourly_5x4.png",
   flatRate: "/offerings-subpage-jan-3/flat-rate-projects-v1b.PNG",
   build: "/homepage-post-12-25-2025/build-with-synerva-final-1.png",
 } as const;
@@ -390,7 +390,7 @@ export default function OfferingsDesktop() {
 
                 <div className="flex w-full items-center justify-center lg:justify-end">
                   <div className="w-full max-w-[560px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                    <div className="relative aspect-[5/4] w-full overflow-hidden">
+                    <div className="relative aspect-[1706/1365] w-full overflow-hidden">
                       <Image
                         src={imagePaths.operator}
                         alt="Operator Hourly visual"
