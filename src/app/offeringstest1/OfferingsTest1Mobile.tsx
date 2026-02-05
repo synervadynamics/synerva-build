@@ -404,8 +404,8 @@ export default function OfferingsTest1Mobile() {
           <div className={styles.portraitPair}>
             <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
               <Image
-                src="/placeholders/offerings/standards-left-2x3.png"
-                alt="2:3 portrait placeholder: clean craft, material authority"
+                src="/offerings-2026-feb/standards-left.PNG"
+                alt="Synerva standards left"
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"
                 className={styles.imageFill}
