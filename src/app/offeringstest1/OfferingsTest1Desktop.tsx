@@ -42,10 +42,10 @@ export default function OfferingsTest1Desktop() {
                 </p>
               </div>
               <div className={styles.imageFrame}>
-                <div className={styles.img3x2}>
+                <div className={styles.imgHero1536x1024}>
                   <Image
-                    src="/placeholders/offeringstest1/hero-3x2.png"
-                    alt="Offerings hero placeholder"
+                    src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+                    alt="Synerva offerings hero"
                     fill
                     className={styles.imageFill}
                     sizes="(max-width: 1280px) 50vw, 560px"

@@ -128,9 +128,20 @@
   min-height: 220px;
 }
 
+.imageHero1536x1024 {
+  aspect-ratio: 1536 / 1024;
+  max-height: 42vh;
+}
+
 .img3x2 {
   position: relative;
   aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
+.imgHero1536x1024 {
+  position: relative;
+  aspect-ratio: 1536 / 1024;
   width: 100%;
 }
 

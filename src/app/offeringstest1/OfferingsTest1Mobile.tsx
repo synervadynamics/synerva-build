@@ -25,10 +25,10 @@ export default function OfferingsTest1Mobile() {
             <br />
             This is work designed to hold up under real pressure.
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
+          <div className={`${styles.imageFrame} ${styles.imageHero1536x1024}`}>
             <Image
-              src="/placeholders/offerings/hero-3x2.png"
-              alt="3:2 landscape placeholder: earthy engineered system, architecture-as-logic, calm authority"
+              src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+              alt="Synerva offerings hero"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className={styles.imageFill}
