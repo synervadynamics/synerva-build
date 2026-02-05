@@ -259,8 +259,8 @@ export default function OfferingsTest1Mobile() {
             className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
           >
             <Image
-              src="/placeholders/offerings/capabilities-3x2.png"
-              alt="3:2 landscape placeholder: overview map, blueprint grid, modular system diagram aesthetic"
+              src="/offerings-2026-feb/what-gets-built.PNG"
+              alt="Synerva capabilities overview"
               fill
               sizes="(max-width: 768px) 100vw, 440px"
               className={styles.imageFill}

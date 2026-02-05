@@ -284,8 +284,8 @@ export default function OfferingsTest1Desktop() {
               className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
             >
               <Image
-                src="/placeholders/offeringstest1/capabilities-3x2.png"
-                alt="Capabilities placeholder"
+                src="/offerings-2026-feb/what-gets-built.PNG"
+                alt="Synerva capabilities overview"
                 fill
                 className={styles.imageFill}
                 sizes="(max-width: 1280px) 100vw, 440px"
