@@ -210,10 +210,10 @@ export default function OfferingsMobile() {
           <p className={styles.sectionSubhead}>
             The fastest way to turn “we should” into “it’s shipped.”
           </p>
-          <div className={`${styles.imageFrame} ${styles.imageFiveFour}`}>
+          <div className={`${styles.imageFrame} ${styles.imageOperatorHourly}`}>
             <Image
-              src="/placeholders/offerings/operator-hourly_5x4.png"
-              alt="5:4 placeholder: tactical clarity, precision tooling, map overlays, earthy and premium"
+              src="/offerings-2026-feb/operator-hourly_5x4.png"
+              alt="Operator Hourly preview: tactical clarity, precision tooling, map overlays, earthy and premium"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className={styles.imageFill}

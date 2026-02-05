@@ -100,6 +100,11 @@
   max-height: 42vh;
 }
 
+.imageOperatorHourly {
+  aspect-ratio: 1706 / 1365;
+  max-height: 42vh;
+}
+
 .imagePortrait {
   aspect-ratio: 2 / 3;
   min-height: 220px;
