@@ -25,6 +25,10 @@
   --cta-ghost-border: rgba(191, 215, 178, 0.35);
   --cta-ghost-ink: #DCEAD2;
   --focus: rgba(200, 163, 106, 0.55);
+  --section-gap-standard: clamp(6rem, 8vh, 8rem);
+  --section-gap-emphasis: clamp(8rem, 10vh, 10rem);
+  --banner-margin-top: clamp(4rem, 6vh, 6rem);
+  --banner-margin-bottom: clamp(4rem, 6vh, 6rem);
 }
 
 .offeringsTest1Page {
@@ -33,12 +37,61 @@
 }
 
 .pageWrapper {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 48px 32px 80px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 0;
+}
+
+.mobilePageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sectionContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionFull {
+  max-width: 100%;
+}
+
+.sectionConstrained {
+  max-width: 1200px;
+}
+
+.sectionGapStandard {
+  margin-top: var(--section-gap-standard);
+}
+
+.sectionGapEmphasis {
+  margin-top: var(--section-gap-emphasis);
+}
+
+.sectionGapStandardBottom {
+  margin-bottom: var(--section-gap-standard);
+}
+
+.sectionGapEmphasisBottom {
+  margin-bottom: var(--section-gap-emphasis);
+}
+
+.bannerWrap {
+  margin-top: var(--banner-margin-top);
+  margin-bottom: var(--banner-margin-bottom);
+}
+
+.bannerWide :global(.cascade-track) {
+  gap: 3.125rem;
+}
+
+.bannerTight :global(.cascade-track) {
+  gap: 2.9rem;
 }
 
 .section {
