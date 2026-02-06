@@ -614,8 +614,8 @@ export default function OfferingsTest1Mobile() {
           </p>
           <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
             <Image
-              src="/placeholders/offerings/start-3x2.png"
-              alt="3:2 landscape placeholder: calm destination, resolved system, clarity"
+              src="/offerings-2026-feb/next-step.PNG"
+              alt="Synerva next step"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className={styles.imageFill}

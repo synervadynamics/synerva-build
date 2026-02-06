@@ -688,8 +688,8 @@ export default function OfferingsTest1Desktop() {
             <div className={styles.imageFrame}>
               <div className={styles.img3x2}>
                 <Image
-                  src="/placeholders/offeringstest1/final-cta-3x2.png"
-                  alt="Final CTA placeholder"
+                  src="/offerings-2026-feb/next-step.PNG"
+                  alt="Synerva next step"
                   fill
                   className={styles.imageFill}
                   sizes="(max-width: 1280px) 50vw, 560px"
