@@ -56,26 +56,6 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             Each mode exists to solve a different kind of problem, cleanly.
           </p>
-          <div className={styles.portraitPair}>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
-              <Image
-                src="/placeholders/offerings/modes-left-2x3.png"
-                alt="2:3 portrait placeholder: precision craft, constraints, engineered composition"
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className={styles.imageFill}
-              />
-            </div>
-            <div className={`${styles.imageFrame} ${styles.imagePortrait}`}>
-              <Image
-                src="/placeholders/offerings/modes-right-2x3.png"
-                alt="2:3 portrait placeholder: system architecture, flows, integrated modules"
-                fill
-                sizes="(max-width: 768px) 50vw, 210px"
-                className={styles.imageFill}
-              />
-            </div>
-          </div>
           <div className={styles.miniCardStack}>
             <article className={styles.miniCard}>
               <h3 className={styles.miniCardTitle}>Operator Hourly</h3>
@@ -519,8 +499,8 @@ export default function OfferingsTest1Mobile() {
           </p>
           <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
             <Image
-              src="/placeholders/offerings/proof-3x2.png"
-              alt="3:2 landscape placeholder: gallery-grade environment, high-end craft"
+              src="/offerings-2026-feb/credibility.PNG"
+              alt="Synerva credibility"
               fill
               sizes="(max-width: 768px) 100vw, 420px"
               className={styles.imageFill}
