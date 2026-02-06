@@ -10,8 +10,7 @@ export default function HomeMobile() {
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           data-accent="blue"
-          className={`mt-6 flex flex-col gap-4 rounded-[16px] border px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled}`}
-          style={{ borderColor: "var(--ol-primary)", background: "var(--fill-strong)" }}
+          className="mt-6 flex flex-col gap-4 px-5 py-5"
         >
           <div className="grid grid-cols-[auto_1fr_auto] items-center">
             <button
@@ -59,8 +58,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="turquoise"
-          className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] -mt-8 ${styles.panelTransparent}`}
-          style={{ borderColor: "var(--ol-primary)" }}
+          className={`flex flex-col gap-3 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             THE PROBLEM
@@ -77,10 +75,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="seagreen"
-          className={`flex flex-col gap-3 rounded-[16px] border px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent}`}
-          style={{
-            borderColor: "var(--ol-primary)",
-          }}
+          className={`flex flex-col gap-3 px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW WORK MOVES
@@ -105,7 +100,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="mint"
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} mt-6`}
+          className={`flex flex-col gap-4 px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             SYSTEMS THAT HOLD
@@ -159,7 +154,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="blue"
-          className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.offeringsPanel} mt-6`}
+          className={`flex flex-col gap-4 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.offeringsPanel} ${styles.sectionOutline} ${styles.sectionOutlineInteractive}`}
           style={{ background: "var(--fill-strong)" }}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
@@ -212,7 +207,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="turquoise"
-          className={`flex flex-col gap-4 rounded-[16px] border px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel}`}
+          className={`flex flex-col gap-4 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel} ${styles.sectionOutline}`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             WHAT YOU GET
@@ -236,7 +231,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="seagreen"
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled} ${styles.publicationsPanel} mt-6`}
+          className={`flex flex-col gap-4 px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled} ${styles.publicationsPanel} ${styles.sectionOutline}`}
           style={{ background: "var(--fill-weak)" }}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
@@ -304,7 +299,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="mint"
-          className={`flex flex-col gap-4 rounded-[18px] border px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} mt-6`}
+          className={`flex flex-col gap-4 px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} ${styles.sectionOutline}`}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             PUBLICATIONS & VISUAL SYSTEMS
@@ -398,7 +393,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="blue"
-          className={`flex flex-col gap-3 rounded-[20px] border px-[22px] py-[22px] text-center ${styles.panelTransparent} ${styles.authorityPanel} mt-6`}
+          className={`flex flex-col gap-3 px-[22px] py-[22px] text-center ${styles.panelTransparent} ${styles.authorityPanel} ${styles.sectionOutline}`}
         >
           <p className="role-authority text-[1.4rem] font-semibold leading-snug text-white">
             Clarity compounds. Every decision either sharpens the signal or feeds
@@ -412,7 +407,7 @@ export default function HomeMobile() {
 
         <section
           data-accent="turquoise"
-          className={`flex flex-col gap-4 rounded-[20px] border px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} mt-6`}
+          className={`flex flex-col gap-4 px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} ${styles.sectionOutline}`}
           style={{ backgroundColor: "rgba(58, 122, 254, 0.06)" }}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
