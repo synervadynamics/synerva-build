@@ -587,8 +587,8 @@ export default function OfferingsTest1Desktop() {
             <div className={styles.imageFrame}>
               <div className={styles.img3x2}>
                 <Image
-                  src="/placeholders/offeringstest1/credibility-3x2.png"
-                  alt="Credibility placeholder"
+                  src="/offerings-2026-feb/credibility.PNG"
+                  alt="Synerva credibility"
                   fill
                   className={styles.imageFill}
                   sizes="(max-width: 1280px) 50vw, 560px"
