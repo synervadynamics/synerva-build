@@ -450,18 +450,11 @@ export default function OfferingsTest1Mobile() {
           <p className={styles.sectionSubhead}>
             A direct path from signal to shipped system.
           </p>
-          <div className={styles.imageFrame}>
-            <div className={styles.imgProcessHalf}>
-              <Image
-                src="/placeholders/offerings/process-3x2.png"
-                alt="3:2 landscape placeholder: sequence, flow, steps, not cheesy icons"
-                fill
-                sizes="(max-width: 768px) 100vw, 420px"
-                className={styles.imageFill}
-              />
-            </div>
-          </div>
-          <div className={styles.stepStack}>
+          <p className={styles.processAxiom}>
+            Every engagement moves from signal to shipped system. No detours.
+          </p>
+          <div className={styles.processDivider} aria-hidden="true" />
+          <div className={`${styles.stepStack} ${styles.processSteps}`}>
             <article className={styles.stepCard}>
               <span className={styles.stepNumber}>Step 1</span>
               <div>

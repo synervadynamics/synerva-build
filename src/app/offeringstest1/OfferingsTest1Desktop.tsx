@@ -504,18 +504,11 @@ export default function OfferingsTest1Desktop() {
             <p className={styles.sectionSubhead}>
               A direct path from signal to shipped system.
             </p>
+            <p className={styles.processAxiom}>
+              Every engagement moves from signal to shipped system. No detours.
+            </p>
           </div>
-          <div className={styles.imageFrame}>
-            <div className={styles.imgProcessHalf}>
-              <Image
-                src="/placeholders/offeringstest1/process-3x2.png"
-                alt="Process placeholder"
-                fill
-                className={styles.imageFill}
-                sizes="(max-width: 1280px) 100vw, 960px"
-              />
-            </div>
-          </div>
+          <div className={styles.processDivider} aria-hidden="true" />
           <div className={styles.stepsRow}>
             <article className={styles.stepCardDesktop}>
               <span className={styles.stepNumber}>Step 1</span>

@@ -99,6 +99,23 @@
   color: var(--ink-1);
 }
 
+.processAxiom {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink-1);
+  max-width: 520px;
+  margin: 0;
+}
+
+.processDivider {
+  width: 100%;
+  height: 1px;
+  background: var(--hairline);
+  margin: 12px 0 14px;
+}
+
 .textStack {
   display: flex;
   flex-direction: column;
@@ -466,6 +483,10 @@
   gap: 10px;
 }
 
+.processSteps {
+  gap: 8px;
+}
+
 .stepCard {
   display: flex;
   gap: 12px;
@@ -623,7 +644,7 @@
 .stepsRow {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .stepCardDesktop {
@@ -685,6 +706,16 @@
     line-height: 1.5;
   }
 
+  .processAxiom {
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    max-width: 560px;
+  }
+
+  .processDivider {
+    margin: 14px 0 18px;
+  }
+
   .bulletList {
     font-size: 15px;
     line-height: 1.55;
@@ -734,7 +765,7 @@
 
   .stepsRow {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 12px;
+    gap: 10px;
   }
 
   .stepCardDesktop {
