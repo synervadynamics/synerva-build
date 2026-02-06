@@ -413,7 +413,7 @@ export default function HomeMobile() {
         <section
           data-accent="turquoise"
           className={`flex flex-col gap-4 rounded-[20px] border px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} mt-6`}
-          style={{ background: "var(--fill-strong)" }}
+          style={{ backgroundColor: "rgba(58, 122, 254, 0.06)" }}
         >
           <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
