@@ -284,7 +284,7 @@ export default function OfferingsTest1Desktop() {
               className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
             >
               <Image
-                src="/offerings-2026-feb/what-gets-built.PNG"
+                src="/offerings-2026-feb/capabilities-v2.jpg"
                 alt="Synerva capabilities overview"
                 fill
                 className={styles.imageFill}

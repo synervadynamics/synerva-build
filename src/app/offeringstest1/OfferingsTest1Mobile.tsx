@@ -259,7 +259,7 @@ export default function OfferingsTest1Mobile() {
             className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
           >
             <Image
-              src="/offerings-2026-feb/what-gets-built.PNG"
+              src="/offerings-2026-feb/capabilities-v2.jpg"
               alt="Synerva capabilities overview"
               fill
               sizes="(max-width: 768px) 100vw, 440px"
