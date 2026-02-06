@@ -37,7 +37,6 @@
 }
 
 .pageWrapper {
-  max-width: 100%;
   margin: 0 auto;
   padding-top: 48px;
   padding-bottom: 80px;
@@ -53,20 +52,24 @@
 }
 
 .sectionContainer {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sectionContainer > section {
   max-width: 72rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sectionFull {
-  max-width: 72rem;
+  max-width: none;
 }
 
 .sectionConstrained {
-  max-width: 72rem;
+  max-width: none;
 }
 
 .sectionGapStandard {
@@ -98,18 +101,12 @@
   gap: 2.9rem;
 }
 
-@media (min-width: 640px) {
-  .sectionContainer {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .sectionContainer {
     padding-left: 4rem;
     padding-right: 4rem;
   }
+}
 
 .section {
   margin-bottom: 0;
