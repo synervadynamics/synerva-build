@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const DEBUG_PARAM = "bgdebug";
 
@@ -11,9 +12,6 @@ const setVar = (name: string, value: string) => {
 const setStaticVars = () => {
   setVar("--mx", "0%");
   setVar("--my", "0%");
-  setVar("--h", "0");
-  setVar("--p", "0.5");
-  setVar("--scroll", "0.5");
 };
 
 const shouldReduceMotion = () => {
@@ -25,9 +23,18 @@ const shouldReduceMotion = () => {
 };
 
 export default function GlobalBackground() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const root = document.documentElement;
     const params = new URLSearchParams(window.location.search);
+    const isOfferings = pathname === "/offerings";
+    if (isOfferings) {
+      root.dataset.bgMode = "offerings";
+    } else {
+      delete root.dataset.bgMode;
+    }
+
     if (params.get(DEBUG_PARAM) === "1") {
       root.dataset.bgDebug = "1";
     } else {
@@ -37,10 +44,39 @@ export default function GlobalBackground() {
     let raf = 0;
     let last = 0;
     let running = false;
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+    let isScrolling = false;
+
+    const isMac =
+      /Macintosh|Mac OS X/i.test(navigator.userAgent) ||
+      /Mac/i.test(navigator.platform);
+    const hasWebGL2 = (() => {
+      try {
+        const canvas = document.createElement("canvas");
+        return Boolean(canvas.getContext("webgl2"));
+      } catch {
+        return false;
+      }
+    })();
+    const computeReduceGpu = () =>
+      shouldReduceMotion() || (!hasWebGL2 && isMac) || (isMac && isOfferings);
+    const setReducedFlag = (value: boolean) => {
+      if (value) {
+        root.dataset.bgReduced = "1";
+      } else {
+        delete root.dataset.bgReduced;
+      }
+    };
+    setReducedFlag(computeReduceGpu());
+    const minFrameMs = isOfferings ? 100 : 33;
 
     const tick = (time: number) => {
       if (!running) return;
-      if (time - last < 33) {
+      if (time - last < minFrameMs) {
+        raf = window.requestAnimationFrame(tick);
+        return;
+      }
+      if (isOfferings && isScrolling) {
         raf = window.requestAnimationFrame(tick);
         return;
       }
@@ -48,16 +84,8 @@ export default function GlobalBackground() {
       const t = time / 1000;
       const mx = Math.sin(t * 0.16) * 8;
       const my = Math.cos(t * 0.12) * 6;
-      const h = Math.sin(t * 0.07) * 28;
-      const p = (Math.sin(t * 0.32) + 1) / 2;
-      const maxScroll =
-        document.body.scrollHeight - window.innerHeight || 1;
-      const scroll = Math.min(1, Math.max(0, window.scrollY / maxScroll));
       setVar("--mx", `${mx.toFixed(2)}%`);
       setVar("--my", `${my.toFixed(2)}%`);
-      setVar("--h", h.toFixed(2));
-      setVar("--p", p.toFixed(3));
-      setVar("--scroll", scroll.toFixed(3));
       raf = window.requestAnimationFrame(tick);
     };
 
@@ -77,7 +105,9 @@ export default function GlobalBackground() {
     const pointerQuery = window.matchMedia("(pointer: coarse)");
 
     const handlePreference = () => {
-      if (shouldReduceMotion()) {
+      const reduceGpu = computeReduceGpu();
+      setReducedFlag(reduceGpu);
+      if (reduceGpu) {
         stop();
         setStaticVars();
         return;
@@ -89,12 +119,29 @@ export default function GlobalBackground() {
     motionQuery.addEventListener("change", handlePreference);
     pointerQuery.addEventListener("change", handlePreference);
 
+    const handleScroll = () => {
+      if (!isOfferings) return;
+      isScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 200);
+    };
+
+    if (isOfferings) {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
+
     return () => {
       motionQuery.removeEventListener("change", handlePreference);
       pointerQuery.removeEventListener("change", handlePreference);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (isOfferings) {
+        window.removeEventListener("scroll", handleScroll);
+      }
       stop();
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="bg-root" aria-hidden="true">

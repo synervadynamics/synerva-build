@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
@@ -9,7 +7,7 @@ import styles from "./offeringstest1.module.css";
 export default function OfferingsTest1Desktop() {
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.webp" />
       <div
         className="pointer-events-none fixed inset-0 z-[5] bg-black"
         style={{ opacity: 0.8 }}
@@ -48,7 +46,7 @@ export default function OfferingsTest1Desktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.imgHero1536x1024}>
                     <Image
-                      src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+                      src="/offerings-2026-feb/ways-to-work-w-synerva.webp"
                       alt="Synerva offerings hero"
                       fill
                       className={styles.imageFill}
@@ -189,7 +187,7 @@ export default function OfferingsTest1Desktop() {
                 <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
                   <div className={styles.imgOperatorHourly}>
                     <Image
-                      src="/offerings-2026-feb/operator-hourly.PNG"
+                      src="/offerings-2026-feb/operator-hourly.webp"
                       alt="Operator hourly offering"
                       fill
                       className={styles.imageFill}
@@ -516,7 +514,7 @@ export default function OfferingsTest1Desktop() {
               <div className={styles.portraitPairDesktop}>
                 <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                   <Image
-                    src="/offerings-2026-feb/standards-left.PNG"
+                    src="/offerings-2026-feb/standards-left.webp"
                     alt="Synerva standards left"
                     fill
                     className={styles.imageFill}
@@ -525,7 +523,7 @@ export default function OfferingsTest1Desktop() {
                 </div>
                 <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                   <Image
-                    src="/offerings-2026-feb/standards-right.PNG"
+                    src="/offerings-2026-feb/standards-right.webp"
                     alt="Synerva standards right"
                     fill
                     className={styles.imageFill}
@@ -664,7 +662,7 @@ export default function OfferingsTest1Desktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.img3x2}>
                     <Image
-                      src="/offerings-2026-feb/credibility.PNG"
+                      src="/offerings-2026-feb/credibility.webp"
                       alt="Synerva credibility"
                       fill
                       className={styles.imageFill}
@@ -773,7 +771,7 @@ export default function OfferingsTest1Desktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.img3x2}>
                     <Image
-                      src="/offerings-2026-feb/next-step.PNG"
+                      src="/offerings-2026-feb/next-step.webp"
                       alt="Synerva next step"
                       fill
                       className={styles.imageFill}

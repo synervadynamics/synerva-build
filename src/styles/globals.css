@@ -656,6 +656,28 @@ html[data-view="mobile"] .view-mobile-only {
     mix-blend-mode: soft-light;
   }
 
+  html[data-bg-mode="offerings"] .bg-mesh {
+    filter: none;
+  }
+
+  html[data-bg-mode="offerings"] .bg-noise {
+    mix-blend-mode: normal;
+    opacity: 0.02;
+  }
+
+  html[data-bg-reduced="1"] .bg-mesh {
+    filter: none;
+  }
+
+  html[data-bg-reduced="1"] .bg-aurora {
+    opacity: 0.6;
+  }
+
+  html[data-bg-reduced="1"] .bg-noise {
+    mix-blend-mode: normal;
+    opacity: 0.02;
+  }
+
 
   html[data-bg-debug="1"] .bg-root {
     background:

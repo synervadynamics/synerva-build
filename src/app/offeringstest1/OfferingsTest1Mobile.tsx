@@ -10,7 +10,7 @@ export default function OfferingsTest1Mobile() {
       <div className="relative z-10">
         <Mobile1Shell
           showBackButton
-          backgroundImageUrl="/subpage-backgrounds/offerings-v3.png"
+          backgroundImageUrl="/subpage-backgrounds/offerings-v3.webp"
           backgroundOverlayOpacity={0.8}
         >
           <div className={styles.mobilePageWrapper}>
@@ -32,7 +32,7 @@ export default function OfferingsTest1Mobile() {
                 </p>
                 <div className={`${styles.imageFrame} ${styles.imageHero1536x1024}`}>
                   <Image
-                    src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+                    src="/offerings-2026-feb/ways-to-work-w-synerva.webp"
                     alt="Synerva offerings hero"
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
@@ -150,7 +150,7 @@ export default function OfferingsTest1Mobile() {
                 <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
                   <div className={styles.imgOperatorHourly}>
                     <Image
-                      src="/offerings-2026-feb/operator-hourly.PNG"
+                      src="/offerings-2026-feb/operator-hourly.webp"
                       alt="Operator hourly offering"
                       fill
                       sizes="(max-width: 768px) 100vw, 420px"
@@ -444,7 +444,7 @@ export default function OfferingsTest1Mobile() {
                 <div className={styles.portraitPair}>
                   <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                     <Image
-                      src="/offerings-2026-feb/standards-left.PNG"
+                      src="/offerings-2026-feb/standards-left.webp"
                       alt="Synerva standards left"
                       fill
                       sizes="(max-width: 768px) 50vw, 210px"
@@ -453,7 +453,7 @@ export default function OfferingsTest1Mobile() {
                   </div>
                   <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                     <Image
-                      src="/offerings-2026-feb/standards-right.PNG"
+                      src="/offerings-2026-feb/standards-right.webp"
                       alt="Synerva standards right"
                       fill
                       sizes="(max-width: 768px) 50vw, 210px"
@@ -582,7 +582,7 @@ export default function OfferingsTest1Mobile() {
                 </p>
                 <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
                   <Image
-                    src="/offerings-2026-feb/credibility.PNG"
+                    src="/offerings-2026-feb/credibility.webp"
                     alt="Synerva credibility"
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
@@ -679,7 +679,7 @@ export default function OfferingsTest1Mobile() {
                 </p>
                 <div className={`${styles.imageFrame} ${styles.imageLandscape}`}>
                   <Image
-                    src="/offerings-2026-feb/next-step.PNG"
+                    src="/offerings-2026-feb/next-step.webp"
                     alt="Synerva next step"
                     fill
                     sizes="(max-width: 768px) 100vw, 420px"
