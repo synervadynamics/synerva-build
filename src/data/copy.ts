@@ -45,7 +45,7 @@ export const copy = {
     },
     proofs: [
       { label: "Loop Coverage", value: "Brand · Web · Content · Automation" },
-      { label: "Core Systems", value: "Lucentra · Verisense · Synerva OS" },
+      { label: "Core Systems", value: "Verisense · Lucentra" },
       {
         label: "Operating Posture",
         value: "Clarity first · Zero friction",
