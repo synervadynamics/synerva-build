@@ -127,18 +127,6 @@
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 24px var(--ol-1);
 }
 
-@supports (content-visibility: auto) {
-  .sectionPanel {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
-  }
-
-  .bannerWrap {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 220px;
-  }
-}
-
 .sectionPanelFilled {
   background: linear-gradient(180deg, var(--fill-1), var(--fill-0));
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35),
