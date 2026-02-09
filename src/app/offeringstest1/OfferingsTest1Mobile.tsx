@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import { CascadingText } from "@/components/CascadingText";
 import styles from "./offeringstest1.module.css";
 import { useEffect } from "react";
 
@@ -25,7 +24,7 @@ export default function OfferingsTest1Mobile() {
         >
           <div className={styles.mobilePageWrapper}>
             <div
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapEmphasisBottom}`}
+              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandardBottom}`}
             >
               <section id="hero" className={styles.sectionPanel}>
                 <p className={styles.eyebrow}>Offerings</p>
@@ -59,23 +58,6 @@ export default function OfferingsTest1Mobile() {
                 </p>
               </section>
             </div>
-
-            <section
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.bannerWrap}`}
-            >
-              <CascadingText
-                className={`${styles.bannerWide} role-body`}
-                items={[
-                  "STRUCTURE BEFORE STYLE",
-                  "SYSTEMS THAT HOLD UNDER PRESSURE",
-                  "DECISIONS MADE ONCE — EXECUTED CONSISTENTLY",
-                  "NO FRAGMENTED DELIVERABLES",
-                  "STRATEGY AND EXECUTION AS ONE SYSTEM",
-                  "DESIGNED FOR REAL OPERATORS, NOT DECKS",
-                ]}
-                speed={70}
-              />
-            </section>
 
             <div
               className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
@@ -431,7 +413,7 @@ export default function OfferingsTest1Mobile() {
             </div>
 
             <div
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapEmphasis} ${styles.sectionGapEmphasisBottom}`}
+              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard} ${styles.sectionGapStandardBottom}`}
             >
               <section
                 id="what-youre-buying"
@@ -491,23 +473,6 @@ export default function OfferingsTest1Mobile() {
                 </div>
               </section>
             </div>
-
-            <section
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.bannerWrap}`}
-            >
-              <CascadingText
-                className={`${styles.bannerTight} role-body`}
-                items={[
-                  "CONSTRAINTS STATED EARLY",
-                  "STANDARDS ENFORCED, NOT IMPLIED",
-                  "NO “GOOD ENOUGH” PHASE",
-                  "DELIVERY THAT DOESN’T COLLAPSE TWO WEEKS LATER",
-                  "SYSTEMS DESIGNED FOR HANDOFF AND SCALE",
-                  "FEWER PROJECTS — HIGHER RESPONSIBILITY",
-                ]}
-                speed={70}
-              />
-            </section>
 
             <div
               className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard} ${styles.sectionGapStandardBottom}`}
