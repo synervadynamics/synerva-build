@@ -23,9 +23,7 @@ export default function OfferingsTest1Mobile() {
           backgroundOverlayOpacity={0.8}
         >
           <div className={styles.mobilePageWrapper}>
-            <div
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandardBottom}`}
-            >
+            <div className={`${styles.sectionContainer} ${styles.sectionFull}`}>
               <section id="hero" className={styles.sectionPanel}>
                 <p className={styles.eyebrow}>Offerings</p>
                 <h1 className={styles.sectionTitle}>Ways to work with Synerva</h1>
@@ -413,7 +411,7 @@ export default function OfferingsTest1Mobile() {
             </div>
 
             <div
-              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard} ${styles.sectionGapStandardBottom}`}
+              className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard}`}
             >
               <section
                 id="what-youre-buying"

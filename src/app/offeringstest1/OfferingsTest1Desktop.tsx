@@ -19,9 +19,7 @@ export default function OfferingsTest1Desktop() {
     >
       <div className="relative z-10">
         <div className={styles.pageWrapper}>
-          <div
-            className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandardBottom}`}
-          >
+          <div className={`${styles.sectionContainer} ${styles.sectionFull}`}>
             <section id="hero" className={`${styles.sectionPanel} ${styles.section}`}>
               <div className={styles.grid2Asym}>
                 <div className={styles.textStack}>
@@ -476,7 +474,7 @@ export default function OfferingsTest1Desktop() {
           </div>
 
           <div
-            className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard} ${styles.sectionGapStandardBottom}`}
+            className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard}`}
           >
             <section
               id="what-youre-buying"
