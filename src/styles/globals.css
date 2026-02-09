@@ -656,6 +656,10 @@ html[data-view="mobile"] .view-mobile-only {
     mix-blend-mode: soft-light;
   }
 
+  body.offerings-safe-bg .bg-root {
+    display: none;
+  }
+
 
   html[data-bg-debug="1"] .bg-root {
     background:

@@ -5,8 +5,16 @@ import Link from "next/link";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import { CascadingText } from "@/components/CascadingText";
 import styles from "./offeringstest1.module.css";
+import { useEffect } from "react";
 
 export default function OfferingsTest1Desktop() {
+  useEffect(() => {
+    document.body.classList.add("offerings-safe-bg");
+    return () => {
+      document.body.classList.remove("offerings-safe-bg");
+    };
+  }, []);
+
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />

@@ -1,10 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
 import { CascadingText } from "@/components/CascadingText";
 import styles from "./offeringstest1.module.css";
+import { useEffect } from "react";
 
 export default function OfferingsTest1Mobile() {
+  useEffect(() => {
+    document.body.classList.add("offerings-safe-bg");
+    return () => {
+      document.body.classList.remove("offerings-safe-bg");
+    };
+  }, []);
+
   return (
     <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
       <div className="relative z-10">
