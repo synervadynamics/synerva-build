@@ -660,6 +660,11 @@ html[data-view="mobile"] .view-mobile-only {
     display: none;
   }
 
+  body.offerings-safe-bg .cascade-track {
+    animation: none !important;
+    transform: translateX(0) !important;
+  }
+
 
   html[data-bg-debug="1"] .bg-root {
     background:

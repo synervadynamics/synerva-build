@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import { CascadingText } from "@/components/CascadingText";
 import styles from "./offeringstest1.module.css";
 import { useEffect } from "react";
@@ -16,13 +15,9 @@ export default function OfferingsTest1Desktop() {
   }, []);
 
   return (
-    <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/offerings-v3.png" />
-      <div
-        className="pointer-events-none fixed inset-0 z-[5] bg-black"
-        style={{ opacity: 0.8 }}
-        aria-hidden
-      />
+    <main
+      className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme} ${styles.offeringsSafeMain}`}
+    >
       <div className="relative z-10">
         <div className={styles.pageWrapper}>
           <div

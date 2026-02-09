@@ -26,6 +26,10 @@ const shouldReduceMotion = () => {
 
 export default function GlobalBackground() {
   useEffect(() => {
+    if (document.body.classList.contains("offerings-safe-bg")) {
+      setStaticVars();
+      return;
+    }
     const root = document.documentElement;
     const params = new URLSearchParams(window.location.search);
     if (params.get(DEBUG_PARAM) === "1") {
