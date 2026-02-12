@@ -63,27 +63,29 @@ export default function Labs(_props: LabsProps) {
                 Get Early Drops
               </h2>
               <p className="role-body text-base leading-relaxed text-white/75">
-                Enter your email to receive an instant preview of The Rockstar
-                Server Playbook—a survival manual drawn from high-pressure
-                restaurants, bars, and service floors, with lessons that
-                translate well beyond the industry. The full preview arrives in
-                one email. No drip campaigns. No algorithmic games. Just a
-                clear, substantial excerpt, delivered on request.
+                Enter your email to get first access to new essays, tools,
+                releases, and experiments from Synerva Dynamics.
               </p>
               <p className="role-body text-sm leading-relaxed text-white/70">
-                You’ll also receive thoughtfully written newsletters and essays
-                spanning psychology, business, technology, strategy, and applied
-                decision-making, along with free tools and materials, early
-                previews of upcoming releases—from publications to art—and
-                occasional member-only discounts on future products and
-                services. Every message is intentional, measured, and
-                respectful of your time. No spam. Just signal. You can opt out
-                at any time.
+                You’ll receive original writing spanning psychology, business,
+                technology, strategy, and real-world decision systems, plus
+                early previews of upcoming publications, art releases, and
+                product launches. Subscribers also get occasional member-only
+                discounts and access to limited tools and resources not released
+                publicly.
+                <br />
+                <br />
+                Every message is intentional, substantial, and respectful of
+                your time.
+                <br />
+                No drip funnels. No algorithm games. Just signal.
+                <br />
+                Unsubscribe anytime.
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">
-                Email for Preview
+                Email Signup
               </p>
               <form
                 onSubmit={handleSubmit}
@@ -100,13 +102,12 @@ export default function Labs(_props: LabsProps) {
                 />
                 <input
                   type="submit"
-                  value={status === "loading" ? "Submitting…" : "Send Preview"}
+                  value={status === "loading" ? "Submitting…" : "Subscribe"}
                   disabled={status === "loading"}
                 />
                 {status === "success" && (
                   <p className="role-body form-microcopy">
-                    Check your inbox to confirm — the preview arrives right
-                    after.
+                    Check your inbox to confirm your subscription.
                   </p>
                 )}
                 {status === "error" && (
