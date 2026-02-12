@@ -16,7 +16,7 @@ export default function InnerClimateMobile() {
           <div className={styles.portraitPair} aria-hidden>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/inner-climate/01.png"
+                src="/inner-climate/1.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"
@@ -25,7 +25,7 @@ export default function InnerClimateMobile() {
             </div>
             <div className="relative aspect-[2/3] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/inner-climate/30.png"
+                src="/inner-climate/24.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"

@@ -9,7 +9,7 @@ export type InnerClimateArtwork = {
 export const innerClimateArtworks: InnerClimateArtwork[] = [
   {
     id: 1,
-    imageSrc: "/inner-climate/01.png",
+    imageSrc: "/inner-climate/1.png",
     artworkNumber: "Artwork 1",
     title: "Assembled Self",
     description:
@@ -17,7 +17,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 2,
-    imageSrc: "/inner-climate/02.png",
+    imageSrc: "/inner-climate/2.png",
     artworkNumber: "Artwork 2",
     title: "Ornament as Load Path",
     description:
@@ -25,7 +25,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 3,
-    imageSrc: "/inner-climate/03.png",
+    imageSrc: "/inner-climate/3.png",
     artworkNumber: "Artwork 3",
     title: "Veil Under Tension",
     description:
@@ -33,7 +33,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 4,
-    imageSrc: "/inner-climate/04.png",
+    imageSrc: "/inner-climate/4.png",
     artworkNumber: "Artwork 4",
     title: "Held Center",
     description:
@@ -41,7 +41,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 5,
-    imageSrc: "/inner-climate/05.png",
+    imageSrc: "/inner-climate/5.png",
     artworkNumber: "Artwork 5",
     title: "Directional Force",
     description:
@@ -49,7 +49,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 6,
-    imageSrc: "/inner-climate/06.png",
+    imageSrc: "/inner-climate/6.png",
     artworkNumber: "Artwork 6",
     title: "Narrow Gate",
     description:
@@ -57,7 +57,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 7,
-    imageSrc: "/inner-climate/07.png",
+    imageSrc: "/inner-climate/7.png",
     artworkNumber: "Artwork 7",
     title: "Accumulation Without Capture",
     description:
@@ -65,7 +65,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 8,
-    imageSrc: "/inner-climate/08.png",
+    imageSrc: "/inner-climate/8.png",
     artworkNumber: "Artwork 8",
     title: "Rotational Field",
     description:
@@ -73,7 +73,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 9,
-    imageSrc: "/inner-climate/09.png",
+    imageSrc: "/inner-climate/9.png",
     artworkNumber: "Artwork 9",
     title: "Constructed Defense",
     description:
@@ -177,7 +177,7 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
   },
   {
     id: 22,
-    imageSrc: "/inner-climate/22.jpg",
+    imageSrc: "/inner-climate/22.png",
     artworkNumber: "Artwork 22",
     title: "Deferred Clarity",
     description:
@@ -198,53 +198,5 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
     title: "Formal Restraint",
     description:
       "Sharp lines and deliberate framing introduce a more architectural order. The face is positioned within a clear structural envelope, as if measured and set in place. Movement is minimal, tightly bounded, and intentional.\n\nThe work refuses expressive excess. By narrowing the range of allowable motion, it increases reliability. Pressure encounters rules instead of reaction. Calm here is procedural, not emotional. The image holds because it knows exactly how much movement it permits.",
-  },
-  {
-    id: 25,
-    imageSrc: "/inner-climate/25.png",
-    artworkNumber: "Artwork 25",
-    title: "Adaptive Masking",
-    description:
-      "Patterns slide across the face like adaptive camouflage, alternately revealing and concealing features. The effect is not concealment but modulation. Visibility rises and falls in response to implied attention.\n\nThe mask is dynamic. It does not hide identity; it regulates access to it. Pressure is anticipated and met with adjustment rather than rigidity. The portrait demonstrates that protection can be responsive without becoming unstable.",
-  },
-  {
-    id: 26,
-    imageSrc: "/inner-climate/26.png",
-    artworkNumber: "Artwork 26",
-    title: "Quiet Compression",
-    description:
-      "The image feels gently pressed, as if the air itself has weight. Subtle distortions flatten depth without erasing form. The face remains calm, eyes steady, unreactive to the narrowing space.\n\nCompression here is not threat; it is condition. The system adapts by redistributing internal spacing rather than resisting the squeeze. The portrait remains legible because it has learned how to occupy less without becoming less.",
-  },
-  {
-    id: 27,
-    imageSrc: "/inner-climate/27.png",
-    artworkNumber: "Artwork 27",
-    title: "Residual Architecture",
-    description:
-      "Geometric remnants and faint structural outlines linger behind the figure, like scaffolding that was never fully removed. These traces suggest prior supports, now inactive but still present as memory.\n\nThe image does not depend on them anymore. What once held is no longer required, yet it is not denied. Stability here includes history without being governed by it. The system stands on its own while acknowledging what helped it get there.",
-  },
-  {
-    id: 28,
-    imageSrc: "/inner-climate/28.png",
-    artworkNumber: "Artwork 28",
-    title: "Selective Transparency",
-    description:
-      "Parts of the image open up into near-transparency, while others remain dense and opaque. The face navigates this uneven field with precision, offering clarity in some areas and withholding it in others.\n\nTransparency becomes a choice, not a vulnerability. Pressure is managed by deciding what can pass through and what must be slowed. The portrait holds because it understands that openness is only strength when it is controlled.",
-  },
-  {
-    id: 29,
-    imageSrc: "/inner-climate/29.png",
-    artworkNumber: "Artwork 29",
-    title: "Terminal Stillness",
-    description:
-      "Motion throughout the image has slowed to near cessation. Textures settle, colors stabilize, and the figure appears fully at rest. Nothing presses urgently anymore, yet the structure remains alert.\n\nThis is not relief. It is readiness without demand. The image suggests that stillness, once learned, does not depend on the absence of pressure. It persists as a capacity, not a reaction.",
-  },
-  {
-    id: 30,
-    imageSrc: "/inner-climate/30.png",
-    artworkNumber: "Artwork 30",
-    title: "Surface Maintained",
-    description:
-      "The final image presents a face that is fully present, fully exposed, and fully intact. The surrounding field is active but no longer threatening, integrated into the surface as context rather than force.\n\nThe work does not resolve the series; it sustains it. The boundary remains, doing quiet work without announcement. What endures is not depth or resistance, but a surface capable of continued contact. The system holds, and that is enough.",
-  },
+  }
 ];
