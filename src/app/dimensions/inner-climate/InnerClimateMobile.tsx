@@ -35,35 +35,37 @@ export default function InnerClimateMobile() {
           </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-[2.05rem] font-light leading-snug text-white">
-              Surface Tension
+              Inner Climate
             </h1>
-            <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Series 002
+            <h2 className="text-[1.45rem] font-light leading-snug text-white">
+              The Systems Beneath Weather
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Synerva Dimensions
+              There are environments we move through, and environments that form
+              quietly inside us.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              There comes a moment when understanding yourself is no longer
-              enough.
+              Inner Climate explores the atmospheric layer beneath visible
+              behavior. Not emotion as performance, but emotion as structure. The
+              interior systems shaped by pressure, memory, repetition, and time.
+              The conditions that exist long before reaction becomes visible,
+              influencing how we experience spaces, decisions, and connection.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              When reflection has done its work.
+              Across this body of work, internal states are treated as
+              environmental realities. They accumulate, stabilize, fracture,
+              soften, and reform. Nothing appears suddenly. Nothing disappears
+              completely. Each shift is the result of forces acting over
+              duration.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              When clarity has settled.
+              What feels like instinct is often architecture. What feels like
+              chance is often pattern. What feels deeply personal is often
+              structural.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              When who you are can no longer stay internal.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Surface Tension begins there.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Not in discovery, but in exposure.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Not in becoming, but in continuing.
+              This is not an interpretation of feeling. It is an observation of
+              what feeling does to form.
             </p>
           </div>
         </section>
@@ -73,25 +75,23 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Orientation
+              Material as Evidence of Duration
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              What Happens After the Inside Work
+              Every surface in this sequence behaves like a record. Compression.
+              Weathering. Sediment. Residue. Materials suggest time spent under
+              influence, time spent adapting, time spent holding shape under
+              pressure.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              These works look at what happens when a life returns to the world.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">After insight.</p>
-            <p className="text-[1.05rem] leading-6 text-white/80">After growth.</p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              After the self has been shaped.
+              Some structures hold tension without visible distortion. Others
+              appear fragile but distribute pressure perfectly. Some
+              environments seem still but contain slow internal movement. Others
+              appear dynamic but have already reached equilibrium.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Because no one stays inward forever. Eventually, other people,
-              time, and pressure resume their influence.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              What once worked privately must now hold up publicly.
+              These works are built to be read slowly. At first, as environment.
+              Then, as structure. Eventually, as recognition.
             </p>
           </div>
         </section>
@@ -101,30 +101,21 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              What the Work Examines
+              Interior Weather as Living Physics
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Stability Under Pressure
+              Inner Climate explores the physics of internal systems. The
+              emotional equivalents of pressure gradients, tectonic drift,
+              atmospheric layering, and seasonal transition patterns.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Here, surface is not about appearance.
+              Internal environments are rarely chaotic. They are governed by
+              accumulation, threshold, and release. What feels sudden is usually
+              stored. What feels permanent is often conditional.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              It’s about function.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Skin, light, and material act like membranes. They bend, absorb,
-              and distribute force without breaking.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Distortion isn’t decoration. It’s evidence of pressure being
-              managed.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              These are not portraits of emotion.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              They are portraits of endurance.
+              The work exists between control and surrender, between force and
+              stillness, between adaptation and design.
             </p>
           </div>
         </section>
@@ -134,30 +125,20 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Visual Language
+              The Long Relationship Between Viewer and Work
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Quiet Strength
+              These pieces are not designed for quick consumption. They are
+              designed to live with you and shift as you shift.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              There is no spectacle here.
+              At distance, they read as environment. At proximity, they read as
+              structure. With time, they begin to read as recognition.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Pressure builds slowly.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              It leaves traces, not damage.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Light touches instead of overwhelms. Structures strain without
-              collapsing.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              What looks abstract is not symbolic. It’s physical record.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              This is what it looks like to remain yourself while being seen,
-              judged, misread, and acted upon.
+              Ownership here is not about collecting objects. It is about
+              finding something that already feels like part of your internal
+              landscape.
             </p>
           </div>
         </section>
@@ -167,29 +148,15 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Underlying Claim
+              Continuity
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              What Strength Actually Is
+              Inner Climate exists between external pressure and internal
+              stillness. Between reaction and design.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Depth alone is not strength.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              If coherence only survives in isolation, it is fragile.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Real strength shows up at the surface, where force is distributed,
-              boundaries hold,
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              and identity remains intact without becoming rigid.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Calm here is not softness.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              It is control.
+              It studies what continues when nothing appears to be happening.
+              And how every system eventually reveals its structure.
             </p>
           </div>
         </section>
@@ -199,29 +166,16 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-3">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Position
+              Availability
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Series Context
+              Select pieces from the Inner Climate collection will be available
+              soon on RedBubble and related platforms as wall prints, phone and
+              laptop cases, and a curated selection of home pieces.
             </p>
             <p className="text-[1.05rem] leading-6 text-white/80">
-              Surface Tension follows Quiet Divine.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Where the first series explored the inner work of becoming
-              coherent,
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              this one asks a harder question:
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Can that coherence survive contact with the world?
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              Strength is not hardness.
-            </p>
-            <p className="text-[1.05rem] leading-6 text-white/80">
-              It is precision.
+              If you want to be notified when works go live, receive early
+              access, and unlock exclusive discounts, leave your email below.
             </p>
           </div>
         </section>
@@ -231,7 +185,7 @@ export default function InnerClimateMobile() {
         >
           <div className="flex flex-col gap-4">
             <h2 className="text-[1.65rem] font-light leading-snug text-white">
-              Surface Tension — Series Images
+              Inner Climate — Series Images
             </h2>
             <p className="text-[1.05rem] leading-6 text-white/80">
               What follows is not an illustration of these ideas, but their

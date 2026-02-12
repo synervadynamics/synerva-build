@@ -213,7 +213,7 @@ export default function InnerClimateGallery() {
             key={artwork.id}
             image={{
               src: artwork.imageSrc,
-              alt: `Surface Tension artwork ${artwork.id}`,
+              alt: `Inner Climate artwork ${artwork.id}`,
               order: idx,
             }}
             onClick={() => openModal(idx)}
@@ -310,7 +310,7 @@ export default function InnerClimateGallery() {
                   >
                     <Image
                       src={activeArtwork.imageSrc}
-                      alt={`Surface Tension artwork ${activeArtwork.id}`}
+                      alt={`Inner Climate artwork ${activeArtwork.id}`}
                       fill
                       sizes="(min-width: 1024px) 45vw, 90vw"
                       className="object-contain"

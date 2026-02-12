@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Surface Tension — Synerva Dimensions",
+  title: "Inner Climate — Synerva Dimensions",
   description:
-    "Surface Tension is Series 002 of Synerva Dimensions, exploring coherence maintained at the boundary between self and world — equilibrium under pressure, integrity through contact, and endurance without collapse.",
+    "Inner Climate is Series 003 of Synerva Dimensions, examining the interior systems shaped by pressure, memory, repetition, and time — the atmospheric layer beneath visible behavior.",
   openGraph: {
-    title: "Surface Tension — Synerva Dimensions",
+    title: "Inner Climate — Synerva Dimensions",
     description:
-      "Surface Tension is Series 002 of Synerva Dimensions, exploring coherence maintained at the boundary between self and world — equilibrium under pressure, integrity through contact, and endurance without collapse.",
+      "Inner Climate is Series 003 of Synerva Dimensions, examining the interior systems shaped by pressure, memory, repetition, and time — the atmospheric layer beneath visible behavior.",
     url: "/dimensions/inner-climate",
     type: "website",
   },
