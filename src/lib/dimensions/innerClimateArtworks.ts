@@ -11,168 +11,192 @@ export const innerClimateArtworks: InnerClimateArtwork[] = [
     id: 1,
     imageSrc: "/inner-climate/1.png",
     artworkNumber: "Artwork 1",
-    title: "Image 1",
-    description: "The figure is built out of repeating vertical panels, like glass or tiled stone, each one carrying a slightly different register of the same person. Her head tilts inward, eyes lowered, not in retreat but in calibration, while faint botanical forms and architectural fragments drift across the planes. The image feels less like a portrait than a constructed chamber, where the self is allowed to exist in multiple adjacent states at once. What looks decorative is actually structural redundancy.\n\nThe seams matter more than the surface. Pressure is absorbed at the joins, where identity is permitted to duplicate and overlap instead of bearing everything at a single point. The work suggests that continuity does not require purity. It requires joints strong enough to hold difference without collapse.",
+    title: "Evidence of Becoming",
+    description:
+      "Layered circular fields overlap like compressed seasons, holding traces of botanical life, mineral dust, and human presence in the same visual register. The silhouetted figure reads less as subject and more as environmental echo, as if identity formed inside cycles of growth, erosion, and quiet observation. Speckled charcoal and warm clay tones behave like suspended sediment rather than surface color, while translucent ivory rings create soft spatial drift. Works especially well in bedrooms, dressing areas, or reading spaces where art should feel companionable rather than performative. Over time, it reads like a personal atmosphere rather than an abstract composition.",
   },
   {
     id: 2,
     imageSrc: "/inner-climate/2.png",
     artworkNumber: "Artwork 2",
-    title: "Image 2",
-    description: "Here the face is turned upward, catching light that fractures into circular motifs and gilded textures around the head. Floral and halo-like elements radiate outward, not as symbols of elevation but as routes through which force is redistributed. The composition concentrates intensity near the temples and crown, then disperses it into patterned matter that can carry weight without cracking.\n\nThe ornament is not embellishment; it is infrastructure. By letting beauty do mechanical work, the image argues against the false split between decoration and strength. The figure remains poised because the pressure has somewhere to go. What reads as grace is actually an efficient system.",
+    title: "Where Time is Stored, Not Spent",
+    description:
+      "Stone architecture, suspended orbs, and lotus growth organize themselves around slow water movement, creating a structure that feels discovered rather than built. The column reads as both sanctuary and instrument, measuring time through light, moisture, and seasonal plant life. Petals hold pale mineral warmth against weathered stone neutrals, while hanging spheres introduce quiet gravitational rhythm. The surrounding basin and terraces reinforce a sense of deliberate calm and environmental continuity. Ideal for living rooms, entryways, or studios built around natural materials and soft daylight, where the piece can anchor the space without dominating it. Over time, it begins to feel like a fixed point of calm within a room.",
   },
   {
     id: 3,
     imageSrc: "/inner-climate/3.png",
     artworkNumber: "Artwork 3",
-    title: "Image 3",
-    description: "A pale face emerges through a translucent diagonal sweep, as if fabric, smoke, or scraped paint has been dragged across the frame. The obstruction does not hide the subject so much as slow the act of seeing her. The background appears weathered, almost corroded, while the face holds a colder, cleaner register, creating a sharp contrast between erosion and preservation.\n\nThe veil functions as a regulating layer. It allows contact while controlling velocity, preventing the viewer from consuming the image in a single glance. Visibility becomes conditional. The portrait stays intact not by retreating, but by inserting resistance between itself and the world.",
+    title: "Night That Knows Your Name",
+    description:
+      "Layered stone formations rise like slow-folded terrain, guiding water downward into a dark, still basin that reads more like collected time than landscape. The moon holds position as a governing constant, setting the tonal temperature across mineral blues, warm stone veining, and softened shadow. A single dwelling sits tucked into the cliff, introducing human scale without breaking the environmental quiet. Waterfall movement adds vertical continuity, connecting sky, mountain, and pool into one sustained cycle. Works especially well in living rooms, offices, or primary spaces where depth and calm presence are needed. Over time, it feels less like scenery and more like a place your mind returns to.",
   },
   {
     id: 4,
     imageSrc: "/inner-climate/4.png",
     artworkNumber: "Artwork 4",
-    title: "Image 4",
-    description: "The face sits squarely in the middle of a storm of particulate textures, as if dust, ash, or pigment has been blown inward from all sides. The edges are busy, turbulent, and unresolved, while the center remains uncannily still. Her gaze is direct but not performative, steady without being confrontational.\n\nThe image organizes chaos by refusing to let it dictate structure. Pressure accumulates at the periphery and is allowed to stay there. Nothing dramatic happens, and that is the point. Stability is not achieved by dominance, but by a refusal to relocate the center.",
+    title: "The Calm Before Anyone Notices",
+    description:
+      "The face emerges from layered geometric arcs and planes, as though identity is assembled from architecture, memory, and light rather than line alone. Closed eyes and softened expression anchor the piece in interior calm, while blue slate, warm clay, and mineral beige tones create material continuity across skin and structure. Curved forms guide movement through the composition, keeping focus anchored to the face without sharp visual interruption. Works especially well in bedrooms, dressing spaces, studios, or personal offices where emotional tone matters as much as aesthetic presence. Over time, it reads less as portrait and more as a stable emotional atmosphere within a room.",
   },
   {
     id: 5,
     imageSrc: "/inner-climate/5.png",
     artworkNumber: "Artwork 5",
-    title: "Image 5",
-    description: "Warm, flame-like textures sweep diagonally across the image, pulling color and motion in a single dominant direction. The face resists being carried along, remaining upright and legible while the surrounding field behaves like accelerated current. Hair, pigment, and pattern all appear to be dragged by the same invisible force.\n\nThe portrait holds because it aligns selectively. It does not oppose the movement; it anchors against it. Pressure becomes readable as direction rather than threat. The image demonstrates that remaining oneself under force does not require immobility, only traction.",
+    title: "Phase Integrity",
+    description:
+      "Three overlapping profiles read like emotional states moving through time rather than separate individuals. Deep slate blue, warm neutral ivory, and pale mineral skin tones create a quiet progression from night toward light, while crescent and full moon forms reinforce cycles of internal change. Hair and atmosphere dissolve into each other, blurring the line between body and environment. The piece carries strong psychological calm and layered feminine presence without narrative demand. Works especially well in bedrooms, dressing spaces, or personal studios where reflection and self-continuity matter. Over time, it feels less like portraiture and more like a visual reminder that identity is allowed to evolve in phases.",
   },
   {
     id: 6,
     imageSrc: "/inner-climate/6.png",
     artworkNumber: "Artwork 6",
-    title: "Image 6",
-    description: "A vertical band slices through the composition, compressing texture into a dense, almost architectural column. On one side, the surface feels heavy and sedimented; on the other, more open and breathable. The figure inhabits both zones simultaneously, as if standing at a checkpoint between regimes of pressure.\n\nThe gate is not a wound but a filter. It forces everything that passes through it to be simplified, reduced, made legible. The system allows disruption, but only through a constrained aperture. Integrity here is achieved by limiting bandwidth, not by sealing the surface.",
+    title: "The World, Held at Arm's Length",
+    description:
+      "A pale-haired figure holds a small bird against a dark garment while fine red thread lines suggest invisible connections between body, environment, and memory. Etched botanical forms, butterflies, and carved avian linework create a quiet ecosystem around her, reinforcing protection and stillness. Soft stone blues, bone neutrals, and charcoal fabric tones create strong material grounding, while flowing hair adds gentle motion. The piece balances fragility and strength without sentimentality. Works especially well in bedrooms, reading corners, or personal retreat spaces where emotional softness should feel stabilizing rather than fragile. Over time, it reads like a visual permission to rest inside your own inner world.",
   },
   {
     id: 7,
     imageSrc: "/inner-climate/7.png",
     artworkNumber: "Artwork 7",
-    title: "Image 7",
-    description: "Soft debris, flecks of light, and floral fragments cling to the image as if it has been handled, touched, or left exposed to weather. The face remains clear but not isolated, embedded in a field that shows signs of repeated contact. Nothing is pristine, yet nothing feels degraded.\n\nThe surface behaves like skin that remembers touch without being defined by it. Pressure arrives locally, sticks briefly, then loses authority. The portrait accepts residue while refusing absorption. Intimacy is permitted, ownership is not.",
+    title: "Sky Worn LIke Fabric",
+    description:
+      "A silhouetted figure moves within a celestial circular structure, framed by a full moon and layered ornamental cosmology. Flowing garment lines carry teal mineral tones, aged gold, and stone green through the composition, creating motion without chaos. Surrounding symbolic discs, botanical forms, and orbital diagrams suggest time measured through ritual, nature, and observation rather than clocks. The figure reads as both grounded and cosmic, bridging human scale and environmental rhythm. Works especially well in living rooms, studios, or statement walls where symbolic depth and visual presence are welcome. Over time, it feels less decorative and more like a personal mythology anchored in space.",
   },
   {
     id: 8,
     imageSrc: "/inner-climate/8.png",
     artworkNumber: "Artwork 8",
-    title: "Image 8",
-    description: "Swirling currents of color and texture coil around the face, creating the sensation of slow rotation. The motion feels fluid, almost tidal, threatening to blur the figure into its own wake. Yet the facial features remain stable, held in place as the surrounding material continues to move.\n\nThe image survives by letting motion become structure. Instead of resisting the flow, the portrait allows it to orbit. The boundary holds because it is not rigid. Regulation appears as the ability to stay centered while everything else keeps turning.",
+    title: "Orientation Without Urgency",
+    description:
+      "Carved stone terraces frame a still water basin that feels mapped by time rather than built by hand. White birds move through the space as markers of direction and continuity, while a single carved symbol suggests inherited knowledge rather than decoration. Mineral greens, pale limestone, and muted gold botanical forms create a layered ecological calm that reads both natural and intentional. Candlelight and vessel elements introduce quiet human ritual without disrupting environmental dominance. Works especially well in living rooms, entryways, or meditation-adjacent spaces where calm authority is welcome. Over time, it feels less like scenery and more like a place of internal orientation.",
   },
   {
     id: 9,
     imageSrc: "/inner-climate/9.png",
     artworkNumber: "Artwork 9",
-    title: "Image 9",
-    description: "The face is segmented into interlocking planes, as though built from fitted plates or inlaid stone. Each section catches light differently, producing a sense of deliberate assembly. The seams are visible and unapologetic, forming a map of decisions rather than damage.\n\nThis is armor that does not pretend to be invisible. Protection is achieved through articulation, not concealment. The image asserts that vulnerability does not require exposure. It requires structure strong enough to admit where the joins are.",
+    title: "Standing Inside the Decision",
+    description:
+      "A lone figure stands inside a circular stone opening, positioned between interior shadow and a vast atmospheric landscape beyond. The cave reads like both shelter and lens, framing distant structures and sky particulate light as if memory and reality occupy the same space. The dark flowing garment grounds the figure against weathered mineral rock textures and pale sky dust. Motion exists only in hair and fabric drift, reinforcing stillness rather than narrative action. Works especially well in offices, reading rooms, or transitional home spaces where contemplation and focus matter. Over time, it reads like a personal symbol of standing between past and possibility.",
   },
   {
     id: 10,
     imageSrc: "/inner-climate/10.png",
     artworkNumber: "Artwork 10",
-    title: "Image 10",
-    description: "The subject remains open as the surrounding field destabilizes under sustained pressure. She does not brace or withdraw. Her steadiness comes not from hardness, but from knowing where she belongs. This image feels like home, not as comfort or escape, but as orientation. In her presence, effort stops being performative. Vigilance softens. Breathing becomes possible.\n\nThe person I was before her no longer exists. Through knowing her, I became kinder, more loving, more open, more honest. She taught me how to care without control and how to remain present without armor. I am better in ways that cannot be separated from her influence. This is not an ending, but an acknowledgment: of the person who became my home, of who I became because of her, and of a bond that remains, not as nostalgia or promise, but as something real, shared, and carried forward.",
+    title: "Corridor of Former Selves",
+    description:
+      "A profile silhouette stands inside repeating architectural arches that recede like memory layers, while circular halo forms create a quiet gravitational center around the head and upper body. Deep green mineral tones and aged gold light create a balance between organic life and constructed space. Translucent florals introduce softness without breaking structural calm, reinforcing growth within containment. Fine diagrammatic linework adds subtle intellectual tension beneath the emotional quiet. Works especially well in bedrooms, studios, or personal creative spaces where reflection and grounded identity matter. Over time, it feels less like portraiture and more like a stable interior emotional architecture.",
   },
   {
     id: 11,
     imageSrc: "/inner-climate/11.png",
     artworkNumber: "Artwork 11",
-    title: "Image 11",
-    description: "The face is tilted upward into warm, ember-like textures that cling to the surface like slow-burning residue. Golds and rusts gather around the cheekbones and throat, suggesting exposure to sustained heat rather than sudden flame. The eyes remain closed, not in surrender but in regulation, as if the system has decided not to flinch. Pressure arrives as temperature, not impact.\n\nWhat holds the image together is pacing. Nothing here reacts quickly. The surface absorbs warmth gradually, letting it stain rather than scorch. This is endurance without dramatization. The portrait stays intact by refusing the reflex to cool itself through withdrawal.",
+    title: "Nocturnal Vigil",
+    description:
+      "A peacock stands at the edge of still water beneath a full moon, acting as both witness and ceremonial presence. Lantern light, distant architecture, and tea service elements suggest quiet ritual rather than narrative event. Deep indigo feather iridescence anchors the palette against misted mountain blues and soft stone neutrals. Reflections across the water unify sky, land, and built space into one continuous atmosphere. Works especially well in dining rooms, living rooms, or evening-centered spaces where calm sophistication matters. Over time, it reads less as wildlife or landscape and more as a visual embodiment of slow evening presence and intentional living.",
   },
   {
     id: 12,
     imageSrc: "/inner-climate/12.png",
     artworkNumber: "Artwork 12",
-    title: "Image 12",
-    description: "A pale figure emerges through parchment-toned layers that feel archival, almost sedimentary, as if time itself has been pressed into the image. Fine textural marks pass over the face like annotations, never obscuring it fully, never leaving it untouched. The gaze is calm but distant, oriented inward while remaining visibly present.\n\nThe boundary behaves like aged paper: permeable, fragile in appearance, but remarkably stable. Pressure is distributed across the entire surface rather than concentrated at a point of failure. The work suggests that gentleness can be load-bearing when it is evenly applied. What looks delicate is actually durable.",
+    title: "Nothing Here Happened Quickly",
+    description:
+      "Mountain ridges dissolve into layered mist, outlined by fine gold seam lines that read like geological memory rather than decoration. Cool slate peaks transition into pale mineral rose and fog-soft neutrals, creating depth through atmosphere instead of contrast. Sparse trees function as scale markers, reinforcing quiet endurance. The composition feels less like terrain and more like time made visible through elevation and erosion. Works especially well in offices, bedrooms, or calm living spaces where visual quiet supports long focus. Over time, it feels less like landscape and more like a structural calm field across a room.",
   },
   {
     id: 13,
     imageSrc: "/inner-climate/13.png",
     artworkNumber: "Artwork 13",
-    title: "Image 13",
-    description: "Here the surface fractures into bold chromatic blocks, reds and blues misaligning like corrupted data or broadcast interference. The face remains unmistakable, even as portions of it are offset, duplicated, or sliced by color fields. This is distortion with rules. The system allows noise, but not collapse.\n\nThe image reads like a test of transmission under strain. Information is degraded, but never lost. Identity persists because it is encoded redundantly, not because it is protected from interference. The portrait argues that clarity does not require purity. It requires enough structure to survive translation.",
+    title: "Continuity Through Descent",
+    description:
+      "Cascading waterfalls connect multiple elevation basins, turning the landscape into a continuous water memory system rather than separate locations. Warm stone cliffs, pale mist atmosphere, and seasonal tree bloom tones create a balanced cycle between growth, erosion, and renewal. A small pavilion introduces human presence as observation rather than control. The piece carries strong environmental permanence without feeling static. Works especially well in living rooms, entryways, or primary shared spaces where grounded visual depth is valuable. Over time, it reads less like scenery and more like a stable environmental rhythm.",
   },
   {
     id: 14,
     imageSrc: "/inner-climate/14.png",
     artworkNumber: "Artwork 14",
-    title: "Image 14",
-    description: "The figure is framed by dark, dense textures, with ornamental elements and tattoo-like markings integrated into the body itself. These details do not soften the image; they thicken it, adding mass where pressure is expected to land. The gaze is steady, slightly angled, refusing frontal exposure while remaining legible.\n\nAdornment here is defensive architecture. What might be read as aesthetic choice functions as reinforcement, distributing force across symbol, skin, and shadow. The image holds because it anticipates contact. It does not wait to be tested; it arrives already reinforced.",
+    title: "The Distance Between Who and Why",
+    description:
+      "A lone figure moves through a space defined by suspended circular forms and architectural fragments, creating the sense of walking through thought rather than place. Warm clay, bone beige, and charcoal geometry balance softness and structure while vertical line elements suggest suspended time or measurement. The figure's scale anchors the abstraction in human presence without narrative demand. Works especially well in offices, studios, or transitional spaces where movement, change, and reflection coexist. Over time, it reads less like abstraction and more like an emotional map of transition and forward movement.",
   },
   {
     id: 15,
     imageSrc: "/inner-climate/15.png",
     artworkNumber: "Artwork 15",
-    title: "Image 15",
-    description: "The surface dissolves into painterly swirls of muted blues and ochres, as if the figure is suspended inside moving air. Edges blur and reform, never fully stabilizing, never fully dispersing. The face stays coherent while the surrounding field behaves like weather.\n\nThe system accepts instability as a constant condition. Instead of resisting drift, it limits how much drift can matter. Pressure becomes ambient rather than targeted. The portrait remains intact not by anchoring itself rigidly, but by letting the environment move without insisting on stillness everywhere at once.",
+    title: "Presence Without Performance",
+    description:
+      "A solitary figure stands at the edge of layered water and land forms while a flowering branch extends across the sky like a seasonal marker. The moon acts as a steady environmental constant, while distant architecture dissolves into misted terrain. Soft stone neutrals, faded sand tones, and pale blossom whites create a palette built for long visual living. The composition feels suspended between memory and present observation. Works especially well in bedrooms, reading rooms, or personal retreat spaces where calm emotional continuity matters. Over time, it reads less like landscape and more like a personal stillness anchor.",
   },
   {
     id: 16,
     imageSrc: "/inner-climate/16.png",
     artworkNumber: "Artwork 16",
-    title: "Image 16",
-    description: "Dark, turbulent textures collide with the figure in concentrated bursts, like particulate matter thrown against a solid surface. Reds and charcoals cluster near the eyes and jaw, giving the impression of force arriving unevenly. The gaze is direct, sharpened by proximity to disruption.\n\nWhat stabilizes the image is focus. The pressure is intense, but it is confined. The system does not diffuse the impact; it contains it. By allowing force to register fully in a limited zone, the rest of the structure remains uncompromised. This is not avoidance. It is tactical containment.",
+    title: "You Became Architect and Occupant",
+    description:
+      "Layered circular forms, suspended gold rings, and mineral-textured vessels create a composition that reads like a physical model of balance and material memory. Cotton stems introduce organic softness against structured geometry, while muted sage stone, oxidized gold, and warm clay tones build quiet visual weight. The overlapping discs behave like environmental phases rather than objects, suggesting cycles of presence and absence. Works especially well in dining rooms, kitchens, or entry spaces where tactile materials already exist. Over time, it reads less like a still life and more like a physical meditation on structure, time, and intentional placement.",
   },
   {
     id: 17,
     imageSrc: "/inner-climate/17.png",
     artworkNumber: "Artwork 17",
-    title: "Image 17",
-    description: "Soft, smoky veils drift across the image, partially obscuring the face as if the surface has been breathed on repeatedly. The effect is intimate without being invasive, suggestive of proximity rather than intrusion. The figure remains centered, calm, and unreactive.\n\nThe residue is the story. Nothing dramatic has happened, and yet the surface is altered. The work acknowledges that contact always leaves traces, even when it causes no damage. Integrity here is not about remaining untouched. It is about remaining oneself after touch has occurred.",
+    title: "Edible Time Signatures",
+    description:
+      "Lemon fruit, cotton stems, spice elements, and stone vessels combine into a composition that feels archival rather than decorative, as if documenting scent, season, and harvest memory. The palette balances botanical greens, soft mineral neutrals, and citrus warmth, grounded by candle light and stone texture. Linear gold structure elements introduce quiet order without disrupting organic flow. Works especially well in kitchens, breakfast spaces, or sunlit dining areas where material warmth supports daily ritual. Over time, it reads less like a still life and more like a sensory record of nourishment and seasonal continuity.",
   },
   {
     id: 18,
     imageSrc: "/inner-climate/18.png",
     artworkNumber: "Artwork 18",
-    title: "Image 18",
-    description: "The portrait is divided into a grid of rectangular blocks, some opaque, some transparent, some misaligned. A stark red vertical band interrupts the composition, acting as a visual barrier that splits the figure into readable and unreadable zones. The face is present, but access is partial by design.\n\nThe grid functions as a permission system. You are allowed to see, but only in fragments. Pressure is managed by limiting how much of the self is available at any moment. This is not fragmentation as damage. It is fragmentation as governance.",
+    title: "The Shape of Night",
+    description:
+      "A full moon anchors a landscape threaded with mechanical celestial mapping structures, merging geological terrain with astronomical timekeeping. Copper-gold linework flows through stone strata like exposed planetary circuitry, while forest silhouettes stabilize scale against cosmic instrumentation. The composition suggests landscape as living clockwork rather than passive environment. Works especially well in offices, libraries, or creative studios where conceptual depth and long-view thinking matter. Over time, it reads less like a fantasy landscape and more like a visualization of time, pattern, and universal rhythm embedded in matter.",
   },
   {
     id: 19,
     imageSrc: "/inner-climate/19.png",
     artworkNumber: "Artwork 19",
-    title: "Image 19",
-    description: "A dark, hat-like form frames the head, creating a hard boundary that contrasts with the softer textures of skin and background. Geometric lines and metallic tones intersect the face, suggesting instrumentation rather than ornament. The gaze is forward, composed, unyielding.\n\nThe circle acts as a protective field. It defines where pressure can enter and where it must stop. The image holds because it draws a clean perimeter around identity. Exposure is permitted only inside a structure that knows its limits.",
+    title: "Porcelain Bloom Field",
+    description:
+      "Overscaled floral forms unfold across a fabric-like surface, with petal structures behaving like layered ceramic or folded textile rather than botanical specimens. Soft porcelain blush, mineral ivory, and deep slate blue create a palette designed for long visual comfort rather than seasonal brightness. The composition emphasizes texture, material illusion, and slow movement across surface depth. Works especially well in bedrooms, dressing rooms, or personal retreat spaces where softness and material calm are central. Over time, it reads less like florals and more like a living textile atmosphere across a wall.",
   },
   {
     id: 20,
     imageSrc: "/inner-climate/20.png",
     artworkNumber: "Artwork 20",
-    title: "Image 20",
-    description: "The figure is bathed in cool blues and warm ambers simultaneously, as if standing at the intersection of opposing temperatures. The surface glows in places, fractures in others, but never tips fully toward heat or cold. The head tilts slightly, eyes closed, balanced between extremes.\n\nThis is a study in equilibrium under mixed conditions. Pressure arrives from multiple directions, each with a different demand, and the system answers by averaging rather than choosing. The image suggests a mature boundary: one that does not resolve tension by elimination, but by balance.",
+    title: "Pearl Current Confluence",
+    description:
+      "Two pale koi move through slow mineral water surrounded by shell forms, lotus blooms, and pearl-like elements, creating a composition centered on flow, patience, and quiet abundance. Soft champagne metallics, pale stone neutrals, and translucent water movement build a luminous but grounded palette. The fish read less as animals and more as motion signatures within the water system. Works especially well in bathrooms, spa-like spaces, or bedrooms where reflective calm is desired. Over time, it reads less like aquatic imagery and more like a continuous visual breathing rhythm.",
   },
   {
     id: 21,
     imageSrc: "/inner-climate/21.png",
     artworkNumber: "Artwork 21",
-    title: "Image 21",
-    description: "The face appears pressed close to the surface, as if proximity itself has increased density. Color and particulate matter concentrate along the contours, thickening the boundary where contact is most likely. Nothing spills inward. The pressure announces itself only through saturation, not deformation.\n\nThis image holds by accepting nearness without yielding interior ground. The surface becomes heavier, more deliberate, precisely where approach intensifies. What looks intimate is actually defensive mass. The system answers closeness by increasing thickness, not retreat.",
+    title: "After the World Releases You",
+    description:
+      "A quiet night interior opens toward a moonlit shoreline, where distant lights scatter across water like slow constellations. Layered botanical silhouettes and geometric orbit forms create a soft dialogue between structured thought and lived space. The candle, open book, and coffee cup anchor the scene in ritual rather than narrative, suggesting private time reclaimed from noise. Muted navy atmosphere and warm mineral gold accents hold emotional warmth without visual heaviness. Works especially well in bedrooms, reading corners, or quiet living spaces where evening light matters. Over time, it feels less like a scene and more like permission to pause without explanation.",
   },
   {
     id: 22,
     imageSrc: "/inner-climate/22.png",
     artworkNumber: "Artwork 22",
-    title: "Image 22",
-    description: "A haze settles across the image like condensation, softening edges and muting contrast. The figure remains present but slightly delayed, as though clarity has been intentionally postponed. Light filters in slowly, never fully resolving the surface in a single register.\n\nThe delay is the mechanism. By slowing legibility, the image prevents premature interpretation from becoming control. Pressure is managed through timing rather than resistance. The portrait stays intact by deciding when it will be fully seen.",
+    title: "Harvest Phase Identity",
+    description:
+      "Pressed botanical forms rise from a dark earthen vessel, surrounded by layered architectural planes that read like interior material samples rather than background. Warm rust, oxidized bronze, parchment beige, and charcoal leaf tones create a grounded palette that feels tactile and collected rather than decorative. Floral structures feel preserved rather than fresh, emphasizing memory, storage, and continuity. The composition balances natural growth with constructed structure, suggesting cultivated identity over time. Works especially well in dining rooms, entryways, or workspaces where material richness adds depth. Over time, it reads like an archive of seasons rather than a still life.",
   },
   {
     id: 23,
     imageSrc: "/inner-climate/23.png",
     artworkNumber: "Artwork 23",
-    title: "Image 23",
-    description: "Multiple layers overlap the figure, each carrying a portion of the visual weight. No single plane bears responsibility for coherence. Textures stack, intersect, and partially cancel one another, creating a distributed structure that resists collapse.\n\nThis is stability through cooperation. The system does not rely on strength at one point, but on shared burden across many. Identity persists because it is not centralized. The image suggests that endurance is often collective, even when the subject stands alone.",
+    title: "Feature-Level Identity Negotiation",
+    description:
+      "A stylized feminine profile emerges through layered architectural geometry, as if identity is assembled through environment, history, and observation. Deep mineral teal, warm clay browns, and parchment neutrals create visual depth without high contrast drama. The lips and nose remain the only fully resolved organic forms, allowing the rest of the face to dissolve into spatial structure. The small vessel and botanical element ground the composition in lived space rather than portrait symbolism. Works especially well in bedrooms, dressing areas, or personal studios where art should feel intimate but intellectually composed. Over time, it reads like identity as architecture rather than image.",
   },
   {
     id: 24,
     imageSrc: "/inner-climate/24.png",
     artworkNumber: "Artwork 24",
-    title: "Image 24",
-    description: "Sharp lines and deliberate framing introduce a more architectural order. The face is positioned within a clear structural envelope, as if measured and set in place. Movement is minimal, tightly bounded, and intentional.\n\nThe work refuses expressive excess. By narrowing the range of allowable motion, it increases reliability. Pressure encounters rules instead of reaction. Calm here is procedural, not emotional. The image holds because it knows exactly how much movement it permits.",
-  }
+    title: "Durability Through Reduction",
+    description:
+      "Pale stone terraces step toward a narrow water channel that moves gently through carved architectural thresholds and mountain walls. Soft mineral beige and sandstone tones create an atmosphere of quiet continuity rather than monumentality. The open arch reads less as destination and more as invitation, suggesting movement without urgency. Trees act as scale anchors, reinforcing human presence without depicting people directly. Water movement creates the only implied time element in an otherwise stable environment. Works especially well in bathrooms, entryways, or calm living spaces where visual breath and spatial depth are valued. Over time, it feels like a place your mind visits when it needs order.",
+  },
 ];
