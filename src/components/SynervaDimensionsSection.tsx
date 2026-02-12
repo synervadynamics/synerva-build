@@ -165,7 +165,7 @@ export function SynervaDimensionsSection() {
                 Inner Climate
               </h3>
               <CtaPill href="/dimensions/inner-climate" variant="secondary" className="mt-4">
-                VIEW "INNER CLIMATE -&gt;"
+                View Inner Climate →
               </CtaPill>
             </div>
           </div>
