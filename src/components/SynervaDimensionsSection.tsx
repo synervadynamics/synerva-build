@@ -20,7 +20,7 @@ export function SynervaDimensionsSection() {
     alt: "Surface Tension artwork",
   };
   const innerClimateHero = {
-    src: "/inner-climate/3.png",
+    src: "/inner-climate/7.png",
     alt: "Inner Climate artwork",
   };
 
