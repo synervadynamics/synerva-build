@@ -1,6 +1,6 @@
 export const surfaceTensionContent = {
-  eyebrow: "Series 002 — Surface Tension",
-  title: "Synerva Dimensions",
+  eyebrow: "Synerva Dimensions",
+  title: "Surface Tension",
   intro: [
     "There comes a point when depth stops doing the work.",
     "When reflection has stabilized.\nWhen clarity has settled.\nWhen a person knows who they are — and that knowledge can no longer remain contained.",

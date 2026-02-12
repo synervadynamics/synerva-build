@@ -1,5 +1,5 @@
 export const innerClimateContent = {
-  eyebrow: "Series 003 — Inner Climate",
+  eyebrow: "Synerva Dimensions",
   title: "Inner Climate",
   intro: [
     "**INNER CLIMATE**",
