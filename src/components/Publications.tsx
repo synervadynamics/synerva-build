@@ -49,6 +49,7 @@ export const Publications = () => {
           <div className="flex flex-col gap-4 sm:hidden">
             {publications.items.map((item) => {
               const isCtaDisabled = !item.href;
+              const isExternalLink = item.href.startsWith("http");
               return (
                 <article
                   key={item.title}
@@ -85,8 +86,13 @@ export const Publications = () => {
                         {item.cta}
                       </CtaPill>
                     ) : (
-                      <CtaPill href={item.href} variant="secondary">
-                        {item.cta} →
+                      <CtaPill
+                        href={item.href}
+                        variant="secondary"
+                        target={isExternalLink ? "_blank" : undefined}
+                        rel={isExternalLink ? "noopener noreferrer" : undefined}
+                      >
+                        {item.cta}
                       </CtaPill>
                     )}
                   </div>
@@ -134,6 +140,7 @@ export const Publications = () => {
               {publications.items.map((item, index) => {
                 const isActive = index === expandedIndex;
                 const isCtaDisabled = !item.href;
+                const isExternalLink = item.href.startsWith("http");
                 return (
                   <article
                     key={item.title}
@@ -196,8 +203,10 @@ export const Publications = () => {
                         tabIndex={isActive ? 0 : -1}
                         className="mt-4"
                         variant="secondary"
+                        target={isExternalLink ? "_blank" : undefined}
+                        rel={isExternalLink ? "noopener noreferrer" : undefined}
                       >
-                        {item.cta} →
+                        {item.cta}
                       </CtaPill>
                     )}
                   </article>

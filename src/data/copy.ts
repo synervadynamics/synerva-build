@@ -135,8 +135,8 @@ export const copy = {
           "It’s also funny, because accuracy is funny when you recognize yourself in it. The humor comes from watching fragile systems hold, watching humans improvise dignity under fluorescent lighting, and watching chaos occasionally line up just long enough to feel like magic.",
           "The setting is hospitality. The subject is competence under pressure. If you’ve ever had to perform while being watched, recover without drama, or keep a system moving when it’s clearly trying to break, this book will recognize you before you finish the sentence.",
         ],
-        cta: "GET THE PREVIEW",
-        href: "/#preview-access",
+        cta: "Get the Playbook on Amazon",
+        href: "https://www.amazon.ca/Rockstar-Server-Playbook-Kyle-Gruarin-ebook/dp/B0GLK41CSY/ref=zg_bsnr_g_941574_d_sccl_4/145-6795304-6292516?psc=1",
         image: {
           src: "/rockstar-cover.png",
           alt: "The Rockstar Server Playbook cover",
