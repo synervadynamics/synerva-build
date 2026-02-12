@@ -8,7 +8,7 @@ export default function InnerClimateMobile() {
     <main className="text-white">
       <Mobile1Shell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2003_34_55%20AM.png"
+        backgroundImageUrl="/subpage-backgrounds/IMG_8828.jpg"
       >
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
