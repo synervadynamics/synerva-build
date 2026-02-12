@@ -13,6 +13,7 @@ export default function SurfaceTensionNarrative() {
   return (
     <section className="quiet-divine-narrative space-y-10">
       <div className="narrative-block space-y-4">
+        <h2 className="text-2xl font-semibold">Overview</h2>
         <div className="space-y-4 text-base leading-relaxed text-white/80">
           {renderParagraphs(intro)}
         </div>

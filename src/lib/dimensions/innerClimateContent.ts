@@ -2,8 +2,6 @@ export const innerClimateContent = {
   eyebrow: "Synerva Dimensions",
   title: "Inner Climate",
   intro: [
-    "**INNER CLIMATE**",
-    "**The Systems Beneath Weather**",
     "There are environments we move through, and environments that form quietly inside us.",
     "Inner Climate explores the atmospheric layer beneath visible behavior. Not emotion as performance, but emotion as structure. The interior systems shaped by pressure, memory, repetition, and time. The conditions that exist long before reaction becomes visible, influencing how we experience spaces, decisions, and connection.",
     "Across this body of work, internal states are treated as environmental realities. They accumulate, stabilize, fracture, soften, and reform. Nothing appears suddenly. Nothing disappears completely. Each shift is the result of forces acting over duration.",
