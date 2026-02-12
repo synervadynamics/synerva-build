@@ -50,6 +50,8 @@ export const Publications = () => {
             {publications.items.map((item) => {
               const isCtaDisabled = !item.href;
               const isExternalLink = item.href.startsWith("http");
+              const isRockstarPlaybook =
+                item.title === "The Rockstar Server Playbook";
               return (
                 <article
                   key={item.title}
@@ -91,6 +93,7 @@ export const Publications = () => {
                         variant="secondary"
                         target={isExternalLink ? "_blank" : undefined}
                         rel={isExternalLink ? "noopener noreferrer" : undefined}
+                        data-rockstar-cta={isRockstarPlaybook ? "true" : undefined}
                       >
                         {item.cta}
                       </CtaPill>
@@ -141,6 +144,8 @@ export const Publications = () => {
                 const isActive = index === expandedIndex;
                 const isCtaDisabled = !item.href;
                 const isExternalLink = item.href.startsWith("http");
+                const isRockstarPlaybook =
+                  item.title === "The Rockstar Server Playbook";
                 return (
                   <article
                     key={item.title}
@@ -205,6 +210,7 @@ export const Publications = () => {
                         variant="secondary"
                         target={isExternalLink ? "_blank" : undefined}
                         rel={isExternalLink ? "noopener noreferrer" : undefined}
+                        data-rockstar-cta={isRockstarPlaybook ? "true" : undefined}
                       >
                         {item.cta}
                       </CtaPill>

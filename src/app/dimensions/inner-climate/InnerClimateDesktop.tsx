@@ -6,7 +6,7 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 export default function InnerClimateDesktop() {
   return (
     <main className="relative text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/IMG_8830.jpg" />
+      <SubpageStaticBackground imageUrl="/subpage-backgrounds/IMG_8838.jpg" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10 quiet-divine-page mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 space-y-14 sm:space-y-16 lg:space-y-20">
         <InnerClimateHero />
