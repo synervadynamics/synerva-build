@@ -19,6 +19,10 @@ export function SynervaDimensionsSection() {
     src: "/surface-tension/10.png",
     alt: "Surface Tension artwork",
   };
+  const innerClimateHero = {
+    src: "/inner-climate/3.png",
+    alt: "Inner Climate artwork",
+  };
 
   return (
     <section
@@ -63,11 +67,11 @@ export function SynervaDimensionsSection() {
             </div>
           </div>
 
-          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:gap-5">
-            <div className="rounded-3xl bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-3xl bg-white/[0.03] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[360px] lg:p-4">
               {quietHero ? (
                 <div className="mb-5 flex justify-center lg:mb-4">
-                  <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
+                  <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[230px]">
                     <Image
                       src={quietHero.src}
                       alt={quietHero.alt}
@@ -84,10 +88,10 @@ export function SynervaDimensionsSection() {
                   </div>
                 </div>
               ) : null}
-              <p className="role-body text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
+              <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
                 Attention Under Internal Authority
               </p>
-              <p className="role-body mt-1 text-xs text-white/70 sm:text-sm leading-tight">
+              <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
                 Examines how focus stabilizes when self-governance replaces
                 external cues.
               </p>
@@ -99,10 +103,10 @@ export function SynervaDimensionsSection() {
               </CtaPill>
             </div>
 
-            <div className="rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[480px] lg:p-5">
+            <div className="rounded-3xl bg-white/[0.035] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[360px] lg:p-4">
               {surfaceTensionHero ? (
                 <div className="mb-5 flex justify-center lg:mb-4">
-                  <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[270px]">
+                  <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[230px]">
                     <Image
                       src={surfaceTensionHero.src}
                       alt={surfaceTensionHero.alt}
@@ -119,10 +123,10 @@ export function SynervaDimensionsSection() {
                   </div>
                 </div>
               ) : null}
-              <p className="role-body text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
+              <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
                 Coherence Under Contact
               </p>
-              <p className="role-body mt-1 text-xs text-white/70 sm:text-sm leading-tight">
+              <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
                 Examines how internal stability behaves once returned to the
                 world and subjected to pressure.
               </p>
@@ -131,6 +135,37 @@ export function SynervaDimensionsSection() {
               </h3>
               <CtaPill href="/dimensions/surface-tension" variant="secondary" className="mt-4">
                 View Surface Tension →
+              </CtaPill>
+            </div>
+
+            <div className="rounded-3xl bg-white/[0.035] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.35)] lg:mx-auto lg:max-w-[360px] lg:p-4">
+              <div className="mb-5 flex justify-center lg:mb-4">
+                <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[230px]">
+                  <Image
+                    src={innerClimateHero.src}
+                    alt={innerClimateHero.alt}
+                    width={720}
+                    height={960}
+                    className="h-auto w-full rounded-2xl border border-white/10"
+                    sizes="(min-width: 1024px) 300px, (min-width: 640px) 340px, 100vw"
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/35 via-transparent to-transparent"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
+                THE CLIMATE THAT SHAPES WHAT COMES NEXT
+              </p>
+              <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
+                Explores the environment that quietly determines how the world is felt and understood.
+              </p>
+              <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
+                Inner Climate
+              </h3>
+              <CtaPill href="/dimensions/inner-climate" variant="secondary" className="mt-4">
+                VIEW "INNER CLIMATE -&gt;"
               </CtaPill>
             </div>
           </div>
