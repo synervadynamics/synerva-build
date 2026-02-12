@@ -1,5 +1,5 @@
 export const innerClimateContent = {
-  eyebrow: "Synerva Dimensions",
+  eyebrow: "Synerva Dimensions — Series 003",
   title: "Inner Climate",
   intro: [
     "There are environments we move through, and environments that form quietly inside us.",

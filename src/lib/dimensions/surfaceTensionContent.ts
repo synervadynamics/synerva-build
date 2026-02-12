@@ -1,5 +1,5 @@
 export const surfaceTensionContent = {
-  eyebrow: "Synerva Dimensions",
+  eyebrow: "Synerva Dimensions — Series 002",
   title: "Surface Tension",
   intro: [
     "There comes a point when depth stops doing the work.",

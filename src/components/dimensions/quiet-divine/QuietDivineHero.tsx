@@ -8,7 +8,7 @@ export default function QuietDivineHero() {
   return (
     <section className="quiet-divine-hero space-y-6">
       <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-        Synerva Dimensions
+        Synerva Dimensions — Series 001
       </p>
       <h1 className="text-4xl sm:text-5xl font-semibold leading-tight">
         {normalizeQuietDivine(title ?? "The Quiet Divine")}
