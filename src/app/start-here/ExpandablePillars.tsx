@@ -120,17 +120,30 @@ export default function ExpandablePillars() {
                     id={contentId}
                     className="overflow-hidden transition-all duration-300 ease-out"
                     style={{
-                      maxHeight: isOpen ? "600px" : "0px",
+                      maxHeight: isOpen ? "900px" : "0px",
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
-                    <div className="space-y-4 border-t border-white/10 px-6 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-6">
-                      <p className="text-base text-white">
-                        <strong>{pillar.entryRange}</strong>
-                      </p>
-                      <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
-                        {pillar.lines.join("\n")}
-                      </p>
+                    <div className="border-t border-white/10 px-6 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-6">
+                      <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                        <div className="space-y-4">
+                          <p className="text-base text-white">
+                            <strong>{pillar.entryRange}</strong>
+                          </p>
+                          <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
+                            {pillar.lines.join("\n")}
+                          </p>
+                        </div>
+
+                        <div className="flex h-full items-center justify-center">
+                          <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                            <div className="aspect-[5/4] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                            <p className="mt-3 text-center text-sm text-white/70">
+                              {pillar.title} Visual Placeholder
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </article>

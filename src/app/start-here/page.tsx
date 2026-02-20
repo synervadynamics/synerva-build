@@ -49,25 +49,36 @@ export default function StartHerePage() {
         <section className="relative overflow-visible px-6 py-20 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl">
             <div className="rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.02] p-8 sm:p-10">
-              <div className="max-w-4xl space-y-8">
-                <h2 className="text-3xl leading-tight text-white sm:text-4xl">
-                  You don’t need more activity.
-                  <br />
-                  You need the right asset built correctly.
-                </h2>
-                <div className="space-y-6 text-base text-white/80 sm:text-lg">
-                  <p>Synerva operates across four integrated pillars:</p>
-                  <ul className="list-disc space-y-2 pl-6">
-                    <li>Strategy &amp; Direction</li>
-                    <li>Brand &amp; Messaging</li>
-                    <li>Digital &amp; Product Builds</li>
-                    <li>Automation &amp; Optimization</li>
-                  </ul>
-                  <p>
-                    Engage at the level your situation requires.
-                  </p>
-                  <p>Sometimes that means sharpening one constraint.</p>
-                  <p>Sometimes it means building the entire system.</p>
+              <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+                <div className="max-w-4xl space-y-8">
+                  <h2 className="text-3xl leading-tight text-white sm:text-4xl">
+                    You don’t need more activity.
+                    <br />
+                    You need the right asset built correctly.
+                  </h2>
+                  <div className="space-y-6 text-base text-white/80 sm:text-lg">
+                    <p>Synerva operates across four integrated pillars:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li>Strategy &amp; Direction</li>
+                      <li>Brand &amp; Messaging</li>
+                      <li>Digital &amp; Product Builds</li>
+                      <li>Automation &amp; Optimization</li>
+                    </ul>
+                    <p>
+                      Engage at the level your situation requires.
+                    </p>
+                    <p>Sometimes that means sharpening one constraint.</p>
+                    <p>Sometimes it means building the entire system.</p>
+                  </div>
+                </div>
+
+                <div className="flex h-full items-center justify-center">
+                  <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                    <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                    <p className="mt-3 text-center text-sm text-white/70">
+                      Positioning Visual Placeholder
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -246,26 +257,37 @@ export default function StartHerePage() {
         <section className="relative overflow-visible px-6 py-[100px] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl">
             <div className="rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.02] p-8 sm:p-10">
-              <div className="max-w-4xl space-y-6">
-                <h2 className="text-3xl text-white sm:text-4xl">
-                  A Simple Path From Signal to Build
-                </h2>
-                <p className="text-base text-white/80 sm:text-lg">
-                  You define the outcome.
-                </p>
-                <ol className="space-y-4 text-base text-white/80 sm:text-lg">
-                  <li>1. Scope and constraints are clarified.</li>
-                  <li>2. You receive a structured proposal.</li>
-                  <li>3. Work begins.</li>
-                  <li>4. You receive finished, usable deliverables.</li>
-                </ol>
-                <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
-                  No vague retainers.
-                  {"\n"}
-                  No endless discovery loops.
-                  {"\n"}
-                  No performative process.
-                </p>
+              <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+                <div className="max-w-4xl space-y-6">
+                  <h2 className="text-3xl text-white sm:text-4xl">
+                    A Simple Path From Signal to Build
+                  </h2>
+                  <p className="text-base text-white/80 sm:text-lg">
+                    You define the outcome.
+                  </p>
+                  <ol className="space-y-4 text-base text-white/80 sm:text-lg">
+                    <li>1. Scope and constraints are clarified.</li>
+                    <li>2. You receive a structured proposal.</li>
+                    <li>3. Work begins.</li>
+                    <li>4. You receive finished, usable deliverables.</li>
+                  </ol>
+                  <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
+                    No vague retainers.
+                    {"\n"}
+                    No endless discovery loops.
+                    {"\n"}
+                    No performative process.
+                  </p>
+                </div>
+
+                <div className="flex h-full items-center justify-center">
+                  <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                    <div className="aspect-square w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                    <p className="mt-3 text-center text-sm text-white/70">
+                      Process Visual Placeholder
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
