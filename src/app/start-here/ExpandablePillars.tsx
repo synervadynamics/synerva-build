@@ -130,9 +130,13 @@ export default function ExpandablePillars() {
                           <p className="text-base text-white">
                             <strong>{pillar.entryRange}</strong>
                           </p>
-                          <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
-                            {pillar.lines.join("\n")}
-                          </p>
+                          <div className="text-sm text-white/80 sm:text-base">
+                            <ul className="list-disc space-y-1 pl-6">
+                              {pillar.lines.map((line) => (
+                                <li key={line}>{line}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
 
                         <div className="flex h-full items-center justify-center">
