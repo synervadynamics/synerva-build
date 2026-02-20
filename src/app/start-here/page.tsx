@@ -195,25 +195,26 @@ export default function StartHerePage() {
                         Integrated Systems
                       </h3>
                       <p className="text-lg text-white">
-                        <strong>Starting at $10,000</strong>
+                        <strong>$10,000+</strong>
                       </p>
                       <p className="text-base text-white/80">
-                        Complete operating architecture across strategy, brand, product, and automation.
+                        Complete operating systems built across strategy, brand, product, and automation.
                       </p>
                       <p className="text-base text-white/80">
-                        For when the business needs alignment at the system level — not isolated upgrades.
+                        For when the business needs unified infrastructure — not incremental upgrades.
                       </p>
                       <div className="space-y-1 text-sm text-white/75 sm:text-base">
                         <p>Typical timeframe: 4–8+ weeks</p>
-                        <p>Best for: Companies eliminating fragmentation and building durable infrastructure</p>
+                        <p>Best for: Companies building durable, system-level alignment</p>
                       </div>
                       <div className="space-y-2 text-sm text-white/80 sm:text-base">
+                        <p>Examples:</p>
                         <ul className="list-disc space-y-1 pl-6">
-                          <li>Full brand positioning and messaging system implemented across website, sales, and marketing</li>
-                          <li>Complete website strategy, UX, design, and custom build with conversion optimization</li>
-                          <li>Multi-stage funnel design with landing pages, email flows, and automation sequences</li>
-                          <li>AI-supported content engine with publishing workflows and performance tracking</li>
-                          <li>Integrated automation connecting CRM, marketing, lead capture, and internal workflows</li>
+                          <li>Full positioning and messaging deployed across web, sales, and growth</li>
+                          <li>End-to-end website strategy, UX, design, engineering, and launch</li>
+                          <li>Multi-stage funnel spanning acquisition, nurture, conversion, and retention</li>
+                          <li>AI-driven content engine with structured workflows and measurement</li>
+                          <li>Integrated CRM, marketing, reporting, and internal automation layer</li>
                         </ul>
                       </div>
                       <Link
