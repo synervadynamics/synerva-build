@@ -101,7 +101,7 @@ export default function ExpandablePillars() {
             return (
               <article
                 key={pillar.id}
-                className="glass-panel rounded-3xl border border-white/10 bg-white/[0.03]"
+                className="glass-panel rounded-3xl border border-white/15 bg-white/[0.03]"
               >
                 <h3 className="text-2xl text-white sm:text-3xl">
                   <button

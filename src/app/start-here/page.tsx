@@ -92,7 +92,7 @@ export default function StartHerePage() {
             </div>
 
             <div className="grid gap-6">
-              <article className="glass-panel rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10">
+              <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.03] p-8 sm:p-10">
                 <div className="space-y-4">
                   <h3 className="text-2xl text-white sm:text-3xl">Focused Work</h3>
                   <p className="text-lg text-white">
@@ -131,7 +131,7 @@ export default function StartHerePage() {
                 </div>
               </article>
 
-              <article className="glass-panel rounded-3xl border-2 border-white/15 bg-white/[0.04] p-8 sm:p-10">
+              <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.04] p-8 sm:p-10">
                 <div className="space-y-4">
                   <h3 className="text-2xl text-white sm:text-3xl">Project Builds</h3>
                   <p className="text-lg text-white">
@@ -169,7 +169,7 @@ export default function StartHerePage() {
                 </div>
               </article>
 
-              <article className="glass-panel rounded-3xl border border-white/20 bg-white/[0.05] p-10 sm:p-12">
+              <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.05] p-10 sm:p-12">
                 <div className="space-y-4">
                   <h3 className="text-2xl text-white sm:text-3xl">
                     Integrated Build
