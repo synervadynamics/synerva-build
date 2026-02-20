@@ -21,24 +21,23 @@ export default function StartHerePage() {
           <div className="mx-auto max-w-6xl text-center">
             <div className="space-y-8 rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
-                Build what actually moves the business forward.
+                Build what moves the business.
               </h1>
               <p className="mx-auto max-w-3xl text-lg text-white/80 sm:text-xl">
-                Strategy, brand, digital builds, and automation — delivered as
-                focused upgrades or complete project builds.
+                Strategy, brand, digital infrastructure, and automation — delivered as precise upgrades or complete builds.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="/contact"
                   className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                 >
-                  Book a 20-Minute Clarity Call
+                  Book a 30-Minute Clarity Call
                 </Link>
                 <Link
                   href="#engagement-options"
                   className="inline-flex w-fit rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:border-white/60 hover:bg-white/10"
                 >
-                  See Engagement Options
+                  View Engagement Options
                 </Link>
               </div>
             </div>
@@ -52,24 +51,23 @@ export default function StartHerePage() {
             <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <div className="max-w-4xl space-y-8">
                 <h2 className="text-3xl leading-tight text-white sm:text-4xl">
-                  You Don’t Need More Activity.
+                  You don’t need more activity.
                   <br />
-                  You Need the Right Asset Built Correctly.
+                  You need the right asset built correctly.
                 </h2>
                 <div className="space-y-6 text-base text-white/80 sm:text-lg">
-                  <p>Synerva works across four integrated pillars:</p>
+                  <p>Synerva operates across four integrated pillars:</p>
                   <ul className="list-disc space-y-2 pl-6">
                     <li>Strategy &amp; Direction</li>
                     <li>Brand &amp; Messaging</li>
                     <li>Digital &amp; Product Builds</li>
                     <li>Automation &amp; Optimization</li>
                   </ul>
-                  <p>You can engage at any level.</p>
                   <p>
-                    Some clients need refinement.
-                    <br />
-                    Others need something built from the ground up.
+                    Engage at the level your situation requires.
                   </p>
+                  <p>Sometimes that means sharpening one constraint.</p>
+                  <p>Sometimes it means building the entire system.</p>
                 </div>
               </div>
             </div>
@@ -102,34 +100,33 @@ export default function StartHerePage() {
                       <strong>$600 – $3,000</strong>
                     </p>
                     <p className="text-base text-white/80">
-                      Precision upgrades. Defined scope. Rapid turnaround.
+                      Defined scope. Single objective. Fast execution.
                     </p>
                     <p className="text-base text-white/80">
-                      For when something exists — but needs to be clarified,
-                      repaired, or strengthened.
+                      For when something exists — but isn’t performing.
                     </p>
                     <div className="space-y-1 text-sm text-white/75 sm:text-base">
                       <p>Typical timeframe: 1–2 weeks</p>
-                      <p>Best for: Solving one specific problem</p>
+                      <p>Best for: Isolated problems with measurable impact</p>
                     </div>
                     <div className="space-y-2 text-sm text-white/80 sm:text-base">
-                      <p>Examples (bullet list):</p>
+                      <p>Examples:</p>
                       <ul className="list-disc space-y-1 pl-6">
-                        <li>Messaging refinement (1 page)</li>
-                        <li>Brand audit with action roadmap</li>
-                        <li>Offer architecture review</li>
-                        <li>Funnel diagnostic</li>
-                        <li>Landing page copy only</li>
-                        <li>Strategic brief</li>
-                        <li>Workflow automation (single system)</li>
-                        <li>Thought leadership article</li>
+                        <li>Messaging overhaul for one core page</li>
+                        <li>Brand audit + implementation roadmap</li>
+                        <li>Offer positioning review</li>
+                        <li>Funnel diagnostic with clear action plan</li>
+                        <li>Landing page copy (copy only)</li>
+                        <li>Strategic decision brief</li>
+                        <li>Single workflow automation</li>
+                        <li>Ghostwritten thought-leadership article</li>
                       </ul>
                     </div>
                     <Link
                       href="/contact"
                       className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                     >
-                      Request Focused Scope
+                      Request a Focused Scope
                     </Link>
                   </div>
                 </article>
@@ -144,23 +141,22 @@ export default function StartHerePage() {
                       Complete assets built from strategy through execution.
                     </p>
                     <p className="text-base text-white/80">
-                      For when you need something substantial created or rebuilt
-                      properly.
+                      For when the core piece doesn’t exist — or needs to be rebuilt properly.
                     </p>
                     <div className="space-y-1 text-sm text-white/75 sm:text-base">
                       <p>Typical timeframe: 2–6 weeks</p>
-                      <p>Best for: Building core business assets</p>
+                      <p>Best for: Foundational business assets</p>
                     </div>
                     <div className="space-y-2 text-sm text-white/80 sm:text-base">
                       <p>Examples:</p>
                       <ul className="list-disc space-y-1 pl-6">
-                        <li>Full landing page build</li>
+                        <li>Conversion-focused landing page (strategy + design + build)</li>
                         <li>3–8 page website</li>
-                        <li>Brand + messaging refresh</li>
-                        <li>Funnel build</li>
-                        <li>AI content infrastructure</li>
-                        <li>Conversion-focused redesign</li>
-                        <li>Automation system build</li>
+                        <li>Brand + messaging system refresh</li>
+                        <li>Funnel architecture and build</li>
+                        <li>AI-assisted content infrastructure</li>
+                        <li>Conversion-driven redesign</li>
+                        <li>Integrated automation system</li>
                       </ul>
                     </div>
                     <Link
@@ -181,18 +177,16 @@ export default function StartHerePage() {
                       <strong>Starting at $10,000</strong>
                     </p>
                     <p className="text-base text-white/80">
-                      Strategy, brand, digital, and automation aligned into one
-                      system.
+                      Strategy, brand, digital infrastructure, and automation aligned into one operating system.
                     </p>
                     <p className="text-base text-white/80">
-                      For companies ready to eliminate fragmentation and build
-                      durable infrastructure.
+                      For companies ready to eliminate fragmentation and build durable architecture.
                     </p>
                     <Link
                       href="/contact"
                       className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                     >
-                      Discuss Integrated Build
+                      Discuss an Integrated Build
                     </Link>
                   </div>
                 </article>
@@ -214,7 +208,7 @@ export default function StartHerePage() {
                 <div className="max-w-3xl space-y-5">
                   <h2 className="text-3xl text-white sm:text-4xl">Operator Sessions</h2>
                   <p className="text-base text-white/80 sm:text-lg">
-                    Senior-level working sessions focused on decisive progress.
+                    High-leverage working sessions focused on decisive progress.
                   </p>
                   <div className="space-y-1 text-base text-white/80 sm:text-lg">
                     <p>Minimum booking: 3-hour block</p>
@@ -223,7 +217,7 @@ export default function StartHerePage() {
                     </p>
                   </div>
                   <p className="text-base text-white/80 sm:text-lg">
-                    For founders who need compression and clarity fast.
+                    Best for founders who need compression, clarity, and forward motion — fast.
                   </p>
                   <p className="text-base text-white/80 sm:text-lg">
                     These sessions are execution-focused, not abstract advisory.
@@ -232,7 +226,7 @@ export default function StartHerePage() {
                     href="/contact"
                     className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                   >
-                    Book Operator Session
+                    Book an Operator Session
                   </Link>
                 </div>
 
@@ -253,21 +247,24 @@ export default function StartHerePage() {
           <div className="mx-auto max-w-6xl">
             <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <div className="max-w-4xl space-y-6">
-                <h2 className="text-3xl text-white sm:text-4xl">Simple Process</h2>
+                <h2 className="text-3xl text-white sm:text-4xl">
+                  A Simple Path From Signal to Build
+                </h2>
                 <p className="text-base text-white/80 sm:text-lg">
-                  Work is structured, defined, and direct.
+                  You define the outcome.
                 </p>
                 <ol className="space-y-4 text-base text-white/80 sm:text-lg">
-                  <li>1. You describe the outcome you need.</li>
-                  <li>2. I clarify scope and constraints.</li>
-                  <li>3. You receive a defined proposal.</li>
-                  <li>4. Work begins.</li>
-                  <li>5. You receive finished, usable deliverables.</li>
+                  <li>1. Scope and constraints are clarified.</li>
+                  <li>2. You receive a structured proposal.</li>
+                  <li>3. Work begins.</li>
+                  <li>4. You receive finished, usable deliverables.</li>
                 </ol>
                 <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
                   No vague retainers.
                   {"\n"}
                   No endless discovery loops.
+                  {"\n"}
+                  No performative process.
                 </p>
               </div>
             </div>
@@ -281,23 +278,26 @@ export default function StartHerePage() {
                 If Something Feels Stuck, Let’s Fix It.
               </h2>
               <div className="space-y-3 text-base text-white/80 sm:text-lg">
-                <p>You’ll leave a clarity call knowing:</p>
-                <p>What the actual problem is</p>
-                <p>What it would cost to fix</p>
-                <p>Whether we’re a fit</p>
+                <p>In 30 minutes, you’ll leave knowing:</p>
+                <ul className="list-disc space-y-2 pl-6 text-left">
+                  <li>What the real constraint is</li>
+                  <li>What it would take to fix</li>
+                  <li>Whether we’re the right fit</li>
+                </ul>
+                <p>No pitch theater. No vague advice.</p>
               </div>
               <div className="flex flex-col items-center justify-center gap-4">
                 <Link
                   href="/contact"
                   className="inline-flex w-fit rounded-full bg-white px-8 py-4 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                 >
-                  Book a 20-Minute Call
+                  Book a 30-Minute Clarity Call
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex w-fit rounded-full border border-white/30 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:border-white/60 hover:bg-white/10"
                 >
-                  Send Direct Inquiry
+                  Send a Direct Inquiry
                 </Link>
               </div>
               <p className="text-sm text-white/70">Response within 24 business hours.</p>

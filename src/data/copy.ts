@@ -15,7 +15,7 @@ export const copy = {
     ],
     contact: {
       email: "synerva.dynamics@gmail.com",
-      phone: "+1 (905) 380-7790",
+      phone: "+1 (905) 732-8993",
       address: "259 St. Paul Street, St. Catharines, Ontario L2R 3M7",
     },
     videoPlaceholder: "Cinematic system preview will render here.",

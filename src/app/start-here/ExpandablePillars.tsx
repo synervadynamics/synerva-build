@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 type Pillar = {
@@ -8,7 +7,6 @@ type Pillar = {
   title: string;
   lines: string[];
   entryRange: string;
-  buttonText: string;
 };
 
 const pillars: Pillar[] = [
@@ -18,14 +16,13 @@ const pillars: Pillar[] = [
     lines: [
       "Business and product strategy",
       "Positioning and differentiation",
-      "Offer architecture and pricing strategy",
+      "Offer architecture and pricing design",
       "Go-to-market planning",
-      "Decision frameworks and operating principles",
-      "Strategic reports and briefs",
+      "Decision frameworks",
+      "Strategic reports",
       "Implementation roadmaps",
     ],
     entryRange: "Entry range: $900+",
-    buttonText: "Request Strategy Scope",
   },
   {
     id: "brand-messaging",
@@ -37,12 +34,11 @@ const pillars: Pillar[] = [
       "Voice and messaging frameworks",
       "Brand audits and refinements",
       "Website and landing page copy",
-      "Blog and editorial content",
-      "Ghostwriting",
-      "Graphic and visual content",
+      "Long-form and short-form writing",
+      "Ghostwriting (articles, essays, books)",
+      "Graphic and visual assets",
     ],
     entryRange: "Entry range: $800+",
-    buttonText: "Discuss Brand Work",
   },
   {
     id: "digital-product-builds",
@@ -51,13 +47,12 @@ const pillars: Pillar[] = [
       "Websites and landing pages",
       "Product and app UI/UX",
       "Design systems",
-      "Frontend and full-stack development",
-      "Performance and accessibility improvements",
-      "Funnel and lifecycle design",
+      "Frontend and full-stack builds",
+      "Funnel and lifecycle systems",
       "Conversion optimization",
+      "Performance and accessibility improvements",
     ],
     entryRange: "Entry range: $2,000+",
-    buttonText: "Start a Digital Build",
   },
   {
     id: "automation-optimization",
@@ -71,7 +66,6 @@ const pillars: Pillar[] = [
       "Marketing automation",
     ],
     entryRange: "Entry range: $1,200+",
-    buttonText: "Automate Something",
   },
 ];
 
@@ -87,7 +81,7 @@ export default function ExpandablePillars() {
             <p className="text-base text-white/80 sm:text-lg">
               Synerva is systems-first by default.
               <br />
-              But you can engage for individual services whenever that’s what the situation calls for.
+              But you can engage for individual deliverables when that’s what the moment requires.
             </p>
             <p className="text-base text-white/80 sm:text-lg">
               Expand a pillar to see what can be delivered directly.
@@ -125,18 +119,12 @@ export default function ExpandablePillars() {
                     }}
                   >
                     <div className="space-y-4 border-t border-white/10 px-6 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-6">
-                      <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
-                        {pillar.lines.join("\n")}
-                      </p>
                       <p className="text-base text-white">
                         <strong>{pillar.entryRange}</strong>
                       </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-                      >
-                        {pillar.buttonText}
-                      </Link>
+                      <p className="whitespace-pre-line text-base text-white/80 sm:text-lg">
+                        {pillar.lines.join("\n")}
+                      </p>
                     </div>
                   </div>
                 </article>
