@@ -386,6 +386,20 @@ export default function HomeMobile() {
                     Surface Tension →
                   </CtaPill>
                 </div>
+                <div className="flex flex-col gap-2">
+                  <div className={styles.publicationCover} aria-hidden>
+                    <Image
+                      src="/mobile-images/homepage/constructed-innocence.webp"
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 50vw, 180px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <CtaPill href="/dimensions/inner-climate" variant="secondary">
+                    Inner Climate →
+                  </CtaPill>
+                </div>
               </div>
             </div>
           </div>
