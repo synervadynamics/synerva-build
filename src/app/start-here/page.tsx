@@ -141,7 +141,7 @@ export default function StartHerePage() {
 
                     <div className="flex h-full items-center justify-center">
                       <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
-                        <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                        <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
                       </div>
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export default function StartHerePage() {
 
                     <div className="flex h-full items-center justify-center">
                       <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
-                        <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                        <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
                       </div>
                     </div>
                   </div>
@@ -196,7 +196,7 @@ export default function StartHerePage() {
                   <div className="flex items-start justify-between">
                     <div className="w-[60%] max-w-[560px] space-y-4">
                       <h3 className="text-2xl text-white sm:text-3xl">
-                        Integrated Build
+                        Integrated Builds
                       </h3>
                       <p className="text-lg text-white">
                         <strong>Starting at $10,000</strong>
@@ -229,9 +229,10 @@ export default function StartHerePage() {
                     </div>
 
                     <div
-                      className="integrated-image-placeholder w-[40%] min-h-[240px]"
-                      style={{ borderRadius: "inherit", background: "transparent" }}
-                    />
+                      className="integrated-image-placeholder w-[40%] min-h-[240px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4"
+                    >
+                      <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                    </div>
                   </div>
                 </article>
               </div>
