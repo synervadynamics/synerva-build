@@ -101,12 +101,18 @@ export default function ExpandablePillars() {
                   <h3 className="text-2xl text-white sm:text-3xl">
                     <button
                       type="button"
-                      className="w-full px-6 py-6 text-left sm:px-8"
+                      className="flex w-full cursor-pointer items-center justify-between gap-3 px-6 py-6 text-left sm:px-8"
                       aria-expanded={isOpen}
                       aria-controls={contentId}
                       onClick={() => setOpenId(isOpen ? null : pillar.id)}
                     >
-                      {pillar.title}
+                      <span>{pillar.title}</span>
+                      <span
+                        aria-hidden="true"
+                        className="text-xl leading-none text-white sm:text-2xl"
+                      >
+                        {isOpen ? "×" : "+"}
+                      </span>
                     </button>
                   </h3>
 
