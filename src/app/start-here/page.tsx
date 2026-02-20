@@ -102,8 +102,8 @@ export default function StartHerePage() {
 
               <div className="mt-8 grid gap-6">
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.03] p-8 sm:p-10">
-                  <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-                    <div className="space-y-4">
+                  <div className="flex items-start justify-between gap-8">
+                    <div className="w-[60%] max-w-[560px] space-y-4">
                       <h3 className="text-2xl text-white sm:text-3xl">Focused Work</h3>
                       <p className="text-lg text-white">
                         <strong>$600 – $3,000</strong>
@@ -139,18 +139,16 @@ export default function StartHerePage() {
                       </Link>
                     </div>
 
-                    <div className="flex h-full items-center justify-center">
-                      <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                    <div className="w-[40%] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                         <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                      </div>
                     </div>
                   </div>
                 </article>
 
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.04] p-8 sm:p-10">
-                  <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-                    <div className="space-y-4">
-                      <h3 className="text-2xl text-white sm:text-3xl">Project Builds</h3>
+                  <div className="flex items-start justify-between gap-8">
+                    <div className="w-[60%] max-w-[560px] space-y-4">
+                      <h3 className="text-2xl text-white sm:text-3xl">Structured Projects</h3>
                       <p className="text-lg text-white">
                         <strong>$2,000 – $10,000</strong>
                       </p>
@@ -184,10 +182,8 @@ export default function StartHerePage() {
                       </Link>
                     </div>
 
-                    <div className="flex h-full items-center justify-center">
-                      <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                    <div className="w-[40%] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                         <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                      </div>
                     </div>
                   </div>
                 </article>
@@ -196,35 +192,35 @@ export default function StartHerePage() {
                   <div className="flex items-start justify-between">
                     <div className="w-[60%] max-w-[560px] space-y-4">
                       <h3 className="text-2xl text-white sm:text-3xl">
-                        Integrated Builds
+                        Integrated Systems
                       </h3>
                       <p className="text-lg text-white">
                         <strong>Starting at $10,000</strong>
                       </p>
                       <p className="text-base text-white/80">
-                        Strategy, brand, digital infrastructure,
+                        Complete operating architecture across strategy, brand, product, and automation.
                       </p>
                       <p className="text-base text-white/80">
-                        and automation aligned
+                        For when the business needs alignment at the system level — not isolated upgrades.
                       </p>
-                      <p className="text-base text-white/80">
-                        into one operating system.
-                      </p>
-                      <div className="h-2" aria-hidden="true" />
-                      <p className="text-base text-white/80">
-                        For companies ready
-                      </p>
-                      <p className="text-base text-white/80">
-                        to eliminate fragmentation
-                      </p>
-                      <p className="text-base text-white/80">
-                        and build durable architecture.
-                      </p>
+                      <div className="space-y-1 text-sm text-white/75 sm:text-base">
+                        <p>Typical timeframe: 4–8+ weeks</p>
+                        <p>Best for: Companies eliminating fragmentation and building durable infrastructure</p>
+                      </div>
+                      <div className="space-y-2 text-sm text-white/80 sm:text-base">
+                        <ul className="list-disc space-y-1 pl-6">
+                          <li>Full brand positioning and messaging system implemented across website, sales, and marketing</li>
+                          <li>Complete website strategy, UX, design, and custom build with conversion optimization</li>
+                          <li>Multi-stage funnel design with landing pages, email flows, and automation sequences</li>
+                          <li>AI-supported content engine with publishing workflows and performance tracking</li>
+                          <li>Integrated automation connecting CRM, marketing, lead capture, and internal workflows</li>
+                        </ul>
+                      </div>
                       <Link
                         href="/contact"
                         className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
                       >
-                        Discuss an Integrated Build
+                        DISCUSS AN INTEGRATED SYSTEM
                       </Link>
                     </div>
 
