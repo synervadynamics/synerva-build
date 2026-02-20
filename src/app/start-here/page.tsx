@@ -19,7 +19,7 @@ export default function StartHerePage() {
       <div className="relative z-10">
         <section className="relative overflow-visible px-6 py-28 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl text-center">
-            <div className="space-y-8 rounded-3xl border border-white/15 bg-white/[0.02] p-8 sm:p-10">
+            <div className="space-y-8 rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <h1 className="text-4xl leading-tight sm:text-5xl lg:text-6xl">
                 Build what actually moves the business forward.
               </h1>
@@ -49,7 +49,7 @@ export default function StartHerePage() {
 
         <section className="relative overflow-visible px-6 py-20 sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.02] p-8 sm:p-10">
+            <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <div className="max-w-4xl space-y-8">
                 <h2 className="text-3xl leading-tight text-white sm:text-4xl">
                   You Don’t Need More Activity.
@@ -83,7 +83,7 @@ export default function StartHerePage() {
           className="relative overflow-visible px-6 py-20 sm:px-10 lg:px-16"
         >
           <div className="mx-auto max-w-6xl space-y-10">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.02] p-8 sm:p-10">
+            <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <div className="max-w-4xl space-y-4">
                 <h2 className="text-3xl text-white sm:text-4xl">
                   Choose Your Entry Point
@@ -95,7 +95,7 @@ export default function StartHerePage() {
               </div>
 
               <div className="mt-8 grid gap-6">
-                <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.03] p-8 sm:p-10">
+                <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.03] p-8 sm:p-10">
                   <div className="space-y-4">
                     <h3 className="text-2xl text-white sm:text-3xl">Focused Work</h3>
                     <p className="text-lg text-white">
@@ -134,7 +134,7 @@ export default function StartHerePage() {
                   </div>
                 </article>
 
-                <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.04] p-8 sm:p-10">
+                <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.04] p-8 sm:p-10">
                   <div className="space-y-4">
                     <h3 className="text-2xl text-white sm:text-3xl">Project Builds</h3>
                     <p className="text-lg text-white">
@@ -172,7 +172,7 @@ export default function StartHerePage() {
                   </div>
                 </article>
 
-                <article className="glass-panel rounded-3xl border border-white/15 bg-white/[0.05] p-10 sm:p-12">
+                <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.05] p-10 sm:p-12">
                   <div className="space-y-4">
                     <h3 className="text-2xl text-white sm:text-3xl">
                       Integrated Build
@@ -209,7 +209,7 @@ export default function StartHerePage() {
 
         <section className="relative overflow-visible px-6 py-[100px] sm:px-10 lg:px-16">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.02] p-8 sm:p-10 lg:col-span-2">
+            <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10 lg:col-span-2">
               <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
                 <div className="max-w-3xl space-y-5">
                   <h2 className="text-3xl text-white sm:text-4xl">Operator Sessions</h2>
@@ -236,7 +236,7 @@ export default function StartHerePage() {
                   </Link>
                 </div>
 
-                <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-6">
+                <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.05] p-6">
                   <div className="aspect-[16/9] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
                   <p className="mt-4 text-sm text-white/70">
                     Operator Session Visual Placeholder
@@ -251,7 +251,7 @@ export default function StartHerePage() {
 
         <section className="relative overflow-visible px-6 py-[100px] sm:px-10 lg:px-16">
           <div className="mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.02] p-8 sm:p-10">
+            <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
               <div className="max-w-4xl space-y-6">
                 <h2 className="text-3xl text-white sm:text-4xl">Simple Process</h2>
                 <p className="text-base text-white/80 sm:text-lg">
@@ -275,7 +275,7 @@ export default function StartHerePage() {
         </section>
 
         <section className="relative overflow-visible px-6 py-[100px] sm:px-10 lg:px-16">
-          <div className="mx-auto max-w-6xl rounded-3xl border border-white/15 bg-white/[0.06] px-8 py-12 text-center sm:px-12 sm:py-16">
+          <div className="mx-auto max-w-6xl rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.06] px-8 py-12 text-center sm:px-12 sm:py-16">
             <div className="mx-auto max-w-3xl space-y-6">
               <h2 className="text-3xl text-white sm:text-4xl">
                 If Something Feels Stuck, Let’s Fix It.
