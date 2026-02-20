@@ -105,84 +105,106 @@ export default function StartHerePage() {
 
               <div className="mt-8 grid gap-6">
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.03] p-8 sm:p-10">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl text-white sm:text-3xl">Focused Work</h3>
-                    <p className="text-lg text-white">
-                      <strong>$600 – $3,000</strong>
-                    </p>
-                    <p className="text-base text-white/80">
-                      Defined scope. Single objective. Fast execution.
-                    </p>
-                    <p className="text-base text-white/80">
-                      For when something exists — but isn’t performing.
-                    </p>
-                    <div className="space-y-1 text-sm text-white/75 sm:text-base">
-                      <p>Typical timeframe: 1–2 weeks</p>
-                      <p>Best for: Isolated problems with measurable impact</p>
+                  <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                    <div className="space-y-4">
+                      <h3 className="text-2xl text-white sm:text-3xl">Focused Work</h3>
+                      <p className="text-lg text-white">
+                        <strong>$600 – $3,000</strong>
+                      </p>
+                      <p className="text-base text-white/80">
+                        Defined scope. Single objective. Fast execution.
+                      </p>
+                      <p className="text-base text-white/80">
+                        For when something exists — but isn’t performing.
+                      </p>
+                      <div className="space-y-1 text-sm text-white/75 sm:text-base">
+                        <p>Typical timeframe: 1–2 weeks</p>
+                        <p>Best for: Isolated problems with measurable impact</p>
+                      </div>
+                      <div className="space-y-2 text-sm text-white/80 sm:text-base">
+                        <p>Examples:</p>
+                        <ul className="list-disc space-y-1 pl-6">
+                          <li>Messaging overhaul for one core page</li>
+                          <li>Brand audit + implementation roadmap</li>
+                          <li>Offer positioning review</li>
+                          <li>Funnel diagnostic with clear action plan</li>
+                          <li>Landing page copy (copy only)</li>
+                          <li>Strategic decision brief</li>
+                          <li>Single workflow automation</li>
+                          <li>Ghostwritten thought-leadership article</li>
+                        </ul>
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                      >
+                        Request a Focused Scope
+                      </Link>
                     </div>
-                    <div className="space-y-2 text-sm text-white/80 sm:text-base">
-                      <p>Examples:</p>
-                      <ul className="list-disc space-y-1 pl-6">
-                        <li>Messaging overhaul for one core page</li>
-                        <li>Brand audit + implementation roadmap</li>
-                        <li>Offer positioning review</li>
-                        <li>Funnel diagnostic with clear action plan</li>
-                        <li>Landing page copy (copy only)</li>
-                        <li>Strategic decision brief</li>
-                        <li>Single workflow automation</li>
-                        <li>Ghostwritten thought-leadership article</li>
-                      </ul>
+
+                    <div className="flex h-full items-center justify-center">
+                      <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                        <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                        <p className="mt-3 text-center text-sm text-white/70">
+                          Focused Work Visual Placeholder
+                        </p>
+                      </div>
                     </div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-                    >
-                      Request a Focused Scope
-                    </Link>
                   </div>
                 </article>
 
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.04] p-8 sm:p-10">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl text-white sm:text-3xl">Project Builds</h3>
-                    <p className="text-lg text-white">
-                      <strong>$2,000 – $10,000</strong>
-                    </p>
-                    <p className="text-base text-white/80">
-                      Complete assets built from strategy through execution.
-                    </p>
-                    <p className="text-base text-white/80">
-                      For when the core piece doesn’t exist — or needs to be rebuilt properly.
-                    </p>
-                    <div className="space-y-1 text-sm text-white/75 sm:text-base">
-                      <p>Typical timeframe: 2–6 weeks</p>
-                      <p>Best for: Foundational business assets</p>
+                  <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+                    <div className="space-y-4">
+                      <h3 className="text-2xl text-white sm:text-3xl">Project Builds</h3>
+                      <p className="text-lg text-white">
+                        <strong>$2,000 – $10,000</strong>
+                      </p>
+                      <p className="text-base text-white/80">
+                        Complete assets built from strategy through execution.
+                      </p>
+                      <p className="text-base text-white/80">
+                        For when the core piece doesn’t exist — or needs to be rebuilt properly.
+                      </p>
+                      <div className="space-y-1 text-sm text-white/75 sm:text-base">
+                        <p>Typical timeframe: 2–6 weeks</p>
+                        <p>Best for: Foundational business assets</p>
+                      </div>
+                      <div className="space-y-2 text-sm text-white/80 sm:text-base">
+                        <p>Examples:</p>
+                        <ul className="list-disc space-y-1 pl-6">
+                          <li>Conversion-focused landing page (strategy + design + build)</li>
+                          <li>3–8 page website</li>
+                          <li>Brand + messaging system refresh</li>
+                          <li>Funnel architecture and build</li>
+                          <li>AI-assisted content infrastructure</li>
+                          <li>Conversion-driven redesign</li>
+                          <li>Integrated automation system</li>
+                        </ul>
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                      >
+                        Start a Project
+                      </Link>
                     </div>
-                    <div className="space-y-2 text-sm text-white/80 sm:text-base">
-                      <p>Examples:</p>
-                      <ul className="list-disc space-y-1 pl-6">
-                        <li>Conversion-focused landing page (strategy + design + build)</li>
-                        <li>3–8 page website</li>
-                        <li>Brand + messaging system refresh</li>
-                        <li>Funnel architecture and build</li>
-                        <li>AI-assisted content infrastructure</li>
-                        <li>Conversion-driven redesign</li>
-                        <li>Integrated automation system</li>
-                      </ul>
+
+                    <div className="flex h-full items-center justify-center">
+                      <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                        <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                        <p className="mt-3 text-center text-sm text-white/70">
+                          Project Builds Visual Placeholder
+                        </p>
+                      </div>
                     </div>
-                    <Link
-                      href="/contact"
-                      className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-                    >
-                      Start a Project
-                    </Link>
                   </div>
                 </article>
 
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-10 sm:p-12">
                   <div className="space-y-4">
                     <h3 className="text-2xl text-white sm:text-3xl">
-                      Integrated Build
+                      Integrated Builds
                     </h3>
                     <p className="text-lg text-white">
                       <strong>Starting at $10,000</strong>
