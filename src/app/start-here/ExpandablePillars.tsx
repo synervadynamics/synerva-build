@@ -142,9 +142,6 @@ export default function ExpandablePillars() {
                         <div className="flex h-full items-center justify-center">
                           <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                             <div className="aspect-[5/4] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                            <p className="mt-3 text-center text-sm text-white/70">
-                              {pillar.title} Visual Placeholder
-                            </p>
                           </div>
                         </div>
                       </div>

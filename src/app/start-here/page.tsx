@@ -75,9 +75,6 @@ export default function StartHerePage() {
                 <div className="flex h-full items-center justify-center">
                   <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                     <div className="aspect-[4/5] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                    <p className="mt-3 text-center text-sm text-white/70">
-                      Positioning Visual Placeholder
-                    </p>
                   </div>
                 </div>
               </div>
@@ -145,9 +142,6 @@ export default function StartHerePage() {
                     <div className="flex h-full items-center justify-center">
                       <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                         <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                        <p className="mt-3 text-center text-sm text-white/70">
-                          Focused Work Visual Placeholder
-                        </p>
                       </div>
                     </div>
                   </div>
@@ -193,34 +187,51 @@ export default function StartHerePage() {
                     <div className="flex h-full items-center justify-center">
                       <div className="w-full max-w-[260px] rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                         <div className="aspect-[9/16] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                        <p className="mt-3 text-center text-sm text-white/70">
-                          Project Builds Visual Placeholder
-                        </p>
                       </div>
                     </div>
                   </div>
                 </article>
 
                 <article className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-10 sm:p-12">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl text-white sm:text-3xl">
-                      Integrated Builds
-                    </h3>
-                    <p className="text-lg text-white">
-                      <strong>Starting at $10,000</strong>
-                    </p>
-                    <p className="text-base text-white/80">
-                      Strategy, brand, digital infrastructure, and automation aligned into one operating system.
-                    </p>
-                    <p className="text-base text-white/80">
-                      For companies ready to eliminate fragmentation and build durable architecture.
-                    </p>
-                    <Link
-                      href="/contact"
-                      className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
-                    >
-                      Discuss an Integrated Build
-                    </Link>
+                  <div className="flex items-start justify-between">
+                    <div className="w-[60%] max-w-[560px] space-y-4">
+                      <h3 className="text-2xl text-white sm:text-3xl">
+                        Integrated Build
+                      </h3>
+                      <p className="text-lg text-white">
+                        <strong>Starting at $10,000</strong>
+                      </p>
+                      <p className="text-base text-white/80">
+                        Strategy, brand, digital infrastructure,
+                      </p>
+                      <p className="text-base text-white/80">
+                        and automation aligned
+                      </p>
+                      <p className="text-base text-white/80">
+                        into one operating system.
+                      </p>
+                      <div className="h-2" aria-hidden="true" />
+                      <p className="text-base text-white/80">
+                        For companies ready
+                      </p>
+                      <p className="text-base text-white/80">
+                        to eliminate fragmentation
+                      </p>
+                      <p className="text-base text-white/80">
+                        and build durable architecture.
+                      </p>
+                      <Link
+                        href="/contact"
+                        className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white/90"
+                      >
+                        Discuss an Integrated Build
+                      </Link>
+                    </div>
+
+                    <div
+                      className="integrated-image-placeholder w-[40%] min-h-[240px]"
+                      style={{ borderRadius: "inherit", background: "transparent" }}
+                    />
                   </div>
                 </article>
               </div>
@@ -265,9 +276,6 @@ export default function StartHerePage() {
 
                 <div className="rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-6">
                   <div className="aspect-[16/9] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                  <p className="mt-4 text-sm text-white/70">
-                    Operator Session Visual Placeholder
-                  </p>
                 </div>
               </div>
             </div>
@@ -305,9 +313,6 @@ export default function StartHerePage() {
                 <div className="flex h-full items-center justify-center">
                   <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
                     <div className="aspect-square w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
-                    <p className="mt-3 text-center text-sm text-white/70">
-                      Process Visual Placeholder
-                    </p>
                   </div>
                 </div>
               </div>
