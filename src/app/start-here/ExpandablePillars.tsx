@@ -5,6 +5,7 @@ import { useState } from "react";
 type Pillar = {
   id: string;
   title: string;
+  intro: string;
   lines: string[];
   entryRange: string;
 };
@@ -13,6 +14,8 @@ const pillars: Pillar[] = [
   {
     id: "strategy-direction",
     title: "Strategy & Direction",
+    intro:
+      "Strategic definition that sharpens positioning, clarifies leverage, and sets the execution path before anything is built.",
     lines: [
       "Business and product strategy",
       "Positioning and differentiation",
@@ -27,6 +30,8 @@ const pillars: Pillar[] = [
   {
     id: "brand-messaging",
     title: "Brand & Messaging",
+    intro:
+      "Brand systems that translate positioning into language, identity, and assets that hold under real-world pressure.",
     lines: [
       "Brand strategy and narrative",
       "Visual identity systems",
@@ -43,6 +48,8 @@ const pillars: Pillar[] = [
   {
     id: "digital-product-builds",
     title: "Digital & Product Builds",
+    intro:
+      "High-performance digital assets designed, engineered, and optimized to move the business forward.",
     lines: [
       "Websites and landing pages",
       "Product and app UI/UX",
@@ -57,6 +64,8 @@ const pillars: Pillar[] = [
   {
     id: "automation-optimization",
     title: "Automation & Optimization",
+    intro:
+      "Operational systems that reduce friction, increase output, and compound efficiency across the organization.",
     lines: [
       "Workflow automation",
       "Internal tools and dashboards",
@@ -124,9 +133,12 @@ export default function ExpandablePillars() {
                       opacity: isOpen ? 1 : 0,
                     }}
                   >
-                    <div className="border-t border-white/10 px-6 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-6">
-                      <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-                        <div className="space-y-4">
+                    <div className="border-t border-white/10 px-6 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-5">
+                      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+                        <div className="space-y-3">
+                          <p className="mb-4 text-base font-normal text-white/80 sm:text-base">
+                            {pillar.intro}
+                          </p>
                           <p className="text-base text-white">
                             <strong>{pillar.entryRange}</strong>
                           </p>
@@ -139,9 +151,9 @@ export default function ExpandablePillars() {
                           </div>
                         </div>
 
-                        <div className="flex h-full items-center justify-center">
-                          <div className="w-full max-w-sm rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
-                            <div className="aspect-[5/4] w-full rounded-2xl border border-dashed border-white/25 bg-black/20" />
+                        <div className="flex h-full items-start justify-center lg:justify-end">
+                          <div className="w-full max-w-md rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.05] p-4">
+                            <div className="aspect-[3/2] w-full rounded-2xl border border-dashed border-white/25 bg-black/20 bg-center bg-cover" />
                           </div>
                         </div>
                       </div>
