@@ -75,7 +75,7 @@ export default function ExpandablePillars() {
   return (
     <section className="relative overflow-visible px-6 py-[100px] sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl space-y-10">
-        <div className="rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.02] p-8 sm:p-10">
+        <div className="rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.02] p-8 sm:p-10">
           <div className="max-w-4xl space-y-4">
             <h2 className="text-3xl text-white sm:text-4xl">Need Something Specific?</h2>
             <p className="text-base text-white/80 sm:text-lg">
@@ -96,7 +96,7 @@ export default function ExpandablePillars() {
               return (
                 <article
                   key={pillar.id}
-                  className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.28)] bg-white/[0.03]"
+                  className="glass-panel rounded-3xl border !border-[rgba(245,241,230,0.62)] bg-white/[0.03]"
                 >
                   <h3 className="text-2xl text-white sm:text-3xl">
                     <button
