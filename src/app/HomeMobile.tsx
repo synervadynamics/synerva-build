@@ -30,7 +30,7 @@ export default function HomeMobile() {
             <span aria-hidden className="h-9 w-9" />
           </div>
           <div
-            className="relative aspect-[1640/981] w-full overflow-hidden rounded-[14px] border border-white/10 bg-white/5 max-h-[34vh] sm:max-h-none"
+            className={`relative aspect-[1640/981] w-full overflow-hidden rounded-[14px] bg-white/5 max-h-[34vh] sm:max-h-none ${styles.imageFrame}`}
           >
             <Image
               src="/mobile-images/homepage/hero.png"

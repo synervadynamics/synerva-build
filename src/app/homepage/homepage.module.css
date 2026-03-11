@@ -238,7 +238,6 @@
   .sdHome {
     --signal-cyan: var(--ink-header);
     --panel-outline-cyan: #2BB8C6;
-    --image-outline-cyan: #1F8F9C;
   }
 
   .sdHome h1,
@@ -284,12 +283,6 @@
   .sdHome :global(.border-white\/5) {
     border: 1px solid var(--panel-outline-cyan) !important;
     box-shadow: none !important;
-  }
-
-  .sdHome img,
-  .sdHome :global(.image-card) img,
-  .sdHome :global(.hero-image) img {
-    border: 1px solid var(--image-outline-cyan) !important;
   }
 
   .sdHome button,
