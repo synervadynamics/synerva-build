@@ -245,24 +245,24 @@
   .sdHome h3,
   .sdHome :global(.section-title),
   .sdHome :global(.section-heading) {
-    color: var(--ink-header) !important;
+    color: var(--ink-body) !important;
   }
 
   .sdHome :global(.section-label) {
-    color: var(--ink-eyebrow) !important;
+    color: var(--cta-text) !important;
   }
 
   .sdHome p.uppercase,
   .sdHome span.uppercase,
   .sdHome p[class*="uppercase"],
   .sdHome span[class*="uppercase"] {
-    color: var(--ink-eyebrow) !important;
+    color: var(--cta-text) !important;
   }
 
   .sdHome :global(.panel) h1,
   .sdHome :global(.panel) h2,
   .sdHome :global(.panel) h3 {
-    color: var(--ink-header) !important;
+    color: var(--ink-body) !important;
   }
 
   .sdHome p,
