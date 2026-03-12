@@ -99,7 +99,7 @@
 }
 
 .homeMobileTheme .sectionOutline {
-  border: 1px solid rgba(58, 122, 254, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-radius: 12px !important;
   margin-top: 12px;
   box-shadow: none !important;
@@ -107,7 +107,7 @@
 
 .homeMobileTheme .sectionOutlineInteractive:hover,
 .homeMobileTheme .sectionOutlineInteractive:focus-within {
-  border-color: rgba(58, 122, 254, 0.28) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
 }
 
 .homeMobileTheme :global(:focus-visible) {

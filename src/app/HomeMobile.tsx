@@ -389,7 +389,7 @@ export default function HomeMobile() {
                 <div className="flex flex-col gap-2">
                   <div className={styles.publicationCover} aria-hidden>
                     <Image
-                      src="/mobile-images/homepage/constructed-innocence.webp"
+                      src="/inner-climate/7.png"
                       alt=""
                       fill
                       sizes="(max-width: 768px) 50vw, 180px"

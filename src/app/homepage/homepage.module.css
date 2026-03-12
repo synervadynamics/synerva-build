@@ -237,7 +237,7 @@
 @media (max-width: 768px) {
   .sdHome {
     --signal-cyan: var(--ink-header);
-    --panel-outline-cyan: #2BB8C6;
+    --panel-outline-cyan: rgba(255, 255, 255, 0.18);
   }
 
   .sdHome h1,
