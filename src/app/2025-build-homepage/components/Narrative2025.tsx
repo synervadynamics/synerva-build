@@ -1,0 +1,209 @@
+// Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { copy } from "../data/copy2025";
+import CtaPill from "./CtaPill2025";
+
+type NarrativeProps = {
+  mobileVariant?: "default" | "beats";
+};
+
+export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
+  const shouldReduceMotion = useReducedMotion();
+  const story = copy.story;
+  const mobileBeats = story.mobile?.beats ?? [];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mobileReadingContainerClasses =
+    "mx-auto w-full max-w-[26rem] px-4 sm:px-6";
+  const mobileBeatsWrapperClasses = "flex flex-col gap-4 sm:gap-6";
+  const mobileBeatClasses = "space-y-1.5 sm:space-y-2";
+
+  useEffect(() => {
+    if (mobileVariant === "beats") return;
+    if (shouldReduceMotion) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.from(".story-bullet", {
+        opacity: 0,
+        x: -20,
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 70%",
+        },
+      });
+    }, containerRef);
+    return () => ctx.revert();
+  }, [mobileVariant, shouldReduceMotion]);
+
+  return (
+    <section
+      id="narrative"
+      className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-20 sm:pt-14 lg:px-16 lg:pb-20 lg:pt-16"
+    >
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-8 text-white">
+        {mobileVariant === "beats" ? (
+          <>
+            <div className="lg:hidden">
+              <div className={mobileReadingContainerClasses}>
+                <div className={mobileBeatsWrapperClasses}>
+                  {mobileBeats.map((beat) => (
+                    <div key={beat.heading} className={mobileBeatClasses}>
+                      <h2 className="role-body text-xl font-light leading-snug text-white">
+                        {beat.heading}
+                      </h2>
+                      <p className="role-body text-[0.95rem] leading-6 text-white/78">
+                        {beat.body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="hidden flex-col gap-8 lg:flex">
+              <div className="space-y-5">
+                <div className="contrast-field space-y-5">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
+                    {story.eyebrow}
+                  </p>
+                  <h2
+                    data-type-compression="headline"
+                    data-type-compression-line-height="1.25"
+                    data-type-compression-letter-spacing="0"
+                    className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                  >
+                    {story.heading}
+                  </h2>
+                  <p
+                    data-type-compression="subhead"
+                    data-type-compression-line-height="1.5"
+                    data-type-compression-letter-spacing="0"
+                    className="role-orientation text-lg text-white/85"
+                  >
+                    {story.statement}
+                  </p>
+                  <p className="role-body text-base text-white/76">{story.proof}</p>
+                </div>
+                <CtaPill href={story.cta.href} variant="secondary">
+                  {story.cta.label} →
+                </CtaPill>
+              </div>
+              <motion.div
+                ref={containerRef}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
+              >
+                <div className="space-y-4">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
+                    System Guardrails
+                  </p>
+                  <ul className="space-y-2 text-sm text-white/78">
+                    {story.bullets.map((point) => (
+                      <li
+                        key={point}
+                        className="role-body story-bullet flex items-start gap-3"
+                      >
+                        <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
+                    Engagement Stance
+                  </p>
+                  <p className="role-body text-sm text-white/80">
+                    We pair precision systems with human judgment, so delivery stays
+                    fast without losing intent.
+                  </p>
+                  <p className="role-body text-sm text-white/74">
+                    Measured automation, tight guardrails, human oversight—momentum
+                    holds after launch.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="space-y-5">
+              <div className="contrast-field space-y-5">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
+                  {story.eyebrow}
+                </p>
+                <h2
+                  data-type-compression="headline"
+                  data-type-compression-line-height="1.25"
+                  data-type-compression-letter-spacing="0"
+                  className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
+                >
+                  {story.heading}
+                </h2>
+                <p
+                  data-type-compression="subhead"
+                  data-type-compression-line-height="1.5"
+                  data-type-compression-letter-spacing="0"
+                  className="role-orientation text-lg text-white/85"
+                >
+                  {story.statement}
+                </p>
+                <p className="role-body text-base text-white/76">{story.proof}</p>
+              </div>
+              <CtaPill href={story.cta.href} variant="secondary">
+                {story.cta.label} →
+              </CtaPill>
+            </div>
+            <motion.div
+              ref={containerRef}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
+            >
+              <div className="space-y-4">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
+                  System Guardrails
+                </p>
+                <ul className="space-y-2 text-sm text-white/78">
+                  {story.bullets.map((point) => (
+                    <li
+                      key={point}
+                      className="role-body story-bullet flex items-start gap-3"
+                    >
+                      <span className="mt-1 h-1.5 w-4 flex-shrink-0 rounded-full bg-sky-300/60" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
+                  Engagement Stance
+                </p>
+                <p className="role-body text-sm text-white/80">
+                  We pair precision systems with human judgment, so delivery stays
+                  fast without losing intent.
+                </p>
+                <p className="role-body text-sm text-white/74">
+                  Measured automation, tight guardrails, human oversight—momentum
+                  holds after launch.
+                </p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Narrative;

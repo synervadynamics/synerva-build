@@ -1,7 +1,7 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 
 import Image from "next/image";
-import homeStyles from "@/app/homepage/homepage.module.css";
+import homeStyles from "../homepage2025.module.css";
 
 export const About = () => {
   return (

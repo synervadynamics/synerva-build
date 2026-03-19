@@ -1,10 +1,10 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import { copy } from "@/data/copy";
+import { copy } from "../data/copy2025";
 import Image from "next/image";
-import CtaPill from "@/components/CtaPill";
-import homeStyles from "@/app/homepage/homepage.module.css";
+import CtaPill from "./CtaPill2025";
+import homeStyles from "../homepage2025.module.css";
 
 type SystemsProps = {
   mobileVariant?: "default" | "beats";

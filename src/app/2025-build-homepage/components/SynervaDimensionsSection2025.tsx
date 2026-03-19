@@ -1,20 +1,15 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 
 import Image from "next/image";
-import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
-import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
-import CtaPill from "@/components/CtaPill";
-import homeStyles from "@/app/homepage/homepage.module.css";
+import CtaPill from "./CtaPill2025";
+import homeStyles from "../homepage2025.module.css";
 
 export function SynervaDimensionsSection() {
-  const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
-    "The Quiet Divine",
-    "Quiet Divine",
-  );
-  const quietHero =
-    quietDivineImages.find(
-      (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
-    ) ?? quietDivineImages[0];
+  const quietDivineTitle = "Quiet Divine";
+  const quietHero = {
+    src: "/quiet-divine/1.png",
+    alt: "Quiet Divine artwork",
+  };
 
   const surfaceTensionHero = {
     src: "/surface-tension/10.png",

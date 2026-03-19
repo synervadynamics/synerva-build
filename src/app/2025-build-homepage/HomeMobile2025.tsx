@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
-import homeStyles from "@/app/homepage/homepage.module.css";
-import CtaPill from "@/components/CtaPill";
+import MobileShell2025 from "./MobileShell2025";
+import styles from "./mobile2025.module.css";
+import homeStyles from "./homepage2025.module.css";
+import CtaPill from "./components/CtaPill2025";
 
 export default function HomeMobile() {
   return (
     <main className={`sd-home ${homeStyles.sdHome} text-white ${styles.homeMobileTheme}`}>
-      <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
+      <MobileShell2025 backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           data-accent="blue"
           className="mt-6 flex flex-col gap-4 px-5 py-5"
@@ -459,7 +459,7 @@ export default function HomeMobile() {
             and choose the cleanest path forward.
           </p>
         </section>
-      </Mobile1Shell>
+      </MobileShell2025>
     </main>
   );
 }

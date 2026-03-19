@@ -4,9 +4,9 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
-import { copy } from "@/data/copy";
-import CtaPill from "@/components/CtaPill";
-import homeStyles from "@/app/homepage/homepage.module.css";
+import { copy } from "../data/copy2025";
+import CtaPill from "./CtaPill2025";
+import homeStyles from "../homepage2025.module.css";
 
 export const Publications = () => {
   const shouldReduceMotion = useReducedMotion();
