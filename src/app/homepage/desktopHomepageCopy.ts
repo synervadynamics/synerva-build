@@ -23,11 +23,12 @@ export const desktopHomepageCopy = {
       {
         label: "Build Logic",
         value:
-          "Clarity, structure, and execution carried through as one connected sequence.",
+          "Clarity, structure, and execution carried through as one coherent sequence.",
       },
       {
         label: "Core Systems",
-        value: "Verisense and Lucentra form the internal intelligence layer behind each build.",
+        value:
+          "Verisense and Lucentra: internal frameworks for clearer, more durable decisions.",
       },
       {
         label: "Working Method",
