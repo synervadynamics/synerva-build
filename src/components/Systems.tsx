@@ -8,25 +8,36 @@ import homeStyles from "@/app/homepage/homepage.module.css";
 
 type SystemsProps = {
   mobileVariant?: "default" | "beats";
+  content?: {
+    heading: string;
+    body: readonly string[];
+    cards: readonly {
+      title: "Verisense" | "Lucentra";
+      headline: string;
+      body: string;
+      image: string;
+      imageAlt: string;
+      cta: { label: string; href?: string };
+    }[];
+  };
 };
 
-export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
-  const sectionCopy = copy.systemsSection;
+export const Systems = ({ mobileVariant = "default", content }: SystemsProps) => {
+  const sectionCopy =
+    content ??
+    ({
+      heading: copy.systemsSection.heading,
+      body: copy.systemsSection.body.split("\n\n"),
+      cards: copy.systemsSection.cards.map((card) => ({
+        ...card,
+        cta:
+          card.title === "Verisense"
+            ? { label: "View Verisense", href: "https://synervadynamics.com/verisense" }
+            : { label: "Page coming soon" },
+      })),
+    } as SystemsProps["content"]);
   void mobileVariant;
-  const systemCards = sectionCopy.cards;
-  type CardCta = {
-    label: string;
-    href?: string;
-  };
-  const cardCtas: Record<"Verisense" | "Lucentra", CardCta> = {
-    Verisense: {
-      label: "View Verisense",
-      href: "https://synervadynamics.com/verisense",
-    },
-    Lucentra: {
-      label: "Page coming soon",
-    },
-  };
+  const systemCards = sectionCopy?.cards ?? [];
   return (
     <section
       id="systems"
@@ -40,13 +51,13 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
             data-type-compression-letter-spacing="0"
             className="role-authority section-header-lock text-center text-3xl leading-tight sm:text-4xl lg:text-[2.9rem] [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:2.9rem] lg:[--section-title-line:3.05rem]"
           >
-            {sectionCopy.heading}
+            {sectionCopy?.heading}
           </h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3 md:items-start md:gap-8 lg:gap-10">
           <div className="max-w-3xl space-y-4 text-base font-normal text-white/80 sm:text-lg">
-            {sectionCopy.body.split("\n\n").map((paragraph) => (
+            {(sectionCopy?.body ?? []).map((paragraph) => (
               <p
                 key={paragraph}
                 className="role-body whitespace-pre-line leading-relaxed"
@@ -56,7 +67,7 @@ export const Systems = ({ mobileVariant = "default" }: SystemsProps) => {
             ))}
           </div>
           {systemCards.map((card) => {
-            const cta = cardCtas[card.title as keyof typeof cardCtas];
+            const cta = card.cta;
             return (
               <article
                 key={card.title}

@@ -15,6 +15,7 @@ import { MainHero } from "@/app/homepage/MainHero";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import HomepageScrollGlow from "@/components/HomepageScrollGlow";
 import styles from "@/app/homepage/homepage.module.css";
+import { desktopHomepageCopy } from "@/app/homepage/desktopHomepageCopy";
 
 export default function HomeDesktop() {
   return (
@@ -26,22 +27,23 @@ export default function HomeDesktop() {
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <MainHero />
-        <Narrative />
-        <Offerings />
-        <Deliver />
+        <MainHero content={desktopHomepageCopy} />
+        <Narrative content={desktopHomepageCopy.narrative} />
+        <Offerings content={desktopHomepageCopy.offerings} />
+        <Deliver content={desktopHomepageCopy.deliver} />
         <SystemsThatHoldSection
+          content={desktopHomepageCopy.systemsThatHold}
           className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
           innerClassName="mx-auto w-full max-w-5xl"
         />
-        <Systems />
-        <Publications />
-        <Labs variant="signup-only" />
-        <SynervaDimensionsSection />
-        <Philosophy />
-        <Merch />
-        <About />
-        <Footer />
+        <Systems content={desktopHomepageCopy.systems} />
+        <Publications content={desktopHomepageCopy.publications} />
+        <Labs variant="signup-only" content={desktopHomepageCopy.previewAccess} />
+        <SynervaDimensionsSection content={desktopHomepageCopy.artwork} />
+        <Philosophy content={desktopHomepageCopy.philosophy} />
+        <Merch content={desktopHomepageCopy.merch} />
+        <About content={desktopHomepageCopy.founder} />
+        <Footer content={desktopHomepageCopy.footer} />
       </div>
     </main>
   );

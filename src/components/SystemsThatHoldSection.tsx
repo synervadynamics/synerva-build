@@ -4,13 +4,35 @@ type SystemsThatHoldSectionProps = {
   className?: string;
   innerClassName?: string;
   portraitPairClassName?: string;
+  content?: {
+    eyebrow: string;
+    heading: string;
+    cards: readonly { title: string; body: string }[];
+  };
 };
 
 export const SystemsThatHoldSection = ({
   className,
   innerClassName,
   portraitPairClassName,
+  content,
 }: SystemsThatHoldSectionProps) => {
+  const resolvedContent = content ?? {
+    eyebrow: "SYSTEMS THAT HOLD",
+    heading: "Designed to Survive Reality",
+    cards: [
+      {
+        title: "What Synerva Builds",
+        body:
+          "Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase.",
+      },
+      {
+        title: "How Synerva Operates",
+        body:
+          "Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork advances under real conditions\nwithout noise, drift, or heroics.",
+      },
+    ],
+  };
   const sectionClassName = ["flex flex-col", className]
     .filter(Boolean)
     .join(" ");
@@ -18,12 +40,12 @@ export const SystemsThatHoldSection = ({
   const pairClassName =
     portraitPairClassName ??
     `grid ${alignClassName} items-stretch gap-4 md:grid-cols-2 md:gap-5 lg:gap-6`;
-  const content = (
+  const sectionContent = (
     <div className="dsr-room filled-panel rounded-3xl border border-[#E0DCD4] bg-white/[0.04] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-7">
       <div className="flex flex-col gap-8">
         <div className={alignClassName}>
           <p className="role-body text-[0.7rem] uppercase tracking-[0.35em] text-white/65">
-            SYSTEMS THAT HOLD
+            {resolvedContent.eyebrow}
           </p>
           <h2
             data-type-compression="headline"
@@ -31,7 +53,7 @@ export const SystemsThatHoldSection = ({
             data-type-compression-letter-spacing="0"
             className="role-authority section-header-lock text-2xl leading-tight text-white sm:text-3xl lg:text-4xl [--section-title-size:1.5rem] [--section-title-line:2rem] [--section-title-tracking:-0.02em] sm:[--section-title-size:2rem] sm:[--section-title-line:2.25rem] lg:[--section-title-size:2.5rem] lg:[--section-title-line:2.75rem]"
           >
-            Designed to Survive Reality
+            {resolvedContent.heading}
           </h2>
         </div>
         <div className={pairClassName}>
@@ -46,10 +68,10 @@ export const SystemsThatHoldSection = ({
               />
             </div>
             <h2 className="role-body text-base font-light leading-snug text-white">
-              What Synerva Builds
+              {resolvedContent.cards[0]?.title}
             </h2>
             <p className="role-body whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
-              {"Synerva builds the underlying structure work depends on:\nshared interfaces, reusable components, and non-negotiable boundaries.\n\nConsistency is enforced by the system itself,\nnot by meetings, memory, or management.\n\nDurable capacity holds\nas scope, pace, and complexity increase."}
+              {resolvedContent.cards[0]?.body}
             </p>
           </div>
           <div className="filled-panel flex h-full flex-col gap-4 rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:gap-5 lg:p-5">
@@ -63,10 +85,10 @@ export const SystemsThatHoldSection = ({
               />
             </div>
             <h2 className="role-body text-base font-light leading-snug text-white">
-              How Synerva Operates
+              {resolvedContent.cards[1]?.title}
             </h2>
             <p className="role-body whitespace-pre-line text-[1.02rem] leading-6 text-white/75">
-              {"Synerva defines how the system responds\nwhen plans fail, signals conflict, or pressure arrives.\n\nDecisions resolve through explicit priorities and constraints,\nnot escalation or consensus.\n\nWork advances under real conditions\nwithout noise, drift, or heroics."}
+              {resolvedContent.cards[1]?.body}
             </p>
           </div>
         </div>
@@ -76,7 +98,7 @@ export const SystemsThatHoldSection = ({
 
   return (
     <section id="systems-that-hold" className={sectionClassName}>
-      {innerClassName ? <div className={innerClassName}>{content}</div> : content}
+      {innerClassName ? <div className={innerClassName}>{sectionContent}</div> : sectionContent}
     </section>
   );
 };

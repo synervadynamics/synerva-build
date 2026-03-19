@@ -10,12 +10,40 @@ import CtaPill from "@/components/CtaPill";
 
 type NarrativeProps = {
   mobileVariant?: "default" | "beats";
+  content?: {
+    eyebrow: string;
+    heading: string;
+    statement: string;
+    proof: string;
+    cta: { label: string; href: string };
+    panelEyebrow: string;
+    bullets: readonly string[];
+    stanceEyebrow: string;
+    stanceParagraphs: readonly string[];
+  };
 };
 
-export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
+export const Narrative = ({
+  mobileVariant = "default",
+  content,
+}: NarrativeProps) => {
   const shouldReduceMotion = useReducedMotion();
   const story = copy.story;
   const mobileBeats = story.mobile?.beats ?? [];
+  const desktopStory = content ?? {
+    eyebrow: story.eyebrow,
+    heading: story.heading,
+    statement: story.statement,
+    proof: story.proof,
+    cta: story.cta,
+    panelEyebrow: "System Guardrails",
+    bullets: story.bullets,
+    stanceEyebrow: "Engagement Stance",
+    stanceParagraphs: [
+      "We pair precision systems with human judgment, so delivery stays fast without losing intent.",
+      "Measured automation, tight guardrails, human oversight—momentum holds after launch.",
+    ],
+  };
   const containerRef = useRef<HTMLDivElement>(null);
   const mobileReadingContainerClasses =
     "mx-auto w-full max-w-[26rem] px-4 sm:px-6";
@@ -68,7 +96,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
               <div className="space-y-5">
                 <div className="contrast-field space-y-5">
                   <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
-                    {story.eyebrow}
+                    {desktopStory.eyebrow}
                   </p>
                   <h2
                     data-type-compression="headline"
@@ -76,7 +104,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                     data-type-compression-letter-spacing="0"
                     className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                   >
-                    {story.heading}
+                    {desktopStory.heading}
                   </h2>
                   <p
                     data-type-compression="subhead"
@@ -84,12 +112,12 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                     data-type-compression-letter-spacing="0"
                     className="role-orientation text-lg text-white/85"
                   >
-                    {story.statement}
+                    {desktopStory.statement}
                   </p>
-                  <p className="role-body text-base text-white/76">{story.proof}</p>
+                  <p className="role-body text-base text-white/76">{desktopStory.proof}</p>
                 </div>
-                <CtaPill href={story.cta.href} variant="secondary">
-                  {story.cta.label} →
+                <CtaPill href={desktopStory.cta.href} variant="secondary">
+                  {desktopStory.cta.label} →
                 </CtaPill>
               </div>
               <motion.div
@@ -102,10 +130,10 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
               >
                 <div className="space-y-4">
                   <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
-                    System Guardrails
+                    {desktopStory.panelEyebrow}
                   </p>
                   <ul className="space-y-2 text-sm text-white/78">
-                    {story.bullets.map((point) => (
+                    {desktopStory.bullets.map((point) => (
                       <li
                         key={point}
                         className="role-body story-bullet flex items-start gap-3"
@@ -118,15 +146,13 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                 </div>
                 <div className="space-y-4">
                   <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
-                    Engagement Stance
+                    {desktopStory.stanceEyebrow}
                   </p>
                   <p className="role-body text-sm text-white/80">
-                    We pair precision systems with human judgment, so delivery stays
-                    fast without losing intent.
+                    {desktopStory.stanceParagraphs[0]}
                   </p>
                   <p className="role-body text-sm text-white/74">
-                    Measured automation, tight guardrails, human oversight—momentum
-                    holds after launch.
+                    {desktopStory.stanceParagraphs[1]}
                   </p>
                 </div>
               </motion.div>
@@ -137,7 +163,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
             <div className="space-y-5">
               <div className="contrast-field space-y-5">
                 <p className="role-body text-xs uppercase tracking-[0.4em] text-white/62">
-                  {story.eyebrow}
+                {desktopStory.eyebrow}
                 </p>
                 <h2
                   data-type-compression="headline"
@@ -145,7 +171,7 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
-                  {story.heading}
+                  {desktopStory.heading}
                 </h2>
                 <p
                   data-type-compression="subhead"
@@ -153,12 +179,12 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-orientation text-lg text-white/85"
                 >
-                  {story.statement}
+                  {desktopStory.statement}
                 </p>
-                <p className="role-body text-base text-white/76">{story.proof}</p>
+                <p className="role-body text-base text-white/76">{desktopStory.proof}</p>
               </div>
-              <CtaPill href={story.cta.href} variant="secondary">
-                {story.cta.label} →
+              <CtaPill href={desktopStory.cta.href} variant="secondary">
+                {desktopStory.cta.label} →
               </CtaPill>
             </div>
             <motion.div
@@ -171,10 +197,10 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
             >
               <div className="space-y-4">
                 <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
-                  System Guardrails
+                  {desktopStory.panelEyebrow}
                 </p>
                 <ul className="space-y-2 text-sm text-white/78">
-                  {story.bullets.map((point) => (
+                  {desktopStory.bullets.map((point) => (
                     <li
                       key={point}
                       className="role-body story-bullet flex items-start gap-3"
@@ -187,15 +213,13 @@ export const Narrative = ({ mobileVariant = "default" }: NarrativeProps) => {
               </div>
               <div className="space-y-4">
                 <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
-                  Engagement Stance
+                  {desktopStory.stanceEyebrow}
                 </p>
                 <p className="role-body text-sm text-white/80">
-                  We pair precision systems with human judgment, so delivery stays
-                  fast without losing intent.
+                  {desktopStory.stanceParagraphs[0]}
                 </p>
                 <p className="role-body text-sm text-white/74">
-                  Measured automation, tight guardrails, human oversight—momentum
-                  holds after launch.
+                  {desktopStory.stanceParagraphs[1]}
                 </p>
               </div>
             </motion.div>

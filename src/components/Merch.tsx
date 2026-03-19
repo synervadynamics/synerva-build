@@ -8,12 +8,42 @@ import { copy } from "@/data/copy";
 import { merchV1Categories } from "@/data/merch-v1";
 import CtaPill from "@/components/CtaPill";
 
-export const Merch = () => {
+type MerchContent = {
+  eyebrow: string;
+  heading: string;
+  body: readonly string[];
+  microline: string;
+  ctas: {
+    primary: { label: string; href: string };
+    secondary: { label: string; href: string };
+  };
+  cards: readonly {
+    title: string;
+    description: string;
+    ctaLabel: string;
+    ctaHref: string;
+    previewImage: string;
+  }[];
+};
+
+export const Merch = ({ content }: { content?: MerchContent }) => {
   const shouldReduceMotion = useReducedMotion();
-  const merch = copy.merch;
+  const merch = content ?? {
+    eyebrow: copy.merch.eyebrow,
+    heading: copy.merch.heading,
+    body: copy.merch.body,
+    microline: copy.merch.microline,
+    ctas: copy.merch.ctas,
+    cards: merchV1Categories.map((card) => ({
+      title: card.title,
+      description: card.description,
+      ctaLabel: card.ctaLabel,
+      ctaHref: card.ctaHref,
+      previewImage: card.previewImage,
+    })),
+  };
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeCard =
-    merchV1Categories[activeIndex] ?? merchV1Categories[0] ?? null;
+  const activeCard = merch.cards[activeIndex] ?? merch.cards[0] ?? null;
 
   return (
     <section
@@ -70,7 +100,7 @@ export const Merch = () => {
               </div>
             </div>
             <div className="space-y-4 sm:hidden">
-              {merchV1Categories.map((card) => (
+              {merch.cards.map((card) => (
                 <article
                   key={card.title}
                   className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.03] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
@@ -113,7 +143,7 @@ export const Merch = () => {
             className="hidden space-y-6 sm:block"
           >
             <div className="grid gap-5">
-              {merchV1Categories.map((card, index) => (
+              {merch.cards.map((card, index) => (
                 <div
                   key={card.title}
                   onMouseEnter={() => setActiveIndex(index)}

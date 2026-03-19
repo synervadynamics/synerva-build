@@ -27,9 +27,31 @@ const offeringsMedia = {
   },
 } as const;
 
-export const Offerings = () => {
+type OfferingsContent = {
+  eyebrow: string;
+  heading: string;
+  body: string;
+  microline: string;
+  cards: readonly {
+    title: string;
+    meta: string;
+    text: string;
+    cta: string;
+    href: string;
+    image?: { src: string; alt: string; width: number; height: number };
+  }[];
+};
+
+export const Offerings = ({ content }: { content?: OfferingsContent }) => {
   const shouldReduceMotion = useReducedMotion();
-  const offerings = copy.offerings;
+  const offerings: OfferingsContent =
+    content ??
+    ({
+      ...copy.offerings,
+      cards: copy.offerings.cards.map((card) => ({
+        ...card,
+      })),
+    } as OfferingsContent);
 
   return (
     <section
@@ -67,6 +89,7 @@ export const Offerings = () => {
         >
           {offerings.cards.map((card) => {
             const media =
+              card.image ??
               offeringsMedia[card.title as keyof typeof offeringsMedia];
 
             return (

@@ -4,13 +4,43 @@ import { useState } from "react";
 
 type LabsProps = {
   variant?: "signup-only";
+  content?: {
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    body: readonly string[];
+    formEyebrow: string;
+    emailPlaceholder: string;
+    submitIdle: string;
+    submitLoading: string;
+    successMessage: string;
+    errorMessage: string;
+  };
 };
 
-export default function Labs(_props: LabsProps) {
+export default function Labs({ content }: LabsProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
+  const resolvedContent = content ?? {
+    eyebrow: "Preview Access",
+    heading: "Get Early Drops",
+    lead:
+      "Enter your email to get first access to new essays, tools, releases, and experiments from Synerva Dynamics.",
+    body: [
+      "You’ll receive original writing spanning psychology, business, technology, strategy, and real-world decision systems, plus early previews of upcoming publications, art releases, and product launches. Subscribers also get occasional member-only discounts and access to limited tools and resources not released publicly.",
+      "Every message is intentional, substantial, and respectful of your time.",
+      "No drip funnels. No algorithm games. Just signal.",
+      "Unsubscribe anytime.",
+    ],
+    formEyebrow: "Email Signup",
+    emailPlaceholder: "you@company.com",
+    submitIdle: "Subscribe",
+    submitLoading: "Submitting…",
+    successMessage: "Check your inbox to confirm your subscription.",
+    errorMessage: "Something went wrong. Please try again shortly.",
+  };
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
@@ -52,7 +82,7 @@ export default function Labs(_props: LabsProps) {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div className="flex flex-col gap-4">
               <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">
-                Preview Access
+                {resolvedContent.eyebrow}
               </p>
               <h2
                 data-type-compression="headline"
@@ -60,32 +90,25 @@ export default function Labs(_props: LabsProps) {
                 data-type-compression-letter-spacing="0"
                 className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
-                Get Early Drops
+                {resolvedContent.heading}
               </h2>
               <p className="role-body text-base leading-relaxed text-white/75">
-                Enter your email to get first access to new essays, tools,
-                releases, and experiments from Synerva Dynamics.
+                {resolvedContent.lead}
               </p>
               <p className="role-body text-sm leading-relaxed text-white/70">
-                You’ll receive original writing spanning psychology, business,
-                technology, strategy, and real-world decision systems, plus
-                early previews of upcoming publications, art releases, and
-                product launches. Subscribers also get occasional member-only
-                discounts and access to limited tools and resources not released
-                publicly.
+                {resolvedContent.body[0]}
                 <br />
                 <br />
-                Every message is intentional, substantial, and respectful of
-                your time.
+                {resolvedContent.body[1]}
                 <br />
-                No drip funnels. No algorithm games. Just signal.
+                {resolvedContent.body[2]}
                 <br />
-                Unsubscribe anytime.
+                {resolvedContent.body[3]}
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">
-                Email Signup
+                {resolvedContent.formEyebrow}
               </p>
               <form
                 onSubmit={handleSubmit}
@@ -95,24 +118,28 @@ export default function Labs(_props: LabsProps) {
                 <input
                   type="email"
                   name="email"
-                  placeholder="you@company.com"
+                  placeholder={resolvedContent.emailPlaceholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
                 <input
                   type="submit"
-                  value={status === "loading" ? "Submitting…" : "Subscribe"}
+                  value={
+                    status === "loading"
+                      ? resolvedContent.submitLoading
+                      : resolvedContent.submitIdle
+                  }
                   disabled={status === "loading"}
                 />
                 {status === "success" && (
                   <p className="role-body form-microcopy">
-                    Check your inbox to confirm your subscription.
+                    {resolvedContent.successMessage}
                   </p>
                 )}
                 {status === "error" && (
                   <p className="role-body form-microcopy">
-                    Something went wrong. Please try again shortly.
+                    {resolvedContent.errorMessage}
                   </p>
                 )}
               </form>

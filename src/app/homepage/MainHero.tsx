@@ -24,12 +24,46 @@ const sectionMap = [
 
 type MainHeroProps = {
   mobileVariant?: "default" | "beats";
+  content?: {
+    header: {
+      brandName: string;
+      sectionMap: readonly { id: string; label: string }[];
+    };
+    hero: {
+      eyebrow: string;
+      headline: readonly string[];
+      subhead: string;
+      primaryCta: { label: string; href: string };
+      secondaryCta: { label: string; href: string };
+      proofs: readonly { label: string; value: string }[];
+      cascadeItems: readonly string[];
+    };
+  };
 };
 
-export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
+export const MainHero = ({
+  mobileVariant = "default",
+  content,
+}: MainHeroProps) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
   const easeCurve = [0.16, 1, 0.3, 1] as Easing;
   const [isMobile, setIsMobile] = useState(false);
+  const hero = content?.hero ?? {
+    eyebrow: copy.hero.eyebrow,
+    headline: copy.hero.headline,
+    subhead: copy.hero.subhead,
+    primaryCta: { label: "START WITH A 30-MINUTE PLAN", href: "/contact" },
+    secondaryCta: { label: "EXPLORE OFFERINGS", href: "/offerings" },
+    proofs: copy.hero.proofs,
+    cascadeItems: [
+      "Web Systems",
+      "Automation Loops",
+      "Analytics Clarity",
+      "Brand Orchestration",
+    ],
+  };
+  const brandName = content?.header.brandName ?? "Synerva Dynamics";
+  const resolvedSectionMap = content?.header.sectionMap ?? sectionMap;
 
   useEffect(() => {
     const updateIsMobile = () => {
@@ -55,7 +89,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
             <div className="flex flex-col lg:hidden">
               <div className="flex flex-col justify-start gap-3 pb-2 pt-4 min-h-0 sm:min-h-[80svh] sm:justify-center sm:gap-4 sm:pb-6 sm:pt-10">
                 <p className="role-body text-[0.65rem] uppercase tracking-[0.5em] text-white/60">
-                  {copy.hero.eyebrow}
+                  {hero.eyebrow}
                 </p>
                 <h1
                   data-type-compression="headline"
@@ -63,7 +97,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-authority section-header-lock text-4xl font-light leading-[1.05] text-white [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em]"
                 >
-                  {copy.hero.headline.map((line) => (
+                  {hero.headline.map((line) => (
                     <span key={line} className="reveal-line">
                       <span className="block">{line}</span>
                     </span>
@@ -77,7 +111,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-body text-2xl font-light leading-snug text-white"
                 >
-                  {copy.hero.title}
+                  {hero.headline.join(" ")}
                 </h2>
                 <p
                   data-type-compression="subhead"
@@ -85,7 +119,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-orientation text-[0.95rem] leading-6 text-white/80"
                 >
-                  {copy.hero.subhead}
+                  {hero.subhead}
                 </p>
               </div>
               <div className="flex flex-col justify-start gap-3 py-3 min-h-0 sm:min-h-[70svh] sm:justify-center sm:py-8">
@@ -95,7 +129,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-body text-lg font-light leading-snug text-white/85"
                 >
-                  {copy.hero.proofs[2].value}
+                  {hero.proofs[2]?.value}
                 </h2>
               </div>
             </div>
@@ -105,16 +139,16 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                   href="/"
                   className="role-body font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
                 >
-                  Synerva Dynamics
+                  {brandName}
                 </Link>
-                <SectionIndex sections={sectionMap} variant="homepage" />
+                <SectionIndex sections={[...resolvedSectionMap]} variant="homepage" />
               </header>
               <div className="flex flex-col gap-10">
                 <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
                   <div className="flex flex-col gap-6 text-balance">
                     <div className="contrast-field space-y-6">
                       <p className="role-body text-xs uppercase tracking-[0.5em] text-white/60">
-                        {copy.hero.eyebrow}
+                        {hero.eyebrow}
                       </p>
                       <h1
                         data-type-compression="headline"
@@ -122,7 +156,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                         data-type-compression-letter-spacing="0"
                         className="role-authority section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
                       >
-                        {copy.hero.headline.map((line) => (
+                        {hero.headline.map((line) => (
                           <span key={line} className="reveal-line">
                             <span className="block">{line}</span>
                           </span>
@@ -134,14 +168,14 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                         data-type-compression-letter-spacing="0"
                       className="role-orientation max-w-3xl text-lg text-white/80 sm:text-xl"
                     >
-                      {copy.hero.subhead}
+                      {hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <CtaPill href="/contact" variant="primary">
-                        START WITH A 30-MINUTE PLAN
+                      <CtaPill href={hero.primaryCta.href} variant="primary">
+                        {hero.primaryCta.label}
                       </CtaPill>
-                      <CtaPill href="/offerings" variant="secondary">
-                        EXPLORE OFFERINGS
+                      <CtaPill href={hero.secondaryCta.href} variant="secondary">
+                        {hero.secondaryCta.label}
                       </CtaPill>
                     </div>
                   </div>
@@ -166,7 +200,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
 
                 {!isMobile && (
                   <div className="grid gap-6 text-sm text-white/70 grid-cols-2 md:grid-cols-3">
-                    {copy.hero.proofs.map(({ label, value }, index) => (
+                    {hero.proofs.map(({ label, value }, index) => (
                       <motion.div
                         key={label}
                         initial={{ opacity: 0, y: 20 }}
@@ -192,10 +226,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
               <CascadingText
                 className="role-body mt-0 pt-0 sm:mt-8 sm:pt-6"
                 items={[
-                  "Web Systems",
-                  "Automation Loops",
-                  "Analytics Clarity",
-                  "Brand Orchestration",
+                  ...hero.cascadeItems,
                 ]}
                 speed={70}
               />
@@ -208,16 +239,16 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                 href="/"
                 className="role-body font-mono text-xs uppercase tracking-[0.5em] text-white/70 hover:text-white"
               >
-                Synerva Dynamics
+                {brandName}
               </Link>
-              <SectionIndex sections={sectionMap} variant="homepage" />
+              <SectionIndex sections={[...resolvedSectionMap]} variant="homepage" />
             </header>
             <div className="flex flex-col gap-10">
               <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
                 <div className="flex flex-col gap-6 text-balance">
                   <div className="contrast-field space-y-6">
                     <p className="role-body text-xs uppercase tracking-[0.5em] text-white/60">
-                      {copy.hero.eyebrow}
+                      {hero.eyebrow}
                     </p>
                     <h1
                       data-type-compression="headline"
@@ -225,7 +256,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       data-type-compression-letter-spacing="0"
                       className="role-authority section-header-lock text-4xl font-light leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
                     >
-                      {copy.hero.headline.map((line) => (
+                      {hero.headline.map((line) => (
                         <span key={line} className="reveal-line">
                           <span className="block">{line}</span>
                         </span>
@@ -237,14 +268,14 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
                       data-type-compression-letter-spacing="0"
                       className="role-orientation max-w-3xl text-lg text-white/80 sm:text-xl"
                     >
-                      {copy.hero.subhead}
+                      {hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <CtaPill href="/contact" variant="primary">
-                        START WITH A 30-MINUTE PLAN
+                      <CtaPill href={hero.primaryCta.href} variant="primary">
+                        {hero.primaryCta.label}
                       </CtaPill>
-                      <CtaPill href="/offerings" variant="secondary">
-                        EXPLORE OFFERINGS
+                      <CtaPill href={hero.secondaryCta.href} variant="secondary">
+                        {hero.secondaryCta.label}
                       </CtaPill>
                     </div>
                   </div>
@@ -269,7 +300,7 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
 
               {!isMobile && (
                 <div className="grid gap-6 text-sm text-white/70 grid-cols-2 md:grid-cols-3">
-                  {copy.hero.proofs.map(({ label, value }, index) => (
+                  {hero.proofs.map(({ label, value }, index) => (
                     <motion.div
                       key={label}
                       initial={{ opacity: 0, y: 20 }}
@@ -294,14 +325,9 @@ export const MainHero = ({ mobileVariant = "default" }: MainHeroProps) => {
             </div>
             <CascadingText
               className="role-body mt-0 pt-0 sm:mt-8 sm:pt-6"
-              items={[
-                "Web Systems",
-                "Automation Loops",
-                "Analytics Clarity",
-                "Brand Orchestration",
-              ]}
-              speed={70}
-            />
+                items={[...hero.cascadeItems]}
+                speed={70}
+              />
           </div>
         )}
       </div>

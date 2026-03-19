@@ -72,9 +72,18 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
 
 type DeliverProps = {
   mobileVariant?: "default" | "beats";
+  content?: {
+    heading: string;
+    intro: string;
+    utility: string;
+    items: readonly DeliverItem[];
+  };
 };
 
-export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
+export const Deliver = ({
+  mobileVariant = "default",
+  content,
+}: DeliverProps) => {
   const isMobileBeats = mobileVariant === "beats";
   const shouldReduceMotion = useReducedMotion();
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -86,7 +95,13 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
   const focusY = useTransform(scrollYProgress, [0, 1], ["20%", "70%"]);
   const gradient = useMotionTemplate`radial-gradient(circle at 25% ${focusY}, rgba(64,148,178,0.24), transparent 55%)`;
   const [activeIndex, setActiveIndex] = useState(0);
-  const deliverItems = copy.deliver.items as readonly DeliverItem[];
+  const deliverSection = content ?? {
+    heading: copy.deliver.heading,
+    intro: copy.deliver.intro,
+    utility: "Scroll to explore",
+    items: copy.deliver.items as readonly DeliverItem[],
+  };
+  const deliverItems = deliverSection.items;
   const activeItem: DeliverItem = deliverItems[activeIndex] ?? deliverItems[0];
   const activeMediaSize = activeItem.video?.src
     ? mediaDimensions[activeItem.video.src]
@@ -156,7 +171,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
               <div className={mobileReadingContainerClasses}>
                 <div className="space-y-5">
                   <h2 className="role-authority text-2xl font-light leading-snug text-white">
-                    {copy.deliver.heading}
+                    {deliverSection.heading}
                   </h2>
                   <div className="space-y-5">
                     {deliverItems.map((item) => {
@@ -203,7 +218,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-authority section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
                 >
-                  {copy.deliver.heading}
+                  {deliverSection.heading}
                 </h2>
                 <p
                   data-type-compression="subhead"
@@ -211,17 +226,17 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                   data-type-compression-letter-spacing="0"
                   className="role-orientation text-lg text-white/72"
                 >
-                  {copy.deliver.intro}
+                  {deliverSection.intro}
                 </p>
                 <div className="role-body flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
-                  <span>Scroll to explore</span>
+                  <span>{deliverSection.utility}</span>
                   <div className="h-px flex-1 bg-white/10" />
                   <span>{Math.round(activeProgress)}%</span>
                 </div>
               </header>
               <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
                 <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
-                  {copy.deliver.items.map((item, index) => (
+                  {deliverItems.map((item, index) => (
                     <motion.article
                       key={item.title}
                       custom={index}
@@ -329,7 +344,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
               </div>
               <CascadingText
                 className="role-body pt-4"
-                items={copy.deliver.items.map((item) => item.title)}
+                items={deliverItems.map((item) => item.title)}
                 speed={60}
               />
             </div>
@@ -343,7 +358,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 data-type-compression-letter-spacing="0"
                 className="role-authority section-header-lock text-3xl leading-tight text-white sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
-                {copy.deliver.heading}
+                {deliverSection.heading}
               </h2>
               <p
                 data-type-compression="subhead"
@@ -351,17 +366,17 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
                 data-type-compression-letter-spacing="0"
                 className="role-orientation text-lg text-white/72"
               >
-                {copy.deliver.intro}
+                {deliverSection.intro}
               </p>
               <div className="role-body flex items-center gap-4 text-xs uppercase tracking-[0.3em] text-white/50">
-                <span>Scroll to explore</span>
+                <span>{deliverSection.utility}</span>
                 <div className="h-px flex-1 bg-white/10" />
                 <span>{Math.round(activeProgress)}%</span>
               </div>
             </header>
             <div className="bubble-drift deliver-clean grid gap-8 rounded-[2.5rem] border border-white/12 bg-transparent p-5 shadow-[0_50px_160px_-80px_rgba(0,0,0,0.86)] sm:p-6 lg:grid-cols-[1.2fr_0.8fr] lg:p-8">
               <div ref={cardsRef} className="grid gap-5 lg:grid-cols-2">
-                {copy.deliver.items.map((item, index) => (
+                {deliverItems.map((item, index) => (
                   <motion.article
                     key={item.title}
                     custom={index}
@@ -469,7 +484,7 @@ export const Deliver = ({ mobileVariant = "default" }: DeliverProps) => {
             </div>
             <CascadingText
               className="role-body pt-4"
-              items={copy.deliver.items.map((item) => item.title)}
+              items={deliverItems.map((item) => item.title)}
               speed={60}
             />
           </>

@@ -6,7 +6,22 @@ import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
 import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
-export function SynervaDimensionsSection() {
+export function SynervaDimensionsSection({
+  content,
+}: {
+  content?: {
+    eyebrow: string;
+    heading: string;
+    paragraphs: readonly string[];
+    cards: readonly {
+      concept: string;
+      description: string;
+      title: string;
+      cta: string;
+      href: string;
+    }[];
+  };
+}) {
   const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
     "The Quiet Divine",
     "Quiet Divine",
@@ -23,6 +38,40 @@ export function SynervaDimensionsSection() {
   const innerClimateHero = {
     src: "/inner-climate/7.png",
     alt: "Inner Climate artwork",
+  };
+  const resolvedContent = content ?? {
+    eyebrow: "ARTWORK",
+    heading: "Synerva Dimensions",
+    paragraphs: [
+      "Synerva Dimensions is a visual research lab—where concepts are built into repeatable, automated systems that compound progress and translate across creative domains globally.",
+      "These works are not marketing artifacts. They are templates. What survives becomes architecture now..",
+    ],
+    cards: [
+      {
+        concept: "Attention Under Internal Authority",
+        description:
+          "Examines how focus stabilizes when self-governance replaces external cues.",
+        title: quietDivineTitle,
+        cta: "View Quiet Divine",
+        href: "/dimensions/quiet-divine",
+      },
+      {
+        concept: "Coherence Under Contact",
+        description:
+          "Examines how internal stability behaves once returned to the world and subjected to pressure.",
+        title: "Surface Tension",
+        cta: "View Surface Tension",
+        href: "/dimensions/surface-tension",
+      },
+      {
+        concept: "THE CLIMATE THAT SHAPES WHAT COMES NEXT",
+        description:
+          "Explores the environment that quietly determines how the world is felt and understood.",
+        title: "Inner Climate",
+        cta: "View Inner Climate",
+        href: "/dimensions/inner-climate",
+      },
+    ],
   };
 
   return (
@@ -44,7 +93,7 @@ export function SynervaDimensionsSection() {
           <div className="space-y-1">
             <div className="space-y-1">
               <p className="role-body text-sm uppercase tracking-[0.28em] text-white/60">
-                ARTWORK
+                {resolvedContent.eyebrow}
               </p>
               <h2
                 data-type-compression="headline"
@@ -52,19 +101,12 @@ export function SynervaDimensionsSection() {
                 data-type-compression-letter-spacing="-0.025"
                 className="role-authority section-header-lock text-3xl font-semibold tracking-tight sm:text-4xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem]"
               >
-                Synerva Dimensions
+                {resolvedContent.heading}
               </h2>
             </div>
             <div className="max-w-3xl space-y-2 text-sm text-white/80 sm:text-base">
-              <p className="role-body">
-                Synerva Dimensions is a visual research lab—where concepts are
-                built into repeatable, automated systems that compound progress
-                and translate across creative domains globally.
-              </p>
-              <p className="role-body">
-                These works are not marketing artifacts. They are templates.
-                What survives becomes architecture now..
-              </p>
+              <p className="role-body">{resolvedContent.paragraphs[0]}</p>
+              <p className="role-body">{resolvedContent.paragraphs[1]}</p>
             </div>
           </div>
 
@@ -92,17 +134,16 @@ export function SynervaDimensionsSection() {
                 </div>
               ) : null}
               <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
-                Attention Under Internal Authority
+                {resolvedContent.cards[0]?.concept}
               </p>
               <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
-                Examines how focus stabilizes when self-governance replaces
-                external cues.
+                {resolvedContent.cards[0]?.description}
               </p>
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
-                {quietDivineTitle}
+                {resolvedContent.cards[0]?.title}
               </h3>
-              <CtaPill href="/dimensions/quiet-divine" variant="secondary" className="mt-4">
-                View Quiet Divine →
+              <CtaPill href={resolvedContent.cards[0]?.href ?? "/dimensions/quiet-divine"} variant="secondary" className="mt-4">
+                {resolvedContent.cards[0]?.cta} →
               </CtaPill>
             </div>
 
@@ -129,17 +170,16 @@ export function SynervaDimensionsSection() {
                 </div>
               ) : null}
               <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
-                Coherence Under Contact
+                {resolvedContent.cards[1]?.concept}
               </p>
               <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
-                Examines how internal stability behaves once returned to the
-                world and subjected to pressure.
+                {resolvedContent.cards[1]?.description}
               </p>
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
-                Surface Tension
+                {resolvedContent.cards[1]?.title}
               </h3>
-              <CtaPill href="/dimensions/surface-tension" variant="secondary" className="mt-4">
-                View Surface Tension →
+              <CtaPill href={resolvedContent.cards[1]?.href ?? "/dimensions/surface-tension"} variant="secondary" className="mt-4">
+                {resolvedContent.cards[1]?.cta} →
               </CtaPill>
             </div>
 
@@ -163,16 +203,16 @@ export function SynervaDimensionsSection() {
                 </div>
               </div>
               <p className="role-body max-w-[24ch] text-[11px] uppercase tracking-[0.24em] text-white/60 leading-tight">
-                THE CLIMATE THAT SHAPES WHAT COMES NEXT
+                {resolvedContent.cards[2]?.concept}
               </p>
               <p className="role-body mt-1 max-w-[31ch] text-xs text-white/70 sm:text-sm leading-tight">
-                Explores the environment that quietly determines how the world is felt and understood.
+                {resolvedContent.cards[2]?.description}
               </p>
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
-                Inner Climate
+                {resolvedContent.cards[2]?.title}
               </h3>
-              <CtaPill href="/dimensions/inner-climate" variant="secondary" className="mt-4">
-                View Inner Climate →
+              <CtaPill href={resolvedContent.cards[2]?.href ?? "/dimensions/inner-climate"} variant="secondary" className="mt-4">
+                {resolvedContent.cards[2]?.cta} →
               </CtaPill>
             </div>
           </div>

@@ -3,7 +3,22 @@
 import Image from "next/image";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
-export const About = () => {
+export const About = ({
+  content,
+}: {
+  content?: { eyebrow: string; heading: string; paragraphs: readonly string[] };
+}) => {
+  const resolvedContent = content ?? {
+    eyebrow: "FOUNDER",
+    heading: "About the Founder",
+    paragraphs: [
+      "Synerva Dynamics was founded by Kyle Gruarin, a marketing operator, business owner, and systems builder who learned most of what he knows by doing things the hard way and paying attention when they went wrong.",
+      "Kyle holds a BA in Psychology, an MBA, and is steadily chipping away at a BSc in Computer Science. He has also spent years working in marketing management, marketing research, and business ownership roles. His work has involved designing strategy, analyzing behavior, and making decisions with real consequences attached. Budgets. Deadlines. Clients. Mistakes. Fixes.",
+      "This was never marketing as theory. It was marketing as practice. Work done with imperfect information, limited time, and no room to hide behind slides.",
+      "Before Synerva, Kyle spent fifteen years in bars and restaurants, working nearly every role imaginable. Serving. Bartending. Managing. Cleaning up messes in real time, where mistakes are immediate and recovery matters more than being right. It’s an unusually effective way to learn how people, pressure, and systems actually behave.",
+      "Synerva grew out of that overlap. The studio focuses on building systems that compound. Visual systems. Cognitive frameworks. Operational structures. Not to impress, but to reduce friction and make good decisions easier to repeat when things get messy.",
+    ],
+  };
   return (
     <section
       id="about"
@@ -14,7 +29,7 @@ export const About = () => {
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
             <div className="flex max-w-2xl flex-col gap-4">
               <p className="role-body text-xs uppercase tracking-[0.4em] text-white/60">
-                FOUNDER
+                {resolvedContent.eyebrow}
               </p>
               <h2
                 data-type-compression="headline"
@@ -22,44 +37,14 @@ export const About = () => {
                 data-type-compression-letter-spacing="0"
                 className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
               >
-                About the Founder
+                {resolvedContent.heading}
               </h2>
               <div className="space-y-3 text-sm leading-snug text-white/80 sm:text-base">
-                <p className="role-body">
-                  Synerva Dynamics was founded by Kyle Gruarin, a marketing
-                  operator, business owner, and systems builder who learned
-                  most of what he knows by doing things the hard way and paying
-                  attention when they went wrong.
-                </p>
-                <p className="role-body">
-                  Kyle holds a BA in Psychology, an MBA, and is steadily
-                  chipping away at a BSc in Computer Science. He has also spent years working in
-                  marketing management, marketing research, and business
-                  ownership roles. His work has involved designing strategy,
-                  analyzing behavior, and making decisions with real
-                  consequences attached. Budgets. Deadlines. Clients. Mistakes.
-                  Fixes.
-                </p>
-                <p className="role-body">
-                  This was never marketing as theory. It was marketing as
-                  practice. Work done with imperfect information, limited time,
-                  and no room to hide behind slides.
-                </p>
-                <p className="role-body">
-                  Before Synerva, Kyle spent fifteen years in bars and
-                  restaurants, working nearly every role imaginable. Serving.
-                  Bartending. Managing. Cleaning up messes in real time, where
-                  mistakes are immediate and recovery matters more than being
-                  right. It’s an unusually effective way to learn how people,
-                  pressure, and systems actually behave.
-                </p>
-                <p className="role-body">
-                  Synerva grew out of that overlap. The studio focuses on
-                  building systems that compound. Visual systems. Cognitive
-                  frameworks. Operational structures. Not to impress, but to
-                  reduce friction and make good decisions easier to repeat when
-                  things get messy.
-                </p>
+                {resolvedContent.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="role-body">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
 

@@ -8,9 +8,33 @@ import { copy } from "@/data/copy";
 import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
-export const Publications = () => {
+export const Publications = ({
+  content,
+}: {
+  content?: {
+    eyebrow: string;
+    itemLabel: string;
+    heading: string;
+    body: string;
+    items: readonly {
+      title: string;
+      teaser: string;
+      description: readonly string[];
+      cta: string;
+      href: string;
+      image: {
+        src: string;
+        alt: string;
+      };
+    }[];
+  };
+}) => {
   const shouldReduceMotion = useReducedMotion();
-  const publications = copy.publications;
+  const publications = content ?? {
+    eyebrow: "PUBLICATIONS",
+    itemLabel: "Publication",
+    ...copy.publications,
+  };
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const activeItem = publications.items[imageIndex];
@@ -28,7 +52,7 @@ export const Publications = () => {
         <div className="flex flex-col gap-5 text-white">
           <div className="contrast-field space-y-2">
             <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">
-              PUBLICATIONS
+              {publications.eyebrow}
             </p>
             <h2
               data-type-compression="headline"
@@ -70,7 +94,7 @@ export const Publications = () => {
                   </div>
                   <div className="space-y-2">
                     <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
-                      Publication
+                      {publications.itemLabel}
                     </p>
                     <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
                       {item.title}
@@ -169,7 +193,7 @@ export const Publications = () => {
                     aria-expanded={isActive}
                   >
                     <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
-                      Publication
+                      {publications.itemLabel}
                     </p>
                     <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
                       {item.title}

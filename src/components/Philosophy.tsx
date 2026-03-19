@@ -3,7 +3,12 @@
 
 import { copy } from "@/data/copy";
 
-export const Philosophy = () => {
+export const Philosophy = ({
+  content,
+}: {
+  content?: { quote: string; p1: string; p2: string };
+}) => {
+  const resolvedContent = content ?? copy.philosophy;
 
   return (
     <section
@@ -18,13 +23,13 @@ export const Philosophy = () => {
             data-type-compression-letter-spacing="0"
             className="role-authority section-header-lock text-3xl leading-tight sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
           >
-            {copy.philosophy.quote}
+            {resolvedContent.quote}
           </blockquote>
           <p className="role-body max-w-3xl text-lg text-white/80">
-            {copy.philosophy.p1}
+            {resolvedContent.p1}
           </p>
           <p className="role-body max-w-3xl text-lg text-white/80">
-            {copy.philosophy.p2}
+            {resolvedContent.p2}
           </p>
         </div>
       </div>
