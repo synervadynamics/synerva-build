@@ -128,7 +128,10 @@ export const Offerings = ({ content }: { content?: OfferingsContent }) => {
                   {card.text}
                 </p>
                 <div className="relative z-10 mt-auto pt-1 sm:pt-2">
-                  <CtaPill href={card.href} variant="secondary">
+                  <CtaPill
+                    href={card.href}
+                    variant={card.cta === "Start a Project" ? "directional" : "ghost"}
+                  >
                     {card.cta} →
                   </CtaPill>
                 </div>

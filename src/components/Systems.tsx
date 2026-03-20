@@ -95,16 +95,13 @@ export const Systems = ({ mobileVariant = "default", content }: SystemsProps) =>
                   </p>
                 </div>
                 {cta?.href ? (
-                  <CtaPill href={cta.href} variant="secondary">
+                  <CtaPill href={cta.href} variant="ghost">
                     {cta.label} →
                   </CtaPill>
                 ) : (
                   <CtaPill
-                    href="#"
-                    variant="secondary"
-                    className="pointer-events-none opacity-60"
-                    aria-disabled
-                    tabIndex={-1}
+                    variant="disabled"
+                    disabled
                   >
                     {cta.label}
                   </CtaPill>

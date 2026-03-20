@@ -142,7 +142,7 @@ export function SynervaDimensionsSection({
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 {resolvedContent.cards[0]?.title}
               </h3>
-              <CtaPill href={resolvedContent.cards[0]?.href ?? "/dimensions/quiet-divine"} variant="secondary" className="mt-4">
+              <CtaPill href={resolvedContent.cards[0]?.href ?? "/dimensions/quiet-divine"} variant="ghost" className="mt-4">
                 {resolvedContent.cards[0]?.cta} →
               </CtaPill>
             </div>
@@ -178,7 +178,7 @@ export function SynervaDimensionsSection({
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 {resolvedContent.cards[1]?.title}
               </h3>
-              <CtaPill href={resolvedContent.cards[1]?.href ?? "/dimensions/surface-tension"} variant="secondary" className="mt-4">
+              <CtaPill href={resolvedContent.cards[1]?.href ?? "/dimensions/surface-tension"} variant="ghost" className="mt-4">
                 {resolvedContent.cards[1]?.cta} →
               </CtaPill>
             </div>
@@ -211,7 +211,7 @@ export function SynervaDimensionsSection({
               <h3 className="role-body mt-3 text-2xl font-semibold tracking-tight">
                 {resolvedContent.cards[2]?.title}
               </h3>
-              <CtaPill href={resolvedContent.cards[2]?.href ?? "/dimensions/inner-climate"} variant="secondary" className="mt-4">
+              <CtaPill href={resolvedContent.cards[2]?.href ?? "/dimensions/inner-climate"} variant="ghost" className="mt-4">
                 {resolvedContent.cards[2]?.cta} →
               </CtaPill>
             </div>

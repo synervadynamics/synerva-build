@@ -77,10 +77,10 @@ export const Merch = ({ content }: { content?: MerchContent }) => {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 pt-1 sm:pt-2">
-              <CtaPill href={merch.ctas.primary.href} variant="primary">
+              <CtaPill href={merch.ctas.primary.href} variant="ghost">
                 {merch.ctas.primary.label} →
               </CtaPill>
-              <CtaPill href={merch.ctas.secondary.href} variant="secondary">
+              <CtaPill href={merch.ctas.secondary.href} variant="directional">
                 {merch.ctas.secondary.label} →
               </CtaPill>
             </div>
@@ -127,7 +127,7 @@ export const Merch = ({ content }: { content?: MerchContent }) => {
                       {card.description}
                     </p>
                   </div>
-                  <CtaPill href={card.ctaHref} variant="secondary">
+                  <CtaPill href={card.ctaHref} variant="ghost">
                     {card.ctaLabel} →
                   </CtaPill>
                 </article>
@@ -175,7 +175,7 @@ export const Merch = ({ content }: { content?: MerchContent }) => {
                       {card.description}
                     </p>
                   </div>
-                  <CtaPill href={card.ctaHref} variant="secondary" className="mt-4">
+                  <CtaPill href={card.ctaHref} variant="ghost" className="mt-4">
                     {card.ctaLabel} →
                   </CtaPill>
                 </div>

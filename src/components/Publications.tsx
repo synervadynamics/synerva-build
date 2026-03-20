@@ -75,8 +75,6 @@ export const Publications = ({
             {publications.items.map((item) => {
               const isCtaDisabled = !item.href;
               const isExternalLink = item.href.startsWith("http");
-              const isRockstarPlaybook =
-                item.title === "The Rockstar Server Playbook";
               return (
                 <article
                   key={item.title}
@@ -104,21 +102,17 @@ export const Publications = ({
                     </p>
                     {isCtaDisabled ? (
                       <CtaPill
-                        href="#"
-                        variant="secondary"
-                        className="pointer-events-none opacity-60"
-                        aria-disabled
-                        tabIndex={-1}
+                        variant="disabled"
+                        disabled
                       >
                         {item.cta}
                       </CtaPill>
                     ) : (
                       <CtaPill
                         href={item.href}
-                        variant="secondary"
+                        variant="directional"
                         target={isExternalLink ? "_blank" : undefined}
                         rel={isExternalLink ? "noopener noreferrer" : undefined}
-                        data-rockstar-cta={isRockstarPlaybook ? "true" : undefined}
                       >
                         {item.cta}
                       </CtaPill>
@@ -169,8 +163,6 @@ export const Publications = ({
                 const isActive = index === expandedIndex;
                 const isCtaDisabled = !item.href;
                 const isExternalLink = item.href.startsWith("http");
-                const isRockstarPlaybook =
-                  item.title === "The Rockstar Server Playbook";
                 return (
                   <article
                     key={item.title}
@@ -219,11 +211,9 @@ export const Publications = ({
                     </div>
                     {isCtaDisabled ? (
                       <CtaPill
-                        href="#"
-                        variant="secondary"
-                        className="mt-4 pointer-events-none opacity-60"
-                        aria-disabled
-                        tabIndex={-1}
+                        className="mt-4"
+                        variant="disabled"
+                        disabled
                       >
                         {item.cta}
                       </CtaPill>
@@ -232,10 +222,9 @@ export const Publications = ({
                         href={item.href}
                         tabIndex={isActive ? 0 : -1}
                         className="mt-4"
-                        variant="secondary"
+                        variant="directional"
                         target={isExternalLink ? "_blank" : undefined}
                         rel={isExternalLink ? "noopener noreferrer" : undefined}
-                        data-rockstar-cta={isRockstarPlaybook ? "true" : undefined}
                       >
                         {item.cta}
                       </CtaPill>

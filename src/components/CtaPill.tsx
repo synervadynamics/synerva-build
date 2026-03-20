@@ -1,31 +1,57 @@
 import Link, { type LinkProps } from "next/link";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import styles from "./CtaPill.module.css";
 
 type CtaPillProps = {
-  href: LinkProps["href"];
-  variant?: "primary" | "secondary";
+  href?: LinkProps["href"];
+  variant?:
+    | "primary"
+    | "secondary"
+    | "homepagePrimary"
+    | "directional"
+    | "ghost"
+    | "disabled"
+    | "neutralFilled";
   className?: string;
   children: ReactNode;
+  disabled?: boolean;
 } & Omit<LinkProps, "href"> &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className" | "children">;
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className" | "children"> &
+  Omit<HTMLAttributes<HTMLSpanElement>, "className" | "children">;
 
 export default function CtaPill({
   href,
   variant = "primary",
   className,
   children,
+  disabled = false,
   ...props
 }: CtaPillProps) {
+  const isDisabled = disabled || variant === "disabled";
+  const pillClassName = cn(
+    styles.pill,
+    styles[variant],
+    className,
+  );
+
+  if (isDisabled) {
+    return (
+      <span
+        className={pillClassName}
+        data-cta-pill
+        aria-disabled="true"
+        {...props}
+      >
+        {children}
+      </span>
+    );
+  }
+
   return (
     <Link
-      href={href}
-      className={cn(
-        styles.pill,
-        variant === "secondary" ? styles.secondary : styles.primary,
-        className,
-      )}
+      href={href ?? "#"}
+      className={pillClassName}
       data-cta-pill
       {...props}
     >

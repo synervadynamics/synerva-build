@@ -171,10 +171,10 @@ export const MainHero = ({
                       {hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <CtaPill href={hero.primaryCta.href} variant="primary">
+                      <CtaPill href={hero.primaryCta.href} variant="homepagePrimary">
                         {hero.primaryCta.label}
                       </CtaPill>
-                      <CtaPill href={hero.secondaryCta.href} variant="secondary">
+                      <CtaPill href={hero.secondaryCta.href} variant="ghost">
                         {hero.secondaryCta.label}
                       </CtaPill>
                     </div>
@@ -271,10 +271,10 @@ export const MainHero = ({
                       {hero.subhead}
                     </p>
                     <div className="flex flex-wrap items-center gap-3">
-                      <CtaPill href={hero.primaryCta.href} variant="primary">
+                      <CtaPill href={hero.primaryCta.href} variant="homepagePrimary">
                         {hero.primaryCta.label}
                       </CtaPill>
-                      <CtaPill href={hero.secondaryCta.href} variant="secondary">
+                      <CtaPill href={hero.secondaryCta.href} variant="ghost">
                         {hero.secondaryCta.label}
                       </CtaPill>
                     </div>
