@@ -24,7 +24,7 @@ export default function HomeMobile() {
                 <span className="h-px w-5 bg-white/70" />
               </span>
             </button>
-            <span className="role-body text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70">
+            <span className="text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70">
               Synerva Dynamics
             </span>
             <span aria-hidden className="h-9 w-9" />
@@ -42,7 +42,7 @@ export default function HomeMobile() {
             />
           </div>
           <div className="flex flex-col gap-3">
-            <p className="role-body text-[0.7rem] uppercase tracking-[0.32em]">
+            <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/70">
               SYNERVA DYNAMICS
             </p>
             <h1 className="role-authority text-[2rem] font-light leading-[1.12] text-white">
@@ -62,7 +62,7 @@ export default function HomeMobile() {
           data-accent="turquoise"
           className={`flex flex-col gap-3 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             THE PROBLEM
           </p>
           <h2 className="role-authority text-[1.45rem] font-light leading-snug text-white">
@@ -83,7 +83,7 @@ export default function HomeMobile() {
           data-accent="seagreen"
           className={`flex flex-col gap-3 px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW WORK MOVES
           </p>
           <h2 className="role-authority text-[1.3rem] font-light leading-snug text-white">
@@ -111,7 +111,7 @@ export default function HomeMobile() {
           data-accent="mint"
           className={`flex flex-col gap-4 px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             SYSTEMS THAT HOLD
           </p>
           <h2 className="role-authority text-[1.45rem] font-semibold leading-snug text-white">
@@ -167,7 +167,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.offeringsPanel} ${styles.sectionOutline} ${styles.sectionOutlineInteractive}`}
           style={{ background: "var(--fill-strong)" }}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             HOW TO ENGAGE
           </p>
           <div className={styles.offeringsImage} aria-hidden>
@@ -220,7 +220,7 @@ export default function HomeMobile() {
           data-accent="turquoise"
           className={`flex flex-col gap-4 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel} ${styles.sectionOutline}`}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             WHAT YOU GET
           </p>
           <h2 className="role-authority text-[1.3rem] font-light leading-snug text-white">
@@ -246,7 +246,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-5 py-5 ${styles.panelTransparent} ${styles.panelFilled} ${styles.publicationsPanel} ${styles.sectionOutline}`}
           style={{ background: "var(--fill-weak)" }}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             INTERNAL ENGINES
           </p>
           <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
@@ -320,7 +320,7 @@ export default function HomeMobile() {
           data-accent="mint"
           className={`flex flex-col gap-4 px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} ${styles.sectionOutline}`}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             PUBLICATIONS & VISUAL SYSTEMS
           </p>
           <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
@@ -453,7 +453,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-[22px] py-[22px] ${styles.panelTransparent} ${styles.panelFilled} ${styles.finalCtaPanel} ${styles.sectionOutline}`}
           style={{ backgroundColor: "rgba(58, 122, 254, 0.06)" }}
         >
-          <p className="role-body text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
+          <p className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55">
             NEXT STEP
           </p>
           <div className={styles.finalCtaImage} aria-hidden>
