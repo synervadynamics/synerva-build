@@ -46,12 +46,14 @@ export default function HomeMobile() {
               SYNERVA DYNAMICS
             </p>
             <h1 className="role-authority text-[2rem] font-light leading-[1.12] text-white">
-              <span className="block">The Power of Many,</span>
-              <span className="block">Engineered for One</span>
+              <span className="block">Make It Clear.</span>
+              <span className="block">Then Make It Real.</span>
             </h1>
             <p className="role-orientation text-[0.96rem] leading-[1.5] text-white/70">
-              Senior-level strategy, systems, and execution—delivered as one
-              coherent operating loop.
+              Clarity, structure, writing, design, web, and digital build are
+              carried through one continuous process, so ideas can move from
+              first signal to finished asset without losing shape, tone, or
+              intent along the way.
             </p>
           </div>
         </section>
@@ -64,12 +66,16 @@ export default function HomeMobile() {
             THE PROBLEM
           </p>
           <h2 className="role-authority text-[1.45rem] font-light leading-snug text-white">
-            Fragmentation Kills Velocity
+            Drift Kills Momentum
           </h2>
           <div className="flex flex-col gap-2 text-[0.93rem] leading-[1.5] text-white/70">
-            <p className="role-body">Decisions stall as work crosses too many systems.</p>
-            <p className="role-body">Judgment gets replaced by interfaces and rituals.</p>
-            <p className="role-body">Momentum resets instead of compounding.</p>
+            <p className="role-body">The signal stays vague for too long.</p>
+            <p className="role-body">
+              Structure never fully locks before execution begins.
+            </p>
+            <p className="role-body">
+              Progress gets recreated instead of carried forward.
+            </p>
           </div>
         </section>
 
@@ -81,19 +87,22 @@ export default function HomeMobile() {
             HOW WORK MOVES
           </p>
           <h2 className="role-authority text-[1.3rem] font-light leading-snug text-white">
-            System Guardrails
+            Working Principles
           </h2>
           <ul
             className={`list-disc pl-4 text-[0.88rem] leading-[1.45] text-white/70 ${styles.guardrailList}`}
           >
             <li className="role-body">
-              Replace coordination overhead with clear decisions.
+              Clarify the real objective before effort starts multiplying in the
+              wrong direction.
             </li>
             <li className="role-body">
-              Convert repetition into automation without losing intent.
+              Give the work a structure strong enough to hold judgment, tone,
+              and intent under pressure.
             </li>
             <li className="role-body">
-              Build delivery so progress compounds instead of resetting.
+              Build in a way that preserves momentum instead of recreating it
+              every time conditions change.
             </li>
           </ul>
         </section>
@@ -109,8 +118,9 @@ export default function HomeMobile() {
             Designed to Survive Reality
           </h2>
           <p className="role-orientation text-[0.92rem] leading-[1.45] text-white/70">
-            Synerva builds operating structures that enforce clarity, persist
-            under pressure, and compound decision quality over time.
+            Synerva builds structures that reduce drag, hold under pressure, and
+            keep decisions coherent as the work moves from clarity into
+            execution.
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-3">
@@ -124,11 +134,11 @@ export default function HomeMobile() {
                 />
               </div>
               <p className="role-body text-[0.9rem] leading-[1.35] text-white/80">
-                Shared interfaces.
+                Clear interfaces.
                 <br />
-                Explicit constraints.
+                Explicit boundaries.
                 <br />
-                Standards enforced by the system itself.
+                Standards carried by the system itself.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -142,11 +152,11 @@ export default function HomeMobile() {
                 />
               </div>
               <p className="role-body text-[0.9rem] leading-[1.35] text-white/80">
-                Clarity under load.
+                Progress under pressure.
                 <br />
-                Momentum without drift.
+                Structure that keeps holding.
                 <br />
-                Judgment that survives contact with reality.
+                Judgment that survives real conditions.
               </p>
             </div>
           </div>
@@ -175,19 +185,20 @@ export default function HomeMobile() {
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-1">
               <p className="role-body text-[0.96rem] font-medium text-white">
-                Operator Hourly
+                Operator Sessions
               </p>
               <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
-                Audits, positioning, and fast decisions where judgment is the
-                product.
+                Audits, positioning, decision support, and fast progress when
+                the highest-value deliverable is applied judgment.
               </p>
             </div>
             <div className="flex flex-col gap-1">
               <p className="role-body text-[0.96rem] font-medium text-white">
-                Flat-Rate Projects
+                Focused Projects
               </p>
               <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
-                Defined outcomes with a clean finish line and no drift.
+                Defined deliverables, explicit scope, and a finish line
+                established before work begins.
               </p>
             </div>
             <div className="flex flex-col gap-1">
@@ -195,8 +206,8 @@ export default function HomeMobile() {
                 Build With Synerva
               </p>
               <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
-                When strategy, writing, design, systems, and automation must ship
-                as one release.
+                For work that needs to be clarified, structured, written,
+                designed, and built as one release.
               </p>
             </div>
           </div>
@@ -216,16 +227,17 @@ export default function HomeMobile() {
             What’s Delivered
           </h2>
           <ul className="list-disc pl-4 text-[0.9rem] leading-[1.45] text-white/70">
-            <li className="role-body">Strategic direction before execution begins</li>
             <li className="role-body">
-              Integrated execution across brand, content, web, and automation
+              Clarity that makes the real objective usable
             </li>
             <li className="role-body">
-              Durable assets you keep using, not decks you outgrow
+              Structure that keeps language, systems, pages, and decisions
+              aligned
             </li>
             <li className="role-body">
-              Senior operating judgment without the usual overhead
+              Build that leaves behind assets designed to keep holding
             </li>
+            <li className="role-body">Operating judgment without avoidable drag</li>
           </ul>
         </section>
 
@@ -241,8 +253,9 @@ export default function HomeMobile() {
             Systems
           </h2>
           <p className="role-orientation text-[0.9rem] leading-[1.45] text-white/70">
-            A small set of internal systems that preserve judgment, reduce noise,
-            and keep decisions coherent as complexity scales.
+            A small set of internal systems preserves judgment, reduces
+            friction, and helps the work stay coherent as complexity, scope, and
+            time increase.
           </p>
           <div className={styles.publicationCovers}>
             <div className="flex flex-col gap-3">
@@ -311,11 +324,10 @@ export default function HomeMobile() {
             PUBLICATIONS & VISUAL SYSTEMS
           </p>
           <h2 className="role-authority text-[1.35rem] font-light leading-snug text-white">
-            Work That Holds Under Pressure
+            Written Under Real Conditions
           </h2>
           <p className="role-orientation text-[0.9rem] leading-[1.45] text-white/70">
-            Long-form thinking and visual systems forged under real conditions and
-            built to endure complexity.
+            Writing and visual systems shaped to hold when conditions do not.
           </p>
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-3">
@@ -323,7 +335,8 @@ export default function HomeMobile() {
                 Writing
               </p>
               <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
-                Books and essays shaped by pressure, not theory.
+                Books and essays built from pressure, observation, and
+                real-world constraint.
               </p>
               <div className={styles.publicationCovers} aria-hidden>
                 <div className={`${styles.publicationCover} ${homeStyles.portraitImageFrame}`}>
@@ -360,7 +373,7 @@ export default function HomeMobile() {
                 Synerva Dimensions Artwork
               </p>
               <p className="role-body text-[0.9rem] leading-[1.45] text-white/70">
-                Visual research where structure, attention, and coherence are
+                Visual research where structure, tension, and coherence are
                 tested in public.
               </p>
               <div className={styles.publicationCovers}>
@@ -429,8 +442,9 @@ export default function HomeMobile() {
             the noise.
           </p>
           <p className="role-body text-[0.9rem] leading-[1.5] text-white/70">
-            Synerva measures movement by lift alone. Fewer pages. Faster load
-            times. Sharper story. Outcomes verified, never assumed.
+            Most work confuses motion with momentum. Synerva measures movement
+            by lift alone, then uses structure to make the right shift easier to
+            repeat.
           </p>
         </section>
 
@@ -452,11 +466,11 @@ export default function HomeMobile() {
             />
           </div>
           <h2 className="role-authority text-[1.35rem] font-medium">
-            Start With a Plan
+            Start With a 30-Minute Plan
           </h2>
           <p className="role-body text-white/70 text-[0.95rem] leading-relaxed">
-            A 30-minute session to clarify direction, pressure-test assumptions,
-            and choose the cleanest path forward.
+            A 30-minute session to clarify the real objective, name the
+            constraints, and choose the cleanest path into the work.
           </p>
         </section>
       </Mobile1Shell>
