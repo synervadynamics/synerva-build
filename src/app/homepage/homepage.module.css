@@ -271,13 +271,6 @@
     color: var(--cta-text) !important;
   }
 
-  .sdHome p.uppercase,
-  .sdHome span.uppercase,
-  .sdHome p[class*="uppercase"],
-  .sdHome span[class*="uppercase"] {
-    color: var(--cta-text) !important;
-  }
-
   .sdHome :global(.panel) h1,
   .sdHome :global(.panel) h2,
   .sdHome :global(.panel) h3 {
