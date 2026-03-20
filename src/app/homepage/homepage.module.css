@@ -241,6 +241,18 @@
   background-color: rgba(255, 255, 255, 0.04);
 }
 
+.mobileBrandMark {
+  color: var(--text-secondary) !important;
+}
+
+.mobileEyebrowHero {
+  color: var(--text-secondary) !important;
+}
+
+.mobileEyebrow {
+  color: var(--text-muted) !important;
+}
+
 @media (max-width: 768px) {
   .sdHome {
     --signal-cyan: var(--ink-header);

@@ -25,8 +25,7 @@ export default function HomeMobile() {
               </span>
             </button>
             <span
-              className="text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70"
-              style={{ color: "var(--text-secondary)" }}
+              className={`${homeStyles.mobileBrandMark} text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70`}
             >
               Synerva Dynamics
             </span>
@@ -46,8 +45,7 @@ export default function HomeMobile() {
           </div>
           <div className="flex flex-col gap-3">
             <p
-              className="text-[0.7rem] uppercase tracking-[0.32em] text-white/70"
-              style={{ color: "var(--text-secondary)" }}
+              className={`${homeStyles.mobileEyebrowHero} text-[0.7rem] uppercase tracking-[0.32em] text-white/70`}
             >
               SYNERVA DYNAMICS
             </p>
@@ -69,8 +67,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-3 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             THE PROBLEM
           </p>
@@ -93,8 +90,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-3 px-[18px] py-[18px] ${homeStyles.analytical} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             HOW WORK MOVES
           </p>
@@ -124,8 +120,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-5 py-5 ${homeStyles.analytical} ${styles.systemsPanel} ${styles.panelTransparent} ${styles.sectionOutline}`}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             SYSTEMS THAT HOLD
           </p>
@@ -183,8 +178,7 @@ export default function HomeMobile() {
           style={{ background: "var(--fill-strong)" }}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             HOW TO ENGAGE
           </p>
@@ -239,8 +233,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-[18px] py-[18px] ${styles.panelTransparent} ${styles.deliveredPanel} ${styles.sectionOutline}`}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             WHAT YOU GET
           </p>
@@ -268,8 +261,7 @@ export default function HomeMobile() {
           style={{ background: "var(--fill-weak)" }}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             INTERNAL ENGINES
           </p>
@@ -345,8 +337,7 @@ export default function HomeMobile() {
           className={`flex flex-col gap-4 px-5 py-5 ${styles.panelTransparent} ${styles.publicationsPanel} ${styles.sectionOutline}`}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             PUBLICATIONS & VISUAL SYSTEMS
           </p>
@@ -481,8 +472,7 @@ export default function HomeMobile() {
           style={{ backgroundColor: "rgba(58, 122, 254, 0.06)" }}
         >
           <p
-            className="text-[0.7rem] uppercase tracking-[0.32em] text-white/55"
-            style={{ color: "var(--text-muted)" }}
+            className={`${homeStyles.mobileEyebrow} text-[0.7rem] uppercase tracking-[0.32em] text-white/55`}
           >
             NEXT STEP
           </p>
