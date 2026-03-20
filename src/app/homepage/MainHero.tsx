@@ -212,7 +212,7 @@ export const MainHero = ({
                         }}
                         className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
                       >
-                        <p className="role-body text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
+                        <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                           {label}
                         </p>
                         <p className="role-body mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
@@ -312,7 +312,7 @@ export const MainHero = ({
                       }}
                       className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
                     >
-                      <p className="role-body text-[0.6rem] uppercase tracking-[0.35em] text-white/60">
+                      <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                         {label}
                       </p>
                       <p className="role-body mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
