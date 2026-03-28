@@ -10,29 +10,17 @@ export default function HomeMobile() {
       <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           data-accent="blue"
-          className="mt-6 flex flex-col gap-4 px-5 py-5"
+          className="mt-4 flex flex-col gap-3 px-5 py-4"
         >
-          <div className="grid grid-cols-[auto_1fr_auto] items-center">
-            <button
-              type="button"
-              aria-label="Open menu"
-              className="flex h-9 w-9 items-center justify-center text-white/70"
-            >
-              <span className="flex flex-col gap-1">
-                <span className="h-px w-5 bg-white/70" />
-                <span className="h-px w-4 bg-white/70" />
-                <span className="h-px w-5 bg-white/70" />
-              </span>
-            </button>
+          <div className="flex items-center">
             <span
-              className={`${homeStyles.mobileBrandMark} text-center text-[0.7rem] uppercase tracking-[0.45em] text-white/70`}
+              className={`${homeStyles.mobileBrandMark} text-left text-[0.7rem] uppercase tracking-[0.45em] text-white/70`}
             >
               Synerva Dynamics
             </span>
-            <span aria-hidden className="h-9 w-9" />
           </div>
           <div
-            className={`relative aspect-[1640/981] w-full overflow-hidden rounded-[14px] bg-white/5 max-h-[34vh] sm:max-h-none ${styles.imageFrame}`}
+            className={`relative aspect-[1640/981] w-full overflow-hidden rounded-[14px] bg-white/5 max-h-[30vh] sm:max-h-none ${styles.imageFrame}`}
           >
             <Image
               src="/mobile-images/homepage/hero.png"
@@ -43,12 +31,7 @@ export default function HomeMobile() {
               priority
             />
           </div>
-          <div className="flex flex-col gap-3">
-            <p
-              className={`${homeStyles.mobileEyebrowHero} text-[0.7rem] uppercase tracking-[0.32em] text-white/70`}
-            >
-              SYNERVA DYNAMICS
-            </p>
+          <div className="flex flex-col gap-2.5">
             <h1 className="role-authority text-[2rem] font-light leading-[1.12] text-white">
               <span className="block">Make It Clear.</span>
               <span className="block">Then Make It Real.</span>
@@ -59,6 +42,22 @@ export default function HomeMobile() {
               first signal to finished asset without losing shape, tone, or
               intent along the way.
             </p>
+            <div className="flex flex-col gap-2.5 pt-1">
+              <CtaPill
+                href="/contact"
+                variant="homepagePrimary"
+                className="w-full justify-center"
+              >
+                Start With a 30-Minute Plan
+              </CtaPill>
+              <CtaPill
+                href="/offerings"
+                variant="ghost"
+                className="w-full justify-center"
+              >
+                Explore Offerings
+              </CtaPill>
+            </div>
           </div>
         </section>
 

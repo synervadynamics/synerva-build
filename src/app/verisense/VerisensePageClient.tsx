@@ -142,7 +142,7 @@ export default function VerisensePageClient() {
                       src="/verisense-subapge/verisense_section1b.png"
                       alt="Verisense hero visual"
                       fill
-                      className="object-cover"
+                      className="object-contain lg:object-cover"
                       sizes="(max-width: 1024px) 80vw, 320px"
                     />
                   </div>
