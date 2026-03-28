@@ -215,7 +215,7 @@ export const MainHero = ({
                         <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                           {label}
                         </p>
-                        <p className="role-body mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
+                        <p className="role-body mt-2 text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
                           {value}
                         </p>
                       </motion.div>
@@ -315,7 +315,7 @@ export const MainHero = ({
                       <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                         {label}
                       </p>
-                      <p className="role-body mt-2 font-mono text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
+                      <p className="role-body mt-2 text-[0.75rem] text-white whitespace-normal break-words leading-snug sm:leading-normal sm:text-sm">
                         {value}
                       </p>
                     </motion.div>
