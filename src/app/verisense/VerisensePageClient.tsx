@@ -136,13 +136,13 @@ export default function VerisensePageClient() {
                 </div>
               </div>
               <div className="flex justify-start lg:justify-end">
-                <div className="aspect-[1024/1536] w-full max-w-xs rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-5 text-center text-sm text-[#DCD8D1]/55 sm:max-w-sm">
-                  <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-[#E6E3DC]/45">
+                <div className="w-full max-w-xs sm:max-w-sm">
+                  <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
                     <Image
                       src="/verisense-subapge/verisense_section1b.png"
                       alt="Verisense hero visual"
                       fill
-                      className="object-contain lg:object-cover"
+                      className="object-cover"
                       sizes="(max-width: 1024px) 80vw, 320px"
                     />
                   </div>
@@ -346,16 +346,14 @@ export default function VerisensePageClient() {
               </div>
               <div className="flex items-start justify-end">
                 <div className="w-full">
-                  <div className="aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85 p-4 sm:p-6 lg:p-8">
-                    <div className="relative h-full w-full rounded-[2rem] border border-[#E6E3DC]/45">
-                      <Image
-                        src="/verisense-subapge/verisense-3.png"
-                        alt="Verisense System Commitments visual"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 80vw, 320px"
-                      />
-                    </div>
+                  <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
+                    <Image
+                      src="/verisense-subapge/verisense-3.png"
+                      alt="Verisense System Commitments visual"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 80vw, 320px"
+                    />
                   </div>
                 </div>
               </div>
