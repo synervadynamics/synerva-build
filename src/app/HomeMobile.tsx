@@ -223,7 +223,7 @@ export default function HomeMobile() {
               </p>
             </div>
           </div>
-          <CtaPill href="/offerings" variant="primary">
+          <CtaPill href="/offerings" variant="ghost">
             Explore Offerings →
           </CtaPill>
         </section>
@@ -295,7 +295,7 @@ export default function HomeMobile() {
               </p>
               <CtaPill
                 href="https://synervadynamics.com/verisense"
-                variant="secondary"
+                variant="ghost"
               >
                 View Verisense →
               </CtaPill>
@@ -319,13 +319,7 @@ export default function HomeMobile() {
               <p className="role-body text-[0.85rem] leading-[1.45] text-white/70">
                 Structural memory that preserves intent.
               </p>
-              <CtaPill
-                href="#"
-                variant="secondary"
-                className="pointer-events-none opacity-60"
-                aria-disabled
-                tabIndex={-1}
-              >
+              <CtaPill variant="disabled">
                 Page Coming Soon
               </CtaPill>
             </div>
@@ -376,13 +370,7 @@ export default function HomeMobile() {
                   />
                 </div>
               </div>
-              <CtaPill
-                href="#"
-                variant="secondary"
-                className="pointer-events-none opacity-60"
-                aria-disabled
-                tabIndex={-1}
-              >
+              <CtaPill variant="disabled">
                 Page Coming Soon
               </CtaPill>
             </div>
@@ -408,7 +396,7 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <CtaPill href="/dimensions/quiet-divine" variant="secondary">
+                  <CtaPill href="/dimensions/quiet-divine" variant="ghost">
                     Quiet Divine →
                   </CtaPill>
                 </div>
@@ -425,7 +413,7 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <CtaPill href="/dimensions/surface-tension" variant="secondary">
+                  <CtaPill href="/dimensions/surface-tension" variant="ghost">
                     Surface Tension →
                   </CtaPill>
                 </div>
@@ -442,7 +430,7 @@ export default function HomeMobile() {
                       className="object-cover"
                     />
                   </div>
-                  <CtaPill href="/dimensions/inner-climate" variant="secondary">
+                  <CtaPill href="/dimensions/inner-climate" variant="ghost">
                     Inner Climate →
                   </CtaPill>
                 </div>
@@ -492,6 +480,9 @@ export default function HomeMobile() {
             A 30-minute session to clarify the real objective, name the
             constraints, and choose the cleanest path into the work.
           </p>
+          <CtaPill href="/contact" variant="homepagePrimary">
+            Start With a 30-Minute Plan
+          </CtaPill>
         </section>
       </Mobile1Shell>
     </main>
