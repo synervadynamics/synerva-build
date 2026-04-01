@@ -4,11 +4,17 @@ import { copy } from "./data/copy2025";
 import HomeDesktop2025 from "./HomeDesktop2025";
 import HomeMobile2025 from "./HomeMobile2025";
 
-export const metadata = buildPageMetadata({
-  title: copy.meta.title,
-  description: copy.meta.description,
-  path: "/2025-build-homepage",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: copy.meta.title,
+    description: copy.meta.description,
+    path: "/2025-build-homepage",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function BuildHomepage2025Page() {
   return (

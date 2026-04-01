@@ -3,12 +3,18 @@ import Offerings2025BuildDesktop from "./Offerings2025BuildDesktop";
 import Offerings2025BuildMobile from "./Offerings2025BuildMobile";
 import { Suspense } from "react";
 
-export const metadata = buildPageMetadata({
-  title: "Offerings — Synerva Dynamics",
-  description:
-    "High-output execution, without the headcount tax. Synerva helps founders and teams ship brand, web, content, and systems faster and cleaner.",
-  path: "/2025-build-offerings",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Offerings — Synerva Dynamics",
+    description:
+      "High-output execution, without the headcount tax. Synerva helps founders and teams ship brand, web, content, and systems faster and cleaner.",
+    path: "/2025-build-offerings",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Offerings2025BuildPage() {
   return (

@@ -4,12 +4,18 @@ import Mobile1Shell from "../../Mobile1Shell";
 import styles from "../../mobile1.module.css";
 import ParallaxLoomImageSystem from "./ParallaxLoomImageSystem";
 
-export const metadata = buildPageMetadata({
-  title: "Parallax Loom | Synerva Dimensions",
-  description:
-    "Parallax Loom is a Synerva Dimensions series documenting modern behavior through a fictional brewery.",
-  path: "/mobile1/dimensions/parallax-loom",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Parallax Loom | Synerva Dimensions",
+    description:
+      "Parallax Loom is a Synerva Dimensions series documenting modern behavior through a fictional brewery.",
+    path: "/mobile1/dimensions/parallax-loom",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport = {
   width: 420,

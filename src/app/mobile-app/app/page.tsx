@@ -5,11 +5,17 @@ import { copy } from "@/data/copy";
 import Mobile1Shell from "./Mobile1Shell";
 import styles from "./mobile1.module.css";
 
-export const metadata = buildPageMetadata({
-  title: copy.meta.title,
-  description: copy.meta.description,
-  path: "/mobile1",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: copy.meta.title,
+    description: copy.meta.description,
+    path: "/mobile1",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport = {
   width: 420,

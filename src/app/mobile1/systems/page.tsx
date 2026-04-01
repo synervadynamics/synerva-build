@@ -3,12 +3,18 @@ import { buildPageMetadata } from "@/lib/metadata";
 import Mobile1Shell from "../Mobile1Shell";
 import styles from "../mobile1.module.css";
 
-export const metadata = buildPageMetadata({
-  title: "Systems | Synerva Dynamics",
-  description:
-    "Internal infrastructure that preserves judgment, reduces operational drag, and lets execution compound.",
-  path: "/mobile1/systems",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Systems | Synerva Dynamics",
+    description:
+      "Internal infrastructure that preserves judgment, reduces operational drag, and lets execution compound.",
+    path: "/mobile1/systems",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport = {
   width: 420,

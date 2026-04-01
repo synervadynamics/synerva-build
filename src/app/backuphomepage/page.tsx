@@ -1,5 +1,12 @@
 import BackupHomepageContent from "@/app/backuphomepage/BackupHomepage";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 // Optional: add middleware auth for /backuphomepage here later.
 // Optional: add env-based feature toggles here later.
 // Optional: add visual debug banners here later.

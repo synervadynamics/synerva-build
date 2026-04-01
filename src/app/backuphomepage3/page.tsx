@@ -1,6 +1,13 @@
 import BackupHomepage3 from "@/app/backuphomepage3/BackupHomepage3";
 import BackupHomepage3Mobile from "@/app/backuphomepage3/BackupHomepage3Mobile";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function BackupHomepage3Page() {
   return (
     <>

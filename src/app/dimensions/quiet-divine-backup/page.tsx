@@ -2,6 +2,13 @@ import QuietDivineGallery from "@/components/dimensions/quiet-divine/QuietDivine
 import QuietDivineHero from "@/components/dimensions/quiet-divine/QuietDivineHero";
 import QuietDivineNarrative from "@/components/dimensions/quiet-divine/QuietDivineNarrative";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function QuietDivinePage() {
   return (
     <div className="quiet-divine-page mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 space-y-14 sm:space-y-16 lg:space-y-20">

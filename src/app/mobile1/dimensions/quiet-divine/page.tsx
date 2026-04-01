@@ -4,12 +4,18 @@ import Mobile1Shell from "../../Mobile1Shell";
 import styles from "../../mobile1.module.css";
 import QuietDivineImageSystem from "./QuietDivineImageSystem";
 
-export const metadata = buildPageMetadata({
-  title: "Quiet Divine | Synerva Dimensions",
-  description:
-    "Quiet Divine is a Synerva Dimensions series exploring human divinity as an internal capacity.",
-  path: "/mobile1/dimensions/quiet-divine",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Quiet Divine | Synerva Dimensions",
+    description:
+      "Quiet Divine is a Synerva Dimensions series exploring human divinity as an internal capacity.",
+    path: "/mobile1/dimensions/quiet-divine",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport = {
   width: 420,

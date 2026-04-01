@@ -4,12 +4,18 @@ import { buildPageMetadata } from "@/lib/metadata";
 import Mobile1Shell from "../Mobile1Shell";
 import styles from "../mobile1.module.css";
 
-export const metadata = buildPageMetadata({
-  title: "Merch | Synerva Dynamics",
-  description:
-    "Preview-only physical artifacts derived from Synerva's standards of restraint, structure, and durability.",
-  path: "/mobile1/merch",
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Merch | Synerva Dynamics",
+    description:
+      "Preview-only physical artifacts derived from Synerva's standards of restraint, structure, and durability.",
+    path: "/mobile1/merch",
+  }),
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export const viewport = {
   width: 420,
