@@ -163,6 +163,7 @@ export const Publications = ({
                 const isActive = index === expandedIndex;
                 const isCtaDisabled = !item.href;
                 const isExternalLink = item.href.startsWith("http");
+                const detailsId = `publication-details-${index}`;
                 return (
                   <article
                     key={item.title}
@@ -170,30 +171,36 @@ export const Publications = ({
                       setExpandedIndex(index);
                       setImageIndex(index);
                     }}
-                    onFocus={() => {
-                      setExpandedIndex(index);
-                      setImageIndex(index);
-                    }}
-                    onClick={() => {
-                      setExpandedIndex(index);
-                      setImageIndex(index);
-                    }}
-                    tabIndex={0}
                     className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
                       isActive ? "bg-white/[0.06]" : ""
                     }`}
-                    aria-expanded={isActive}
                   >
-                    <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
-                      {publications.itemLabel}
-                    </p>
-                    <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
-                      {item.title}
-                    </h3>
-                    <p className="role-body mt-2 text-sm leading-snug text-white/70">
-                      {item.teaser}
-                    </p>
+                    <button
+                      type="button"
+                      onFocus={() => {
+                        setExpandedIndex(index);
+                        setImageIndex(index);
+                      }}
+                      onClick={() => {
+                        setExpandedIndex(index);
+                        setImageIndex(index);
+                      }}
+                      aria-expanded={isActive}
+                      aria-controls={detailsId}
+                      className="block w-full text-left focus:outline-none"
+                    >
+                      <p className="role-body text-xs uppercase tracking-[0.35em] text-white/60">
+                        {publications.itemLabel}
+                      </p>
+                      <h3 className="role-body text-2xl font-semibold tracking-tight text-white/95">
+                        {item.title}
+                      </h3>
+                      <p className="role-body mt-2 text-sm leading-snug text-white/70">
+                        {item.teaser}
+                      </p>
+                    </button>
                     <div
+                      id={detailsId}
                       className={`role-body overflow-hidden text-sm leading-relaxed text-white/70 transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isActive
                           ? "mt-3 max-h-[1200px] opacity-100"
