@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
+import HomeMobileShell from "@/app/HomeMobileShell";
+import styles from "@/app/homeMobile.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
 import CtaPill from "@/components/CtaPill";
 
 export default function HomeMobile() {
   return (
     <main className={`sd-home ${homeStyles.sdHome} text-white ${styles.homeMobileTheme}`}>
-      <Mobile1Shell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
+      <HomeMobileShell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
         <section
           data-accent="blue"
           className="mt-4 flex flex-col gap-3 px-5 py-4"
@@ -483,7 +483,7 @@ export default function HomeMobile() {
             Start With a 30-Minute Plan
           </CtaPill>
         </section>
-      </Mobile1Shell>
+      </HomeMobileShell>
     </main>
   );
 }

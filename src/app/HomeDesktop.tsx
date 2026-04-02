@@ -20,7 +20,7 @@ import { desktopHomepageCopy } from "@/app/homepage/desktopHomepageCopy";
 export default function HomeDesktop() {
   return (
     <main
-      className={`sd-home ${styles.sdHome} relative bg-[#0E1514] text-white backuphomepage backuphomepage-variant`}
+      className={`sd-home ${styles.sdHome} relative bg-[#0E1514] text-white`}
     >
       <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
       <HomepageScrollGlow />

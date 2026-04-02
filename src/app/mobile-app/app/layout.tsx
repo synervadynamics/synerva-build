@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   metadataBase,
   title: copy.meta.title,
   description: copy.meta.description,
+  robots: {
+    index: false,
+    follow: false,
+  },
   icons: "/favicon.ico",
   manifest: "/manifest.json",
   openGraph: {
