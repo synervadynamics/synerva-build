@@ -1,815 +1,740 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import SubpageStaticBackground from "@/components/SubpageStaticBackground";
+import Link from "next/link";
 import styles from "./offerings.module.css";
-
-const imagePaths = {
-  hero: "/offerings-subpage-jan-3/hero-v3.JPG",
-  hiring: "/homepage-post-12-25-2025/operator-hourly-final-1.png",
-  scope: "/homepage-post-12-25-2025/scope-discipline-final-1.png",
-  operator: "/offerings-2026-feb/operator-hourly_5x4.png",
-  flatRate: "/offerings-2026-feb/flat-rate-projects.jpg",
-  build: "/homepage-post-12-25-2025/build-with-synerva-final-1.png",
-} as const;
-
-const sectionMap = [
-  { id: "hiring", labelLines: ["HIRING"] },
-  { id: "scope", labelLines: ["SCOPE"] },
-  { id: "hourly", labelLines: ["HOURLY"] },
-  { id: "flat-rate", labelLines: ["FLAT-RATE"] },
-  { id: "full-build", labelLines: ["FULL BUILD"] },
-  { id: "additional-capabilities", labelLines: ["ADDITIONAL", "CAPABILITIES"] },
-  { id: "clarity-diagnostic", labelLines: ["CLARITY", "DIAGNOSTIC"] },
-  { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
-];
+import { useEffect } from "react";
 
 export default function OfferingsDesktop() {
-  const headerRef = useRef<HTMLElement | null>(null);
-  const [activeSection, setActiveSection] = useState<string>(
-    sectionMap[0]?.id ?? "",
-  );
-  const scrollToSection = (
-    event: MouseEvent<HTMLAnchorElement>,
-    sectionId: string,
-  ) => {
-    event.preventDefault();
-    const target = document.getElementById(sectionId);
-    if (!target) return;
-    const top = target.getBoundingClientRect().top + window.scrollY;
-    window.history.replaceState(null, "", `#${sectionId}`);
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
-        }
-      },
-      {
-        rootMargin: "-40% 0px -40% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      },
-    );
-
-    sectionMap.forEach((section) => {
-      const el = document.getElementById(section.id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    document.body.classList.add("offerings-safe-bg");
+    return () => {
+      document.body.classList.remove("offerings-safe-bg");
+    };
   }, []);
 
-  const items = useMemo(
-    () =>
-      sectionMap.map((item) => ({
-        ...item,
-        isActive: activeSection === item.id,
-      })),
-    [activeSection],
-  );
-
   return (
-    <main className={`${styles.offeringsPage} ${styles.offeringsPageDesktop} relative`}>
-      <SubpageStaticBackground
-        imageUrl="/subpage-backgrounds/offerings-v3.png"
-        showOverlay={false}
-      />
-      <div className="pointer-events-none fixed inset-0 z-[4] bg-[color:var(--offerings-panel-fill)]" />
+    <main
+      className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme} ${styles.offeringsSafeMain}`}
+    >
       <div className="relative z-10">
-        <ScrollProgress />
-
-        <div>
-          <section
-            id="hero"
-            className="relative overflow-visible px-6 pt-14 sm:px-10 sm:pt-16 lg:px-16 lg:pt-20"
-          >
-            <div className="hero-grid" />
-            <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
-              <header ref={headerRef} className="flex flex-col gap-4 pb-6">
-                <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="font-mono text-xs uppercase tracking-[0.5em] text-[color:var(--offerings-link)]">
-                    <span className="block">Synerva</span>
-                    <span className="block">Dynamics</span>
-                  </div>
-                  <div className="flex flex-wrap items-start gap-x-6 gap-y-4 text-xs uppercase tracking-[0.3em] text-[color:var(--offerings-link)]">
-                    {items.map((item) => (
-                      <Link
-                        key={item.id}
-                        href={`#${item.id}`}
-                        onClick={(event) => scrollToSection(event, item.id)}
-                        className={`flex w-fit flex-col items-center gap-2 transition ${
-                          item.isActive ? "opacity-100" : "opacity-70 hover:opacity-90"
-                        }`}
-                        aria-current={item.isActive ? "true" : undefined}
-                      >
-                        <span className="text-center leading-tight">
-                          {item.labelLines.map((line) => (
-                            <span key={line} className="block">
-                              {line}
-                            </span>
-                          ))}
-                        </span>
-                        <span
-                          className={`h-1 w-full rounded-full bg-[color:var(--offerings-divider)] transition ${
-                            item.isActive ? "opacity-100" : "opacity-60"
-                          }`}
-                        />
-                      </Link>
-                    ))}
-                  </div>
+        <div className={styles.pageWrapper}>
+          <div className={`${styles.sectionContainer} ${styles.sectionFull}`}>
+            <section id="hero" className={`${styles.sectionPanel} ${styles.section}`}>
+              <div className={styles.grid2Asym}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Offerings</p>
+                  <h1 className={styles.heroTitle}>Ways to work with Synerva</h1>
+                  <p className={styles.sectionSubhead}>
+                    Choose the engagement that matches your scope, urgency, and
+                    standards.
+                  </p>
+                  <p className={styles.sectionSubhead}>
+                    Synerva brings clarity, structure, and execution into one
+                    continuous process. No handoffs. No theater. No padded
+                    process. This is work designed to hold up under real
+                    conditions.
+                  </p>
+                  <ul className={styles.bulletList}>
+                    <li>Clear constraints and explicit decisions</li>
+                    <li>Fast, disciplined execution</li>
+                    <li>Assets that hold instead of decaying</li>
+                  </ul>
+                  <p className={styles.microLine}>
+                    Response within 24 hours. No sales calls. No waiting room.
+                  </p>
                 </div>
-              </header>
-              <div className="relative mx-auto max-w-5xl rounded-[3rem] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-10 shadow-[0_64px_180px_-88px_rgba(0,0,0,0.82)]">
-                <div className="flex flex-col gap-8">
-                  <div className="flex flex-col gap-6 text-balance">
-                    <h1
-                      data-type-compression="headline"
-                      data-type-compression-line-height="1.05"
-                      data-type-compression-letter-spacing="0"
-                      className="section-header-lock text-4xl font-light leading-[1.05] text-[color:var(--ink-human)] sm:text-5xl lg:text-6xl xl:text-7xl [--section-title-size:2.25rem] [--section-title-line:2.5rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:3rem] sm:[--section-title-line:3rem] lg:[--section-title-size:3.75rem] lg:[--section-title-line:3.75rem] xl:[--section-title-size:4.5rem] xl:[--section-title-line:4.5rem]"
-                    >
-                      <span className="reveal-line">
-                        <span className="block">
-                          Choose the entry point. We’ll do the compression.
-                        </span>
-                      </span>
-                    </h1>
-                  <div className="space-y-4 text-lg text-[color:var(--ink-editorial)] sm:text-xl">
-                    <p>
-                      Most firms sell isolated services. Synerva applies
-                      intelligence across the full loop, so work ships faster,
-                      costs less, and doesn’t require babysitting after launch.
-                    </p>
-                    <p>
-                      This work is not driven by volume, ceremony, or handoffs.
-                      It is driven by structure, judgment, and release logic.
-                    </p>
-                    <p>
-                      Whether you need a single intervention or a fully
-                      interconnected system, there are clear ways to engage—without
-                      drift, noise, or unnecessary process.
-                    </p>
-                  </div>
-                  <div className="flex w-full items-center justify-center">
-                    <div className="w-full max-w-[600px] overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3 sm:p-4">
-                      <div className="aspect-[856/676] w-full overflow-hidden rounded-xl">
-                        <img
-                          src={imagePaths.hero}
-                          alt="Synerva Dynamics offerings hero"
-                          className="h-full w-full rounded-xl object-cover object-[50%_50%] opacity-90"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="max-w-[240px]">
-                    <Link href="/contact" className={styles.btnPrimary}>
-                      Start a Conversation
-                    </Link>
+                <div className={styles.imageFrame}>
+                  <div className={styles.imgHero1536x1024}>
+                    <Image
+                      src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+                      alt="Synerva offerings hero"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 50vw, 560px"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
 
-          <section
-            id="hiring"
-            className="relative px-6 pb-10 pt-8 sm:px-10 sm:pb-12 sm:pt-10 lg:px-16 lg:pb-12 lg:pt-10"
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
           >
-          <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] px-8 py-12 text-[color:var(--ink-editorial)] sm:px-10 sm:py-14 lg:px-12 lg:py-16">
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
-                <div className="flex max-w-2xl flex-col gap-4">
-                  <div className="space-y-3 text-sm leading-snug text-[color:var(--ink-editorial)] sm:text-base">
-                    <p>
-                      You’re not hiring a role, a team, or a bundle of services.
-                      You’re hiring a continuously applied decision system.
-                    </p>
-                    <p>
-                      Synerva combines strategy, execution, and release logic into
-                      a single operating loop. Judgment is applied where it
-                      matters most, handoffs are minimized, and work is built to
-                      hold together after launch, not fall apart the moment it’s
-                      shipped.
-                    </p>
-                    <p>
-                      The result is less time spent coordinating, fewer revisions
-                      caused by misalignment, and output that survives contact
-                      with the real world.
-                    </p>
-                  </div>
-                </div>
+            <section
+              id="modes"
+              className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+            >
+              <div className={styles.sectionHeader}>
+                <p className={styles.eyebrow}>Engagement Modes</p>
+                <h2 className={styles.sectionTitle}>Choose your lane</h2>
+                <p className={styles.sectionSubhead}>
+                  Three ways to engage. Same standards. Different tempos.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  Each mode exists to solve a different kind of problem, cleanly.
+                </p>
+              </div>
+              <div className={styles.grid3}>
+                <article className={styles.card}>
+                  <h3 className={styles.cardTitle}>Operator Sessions</h3>
+                  <p className={styles.cardSubhead}>
+                    Focused, high-leverage sessions to unblock decisions and
+                    move the work forward.
+                  </p>
+                  <p className={styles.cardSubhead}>
+                    Applied judgment, used where it actually matters.
+                  </p>
+                  <ul className={styles.cardList}>
+                    <li>Rapid diagnosis and direction</li>
+                    <li>Clarity and execution in the same room</li>
+                    <li>Best for pivots, audits, fixes, and pressure points</li>
+                  </ul>
+                </article>
+                <article className={styles.card}>
+                  <h3 className={styles.cardTitle}>Focused Projects</h3>
+                  <p className={styles.cardSubhead}>
+                    Defined outcomes, fixed scope, clean delivery.
+                  </p>
+                  <p className={styles.cardSubhead}>
+                    For people who know what needs to be built and want it done
+                    properly.
+                  </p>
+                  <ul className={styles.cardList}>
+                    <li>Clear scope, price, and finish line</li>
+                    <li>Durable assets built with taste and standards</li>
+                    <li>Minimal meetings, maximum throughput</li>
+                  </ul>
+                </article>
+                <article className={styles.card}>
+                  <h3 className={styles.cardTitle}>Build With Synerva</h3>
+                  <p className={styles.cardSubhead}>
+                    Clarified, structured, and built as one coherent whole.
+                  </p>
+                  <p className={styles.cardSubhead}>
+                    For work that needs more than a quick fix.
+                  </p>
+                  <ul className={styles.cardList}>
+                    <li>Strategy, writing, design, web, and systems thinking</li>
+                    <li>One build, not a pile of disconnected deliverables</li>
+                    <li>Designed to hold without rewrites or regret</li>
+                  </ul>
+                </article>
+              </div>
+              <div className={styles.ctaRow}>
+                <Link href="#next-step" className={styles.btnSecondary}>
+                  See the next step
+                </Link>
+              </div>
+            </section>
+          </div>
 
-                <div className="flex w-full items-center justify-center">
-                  <div className="flex w-full flex-col">
-                    <div
-                      className={`${styles.mediaCompactWide} overflow-visible rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
-                    >
-                      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
-                        <Image
-                          src={imagePaths.hiring}
-                          alt="What you’re actually hiring"
-                          fill
-                          className="rounded-xl object-cover"
-                          sizes="(min-width: 1024px) 32vw, 100vw"
-                        />
-                      </div>
-                    </div>
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section
+              id="operator-hourly"
+              className={`${styles.sectionPanel} ${styles.section}`}
+            >
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Operator Sessions</p>
+                  <h2 className={styles.sectionTitle}>
+                    Fast clarity. Real movement.
+                  </h2>
+                  <p className={styles.sectionSubhead}>
+                    The fastest way to turn “we should” into work that can
+                    actually move.
+                  </p>
+                  <div className={styles.bulletGroup}>
+                    <p className={styles.groupLabel}>Best for</p>
+                    <ul className={styles.bulletList}>
+                      <li>Clarifying direction when the signal is buried</li>
+                      <li>Fixing what’s almost-working and expensive</li>
+                      <li>Designing the next 2–4 weeks of momentum</li>
+                    </ul>
+                  </div>
+                  <div className={styles.bulletGroup}>
+                    <p className={styles.groupLabel}>What happens in sessions</p>
+                    <ul className={styles.bulletList}>
+                      <li>Diagnose the bottleneck and set constraints</li>
+                      <li>Rewrite the plan into a buildable sequence</li>
+                      <li>Execute key work live where useful</li>
+                      <li>Define acceptance criteria and ship-ready outputs</li>
+                      <li>Leave with next actions that actually connect</li>
+                    </ul>
+                  </div>
+                  <p className={styles.microLine}>
+                    Minimum friction. Maximum leverage.
+                  </p>
+                </div>
+                <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+                  <div className={styles.imgOperatorHourly}>
+                    <Image
+                      src="/offerings-2026-feb/operator-hourly.PNG"
+                      alt="Operator hourly offering"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 50vw, 560px"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-          </section>
-        </div>
 
-        <section
-          id="scope"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto max-w-6xl space-y-6 text-[color:var(--ink-editorial)]">
-            <div className="space-y-4">
-              <h2
-                data-type-compression="headline"
-                data-type-compression-line-height="1.25"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-              >
-                Scope Discipline
-              </h2>
-            </div>
-
-            <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-5 text-[color:var(--ink-editorial)] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center">
-                <div className="w-full">
-                  <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-6">
-                    <div className="relative aspect-square w-full overflow-hidden rounded-2xl border border-[color:var(--offerings-outline-secondary)]">
-                      <Image
-                        src={imagePaths.scope}
-                        alt="Scope discipline visual"
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 1024px) 35vw, 100vw"
-                      />
-                    </div>
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section id="flat-rate" className={`${styles.sectionPanel} ${styles.section}`}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Focused Projects</p>
+                  <h2 className={styles.sectionTitle}>
+                    Defined outcomes. Clean delivery.
+                  </h2>
+                  <p className={styles.sectionSubhead}>
+                    Fixed scope, fixed price, built with taste, structure, and
+                    standards.
+                  </p>
+                  <div className={styles.bulletGroup}>
+                    <p className={styles.groupLabel}>Common builds</p>
+                    <ul className={styles.bulletList}>
+                      <li>A page or funnel that converts without begging</li>
+                      <li>
+                        Brand system clean-up (rules, templates, tone, consistency)
+                      </li>
+                      <li>Messaging and positioning that survives scrutiny</li>
+                      <li>
+                        Website or product refinements that make the system feel
+                        done
+                      </li>
+                    </ul>
+                  </div>
+                  <div className={styles.bulletGroup}>
+                    <p className={styles.groupLabel}>What success looks like</p>
+                    <ul className={styles.bulletList}>
+                      <li>Coherent, consistent, shippable work</li>
+                      <li>Maintainable without unraveling</li>
+                      <li>Output that keeps creating value</li>
+                    </ul>
+                  </div>
+                  <p className={styles.microLine}>
+                    You’ll know exactly what you’re getting before we build.
+                  </p>
+                </div>
+                <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
+                  <div className={styles.imgOperatorHourly}>
+                    <Image
+                      src="/offerings-2026-feb/flat-rate-projects.jpg"
+                      alt="Flat-Rate Projects"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 50vw, 560px"
+                    />
                   </div>
                 </div>
-                <div className="flex h-full flex-col justify-center gap-6">
-                  <div className="space-y-4 text-base text-[color:var(--ink-editorial)]">
-                    <p>
-                      To keep work predictable and pricing fair, all engagements are
-                      scoped after intake. Pricing reflects output and complexity,
-                      not vibes, urgency, or shifting interpretation once work is
-                      underway. What’s being built, how much of it, and how tightly
-                      it needs to hold together are all defined up front.
-                    </p>
-                    <p>
-                      Every project lives inside a defined scope band. That boundary
-                      is explicit and shared. Expansion is deliberate and surfaced
-                      early, not absorbed quietly as expectations drift. Nothing
-                      grows silently, and scope does not stretch midstream without
-                      acknowledgment, adjustment, and re-alignment.
-                    </p>
+              </div>
+            </section>
+          </div>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section
+              id="build-with-synerva"
+              className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+            >
+              <div className={`${styles.grid2Asym} ${styles.buildSectionGrid}`}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Build With Synerva</p>
+                  <h2 className={styles.sectionTitle}>
+                    One build. Carried all the way through.
+                  </h2>
+                  <p className={styles.sectionSubhead}>
+                    Clarity, structure, writing, design, web, and systems
+                    thinking working as one chain.
+                  </p>
+                  <ul className={styles.bulletList}>
+                    <li>A unified build, not a pile of disconnected deliverables</li>
+                    <li>Decisions embedded into language, pages, and workflow</li>
+                    <li>Tools used where they preserve leverage</li>
+                    <li>A build that holds cleanly without rewrites or regret</li>
+                    <li>Output that feels premium because it is</li>
+                  </ul>
+                  <div className={styles.requirementsRow}>
+                    <span className={styles.groupLabel}>Best when</span>
+                    <span className={styles.requirementsText}>
+                      You want the whole build clarified, structured, and
+                      carried through.
+                    </span>
                   </div>
-                  <ul className="space-y-3 text-sm text-[color:var(--ink-analytical)]">
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-[color:var(--offerings-bullet)]" />
-                      <span>Band 1: Single asset or short deliverable</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-[color:var(--offerings-bullet)]" />
-                      <span>Band 2: Campaign pack or multi-asset set</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-[color:var(--offerings-bullet)]" />
-                      <span>Band 3: System build</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="mt-1 h-1.5 w-6 flex-shrink-0 rounded-full bg-[color:var(--offerings-bullet)]" />
-                      <span>
-                        Band 4: Deep production (books, multi-week cycles)
-                      </span>
-                    </li>
+                  <p className={styles.microLine}>This is the deepest lane.</p>
+                </div>
+                <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
+                  <div className={styles.imgWidePlate}>
+                    <Image
+                      src="/offerings-2026-feb/build-with-synerva.jpg"
+                      alt="Build with Synerva systems overview"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 60vw, 640px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section id="capabilities" className={`${styles.sectionPanel} ${styles.section}`}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Capabilities</p>
+                  <h2 className={styles.sectionTitle}>What gets built</h2>
+                  <p className={styles.sectionSubhead}>
+                    Durable assets, not isolated artifacts.
+                  </p>
+                  <p className={styles.sectionSubhead}>
+                    Synerva builds the structures work depends on: language,
+                    pages, systems, and supporting tools.
+                  </p>
+                  <p className={styles.sectionSubhead}>
+                    Depending on the engagement, this may include:
+                  </p>
+                  <ul className={styles.bulletList}>
+                    <li>Positioning and messaging</li>
+                    <li>Brand structure, identity, and graphic design</li>
+                    <li>Websites, landing pages, and product surfaces</li>
+                    <li>Content systems and digital assets</li>
+                    <li>Lightweight automation and internal tools</li>
+                  </ul>
+                  <p className={styles.sectionSubhead}>
+                    Everything is designed to work together. Nothing is shipped in
+                    isolation.
+                  </p>
+                </div>
+                <div
+                  className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
+                >
+                  <Image
+                    src="/offerings-2026-feb/capabilities-v2.jpg"
+                    alt="Synerva capabilities overview"
+                    fill
+                    className={styles.imageFill}
+                    sizes="(max-width: 1280px) 100vw, 440px"
+                  />
+                </div>
+              </div>
+              <p className={styles.microLine}>
+                If it supports the build, it’s in scope.
+              </p>
+            </section>
+          </div>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section
+              id="individual-services"
+              className={`${styles.sectionPanel} ${styles.section}`}
+            >
+              <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionTitle}>
+                  Individual services &amp; deliverables
+                </h2>
+                <p className={styles.sectionSubhead}>
+                  Yes, Synerva is structure-first by default.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  But you can absolutely engage Synerva for individual services or
+                  specific deliverables when that is what the situation calls for.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  The difference is that nothing here is treated as a throwaway
+                  artifact. Every deliverable is designed with awareness of the
+                  larger system it lives inside.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  Below is a representative map of what Synerva can deliver
+                  directly.
+                </p>
+              </div>
+              <div className={styles.stepStack}>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>Strategy &amp; Direction</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Business and offer strategy</li>
+                      <li>Positioning and differentiation</li>
+                      <li>Offer architecture and pricing direction</li>
+                      <li>Decision frameworks and operating principles</li>
+                    </ul>
+                  </div>
+                </article>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>Brand &amp; Identity</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Brand strategy and narrative</li>
+                      <li>Visual identity and graphic design</li>
+                      <li>Voice, tone, and messaging frameworks</li>
+                      <li>Brand refinements and cleanup</li>
+                    </ul>
+                  </div>
+                </article>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>Research &amp; Insight</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Marketing and audience research</li>
+                      <li>Message and offer analysis</li>
+                      <li>Conversion and friction diagnosis</li>
+                      <li>Opportunity mapping</li>
+                    </ul>
+                  </div>
+                </article>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>Content &amp; Messaging</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Website and landing page copy</li>
+                      <li>Editorial and long-form writing</li>
+                      <li>Thought leadership and ghostwriting</li>
+                      <li>Messaging systems and supporting content</li>
+                    </ul>
+                  </div>
+                </article>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>Web &amp; Product</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Websites and landing pages</li>
+                      <li>Product and interface refinement</li>
+                      <li>Design systems and component logic</li>
+                      <li>Page architecture and user flow</li>
+                    </ul>
+                  </div>
+                </article>
+                <article className={styles.card}>
+                  <div className={styles.grid2}>
+                    <div className={styles.textStack}>
+                      <h3 className={styles.cardTitle}>AI &amp; Automation</h3>
+                      <div className={styles.tableDivider} />
+                    </div>
+                    <ul className={styles.cardList}>
+                      <li>Workflow automation</li>
+                      <li>Internal tools and dashboards</li>
+                      <li>AI-assisted content systems</li>
+                      <li>Lightweight custom tooling</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+              <p className={styles.microLine}>
+                If it is on the list, it is fair game. If it is not, ask anyway.
+              </p>
+            </section>
+          </div>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionFull} ${styles.sectionGapStandard}`}
+          >
+            <section
+              id="what-youre-buying"
+              className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+            >
+              <div className={styles.sectionHeader}>
+                <p className={styles.eyebrow}>Standards</p>
+                <h2 className={styles.sectionTitle}>What you’re actually buying</h2>
+                <p className={styles.sectionSubhead}>
+                  Not services. Outcomes that hold up.
+                </p>
+                <p className={styles.sectionSubhead}>Deliverables matter.</p>
+                <p className={styles.sectionSubhead}>
+                  But what you’re really buying is clarity, structure, and momentum
+                  that survives contact with reality.
+                </p>
+                <p className={styles.sectionSubhead}>
+                  This work is designed to reduce friction, collapse decision
+                  time, and create assets that keep working after delivery.
+                </p>
+              </div>
+              <div className={styles.portraitPairDesktop}>
+                <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+                  <Image
+                    src="/offerings-2026-feb/standards-left.PNG"
+                    alt="Synerva standards left"
+                    fill
+                    className={styles.imageFill}
+                    sizes="(max-width: 1280px) 45vw, 360px"
+                  />
+                </div>
+                <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
+                  <Image
+                    src="/offerings-2026-feb/standards-right.PNG"
+                    alt="Synerva standards right"
+                    fill
+                    className={styles.imageFill}
+                    sizes="(max-width: 1280px) 45vw, 360px"
+                  />
+                </div>
+              </div>
+              <div className={styles.grid2}>
+                <div className={styles.bulletGroup}>
+                  <p className={styles.groupLabel}>Outcomes</p>
+                  <ul className={styles.bulletList}>
+                    <li>Cleaner decisions and fewer dead ends</li>
+                    <li>Systems that reduce cognitive load instead of adding to it</li>
+                    <li>Higher conversion without louder marketing</li>
+                    <li>Momentum that continues after delivery</li>
+                  </ul>
+                </div>
+                <div className={styles.bulletGroup}>
+                  <p className={styles.groupLabel}>Standards</p>
+                  <ul className={styles.bulletList}>
+                    <li>Coherence across copy, design, and structure</li>
+                    <li>Constraints stated early and enforced</li>
+                    <li>Craft over “good enough”</li>
+                    <li>Delivery that doesn’t collapse two weeks later</li>
                   </ul>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
 
-        <section
-          id="hourly"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto flex max-w-6xl flex-col gap-6 text-[color:var(--ink-editorial)]">
-            <div className="space-y-2">
-              <h2
-                data-type-compression="headline"
-                data-type-compression-line-height="1.25"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-              >
-                Operator Hourly
-              </h2>
-              <p className="text-base text-[color:var(--ink-editorial)]">
-                When Momentum Matters More Than Ceremony
-              </p>
-            </div>
-
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12">
-              <div className="space-y-6">
-                <div className="space-y-3 text-base text-[color:var(--ink-editorial)]">
-                  <p className="text-lg text-[color:var(--ink-analytical)]">
-                    $100 CAD per hour
-                  </p>
-                  <p>
-                    Used to audit, unblock, re-prioritize, or ship under real
-                    conditions. Designed for situations where clarity and judgment
-                    matter more than documentation.
-                  </p>
-                  <p>
-                    You are not buying time. You are buying progress with fewer
-                    cycles.
-                  </p>
-                </div>
-
-                <div className="max-w-xl space-y-3 text-sm leading-snug text-[color:var(--ink-analytical)]">
-                  <p className="text-base text-[color:var(--ink-analytical)]">
-                    How it Works
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-[color:var(--ink-analytical)]">
-                      Minimum: 1 Hour
-                    </p>
-                    <p>
-                      Work begins immediately inside the live system. Time is used
-                      to assess structure, surface constraints, and determine where
-                      intervention will have the most impact before action is taken.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[color:var(--ink-analytical)]">
-                      Billed: In 15-minute increments after
-                    </p>
-                    <p>
-                      Billing scales with what&apos;s required to restore momentum.
-                      There is no fixed cadence or obligation to continue once
-                      clarity is reached and progress is unblocked.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[color:var(--ink-analytical)]">
-                      After each working block: Short written recap
-                    </p>
-                    <p className="text-[color:var(--ink-analytical)]">
-                      A concise summary outlines:
-                    </p>
-                    <ul className="space-y-1 text-sm text-[color:var(--ink-analytical)]">
-                      <li>what changed</li>
-                      <li>what shipped</li>
-                      <li>what happens next</li>
-                    </ul>
-                    <p>
-                      This preserves continuity without creating unnecessary
-                      documentation or slowing execution.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-                <div className="flex w-full items-center justify-center lg:justify-end">
-                  <div className="w-full max-w-[560px] overflow-hidden rounded-[28px] border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                    <div className="relative aspect-[1706/1365] w-full overflow-hidden">
-                      <Image
-                        src={imagePaths.operator}
-                        alt="Operator Hourly visual"
-                        fill
-                        className="object-cover object-[50%_50%]"
-                        sizes="(min-width: 1024px) 420px, 100vw"
-                      />
-                    </div>
-                  <div className="flex flex-col items-center gap-1 px-6 pb-4 pt-3 text-center">
-                    <p className="text-base text-[color:var(--ink-editorial)]">
-                      Judgment applied across your system.
-                    </p>
-                    <p className="text-sm text-[color:var(--ink-editorial)]">
-                      A system-level view that replaces coordination overhead with
-                      decisive action.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="flat-rate"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto flex max-w-5xl flex-col gap-6 text-[color:var(--ink-editorial)]">
-            <div className="space-y-2">
-              <h2
-                data-type-compression="headline"
-                data-type-compression-line-height="1.25"
-                data-type-compression-letter-spacing="0"
-                className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-              >
-                Flat-Rate Projects
-              </h2>
-              <p className="text-base text-[color:var(--ink-editorial)]">
-                When Scope Is Clean
-              </p>
-            </div>
-
-            <div className="space-y-4 text-base text-[color:var(--ink-editorial)]">
-              <p>
-                Flat-rate work exists for clients who want certainty. The finish
-                line is defined first. Deliverables are explicit. Acceptance
-                criteria are agreed on before work begins.
-              </p>
-              <p>
-                If you want a fixed quote that does not drift, this is how it happens.
-              </p>
-            </div>
-
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-              <div className="flex w-full justify-center lg:justify-start">
-                <div className="w-full max-w-[560px] lg:max-w-[560px] lg:mx-0">
-                  <div className="rounded-[28px] border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2">
-                    <div className="aspect-[1536/1024] w-full overflow-hidden rounded-[22px]">
-                      <img
-                        src={imagePaths.flatRate}
-                        alt="Flat-Rate Projects"
-                        className="block h-full w-full object-cover object-[50%_50%]"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <p className="text-base text-[color:var(--ink-analytical)]">
-                  Common Flat-Rate Engagements
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard} ${styles.sectionGapStandardBottom}`}
+          >
+            <section
+              id="how-it-works"
+              className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+            >
+              <div className={styles.sectionHeader}>
+                <p className={styles.eyebrow}>Process</p>
+                <h2 className={styles.sectionTitle}>How it works</h2>
+                <p className={styles.sectionSubhead}>
+                  A direct path from signal to finished build.
                 </p>
-                <div className="space-y-4 text-sm text-[color:var(--ink-analytical)]">
-                  <p>
-                    <span className="text-[color:var(--ink-analytical)]">
-                      Brand Voice Kit — $600–$1,200 CAD
-                    </span>
-                    <span className="mt-2 block text-[color:var(--ink-analytical)]">
-                      Tone rules, constraints, patterns, and QA logic so output
-                      stays consistent across people, channels, and time.
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text-[color:var(--ink-analytical)]">
-                      Offer + Positioning Sprint — $900–$1,800 CAD
-                    </span>
-                    <span className="mt-2 block text-[color:var(--ink-analytical)]">
-                      Message hierarchy, objection handling, proof structure, and
-                      CTA logic organized so decisions don’t reset.
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text-[color:var(--ink-analytical)]">
-                      Landing Page Sprint — $900–$2,500 CAD
-                    </span>
-                    <span className="mt-2 block text-[color:var(--ink-analytical)]">
-                      One goal. One path. One clean conversion narrative.
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text-[color:var(--ink-analytical)]">
-                      Website Launch Map (10 days) — $1,500–$3,000 CAD
-                    </span>
-                    <span className="mt-2 block text-[color:var(--ink-analytical)]">
-                      Sitemap, page goals, content requirements, build sequence,
-                      and launch checklist.
-                    </span>
-                  </p>
-                  <p>
-                    <span className="text-[color:var(--ink-analytical)]">
-                      Full Build — From $5,000 CAD
-                    </span>
-                    <span className="mt-2 block text-[color:var(--ink-analytical)]">
-                      For teams that want a functioning system, not a polished
-                      first draft.
-                    </span>
-                  </p>
-                </div>
+                <p className={styles.processAxiom}>
+                  Every engagement moves from signal to structure to build. No
+                  detours.
+                </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="full-build"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-5 text-[color:var(--ink-editorial)] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
-                <div
-                  className="flex max-w-2xl flex-col gap-4"
-                >
-                  <h2
-                    data-type-compression="headline"
-                    data-type-compression-line-height="1.25"
-                    data-type-compression-letter-spacing="0"
-                    className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-                  >
-                    Build With Synerva
-                  </h2>
-                  <div className="space-y-3 text-sm leading-snug text-[color:var(--ink-editorial)] sm:text-base">
-                    <p>
-                      Synerva performs the category of work typically handled by
-                      senior brand strategists, lead designers, principal writers,
-                      and experienced operators.
-                    </p>
-                    <p>
-                      The compression comes from structure, not shortcuts.
-                      Strategy, execution, and judgment are not split across
-                      roles. They live in one loop.
-                    </p>
-                    <p>
-                      That is why work that normally stretches across quarters can
-                      be delivered in days or weeks, and why costs stay in the
-                      thousands instead of six figures.
-                    </p>
-                    <p>This is senior-level work without senior-level overhead.</p>
-                  </div>
-                </div>
-
-                <div className="flex w-full items-center justify-center">
-                  <div className="w-full">
-                    <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
-                      <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2 sm:p-3">
-                        <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
-                          <Image
-                            src={imagePaths.build}
-                            alt="Build with Synerva visual"
-                            fill
-                            className="object-cover object-[40%_50%]"
-                            sizes="(min-width: 1024px) 36vw, 100vw"
-                          />
-                        </div>
-                      </div>
-                      <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-2 sm:p-3">
-                        <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
-                          <Image
-                            src={imagePaths.build}
-                            alt="Build with Synerva visual"
-                            fill
-                            className="object-cover object-[60%_50%]"
-                            sizes="(min-width: 1024px) 32vw, 100vw"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className={styles.processDivider} aria-hidden="true" />
+              <div className={styles.stepsRow}>
+                <article className={styles.stepCardDesktop}>
+                  <span className={styles.stepNumber}>Step 1</span>
+                  <h3 className={styles.stepTitle}>Intake</h3>
+                  <p className={styles.stepBody}>
+                    You outline the goal and what is currently blocked.
+                  </p>
+                </article>
+                <article className={styles.stepCardDesktop}>
+                  <span className={styles.stepNumber}>Step 2</span>
+                  <h3 className={styles.stepTitle}>Scope + constraints</h3>
+                  <p className={styles.stepBody}>
+                    We define the real problem and the conditions it must operate
+                    under.
+                  </p>
+                </article>
+                <article className={styles.stepCardDesktop}>
+                  <span className={styles.stepNumber}>Step 3</span>
+                  <h3 className={styles.stepTitle}>Build</h3>
+                  <p className={styles.stepBody}>
+                    Tight loops. Fast feedback. Real progress.
+                  </p>
+                </article>
+                <article className={styles.stepCardDesktop}>
+                  <span className={styles.stepNumber}>Step 4</span>
+                  <h3 className={styles.stepTitle}>Review + harden</h3>
+                  <p className={styles.stepBody}>
+                    Stress-test, refine, and lock standards.
+                  </p>
+                </article>
+                <article className={styles.stepCardDesktop}>
+                  <span className={styles.stepNumber}>Step 5</span>
+                  <h3 className={styles.stepTitle}>Launch + handoff</h3>
+                  <p className={styles.stepBody}>
+                    Final deliverables, documentation, and clear next actions.
+                  </p>
+                </article>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="relative px-6 pb-10 pt-2 sm:px-10 sm:pb-12 lg:px-16 lg:pb-12">
-          <div className="mx-auto flex max-w-6xl justify-center">
-            <div className="w-full max-w-[240px]">
-              <Link href="/contact" className={styles.btnPrimary}>
-                Discuss Your Project
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="additional-capabilities"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-5 text-[color:var(--ink-editorial)] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
-              <div className="flex flex-col gap-8">
-                <div className="flex max-w-2xl flex-col gap-4">
-                  <h2
-                    data-type-compression="headline"
-                    data-type-compression-line-height="1.25"
-                    data-type-compression-letter-spacing="0"
-                    className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-                  >
-                    Additional Capabilities
-                  </h2>
-                  <div className="space-y-4 text-sm leading-snug text-[color:var(--ink-editorial)] sm:text-base">
-                    <div className="space-y-2">
-                      <p className="text-base text-[color:var(--ink-structural)]">
-                        Writing & Ghostwriting
-                      </p>
-                      <p>
-                        Writing is treated as structure, not volume. Work focuses
-                        on voice, logic, proof, and durability across revisions
-                        and releases, not just draft quality.
-                      </p>
-                      <p>
-                        Engagements range from shortform copy and campaigns to
-                        longform systems and books. Pricing is scoped after intake
-                        based on research depth, length, and revision cycles,
-                        with milestone-based delivery designed to hold up beyond
-                        draft one.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-base text-[color:var(--ink-structural)]">
-                        Graphic Design
-                      </p>
-                      <p>
-                        Design is approached as a deployable system, not isolated
-                        assets. Emphasis is placed on hierarchy, consistency, and
-                        cross-channel integrity rather than surface aesthetics.
-                      </p>
-                      <p>
-                        Engagements may be hourly or scoped sprints depending on
-                        asset count and system maturity. Deliverables are
-                        export-ready, correctly sized, and built to work together
-                        across contexts, not just look good in isolation.
-                      </p>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-base text-[color:var(--ink-structural)]">
-                        Plans & Reports
-                      </p>
-                      <p>
-                        Plans and reports are built as decision tools, not
-                        presentation artifacts. Work includes business plans,
-                        marketing plans, go-to-market strategies, executive slide
-                        decks with presentation scripts, analytics summaries,
-                        budget models, and strategic reports designed to support
-                        clear action.
-                      </p>
-                    </div>
-                    <p className="text-base text-[color:var(--ink-editorial)]">
-                      These capabilities are available within Operator Hourly,
-                      Flat-Rate Projects, or Build with Synerva engagements.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex w-full items-center justify-center">
-                  <div className="w-full max-w-[300px]">
-                    <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-3">
-                      <div className="aspect-[5/4] w-full overflow-hidden rounded-xl">
-                        <img
-                          src="/offerings-subpage-jan-3/additional-capabilities-4-6.PNG"
-                          alt="Additional capabilities visual"
-                          className="h-full w-full rounded-xl object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="clarity-diagnostic"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-3xl border border-[color:var(--offerings-outline-primary)] bg-[color:var(--offerings-panel-fill)] p-5 text-[color:var(--ink-editorial)] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-6 lg:p-7">
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-                <div className="flex max-w-2xl flex-col gap-4">
-                  <h2
-                    data-type-compression="headline"
-                    data-type-compression-line-height="1.25"
-                    data-type-compression-letter-spacing="0"
-                    className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-                  >
-                    Start with a Clarity Diagnostic
-                  </h2>
-                  <div className="space-y-3 text-sm leading-snug text-[color:var(--ink-editorial)] sm:text-base">
-                    <p>
-                      For teams who know something isn’t working but don’t yet
-                      want to commit to a full engagement, the Clarity Diagnostic
-                      offers a fast, structured entry point.
-                    </p>
-                    <p>
-                      In a short, fixed-scope engagement, constraints are
-                      identified, decision bottlenecks are surfaced, and the
-                      problem is compressed into clear next steps. Some clients
-                      stop there. Others use it to determine whether Operator
-                      Hourly, a Flat-Rate Project, or a full Build with Synerva
-                      engagement makes sense.
-                    </p>
-                    <p>No obligation to proceed beyond the diagnostic.</p>
-                  </div>
-                </div>
-
-                <div className="flex w-full items-center justify-center">
-                  <div className="flex w-full flex-col">
-                    <div
-                      className={`${styles.mediaCompactWide} rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5`}
-                    >
-                      <div className="aspect-[16/9] w-full overflow-hidden rounded-xl">
-                        <img
-                          src="/offerings-subpage-jan-3/clarity-diagnostic-v3.png"
-                          alt="Clarity diagnostic visual"
-                          className="h-full w-full rounded-xl object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="next-steps"
-          
-          className="relative px-6 pb-16 pt-12 sm:px-10 sm:pb-20 sm:pt-12 lg:px-16 lg:pb-20 lg:pt-14"
-        >
-          <div className="relative mx-auto max-w-6xl">
-            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-              <div className="flex max-w-2xl flex-col gap-4">
-                <h2
-                  data-type-compression="headline"
-                  data-type-compression-line-height="1.25"
-                  data-type-compression-letter-spacing="0"
-                  className="section-header-lock text-3xl leading-tight text-[color:var(--ink-structural)] sm:text-4xl lg:text-5xl [--section-title-size:1.875rem] [--section-title-line:2.25rem] [--section-title-tracking:-0.025em] sm:[--section-title-size:2.25rem] sm:[--section-title-line:2.5rem] lg:[--section-title-size:3rem] lg:[--section-title-line:3rem]"
-                >
-                  Next Steps
-                </h2>
-                <div className="space-y-4 text-sm leading-snug text-[color:var(--ink-human)] sm:text-base">
-                  <p>
-                    You don’t need to commit to a full system build to move
-                    forward.
-                    <br />
-                    You just need to choose where judgment enters the loop.
-                  </p>
-                  <p>
-                    If speed and unblockage matter most, Operator Hourly applies
-                    decision-making directly inside live work.
-                    <br />
-                    If the finish line is clear and you want certainty, Flat-Rate
-                    Projects lock scope, criteria, and delivery before execution
-                    begins.
-                    <br />
-                    If what you need is cohesion across strategy, execution, and
-                    release, Build With Synerva compresses senior-level work into
-                    a single operating system.
-                  </p>
-                  <p>
-                    And if the right entry point isn’t obvious yet, start with a
-                    Clarity Diagnostic. It’s designed to surface constraints,
-                    define leverage, and determine which path actually makes
-                    sense before time or money is wasted.
-                  </p>
-                  <p>
-                    Choose an entry point.
-                    <br />
-                    The compression happens automatically.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  aria-label="Get in touch with Synerva"
-                  className={styles.btnPrimary}
-                >
-                  Get in Touch
+              <div className={styles.ctaRow}>
+                <Link href="#next-step" className={styles.btnSecondary}>
+                  What happens next
                 </Link>
               </div>
-              <div className="flex w-full items-center justify-center lg:justify-end">
-                <div className="flex w-full max-w-[320px] flex-col lg:max-w-[360px]">
-                  <div className="rounded-2xl border border-[color:var(--offerings-outline-secondary)] bg-[color:var(--offerings-panel-fill)] p-4 sm:p-5">
-                    <div className="aspect-[4/5] w-full overflow-hidden rounded-xl">
-                      <img
-                        src="/offerings-subpage-jan-3/next-steps-v3.PNG"
-                        alt="Systemic architectural visual"
-                        className="h-full w-full rounded-xl object-cover"
-                      />
-                    </div>
+            </section>
+          </div>
+
+          <div className={`${styles.sectionContainer} ${styles.sectionConstrained}`}>
+            <section id="proof" className={`${styles.sectionPanel} ${styles.section}`}>
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Credibility</p>
+                  <h2 className={styles.sectionTitle}>
+                    Signals you’re in the right place
+                  </h2>
+                  <p className={styles.sectionSubhead}>
+                    What working together feels like in practice.
+                  </p>
+                  <ul className={styles.bulletList}>
+                    <li>Crisp options, not vague advice</li>
+                    <li>Constraints instead of endless brainstorms</li>
+                    <li>Coherence across the build</li>
+                    <li>Momentum that doesn’t evaporate</li>
+                    <li>No bloat, filler, or performative process</li>
+                    <li>No “pretty” that breaks under load</li>
+                  </ul>
+                  <p className={styles.microLine}>
+                    If you want comfort, reassurance, or consensus, this is not the
+                    right fit.
+                  </p>
+                </div>
+                <div className={styles.imageFrame}>
+                  <div className={styles.img3x2}>
+                    <Image
+                      src="/offerings-2026-feb/credibility.PNG"
+                      alt="Synerva credibility"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 50vw, 560px"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapStandard}`}
+          >
+            <section id="faq" className={`${styles.sectionPanel} ${styles.section}`}>
+              <div className={styles.sectionHeader}>
+                <p className={styles.eyebrow}>FAQ</p>
+                <h2 className={styles.sectionTitle}>Quick answers</h2>
+                <p className={styles.sectionSubhead}>
+                  The things you’d ask before clicking.
+                </p>
+              </div>
+              <div className={styles.faqGrid}>
+                <div className={styles.faqColumn}>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>
+                      Which engagement mode should I pick?
+                    </h3>
+                    <p className={styles.faqAnswer}>
+                      Start with Operator Sessions for fast clarity. Choose
+                      Focused Projects for a defined outcome. Choose Build With
+                      Synerva when the work needs to be carried all the way
+                      through.
+                    </p>
+                  </article>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>Do you do retainers?</h3>
+                    <p className={styles.faqAnswer}>
+                      Not by default. If it makes sense after real work ships, we can
+                      discuss.
+                    </p>
+                  </article>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>What if my scope is messy?</h3>
+                    <p className={styles.faqAnswer}>
+                      Normal. We convert it into constraints, phases, and a buildable
+                      sequence.
+                    </p>
+                  </article>
+                </div>
+                <div className={styles.faqColumn}>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>
+                      Can you work with my existing brand or site?
+                    </h3>
+                    <p className={styles.faqAnswer}>
+                      Yes. We keep what holds up, replace what doesn’t, and
+                      unify the build.
+                    </p>
+                  </article>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>How fast can we start?</h3>
+                    <p className={styles.faqAnswer}>
+                      Typically within days, depending on scope and bandwidth.
+                    </p>
+                  </article>
+                  <article className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>What do you need from me?</h3>
+                    <p className={styles.faqAnswer}>
+                      A clear goal, access to current assets, and decision velocity.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div
+            className={`${styles.sectionContainer} ${styles.sectionConstrained} ${styles.sectionGapEmphasis}`}
+          >
+            <section
+              id="next-step"
+              className={`${styles.sectionPanel} ${styles.sectionPanelFilled} ${styles.section}`}
+            >
+              <div className={styles.grid2}>
+                <div className={styles.textStack}>
+                  <p className={styles.eyebrow}>Next Step</p>
+                  <h2 className={styles.sectionTitle}>Ready when you are</h2>
+                  <p className={styles.sectionSubhead}>
+                    One short intake. Then we choose the fastest path to a real
+                    outcome.
+                  </p>
+                  <ul className={styles.bulletList}>
+                    <li>Tell me what you’re building and what’s blocked</li>
+                    <li>I reply with next steps and the right engagement fit</li>
+                    <li>We move into a build loop with clear constraints</li>
+                  </ul>
+                  <div className={styles.ctaRow}>
+                    <Link href="/contact" className={styles.btnPrimary}>
+                      Start a conversation
+                    </Link>
+                  </div>
+                  <p className={styles.microLine}>
+                    Clarity compounds. Confusion spreads.
+                  </p>
+                </div>
+                <div className={styles.imageFrame}>
+                  <div className={styles.img3x2}>
+                    <Image
+                      src="/offerings-2026-feb/next-step.PNG"
+                      alt="Synerva next step"
+                      fill
+                      className={styles.imageFill}
+                      sizes="(max-width: 1280px) 50vw, 560px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </main>
   );

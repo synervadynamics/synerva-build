@@ -1,5 +1,5 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import OfferingsTest1Desktop from "@/app/offeringstest1/OfferingsTest1Desktop";
+import OfferingsDesktop from "@/app/offerings/OfferingsDesktop";
 import { Suspense } from "react";
 
 export const metadata = buildPageMetadata({
@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
 export default function OfferingsPage() {
   return (
     <Suspense fallback={null}>
-      <OfferingsTest1Desktop />
+      <OfferingsDesktop />
     </Suspense>
   );
 }
