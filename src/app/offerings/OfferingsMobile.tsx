@@ -14,7 +14,7 @@ export default function OfferingsMobile() {
   }, []);
 
   return (
-    <main className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme}`}>
+    <main className={`${styles.offeringsPage} ${styles.offeringsTheme}`}>
       <div className="relative z-10">
         <OfferingsMobileShell
           showBackButton

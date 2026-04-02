@@ -15,7 +15,7 @@ export default function OfferingsDesktop() {
 
   return (
     <main
-      className={`${styles.offeringsTest1Page} ${styles.offeringsTest1Theme} ${styles.offeringsSafeMain}`}
+      className={`${styles.offeringsPage} ${styles.offeringsTheme} ${styles.offeringsSafeMain}`}
     >
       <div className="relative z-10">
         <div className={styles.pageWrapper}>

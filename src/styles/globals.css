@@ -249,15 +249,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .backuphomepage .contrast-field {
+  .homepage .contrast-field {
     --contrast-pad-x: clamp(2.4rem, 6vw, 6.5rem);
     --contrast-pad-y: clamp(2rem, 5vw, 5.5rem);
     position: relative;
     z-index: 0;
   }
 
-  .backuphomepage .contrast-field::before,
-  .backuphomepage .contrast-field::after {
+  .homepage .contrast-field::before,
+  .homepage .contrast-field::after {
     content: "";
     position: absolute;
     inset: calc(-1 * var(--contrast-pad-y)) calc(-1 * var(--contrast-pad-x));
@@ -266,7 +266,7 @@
     z-index: 0;
   }
 
-  .backuphomepage .contrast-field::before {
+  .homepage .contrast-field::before {
     background: radial-gradient(
       120% 120% at 50% 50%,
       rgba(8, 12, 18, 0.22) 0%,
@@ -276,7 +276,7 @@
     opacity: 0.2;
   }
 
-  .backuphomepage .contrast-field::after {
+  .homepage .contrast-field::after {
     background: radial-gradient(
       120% 120% at 50% 50%,
       rgba(255, 255, 255, 0.18) 0%,
@@ -286,28 +286,28 @@
     opacity: 0.1;
   }
 
-  .backuphomepage .contrast-field > * {
+  .homepage .contrast-field > * {
     position: relative;
     z-index: 1;
   }
 
-  .backuphomepage #hero .backdrop-blur-2xl,
-  .backuphomepage #hero .backdrop-blur-xl {
+  .homepage #hero .backdrop-blur-2xl,
+  .homepage #hero .backdrop-blur-xl {
     backdrop-filter: none !important;
     background-color: var(--bg-elevated) !important;
   }
 
-  .backuphomepage #deliver .deliver-clean {
+  .homepage #deliver .deliver-clean {
     background-color: var(--bg-elevated) !important;
   }
 
-  .backuphomepage #offerings .bubble-drift,
-  .backuphomepage #offerings .backdrop-blur-xl {
+  .homepage #offerings .bubble-drift,
+  .homepage #offerings .backdrop-blur-xl {
     backdrop-filter: none !important;
     background-color: var(--bg-elevated) !important;
   }
 
-  .backuphomepage #narrative .bubble-drift {
+  .homepage #narrative .bubble-drift {
     backdrop-filter: none !important;
     background-image: linear-gradient(
       to bottom right,
@@ -318,7 +318,7 @@
     background-color: rgb(10, 26, 44) !important;
   }
 
-  .backuphomepage #systems .bubble-drift {
+  .homepage #systems .bubble-drift {
     backdrop-filter: none !important;
     background-image: linear-gradient(
       to bottom right,
@@ -329,7 +329,7 @@
     background-color: rgb(13, 27, 38) !important;
   }
 
-  .backuphomepage #systems article {
+  .homepage #systems article {
     background-image: linear-gradient(
       to bottom,
       rgb(16, 30, 42),
@@ -339,12 +339,12 @@
     background-color: rgb(16, 30, 42) !important;
   }
 
-  .backuphomepage #preview-access {
+  .homepage #preview-access {
     backdrop-filter: none !important;
     background-color: var(--bg-elevated) !important;
   }
 
-  .backuphomepage #philosophy .bubble-drift {
+  .homepage #philosophy .bubble-drift {
     backdrop-filter: none !important;
     background-image: linear-gradient(
       to bottom right,
@@ -355,7 +355,7 @@
     background-color: rgb(14, 30, 52) !important;
   }
 
-  .backuphomepage #roadmap .bubble-drift {
+  .homepage #roadmap .bubble-drift {
     backdrop-filter: none !important;
     background-image: linear-gradient(
       to bottom right,
@@ -366,7 +366,7 @@
     background-color: rgb(14, 30, 50) !important;
   }
 
-  .backuphomepage footer > div {
+  .homepage footer > div {
     backdrop-filter: none !important;
     background-image: linear-gradient(
       to bottom right,
@@ -377,40 +377,40 @@
     background-color: #0b1522 !important;
   }
 
-  .backuphomepage.backuphomepage-variant #hero .rounded-2xl.backdrop-blur-2xl,
-  .backuphomepage.backuphomepage-variant #narrative .bubble-drift,
-  .backuphomepage.backuphomepage-variant #offerings .bubble-drift,
-  .backuphomepage.backuphomepage-variant #offerings .backdrop-blur-xl,
-  .backuphomepage.backuphomepage-variant #systems .bubble-drift,
-  .backuphomepage.backuphomepage-variant #systems article,
-  .backuphomepage.backuphomepage-variant #preview-access,
-  .backuphomepage.backuphomepage-variant #philosophy .bubble-drift,
-  .backuphomepage.backuphomepage-variant #roadmap .bubble-drift,
-  .backuphomepage.backuphomepage-variant footer > div {
+  .homepage.homepage-variant #hero .rounded-2xl.backdrop-blur-2xl,
+  .homepage.homepage-variant #narrative .bubble-drift,
+  .homepage.homepage-variant #offerings .bubble-drift,
+  .homepage.homepage-variant #offerings .backdrop-blur-xl,
+  .homepage.homepage-variant #systems .bubble-drift,
+  .homepage.homepage-variant #systems article,
+  .homepage.homepage-variant #preview-access,
+  .homepage.homepage-variant #philosophy .bubble-drift,
+  .homepage.homepage-variant #roadmap .bubble-drift,
+  .homepage.homepage-variant footer > div {
     backdrop-filter: none !important;
     background: transparent !important;
     background-color: transparent !important;
     background-image: none !important;
   }
 
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) .contrast-field::before,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) .contrast-field::after {
+  :is(.homepage.homepage-variant, .homepage) .contrast-field::before,
+  :is(.homepage.homepage-variant, .homepage) .contrast-field::after {
     background: none !important;
     opacity: 0 !important;
   }
 
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #hero .backdrop-blur-2xl,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #hero .backdrop-blur-xl,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #deliver .deliver-clean,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #offerings .bubble-drift,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #offerings .backdrop-blur-xl,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #narrative .bubble-drift,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #systems .bubble-drift,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #systems article,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #preview-access,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #philosophy .bubble-drift,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) #roadmap .bubble-drift,
-  :is(.backuphomepage.backuphomepage-variant, .backuphomepage) footer > div {
+  :is(.homepage.homepage-variant, .homepage) #hero .backdrop-blur-2xl,
+  :is(.homepage.homepage-variant, .homepage) #hero .backdrop-blur-xl,
+  :is(.homepage.homepage-variant, .homepage) #deliver .deliver-clean,
+  :is(.homepage.homepage-variant, .homepage) #offerings .bubble-drift,
+  :is(.homepage.homepage-variant, .homepage) #offerings .backdrop-blur-xl,
+  :is(.homepage.homepage-variant, .homepage) #narrative .bubble-drift,
+  :is(.homepage.homepage-variant, .homepage) #systems .bubble-drift,
+  :is(.homepage.homepage-variant, .homepage) #systems article,
+  :is(.homepage.homepage-variant, .homepage) #preview-access,
+  :is(.homepage.homepage-variant, .homepage) #philosophy .bubble-drift,
+  :is(.homepage.homepage-variant, .homepage) #roadmap .bubble-drift,
+  :is(.homepage.homepage-variant, .homepage) footer > div {
     backdrop-filter: none !important;
     filter: none !important;
     background: transparent !important;
@@ -418,7 +418,7 @@
     background-image: none !important;
   }
 
-  .backuphomepage.backuphomepage-variant :is(
+  .homepage.homepage-variant :is(
       #hero,
       #narrative,
       #deliver,
@@ -429,19 +429,19 @@
       #roadmap,
       #about
     )::before,
-  .backuphomepage.backuphomepage-variant footer::before {
+  .homepage.homepage-variant footer::before {
     background-color: transparent !important;
     opacity: 0 !important;
   }
 
-  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about),
-  .backuphomepage footer {
+  .homepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about),
+  .homepage footer {
     position: relative;
     isolation: isolate;
   }
 
-  .backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about)::before,
-  .backuphomepage footer::before {
+  .homepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about)::before,
+  .homepage footer::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -450,8 +450,8 @@
     z-index: 0;
   }
 
-.backuphomepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about) > *,
-.backuphomepage footer > * {
+.homepage :is(#hero, #narrative, #deliver, #systems, #publications, #labs, #philosophy, #roadmap, #about) > *,
+.homepage footer > * {
   position: relative;
   z-index: 1;
 }

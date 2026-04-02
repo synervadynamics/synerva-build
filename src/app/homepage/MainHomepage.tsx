@@ -23,7 +23,7 @@ export default function MainHomepage() {
   ];
 
   return (
-    <main className="relative text-white backuphomepage backuphomepage-variant">
+    <main className="relative text-white homepage homepage-variant">
       <ScrollMorphBackground imageSources={backgroundSources} />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">

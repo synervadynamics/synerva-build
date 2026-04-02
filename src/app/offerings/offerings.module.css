@@ -1,4 +1,4 @@
-.offeringsTest1Theme {
+.offeringsTheme {
   --bg-0: #070A0A;
   --bg-1: #0B1010;
   --bg-2: #111919;
@@ -31,7 +31,7 @@
   --banner-margin-bottom: clamp(4rem, 6vh, 6rem);
 }
 
-.offeringsTest1Page {
+.offeringsPage {
   background-color: var(--bg-0);
   color: var(--ink-1);
 }

@@ -26,7 +26,7 @@ const sectionMap = [
   { id: "next-steps", labelLines: ["NEXT", "STEPS"] },
 ];
 
-export default function OfferingsTest2Client() {
+export default function OfferingsExperienceClient() {
   const headerRef = useRef<HTMLElement | null>(null);
   const [activeSection, setActiveSection] = useState<string>(
     sectionMap[0]?.id ?? "",
