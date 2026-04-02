@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
-import SurfaceTensionImageSystem from "@/app/mobile1/dimensions/surface-tension/SurfaceTensionImageSystem";
+import DimensionsMobileShell from "../_shared/DimensionsMobileShell";
+import styles from "../_shared/dimensionsMobileShell.module.css";
+import SurfaceTensionImageSystem from "./SurfaceTensionImageSystem";
 
 export default function SurfaceTensionMobile() {
   return (
     <main className="text-white">
-      <Mobile1Shell
+      <DimensionsMobileShell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2003_34_55%20AM.png"
       >
@@ -242,7 +242,7 @@ export default function SurfaceTensionMobile() {
             </div>
           </div>
         </section>
-      </Mobile1Shell>
+      </DimensionsMobileShell>
     </main>
   );
 }

@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ScrollMorphBackground } from "./ScrollMorphBackground2025";
-import SubpageStaticBackground from "./components/SubpageStaticBackground2025";
-import styles from "./mobile2025.module.css";
+import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
+import SubpageStaticBackground from "@/components/SubpageStaticBackground";
+import styles from "./dimensionsMobileShell.module.css";
 
-const STORAGE_KEY = "mobile1LayoutMode";
+const STORAGE_KEY = "dimensionsLayoutMode";
 const backgroundSources = [
   "/jan-4-new-background-transition/v8/1.png",
   "/jan-4-new-background-transition/v8/2.png",
@@ -42,7 +42,7 @@ const collapseIcon = (
   </svg>
 );
 
-type Mobile1ShellProps = {
+type DimensionsMobileShellProps = {
   children: React.ReactNode;
   showBackButton?: boolean;
   backgroundImageUrl?: string;
@@ -50,13 +50,13 @@ type Mobile1ShellProps = {
   backgroundOverlayOpacity?: number;
 };
 
-export default function Mobile1Shell({
+export default function DimensionsMobileShell({
   children,
   showBackButton = false,
   backgroundImageUrl,
   backgroundOverlayEnabled = true,
   backgroundOverlayOpacity = 1,
-}: Mobile1ShellProps) {
+}: DimensionsMobileShellProps) {
   const [mode, setMode] = useState<LayoutMode>("expanded");
   const [isArtworkOpen, setIsArtworkOpen] = useState(false);
 
@@ -91,7 +91,7 @@ export default function Mobile1Shell({
   };
 
   return (
-    <div id="mobile1-shell" data-mode={mode} className={styles.shell}>
+    <div id="dimensions-mobile-shell" data-mode={mode} className={styles.shell}>
       {backgroundImageUrl ? (
         <SubpageStaticBackground
           imageUrl={backgroundImageUrl}

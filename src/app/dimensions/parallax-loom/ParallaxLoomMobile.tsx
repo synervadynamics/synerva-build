@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
-import ParallaxLoomImageSystem from "@/app/mobile1/dimensions/parallax-loom/ParallaxLoomImageSystem";
+import DimensionsMobileShell from "../_shared/DimensionsMobileShell";
+import styles from "../_shared/dimensionsMobileShell.module.css";
+import ParallaxLoomImageSystem from "./ParallaxLoomImageSystem";
 
 export default function ParallaxLoomMobile() {
   return (
     <main className="text-white">
-      <Mobile1Shell showBackButton>
+      <DimensionsMobileShell showBackButton>
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}
         >
@@ -151,7 +151,7 @@ export default function ParallaxLoomMobile() {
             <ParallaxLoomImageSystem />
           </div>
         </section>
-      </Mobile1Shell>
+      </DimensionsMobileShell>
     </main>
   );
 }

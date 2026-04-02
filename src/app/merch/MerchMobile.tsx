@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
+import MerchMobileShell from "./MerchMobileShell";
 import pageStyles from "./merch.module.css";
 
 export default function MerchMobile() {
   return (
     <main className={pageStyles.merchPage}>
-      <Mobile1Shell
+      <MerchMobileShell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/merch.png"
       >
@@ -240,7 +240,7 @@ export default function MerchMobile() {
             Join the Drop List
           </Link>
         </section>
-      </Mobile1Shell>
+      </MerchMobileShell>
     </main>
   );
 }

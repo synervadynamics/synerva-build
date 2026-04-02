@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
-import InnerClimateImageSystem from "@/app/mobile1/dimensions/inner-climate/InnerClimateImageSystem";
+import DimensionsMobileShell from "../_shared/DimensionsMobileShell";
+import styles from "../_shared/dimensionsMobileShell.module.css";
+import InnerClimateImageSystem from "./InnerClimateImageSystem";
 
 export default function InnerClimateMobile() {
   return (
     <main className="text-white">
-      <Mobile1Shell
+      <DimensionsMobileShell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/IMG_8838.jpg"
       >
@@ -196,7 +196,7 @@ export default function InnerClimateMobile() {
             </div>
           </div>
         </section>
-      </Mobile1Shell>
+      </DimensionsMobileShell>
     </main>
   );
 }

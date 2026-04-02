@@ -1,11 +1,11 @@
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
+import SystemsMobileShell from "./SystemsMobileShell";
+import styles from "./systemsMobileShell.module.css";
 import SystemsOverviewSection from "@/components/systems/SystemsOverviewSection";
 
 export default function SystemsMobile() {
   return (
     <main className="bg-[#05070c] text-white">
-      <Mobile1Shell
+      <SystemsMobileShell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png"
       >
@@ -137,7 +137,7 @@ export default function SystemsMobile() {
             <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04]" />
           </div>
         </section>
-      </Mobile1Shell>
+      </SystemsMobileShell>
     </main>
   );
 }

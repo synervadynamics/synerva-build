@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Mobile1Shell from "@/app/mobile1/Mobile1Shell";
-import styles from "@/app/mobile1/mobile1.module.css";
-import QuietDivineImageSystem from "@/app/mobile1/dimensions/quiet-divine/QuietDivineImageSystem";
+import DimensionsMobileShell from "../_shared/DimensionsMobileShell";
+import styles from "../_shared/dimensionsMobileShell.module.css";
+import QuietDivineImageSystem from "./QuietDivineImageSystem";
 
 export default function QuietDivineMobile() {
   return (
     <main className="text-white">
-      <Mobile1Shell
+      <DimensionsMobileShell
         showBackButton
         backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2023,%202026,%2010_00_46%20PM.png"
         backgroundOverlayEnabled={false}
@@ -153,7 +153,7 @@ export default function QuietDivineMobile() {
             <QuietDivineImageSystem />
           </div>
         </section>
-      </Mobile1Shell>
+      </DimensionsMobileShell>
       <div
         className="pointer-events-none fixed inset-0 z-[2] bg-black/30"
         aria-hidden
