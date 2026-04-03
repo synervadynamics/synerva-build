@@ -588,5 +588,3 @@ export const homepageContent = {
     },
   },
 } as const;
-
-export type HomepageContent = typeof homepageContent;

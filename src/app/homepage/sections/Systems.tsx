@@ -6,7 +6,6 @@ import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
 type SystemsProps = {
-  mobileVariant?: "default" | "beats";
   content: {
     heading: string;
     body: readonly string[];
@@ -21,9 +20,8 @@ type SystemsProps = {
   };
 };
 
-export const Systems = ({ mobileVariant = "default", content }: SystemsProps) => {
+export const Systems = ({ content }: SystemsProps) => {
   const sectionCopy = content;
-  void mobileVariant;
   const systemCards = sectionCopy?.cards ?? [];
   return (
     <section
