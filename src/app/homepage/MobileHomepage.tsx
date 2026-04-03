@@ -1,11 +1,11 @@
 import Image from "next/image";
-import HomeMobileShell from "@/app/HomeMobileShell";
+import HomeMobileShell from "@/app/homepage/HomeMobileShell";
 import styles from "@/app/homeMobile.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
 import { homepageContent } from "@/app/homepage/homepageContent";
 import CtaPill from "@/components/CtaPill";
 
-export default function HomeMobile() {
+export default function MobileHomepage() {
   const { mobile } = homepageContent;
 
   return (

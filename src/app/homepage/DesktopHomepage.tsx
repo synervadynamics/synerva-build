@@ -17,7 +17,7 @@ import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import styles from "@/app/homepage/homepage.module.css";
 import { homepageContent } from "@/app/homepage/homepageContent";
 
-export default function HomeDesktop() {
+export default function DesktopHomepage() {
   const { desktop } = homepageContent;
 
   return (

@@ -1,17 +1,17 @@
 import { Suspense } from "react";
-import HomeDesktop from "@/app/HomeDesktop";
-import HomeMobile from "@/app/HomeMobile";
+import DesktopHomepage from "@/app/homepage/DesktopHomepage";
+import MobileHomepage from "@/app/homepage/MobileHomepage";
 
 export default function HomepageEntry() {
   return (
     <>
       <div className="view-desktop-only hidden xl:block">
         <Suspense fallback={null}>
-          <HomeDesktop />
+          <DesktopHomepage />
         </Suspense>
       </div>
       <div className="view-mobile-only block xl:hidden">
-        <HomeMobile />
+        <MobileHomepage />
       </div>
     </>
   );
