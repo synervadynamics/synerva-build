@@ -1,6 +1,7 @@
 import { Footer } from "@/components/Footer";
-import { ScrollProgress } from "@/components/ScrollProgress";
 import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
+import HomepageScrollGlow from "@/app/homepage/components/HomepageScrollGlow";
+import { ScrollProgress } from "@/app/homepage/components/ScrollProgress";
 import { MainHero } from "@/app/homepage/MainHero";
 import { About } from "@/app/homepage/sections/About";
 import { Deliver } from "@/app/homepage/sections/Deliver";
@@ -13,7 +14,6 @@ import { Publications } from "@/app/homepage/sections/Publications";
 import { Systems } from "@/app/homepage/sections/Systems";
 import { SystemsThatHoldSection } from "@/app/homepage/sections/SystemsThatHoldSection";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
-import HomepageScrollGlow from "@/components/HomepageScrollGlow";
 import styles from "@/app/homepage/homepage.module.css";
 import { homepageContent } from "@/app/homepage/homepageContent";
 
