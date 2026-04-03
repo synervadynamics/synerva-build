@@ -15,9 +15,11 @@ import { MainHero } from "@/app/homepage/MainHero";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
 import HomepageScrollGlow from "@/components/HomepageScrollGlow";
 import styles from "@/app/homepage/homepage.module.css";
-import { desktopHomepageCopy } from "@/app/homepage/desktopHomepageCopy";
+import { homepageContent } from "@/app/homepage/homepageContent";
 
 export default function HomeDesktop() {
+  const { desktop } = homepageContent;
+
   return (
     <main
       className={`sd-home ${styles.sdHome} relative bg-[#0E1514] text-white`}
@@ -27,23 +29,23 @@ export default function HomeDesktop() {
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <ScrollProgress />
-        <MainHero content={desktopHomepageCopy} />
-        <Narrative content={desktopHomepageCopy.narrative} />
-        <Offerings content={desktopHomepageCopy.offerings} />
-        <Deliver content={desktopHomepageCopy.deliver} />
+        <MainHero content={desktop} />
+        <Narrative content={desktop.narrative} />
+        <Offerings content={desktop.offerings} />
+        <Deliver content={desktop.deliver} />
         <SystemsThatHoldSection
-          content={desktopHomepageCopy.systemsThatHold}
+          content={desktop.systemsThatHold}
           className="relative px-4 pb-4 pt-4 sm:px-10 sm:pb-18 sm:pt-10 lg:px-16 lg:pb-18 lg:pt-12"
           innerClassName="mx-auto w-full max-w-5xl"
         />
-        <Systems content={desktopHomepageCopy.systems} />
-        <Publications content={desktopHomepageCopy.publications} />
-        <Labs variant="signup-only" content={desktopHomepageCopy.previewAccess} />
-        <SynervaDimensionsSection content={desktopHomepageCopy.artwork} />
-        <Philosophy content={desktopHomepageCopy.philosophy} />
-        <Merch content={desktopHomepageCopy.merch} />
-        <About content={desktopHomepageCopy.founder} />
-        <Footer content={desktopHomepageCopy.footer} />
+        <Systems content={desktop.systems} />
+        <Publications content={desktop.publications} />
+        <Labs variant="signup-only" content={desktop.previewAccess} />
+        <SynervaDimensionsSection content={desktop.artwork} />
+        <Philosophy content={desktop.philosophy} />
+        <Merch content={desktop.merch} />
+        <About content={desktop.founder} />
+        <Footer content={desktop.footer} />
       </div>
     </main>
   );

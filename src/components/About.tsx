@@ -6,19 +6,9 @@ import homeStyles from "@/app/homepage/homepage.module.css";
 export const About = ({
   content,
 }: {
-  content?: { eyebrow: string; heading: string; paragraphs: readonly string[] };
+  content: { eyebrow: string; heading: string; paragraphs: readonly string[] };
 }) => {
-  const resolvedContent = content ?? {
-    eyebrow: "FOUNDER",
-    heading: "About the Founder",
-    paragraphs: [
-      "Synerva Dynamics was founded by Kyle Gruarin, a marketing operator, business owner, and systems builder who learned most of what he knows by doing things the hard way and paying attention when they went wrong.",
-      "Kyle holds a BA in Psychology, an MBA, and is steadily chipping away at a BSc in Computer Science. He has also spent years working in marketing management, marketing research, and business ownership roles. His work has involved designing strategy, analyzing behavior, and making decisions with real consequences attached. Budgets. Deadlines. Clients. Mistakes. Fixes.",
-      "This was never marketing as theory. It was marketing as practice. Work done with imperfect information, limited time, and no room to hide behind slides.",
-      "Before Synerva, Kyle spent fifteen years in bars and restaurants, working nearly every role imaginable. Serving. Bartending. Managing. Cleaning up messes in real time, where mistakes are immediate and recovery matters more than being right. It’s an unusually effective way to learn how people, pressure, and systems actually behave.",
-      "Synerva grew out of that overlap. The studio focuses on building systems that compound. Visual systems. Cognitive frameworks. Operational structures. Not to impress, but to reduce friction and make good decisions easier to repeat when things get messy.",
-    ],
-  };
+  const resolvedContent = content;
   return (
     <section
       id="about"

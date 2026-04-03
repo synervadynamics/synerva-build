@@ -1,7 +1,6 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 
 import Image from "next/image";
-import { quietDivineContent } from "@/lib/dimensions/quietDivineContent";
 import { quietDivineImages } from "@/lib/dimensions/quietDivineImages";
 import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
@@ -9,7 +8,7 @@ import homeStyles from "@/app/homepage/homepage.module.css";
 export function SynervaDimensionsSection({
   content,
 }: {
-  content?: {
+  content: {
     eyebrow: string;
     heading: string;
     paragraphs: readonly string[];
@@ -22,10 +21,6 @@ export function SynervaDimensionsSection({
     }[];
   };
 }) {
-  const quietDivineTitle = (quietDivineContent.title ?? "The Quiet Divine").replace(
-    "The Quiet Divine",
-    "Quiet Divine",
-  );
   const quietHero =
     quietDivineImages.find(
       (image) => image.id === "28FEE977-CD07-4640-A878-C3167812F3B6",
@@ -39,40 +34,7 @@ export function SynervaDimensionsSection({
     src: "/inner-climate/7.png",
     alt: "Inner Climate artwork",
   };
-  const resolvedContent = content ?? {
-    eyebrow: "ARTWORK",
-    heading: "Synerva Dimensions",
-    paragraphs: [
-      "Synerva Dimensions is a visual research lab—where concepts are built into repeatable, automated systems that compound progress and translate across creative domains globally.",
-      "These works are not marketing artifacts. They are templates. What survives becomes architecture now..",
-    ],
-    cards: [
-      {
-        concept: "Attention Under Internal Authority",
-        description:
-          "Examines how focus stabilizes when self-governance replaces external cues.",
-        title: quietDivineTitle,
-        cta: "View Quiet Divine",
-        href: "/dimensions/quiet-divine",
-      },
-      {
-        concept: "Coherence Under Contact",
-        description:
-          "Examines how internal stability behaves once returned to the world and subjected to pressure.",
-        title: "Surface Tension",
-        cta: "View Surface Tension",
-        href: "/dimensions/surface-tension",
-      },
-      {
-        concept: "THE CLIMATE THAT SHAPES WHAT COMES NEXT",
-        description:
-          "Explores the environment that quietly determines how the world is felt and understood.",
-        title: "Inner Climate",
-        cta: "View Inner Climate",
-        href: "/dimensions/inner-climate",
-      },
-    ],
-  };
+  const resolvedContent = content;
 
   return (
     <section

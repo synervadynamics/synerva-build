@@ -4,8 +4,6 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
-import { copy } from "@/data/copy";
-import { merchV1Categories } from "@/data/merch-v1";
 import CtaPill from "@/components/CtaPill";
 
 type MerchContent = {
@@ -26,22 +24,9 @@ type MerchContent = {
   }[];
 };
 
-export const Merch = ({ content }: { content?: MerchContent }) => {
+export const Merch = ({ content }: { content: MerchContent }) => {
   const shouldReduceMotion = useReducedMotion();
-  const merch = content ?? {
-    eyebrow: copy.merch.eyebrow,
-    heading: copy.merch.heading,
-    body: copy.merch.body,
-    microline: copy.merch.microline,
-    ctas: copy.merch.ctas,
-    cards: merchV1Categories.map((card) => ({
-      title: card.title,
-      description: card.description,
-      ctaLabel: card.ctaLabel,
-      ctaHref: card.ctaHref,
-      previewImage: card.previewImage,
-    })),
-  };
+  const merch = content;
   const [activeIndex, setActiveIndex] = useState(0);
   const activeCard = merch.cards[activeIndex] ?? merch.cards[0] ?? null;
 

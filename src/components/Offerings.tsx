@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { copy } from "@/data/copy";
 import CtaPill from "@/components/CtaPill";
 
 const offeringsMedia = {
@@ -42,16 +41,9 @@ type OfferingsContent = {
   }[];
 };
 
-export const Offerings = ({ content }: { content?: OfferingsContent }) => {
+export const Offerings = ({ content }: { content: OfferingsContent }) => {
   const shouldReduceMotion = useReducedMotion();
-  const offerings: OfferingsContent =
-    content ??
-    ({
-      ...copy.offerings,
-      cards: copy.offerings.cards.map((card) => ({
-        ...card,
-      })),
-    } as OfferingsContent);
+  const offerings: OfferingsContent = content;
 
   return (
     <section

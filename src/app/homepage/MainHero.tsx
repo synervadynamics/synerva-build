@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
-import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
 import { SectionIndex } from "@/components/SectionIndex";
 import CtaPill from "@/components/CtaPill";
@@ -24,7 +23,7 @@ const sectionMap = [
 
 type MainHeroProps = {
   mobileVariant?: "default" | "beats";
-  content?: {
+  content: {
     header: {
       brandName: string;
       sectionMap: readonly { id: string; label: string }[];
@@ -48,22 +47,9 @@ export const MainHero = ({
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
   const easeCurve = [0.16, 1, 0.3, 1] as Easing;
   const [isMobile, setIsMobile] = useState(false);
-  const hero = content?.hero ?? {
-    eyebrow: copy.hero.eyebrow,
-    headline: copy.hero.headline,
-    subhead: copy.hero.subhead,
-    primaryCta: { label: "START WITH A 30-MINUTE PLAN", href: "/contact" },
-    secondaryCta: { label: "EXPLORE OFFERINGS", href: "/offerings" },
-    proofs: copy.hero.proofs,
-    cascadeItems: [
-      "Web Systems",
-      "Automation Loops",
-      "Analytics Clarity",
-      "Brand Orchestration",
-    ],
-  };
-  const brandName = content?.header.brandName ?? "Synerva Dynamics";
-  const resolvedSectionMap = content?.header.sectionMap ?? sectionMap;
+  const hero = content.hero;
+  const brandName = content.header.brandName;
+  const resolvedSectionMap = content.header.sectionMap ?? sectionMap;
 
   useEffect(() => {
     const updateIsMobile = () => {

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type LabsProps = {
   variant?: "signup-only";
-  content?: {
+  content: {
     eyebrow: string;
     heading: string;
     lead: string;
@@ -23,24 +23,7 @@ export default function Labs({ content }: LabsProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
-  const resolvedContent = content ?? {
-    eyebrow: "Preview Access",
-    heading: "Get Early Drops",
-    lead:
-      "Enter your email to get first access to new essays, tools, releases, and experiments from Synerva Dynamics.",
-    body: [
-      "You’ll receive original writing spanning psychology, business, technology, strategy, and real-world decision systems, plus early previews of upcoming publications, art releases, and product launches. Subscribers also get occasional member-only discounts and access to limited tools and resources not released publicly.",
-      "Every message is intentional, substantial, and respectful of your time.",
-      "No drip funnels. No algorithm games. Just signal.",
-      "Unsubscribe anytime.",
-    ],
-    formEyebrow: "Email Signup",
-    emailPlaceholder: "you@company.com",
-    submitIdle: "Subscribe",
-    submitLoading: "Submitting…",
-    successMessage: "Check your inbox to confirm your subscription.",
-    errorMessage: "Something went wrong. Please try again shortly.",
-  };
+  const resolvedContent = content;
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("loading");
