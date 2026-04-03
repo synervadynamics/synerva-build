@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HomeMobileShell from "@/app/homepage/HomeMobileShell";
-import styles from "@/app/homeMobile.module.css";
+import styles from "@/app/homepage/homeMobile.module.css";
 import homeStyles from "@/app/homepage/homepage.module.css";
 import { homepageContent } from "@/app/homepage/homepageContent";
 import CtaPill from "@/components/CtaPill";

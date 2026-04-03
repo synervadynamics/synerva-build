@@ -1,8 +1,8 @@
 import { Footer } from "@/components/Footer";
-import { SynervaDimensionsSection } from "@/components/SynervaDimensionsSection";
 import HomepageScrollGlow from "@/app/homepage/components/HomepageScrollGlow";
 import { ScrollProgress } from "@/app/homepage/components/ScrollProgress";
 import { MainHero } from "@/app/homepage/MainHero";
+import { SynervaDimensionsSection } from "@/app/homepage/sections/SynervaDimensionsSection";
 import { About } from "@/app/homepage/sections/About";
 import { Deliver } from "@/app/homepage/sections/Deliver";
 import { Labs } from "@/app/homepage/sections/Labs";

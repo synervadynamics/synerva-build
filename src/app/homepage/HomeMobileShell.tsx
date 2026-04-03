@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ScrollMorphBackground } from "@/app/homepage/ScrollMorphBackground";
 import SubpageStaticBackground from "@/components/SubpageStaticBackground";
-import styles from "@/app/homeMobile.module.css";
+import styles from "@/app/homepage/homeMobile.module.css";
 
 const STORAGE_KEY = "homeMobileLayoutMode";
 const backgroundSources = [
