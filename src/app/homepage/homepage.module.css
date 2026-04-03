@@ -38,14 +38,6 @@
   --ink-current: var(--ink-analytical);
 }
 
-.human {
-  --ink-current: var(--ink-human);
-}
-
-.structural {
-  --ink-current: var(--ink-structural);
-}
-
 .sdHome .role-authority {
   color: var(--role-authority) !important;
   font-weight: 500 !important;
@@ -266,10 +258,6 @@
 }
 
 .mobileBrandMark {
-  color: var(--text-secondary) !important;
-}
-
-.mobileEyebrowHero {
   color: var(--text-secondary) !important;
 }
 
