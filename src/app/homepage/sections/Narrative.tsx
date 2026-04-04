@@ -5,12 +5,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { copy } from "@/data/copy";
 import CtaPill from "@/components/CtaPill";
 
 type NarrativeProps = {
   mobileVariant?: "default" | "beats";
-  content?: {
+  content: {
     eyebrow: string;
     heading: string;
     statement: string;
@@ -20,6 +19,12 @@ type NarrativeProps = {
     bullets: readonly string[];
     stanceEyebrow: string;
     stanceParagraphs: readonly string[];
+    mobile?: {
+      beats: readonly {
+        heading: string;
+        body: string;
+      }[];
+    };
   };
 };
 
@@ -28,22 +33,8 @@ export const Narrative = ({
   content,
 }: NarrativeProps) => {
   const shouldReduceMotion = useReducedMotion();
-  const story = copy.story;
-  const mobileBeats = story.mobile?.beats ?? [];
-  const desktopStory = content ?? {
-    eyebrow: story.eyebrow,
-    heading: story.heading,
-    statement: story.statement,
-    proof: story.proof,
-    cta: story.cta,
-    panelEyebrow: "System Guardrails",
-    bullets: story.bullets,
-    stanceEyebrow: "Engagement Stance",
-    stanceParagraphs: [
-      "We pair precision systems with human judgment, so delivery stays fast without losing intent.",
-      "Measured automation, tight guardrails, human oversight—momentum holds after launch.",
-    ],
-  };
+  const mobileBeats = content.mobile?.beats ?? [];
+  const desktopStory = content;
   const containerRef = useRef<HTMLDivElement>(null);
   const mobileReadingContainerClasses =
     "mx-auto w-full max-w-[26rem] px-4 sm:px-6";
@@ -79,7 +70,7 @@ export const Narrative = ({
             <div className="lg:hidden">
               <div className={mobileReadingContainerClasses}>
                 <div className={mobileBeatsWrapperClasses}>
-                  {mobileBeats.map((beat) => (
+                  {mobileBeats.map((beat: { heading: string; body: string }) => (
                     <div key={beat.heading} className={mobileBeatClasses}>
                       <h2 className="role-body text-xl font-light leading-snug text-white">
                         {beat.heading}

@@ -1,14 +1,12 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import { copy } from "@/data/copy";
-
 export const Philosophy = ({
   content,
 }: {
-  content?: { quote: string; p1: string; p2: string };
+  content: { quote: string; p1: string; p2: string };
 }) => {
-  const resolvedContent = content ?? copy.philosophy;
+  const resolvedContent = content;
 
   return (
     <section

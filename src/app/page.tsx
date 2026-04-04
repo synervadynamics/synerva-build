@@ -1,26 +1,13 @@
 import { buildPageMetadata } from "@/lib/metadata";
-import { copy } from "@/data/copy";
-import HomeDesktop from "@/app/HomeDesktop";
-import HomeMobile from "@/app/HomeMobile";
-import { Suspense } from "react";
+import HomepageEntry from "@/app/homepage/HomepageEntry";
 
 export const metadata = buildPageMetadata({
-  title: copy.meta.title,
-  description: copy.meta.description,
+  title: "Synerva Dynamics — The Power of Many, Engineered for One",
+  description:
+    "Synerva Dynamics builds unified systems across brand, web, content, and automation—designed around structure, not noise. Every layer works in one integrated loop, so ambitious teams gain lift they can see, measure, and compound.",
   path: "/",
 });
 
 export default function HomePage() {
-  return (
-    <>
-      <div className="view-desktop-only hidden xl:block">
-        <Suspense fallback={null}>
-          <HomeDesktop />
-        </Suspense>
-      </div>
-      <div className="view-mobile-only block xl:hidden">
-        <HomeMobile />
-      </div>
-    </>
-  );
+  return <HomepageEntry />;
 }

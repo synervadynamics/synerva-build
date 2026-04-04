@@ -1,14 +1,12 @@
 // Rollback: disable ENABLE_TYPE_COMPRESSION in src/components/TypographyCompressionController.tsx or remove <TypographyCompressionController /> from src/app/page.tsx, or reset to the checkpoint commit.
 "use client";
 
-import { copy } from "@/data/copy";
 import Image from "next/image";
 import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
 type SystemsProps = {
-  mobileVariant?: "default" | "beats";
-  content?: {
+  content: {
     heading: string;
     body: readonly string[];
     cards: readonly {
@@ -22,21 +20,8 @@ type SystemsProps = {
   };
 };
 
-export const Systems = ({ mobileVariant = "default", content }: SystemsProps) => {
-  const sectionCopy =
-    content ??
-    ({
-      heading: copy.systemsSection.heading,
-      body: copy.systemsSection.body.split("\n\n"),
-      cards: copy.systemsSection.cards.map((card) => ({
-        ...card,
-        cta:
-          card.title === "Verisense"
-            ? { label: "View Verisense", href: "https://synervadynamics.com/verisense" }
-            : { label: "Page coming soon" },
-      })),
-    } as SystemsProps["content"]);
-  void mobileVariant;
+export const Systems = ({ content }: SystemsProps) => {
+  const sectionCopy = content;
   const systemCards = sectionCopy?.cards ?? [];
   return (
     <section

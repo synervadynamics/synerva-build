@@ -14,7 +14,6 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { copy } from "@/data/copy";
 import { CascadingText } from "@/components/CascadingText";
 import VideoPlaceholder from "@/components/VideoPlaceholder";
 
@@ -72,7 +71,7 @@ const mediaDimensions: Record<string, { width: number; height: number }> = {
 
 type DeliverProps = {
   mobileVariant?: "default" | "beats";
-  content?: {
+  content: {
     heading: string;
     intro: string;
     utility: string;
@@ -95,12 +94,7 @@ export const Deliver = ({
   const focusY = useTransform(scrollYProgress, [0, 1], ["20%", "70%"]);
   const gradient = useMotionTemplate`radial-gradient(circle at 25% ${focusY}, rgba(64,148,178,0.24), transparent 55%)`;
   const [activeIndex, setActiveIndex] = useState(0);
-  const deliverSection = content ?? {
-    heading: copy.deliver.heading,
-    intro: copy.deliver.intro,
-    utility: "Scroll to explore",
-    items: copy.deliver.items as readonly DeliverItem[],
-  };
+  const deliverSection = content;
   const deliverItems = deliverSection.items;
   const activeItem: DeliverItem = deliverItems[activeIndex] ?? deliverItems[0];
   const activeMediaSize = activeItem.video?.src

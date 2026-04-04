@@ -4,14 +4,13 @@
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
-import { copy } from "@/data/copy";
 import CtaPill from "@/components/CtaPill";
 import homeStyles from "@/app/homepage/homepage.module.css";
 
 export const Publications = ({
   content,
 }: {
-  content?: {
+  content: {
     eyebrow: string;
     itemLabel: string;
     heading: string;
@@ -30,11 +29,7 @@ export const Publications = ({
   };
 }) => {
   const shouldReduceMotion = useReducedMotion();
-  const publications = content ?? {
-    eyebrow: "PUBLICATIONS",
-    itemLabel: "Publication",
-    ...copy.publications,
-  };
+  const publications = content;
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const activeItem = publications.items[imageIndex];
