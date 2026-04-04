@@ -19,8 +19,8 @@
 - `.global-gradient` background removed, `::before` set to `content: none;`
 
 ## Playwright Screenshots
-- Chromium: `diagnostics-rendering/chromium-gradient.png`
-- WebKit: `diagnostics-rendering/webkit-gradient.png`
+- Chromium: `__project_support/diagnostics/rendering/chromium-gradient.png`
+- WebKit: `__project_support/diagnostics/rendering/webkit-gradient.png`
 
 ## Data Collection Commands
 ### A) chrome://gpu info (manual)

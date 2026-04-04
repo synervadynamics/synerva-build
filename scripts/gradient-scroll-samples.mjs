@@ -3,7 +3,7 @@ import path from "node:path";
 import { chromium, webkit } from "playwright";
 
 const baseUrl = process.env.SCREENSHOT_URL || "http://localhost:3000";
-const outDir = path.resolve("diagnostics-rendering");
+const outDir = path.resolve("__project_support/diagnostics/rendering");
 const viewport = { width: 1440, height: 900 };
 const scrollSteps = [0, 1200, 3000, 6000, 9000];
 

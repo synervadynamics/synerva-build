@@ -511,7 +511,7 @@ export const homepageContent = {
         {
           title: "Verisense",
           body: "Signal clarity at the point of decision.",
-          image: "/mobile-images/homepage/verisense_edit_masterr4%20copy.png",
+          image: "/mobile-images/homepage/verisense-edit-masterr4-homepage.png",
           cta: {
             label: "View Verisense →",
             href: "https://synervadynamics.com/verisense",
@@ -521,7 +521,7 @@ export const homepageContent = {
         {
           title: "Lucentra",
           body: "Structural memory that preserves intent.",
-          image: "/mobile-images/homepage/lucentra-v3%20copy.png",
+          image: "/mobile-images/homepage/lucentra-v3-homepage.png",
           cta: {
             label: "Page Coming Soon",
             variant: "disabled" as const,

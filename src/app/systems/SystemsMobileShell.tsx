@@ -8,10 +8,10 @@ import styles from "./systemsMobileShell.module.css";
 
 const STORAGE_KEY = "systemsLayoutMode";
 const backgroundSources = [
-  "/jan-4-new-background-transition/v8/1.png",
-  "/jan-4-new-background-transition/v8/2.png",
-  "/jan-4-new-background-transition/v8/3.png",
-  "/jan-4-new-background-transition/v8/4.png",
+  "/background-transitions/mobile-shell/1.png",
+  "/background-transitions/mobile-shell/2.png",
+  "/background-transitions/mobile-shell/3.png",
+  "/background-transitions/mobile-shell/4.png",
 ];
 
 type LayoutMode = "compact" | "expanded";
