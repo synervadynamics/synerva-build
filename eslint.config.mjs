@@ -9,7 +9,7 @@ export default [
       "seed-files/**",
       ".next/**",
       "node_modules/**",
-      "diagnostics-config/**",
+      "__project_support/diagnostics/config/**",
       "lib/**",
       "supabase/**",
       "types/**",

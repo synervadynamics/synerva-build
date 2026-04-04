@@ -675,12 +675,12 @@ Diagnostics-rendering files:
 
 
 Configs collected (diagnostics-config):
-diagnostics-config/.eslintrc.json
-diagnostics-config/next.config.mjs
-diagnostics-config/package.json
-diagnostics-config/postcss.config.cjs
-diagnostics-config/tailwind.config.ts
-diagnostics-config/tsconfig.json
+__project_support/diagnostics/config/.eslintrc.json
+__project_support/diagnostics/config/next.config.mjs
+__project_support/diagnostics/config/package.json
+__project_support/diagnostics/config/postcss.config.cjs
+__project_support/diagnostics/config/tailwind.config.ts
+__project_support/diagnostics/config/tsconfig.json
 
 
 Rendering/data fetching patterns:
