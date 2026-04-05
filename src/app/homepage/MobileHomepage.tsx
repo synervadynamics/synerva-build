@@ -10,7 +10,7 @@ export default function MobileHomepage() {
 
   return (
     <main className={`sd-home ${homeStyles.sdHome} text-white ${styles.homeMobileTheme}`}>
-      <HomeMobileShell backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png">
+      <HomeMobileShell backgroundImageUrl="/shared/subpage-backgrounds/default-background.png">
         <section
           data-accent="blue"
           className="mt-4 flex flex-col gap-3 px-5 py-4"

@@ -13,7 +13,7 @@ export const metadata = buildPageMetadata({
 export default function StartHerePage() {
   return (
     <div className="relative bg-[var(--bg)] text-white">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png" />
+      <SubpageStaticBackground imageUrl="/shared/subpage-backgrounds/default-background.png" />
       <div className="pointer-events-none fixed inset-0 z-[2] bg-black/80" />
 
       <div className="relative z-10">
