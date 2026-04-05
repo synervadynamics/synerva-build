@@ -47,7 +47,7 @@ export default function OfferingsDesktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.imgHero1536x1024}>
                     <Image
-                      src="/offerings-2026-feb/ways-to-work-w-synerva.PNG"
+                      src="/offerings/ways-to-work-w-synerva.PNG"
                       alt="Synerva offerings hero"
                       fill
                       className={styles.imageFill}
@@ -172,7 +172,7 @@ export default function OfferingsDesktop() {
                 <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
                   <div className={styles.imgOperatorHourly}>
                     <Image
-                      src="/offerings-2026-feb/operator-hourly.PNG"
+                      src="/offerings/operator-hourly.PNG"
                       alt="Operator hourly offering"
                       fill
                       className={styles.imageFill}
@@ -227,7 +227,7 @@ export default function OfferingsDesktop() {
                 <div className={`${styles.imageFrame} ${styles.offeringsAnchorFrame}`}>
                   <div className={styles.imgOperatorHourly}>
                     <Image
-                      src="/offerings-2026-feb/flat-rate-projects.jpg"
+                      src="/offerings/flat-rate-projects.jpg"
                       alt="Flat-Rate Projects"
                       fill
                       className={styles.imageFill}
@@ -275,7 +275,7 @@ export default function OfferingsDesktop() {
                 <div className={`${styles.imageFrame} ${styles.buildAnchorFrame}`}>
                   <div className={styles.imgWidePlate}>
                     <Image
-                      src="/offerings-2026-feb/build-with-synerva.jpg"
+                      src="/offerings/build-with-synerva.jpg"
                       alt="Build with Synerva systems overview"
                       fill
                       className={styles.imageFill}
@@ -321,7 +321,7 @@ export default function OfferingsDesktop() {
                   className={`${styles.imageFrame} ${styles.capabilitiesAnchorFrame} ${styles.imgCapSquare}`}
                 >
                   <Image
-                    src="/offerings-2026-feb/capabilities-v2.jpg"
+                    src="/offerings/capabilities-v2.jpg"
                     alt="Synerva capabilities overview"
                     fill
                     className={styles.imageFill}
@@ -481,7 +481,7 @@ export default function OfferingsDesktop() {
               <div className={styles.portraitPairDesktop}>
                 <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                   <Image
-                    src="/offerings-2026-feb/standards-left.PNG"
+                    src="/offerings/standards-left.PNG"
                     alt="Synerva standards left"
                     fill
                     className={styles.imageFill}
@@ -490,7 +490,7 @@ export default function OfferingsDesktop() {
                 </div>
                 <div className={`${styles.imageFrame} ${styles.imgStandardsBand}`}>
                   <Image
-                    src="/offerings-2026-feb/standards-right.PNG"
+                    src="/offerings/standards-right.PNG"
                     alt="Synerva standards right"
                     fill
                     className={styles.imageFill}
@@ -613,7 +613,7 @@ export default function OfferingsDesktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.img3x2}>
                     <Image
-                      src="/offerings-2026-feb/credibility.PNG"
+                      src="/offerings/credibility.PNG"
                       alt="Synerva credibility"
                       fill
                       className={styles.imageFill}
@@ -723,7 +723,7 @@ export default function OfferingsDesktop() {
                 <div className={styles.imageFrame}>
                   <div className={styles.img3x2}>
                     <Image
-                      src="/offerings-2026-feb/next-step.PNG"
+                      src="/offerings/next-step.PNG"
                       alt="Synerva next step"
                       fill
                       className={styles.imageFill}
