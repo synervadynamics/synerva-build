@@ -8,7 +8,7 @@ export default function MerchMobile() {
     <main className={pageStyles.merchPage}>
       <MerchMobileShell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/merch.png"
+        backgroundImageUrl="/merch-v1/background.png"
       >
         <section
           className={`${pageStyles.merchHero} mt-6 flex flex-col gap-5 rounded-[2rem] border border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)] px-5 py-6`}

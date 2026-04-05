@@ -97,7 +97,7 @@ const commitments = [
 export default function VerisensePageClient() {
   return (
     <main className="relative bg-[#0E1514] text-[#DCD8D1]">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/verisense.png" />
+      <SubpageStaticBackground imageUrl="/verisense-subpage/background.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="px-6 pb-8 pt-24 sm:px-8 sm:pb-12 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
