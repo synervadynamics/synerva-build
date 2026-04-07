@@ -8,7 +8,7 @@ export default function SurfaceTensionMobile() {
     <main className="text-white">
       <DimensionsMobileShell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2003_34_55%20AM.png"
+        backgroundImageUrl="/subpage-backgrounds/surface-tension-background.png"
       >
         <section
           className={`mt-6 flex flex-col gap-5 rounded-[2rem] border border-white/20 bg-white/[0.04] px-5 py-6 ${styles.panelTransparent}`}

@@ -8,7 +8,7 @@ export default function QuietDivineMobile() {
     <main className="text-white">
       <DimensionsMobileShell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2023,%202026,%2010_00_46%20PM.png"
+        backgroundImageUrl="/subpage-backgrounds/quiet-divine-background.png"
         backgroundOverlayEnabled={false}
       >
         <section

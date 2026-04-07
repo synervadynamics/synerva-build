@@ -182,7 +182,7 @@ export const copy = {
         cta: "See the Editions",
         href: "/merch",
         image: {
-          src: "/visuals/merch/quiet-divine-series-v1.PNG",
+          src: "/visuals/merch/quiet-divine-series-v1.png",
           alt: "Quiet Divine Editions mockup",
         },
       },
@@ -194,7 +194,7 @@ export const copy = {
         cta: "Explore Essentials",
         href: "/merch",
         image: {
-          src: "/visuals/merch/what-you-see-is-a-side-effect.PNG",
+          src: "/visuals/merch/what-you-see-is-a-side-effect.png",
           alt: "Synerva Essentials mockup",
         },
       },
@@ -206,7 +206,7 @@ export const copy = {
         cta: "View Upcoming Drops",
         href: "/merch",
         image: {
-          src: "/visuals/merch/numbered-issues-v1.PNG",
+          src: "/visuals/merch/numbered-issues-v1.png",
           alt: "Numbered Issues mockup",
         },
       },
@@ -786,7 +786,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/brand/reflective-dose-cover.png",
+        src: "/reflective-dose-cover.png",
         alt: "Cover of The Reflective Dose journal",
       },
       ctaPrimary: { label: "Explore The Reflective Dose", href: "/#preview-access" },
