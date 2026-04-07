@@ -10,7 +10,7 @@ export default function MerchDesktop() {
 
   return (
     <main className={`${styles.merchPage} relative`}>
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/merch.png" />
+      <SubpageStaticBackground imageUrl="/merch/background.png" />
       <div
         className="pointer-events-none fixed inset-0 z-[5] bg-[color:var(--merch-overlay)]"
         aria-hidden

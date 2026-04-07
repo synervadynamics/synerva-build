@@ -7,7 +7,7 @@ export default function QuietDivineDesktop() {
   return (
     <main className="relative text-white">
       <SubpageStaticBackground
-        imageUrl="/subpage-backgrounds/quiet-divine-background.png"
+        imageUrl="/quiet-divine/background.png"
         showOverlay={false}
       />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/30" />

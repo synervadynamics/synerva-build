@@ -8,7 +8,7 @@ export default function QuietDivineMobile() {
     <main className="text-white">
       <DimensionsMobileShell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/quiet-divine-background.png"
+        backgroundImageUrl="/quiet-divine/background.png"
         backgroundOverlayEnabled={false}
       >
         <section
