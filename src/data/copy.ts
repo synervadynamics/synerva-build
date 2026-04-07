@@ -356,7 +356,7 @@ export const copy = {
           "Data-driven automation map",
         ],
         image: {
-          src: "/visuals/systems/lucentra-wide-logo-1.png",
+          src: "/shared/systems/lucentra-wide-logo-1.png",
           label: "Lucentra crest and mark",
         },
       },
@@ -373,7 +373,7 @@ export const copy = {
           "Feedback loops integrated into CRM",
         ],
         image: {
-          src: "/new-hero-shots/verisense-hero-shot-new-3.png",
+          src: "/shared/systems/verisense-hero-shot-new-3.png",
           label: "Verisense crest and mark",
         },
       },
@@ -390,7 +390,7 @@ export const copy = {
           "Airtight data discipline meeting Canadian standards",
         ],
         image: {
-          src: "/visuals/systems/usethis-snerva-os-wide-1.png",
+          src: "/shared/systems/usethis-snerva-os-wide-1.png",
           label: "Synerva OS crest and mark",
         },
       },
@@ -451,7 +451,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/lucentra-subpage.png",
+        src: "/shared/systems/lucentra-subpage.png",
         label: "Lucentra crest and mark",
       },
       cta: { label: "See What Lucentra Makes Possible", href: "/contact" },
@@ -513,7 +513,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/verisense-subpage.png",
+        src: "/shared/systems/verisense-subpage.png",
         label: "Verisense crest and mark",
       },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
@@ -573,7 +573,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/synerva-os-subpage.png",
+        src: "/shared/systems/synerva-os-subpage.png",
         label: "Synerva OS crest and mark",
       },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },
