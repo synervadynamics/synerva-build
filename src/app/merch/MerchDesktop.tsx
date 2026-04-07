@@ -70,7 +70,7 @@ export default function MerchDesktop() {
                 <div className="relative overflow-hidden rounded-[2.25rem] border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] p-3 shadow-[0_32px_120px_-90px_rgba(0,0,0,0.9)]">
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.75rem] border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)]">
                     <Image
-                      src="/merch-v1/merch-hero.png"
+                      src="/merch/merch-hero.png"
                       alt="Synerva merch hero mockup"
                       fill
                       sizes="(min-width: 1024px) 40vw, 90vw"

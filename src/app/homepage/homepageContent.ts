@@ -366,7 +366,7 @@ export const homepageContent = {
             "Portraiture-as-infrastructure. Floral permeability, fracture, goldwork, and the calm kind of intensity that does not need volume to be felt.",
           ctaLabel: "See the Editions",
           ctaHref: "/merch#quiet-divine-editions",
-          previewImage: "/merch-v1/already-underway.PNG",
+          previewImage: "/merch/already-underway.PNG",
         },
         {
           title: "Synerva Essentials",
@@ -374,7 +374,7 @@ export const homepageContent = {
             "Minimal marks, engineered layouts, and typographic pressure. Pieces that feel like a studio schematic, not a slogan.",
           ctaLabel: "Explore Essentials",
           ctaHref: "/merch#synerva-essentials",
-          previewImage: "/merch-v1/crystal-clear.PNG",
+          previewImage: "/merch/crystal-clear.PNG",
         },
         {
           title: "Numbered Issues",
@@ -382,7 +382,7 @@ export const homepageContent = {
             "Small-batch releases with a clean identifier and a clear end. When it is done, it is done.",
           ctaLabel: "View Numbered Issues",
           ctaHref: "/merch#numbered-issues",
-          previewImage: "/merch-v1/partial-exception.PNG",
+          previewImage: "/merch/partial-exception.PNG",
         },
       ],
     },
