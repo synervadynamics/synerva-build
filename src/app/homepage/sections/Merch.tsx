@@ -74,11 +74,13 @@ export const Merch = ({ content }: { content: MerchContent }) => {
                 <div className="relative aspect-[3/2] w-full">
                   {activeCard ? (
                     <Image
+                      key={activeCard.previewImage}
                       src={activeCard.previewImage}
                       alt={`${activeCard.title} preview`}
                       fill
                       className="rounded-2xl object-cover"
                       sizes="(min-width: 1024px) 44vw, (min-width: 768px) 80vw, 100vw"
+                      unoptimized
                     />
                   ) : null}
                 </div>
@@ -98,6 +100,7 @@ export const Merch = ({ content }: { content: MerchContent }) => {
                         fill
                         className="rounded-2xl object-cover"
                         sizes="100vw"
+                        unoptimized
                       />
                     </div>
                   </div>
