@@ -60,7 +60,7 @@ export const SystemsThatHoldSection = ({
           <div className="filled-panel flex h-full flex-col gap-4 rounded-3xl bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:gap-5 lg:p-5">
             <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
-                src="/homepage-post-12-25-2025/what-synerva-builds-5-4.png"
+                src="/home/desktop/what-synerva-builds-5-4.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"
@@ -77,7 +77,7 @@ export const SystemsThatHoldSection = ({
           <div className="filled-panel flex h-full flex-col gap-4 rounded-3xl bg-white/[0.035] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] sm:gap-5 lg:p-5">
             <div className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl">
               <Image
-                src="/homepage-post-12-25-2025/how-synerva-operates-5-4.png"
+                src="/home/desktop/how-synerva-operates-5-4.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 520px"

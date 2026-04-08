@@ -31,19 +31,19 @@ const isVideoSrc = (src?: string) =>
   Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const mediaDimensions: Record<string, { width: number; height: number }> = {
-  "/homepage-post-12-25-2025/strategic-direction-v1a.PNG": {
+  "/home/desktop/strategic-direction-v1a.PNG": {
     width: 1536,
     height: 1024,
   },
-  "/homepage-post-12-25-2025/integrated-execution-v2a.png": {
+  "/home/desktop/integrated-execution-v2a.png": {
     width: 1536,
     height: 1024,
   },
-  "/homepage-post-12-25-2025/operating-judgement-v1a.PNG": {
+  "/home/desktop/operating-judgement-v1a.PNG": {
     width: 1536,
     height: 1024,
   },
-  "/homepage-post-12-25-2025/durable-assets-v1a.WEBP": {
+  "/home/desktop/durable-assets-v1a.WEBP": {
     width: 1536,
     height: 1024,
   },

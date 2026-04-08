@@ -44,7 +44,7 @@ export const About = ({
                   className={`relative aspect-[2/3] w-full ${homeStyles.portraitImageFrame}`}
                 >
                   <Image
-                    src="/homepage-post-12-25-2025/founder-start-hero.png"
+                    src="/home/desktop/founder-start-hero.png"
                     alt="Portrait of Kyle Gruarin"
                     fill
                     className="object-cover"

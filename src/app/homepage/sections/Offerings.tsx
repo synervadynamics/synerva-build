@@ -7,19 +7,19 @@ import CtaPill from "@/components/CtaPill";
 
 const offeringsMedia = {
   "Operator Hourly": {
-    src: "/homepage-post-12-25-2025/operator-hourly-v2a.png",
+    src: "/home/desktop/operator-hourly-v2a.png",
     alt: "Operator Hourly offering",
     width: 1536,
     height: 1024,
   },
   "Flat-Rate Projects": {
-    src: "/homepage-post-12-25-2025/flat-rate-projects-v8.png",
+    src: "/home/desktop/flat-rate-projects-v8.png",
     alt: "Flat-rate sprints offering",
     width: 1536,
     height: 1024,
   },
   "Build with Synerva": {
-    src: "/homepage-post-12-25-2025/build-with-synerva-v6.png",
+    src: "/home/desktop/build-with-synerva-v6.png",
     alt: "Full-stack system builds offering",
     width: 1024,
     height: 1024,

@@ -77,7 +77,7 @@ export const homepageContent = {
           cta: "View Offerings",
           href: "/offerings",
           image: {
-            src: "/homepage-post-12-25-2025/operator-hourly-v2a.png",
+            src: "/home/desktop/operator-hourly-v2a.png",
             alt: "Operator Hourly offering",
             width: 1536,
             height: 1024,
@@ -91,7 +91,7 @@ export const homepageContent = {
           cta: "See Project Options",
           href: "/offerings#sprints",
           image: {
-            src: "/homepage-post-12-25-2025/flat-rate-projects-v8.png",
+            src: "/home/desktop/flat-rate-projects-v8.png",
             alt: "Flat-rate sprints offering",
             width: 1536,
             height: 1024,
@@ -105,7 +105,7 @@ export const homepageContent = {
           cta: "Start a Project",
           href: "/contact",
           image: {
-            src: "/homepage-post-12-25-2025/build-with-synerva-v6.png",
+            src: "/home/desktop/build-with-synerva-v6.png",
             alt: "Full-stack system builds offering",
             width: 1024,
             height: 1024,
@@ -136,7 +136,7 @@ export const homepageContent = {
             "Actions that can begin immediately",
           ],
           video: {
-            src: "/homepage-post-12-25-2025/strategic-direction-v1a.PNG",
+            src: "/home/desktop/strategic-direction-v1a.PNG",
             label: "Clarity",
           },
         },
@@ -155,7 +155,7 @@ export const homepageContent = {
             "Forward motion that can hold",
           ],
           video: {
-            src: "/homepage-post-12-25-2025/integrated-execution-v2a.png",
+            src: "/home/desktop/integrated-execution-v2a.png",
             label: "Structure",
           },
         },
@@ -175,7 +175,7 @@ export const homepageContent = {
             "Less dependence on outside interpretation",
           ],
           video: {
-            src: "/homepage-post-12-25-2025/durable-assets-v1a.WEBP",
+            src: "/home/desktop/durable-assets-v1a.WEBP",
             label: "Build",
           },
         },
@@ -194,7 +194,7 @@ export const homepageContent = {
             "Composed execution under constraint",
           ],
           video: {
-            src: "/homepage-post-12-25-2025/operating-judgement-v1a.PNG",
+            src: "/home/desktop/operating-judgement-v1a.PNG",
             label: "Operating Judgment",
           },
         },
@@ -228,7 +228,7 @@ export const homepageContent = {
           title: "Verisense",
           headline: "Verisense",
           body: "Signal clarity at the point of decision.",
-          image: "/homepage-post-12-25-2025/verisense_4x5_exact.png",
+          image: "/home/desktop/verisense_4x5_exact.png",
           imageAlt: "Verisense interface preview",
           cta: {
             label: "View Verisense",
@@ -239,7 +239,7 @@ export const homepageContent = {
           title: "Lucentra",
           headline: "Lucentra",
           body: "Structural memory that preserves intent.",
-          image: "/homepage-post-12-25-2025/lucentra_4x5_exact.png",
+          image: "/home/desktop/lucentra_4x5_exact.png",
           imageAlt: "Lucentra interface preview",
           cta: { label: "Page coming soon" },
         },
@@ -409,7 +409,7 @@ export const homepageContent = {
     hero: {
       brandMark: "Synerva Dynamics",
       image: {
-        src: "/mobile-images/homepage/hero.png",
+        src: "/home/mobile/hero.png",
         alt: "Synerva Dynamics hero image",
       },
       headline: ["Make It Clear.", "Then Make It Real."],
@@ -449,7 +449,7 @@ export const homepageContent = {
         "Synerva builds structures that reduce drag, hold under pressure, and keep decisions coherent as the work moves from clarity into execution.",
       cards: [
         {
-          image: "/mobile-images/homepage/systems-that-hold-upper.PNG",
+          image: "/home/mobile/systems-that-hold-upper.PNG",
           lines: [
             "Clear interfaces.",
             "Explicit boundaries.",
@@ -457,7 +457,7 @@ export const homepageContent = {
           ],
         },
         {
-          image: "/mobile-images/homepage/systems-that-hold-2.PNG",
+          image: "/home/mobile/systems-that-hold-2.PNG",
           lines: [
             "Progress under pressure.",
             "Structure that keeps holding.",
@@ -469,7 +469,7 @@ export const homepageContent = {
     offerings: {
       eyebrow: "HOW TO ENGAGE",
       heading: "Offerings",
-      image: "/mobile-images/homepage/offerings-2.PNG",
+      image: "/home/mobile/offerings-2.PNG",
       cards: [
         {
           title: "Operator Sessions",
@@ -511,7 +511,7 @@ export const homepageContent = {
         {
           title: "Verisense",
           body: "Signal clarity at the point of decision.",
-          image: "/mobile-images/homepage/verisense-edit-masterr4-homepage.png",
+          image: "/home/mobile/verisense-edit-masterr4-homepage.png",
           cta: {
             label: "View Verisense →",
             href: "https://synervadynamics.com/verisense",
@@ -521,7 +521,7 @@ export const homepageContent = {
         {
           title: "Lucentra",
           body: "Structural memory that preserves intent.",
-          image: "/mobile-images/homepage/lucentra-v3-homepage.png",
+          image: "/home/mobile/lucentra-v3-homepage.png",
           cta: {
             label: "Page Coming Soon",
             variant: "disabled" as const,
@@ -538,8 +538,8 @@ export const homepageContent = {
         body:
           "Books and essays built from pressure, observation, and real-world constraint.",
         covers: [
-          "/mobile-images/homepage/the-rockstar-server-playbook-2.png",
-          "/mobile-images/homepage/TRD%20Cover%20Page%20(1).png",
+          "/home/mobile/the-rockstar-server-playbook-2.png",
+          "/home/mobile/TRD%20Cover%20Page%20(1).png",
         ],
         cta: {
           label: "Page Coming Soon",
@@ -552,12 +552,12 @@ export const homepageContent = {
           "Visual research where structure, tension, and coherence are tested in public.",
         cards: [
           {
-            image: "/mobile-images/homepage/the-fractured-self.webp",
+            image: "/home/mobile/the-fractured-self.webp",
             label: "Quiet Divine →",
             href: "/dimensions/quiet-divine",
           },
           {
-            image: "/mobile-images/homepage/surface-tension.png",
+            image: "/home/mobile/surface-tension.png",
             label: "Surface Tension →",
             href: "/dimensions/surface-tension",
           },
@@ -580,7 +580,7 @@ export const homepageContent = {
       heading: "Start With a 30-Minute Plan",
       body:
         "A 30-minute session to clarify the real objective, name the constraints, and choose the cleanest path into the work.",
-      image: "/mobile-images/homepage/next-step.PNG",
+      image: "/home/mobile/next-step.PNG",
       cta: {
         label: "Start With a 30-Minute Plan",
         href: "/contact",

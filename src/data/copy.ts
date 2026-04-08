@@ -4,7 +4,7 @@ export const copy = {
     description:
       "Synerva Dynamics builds unified systems across brand, web, content, and automation—designed around structure, not noise. Every layer works in one integrated loop, so ambitious teams gain lift they can see, measure, and compound.",
     url: "https://www.synervadynamics.com",
-    ogImage: "/homepage-post-12-25-2025/synerva-hero-5.png",
+    ogImage: "/home/desktop/synerva-hero-5.png",
     twitter: "@synerva-dynamics",
   },
   global: {
@@ -320,14 +320,14 @@ export const copy = {
         title: "Verisense",
         headline: "Verisense",
         body: "Signal clarity at the point of decision.",
-        image: "/homepage-post-12-25-2025/verisense_4x5_exact.png",
+        image: "/home/desktop/verisense_4x5_exact.png",
         imageAlt: "Verisense interface preview",
       },
       {
         title: "Lucentra",
         headline: "Lucentra",
         body: "Structural memory that preserves intent.",
-        image: "/homepage-post-12-25-2025/lucentra_4x5_exact.png",
+        image: "/home/desktop/lucentra_4x5_exact.png",
         imageAlt: "Lucentra interface preview",
       },
     ],
@@ -626,7 +626,7 @@ export const copy = {
           "actions that can begin immediately",
         ],
         video: {
-          src: "/homepage-post-12-25-2025/strategic-direction-v1a.PNG",
+          src: "/home/desktop/strategic-direction-v1a.PNG",
           label: "Strategic Direction",
         },
         href: "/contact",
@@ -647,7 +647,7 @@ export const copy = {
           "compounding forward motion",
         ],
         video: {
-          src: "/homepage-post-12-25-2025/integrated-execution-v2a.png",
+          src: "/home/desktop/integrated-execution-v2a.png",
           label: "Integrated Execution",
         },
         href: "/contact",
@@ -667,7 +667,7 @@ export const copy = {
           "less dependence on outside interpretation",
         ],
         video: {
-          src: "/homepage-post-12-25-2025/durable-assets-v1a.WEBP",
+          src: "/home/desktop/durable-assets-v1a.WEBP",
           label: "Durable Assets",
         },
         href: "/contact",
@@ -687,7 +687,7 @@ export const copy = {
           "composed execution under constraint",
         ],
         video: {
-          src: "/homepage-post-12-25-2025/operating-judgement-v1a.PNG",
+          src: "/home/desktop/operating-judgement-v1a.PNG",
           label: "Operating Judgment",
         },
         href: "/contact",
