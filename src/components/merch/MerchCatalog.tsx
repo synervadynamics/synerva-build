@@ -286,14 +286,14 @@ export default function MerchCatalog() {
                 onClick={() => openLightbox(category.id, itemIndex)}
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)] text-left shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition hover:border-[color:var(--merch-outline-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--merch-outline-primary)]"
               >
-                <div className="relative aspect-[3/2] w-full p-5">
-                  <div className="relative h-full w-full overflow-hidden rounded-[1.5rem]">
+                <div className="w-full p-5">
+                  <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1rem] border border-[color:var(--merch-outline-primary)] bg-white/[0.04]">
                     <Image
                       src={item.imageSrc}
                       alt={item.alt}
                       fill
                       sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 90vw"
-                      className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                      className="rounded-[1.65rem] object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
                       priority={categoryIndex === 0 && itemIndex === 0}
                     />
                   </div>
