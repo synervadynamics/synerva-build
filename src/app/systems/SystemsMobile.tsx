@@ -7,7 +7,7 @@ export default function SystemsMobile() {
     <main className="bg-[#05070c] text-white">
       <SystemsMobileShell
         showBackButton
-        backgroundImageUrl="/subpage-backgrounds/ChatGPT%20Image%20Jan%2022,%202026,%2012_00_43%20AM.png"
+        backgroundImageUrl="/shared/subpage-backgrounds/default-background.png"
       >
         <div className="-mx-5 -mt-2 mb-2">
           <SystemsOverviewSection />

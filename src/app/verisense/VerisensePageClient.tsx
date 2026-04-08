@@ -97,7 +97,7 @@ const commitments = [
 export default function VerisensePageClient() {
   return (
     <main className="relative bg-[#0E1514] text-[#DCD8D1]">
-      <SubpageStaticBackground imageUrl="/subpage-backgrounds/verisense.png" />
+      <SubpageStaticBackground imageUrl="/verisense-subpage/background.png" />
       <div className="pointer-events-none fixed inset-0 z-[5] bg-black/80" />
       <div className="relative z-10">
         <section className="px-6 pb-8 pt-24 sm:px-8 sm:pb-12 sm:pt-28 lg:px-12 lg:pb-16 lg:pt-32">
@@ -139,7 +139,7 @@ export default function VerisensePageClient() {
                 <div className="w-full max-w-xs sm:max-w-sm">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
                     <Image
-                      src="/verisense-subapge/verisense_section1b.png"
+                      src="/verisense-subpage/verisense_section1b.png"
                       alt="Verisense hero visual"
                       fill
                       className="object-cover"
@@ -184,7 +184,7 @@ export default function VerisensePageClient() {
                 <div className="w-full max-w-md">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45">
                     <Image
-                      src="/verisense-subapge/verisense-section2b.png"
+                      src="/verisense-subpage/verisense-section2b.png"
                       alt="Verisense instrument plate"
                       fill
                       className="object-cover"
@@ -348,7 +348,7 @@ export default function VerisensePageClient() {
                 <div className="w-full">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
                     <Image
-                      src="/verisense-subapge/verisense-3.png"
+                      src="/verisense-subpage/verisense-3.png"
                       alt="Verisense System Commitments visual"
                       fill
                       className="object-cover"
