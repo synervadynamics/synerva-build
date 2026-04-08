@@ -31,26 +31,6 @@ const isVideoSrc = (src?: string) =>
   Boolean(src && /\.(mp4|webm|mov)$/i.test(src));
 
 const mediaDimensions: Record<string, { width: number; height: number }> = {
-  "/whats-delivered-v2/voice-built-to-scale.PNG": {
-    width: 1536,
-    height: 1024,
-  },
-  "/whats-delivered-v2/web-that-earns-attention.PNG": {
-    width: 1536,
-    height: 1024,
-  },
-  "/whats-delivered-v2/content-that-multiplies-reach.PNG": {
-    width: 1536,
-    height: 1024,
-  },
-  "/whats-delivered-v2/automation-that-restores-focus.PNG": {
-    width: 1536,
-    height: 1024,
-  },
-  "/whats-delivered-v2/analytics-that-tell-the-truth.PNG": {
-    width: 1536,
-    height: 1024,
-  },
   "/homepage-post-12-25-2025/strategic-direction-v1a.PNG": {
     width: 1536,
     height: 1024,
