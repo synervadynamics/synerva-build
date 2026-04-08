@@ -138,7 +138,7 @@ export const copy = {
         cta: "Get the Playbook on Amazon",
         href: "https://www.amazon.ca/Rockstar-Server-Playbook-Kyle-Gruarin-ebook/dp/B0GLK41CSY/ref=zg_bsnr_g_941574_d_sccl_4/145-6795304-6292516?psc=1",
         image: {
-          src: "/rockstar-cover.png",
+          src: "/home/desktop/rockstar-cover.png",
           alt: "The Rockstar Server Playbook cover",
         },
       },
@@ -155,7 +155,7 @@ export const copy = {
         cta: "PREVIEW COMING SOON",
         href: "",
         image: {
-          src: "/reflective-dose-cover.png",
+          src: "/home/desktop/reflective-dose-cover.png",
           alt: "The Reflective Dose cover",
         },
       },
@@ -717,11 +717,11 @@ export const copy = {
       ctaPrimaryHref: "/#preview-access",
       ctaSecondary: "View all Labs",
       video: {
-        src: "/rockstar-cover.png",
+        src: "/home/desktop/rockstar-cover.png",
         alt: "The Rockstar Server Playbook cover artwork",
       },
       image: {
-        src: "/rockstar-cover.png",
+        src: "/home/desktop/rockstar-cover.png",
         alt: "The Rockstar Server Playbook cover artwork",
       },
     },
@@ -786,7 +786,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/reflective-dose-cover.png",
+        src: "/home/desktop/reflective-dose-cover.png",
         alt: "Cover of The Reflective Dose journal",
       },
       ctaPrimary: { label: "Explore The Reflective Dose", href: "/#preview-access" },

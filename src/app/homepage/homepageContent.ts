@@ -263,7 +263,7 @@ export const homepageContent = {
           cta: "Get the Playbook on Amazon",
           href: "https://www.amazon.ca/Rockstar-Server-Playbook-Kyle-Gruarin-ebook/dp/B0GLK41CSY/ref=zg_bsnr_g_941574_d_sccl_4/145-6795304-6292516?psc=1",
           image: {
-            src: "/rockstar-cover.png",
+            src: "/home/desktop/rockstar-cover.png",
             alt: "The Rockstar Server Playbook cover",
           },
         },
@@ -281,7 +281,7 @@ export const homepageContent = {
           cta: "Preview Coming Soon",
           href: "",
           image: {
-            src: "/reflective-dose-cover.png",
+            src: "/home/desktop/reflective-dose-cover.png",
             alt: "The Reflective Dose cover",
           },
         },
