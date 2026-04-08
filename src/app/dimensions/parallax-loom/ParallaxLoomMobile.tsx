@@ -13,7 +13,7 @@ export default function ParallaxLoomMobile() {
           <div className={styles.portraitPair} aria-hidden>
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/parallax-loom-designs/gaslighting-myself-into-greatness-v1.png"
+                src="/parallax-loom/gaslighting-myself-into-greatness-v1.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"
@@ -22,7 +22,7 @@ export default function ParallaxLoomMobile() {
             </div>
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-2xl border border-white/12 bg-white/5">
               <Image
-                src="/parallax-loom-designs/divorced-millenial-v1.png"
+                src="/parallax-loom/divorced-millenial-v1.png"
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, 210px"

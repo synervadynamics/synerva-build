@@ -55,7 +55,7 @@ const buildImages = (): QuietDivineImage[] => {
     return {
       id,
       fileName,
-      src: `/the-quiet-divine-art/${fileName}`,
+      src: `/quiet-divine/${fileName}`,
       alt,
       caption,
     };

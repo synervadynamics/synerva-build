@@ -139,7 +139,7 @@ export default function VerisensePageClient() {
                 <div className="w-full max-w-xs sm:max-w-sm">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
                     <Image
-                      src="/verisense-subapge/verisense_section1b.png"
+                      src="/verisense/verisense_section1b.png"
                       alt="Verisense hero visual"
                       fill
                       className="object-cover"
@@ -184,7 +184,7 @@ export default function VerisensePageClient() {
                 <div className="w-full max-w-md">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45">
                     <Image
-                      src="/verisense-subapge/verisense-section2b.png"
+                      src="/verisense/verisense-section2b.png"
                       alt="Verisense instrument plate"
                       fill
                       className="object-cover"
@@ -348,7 +348,7 @@ export default function VerisensePageClient() {
                 <div className="w-full">
                   <div className="relative aspect-[1024/1536] w-full overflow-hidden rounded-[2.5rem] border border-[#E6E3DC]/45 bg-[#121416]/85">
                     <Image
-                      src="/verisense-subapge/verisense-3.png"
+                      src="/verisense/verisense-3.png"
                       alt="Verisense System Commitments visual"
                       fill
                       className="object-cover"

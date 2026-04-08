@@ -18,7 +18,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/partial-exception.PNG"
+              src="/merch/partial-exception.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -52,7 +52,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/thermal-drift-v2.png"
+              src="/merch/thermal-drift-v2.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -88,7 +88,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/merch-hero.png"
+              src="/merch/merch-hero.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -137,7 +137,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/weightless-resolve.png"
+              src="/merch/weightless-resolve.png"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -172,7 +172,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/there-all-along.PNG"
+              src="/merch/there-all-along.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"
@@ -210,7 +210,7 @@ export default function MerchMobile() {
             className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border border-[color:var(--merch-outline-secondary)] bg-[color:var(--merch-panel-fill)] max-h-[40vh] sm:max-h-none"
           >
             <Image
-              src="/merch-v1/while-you-wait.PNG"
+              src="/merch/while-you-wait.PNG"
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, 420px"

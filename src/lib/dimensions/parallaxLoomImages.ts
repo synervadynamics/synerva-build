@@ -52,7 +52,7 @@ export const parallaxLoomImages: ParallaxLoomImage[] = orderedFileNames.map(
     return {
       id,
       fileName,
-      src: `/parallax-loom-designs/${fileName}`,
+      src: `/parallax-loom/${fileName}`,
       alt: formatAlt(id),
       caption: null,
       order: index,
