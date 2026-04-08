@@ -373,7 +373,7 @@ export const copy = {
           "Feedback loops integrated into CRM",
         ],
         image: {
-          src: "/new-hero-shots/verisense-hero-shot-new-3.png",
+          src: "/visuals/systems/verisense-hero-shot-new-3.png",
           label: "Verisense crest and mark",
         },
       },
@@ -451,7 +451,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/lucentra-subpage.png",
+        src: "/visuals/systems/lucentra-subpage.png",
         label: "Lucentra crest and mark",
       },
       cta: { label: "See What Lucentra Makes Possible", href: "/contact" },
@@ -513,7 +513,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/verisense-subpage.png",
+        src: "/visuals/systems/verisense-subpage.png",
         label: "Verisense crest and mark",
       },
       cta: { label: "See Verisense Read the Room", href: "/contact" },
@@ -573,7 +573,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/systems-logos-upscaled/synerva-os-subpage.png",
+        src: "/visuals/systems/synerva-os-subpage.png",
         label: "Synerva OS crest and mark",
       },
       cta: { label: "Unlock the Synerva OS", href: "/contact" },
@@ -786,7 +786,7 @@ export const copy = {
         },
       ],
       image: {
-        src: "/brand/reflective-dose-cover.png",
+        src: "/reflective-dose-cover.png",
         alt: "Cover of The Reflective Dose journal",
       },
       ctaPrimary: { label: "Explore The Reflective Dose", href: "/#preview-access" },
