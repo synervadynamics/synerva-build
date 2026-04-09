@@ -287,7 +287,7 @@ export default function MerchCatalog() {
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-[color:var(--merch-outline-primary)] bg-[color:var(--merch-panel-fill)] text-left shadow-[0_28px_90px_-70px_rgba(0,0,0,0.8)] transition hover:border-[color:var(--merch-outline-secondary)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--merch-outline-primary)]"
               >
                 <div className="w-full p-5">
-                  <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1rem] border border-[color:var(--merch-outline-primary)] bg-white/[0.04]">
+                  <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[1rem] bg-white/[0.04]">
                     <Image
                       src={item.imageSrc}
                       alt={item.alt}
