@@ -94,13 +94,16 @@
 .sdHome :global(.border-white\/55),
 .sdHome :global(.border-\[\#E0DCD4\]),
 .sdHome :global(.border-\[rgba\(243,238,228,0.4\)\]) {
-  border-color: var(--outline-primary);
+  border-color: var(--outline-secondary);
 }
 
-.sdHome section[class*="border-white/20"],
-.sdHome div[class*="border-white/20"],
-.sdHome article[class*="border-white/20"] {
-  border-color: var(--outline-primary);
+.sdHome section[class*="border-white/"],
+.sdHome div[class*="border-white/"],
+.sdHome article[class*="border-white/"],
+.sdHome section[class*="border-[#E0DCD4]"],
+.sdHome div[class*="border-[#E0DCD4]"],
+.sdHome article[class*="border-[#E0DCD4]"] {
+  border-color: var(--outline-secondary);
 }
 
 .sdHome :global(.border-white\/10),
