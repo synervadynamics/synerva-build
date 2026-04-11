@@ -169,7 +169,7 @@ export const MainHero = ({
 
                   <div className="space-y-4 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-0 backdrop-blur-2xl">
                     <div className="overflow-hidden rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
-                      <div className="overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)]">
+                      <div className="overflow-hidden rounded-2xl">
                         <Image
                           src="/homepage-post-12-25-2025/synerva-hero-5.png"
                           alt="Synerva Dynamics hero graphic"
@@ -269,7 +269,7 @@ export const MainHero = ({
 
                 <div className="space-y-4 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-0 backdrop-blur-2xl">
                   <div className="overflow-hidden rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
-                    <div className="overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)]">
+                    <div className="overflow-hidden rounded-2xl">
                       <Image
                         src="/homepage-post-12-25-2025/synerva-hero-5.png"
                         alt="Synerva Dynamics hero graphic"

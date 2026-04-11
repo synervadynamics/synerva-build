@@ -99,7 +99,7 @@ export const Offerings = ({ content }: { content: OfferingsContent }) => {
                   }}
                 />
                 {media ? (
-                  <div className="relative z-10 overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)] bg-white/5 max-h-[40vh] sm:max-h-none">
+                  <div className="relative z-10 overflow-hidden rounded-2xl bg-white/5 max-h-[40vh] sm:max-h-none">
                     <Image
                       src={media.src}
                       alt={media.alt}

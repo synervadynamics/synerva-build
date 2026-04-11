@@ -158,7 +158,7 @@ export const Deliver = ({
                           className="space-y-3 rounded-2xl border border-[color:var(--outline-secondary)] bg-white/[0.02] p-4 shadow-[0_20px_70px_-48px_rgba(0,0,0,0.75)]"
                         >
                           {item.video?.src ? (
-                            <div className="overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)] bg-white/5 max-h-[40vh] md:max-h-none">
+                            <div className="overflow-hidden rounded-2xl bg-white/5 max-h-[40vh] md:max-h-none">
                               <Image
                                 src={item.video.src}
                                 alt={item.video.label}
@@ -256,7 +256,7 @@ export const Deliver = ({
                   className="deliver-clean relative h-full rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
                 >
                   <div
-                    className="deliver-clean overflow-hidden rounded-3xl border border-[color:var(--outline-secondary)]"
+                    className="deliver-clean overflow-hidden rounded-3xl"
                     style={{ aspectRatio: activeAspectRatio }}
                   >
                     {activeItem.video?.src ? (
@@ -396,7 +396,7 @@ export const Deliver = ({
                 className="deliver-clean relative h-full rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-5 shadow-[0_44px_150px_-82px_rgba(0,0,0,0.82)]"
               >
                 <div
-                  className="deliver-clean overflow-hidden rounded-3xl border border-[color:var(--outline-secondary)]"
+                  className="deliver-clean overflow-hidden rounded-3xl"
                   style={{ aspectRatio: activeAspectRatio }}
                 >
                   {activeItem.video?.src ? (

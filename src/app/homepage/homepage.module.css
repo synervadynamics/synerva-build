@@ -252,7 +252,6 @@
 
 .portraitImageFrame {
   overflow: hidden;
-  border: 1px solid var(--outline-primary);
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.04);
 }
