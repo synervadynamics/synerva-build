@@ -1,7 +1,7 @@
 .sdHome {
   --page-bg-ref: #060A0D;
   --outline-primary: rgba(199, 210, 216, 0.12);
-  --outline-secondary: rgba(199, 210, 216, 0.14);
+  --outline-secondary: rgba(199, 210, 216, 0.18);
   --divider-rule: rgba(199, 210, 216, 0.10);
   --panel-fill: transparent;
   --panel-fill-focus: transparent;
