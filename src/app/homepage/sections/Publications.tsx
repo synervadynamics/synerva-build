@@ -73,7 +73,7 @@ export const Publications = ({
               return (
                 <article
                   key={item.title}
-                  className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.03] p-4"
+                  className="space-y-3 rounded-2xl border border-[color:var(--outline-secondary)] bg-white/[0.03] p-4"
                 >
                   <div className={homeStyles.portraitImageFrame}>
                     <Image
@@ -125,7 +125,7 @@ export const Publications = ({
             className="hidden gap-4 lg:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] lg:items-start lg:gap-4 items-start grid-rows-[min-content] sm:grid"
           >
             <div className="w-full self-start h-fit flex flex-col">
-              <div className="rounded-2xl border border-white/12 bg-white/[0.03] p-6 flex items-start">
+              <div className="rounded-2xl border border-[color:var(--outline-secondary)] bg-white/[0.03] p-6 flex items-start">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeItem.title}
@@ -166,7 +166,7 @@ export const Publications = ({
                       setExpandedIndex(index);
                       setImageIndex(index);
                     }}
-                    className={`cursor-pointer rounded-3xl border border-white/12 bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
+                    className={`cursor-pointer rounded-3xl border border-[color:var(--outline-secondary)] bg-white/[0.03] px-4 py-3.5 transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none ${
                       isActive ? "bg-white/[0.06]" : ""
                     }`}
                   >

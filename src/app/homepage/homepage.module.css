@@ -1,7 +1,7 @@
 .sdHome {
   --page-bg-ref: #060A0D;
   --outline-primary: rgba(199, 210, 216, 0.12);
-  --outline-secondary: rgba(199, 210, 216, 0.08);
+  --outline-secondary: rgba(199, 210, 216, 0.18);
   --divider-rule: rgba(199, 210, 216, 0.10);
   --panel-fill: transparent;
   --panel-fill-focus: transparent;
@@ -252,7 +252,6 @@
 
 .portraitImageFrame {
   overflow: hidden;
-  border: 1px solid var(--outline-primary);
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.04);
 }

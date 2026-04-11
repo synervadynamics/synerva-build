@@ -77,7 +77,7 @@ export const Offerings = ({ content }: { content: OfferingsContent }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="bubble-drift grid gap-4 rounded-[2.5rem] border border-white/12 bg-transparent p-4 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:gap-6 sm:p-6 lg:grid-cols-3 lg:p-8"
+          className="bubble-drift grid gap-4 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-4 shadow-[0_50px_160px_-84px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:gap-6 sm:p-6 lg:grid-cols-3 lg:p-8"
         >
           {offerings.cards.map((card) => {
             const media =
@@ -87,7 +87,7 @@ export const Offerings = ({ content }: { content: OfferingsContent }) => {
             return (
               <div
                 key={card.title}
-                className="group relative flex h-full flex-col gap-2 rounded-[2rem] border border-white/12 bg-transparent p-3 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-3 sm:p-5"
+                className="group relative flex h-full flex-col gap-2 rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-3 text-white shadow-[0_32px_130px_-76px_rgba(0,0,0,0.82)] backdrop-blur-xl sm:gap-3 sm:p-5"
               >
                 <div
                   aria-hidden
@@ -99,7 +99,7 @@ export const Offerings = ({ content }: { content: OfferingsContent }) => {
                   }}
                 />
                 {media ? (
-                  <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 max-h-[40vh] sm:max-h-none">
+                  <div className="relative z-10 overflow-hidden rounded-2xl bg-white/5 max-h-[40vh] sm:max-h-none">
                     <Image
                       src={media.src}
                       alt={media.alt}

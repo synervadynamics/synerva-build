@@ -13,7 +13,7 @@ export const Philosophy = ({
       id="philosophy"
       className="relative px-6 pb-20 pt-14 sm:px-10 sm:pb-22 sm:pt-16 lg:px-16 lg:pb-24 lg:pt-18"
     >
-      <div className="bubble-drift relative mx-auto w-full max-w-6xl overflow-hidden rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(14,30,52,0.76)] via-[rgba(14,26,42,0.7)] to-[rgba(10,20,34,0.7)] p-8 text-white shadow-[0_52px_170px_-86px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-12 lg:p-14">
+      <div className="bubble-drift relative mx-auto w-full max-w-6xl overflow-hidden rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-gradient-to-br from-[rgba(14,30,52,0.76)] via-[rgba(14,26,42,0.7)] to-[rgba(10,20,34,0.7)] p-8 text-white shadow-[0_52px_170px_-86px_rgba(0,0,0,0.86)] backdrop-blur-2xl sm:p-12 lg:p-14">
         <div className="relative space-y-6 text-white">
           <blockquote
             data-type-compression="headline"

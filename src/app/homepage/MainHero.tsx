@@ -167,9 +167,9 @@ export const MainHero = ({
                   </div>
                 </div>
 
-                  <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
-                    <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
-                      <div className="overflow-hidden rounded-2xl border border-white/8">
+                  <div className="space-y-4 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-0 backdrop-blur-2xl">
+                    <div className="overflow-hidden rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+                      <div className="overflow-hidden rounded-2xl">
                         <Image
                           src="/homepage-post-12-25-2025/synerva-hero-5.png"
                           alt="Synerva Dynamics hero graphic"
@@ -196,7 +196,7 @@ export const MainHero = ({
                           duration: 0.6,
                           ease: easeCurve,
                         }}
-                        className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
+                        className="min-h-[104px] rounded-2xl border border-[color:var(--outline-secondary)] bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-[color:var(--outline-secondary)] backdrop-blur-2xl sm:min-h-0 sm:py-4"
                       >
                         <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                           {label}
@@ -267,9 +267,9 @@ export const MainHero = ({
                   </div>
                 </div>
 
-                <div className="space-y-4 rounded-[2.5rem] border border-white/10 bg-transparent p-0 backdrop-blur-2xl">
-                  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
-                    <div className="overflow-hidden rounded-2xl border border-white/8">
+                <div className="space-y-4 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-transparent p-0 backdrop-blur-2xl">
+                  <div className="overflow-hidden rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-4 shadow-[0_42px_140px_-70px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+                    <div className="overflow-hidden rounded-2xl">
                       <Image
                         src="/homepage-post-12-25-2025/synerva-hero-5.png"
                         alt="Synerva Dynamics hero graphic"
@@ -296,7 +296,7 @@ export const MainHero = ({
                         duration: 0.6,
                         ease: easeCurve,
                       }}
-                      className="min-h-[104px] rounded-2xl border border-white/12 bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-white/35 backdrop-blur-2xl sm:min-h-0 sm:py-4"
+                      className="min-h-[104px] rounded-2xl border border-[color:var(--outline-secondary)] bg-transparent px-6 py-6 text-center shadow-[0_24px_80px_-50px_rgba(0,0,0,0.78)] transition hover:border-[color:var(--outline-secondary)] backdrop-blur-2xl sm:min-h-0 sm:py-4"
                     >
                       <p className="role-body text-[0.75rem] uppercase tracking-[0.35em] text-white/60 sm:text-sm">
                         {label}
