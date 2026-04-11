@@ -61,7 +61,7 @@ export default function Labs({ content }: LabsProps) {
       className="relative px-4 py-4 sm:px-10 sm:py-4 lg:px-16 lg:py-4"
     >
       <div className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2.5rem] border border-white/12 bg-white/[0.03] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] sm:p-8 lg:p-10">
+        <div className="rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-white/[0.03] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <div className="flex flex-col gap-4">
               <p className="role-body text-xs uppercase tracking-[0.4em] text-white/55">

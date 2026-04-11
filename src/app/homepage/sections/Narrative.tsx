@@ -117,7 +117,7 @@ export const Narrative = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-                className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
+                className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
               >
                 <div className="space-y-4">
                   <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">
@@ -184,7 +184,7 @@ export const Narrative = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-white/12 bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
+              className="bubble-drift relative grid gap-10 rounded-[2.5rem] border border-[color:var(--outline-secondary)] bg-gradient-to-br from-[rgba(10,26,44,0.74)] via-[rgba(14,34,56,0.68)] to-[rgba(8,20,34,0.68)] p-6 shadow-[0_50px_140px_-72px_rgba(0,0,0,0.82)] backdrop-blur-2xl lg:grid-cols-[1.1fr_0.9fr] lg:p-10"
             >
               <div className="space-y-4">
                 <p className="role-body text-xs uppercase tracking-[0.4em] text-white/64">

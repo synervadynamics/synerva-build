@@ -56,7 +56,7 @@ export const Systems = ({ content }: SystemsProps) => {
             return (
               <article
                 key={card.title}
-                className="relative flex w-full flex-col gap-3 rounded-[2rem] border border-white/12 bg-transparent p-3 pb-4 sm:gap-4 sm:p-4 sm:pb-5 md:justify-self-stretch"
+                className="relative flex w-full flex-col gap-3 rounded-[2rem] border border-[color:var(--outline-secondary)] bg-transparent p-3 pb-4 sm:gap-4 sm:p-4 sm:pb-5 md:justify-self-stretch"
               >
                 <div
                   className={`relative w-full ${homeStyles.portraitImageFrame}`}

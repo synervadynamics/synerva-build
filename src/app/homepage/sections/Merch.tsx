@@ -69,8 +69,8 @@ export const Merch = ({ content }: { content: MerchContent }) => {
                 {merch.ctas.secondary.label} →
               </CtaPill>
             </div>
-            <div className="bubble-drift mt-6 hidden rounded-[2rem] border border-white/12 bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)] sm:block">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div className="bubble-drift mt-6 hidden rounded-[2rem] border border-[color:var(--outline-secondary)] bg-white/[0.03] p-4 shadow-[0_30px_120px_-80px_rgba(0,0,0,0.8)] sm:block">
+              <div className="relative overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)] bg-white/5">
                 <div className="relative aspect-[3/2] w-full">
                   {activeCard ? (
                     <Image
@@ -90,9 +90,9 @@ export const Merch = ({ content }: { content: MerchContent }) => {
               {merch.cards.map((card) => (
                 <article
                   key={card.title}
-                  className="space-y-3 rounded-2xl border border-white/12 bg-white/[0.03] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
+                  className="space-y-3 rounded-2xl border border-[color:var(--outline-secondary)] bg-white/[0.03] p-4 shadow-[0_18px_45px_rgba(0,0,0,0.35)]"
                 >
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                  <div className="overflow-hidden rounded-2xl border border-[color:var(--outline-secondary)] bg-white/5">
                     <div className="relative aspect-[4/3] w-full max-h-[40vh] sm:max-h-none">
                       <Image
                         src={card.previewImage}
@@ -137,9 +137,9 @@ export const Merch = ({ content }: { content: MerchContent }) => {
                   onMouseEnter={() => setActiveIndex(index)}
                   onFocus={() => setActiveIndex(index)}
                   tabIndex={0}
-                  className={`group relative overflow-hidden rounded-3xl border border-white/12 bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
+                  className={`group relative overflow-hidden rounded-3xl border border-[color:var(--outline-secondary)] bg-white/[0.03] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition ${
                     activeIndex === index
-                      ? "border-white/30 shadow-[0_24px_70px_-40px_rgba(0,0,0,0.55)]"
+                      ? "border-[color:var(--outline-secondary)] shadow-[0_24px_70px_-40px_rgba(0,0,0,0.55)]"
                       : ""
                   }`}
                 >
